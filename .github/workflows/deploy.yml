@@ -1,0 +1,47 @@
+name: Deploy MkDocs site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - '**'  # 监听所有分支的推送
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # 确保你使用的是合适的Python版本
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install mkdocs
+        pip install mkdocs-material  # 如果你使用的是 Material 主题
+        pip install mike  # 如果你使用了 mike 插件
+
+    - name: Build the site
+      run: mkdocs build
+
+    - name: Package site as zip
+      run: |
+        zip -r site.zip site
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: site-artifact
+        path: site.zip
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./site  # 确保这里是正确的路径
+        publish_branch: gh-pages  # 部署到的分支
+

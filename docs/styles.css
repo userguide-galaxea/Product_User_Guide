@@ -1,0 +1,174 @@
+/*.md-sidebar {*/
+/*    display: none;*/
+/*}*/
+
+/*.md-nav__inner {*/
+/*    display: none;*/
+/*}*/
+
+/*.md-nav {*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*.md-header-nav__title {*/
+/*    display: none !important;*/
+/*}*/
+
+/*.md-main {*/
+/*    margin: 0px;*/
+/*}*/
+
+
+
+/* 图片和按钮容器 */
+.image-button-container {
+    display: flex; /* 使用 Flexbox 布局 */
+    align-items: flex-end; /* 图片和按钮底部对齐 */
+    gap: 200px; /* 图片和按钮之间的间距 */
+    margin-bottom: 100px; /* 底部间距 */
+    margin-left: 50px;
+    margin-top: 0px;
+}
+
+/* 图片样式 */
+.standalone-image {
+    width: 200px; /* 自定义图片宽度 */
+    height: auto; /* 保持图片的原始宽高比 */
+}
+
+/* 按钮部分容器样式 */
+.button-container {
+    display: flex; /* 使用 Flexbox 布局 */
+    flex-direction: column; /* 文字和按钮垂直排列 */
+    align-items: flex-start; /* 文字和按钮左对齐 */
+    gap: 10px; /* 文字和按钮之间的间距 */
+    flex-wrap: nowrap; /* 防止按钮换行 */
+
+}
+
+/* 按钮包装容器样式 */
+.buttons-wrapper {
+    display: flex; /* 使用 Flexbox 布局 */
+    gap: 20px; /* 按钮之间的间距 */
+    flex-wrap: nowrap; /* 防止按钮换行 */
+}
+
+.md-content .md-button-quickstart{
+    white-space: nowrap;
+    flex: 0 1 500px;
+    margin-top: .5rem;
+    margin-right: .5rem;
+    color: #1F883D;
+}
+.md-content .md-typeset .md-button-quickstart{
+    border: .1rem solid;
+    border-radius: .1rem;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    padding: .625em 1.5em;
+    transition: color 125ms, background-color 125ms, border-color 125ms;
+}
+.md-content .md-button-guide{
+    white-space: nowrap;
+    flex: 0 1 500px;
+    margin-top: .5rem;
+    margin-right: .5rem;
+    color: #333333;
+}
+.md-content .md-typeset .md-button-guide{
+    border: .1rem solid;
+    border-radius: .1rem;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    padding: .625em 1.5em;
+    transition: color 125ms, background-color 125ms, border-color 125ms;
+}
+
+/* 文字容器样式 */
+.text-container {
+    text-align: left; /* 文字左对齐 */
+    margin-bottom: 10px; /* 文字与按钮之间的间距 */
+    max-width: 300px; /* 设置最大宽度 */
+}
+
+
+
+
+/* Top-level container styling */
+.top-hr {
+    width: 140%;
+    display: flex;
+    max-width: 61rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 .2rem;
+    flex-wrap: wrap;
+}
+
+/* Feature item styling */
+.feature-item {
+    /*flex: 1 1 200px; !* Adjust the width as needed *!*/
+    /*border: 1px solid white; !* White border color *!*/
+    /*border-radius: 8px; !* Optional: for rounded corners *!*/
+    /*padding: 20px;*/
+    /*background-color: white; !* White background color *!*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: flex-start; !* Align items to the start *!*/
+    flex: 1 0 30%;
+    min-width: 0;
+}
+
+/* Feature item headings */
+.feature-item h2 {
+    color: #333;
+    font-weight: 300;
+    font-size: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: normal;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: inherit;
+}
+
+/* Feature item links */
+.feature-item a {
+    display: block;
+    margin-bottom: 10px;
+    color: #00aaff; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.feature-item a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Adjust the alignment for the icon and title in h2 */
+/*.feature-item h2 span.twemoji {*/
+/*    margin-right: 10px;*/
+/*    display: inline-block;*/
+/*    vertical-align: middle; !* Align icon with the middle of the text *!*/
+/*}*/
+.feature-item h2 svg {
+    height: 30px;
+    float: left;
+    margin-right: 10px;
+    transform: translateY(10%);
+}
+
+.feature-item a {
+    font-size: 18px;
+    line-height: 1.8em;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color: rgb(19, 19, 236);
+    margin-left: 10px;
+    display: block;
+}
+
+

@@ -1,0 +1,50 @@
+site_name: Galaxea Docs
+site_url: https://userguide-galaxea.github.io/userguide-galaxea/
+repo_url: https://github.com/userguide-galaxea/userguide-galaxea
+site_description: "Galaxea"
+copyright: Copyright &copy; 2023 - 2024 Galaxea
+site_author: Galaxea Inc
+
+theme:
+    name: material
+    logo: assets/logo.png
+    palette:
+        primary: black
+plugins:
+    - search:
+        enabled: true
+features:
+    - search.highlight
+    - search.inline
+    - search.excerpt
+    - navigation.expand
+    - navigation.tabs
+extra:
+  mathjax:
+    enable: true
+
+nav:
+  - Galaxea Docs: index.md
+  - About us: about_us/about_us.md
+  - Introducing Galaxea Robot:
+      - A1: Introducing_Galaxea_Robot/product_info/A1.md
+      - R1: Introducing_Galaxea_Robot/product_info/R1.md
+      - X1: Introducing_Galaxea_Robot/product_info/X1.md
+  - Galaxea A1 Guide:
+      - Getting Started: Guide/A1/Getting_Started.md
+      - A1 Hardware Guide: Guide/A1/A1_Hardware_Guide.md
+  - Galaxea R1 Guide:
+      - Getting Started: Guide/R1/Getting_Started.md
+      - R1 Hardware Guide: Guide/R1/A1_Hardware_Guide.md
+  - Galaxea X1 Guide:
+      - Getting Started: Guide/X1/Getting_Started.md
+      - X1 Hardware Guide: Guide/X1/A1_Hardware_Guide.md
+
+extra_css:
+  - styles.css
+  - Introducing_Galaxea_Robot/simple_intro.css
+  - Introducing_Galaxea_Robot/detail_intro.css
+
+markdown_extensions:
+  - pymdownx.details
+  - pymdownx.superfences
