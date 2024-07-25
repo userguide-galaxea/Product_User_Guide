@@ -1,0 +1,88 @@
+/* 基本样式重置 */
+body, .custom-h1, .custom-h2, .custom-h3, p, table {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 主容器样式 */
+.custom-main-container {
+    margin-top: 200px;
+    padding: 20px;
+}
+
+/* 文字、图片和表格容器样式 */
+.custom-text-image-table-container {
+    display: flex; /* 使用 Flexbox 布局 */
+    gap: 100px; /* 增加容器之间的间距 */
+    align-items: flex-start; /* 顶部对齐 */
+    flex-wrap: nowrap; /* 防止换行 */
+
+}
+
+/* 文字部分样式 */
+.custom-text-content {
+    line-height: 1.8; /* 增加行高，适合长文本 */
+    font-size: 1em; /* 增大文字内容区域的字体大小 */
+    flex: 1 0 30%;
+
+}
+
+/* 图片部分样式 */
+.custom-image-content {
+    flex: 1 0 50%; /* 图片部分宽度 */
+
+}
+
+.custom-image-content img {
+    width: 100%; /* 图片宽度自适应容器 */
+    height: auto; /* 保持图片的原始宽高比 */
+    max-height: 500px; /* 设定图片最大高度 */
+}
+
+/* 表格部分样式 */
+.custom-table-container {
+    flex: 1 0 20%;
+}
+
+table {
+    width: 100%; /* 表格宽度自适应容器 */
+    border-collapse: collapse; /* 合并边框 */
+    font-size: 1.25em; /* 增大表格字体大小 */
+
+}
+
+th, td {
+    border: 1px solid #ddd; /* 边框颜色 */
+    padding: 12px; /* 单元格内边距 */
+    text-align: left; /* 左对齐文本 */
+
+}
+
+th {
+    /*background-color: #f2f2f2; !* 表头背景色 *!*/
+}
+
+/* 标题和段落样式 */
+.custom-h1 {
+    font-size: 2.5em; /* 最大字体大小 */
+    color: #1E90FF; /* 蓝色 */
+    margin-bottom: 0.5em;
+}
+
+.custom-h2 {
+    font-size: 2em; /* 中等字体大小 */
+    color: #1E90FF; /* 蓝色 */
+    margin-bottom: 0.5em;
+}
+
+.custom-h3 {
+    font-size: 1.5em; /* 最小字体大小 */
+    color: #000000; /* 黑色 */
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+    line-height: 1.6; /* 调整行高以优化文本显示 */
+}
