@@ -32,7 +32,7 @@ nav:
       - X1: Introducing_Galaxea_Robot/product_info/X1.md
   - Galaxea A1 Guide:
       - Getting Started: Guide/A1/Getting_Started.md
-      - A1 Hardware Guide: Guide/A1/A1_Hardware_Guide.md
+      - Hardware Guide: Guide/A1/Hardware_Guide.md
   - Galaxea R1 Guide:
       - Getting Started: Guide/R1/Getting_Started.md
       - R1 Hardware Guide: Guide/R1/A1_Hardware_Guide.md

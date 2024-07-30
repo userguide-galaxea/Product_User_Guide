@@ -4,7 +4,7 @@
     <div class="button-container">
         <!-- 文字部分 -->
         <div class="text-container">
-            <p>这里是你想添加的文字，可以是描述或说明。这里是你想添加的文字，可以是描述或说明。</p>
+            <p>Hello Galaxea!</p>
         </div>
         <!-- 按钮包装容器 -->
         <div class="buttons-wrapper">
@@ -30,7 +30,7 @@
             Galaxea A1 Guide
         </h2>
         <a href="Guide/A1/Getting_Started">Getting Started!</a>
-        <a href="Guide/A1/A1_Hardware_Guide">A1 Hardware Guide</a>
+        <a href="Guide/A1/Hardware_Guide">Hardware Guide</a>
     </div>
 
     <div class="feature-item" id="hardware-guides">
