@@ -8,5 +8,5 @@ but also possesses rich cutting-edge technology product
 landing ability and valuable experience in mass production of autonomous driving. 
 Galaxea AI's vision is to create a new quality of robot productivity in the era of artificial intelligence.
 
-![about_us](product_images_video/all_C.jpg)
+[//]: # (![about_us]&#40;product_images_video/all_C.jpg&#41;)
 
