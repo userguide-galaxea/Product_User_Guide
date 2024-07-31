@@ -13,10 +13,13 @@ The tutorials will introduce how to use the programme to develop and operate A1.
 
 ## Developing and Operating Tutorials
 ### A1 Driver Kit
+1. For the first time, after confirming the power supply and USB connection, 
+run the following command to modify the read and write permission of serial port files:
 ```shell
 sudo chmod 777 /dev/ttyACM0
 ```
 
+2. After confirming the modification, you can initialize the SDK:
 ```shell
 cd a1_driver_sdk/install
 source setup.bash
@@ -25,6 +28,7 @@ roslaunch signal_arm single_arm_node.launch
 
 The interface section describes the various control and status feedback interfaces for A1 robot arm, 
 to help users better understand how to communicate and control the arm thriugh the ROS package.
+
 ### Driver Interface
 The interface is a ROS package for manipulator control and status feedback. 
 This package defines several topics for Posting and subscribing to the status of the robot arm, 
@@ -92,3 +96,198 @@ The following is a detailed description of each fault code and its corresponding
 | 19                  | Driver Feedback: Serial Read/Write Failure                       |
 | 20                  | Driver Feedback: Feedback Reception Overflow                     |
 
+## Joint and End-Effector Motion Control
+We provide the joint and end-effector motion control interfaces for A1 robotic arm, 
+enabling efficient control of the arm through the ROS (Robot Operating System) framework. 
+Whether you are performing end-effector motion or joint motion, 
+you must first activate the signal_arm interface; 
+detailed operation instructions can be found in the signal_arm documentation. 
+This project encompasses several primary functions:
+
+1. **End-Effector Motion**: Enables users to control the position and orientation of the robotic arm's 
+end-effector by publishing target pose messages, suitable for applications requiring precise positioning.
+
+2. **End-Effector Trajectory Motion**: Achieves movement of the robotic arm's end-effector along a specified trajectory 
+by publishing a series of pose messages, ideal for complex path planning and execution.
+
+3. **Joint Motion**: Offers a joint-level control interface where users can set the target positions for each individual joint, 
+facilitating coordinated whole-arm movements.
+
+### End-Effector Motion
+1. First, initiate the end-effector motion script, which will launch an rviz visualization for A1, with the default joint positions at zero.
+```shell
+cd release/install
+source setup.bash
+roslaunch mobiman eeTrackerdemo.launch
+```
+2. In File eeTrackerdemo.launch：
+```shell
+<param name="joint_states_topic" value="/joint_states" /> #topic /joint_states topic the channel for acquiring simulated values, specifically the states of the robot's joints, in a simulation environment.
+<param name="joint_command" value="/a1_robot_right/arm_joint_command" /> #topic /a1_robot_right/arm_joint_command represents the topic of the issuing motor.
+```
+3. Send messages to the end-effector motion, 
+specifically named `/a1_mpc_target`. This operation is non-blocking, 
+allowing for continuous sending. It enables the end of the robotic arm to move seamlessly. 
+However, it's critical that the target endpoint should not be too far from the current position of the robotic arm's end, 
+to prevent overstraining the mechanics or risking a collision.
+```shell
+rostopic pub /a1_mpc_target geometry_msgs/PoseStamped "{
+header: {
+seq: 0,
+stamp: {secs: 0, nsecs: 0},
+frame_id: 'world'
+},
+pose: {
+position: {x: 0.08, y: 0.0, z: 0.5},
+orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+}
+}"
+```
+```python
+#!/usr/bin/env python
+import rospy
+from geometry_msgs.msg import PoseStamped
+def publish_pose():
+rospy.init_node('pose_stamped_publisher', anonymous=True)
+pose_pub = rospy.Publisher('/a1_mpc_target', PoseStamped, queue_size=10)
+# Create message with type PoseStamped
+pose_msg = PoseStamped()
+pose_msg.header.seq = 0
+pose_msg.header.stamp = rospy.Time.now()
+pose_msg.header.frame_id = 'world'
+pose_msg.pose.position.x = 0.
+pose_msg.pose.position.y = 0.
+pose_msg.pose.position.z = 0.
+pose_msg.pose.orientation.x = 0.
+pose_msg.pose.orientation.y = 0.
+pose_msg.pose.orientation.z = 0.
+pose_msg.pose.orientation.w = 0.
+# Wait for subscribers to connect
+rospy.sleep(1)
+# Pulish message
+pose_pub.publish(pose_msg)
+rospy.loginfo("Published PoseStamped message to /a1_mpc_target")
+if __name__ == '__main__':
+try:
+publish_pose()
+except rospy.ROSInterruptException:
+pass
+```
+4. Usage Example:
+<div style="display: flex; justify-content: center; align-items: center;">
+<video width="1920" height="1080" controls>
+  <source src="../assets/A1_End-Effector_Motion.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
+
+
+### End-Effector Trajectory Motion
+1. Firstly, initiate the end-effector trajectory motion script, 
+which will launch an rviz visualization for A1, with the default joint positions set at zero.
+```shell
+cd release/install
+source setup.bash
+roslaunch mobiman eeTrajTrackerdemo.launch
+```
+2. in file eeTrajTrackerdemo.launch :
+```shell
+<param name="joint_states_topic" value="/joint_states" /> #/joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot's joints, in a simulation environment.
+<param name="joint_command" value="/a1_robot_right/arm_joint_command" /> #/a1_robot_right/arm_joint_command topic represents the topic of the issuing motor.
+```
+3. Publish messages to specify a trajectory for the end-effector motion, specially named  `/arm_target_trajectory`. 
+This operation is non-blocking, allowing for continuous publishing. 
+Note that the trajectory should not deviate significantly from the current end-effector position. However, 
+it's recommended to wait until the current trajectory is 
+completed before sending the next one to avoid inaccuracies in tracking the desired path.
+```c++
+int main(int argc, char** argv)
+{
+    ros::init(argc, argv, "pose_array_publisher");
+    ros::NodeHandle nh;
+    ros::Publisher pose_pub = nh.advertise<geometry_msgs::PoseArray>
+        ("/arm_target_trajectory", 10);
+    // Wait for subscribers to connect
+    ros::Rate wait_rate(10);
+    while (pose_pub.getNumSubscribers() == 0){
+        wait_rate.sleep();
+        }
+    geometry_msgs::PoseArray poseArrayMsg;
+    geometry_msgs::Pose pose1;
+    pose1.position.x = 0.08;
+    pose1.position.y = 0.0;
+    pose1.position.z = 0.3;
+    pose1.orientation.w = 0.5;
+    pose1.orientation.x = 0.5;
+    pose1.orientation.y = 0.5;
+    pose1.orientation.z = 0.5;
+    geometry_msgs::Pose pose2;
+    pose2.position.x = 0.08;
+    pose2.position.y = 0.0;
+    pose2.position.z = 0.4;
+    pose2.orientation.w = 0.5;
+    pose2.orientation.x = 0.5;
+    pose2.orientation.y = 0.5;
+    pose2.orientation.z = 0.5;
+    geometry_msgs::Pose pose3;
+    pose3.position.x = 0.08;
+    pose3.position.y = 0.0;
+    pose3.position.z = 0.54;
+    pose3.orientation.w = 0.5;
+    pose3.orientation.x = 0.5;
+    pose3.orientation.y = 0.5;
+    pose3.orientation.z = 0.5;
+    poseArrayMsg.poses.push_back(pose1);
+    poseArrayMsg.poses.push_back(pose2);
+    poseArrayMsg.poses.push_back(pose3);
+    pose_pub.publish(poseArrayMsg);
+    ROS_INFO("Published PoseArray with 3 poses");
+    return 0;
+}
+```
+4. 使用如影片所示:
+<div style="display: flex; justify-content: center; align-items: center;">
+<video width="1920" height="1080" controls>
+  <source src="../assets/A1_End-Effector_Trajectory_Motion.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
+
+### Joint Motion
+
+
+### Joint Position Motion Interface
+joint_move is a ROS package for single-joint control of A1 arms. 
+This package is used to specify the movement of each joint from the current position to the specified position, 
+the maximum speed and maximum acceleration during the movement can be specified, 
+if not specified, the default speed and acceleration will be planned. 
+The default maximum speed is 20 $rad/s$, and the maximum acceleration is $20 rad/s^2$. 
+The topic names and fields of the motion interface are shown in the following table.
+
+| Topic Name                  | Description                         | Message Type             |
+|-----------------------------|-------------------------------------|--------------------------|
+| /arm_joint_target_position  | Target position of each arm joint   | Sensor_msgs/JointState   |
+
+| Topic Name                  | Field      | Description                                      |
+|-----------------------------|------------|--------------------------------------------------|
+| /arm_joint_target_position  | header     | Standard Header                                  |
+| /arm_joint_target_position  | name       | Name of each arm joint                           |
+| /arm_joint_target_position  | position   | Target position of each arm joint                |
+| /arm_joint_target_position  | velocity   | Maximum velocity of each arm joint               |
+| /arm_joint_target_position  | effort     | Maximum acceleration velocity of each arm joint  |
+
+### Terminal Position Motion Interface
+| Topic Name     | Description                  | Message Type               |
+|----------------|------------------------------|----------------------------|
+| /a1_mpc_target | Target pose of end arm joint | Geometry_msgs::PoseStamped |
+
+| Topic Name     | Field              | Description            |
+|----------------|--------------------|------------------------|
+| /a1_mpc_target | header             | Standard Header        |
+| /a1_mpc_target | pose.position.x    | Shift in x direction   |
+| /a1_mpc_target | pose.position.y    | Shift in y direction   |
+| /a1_mpc_target | pose.position.z    | Shift in z direction   |
+| /a1_mpc_target | pose.orientation.x | Orientation quaternion |
+| /a1_mpc_target | pose.orientation.y | Orientation quaternion |
+| /a1_mpc_target | pose.orientation.z | Orientation quaternion |
+| /a1_mpc_target | pose.orientation.w | Orientation quaternion |
