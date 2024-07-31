@@ -562,6 +562,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#joint-and-end-effector-motion-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint and End-Effector Motion Control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Joint and End-Effector Motion Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#end-effector-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-Effector Motion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-effector-trajectory-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-Effector Trajectory Motion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joint-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint Motion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joint-position-motion-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint Position Motion Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-position-motion-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminal Position Motion Interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -832,6 +892,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#joint-and-end-effector-motion-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint and End-Effector Motion Control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Joint and End-Effector Motion Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#end-effector-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-Effector Motion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-effector-trajectory-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-Effector Trajectory Motion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joint-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint Motion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joint-position-motion-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint Position Motion Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-position-motion-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminal Position Motion Interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -864,12 +984,21 @@ The tutorials will introduce how to use the programme to develop and operate A1.
 <h2 id="installation">Installation</h2>
 <h2 id="developing-and-operating-tutorials">Developing and Operating Tutorials</h2>
 <h3 id="a1-driver-kit">A1 Driver Kit</h3>
+<ol>
+<li>
+<p>For the first time, after confirming the power supply and USB connection, 
+run the following command to modify the read and write permission of serial port files:
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/dev/ttyACM0
-</code></pre></div>
+</code></pre></div></p>
+</li>
+<li>
+<p>After confirming the modification, you can initialize the SDK:
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>a1_driver_sdk/install
 <span class="nb">source</span><span class="w"> </span>setup.bash
 roslaunch<span class="w"> </span>signal_arm<span class="w"> </span>single_arm_node.launch
-</code></pre></div>
+</code></pre></div></p>
+</li>
+</ol>
 <p>The interface section describes the various control and status feedback interfaces for A1 robot arm, 
 to help users better understand how to communicate and control the arm thriugh the ROS package.</p>
 <h3 id="driver-interface">Driver Interface</h3>
@@ -1169,6 +1298,291 @@ The following is a detailed description of each fault code and its corresponding
 <tr>
 <td>20</td>
 <td>Driver Feedback: Feedback Reception Overflow</td>
+</tr>
+</tbody>
+</table>
+<h2 id="joint-and-end-effector-motion-control">Joint and End-Effector Motion Control</h2>
+<p>We provide the joint and end-effector motion control interfaces for A1 robotic arm, 
+enabling efficient control of the arm through the ROS (Robot Operating System) framework. 
+Whether you are performing end-effector motion or joint motion, 
+you must first activate the signal_arm interface; 
+detailed operation instructions can be found in the signal_arm documentation. 
+This project encompasses several primary functions:</p>
+<ol>
+<li>
+<p><strong>End-Effector Motion</strong>: Enables users to control the position and orientation of the robotic arm's 
+end-effector by publishing target pose messages, suitable for applications requiring precise positioning.</p>
+</li>
+<li>
+<p><strong>End-Effector Trajectory Motion</strong>: Achieves movement of the robotic arm's end-effector along a specified trajectory 
+by publishing a series of pose messages, ideal for complex path planning and execution.</p>
+</li>
+<li>
+<p><strong>Joint Motion</strong>: Offers a joint-level control interface where users can set the target positions for each individual joint, 
+facilitating coordinated whole-arm movements.</p>
+</li>
+</ol>
+<h3 id="end-effector-motion">End-Effector Motion</h3>
+<ol>
+<li>First, initiate the end-effector motion script, which will launch an rviz visualization for A1, with the default joint positions at zero.
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>release/install
+<span class="nb">source</span><span class="w"> </span>setup.bash
+roslaunch<span class="w"> </span>mobiman<span class="w"> </span>eeTrackerdemo.launch
+</code></pre></div></li>
+<li>In File eeTrackerdemo.launch：
+<div class="highlight"><pre><span></span><code>&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_states_topic&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/joint_states&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1">#topic /joint_states topic the channel for acquiring simulated values, specifically the states of the robot&#39;s joints, in a simulation environment.</span>
+&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_command&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/a1_robot_right/arm_joint_command&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1">#topic /a1_robot_right/arm_joint_command represents the topic of the issuing motor.</span>
+</code></pre></div></li>
+<li>Send messages to the end-effector motion, 
+specifically named <code>/a1_mpc_target</code>. This operation is non-blocking, 
+allowing for continuous sending. It enables the end of the robotic arm to move seamlessly. 
+However, it's critical that the target endpoint should not be too far from the current position of the robotic arm's end, 
+to prevent overstraining the mechanics or risking a collision.
+<div class="highlight"><pre><span></span><code>rostopic<span class="w"> </span>pub<span class="w"> </span>/a1_mpc_target<span class="w"> </span>geometry_msgs/PoseStamped<span class="w"> </span><span class="s2">&quot;{</span>
+<span class="s2">header: {</span>
+<span class="s2">seq: 0,</span>
+<span class="s2">stamp: {secs: 0, nsecs: 0},</span>
+<span class="s2">frame_id: &#39;world&#39;</span>
+<span class="s2">},</span>
+<span class="s2">pose: {</span>
+<span class="s2">position: {x: 0.08, y: 0.0, z: 0.5},</span>
+<span class="s2">orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}</span>
+<span class="s2">}</span>
+<span class="s2">}&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">rospy</span>
+<span class="kn">from</span> <span class="nn">geometry_msgs.msg</span> <span class="kn">import</span> <span class="n">PoseStamped</span>
+<span class="k">def</span> <span class="nf">publish_pose</span><span class="p">():</span>
+<span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s1">&#39;pose_stamped_publisher&#39;</span><span class="p">,</span> <span class="n">anonymous</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pose_pub</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Publisher</span><span class="p">(</span><span class="s1">&#39;/a1_mpc_target&#39;</span><span class="p">,</span> <span class="n">PoseStamped</span><span class="p">,</span> <span class="n">queue_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># Create message with type PoseStamped</span>
+<span class="n">pose_msg</span> <span class="o">=</span> <span class="n">PoseStamped</span><span class="p">()</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">seq</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s1">&#39;world&#39;</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="c1"># Wait for subscribers to connect</span>
+<span class="n">rospy</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Pulish message</span>
+<span class="n">pose_pub</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">pose_msg</span><span class="p">)</span>
+<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;Published PoseStamped message to /a1_mpc_target&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">try</span><span class="p">:</span>
+<span class="n">publish_pose</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ROSInterruptException</span><span class="p">:</span>
+<span class="k">pass</span>
+</code></pre></div></li>
+<li>Usage Example:</li>
+</ol>
+<div style="display: flex; justify-content: center; align-items: center;">
+<video width="1920" height="1080" controls>
+  <source src="../assets/A1_End-Effector_Motion.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
+
+<h3 id="end-effector-trajectory-motion">End-Effector Trajectory Motion</h3>
+<ol>
+<li>Firstly, initiate the end-effector trajectory motion script, 
+which will launch an rviz visualization for A1, with the default joint positions set at zero.
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>release/install
+<span class="nb">source</span><span class="w"> </span>setup.bash
+roslaunch<span class="w"> </span>mobiman<span class="w"> </span>eeTrajTrackerdemo.launch
+</code></pre></div></li>
+<li>in file eeTrajTrackerdemo.launch :
+<div class="highlight"><pre><span></span><code>&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_states_topic&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/joint_states&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1">#/joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot&#39;s joints, in a simulation environment.</span>
+&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_command&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/a1_robot_right/arm_joint_command&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1">#/a1_robot_right/arm_joint_command topic represents the topic of the issuing motor.</span>
+</code></pre></div></li>
+<li>Publish messages to specify a trajectory for the end-effector motion, specially named  <code>/arm_target_trajectory</code>. 
+This operation is non-blocking, allowing for continuous publishing. 
+Note that the trajectory should not deviate significantly from the current end-effector position. However, 
+it's recommended to wait until the current trajectory is 
+completed before sending the next one to avoid inaccuracies in tracking the desired path.
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ros</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pose_array_publisher&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ros</span><span class="o">::</span><span class="n">NodeHandle</span><span class="w"> </span><span class="n">nh</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ros</span><span class="o">::</span><span class="n">Publisher</span><span class="w"> </span><span class="n">pose_pub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nh</span><span class="p">.</span><span class="n">advertise</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">PoseArray</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="p">(</span><span class="s">&quot;/arm_target_trajectory&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Wait for subscribers to connect</span>
+<span class="w">    </span><span class="n">ros</span><span class="o">::</span><span class="n">Rate</span><span class="w"> </span><span class="n">wait_rate</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">pose_pub</span><span class="p">.</span><span class="n">getNumSubscribers</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span>
+<span class="w">        </span><span class="n">wait_rate</span><span class="p">.</span><span class="n">sleep</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">PoseArray</span><span class="w"> </span><span class="n">poseArrayMsg</span><span class="p">;</span>
+<span class="w">    </span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">Pose</span><span class="w"> </span><span class="n">pose1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose1</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.08</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose1</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose1</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.3</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose1</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose1</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose1</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose1</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">Pose</span><span class="w"> </span><span class="n">pose2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose2</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.08</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose2</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose2</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.4</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose2</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose2</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose2</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose2</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">Pose</span><span class="w"> </span><span class="n">pose3</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.08</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.54</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose3</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose3</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose3</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose3</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">poseArrayMsg</span><span class="p">.</span><span class="n">poses</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">pose1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">poseArrayMsg</span><span class="p">.</span><span class="n">poses</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">pose2</span><span class="p">);</span>
+<span class="w">    </span><span class="n">poseArrayMsg</span><span class="p">.</span><span class="n">poses</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">pose3</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pose_pub</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="n">poseArrayMsg</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Published PoseArray with 3 poses&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>使用如影片所示:</li>
+</ol>
+<div style="display: flex; justify-content: center; align-items: center;">
+<video width="1920" height="1080" controls>
+  <source src="../assets/A1_End-Effector_Trajectory_Motion.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
+
+<h3 id="joint-motion">Joint Motion</h3>
+<h3 id="joint-position-motion-interface">Joint Position Motion Interface</h3>
+<p>joint_move is a ROS package for single-joint control of A1 arms. 
+This package is used to specify the movement of each joint from the current position to the specified position, 
+the maximum speed and maximum acceleration during the movement can be specified, 
+if not specified, the default speed and acceleration will be planned. 
+The default maximum speed is 20 <span class="arithmatex">\(rad/s\)</span>, and the maximum acceleration is <span class="arithmatex">\(20 rad/s^2\)</span>. 
+The topic names and fields of the motion interface are shown in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Topic Name</th>
+<th>Description</th>
+<th>Message Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/arm_joint_target_position</td>
+<td>Target position of each arm joint</td>
+<td>Sensor_msgs/JointState</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Topic Name</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/arm_joint_target_position</td>
+<td>header</td>
+<td>Standard Header</td>
+</tr>
+<tr>
+<td>/arm_joint_target_position</td>
+<td>name</td>
+<td>Name of each arm joint</td>
+</tr>
+<tr>
+<td>/arm_joint_target_position</td>
+<td>position</td>
+<td>Target position of each arm joint</td>
+</tr>
+<tr>
+<td>/arm_joint_target_position</td>
+<td>velocity</td>
+<td>Maximum velocity of each arm joint</td>
+</tr>
+<tr>
+<td>/arm_joint_target_position</td>
+<td>effort</td>
+<td>Maximum acceleration velocity of each arm joint</td>
+</tr>
+</tbody>
+</table>
+<h3 id="terminal-position-motion-interface">Terminal Position Motion Interface</h3>
+<table>
+<thead>
+<tr>
+<th>Topic Name</th>
+<th>Description</th>
+<th>Message Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/a1_mpc_target</td>
+<td>Target pose of end arm joint</td>
+<td>Geometry_msgs::PoseStamped</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Topic Name</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/a1_mpc_target</td>
+<td>header</td>
+<td>Standard Header</td>
+</tr>
+<tr>
+<td>/a1_mpc_target</td>
+<td>pose.position.x</td>
+<td>Shift in x direction</td>
+</tr>
+<tr>
+<td>/a1_mpc_target</td>
+<td>pose.position.y</td>
+<td>Shift in y direction</td>
+</tr>
+<tr>
+<td>/a1_mpc_target</td>
+<td>pose.position.z</td>
+<td>Shift in z direction</td>
+</tr>
+<tr>
+<td>/a1_mpc_target</td>
+<td>pose.orientation.x</td>
+<td>Orientation quaternion</td>
+</tr>
+<tr>
+<td>/a1_mpc_target</td>
+<td>pose.orientation.y</td>
+<td>Orientation quaternion</td>
+</tr>
+<tr>
+<td>/a1_mpc_target</td>
+<td>pose.orientation.z</td>
+<td>Orientation quaternion</td>
+</tr>
+<tr>
+<td>/a1_mpc_target</td>
+<td>pose.orientation.w</td>
+<td>Orientation quaternion</td>
 </tr>
 </tbody>
 </table>
