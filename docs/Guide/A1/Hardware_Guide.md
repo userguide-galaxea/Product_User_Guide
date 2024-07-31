@@ -83,3 +83,103 @@ Its design ensures stable and reliable performance in high payload and dynamic a
 The performance parameters show A1's key parameters, 
 such as weight, payload capacity, arm span and speed, 
 which reflect its superior performance in highly dynamic operation.
+
+| Performance                          | Parameter  |
+|--------------------------------------|------------|
+| Weight                               | $6kg$      |
+| Rated Payload                        | $2kg@0.5m$ |
+| Maximum Payload                      | $5kg@0.5m$ |
+| Reach                                | $700mm$    |
+| Maximum End-Effector Linear Velocity | $10m/s$    |
+| Maximum End-Effector Acceleration    | $40m/s^2$  |
+| Maximum Gripping Force               | $200N$     |
+| Repeatability Accuracy               | $1mm$      |
+
+## Body Plan
+A1 is a pair of robotic arms, each consisting of one base, two links, 6 joints and 6 motor actuators.
+You can purchase end-effectors such as grippers or customized tools from the Galaxea AI website, if needed.
+
+## Hardware Architecture
+
+### Base
+A1 has only two ports on the rear of the base for development and charging.
+
+### Link
+Each arm comprises 2 telescoping aluminum links set on base. 
+These two links are connected by six joints, 
+each of which is a planetary gear motor that enables high precision and high torque.
+
+A1 robotic arm is an integrated unit, 
+which means it comes fully assembled and ready to use once the base is fixed in a platform by users.
+
+<div style="display: flex; justify-content: space-around;">
+  <img src="../assets/A1_size1.jpg" alt="Image 1" style="width: 60%;">
+  <img src="../assets/A1_size2.jpg" alt="Image 2" style="width: 30%;">
+</div>
+
+**The arm is designed to have:**
+
+| Item                | Notes                                     |
+|---------------------|-------------------------------------------|
+| Length              | Deployed $775.1mm$ <br/> Folded $449mm$   |
+| Height              | Deployed $237.6mm$ <br/> Folded $277.6mm$ |
+| Width               | $128mm$                                   |
+| Reach               | $0.7m$                                    |
+| Degree of Freedom   | $6$                                       |
+| Maximum Payload     | $5kg$                                     |
+| Weight              | $6kg$                                     |
+
+
+### Joint
+The joint performance parameters detail the operating range, 
+rated torque and peak torque of six joints, 
+demonstrating its flexibility and power in a variety of operations.
+
+![A1_joint](assets/A1_joint.jpg)
+
+| Joint   | Range           | Rated Torque |
+|---------|-----------------|--------------|
+| Joint 1 | $[-165°, 165°]$ | $20 Nm$      |
+| Joint 2 | $[0°, 180°]$    | $20 Nm$      |
+| Joint 3 | $[0°, 190°]$    | $9 Nm$       |
+| Joint 4 | $[-165°, 165°]$ | $3 Nm$       |
+| Joint 5 | $[-95°, 95°]$   | $3 Nm$       |
+| Joint 6 | $[-105°, 105°]$ | $3 Nm$       |
+
+View 1 shows the working radius and rotation angle of **Joint 1**, 
+with a rotation radius of 780mm and a maximum rotation angle of 330 degrees.
+
+![A1_joint_view1](assets/A1_joint_view1.png)
+
+View 2 shows the rotation ranges for **Joint 2 and Joint 3**. 
+The maximum rotation angle of Joint 2 is 180 degrees, and the maximum rotation angle of Joint 3 is 190 degrees.
+
+![A1_joint_view1](assets/A1_joint_view2.png)
+
+View 3 shows the rotation angle of **Joint 4,5,6** and the end position of the robotic arm. 
+The maximum rotation angle of Joint 4 and Joint 6 is 330 degrees, 
+and the maximum rotation angle of Joint 5 is 190 degrees. 
+The distance between two fingertips is 60mm.
+
+![A1_joint_view1](assets/A1_joint_view3.png)
+
+
+### Wrist
+
+### Gripper
+1. The gripper is composed of one motor, two clips, and one specially designed joint module.
+2. **No gripper comes with the probduct. You can purchase end-effectors or customized tools from the Galaxea AI website, if needed.**
+
+
+| Feature                 | Value        |
+|-------------------------|--------------|
+| Gripper Operating Range | $[0mm,60mm]$ |
+| Gripper Rated force     | $100 N$      |
+
+<div style="display: flex; justify-content: space-around;">
+  <img src="../assets/A1_gripper_size1.jpg" alt="Image 1" style="width: 60%;">
+  <img src="../assets/A1_gripper_size2.jpg" alt="Image 2" style="width: 30%;">
+</div>
+
+#### Gripper Removal
+Here we describe removing A1 gripper. Installation is simply these steps in reverse.

@@ -33,6 +33,7 @@ nav:
   - Galaxea A1 Guide:
       - Getting Started: Guide/A1/Getting_Started.md
       - Hardware Guide: Guide/A1/Hardware_Guide.md
+      - Software_Overview: Guide/A1/Software_Overview.md
   - Galaxea R1 Guide:
       - Getting Started: Guide/R1/Getting_Started.md
       - R1 Hardware Guide: Guide/R1/A1_Hardware_Guide.md
@@ -48,3 +49,9 @@ extra_css:
 markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js

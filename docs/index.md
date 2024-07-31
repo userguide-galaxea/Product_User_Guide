@@ -31,6 +31,7 @@
         </h2>
         <a href="Guide/A1/Getting_Started">Getting Started!</a>
         <a href="Guide/A1/Hardware_Guide">Hardware Guide</a>
+        <a href="Guide/A1/Software_Overview">Software Overview</a>
     </div>
 
     <div class="feature-item" id="hardware-guides">
