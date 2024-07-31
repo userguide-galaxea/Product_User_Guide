@@ -16,7 +16,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/A1/Software_Overview/</loc>
+         <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/A1/Software_Guide/</loc>
          <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -31,7 +31,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/R1/Software_Guide/</loc>
+         <lastmod>2024-07-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/X1/Getting_Started/</loc>
+         <lastmod>2024-07-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/X1/Software_Guide/</loc>
          <lastmod>2024-07-31</lastmod>
          <changefreq>daily</changefreq>
     </url>

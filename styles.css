@@ -24,7 +24,7 @@
 .image-button-container {
     display: flex; /* 使用 Flexbox 布局 */
     align-items: flex-end; /* 图片和按钮底部对齐 */
-    gap: 200px; /* 图片和按钮之间的间距 */
+    gap: 700px; /* 图片和按钮之间的间距 */
     margin-bottom: 100px; /* 底部间距 */
     margin-left: 50px;
     margin-top: 0px;

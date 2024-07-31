@@ -1,0 +1,1702 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Galaxea">
+      
+      
+        <meta name="author" content="Galaxea Inc">
+      
+      
+        <link rel="canonical" href="https://userguide-galaxea.github.io/userguide-galaxea/Guide/A1/Software_Guide/">
+      
+      
+        <link rel="prev" href="../Hardware_Guide/">
+      
+      
+        <link rel="next" href="../../R1/Getting_Started/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+    
+    
+      
+        <title>Software Guide - Galaxea Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../styles.css">
+    
+      <link rel="stylesheet" href="../../../Introducing_Galaxea_Robot/simple_intro.css">
+    
+      <link rel="stylesheet" href="../../../Introducing_Galaxea_Robot/detail_intro.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#software-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Galaxea Docs" class="md-header__button md-logo" aria-label="Galaxea Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Galaxea Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Software Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/userguide-galaxea/userguide-galaxea" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Galaxea Docs" class="md-nav__button md-logo" aria-label="Galaxea Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Galaxea Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/userguide-galaxea/userguide-galaxea" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Galaxea Robot
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Galaxea Robot
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introducing_Galaxea_Robot/introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About us
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introducing_Galaxea_Robot/product_info/A1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introducing_Galaxea_Robot/product_info/R1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    R1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introducing_Galaxea_Robot/product_info/X1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    X1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Galaxea A1 Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Galaxea A1 Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Getting_Started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hardware_Guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Software Guide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Software Guide
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Dependency
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developing-and-operating-tutorials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Developing and Operating Tutorials
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Developing and Operating Tutorials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1-driver-kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      A1 Driver Kit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Driver Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnostic-trouble-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnostic Trouble Code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#joint-and-end-effector-movement-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint and End-Effector Movement Control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Joint and End-Effector Movement Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#end-effector-movement" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-Effector movement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-effector-trajectory-movement" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-Effector Trajectory Movement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="End-Effector Trajectory Movement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#end-effector-pose-movement-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-Effector Pose Movement Interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joint-movement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint Movement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Joint Movement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#joint-position-movement-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint Position Movement Interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Galaxea R1 Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Galaxea R1 Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R1/Getting_Started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R1/A1_Hardware_Guide.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    R1 Hardware Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Galaxea X1 Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Galaxea X1 Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../X1/Getting_Started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../X1/A1_Hardware_Guide.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    X1 Hardware Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Dependency
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developing-and-operating-tutorials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Developing and Operating Tutorials
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Developing and Operating Tutorials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1-driver-kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      A1 Driver Kit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Driver Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnostic-trouble-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnostic Trouble Code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#joint-and-end-effector-movement-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint and End-Effector Movement Control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Joint and End-Effector Movement Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#end-effector-movement" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-Effector movement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#end-effector-trajectory-movement" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-Effector Trajectory Movement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="End-Effector Trajectory Movement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#end-effector-pose-movement-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      End-Effector Pose Movement Interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joint-movement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint Movement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Joint Movement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#joint-position-movement-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joint Position Movement Interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="software-guide">Software Guide</h1>
+<p>We developed an efficient driver for converting the serial signals through the slave computer and finally released it as a ROS (Robot Operating System) topics. 
+This driver not only enables the control of the slave computer, 
+but also obtains the feedback information and error codes of the device, 
+thus enabling two-way communication and real-time control. 
+The tutorials will introduce how to use the programme to develop and operate A1. </p>
+<h2 id="software-dependency">Software Dependency</h2>
+<ol>
+<li>Ubuntu 20.04LTS</li>
+<li>ROS Noetic</li>
+</ol>
+<h2 id="installation">Installation</h2>
+<p>This SDK does not need to be recompiled, please refer to the Developing and Operating Tutorial to use directly.</p>
+<h2 id="developing-and-operating-tutorials">Developing and Operating Tutorials</h2>
+<h3 id="a1-driver-kit">A1 Driver Kit</h3>
+<ol>
+<li>
+<p>For the first time, after confirming the power supply and USB connection, 
+run the following command to modify the read and write permission of serial port files:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/dev/ttyACM0
+</code></pre></div></p>
+</li>
+<li>
+<p>After confirming the modification, you can initialize the SDK:
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>a1_driver_sdk/install
+<span class="nb">source</span><span class="w"> </span>setup.bash
+roslaunch<span class="w"> </span>signal_arm<span class="w"> </span>single_arm_node.launch
+</code></pre></div></p>
+</li>
+</ol>
+<p>The interface section describes the various control and status feedback interfaces for A1 robot arm, 
+to help users better understand how to communicate and control the arm thriugh the ROS package.</p>
+<h3 id="driver-interface">Driver Interface</h3>
+<p>The interface is a ROS package for manipulator control and status feedback. 
+This package defines several topics for publishing and subscribing to the status of the robot arm, 
+control commands, and associated error code information. 
+Below are detailed descriptions of each topic and its related message types:</p>
+<table>
+<thead>
+<tr>
+<th>Topic Name</th>
+<th>Description</th>
+<th>Message Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/joint_states</td>
+<td>Robot arm joint state feedback</td>
+<td>sensor_msgs/JointState</td>
+</tr>
+<tr>
+<td>/arm_status</td>
+<td>Robot arm motor status feedback</td>
+<td>signal_arm/arm_status</td>
+</tr>
+<tr>
+<td>/arm_joint_command</td>
+<td>Robot arm control interface</td>
+<td>signal_arm/arm_control</td>
+</tr>
+<tr>
+<td>/gripper_joint_command</td>
+<td>Gripper force control interface</td>
+<td>signal_arm/gripper_joint_command</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Topic Name</th>
+<th>Field</th>
+<th>Description</th>
+<th>Data Type</th>
+<th>Unit</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/joint_states</td>
+<td>header</td>
+<td>Standard ROS message header</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td>name</td>
+<td>Names of the robot arm joints</td>
+<td>string[]</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td>position</td>
+<td>Positions of the robot arm joints</td>
+<td>float64[]</td>
+<td><span class="arithmatex">\(rad\)</span></td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td>velocity</td>
+<td>Velocities of the robot arm joints</td>
+<td>float64[]</td>
+<td><span class="arithmatex">\(rad/s\)</span></td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td>effort</td>
+<td>Torques of the robot arm joints</td>
+<td>float64[]</td>
+<td><span class="arithmatex">\(Nm\)</span></td>
+<td>-</td>
+</tr>
+<tr>
+<td>/arm_status</td>
+<td>header</td>
+<td>Standard ROS message header</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td>name</td>
+<td>Names of the robot arm joints</td>
+<td>string[]</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td>error_code</td>
+<td>Error codes for the robot arm joints</td>
+<td>float32[]</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td>t_mos</td>
+<td>MOS chip temperature of the robot arm joints</td>
+<td>float32[]</td>
+<td><span class="arithmatex">\(Celsius\)</span></td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td>t_rotor</td>
+<td>Internal encoder temperature of the robot arm joints</td>
+<td>float32[]</td>
+<td><span class="arithmatex">\(Celsius\)</span></td>
+<td>-</td>
+</tr>
+<tr>
+<td>/arm_joint_command</td>
+<td>header</td>
+<td>Standard ROS message header</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td>p_des</td>
+<td>Desired position of the robot arm</td>
+<td>float32[]</td>
+<td><span class="arithmatex">\(rad\)</span></td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td>v_des</td>
+<td>Desired velocity of the robot arm</td>
+<td>float32[]</td>
+<td><span class="arithmatex">\(rad/s\)</span></td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td>t_ff</td>
+<td>Desired torque of the robot arm</td>
+<td>float32[]</td>
+<td><span class="arithmatex">\(Nm\)</span></td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td>kp</td>
+<td>Proportional gain for position</td>
+<td>float32[]</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td>kd</td>
+<td>Derivative gain for position</td>
+<td>float32[]</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td>mode</td>
+<td>Control mode</td>
+<td>uint8</td>
+<td>-</td>
+<td>Default 0, MIT control</td>
+</tr>
+<tr>
+<td>/gripper_force_control</td>
+<td>header</td>
+<td>Standard ROS message header</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td>gripper_force</td>
+<td>Gripper support force</td>
+<td>float32</td>
+<td><span class="arithmatex">\(N\)</span></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagnostic-trouble-code">Diagnostic Trouble Code</h3>
+<p>DTC is used to feedback the error information of the ACU and the drive, 
+and can be used to view the real-time status of each motor and the running status of the drive. 
+The following is a detailed description of each fault code and its corresponding status.</p>
+<table>
+<thead>
+<tr>
+<th>Fault Code Position</th>
+<th>Corresponding Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>ACU Feedback: Disabled</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ACU Feedback: Enabled</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ACU Feedback: Motor Disconnected</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ACU Feedback: Position Jump</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ACU Feedback: Persistent High Current</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ACU Feedback: Excessive Torque</td>
+</tr>
+<tr>
+<td>6</td>
+<td>ACU Feedback: ECU -&gt; ACU Timeout</td>
+</tr>
+<tr>
+<td>7</td>
+<td>ACU Feedback: Position Limit Exceeded</td>
+</tr>
+<tr>
+<td>8</td>
+<td>ACU Feedback: Speed Limit Exceeded</td>
+</tr>
+<tr>
+<td>9</td>
+<td>ACU Feedback: Torque Limit Exceeded</td>
+</tr>
+<tr>
+<td>10</td>
+<td>ACU Feedback: Overpressure</td>
+</tr>
+<tr>
+<td>11</td>
+<td>ACU Feedback: Low Pressure</td>
+</tr>
+<tr>
+<td>12</td>
+<td>ACU Feedback: Overcurrent</td>
+</tr>
+<tr>
+<td>13</td>
+<td>ACU Feedback: MOS Overtemperature</td>
+</tr>
+<tr>
+<td>14</td>
+<td>ACU Feedback: Motor Winding Overtemperature</td>
+</tr>
+<tr>
+<td>15</td>
+<td>ACU Feedback: Communication Loss</td>
+</tr>
+<tr>
+<td>16</td>
+<td>ACU Feedback: Overload</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Driver Feedback: Serial Connection Disconnected (No Device File)</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Driver Feedback: Device File Connected, No Messages</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Driver Feedback: Serial Read/Write Failure</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Driver Feedback: Feedback Reception Overflow</td>
+</tr>
+</tbody>
+</table>
+<h2 id="joint-and-end-effector-movement-control">Joint and End-Effector Movement Control</h2>
+<p>We provide the joint and end-effector movement control interfaces for A1 robotic arm, 
+enabling efficient control of the arm through the ROS (Robot Operating System) framework. 
+Whether you are performing end-effector movement or joint movement, 
+you must first activate the <code>signal_arm</code> interface; 
+detailed operation instructions can be found in the <code>signal_arm</code> documentation. 
+This project encompasses several primary functions:</p>
+<ol>
+<li>
+<p><strong>End-Effector movement</strong>: Enables users to control the position and orientation of the robotic arm's 
+end-effector by publishing target pose messages, suitable for applications requiring precise positioning.</p>
+</li>
+<li>
+<p><strong>End-Effector Trajectory movement</strong>: Achieves movement of the robotic arm's end-effector along a specified trajectory 
+by publishing a series of pose messages, ideal for complex path planning and execution.</p>
+</li>
+<li>
+<p><strong>Joint movement</strong>: Offers a joint-level control interface where users can set the target positions for each individual joint, 
+facilitating coordinated whole-arm movements.</p>
+</li>
+</ol>
+<h3 id="end-effector-movement">End-Effector movement</h3>
+<ol>
+<li>First, initiate the end-effector movement script, which will launch an rviz visualization for A1, with the default joint positions at zero.
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>release/install
+<span class="nb">source</span><span class="w"> </span>setup.bash
+roslaunch<span class="w"> </span>mobiman<span class="w"> </span>eeTrackerdemo.launch
+</code></pre></div></li>
+<li>In File <em>eeTrackerdemo.launch</em>：
+<div class="highlight"><pre><span></span><code>&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_states_topic&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/joint_states&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1">#topic /joint_states topic the channel for acquiring simulated values, specifically the states of the robot&#39;s joints, in a simulation environment.</span>
+&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_command&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/a1_robot_right/arm_joint_command&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1">#topic /a1_robot_right/arm_joint_command represents the topic of the issuing motor.</span>
+</code></pre></div></li>
+<li>Send messages to the end-effector movement, 
+specifically named <code>/a1_mpc_target</code>. This operation is non-blocking, 
+allowing for continuous sending. It enables the end of the robotic arm to move seamlessly. 
+However, it's critical that the target endpoint should not be too far from the current position of the robotic arm's end, 
+to prevent overstraining the mechanics or risking a collision.
+<div class="highlight"><pre><span></span><code>rostopic<span class="w"> </span>pub<span class="w"> </span>/a1_mpc_target<span class="w"> </span>geometry_msgs/PoseStamped<span class="w"> </span><span class="s2">&quot;{</span>
+<span class="s2">header: {</span>
+<span class="s2">seq: 0,</span>
+<span class="s2">stamp: {secs: 0, nsecs: 0},</span>
+<span class="s2">frame_id: &#39;world&#39;</span>
+<span class="s2">},</span>
+<span class="s2">pose: {</span>
+<span class="s2">position: {x: 0.08, y: 0.0, z: 0.5},</span>
+<span class="s2">orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}</span>
+<span class="s2">}</span>
+<span class="s2">}&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">rospy</span>
+<span class="kn">from</span> <span class="nn">geometry_msgs.msg</span> <span class="kn">import</span> <span class="n">PoseStamped</span>
+<span class="k">def</span> <span class="nf">publish_pose</span><span class="p">():</span>
+<span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s1">&#39;pose_stamped_publisher&#39;</span><span class="p">,</span> <span class="n">anonymous</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pose_pub</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Publisher</span><span class="p">(</span><span class="s1">&#39;/a1_mpc_target&#39;</span><span class="p">,</span> <span class="n">PoseStamped</span><span class="p">,</span> <span class="n">queue_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># Create message with type PoseStamped</span>
+<span class="n">pose_msg</span> <span class="o">=</span> <span class="n">PoseStamped</span><span class="p">()</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">seq</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s1">&#39;world&#39;</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">pose_msg</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="c1"># Wait for subscribers to connect</span>
+<span class="n">rospy</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Pulish message</span>
+<span class="n">pose_pub</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">pose_msg</span><span class="p">)</span>
+<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;Published PoseStamped message to /a1_mpc_target&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">try</span><span class="p">:</span>
+<span class="n">publish_pose</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ROSInterruptException</span><span class="p">:</span>
+<span class="k">pass</span>
+</code></pre></div></li>
+<li>Usage Example:</li>
+</ol>
+<div style="display: flex; justify-content: center; align-items: center;">
+<video width="1920" height="1080" controls>
+  <source src="../assets/A1_End-Effector_Motion.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
+
+<h3 id="end-effector-trajectory-movement">End-Effector Trajectory Movement</h3>
+<ol>
+<li>Firstly, initiate the end-effector trajectory movement script, 
+which will launch an rviz visualization for A1, with the default joint positions set at zero.
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>release/install
+<span class="nb">source</span><span class="w"> </span>setup.bash
+roslaunch<span class="w"> </span>mobiman<span class="w"> </span>eeTrajTrackerdemo.launch
+</code></pre></div></li>
+<li>in file <em>eeTrajTrackerdemo.launch</em> :
+<div class="highlight"><pre><span></span><code>&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_states_topic&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/joint_states&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1">#/joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot&#39;s joints, in a simulation environment.</span>
+&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_command&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/a1_robot_right/arm_joint_command&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1">#/a1_robot_right/arm_joint_command topic represents the topic of the issuing motor.</span>
+</code></pre></div></li>
+<li>Publish messages to specify a trajectory for the end-effector movement, specially named  <code>/arm_target_trajectory</code>. 
+This operation is non-blocking, allowing for continuous publishing. 
+Note that the trajectory should not deviate significantly from the current end-effector position. However, 
+it's recommended to wait until the current trajectory is 
+completed before sending the next one to avoid inaccuracies in tracking the desired path.
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ros</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pose_array_publisher&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ros</span><span class="o">::</span><span class="n">NodeHandle</span><span class="w"> </span><span class="n">nh</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ros</span><span class="o">::</span><span class="n">Publisher</span><span class="w"> </span><span class="n">pose_pub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nh</span><span class="p">.</span><span class="n">advertise</span><span class="o">&lt;</span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">PoseArray</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="p">(</span><span class="s">&quot;/arm_target_trajectory&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Wait for subscribers to connect</span>
+<span class="w">    </span><span class="n">ros</span><span class="o">::</span><span class="n">Rate</span><span class="w"> </span><span class="n">wait_rate</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">pose_pub</span><span class="p">.</span><span class="n">getNumSubscribers</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span>
+<span class="w">        </span><span class="n">wait_rate</span><span class="p">.</span><span class="n">sleep</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">PoseArray</span><span class="w"> </span><span class="n">poseArrayMsg</span><span class="p">;</span>
+<span class="w">    </span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">Pose</span><span class="w"> </span><span class="n">pose1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose1</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.08</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose1</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose1</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.3</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose1</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose1</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose1</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose1</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">Pose</span><span class="w"> </span><span class="n">pose2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose2</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.08</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose2</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose2</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.4</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose2</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose2</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose2</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose2</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">Pose</span><span class="w"> </span><span class="n">pose3</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.08</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose3</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.54</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose3</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose3</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose3</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pose3</span><span class="p">.</span><span class="n">orientation</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">poseArrayMsg</span><span class="p">.</span><span class="n">poses</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">pose1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">poseArrayMsg</span><span class="p">.</span><span class="n">poses</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">pose2</span><span class="p">);</span>
+<span class="w">    </span><span class="n">poseArrayMsg</span><span class="p">.</span><span class="n">poses</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">pose3</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pose_pub</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="n">poseArrayMsg</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;Published PoseArray with 3 poses&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>使用如影片所示:</li>
+</ol>
+<div style="display: flex; justify-content: center; align-items: center;">
+<video width="1920" height="1080" controls>
+  <source src="../assets/A1_End-Effector_Trajectory_Motion.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
+
+<h4 id="end-effector-pose-movement-interface">End-Effector Pose Movement Interface</h4>
+<table>
+<thead>
+<tr>
+<th>Topic Name</th>
+<th>Description</th>
+<th>Message Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/a1_mpc_target</td>
+<td>Target pose of end arm joint</td>
+<td>Geometry_msgs::PoseStamped</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Topic Name</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/a1_mpc_target</td>
+<td>header</td>
+<td>Standard Header</td>
+</tr>
+<tr>
+<td>/a1_mpc_target</td>
+<td>pose.position.x</td>
+<td>Shift in x direction</td>
+</tr>
+<tr>
+<td>/a1_mpc_target</td>
+<td>pose.position.y</td>
+<td>Shift in y direction</td>
+</tr>
+<tr>
+<td>/a1_mpc_target</td>
+<td>pose.position.z</td>
+<td>Shift in z direction</td>
+</tr>
+<tr>
+<td>/a1_mpc_target</td>
+<td>pose.orientation.x</td>
+<td>Orientation quaternion</td>
+</tr>
+<tr>
+<td>/a1_mpc_target</td>
+<td>pose.orientation.y</td>
+<td>Orientation quaternion</td>
+</tr>
+<tr>
+<td>/a1_mpc_target</td>
+<td>pose.orientation.z</td>
+<td>Orientation quaternion</td>
+</tr>
+<tr>
+<td>/a1_mpc_target</td>
+<td>pose.orientation.w</td>
+<td>Orientation quaternion</td>
+</tr>
+</tbody>
+</table>
+<h3 id="joint-movement">Joint Movement</h3>
+<h4 id="joint-position-movement-interface">Joint Position Movement Interface</h4>
+<p>joint_move is a ROS package for single-joint control of A1 arms. 
+This package is used to specify the movement of each joint from the current position to the specified position, 
+the maximum speed and maximum acceleration during the movement can be specified, 
+if not specified, the default speed and acceleration will be planned. 
+The default maximum speed is 20 <span class="arithmatex">\(rad/s\)</span>, and the maximum acceleration is <span class="arithmatex">\(20 rad/s^2\)</span>. 
+The topic names and fields of the movement interface are shown in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Topic Name</th>
+<th>Description</th>
+<th>Message Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/arm_joint_target_position</td>
+<td>Target position of each arm joint</td>
+<td>Sensor_msgs/JointState</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Topic Name</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/arm_joint_target_position</td>
+<td>header</td>
+<td>Standard Header</td>
+</tr>
+<tr>
+<td>/arm_joint_target_position</td>
+<td>name</td>
+<td>Name of each arm joint</td>
+</tr>
+<tr>
+<td>/arm_joint_target_position</td>
+<td>position</td>
+<td>Target position of each arm joint</td>
+</tr>
+<tr>
+<td>/arm_joint_target_position</td>
+<td>velocity</td>
+<td>Maximum velocity of each arm joint</td>
+</tr>
+<tr>
+<td>/arm_joint_target_position</td>
+<td>effort</td>
+<td>Maximum acceleration velocity of each arm joint</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - 2024 Galaxea
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://x.com/Galaxea_AI" target="_blank" rel="noopener" title="x.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/userguide-galaxea" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
