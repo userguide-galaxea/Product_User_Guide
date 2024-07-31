@@ -1,7 +1,9 @@
-# Hardware_Guide
+# A1 Hardware Guide
 This manual provides the engineering data and user guidance for working with the Galaxea Robot A1 hardware.
 
 ## Safety Guide
+![warning](assets/warning.jpg)
+
 Galaxea robots are potentially dangerous machines with safety hazards. 
 **If improperly used they can cause injury or death.**
 
@@ -69,9 +71,9 @@ Factors such as wind, rain, dust and temperature changes in the outdoor environm
 affecting its performance and safety.
 
 ## Disclaimer
-The Galaxea robots are explicitly designed for use by researchers in highly controlled indoor scientific environments. 
+<u>The Galaxea robots are explicitly designed for use by researchers in highly controlled indoor scientific environments. 
 As it has not undergone the certification process required for other uses (e.g., consumer use in a home environment), 
-this product is not recommended or suitable for such unspecified uses.
+this product is not recommended or suitable for such unspecified uses.</u>
 
 ## Technical Specification
 ### Electric Parameters
@@ -95,17 +97,28 @@ which reflect its superior performance in highly dynamic operation.
 | Maximum Gripping Force               | $200N$     |
 | Repeatability Accuracy               | $1mm$      |
 
-## Body Plan
-A1 is a pair of robotic arms, each consisting of one base, two links, 6 joints and 6 motor actuators.
-You can purchase end-effectors such as grippers or customized tools from the Galaxea AI website, if needed.
 
 ## Hardware Architecture
+![A1_topo](assets/A1_topo.jpg)
 
 ### Base
 A1 has only two ports on the rear of the base for development and charging.
 
+
+
+
+![A1_base](assets/A1_base.png)
+
+| Item           | Notes                                  |
+|----------------|----------------------------------------|
+| Charging port  | Rated voltage 48V                      |
+| USB port       | USB2.0                                 |
+| Mounting holes | Four M6 threads in a diameter of 6.3mm |
+| Size           | 100mm x 100mm                          |
+
+
 ### Link
-Each arm comprises 2 telescoping aluminum links set on base. 
+Each arm comprises two Acrylonitrile Butadiene Styrenelinks set on base. 
 These two links are connected by six joints, 
 each of which is a planetary gear motor that enables high precision and high torque.
 
@@ -117,7 +130,7 @@ which means it comes fully assembled and ready to use once the base is fixed in 
   <img src="../assets/A1_size2.jpg" alt="Image 2" style="width: 30%;">
 </div>
 
-**The arm is designed to have:**
+The arm is designed to have:
 
 | Item                | Notes                                     |
 |---------------------|-------------------------------------------|
@@ -135,7 +148,7 @@ The joint performance parameters detail the operating range,
 rated torque and peak torque of six joints, 
 demonstrating its flexibility and power in a variety of operations.
 
-![A1_joint](assets/A1_joint.jpg)
+![A1_joint](assets/A1_joint.png)
 
 | Joint   | Range           | Rated Torque |
 |---------|-----------------|--------------|
@@ -163,23 +176,53 @@ The distance between two fingertips is 60mm.
 
 ![A1_joint_view1](assets/A1_joint_view3.png)
 
-
-### Wrist
-
 ### Gripper
-1. The gripper is composed of one motor, two clips, and one specially designed joint module.
-2. **No gripper comes with the probduct. You can purchase end-effectors or customized tools from the Galaxea AI website, if needed.**
+The gripper is composed of one motor, two clips, and one specially designed joint module.
 
+No gripper comes with the probduct. You can purchase end-effectors or customized tools from the Galaxea AI website, if needed.
 
-| Feature                 | Value        |
-|-------------------------|--------------|
-| Gripper Operating Range | $[0mm,60mm]$ |
-| Gripper Rated force     | $100 N$      |
+<div style="display: flex; justify-content: space-around;">
+  <img src="../assets/A1_gripper_view1.png" alt="Image 1" style="width: 30%;">
+  <img src="../assets/A1_gripper_view2.png" alt="Image 2" style="width: 70%;">
+</div>
+
+| Feature                 | Value       |
+|-------------------------|-------------|
+| Length                  | 149.63mm    |
+| Length of Fingers       | 77.45mm     |
+| Diameter of Motor       | 60.4mm      |
+| Gripper Operating Range | [0mm, 60mm] |
+| Gripper Rated Force     | 100 N       |
+
+A1 arm with gripper should have:
 
 <div style="display: flex; justify-content: space-around;">
   <img src="../assets/A1_gripper_size1.jpg" alt="Image 1" style="width: 60%;">
   <img src="../assets/A1_gripper_size2.jpg" alt="Image 2" style="width: 30%;">
 </div>
 
-#### Gripper Removal
-Here we describe removing A1 gripper. Installation is simply these steps in reverse.
+| Item              | Notes                            |
+|-------------------|----------------------------------|
+| Length            | Deployed 918.6mm, Folded 545.4mm |
+| Height            | Deployed 237.6mm, Folded 277.6mm |
+| Width             | 128mm                            |
+| Degree of Freedom | 7                                |
+| Maximum Payload   | 5kg                              |
+| Weight            | 6kg                              |
+
+
+#### Gripper Attaching
+<img src="../assets/A1_joint_interface.png" alt="A1_joint_view1" width="400" />
+<img src="../assets/A1_gripper_interface.png" alt="A1_joint_view1" width="400" />
+
+1. **Alignment Check**: Ensure that the four protruding points on the gripper side align perfectly with the corresponding recessed points on the robotic arm's end effector mount. This alignment ensures that the gripper is properly positioned and centered.
+2. **Initial Placement**: Carefully place the gripper onto the robotic arm's end effector mount, making sure that the protrusions fit snugly into the recesses. This step is crucial for achieving the correct orientation and balance.
+3. **Screw Fixation**: Once aligned, secure the gripper to the robotic arm using three screws provided. These screws go around the outer circle of the mounting area, as shown in the figure. Tighten the screws evenly to prevent any skewing or misalignment.
+4. **Final Check**: After tightening the screws, double-check the alignment and stability of the gripper. It should be firmly attached and not wobble or move independently of the robotic arm.
+5. **Testing**: Before using the robotic arm, perform a test run to ens
+
+## Robot Care
+1. **Keet it clean**: In order to maintain the good operating condition of the robotic arm and extend its service life, 
+regular cleaning work should be carried out. 
+Alcohol wipes or wet and clean rags can be used to gently wipe the surface of the robot arm, 
+including the shell, base and other components, to effectively remove debris, oil and other impurities attached to it.

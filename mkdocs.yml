@@ -10,6 +10,8 @@ theme:
     logo: assets/logo.png
     palette:
         primary: black
+    font:
+        code: Roboto Mono
 plugins:
     - search:
         enabled: true
@@ -18,22 +20,28 @@ features:
     - search.inline
     - search.excerpt
     - navigation.expand
-    - navigation.tabs
+    - navigation.instant
 extra:
-  mathjax:
-    enable: true
+    mathjax:
+        enable: true
+    social:
+        - icon: material/twitter
+          link: https://x.com/Galaxea_AI
+        - icon: material/github
+          link: https://github.com/userguide-galaxea
 
 nav:
-  - Galaxea Docs: index.md
-  - About us: about_us/about_us.md
-  - Introducing Galaxea Robot:
+  - Home: index.md
+#   - About us: about_us/about_us.md
+  - Galaxea Robot:
+      - About us: Introducing_Galaxea_Robot/introduction.md
       - A1: Introducing_Galaxea_Robot/product_info/A1.md
       - R1: Introducing_Galaxea_Robot/product_info/R1.md
       - X1: Introducing_Galaxea_Robot/product_info/X1.md
   - Galaxea A1 Guide:
       - Getting Started: Guide/A1/Getting_Started.md
       - Hardware Guide: Guide/A1/Hardware_Guide.md
-      - Software_Overview: Guide/A1/Software_Overview.md
+      - Software Guide: Guide/A1/Software_Guide.md
   - Galaxea R1 Guide:
       - Getting Started: Guide/R1/Getting_Started.md
       - R1 Hardware Guide: Guide/R1/A1_Hardware_Guide.md
