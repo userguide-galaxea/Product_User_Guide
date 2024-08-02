@@ -19,7 +19,7 @@ making it a versatile tool for industries seeking automation with finesse.
 
 ## Discover More
 If you wish to learn more about the hardware and software specifics of A1 robotic arm, 
-please refer to the Galaxea  A1 Guide for detailed information.
+please refer to the [Galaxea  A1 Guide](../Guide/A1/Getting_Started.md) for detailed information.
 
 The manual will provide you with comprehensive insights into the technical specifications, 
 operational guidelines, and system requirements that will help you understand and utilize A1 to its fullest potential.

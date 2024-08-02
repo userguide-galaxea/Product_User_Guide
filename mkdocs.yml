@@ -34,7 +34,7 @@ nav:
   - Home: index.md
 #   - About us: about_us/about_us.md
   - Galaxea Robot:
-      - About us: Introducing_Galaxea_Robot/introduction.md
+#       - About us: Introducing_Galaxea_Robot/introduction.md
       - A1: Introducing_Galaxea_Robot/product_info/A1.md
 #       - R1: Introducing_Galaxea_Robot/product_info/R1.md
 #       - X1: Introducing_Galaxea_Robot/product_info/X1.md

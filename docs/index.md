@@ -15,7 +15,7 @@ hide:
         </div>
         <!-- 按钮包装容器 -->
         <div class="buttons-wrapper">
-            <a href="Introducing_Galaxea_Robot/introduction" class="md-button-quickstart">
+            <a href="Introducing_Galaxea_Robot/product_info/A1" class="md-button-quickstart">
                 Galaxea Robot
             </a>
 
