@@ -15,25 +15,25 @@ Therefore, we strongly recommend that every user carefully read and follow the i
 Safety Guide before operating the robot for the first time to ensure that the operation process is safe and efficient.
 
 ### Unboxing
-Upon opening the package, you will find the robotic arm as a fully assembled unit. 
+Upon opening the package, you will find the robot arm as a fully assembled unit. 
 This means that the arm structure, including all its links and joints, 
 comes pre-assembled and ready for installation. Here’s what you can expect inside the box:
 
 ![A1_unboxing](assets/A1_unboxing.png)
 
-| Item                      | Quantity | Notes                                                                                                |
-|---------------------------|----------|------------------------------------------------------------------------------------------------------|
-| Pre-assembled Robotic Arm | 1        | The arm is constructed with all its components integrated, ensuring a straightforward setup process. |
-| Power Supply Unit         | 1        | Supplies the electrical power required for the robotic arm's operation.                              |
-| Emergency Stop Button     | 1        | Used for immediate power interruption during emergencies                                                                                                     |
-| Power Cables              | 1        | Used to connect the PSU to the robotic arm and the controller.                                       |
-| USB-A Cable               | 1        | Used to connect the robotic arm controller to a computer with a USB-A port.                          |
-| Mounting Base Plate       | 1        | A flat plate for mounting the robotic arm to a stable surface.                                       |
-| G-Clips                   | 2        | Grating fasteners, used to secure the base plate to the worktable or surface.                        |
-| Mounting Plate Screw M6   | 4        | Used to attach the base plate to the installation surface using the G-clips.                         |
-| Manuals                   | 1        | User manual, quick start guide, and safety instructions.                                             |
+| Item                    | Quantity | Notes                                                                                                |
+|-------------------------|----------|------------------------------------------------------------------------------------------------------|
+| Pre-assembled Robot Arm | 1        | The arm is constructed with all its components integrated, ensuring a straightforward setup process. |
+| Power Supply Unit       | 1        | Supplies the electrical power required for the robot arm's operation.                              |
+| Emergency Stop Button   | 1        | Used for immediate power interruption during emergencies                                                                                                     |
+| Power Cables            | 1        | Used to connect the PSU to the robot arm and the controller.                                       |
+| USB-A Cable             | 1        | Used to connect the robot arm controller to a computer with a USB-A port.                          |
+| Mounting Base Plate     | 1        | A flat plate for mounting the robot arm to a stable surface.                                       |
+| G-Clips                 | 2        | Grating fasteners, used to secure the base plate to the worktable or surface.                        |
+| Mounting Plate Screw M6 | 4        | Used to attach the base plate to the installation surface using the G-clips.                         |
+| Manuals                 | 1        | User manual, quick start guide, and safety instructions.                                             |
 
-If you need assistance unboxing the robotic arm, please refer to A1 unboxing video.
+If you need assistance unboxing the robot arm, please refer to A1 unboxing video.
 
 ### Installing Robot
 The installation process of A1 includes securing the arm to the mounting base to ensure its stability and operating accuracy. 
@@ -43,7 +43,7 @@ providing flexible mounting options.
 Please select the appropriate installtion platform and fixing method according to the operating environment 
 and usage requirements of the arm to ensure the stability and safety of the arm during operation.
 
-If you need assistance installing the robotic arm on a base, please refer to A1 installation video.
+If you need assistance installing the robot arm on a base, please refer to A1 installation video.
 
 ### Charging
 Before we begin, confirm that all of the packing material has been removed from the robot, 
@@ -53,11 +53,11 @@ To charge A1, please use the cable provided with the device and plug it into the
 
 ### Shutting Down
 In the event of an emergency where the normal shutdown procedure cannot be followed, 
-proceed to disconnect the power cable from the power supply to immediately halt the robotic arm's operation.
+proceed to disconnect the power cable from the power supply to immediately halt the robot arm's operation.
 
 ### Emergency Stop
-The power supply unit of the robotic arm includes an emergency stop switch button (E-stop) for immediate power 
-interruption during emergencies. Pressing the E-stop button will instantly disconnect power to the robotic arm,
+The power supply unit of the robot arm includes an emergency stop switch button (E-stop) for immediate power 
+interruption during emergencies. Pressing the E-stop button will instantly disconnect power to the robot arm,
 ensuring operator safety and preventing damage to the equipment.
 
 ## Community Resouces 

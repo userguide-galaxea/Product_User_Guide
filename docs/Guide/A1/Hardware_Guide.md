@@ -98,7 +98,7 @@ which reflect its superior performance in highly dynamic operation.
 | Repeatability Accuracy               | $1mm$      |
 
 
-## Hardware Architecture
+## Robot Structure
 ![A1_topo](assets/A1_topo.jpg)
 
 ### Base
@@ -118,17 +118,12 @@ A1 has only two ports on the rear of the base for development and charging.
 
 
 ### Link
-Each arm comprises two Acrylonitrile Butadiene Styrenelinks set on base. 
-These two links are connected by six joints, 
-each of which is a planetary gear motor that enables high precision and high torque.
+A1 robot arm consists of two Acrylonitrile Butadiene Styrene (ABS) main links mounted on a base, 
+interconnected by six joints equipped with planetary gear motors that allow for independent variable-speed operation, 
+delivering high precision and torque, thereby enabling the arm to maneuver in any direction commanded by the controller.
 
-A1 robotic arm is an integrated unit, 
-which means it comes fully assembled and ready to use once the base is fixed in a platform by users.
+![A1_Structure](assets/A1_Structure.png)
 
-<div style="display: flex; justify-content: space-around;">
-  <img src="../assets/A1_size1.jpg" alt="Image 1" style="width: 60%;">
-  <img src="../assets/A1_size2.jpg" alt="Image 2" style="width: 30%;">
-</div>
 
 The arm is designed to have:
 
@@ -159,32 +154,30 @@ demonstrating its flexibility and power in a variety of operations.
 | Joint 5 | $[-95°, 95°]$   | $3 Nm$       |
 | Joint 6 | $[-105°, 105°]$ | $3 Nm$       |
 
+![A1_joint_view](assets/A1_joint_view.png)
+
 View 1 shows the working radius and rotation angle of **Joint 1**, 
 with a rotation radius of 780mm and a maximum rotation angle of 330 degrees.
-
-![A1_joint_view1](assets/A1_joint_view1.png)
 
 View 2 shows the rotation ranges for **Joint 2 and Joint 3**. 
 The maximum rotation angle of Joint 2 is 180 degrees, and the maximum rotation angle of Joint 3 is 190 degrees.
 
-![A1_joint_view1](assets/A1_joint_view2.png)
 
 View 3 shows the rotation angle of **Joint 4,5,6** and the end position of the robotic arm. 
 The maximum rotation angle of Joint 4 and Joint 6 is 330 degrees, 
 and the maximum rotation angle of Joint 5 is 190 degrees. 
 The distance between two fingertips is 60mm.
 
-![A1_joint_view1](assets/A1_joint_view3.png)
-
 ### Gripper
+#### G1
+
 The gripper is composed of one motor, two clips, and one specially designed joint module.
 
 No gripper comes with the probduct. You can purchase end-effectors or customized tools from the Galaxea AI website, if needed.
 
-<div style="display: flex; justify-content: space-around;">
-  <img src="../assets/A1_gripper_view1.png" alt="Image 1" style="width: 30%;">
-  <img src="../assets/A1_gripper_view2.png" alt="Image 2" style="width: 70%;">
-</div>
+![G1_Structure_view](assets/G1_Structure_view.png)
+
+
 
 | Feature                 | Value       |
 |-------------------------|-------------|
@@ -196,10 +189,6 @@ No gripper comes with the probduct. You can purchase end-effectors or customized
 
 A1 arm with gripper should have:
 
-<div style="display: flex; justify-content: space-around;">
-  <img src="../assets/A1_gripper_size1.jpg" alt="Image 1" style="width: 60%;">
-  <img src="../assets/A1_gripper_size2.jpg" alt="Image 2" style="width: 30%;">
-</div>
 
 | Item              | Notes                            |
 |-------------------|----------------------------------|
@@ -211,9 +200,9 @@ A1 arm with gripper should have:
 | Weight            | 6kg                              |
 
 
-#### Gripper Attaching
-<img src="../assets/A1_joint_interface.png" alt="A1_joint_view1" width="400" />
-<img src="../assets/A1_gripper_interface.png" alt="A1_joint_view1" width="400" />
+#### Attaching
+![G1_interface](assets/G1_interface.png)
+![A1_interface](assets/A1_interface.png)
 
 1. **Alignment Check**: Ensure that the four protruding points on the gripper side align perfectly with the corresponding recessed points on the robotic arm's end effector mount. This alignment ensures that the gripper is properly positioned and centered.
 2. **Initial Placement**: Carefully place the gripper onto the robotic arm's end effector mount, making sure that the protrusions fit snugly into the recesses. This step is crucial for achieving the correct orientation and balance.
@@ -221,8 +210,17 @@ A1 arm with gripper should have:
 4. **Final Check**: After tightening the screws, double-check the alignment and stability of the gripper. It should be firmly attached and not wobble or move independently of the robotic arm.
 5. **Testing**: Before using the robotic arm, perform a test run to ens
 
+
+### Dexterous Hand
+The dexterous hand boasts significant gripping strength and moderate speed, 
+making it suitable for grasp and manipulation tasks in robotics or prosthetic applications. 
+Its combination of power and control allows for effective handling of various objects, 
+akin to the versatility of a human hand, thereby enhancing the functionality of robots or prostheses in performing complex tasks.
+
+![A1_Dexterous_Hand](assets/A1_dexterous_hand.png)
+
 ## Robot Care
-1. **Keet it clean**: In order to maintain the good operating condition of the robotic arm and extend its service life, 
+1. **Keet It Clean**: In order to maintain the good operating condition of the robotic arm and extend its service life, 
 regular cleaning work should be carried out. 
 Alcohol wipes or wet and clean rags can be used to gently wipe the surface of the robot arm, 
 including the shell, base and other components, to effectively remove debris, oil and other impurities attached to it.

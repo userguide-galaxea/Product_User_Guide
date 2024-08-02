@@ -6,7 +6,7 @@ thus enabling two-way communication and real-time control.
 The tutorials will introduce how to use the programme to develop and operate A1. 
 
 ## Software Dependency
-1. Ubuntu 20.04LTS
+1. Ubuntu 20.04 LTS
 2. ROS Noetic
 
 ## Installation
@@ -105,17 +105,17 @@ you must first activate the `signal_arm` interface;
 detailed operation instructions can be found in the `signal_arm` documentation. 
 This project encompasses several primary functions:
 
-1. **End-Effector movement**: Enables users to control the position and orientation of the robotic arm's 
+1. **End-Effector Pose Movement**: Enables users to control the position and orientation of the robotic arm's 
 end-effector by publishing target pose messages, suitable for applications requiring precise positioning.
 
-2. **End-Effector Trajectory movement**: Achieves movement of the robotic arm's end-effector along a specified trajectory 
+2. **End-Effector Trajectory Movement**: Achieves movement of the robotic arm's end-effector along a specified trajectory 
 by publishing a series of pose messages, ideal for complex path planning and execution.
 
-3. **Joint movement**: Offers a joint-level control interface where users can set the target positions for each individual joint, 
+3. **Joint Angle Movement**: Offers a joint-level control interface where users can set the target positions for each individual joint, 
 facilitating coordinated whole-arm movements.
 
-### End-Effector movement
-1. First, initiate the end-effector movement script, which will launch an rviz visualization for A1, with the default joint positions at zero.
+### End-Effector Pose Movement
+1. First, initiate the end-effector pose movement script, which will launch an RViz visualization for A1, with the default joint positions at zero.
 ```shell
 cd release/install
 source setup.bash
@@ -185,7 +185,7 @@ pass
 
 ### End-Effector Trajectory Movement
 1. Firstly, initiate the end-effector trajectory movement script, 
-which will launch an rviz visualization for A1, with the default joint positions set at zero.
+which will launch an RViz visualization for A1, with the default joint positions set at zero.
 ```shell
 cd release/install
 source setup.bash
@@ -270,7 +270,7 @@ int main(int argc, char** argv)
 | /a1_mpc_target | pose.orientation.z | Orientation quaternion |
 | /a1_mpc_target | pose.orientation.w | Orientation quaternion |
 
-### Joint Movement
+### Joint Angle Movement
 
 
 #### Joint Position Movement Interface
