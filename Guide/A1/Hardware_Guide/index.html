@@ -600,13 +600,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hardware-architecture" class="md-nav__link">
+  <a href="#robot-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Hardware Architecture
+      Robot Structure
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Hardware Architecture">
+    <nav class="md-nav" aria-label="Robot Structure">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -647,9 +647,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gripper-attaching" class="md-nav__link">
+  <a href="#g1" class="md-nav__link">
     <span class="md-ellipsis">
-      Gripper Attaching
+      G1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attaching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attaching
     </span>
   </a>
   
@@ -657,6 +666,15 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dexterous-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dexterous Hand
+    </span>
+  </a>
   
 </li>
         
@@ -1065,13 +1083,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hardware-architecture" class="md-nav__link">
+  <a href="#robot-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Hardware Architecture
+      Robot Structure
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Hardware Architecture">
+    <nav class="md-nav" aria-label="Robot Structure">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1112,9 +1130,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gripper-attaching" class="md-nav__link">
+  <a href="#g1" class="md-nav__link">
     <span class="md-ellipsis">
-      Gripper Attaching
+      G1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attaching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attaching
     </span>
   </a>
   
@@ -1122,6 +1149,15 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dexterous-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dexterous Hand
+    </span>
+  </a>
   
 </li>
         
@@ -1271,7 +1307,7 @@ which reflect its superior performance in highly dynamic operation.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="hardware-architecture">Hardware Architecture</h2>
+<h2 id="robot-structure">Robot Structure</h2>
 <p><img alt="A1_topo" src="../assets/A1_topo.jpg" /></p>
 <h3 id="base">Base</h3>
 <p>A1 has only two ports on the rear of the base for development and charging.</p>
@@ -1303,16 +1339,10 @@ which reflect its superior performance in highly dynamic operation.</p>
 </tbody>
 </table>
 <h3 id="link">Link</h3>
-<p>Each arm comprises two Acrylonitrile Butadiene Styrenelinks set on base. 
-These two links are connected by six joints, 
-each of which is a planetary gear motor that enables high precision and high torque.</p>
-<p>A1 robotic arm is an integrated unit, 
-which means it comes fully assembled and ready to use once the base is fixed in a platform by users.</p>
-<div style="display: flex; justify-content: space-around;">
-  <img src="../assets/A1_size1.jpg" alt="Image 1" style="width: 60%;">
-  <img src="../assets/A1_size2.jpg" alt="Image 2" style="width: 30%;">
-</div>
-
+<p>A1 robot arm consists of two Acrylonitrile Butadiene Styrene (ABS) main links mounted on a base, 
+interconnected by six joints equipped with planetary gear motors that allow for independent variable-speed operation, 
+delivering high precision and torque, thereby enabling the arm to maneuver in any direction commanded by the controller.</p>
+<p><img alt="A1_Structure" src="../assets/A1_Structure.png" /></p>
 <p>The arm is designed to have:</p>
 <table>
 <thead>
@@ -1398,25 +1428,20 @@ demonstrating its flexibility and power in a variety of operations.</p>
 </tr>
 </tbody>
 </table>
+<p><img alt="A1_joint_view" src="../assets/A1_joint_view.png" /></p>
 <p>View 1 shows the working radius and rotation angle of <strong>Joint 1</strong>, 
 with a rotation radius of 780mm and a maximum rotation angle of 330 degrees.</p>
-<p><img alt="A1_joint_view1" src="../assets/A1_joint_view1.png" /></p>
 <p>View 2 shows the rotation ranges for <strong>Joint 2 and Joint 3</strong>. 
 The maximum rotation angle of Joint 2 is 180 degrees, and the maximum rotation angle of Joint 3 is 190 degrees.</p>
-<p><img alt="A1_joint_view1" src="../assets/A1_joint_view2.png" /></p>
 <p>View 3 shows the rotation angle of <strong>Joint 4,5,6</strong> and the end position of the robotic arm. 
 The maximum rotation angle of Joint 4 and Joint 6 is 330 degrees, 
 and the maximum rotation angle of Joint 5 is 190 degrees. 
 The distance between two fingertips is 60mm.</p>
-<p><img alt="A1_joint_view1" src="../assets/A1_joint_view3.png" /></p>
 <h3 id="gripper">Gripper</h3>
+<h4 id="g1">G1</h4>
 <p>The gripper is composed of one motor, two clips, and one specially designed joint module.</p>
 <p>No gripper comes with the probduct. You can purchase end-effectors or customized tools from the Galaxea AI website, if needed.</p>
-<div style="display: flex; justify-content: space-around;">
-  <img src="../assets/A1_gripper_view1.png" alt="Image 1" style="width: 30%;">
-  <img src="../assets/A1_gripper_view2.png" alt="Image 2" style="width: 70%;">
-</div>
-
+<p><img alt="G1_Structure_view" src="../assets/G1_Structure_view.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1448,11 +1473,6 @@ The distance between two fingertips is 60mm.</p>
 </tbody>
 </table>
 <p>A1 arm with gripper should have:</p>
-<div style="display: flex; justify-content: space-around;">
-  <img src="../assets/A1_gripper_size1.jpg" alt="Image 1" style="width: 60%;">
-  <img src="../assets/A1_gripper_size2.jpg" alt="Image 2" style="width: 30%;">
-</div>
-
 <table>
 <thead>
 <tr>
@@ -1487,9 +1507,9 @@ The distance between two fingertips is 60mm.</p>
 </tr>
 </tbody>
 </table>
-<h4 id="gripper-attaching">Gripper Attaching</h4>
-<p><img src="../assets/A1_joint_interface.png" alt="A1_joint_view1" width="400" />
-<img src="../assets/A1_gripper_interface.png" alt="A1_joint_view1" width="400" /></p>
+<h4 id="attaching">Attaching</h4>
+<p><img alt="G1_interface" src="../assets/G1_interface.png" />
+<img alt="A1_interface" src="../assets/A1_interface.png" /></p>
 <ol>
 <li><strong>Alignment Check</strong>: Ensure that the four protruding points on the gripper side align perfectly with the corresponding recessed points on the robotic arm's end effector mount. This alignment ensures that the gripper is properly positioned and centered.</li>
 <li><strong>Initial Placement</strong>: Carefully place the gripper onto the robotic arm's end effector mount, making sure that the protrusions fit snugly into the recesses. This step is crucial for achieving the correct orientation and balance.</li>
@@ -1497,9 +1517,15 @@ The distance between two fingertips is 60mm.</p>
 <li><strong>Final Check</strong>: After tightening the screws, double-check the alignment and stability of the gripper. It should be firmly attached and not wobble or move independently of the robotic arm.</li>
 <li><strong>Testing</strong>: Before using the robotic arm, perform a test run to ens</li>
 </ol>
+<h3 id="dexterous-hand">Dexterous Hand</h3>
+<p>The dexterous hand boasts significant gripping strength and moderate speed, 
+making it suitable for grasp and manipulation tasks in robotics or prosthetic applications. 
+Its combination of power and control allows for effective handling of various objects, 
+akin to the versatility of a human hand, thereby enhancing the functionality of robots or prostheses in performing complex tasks.</p>
+<p><img alt="A1_Dexterous_Hand" src="../assets/A1_dexterous_hand.png" /></p>
 <h2 id="robot-care">Robot Care</h2>
 <ol>
-<li><strong>Keet it clean</strong>: In order to maintain the good operating condition of the robotic arm and extend its service life, 
+<li><strong>Keet It Clean</strong>: In order to maintain the good operating condition of the robotic arm and extend its service life, 
 regular cleaning work should be carried out. 
 Alcohol wipes or wet and clean rags can be used to gently wipe the surface of the robot arm, 
 including the shell, base and other components, to effectively remove debris, oil and other impurities attached to it.</li>
