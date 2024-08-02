@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
@@ -1511,6 +1511,56 @@ completed before sending the next one to avoid inaccuracies in tracking the desi
 </tbody>
 </table>
 <h3 id="joint-angle-movement">Joint Angle Movement</h3>
+<p>Start the joint movement script first. 
+This will launch an RViz instance for the A1 robotic arm, with joints initially at zero position.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>release/install
+<span class="nb">source</span><span class="w"> </span>setup.bash
+roslaunch<span class="w"> </span>mobiman<span class="w"> </span>jointTrackerdemo.launch
+</code></pre></div>
+<p>In the launch file:
+<div class="highlight"><pre><span></span><code>&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_states_sub_topic&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/joint_states&quot;</span><span class="w"> </span>/&gt;
+</code></pre></div>
+<code>/joint_states</code> represents the topic for obtaining simulation values.</p>
+<p><div class="highlight"><pre><span></span><code>&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;arm_joint_command_topic&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/arm_joint_command_host&quot;</span><span class="w"> </span>/&gt;
+</code></pre></div>
+<code>/arm_joint_command_host</code> represents the topic to publish motor commands.</p>
+<p>Publish messages for joint movement. 
+The message name is <code>/arm_joint_target_position</code>, which is non-blocking and can be continuously published. 
+The robotic arm joints can move continuously.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">rospy</span>
+<span class="kn">from</span> <span class="nn">sensor_msgs.msg</span> <span class="kn">import</span> <span class="n">JointState</span>
+
+<span class="k">def</span> <span class="nf">publish_joint_state</span><span class="p">():</span>
+    <span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s1">&#39;joint_state_publisher&#39;</span><span class="p">,</span> <span class="n">anonymous</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">pub</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Publisher</span><span class="p">(</span><span class="s1">&#39;/arm_joint_target_position&#39;</span><span class="p">,</span> <span class="n">JointState</span><span class="p">,</span> <span class="n">queue_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">rate</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Rate</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># 10 Hz</span>
+    <span class="n">joint_state</span> <span class="o">=</span> <span class="n">JointState</span><span class="p">()</span>
+    <span class="n">joint_state</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">seq</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">joint_state</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="n">joint_state</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s1">&#39;world&#39;</span>
+    <span class="n">joint_state</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;joint1&#39;</span><span class="p">,</span> <span class="s1">&#39;joint2&#39;</span><span class="p">,</span> <span class="s1">&#39;joint3&#39;</span><span class="p">,</span> <span class="s1">&#39;joint4&#39;</span><span class="p">,</span> <span class="s1">&#39;joint5&#39;</span><span class="p">,</span> <span class="s1">&#39;joint6&#39;</span><span class="p">]</span>
+    <span class="n">joint_state</span><span class="o">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">joint_state</span><span class="o">.</span><span class="n">effort</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># Initialize positions to zeros</span>
+    <span class="n">joint_state</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Number of steps</span>
+
+ <span class="c1">#to reach the target position</span>
+    <span class="n">target_position</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">step_increment</span> <span class="o">=</span> <span class="p">[(</span><span class="n">target</span> <span class="o">-</span> <span class="n">current</span><span class="p">)</span> <span class="o">/</span> <span class="n">steps</span> <span class="k">for</span> <span class="n">target</span><span class="p">,</span> <span class="n">current</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">target_position</span><span class="p">,</span> <span class="n">joint_state</span><span class="o">.</span><span class="n">position</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">steps</span><span class="p">):</span>
+        <span class="n">joint_state</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="c1"># Update the timestamp</span>
+        <span class="n">joint_state</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="n">current</span> <span class="o">+</span> <span class="n">increment</span> <span class="k">for</span> <span class="n">current</span><span class="p">,</span> <span class="n">increment</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">joint_state</span><span class="o">.</span><span class="n">position</span><span class="p">,</span> <span class="n">step_increment</span><span class="p">)]</span>
+        <span class="n">pub</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">joint_state</span><span class="p">)</span>
+        <span class="n">rate</span><span class="o">.</span><span class="n">sleep</span><span class="p">()</span>
+    <span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;Published JointState message to /arm_joint_target_position&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">publish_joint_state</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ROSInterruptException</span><span class="p">:</span>
+        <span class="k">pass</span>
+</code></pre></div>
 <h4 id="joint-position-movement-interface">Joint Position Movement Interface</h4>
 <p>joint_move is a ROS package for single-joint control of A1 arms. 
 This package is used to specify the movement of each joint from the current position to the specified position, 
