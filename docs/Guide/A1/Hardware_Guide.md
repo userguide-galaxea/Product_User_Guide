@@ -95,7 +95,7 @@ which reflect its superior performance in highly dynamic operation.
 | Maximum End-Effector Linear Velocity | $10m/s$    |
 | Maximum End-Effector Acceleration    | $40m/s^2$  |
 | Maximum Gripping Force               | $200N$     |
-| Repeatability Accuracy               | $1mm$      |
+| Repeatability                        | $1mm$      |
 
 
 ## Robot Structure
@@ -174,9 +174,7 @@ The distance between two fingertips is 60mm.
 The gripper is composed of one motor, two clips, and one specially designed joint module.
 
 No gripper comes with the probduct. You can purchase end-effectors or customized tools from the Galaxea AI website, if needed.
-
-![G1_Structure_view](assets/G1_Structure_view.png)
-
+![G1_gripper](assets/G1_gripper.png)
 
 
 | Feature                 | Value       |
@@ -186,6 +184,9 @@ No gripper comes with the probduct. You can purchase end-effectors or customized
 | Diameter of Motor       | 60.4mm      |
 | Gripper Operating Range | [0mm, 60mm] |
 | Gripper Rated Force     | 100 N       |
+
+![G1_Structure_view](assets/G1_Structure_view.png)
+
 
 A1 arm with gripper should have:
 
@@ -216,6 +217,15 @@ The dexterous hand boasts significant gripping strength and moderate speed,
 making it suitable for grasp and manipulation tasks in robotics or prosthetic applications. 
 Its combination of power and control allows for effective handling of various objects, 
 akin to the versatility of a human hand, thereby enhancing the functionality of robots or prostheses in performing complex tasks.
+
+| Feature                   | Value   |
+|---------------------------|---------|
+| Degrees of Freedom        | 6       |
+| Number of Joints          | 12      |
+| Weight                    | 540g    |
+| Repeatability             | ±0.20mm |
+| Max. Finger Grip Force    | 10 N    |
+
 
 ![A1_Dexterous_Hand](assets/A1_dexterous_hand.png)
 
