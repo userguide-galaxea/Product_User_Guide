@@ -290,7 +290,28 @@
         
   
   <span class="md-ellipsis">
-    A1
+    A1 Robot Arm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Introducing_Galaxea_Robot/product_info/A1_accessory_G1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Accessories
   </span>
   
 
@@ -330,7 +351,7 @@
             
   
   <span class="md-ellipsis">
-    Galaxea A1 Guide
+    Galaxea A1 User Guide
   </span>
   
 
@@ -340,7 +361,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Galaxea A1 Guide
+            Galaxea A1 User Guide
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -473,7 +494,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="A1 Driver Kit">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#driver-interface" class="md-nav__link">
@@ -497,8 +519,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#joint-and-end-effector-movement-control" class="md-nav__link">
     <span class="md-ellipsis">
       Joint and End-Effector Movement Control
@@ -514,6 +536,11 @@
       End-Effector Pose Movement
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -647,7 +674,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="A1 Driver Kit">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#driver-interface" class="md-nav__link">
@@ -671,8 +699,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#joint-and-end-effector-movement-control" class="md-nav__link">
     <span class="md-ellipsis">
       Joint and End-Effector Movement Control
@@ -688,6 +716,11 @@
       End-Effector Pose Movement
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -763,24 +796,19 @@
 
 
 <h1 id="software-guide">Software Guide</h1>
-<p>We developed an efficient driver for converting the serial signals through the slave computer and finally released it as a ROS (Robot Operating System) topics. 
-This driver not only enables the control of the slave computer, 
-but also obtains the feedback information and error codes of the device, 
-thus enabling two-way communication and real-time control. 
-The tutorials will introduce how to use the programme to develop and operate A1. </p>
+<p>We developed an efficient driver for converting serial signals through the slave computer, which has been released as a ROS (Robot Operating System) topic. This driver not only enables control of the slave computer but also retrieves feedback information and error codes from the device, facilitating two-way communication and real-time control. The tutorials will guide you on how to use this program to develop and operate A1.</p>
 <h2 id="software-dependency">Software Dependency</h2>
 <ol>
 <li>Ubuntu 20.04 LTS</li>
 <li>ROS Noetic</li>
 </ol>
 <h2 id="installation">Installation</h2>
-<p>This SDK does not need to be recompiled, please refer to the Developing and Operating Tutorial to use directly.</p>
+<p>This SDK does not require recompilation. Please refer to the Developing and Operating Tutorials for direct usage instructions.</p>
 <h2 id="developing-and-operating-tutorials">Developing and Operating Tutorials</h2>
 <h3 id="a1-driver-kit">A1 Driver Kit</h3>
 <ol>
 <li>
-<p>For the first time, after confirming the power supply and USB connection, 
-run the following command to modify the read and write permission of serial port files:
+<p>For the first use, after confirming the power supply and USB connection, run the following command to modify the read and write permissions of the serial port files:
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/dev/ttyACM0
 </code></pre></div></p>
 </li>
@@ -792,13 +820,9 @@ roslaunch<span class="w"> </span>signal_arm<span class="w"> </span>single_arm_no
 </code></pre></div></p>
 </li>
 </ol>
-<p>The interface section describes the various control and status feedback interfaces for A1 robot arm, 
-to help users better understand how to communicate and control the arm thriugh the ROS package.</p>
-<h3 id="driver-interface">Driver Interface</h3>
-<p>The interface is a ROS package for manipulator control and status feedback. 
-This package defines several topics for publishing and subscribing to the status of the robot arm, 
-control commands, and associated error code information. 
-Below are detailed descriptions of each topic and its related message types:</p>
+<p>The interface section describes the various control and status feedback interfaces for A1 robot arm, helping users understand how to communicate with and control the arm through the ROS package.</p>
+<h4 id="driver-interface">Driver Interface</h4>
+<p>The interface is a ROS package designed for manipulator control and status feedback. This package defines several topics for publishing and subscribing to the robot arm’s status, control commands, and associated error codes. Below are detailed descriptions of each topic and its related message types:</p>
 <table>
 <thead>
 <tr>
@@ -810,23 +834,18 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <tbody>
 <tr>
 <td>/joint_states</td>
-<td>Robot arm joint state feedback</td>
+<td>Robot arm joint status feedback</td>
 <td>sensor_msgs/JointState</td>
 </tr>
 <tr>
 <td>/arm_status</td>
 <td>Robot arm motor status feedback</td>
-<td>signal_arm/arm_status</td>
+<td>signal_arm/status_stamped</td>
 </tr>
 <tr>
 <td>/arm_joint_command</td>
-<td>Robot arm control interface</td>
+<td>Robot arm joint control interface</td>
 <td>signal_arm/arm_control</td>
-</tr>
-<tr>
-<td>/gripper_joint_command</td>
-<td>Gripper force control interface</td>
-<td>signal_arm/gripper_joint_command</td>
 </tr>
 </tbody>
 </table>
@@ -854,7 +873,7 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <td></td>
 <td>name</td>
 <td>Names of the robot arm joints</td>
-<td>string[]</td>
+<td>string</td>
 <td>-</td>
 <td>-</td>
 </tr>
@@ -862,7 +881,7 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <td></td>
 <td>position</td>
 <td>Positions of the robot arm joints</td>
-<td>float64[]</td>
+<td>float64</td>
 <td><span class="arithmatex">\(rad\)</span></td>
 <td>-</td>
 </tr>
@@ -870,7 +889,7 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <td></td>
 <td>velocity</td>
 <td>Velocities of the robot arm joints</td>
-<td>float64[]</td>
+<td>float64</td>
 <td><span class="arithmatex">\(rad/s\)</span></td>
 <td>-</td>
 </tr>
@@ -878,7 +897,7 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <td></td>
 <td>effort</td>
 <td>Torques of the robot arm joints</td>
-<td>float64[]</td>
+<td>float64</td>
 <td><span class="arithmatex">\(Nm\)</span></td>
 <td>-</td>
 </tr>
@@ -894,7 +913,7 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <td></td>
 <td>name</td>
 <td>Names of the robot arm joints</td>
-<td>string[]</td>
+<td>string</td>
 <td>-</td>
 <td>-</td>
 </tr>
@@ -902,7 +921,7 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <td></td>
 <td>error_code</td>
 <td>Error codes for the robot arm joints</td>
-<td>float32[]</td>
+<td>float32</td>
 <td>-</td>
 <td>-</td>
 </tr>
@@ -910,7 +929,7 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <td></td>
 <td>t_mos</td>
 <td>MOS chip temperature of the robot arm joints</td>
-<td>float32[]</td>
+<td>float32</td>
 <td><span class="arithmatex">\(Celsius\)</span></td>
 <td>-</td>
 </tr>
@@ -918,7 +937,7 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <td></td>
 <td>t_rotor</td>
 <td>Internal encoder temperature of the robot arm joints</td>
-<td>float32[]</td>
+<td>float32</td>
 <td><span class="arithmatex">\(Celsius\)</span></td>
 <td>-</td>
 </tr>
@@ -934,7 +953,7 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <td></td>
 <td>p_des</td>
 <td>Desired position of the robot arm</td>
-<td>float32[]</td>
+<td>float32</td>
 <td><span class="arithmatex">\(rad\)</span></td>
 <td>-</td>
 </tr>
@@ -942,7 +961,7 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <td></td>
 <td>v_des</td>
 <td>Desired velocity of the robot arm</td>
-<td>float32[]</td>
+<td>float32</td>
 <td><span class="arithmatex">\(rad/s\)</span></td>
 <td>-</td>
 </tr>
@@ -950,7 +969,7 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <td></td>
 <td>t_ff</td>
 <td>Desired torque of the robot arm</td>
-<td>float32[]</td>
+<td>float32</td>
 <td><span class="arithmatex">\(Nm\)</span></td>
 <td>-</td>
 </tr>
@@ -958,7 +977,7 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <td></td>
 <td>kp</td>
 <td>Proportional gain for position</td>
-<td>float32[]</td>
+<td>float32</td>
 <td>-</td>
 <td>-</td>
 </tr>
@@ -966,7 +985,7 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <td></td>
 <td>kd</td>
 <td>Derivative gain for position</td>
-<td>float32[]</td>
+<td>float32</td>
 <td>-</td>
 <td>-</td>
 </tr>
@@ -984,7 +1003,7 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <td>Standard ROS message header</td>
 <td>-</td>
 <td>-</td>
-<td>-</td>
+<td>(with optional)</td>
 </tr>
 <tr>
 <td></td>
@@ -992,14 +1011,12 @@ Below are detailed descriptions of each topic and its related message types:</p>
 <td>Gripper support force</td>
 <td>float32</td>
 <td><span class="arithmatex">\(N\)</span></td>
-<td>-</td>
+<td>(with optional)</td>
 </tr>
 </tbody>
 </table>
-<h3 id="diagnostic-trouble-code">Diagnostic Trouble Code</h3>
-<p>DTC is used to feedback the error information of the ACU and the drive, 
-and can be used to view the real-time status of each motor and the running status of the drive. 
-The following is a detailed description of each fault code and its corresponding status.</p>
+<h4 id="diagnostic-trouble-code">Diagnostic Trouble Code</h4>
+<p>DTC is used to feedback the error information of the ACU and the drive, and can be used to view the real-time status of each motor and the running status of the drive. The following is a detailed description of each fault code and its corresponding status.</p>
 <table>
 <thead>
 <tr>
@@ -1094,43 +1111,31 @@ The following is a detailed description of each fault code and its corresponding
 </tr>
 </tbody>
 </table>
-<h2 id="joint-and-end-effector-movement-control">Joint and End-Effector Movement Control</h2>
-<p>We provide the joint and end-effector movement control interfaces for A1 robotic arm, 
-enabling efficient control of the arm through the ROS (Robot Operating System) framework. 
-Whether you are performing end-effector movement or joint movement, 
-you must first activate the <code>signal_arm</code> interface; 
-detailed operation instructions can be found in the <code>signal_arm</code> documentation. 
-This project encompasses several primary functions:</p>
+<h3 id="joint-and-end-effector-movement-control">Joint and End-Effector Movement Control</h3>
+<p>We provide joint and end-effector movement control interfaces for A1 robot arm, enabling efficient control through the ROS (Robot Operating System) framework. Before performing end-effector or joint movement, you must first activate the <code>signal_arm</code> interface; detailed operation instructions can be found in the  <code>signal_arm</code> documentation. This project includes several primary functions:</p>
+<ul>
+<li>
+<p><strong>End-Effector Pose Movement</strong>: Allows users to control the position and orientation of the robot arm's end-effector by publishing target pose messages. This function is suitable for applications requiring precise positioning.</p>
+</li>
+<li>
+<p><strong>End-Effector Trajectory Movement</strong>: Facilitates the movement of the robot arm's end-effector along a specified trajectory by publishing a series of pose messages. This function is ideal for complex path planning and execution.</p>
+</li>
+<li>
+<p><strong>Joint Angle Movement</strong>: Provides a joint-level control interface where users can set the target positions for each individual joint, enabling coordinated whole-arm movements.</p>
+</li>
+</ul>
+<h4 id="end-effector-pose-movement">End-Effector Pose Movement</h4>
 <ol>
-<li>
-<p><strong>End-Effector Pose Movement</strong>: Enables users to control the position and orientation of the robotic arm's 
-end-effector by publishing target pose messages, suitable for applications requiring precise positioning.</p>
-</li>
-<li>
-<p><strong>End-Effector Trajectory Movement</strong>: Achieves movement of the robotic arm's end-effector along a specified trajectory 
-by publishing a series of pose messages, ideal for complex path planning and execution.</p>
-</li>
-<li>
-<p><strong>Joint Angle Movement</strong>: Offers a joint-level control interface where users can set the target positions for each individual joint, 
-facilitating coordinated whole-arm movements.</p>
-</li>
-</ol>
-<h3 id="end-effector-pose-movement">End-Effector Pose Movement</h3>
-<ol>
-<li>First, initiate the end-effector pose movement script, which will launch an RViz visualization for A1, with the default joint positions at zero.
+<li>First, initiate the end-effector pose movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>release/install
-<span class="nb">source</span><span class="w"> </span>setup.bash
-roslaunch<span class="w"> </span>mobiman<span class="w"> </span>eeTrackerdemo.launch
+<span class="w">   </span><span class="nb">source</span><span class="w"> </span>setup.bash
+<span class="w">   </span>roslaunch<span class="w"> </span>mobiman<span class="w"> </span>eeTrackerdemo.launch
 </code></pre></div></li>
-<li>In File <em>eeTrackerdemo.launch</em>：
-<div class="highlight"><pre><span></span><code>&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_states_topic&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/joint_states&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1">#topic /joint_states topic the channel for acquiring simulated values, specifically the states of the robot&#39;s joints, in a simulation environment.</span>
-&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_command&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/a1_robot_right/arm_joint_command&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1">#topic /a1_robot_right/arm_joint_command represents the topic of the issuing motor.</span>
+<li>In the file <em>eeTrackerdemo.launch</em>：
+<div class="highlight"><pre><span></span><code>&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_states_topic&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/joint_states&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1"># the topic /joint_states  represents the channel for acquiring simulated values, specifically the states of the robot&#39;s joints, within a simulation environment.</span>
+&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_command&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/a1_robot_right/arm_joint_command&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1"># the topic /a1_robot_right/arm_joint_command topic represents the channel for issuing commands to the motors.</span>
 </code></pre></div></li>
-<li>Send messages to the end-effector movement, 
-specifically named <code>/a1_mpc_target</code>. This operation is non-blocking, 
-allowing for continuous sending. It enables the end of the robotic arm to move seamlessly. 
-However, it's critical that the target endpoint should not be too far from the current position of the robotic arm's end, 
-to prevent overstraining the mechanics or risking a collision.
+<li>Publish messages to the end-effector movement topic, specifically named <code>/a1_mpc_target</code>. This operation is non-blocking, allowing for continuous message sending and enabling seamless movement of the robot arm's end-effector. However, it's critical that the target endpoint is not too far from the current position of the end-effector to avoid overstraining the mechanics or risking a collision.
 <div class="highlight"><pre><span></span><code>rostopic<span class="w"> </span>pub<span class="w"> </span>/a1_mpc_target<span class="w"> </span>geometry_msgs/PoseStamped<span class="w"> </span><span class="s2">&quot;{</span>
 <span class="s2">header: {</span>
 <span class="s2">seq: 0,</span>
@@ -1183,21 +1188,16 @@ to prevent overstraining the mechanics or risking a collision.
 
 <h3 id="end-effector-trajectory-movement">End-Effector Trajectory Movement</h3>
 <ol>
-<li>Firstly, initiate the end-effector trajectory movement script, 
-which will launch an RViz visualization for A1, with the default joint positions set at zero.
+<li>Firstly, initiate the end-effector trajectory movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>release/install
 <span class="nb">source</span><span class="w"> </span>setup.bash
 roslaunch<span class="w"> </span>mobiman<span class="w"> </span>eeTrajTrackerdemo.launch
 </code></pre></div></li>
-<li>in file <em>eeTrajTrackerdemo.launch</em> :
-<div class="highlight"><pre><span></span><code>&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_states_topic&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/joint_states&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1">#/joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot&#39;s joints, in a simulation environment.</span>
-&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_command&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/a1_robot_right/arm_joint_command&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1">#/a1_robot_right/arm_joint_command topic represents the topic of the issuing motor.</span>
+<li>In the file <em>eeTrajTrackerdemo.launch</em> :
+<div class="highlight"><pre><span></span><code>&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_states_topic&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/joint_states&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1"># the /joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot&#39;s joints, within a simulation environment.</span>
+&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_command&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/a1_robot_right/arm_joint_command&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1">#the /a1_robot_right/arm_joint_command topic represents the channel for issuing commands to the motors.</span>
 </code></pre></div></li>
-<li>Publish messages to specify a trajectory for the end-effector movement, specially named  <code>/arm_target_trajectory</code>. 
-This operation is non-blocking, allowing for continuous publishing. 
-Note that the trajectory should not deviate significantly from the current end-effector position. However, 
-it's recommended to wait until the current trajectory is 
-completed before sending the next one to avoid inaccuracies in tracking the desired path.
+<li>Publish messages to specify a trajectory for the end-effector movement on the   <code>/arm_target_trajectory</code> topic. This operation is non-blocking, allowing for continuous publishing. Ensure that the trajectory does not deviate significantly from the current end-effector position. It is recommended to wait until the current trajectory is completed before sending the next one to avoid inaccuracies in tracking the desired path.
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">ros</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pose_array_publisher&quot;</span><span class="p">);</span>
@@ -1251,7 +1251,7 @@ completed before sending the next one to avoid inaccuracies in tracking the desi
 </video>
 </div>
 
-<h4 id="end-effector-pose-movement-interface">End-Effector Pose Movement Interface</h4>
+<h5 id="end-effector-pose-movement-interface">End-Effector Pose Movement Interface</h5>
 <table>
 <thead>
 <tr>
@@ -1320,22 +1320,20 @@ completed before sending the next one to avoid inaccuracies in tracking the desi
 </tbody>
 </table>
 <h3 id="joint-angle-movement">Joint Angle Movement</h3>
-<p>Start the joint movement script first. 
-This will launch an RViz instance for the A1 robotic arm, with joints initially at zero position.</p>
+<ol>
+<li>Firstly, initiate the joint angle movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.</li>
+</ol>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>release/install
 <span class="nb">source</span><span class="w"> </span>setup.bash
 roslaunch<span class="w"> </span>mobiman<span class="w"> </span>jointTrackerdemo.launch
 </code></pre></div>
-<p>In the launch file:
-<div class="highlight"><pre><span></span><code>&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_states_sub_topic&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/joint_states&quot;</span><span class="w"> </span>/&gt;
-</code></pre></div>
-<code>/joint_states</code> represents the topic for obtaining simulation values.</p>
-<p><div class="highlight"><pre><span></span><code>&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;arm_joint_command_topic&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/arm_joint_command_host&quot;</span><span class="w"> </span>/&gt;
-</code></pre></div>
-<code>/arm_joint_command_host</code> represents the topic to publish motor commands.</p>
-<p>Publish messages for joint movement. 
-The message name is <code>/arm_joint_target_position</code>, which is non-blocking and can be continuously published. 
-The robotic arm joints can move continuously.</p>
+<ol>
+<li>In the file <em>jointTrackerdemo.launch</em> :
+<div class="highlight"><pre><span></span><code>&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_states_sub_topic&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/joint_states&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1"># the /joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot&#39;s joints, within a simulation environment.</span>
+&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_command&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/a1_robot_right/arm_joint_command&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1">#the /a1_robot_right/arm_joint_command topic represents the channel for issuing commands to the motors.</span>
+</code></pre></div></li>
+</ol>
+<p>Publish messages for joint movement on the  <code>/arm_joint_target_position</code> topic. This operation is non-blocking, allowing for continuous publishing and enabling uninterrupted movement of the robot arm's joints.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">rospy</span>
 <span class="kn">from</span> <span class="nn">sensor_msgs.msg</span> <span class="kn">import</span> <span class="n">JointState</span>
 
@@ -1370,13 +1368,8 @@ The robotic arm joints can move continuously.</p>
     <span class="k">except</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ROSInterruptException</span><span class="p">:</span>
         <span class="k">pass</span>
 </code></pre></div>
-<h4 id="joint-position-movement-interface">Joint Position Movement Interface</h4>
-<p>joint_move is a ROS package for single-joint control of A1 arms. 
-This package is used to specify the movement of each joint from the current position to the specified position, 
-the maximum speed and maximum acceleration during the movement can be specified, 
-if not specified, the default speed and acceleration will be planned. 
-The default maximum speed is 20 <span class="arithmatex">\(rad/s\)</span>, and the maximum acceleration is <span class="arithmatex">\(20 rad/s^2\)</span>. 
-The topic names and fields of the movement interface are shown in the following table.</p>
+<h5 id="joint-position-movement-interface">Joint Position Movement Interface</h5>
+<p>The <code>/joint_move</code> is a ROS package for single-joint control of A1 arms. This package allows you to specify the movement of each joint from its current position to a target position, with configurable maximum speed and acceleration. If these parameters are not specified, default values will be used. The default maximum speed is 20 rad/s, and the default maximum acceleration is 20 rad/s². The topic names and fields of the movement interface are detailed in the following table.</p>
 <table>
 <thead>
 <tr>
