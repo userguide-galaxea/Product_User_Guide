@@ -35,10 +35,11 @@ nav:
 #   - About us: about_us/about_us.md
   - Galaxea Robot:
 #       - About us: Introducing_Galaxea_Robot/introduction.md
-      - A1: Introducing_Galaxea_Robot/product_info/A1.md
+      - A1 Robot Arm: Introducing_Galaxea_Robot/product_info/A1.md
+      - Advanced Accessories: Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md
 #       - R1: Introducing_Galaxea_Robot/product_info/R1.md
 #       - X1: Introducing_Galaxea_Robot/product_info/X1.md
-  - Galaxea A1 Guide:
+  - Galaxea A1 User Guide:
       - Getting Started: Guide/A1/Getting_Started.md
       - Hardware Guide: Guide/A1/Hardware_Guide.md
       - Software Guide: Guide/A1/Software_Guide.md

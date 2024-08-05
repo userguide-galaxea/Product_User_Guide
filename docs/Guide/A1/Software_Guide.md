@@ -1,21 +1,16 @@
 # Software Guide
-We developed an efficient driver for converting the serial signals through the slave computer and finally released it as a ROS (Robot Operating System) topics. 
-This driver not only enables the control of the slave computer, 
-but also obtains the feedback information and error codes of the device, 
-thus enabling two-way communication and real-time control. 
-The tutorials will introduce how to use the programme to develop and operate A1. 
+We developed an efficient driver for converting serial signals through the slave computer, which has been released as a ROS (Robot Operating System) topic. This driver not only enables control of the slave computer but also retrieves feedback information and error codes from the device, facilitating two-way communication and real-time control. The tutorials will guide you on how to use this program to develop and operate A1.
 
 ## Software Dependency
 1. Ubuntu 20.04 LTS
 2. ROS Noetic
 
 ## Installation
-This SDK does not need to be recompiled, please refer to the Developing and Operating Tutorial to use directly.
+This SDK does not require recompilation. Please refer to the Developing and Operating Tutorials for direct usage instructions.
 
 ## Developing and Operating Tutorials
 ### A1 Driver Kit
-1. For the first time, after confirming the power supply and USB connection, 
-run the following command to modify the read and write permission of serial port files:
+1. For the first use, after confirming the power supply and USB connection, run the following command to modify the read and write permissions of the serial port files:
 ```shell
 sudo chmod 777 /dev/ttyACM0
 ```
@@ -27,51 +22,43 @@ source setup.bash
 roslaunch signal_arm single_arm_node.launch
 ```
 
-The interface section describes the various control and status feedback interfaces for A1 robot arm, 
-to help users better understand how to communicate and control the arm thriugh the ROS package.
+The interface section describes the various control and status feedback interfaces for A1 robot arm, helping users understand how to communicate with and control the arm through the ROS package.
+#### Driver Interface
+The interface is a ROS package designed for manipulator control and status feedback. This package defines several topics for publishing and subscribing to the robot arm’s status, control commands, and associated error codes. Below are detailed descriptions of each topic and its related message types:
 
-### Driver Interface
-The interface is a ROS package for manipulator control and status feedback. 
-This package defines several topics for publishing and subscribing to the status of the robot arm, 
-control commands, and associated error code information. 
-Below are detailed descriptions of each topic and its related message types:
-
-| Topic Name             | Description                     | Message Type                     |
-|------------------------|---------------------------------|----------------------------------|
-| /joint_states          | Robot arm joint state feedback  | sensor_msgs/JointState           |
-| /arm_status            | Robot arm motor status feedback | signal_arm/arm_status            |
-| /arm_joint_command     | Robot arm control interface     | signal_arm/arm_control           |
-| /gripper_joint_command | Gripper force control interface | signal_arm/gripper_joint_command |
+| Topic Name             | Description                         | Message Type                   |
+|------------------------|-------------------------------------|--------------------------------|
+| /joint_states          | Robot arm joint status feedback   | sensor_msgs/JointState         |
+| /arm_status            | Robot arm motor status feedback   | signal_arm/status_stamped      |
+| /arm_joint_command     | Robot arm joint control interface | signal_arm/arm_control         |
 
 
 
 | Topic Name             | Field         | Description                                          | Data Type | Unit      | Notes                  |
 |------------------------|---------------|------------------------------------------------------|-----------|-----------|------------------------|
 | /joint_states          | header        | Standard ROS message header                          | -         | -         | -                      |
-|                        | name          | Names of the robot arm joints                        | string[]  | -         | -                      |
-|                        | position      | Positions of the robot arm joints                    | float64[] | $rad$     | -                      |
-|                        | velocity      | Velocities of the robot arm joints                   | float64[] | $rad/s$   | -                      |
-|                        | effort        | Torques of the robot arm joints                      | float64[] | $Nm$      | -                      |
+|                        | name          | Names of the robot arm joints                        | string  | -         | -                      |
+|                        | position      | Positions of the robot arm joints                    | float64 | $rad$     | -                      |
+|                        | velocity      | Velocities of the robot arm joints                   | float64 | $rad/s$   | -                      |
+|                        | effort        | Torques of the robot arm joints                      | float64 | $Nm$      | -                      |
 | /arm_status            | header        | Standard ROS message header                          | -         | -         | -                      |
-|                        | name          | Names of the robot arm joints                        | string[]  | -         | -                      |
-|                        | error_code    | Error codes for the robot arm joints                 | float32[] | -         | -                      |
-|                        | t_mos         | MOS chip temperature of the robot arm joints         | float32[] | $Celsius$ | -                      |
-|                        | t_rotor       | Internal encoder temperature of the robot arm joints | float32[] | $Celsius$ | -                      |
+|                        | name          | Names of the robot arm joints                        | string  | -         | -                      |
+|                        | error_code    | Error codes for the robot arm joints                 | float32 | -         | -                      |
+|                        | t_mos         | MOS chip temperature of the robot arm joints         | float32 | $Celsius$ | -                      |
+|                        | t_rotor       | Internal encoder temperature of the robot arm joints | float32 | $Celsius$ | -                      |
 | /arm_joint_command     | header        | Standard ROS message header                          | -         | -         | -                      |
-|                        | p_des         | Desired position of the robot arm                    | float32[] | $rad$     | -                      |
-|                        | v_des         | Desired velocity of the robot arm                    | float32[] | $rad/s$   | -                      |
-|                        | t_ff          | Desired torque of the robot arm                      | float32[] | $Nm$      | -                      |
-|                        | kp            | Proportional gain for position                       | float32[] | -         | -                      |
-|                        | kd            | Derivative gain for position                         | float32[] | -         | -                      |
+|                        | p_des         | Desired position of the robot arm                    | float32| $rad$     | -                      |
+|                        | v_des         | Desired velocity of the robot arm                    | float32 | $rad/s$   | -                      |
+|                        | t_ff          | Desired torque of the robot arm                      | float32 | $Nm$      | -                      |
+|                        | kp            | Proportional gain for position                       | float32 | -         | -                      |
+|                        | kd            | Derivative gain for position                         | float32 | -         | -                      |
 |                        | mode          | Control mode                                         | uint8     | -         | Default 0, MIT control |
-| /gripper_force_control | header        | Standard ROS message header                          | -         | -         | -                      |
-|                        | gripper_force | Gripper support force                                | float32   | $N$       | -                      |
+| /gripper_force_control | header        | Standard ROS message header                          | -         | -         | (with optional)|
+|                        | gripper_force | Gripper support force                                | float32   | $N$       | (with optional)                      |
 
 
-### Diagnostic Trouble Code
-DTC is used to feedback the error information of the ACU and the drive, 
-and can be used to view the real-time status of each motor and the running status of the drive. 
-The following is a detailed description of each fault code and its corresponding status.
+#### Diagnostic Trouble Code
+DTC is used to feedback the error information of the ACU and the drive, and can be used to view the real-time status of each motor and the running status of the drive. The following is a detailed description of each fault code and its corresponding status.
 
 | Fault Code Position | Corresponding Status                                             |
 |---------------------|------------------------------------------------------------------|
@@ -97,40 +84,28 @@ The following is a detailed description of each fault code and its corresponding
 | 19                  | Driver Feedback: Serial Read/Write Failure                       |
 | 20                  | Driver Feedback: Feedback Reception Overflow                     |
 
-## Joint and End-Effector Movement Control
-We provide the joint and end-effector movement control interfaces for A1 robotic arm, 
-enabling efficient control of the arm through the ROS (Robot Operating System) framework. 
-Whether you are performing end-effector movement or joint movement, 
-you must first activate the `signal_arm` interface; 
-detailed operation instructions can be found in the `signal_arm` documentation. 
-This project encompasses several primary functions:
+### Joint and End-Effector Movement Control
+We provide joint and end-effector movement control interfaces for A1 robot arm, enabling efficient control through the ROS (Robot Operating System) framework. Before performing end-effector or joint movement, you must first activate the `signal_arm` interface; detailed operation instructions can be found in the  `signal_arm` documentation. This project includes several primary functions:
 
-1. **End-Effector Pose Movement**: Enables users to control the position and orientation of the robotic arm's 
-end-effector by publishing target pose messages, suitable for applications requiring precise positioning.
+- **End-Effector Pose Movement**: Allows users to control the position and orientation of the robot arm's end-effector by publishing target pose messages. This function is suitable for applications requiring precise positioning.
 
-2. **End-Effector Trajectory Movement**: Achieves movement of the robotic arm's end-effector along a specified trajectory 
-by publishing a series of pose messages, ideal for complex path planning and execution.
+- **End-Effector Trajectory Movement**: Facilitates the movement of the robot arm's end-effector along a specified trajectory by publishing a series of pose messages. This function is ideal for complex path planning and execution.
 
-3. **Joint Angle Movement**: Offers a joint-level control interface where users can set the target positions for each individual joint, 
-facilitating coordinated whole-arm movements.
+- **Joint Angle Movement**: Provides a joint-level control interface where users can set the target positions for each individual joint, enabling coordinated whole-arm movements.
 
-### End-Effector Pose Movement
-1. First, initiate the end-effector pose movement script, which will launch an RViz visualization for A1, with the default joint positions at zero.
+#### End-Effector Pose Movement
+1. First, initiate the end-effector pose movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.
 ```shell
 cd release/install
-source setup.bash
-roslaunch mobiman eeTrackerdemo.launch
+   source setup.bash
+   roslaunch mobiman eeTrackerdemo.launch
 ```
-2. In File *eeTrackerdemo.launch*：
+2. In the file *eeTrackerdemo.launch*：
 ```shell
-<param name="joint_states_topic" value="/joint_states" /> #topic /joint_states topic the channel for acquiring simulated values, specifically the states of the robot's joints, in a simulation environment.
-<param name="joint_command" value="/a1_robot_right/arm_joint_command" /> #topic /a1_robot_right/arm_joint_command represents the topic of the issuing motor.
+<param name="joint_states_topic" value="/joint_states" /> # the topic /joint_states  represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
+<param name="joint_command" value="/a1_robot_right/arm_joint_command" /> # the topic /a1_robot_right/arm_joint_command topic represents the channel for issuing commands to the motors.
 ```
-3. Send messages to the end-effector movement, 
-specifically named `/a1_mpc_target`. This operation is non-blocking, 
-allowing for continuous sending. It enables the end of the robotic arm to move seamlessly. 
-However, it's critical that the target endpoint should not be too far from the current position of the robotic arm's end, 
-to prevent overstraining the mechanics or risking a collision.
+3. Publish messages to the end-effector movement topic, specifically named `/a1_mpc_target`. This operation is non-blocking, allowing for continuous message sending and enabling seamless movement of the robot arm's end-effector. However, it's critical that the target endpoint is not too far from the current position of the end-effector to avoid overstraining the mechanics or risking a collision.
 ```shell
 rostopic pub /a1_mpc_target geometry_msgs/PoseStamped "{
 header: {
@@ -184,23 +159,18 @@ pass
 
 
 ### End-Effector Trajectory Movement
-1. Firstly, initiate the end-effector trajectory movement script, 
-which will launch an RViz visualization for A1, with the default joint positions set at zero.
+1. Firstly, initiate the end-effector trajectory movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.
 ```shell
 cd release/install
 source setup.bash
 roslaunch mobiman eeTrajTrackerdemo.launch
 ```
-2. in file *eeTrajTrackerdemo.launch* :
+2. In the file *eeTrajTrackerdemo.launch* :
 ```shell
-<param name="joint_states_topic" value="/joint_states" /> #/joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot's joints, in a simulation environment.
-<param name="joint_command" value="/a1_robot_right/arm_joint_command" /> #/a1_robot_right/arm_joint_command topic represents the topic of the issuing motor.
+<param name="joint_states_topic" value="/joint_states" /> # the /joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
+<param name="joint_command" value="/a1_robot_right/arm_joint_command" /> #the /a1_robot_right/arm_joint_command topic represents the channel for issuing commands to the motors.
 ```
-3. Publish messages to specify a trajectory for the end-effector movement, specially named  `/arm_target_trajectory`. 
-This operation is non-blocking, allowing for continuous publishing. 
-Note that the trajectory should not deviate significantly from the current end-effector position. However, 
-it's recommended to wait until the current trajectory is 
-completed before sending the next one to avoid inaccuracies in tracking the desired path.
+3. Publish messages to specify a trajectory for the end-effector movement on the   `/arm_target_trajectory` topic. This operation is non-blocking, allowing for continuous publishing. Ensure that the trajectory does not deviate significantly from the current end-effector position. It is recommended to wait until the current trajectory is completed before sending the next one to avoid inaccuracies in tracking the desired path.
 ```c++
 int main(int argc, char** argv)
 {
@@ -246,7 +216,7 @@ int main(int argc, char** argv)
     return 0;
 }
 ```
-4. 使用如影片所示:
+4. Usage Example:
 <div style="display: flex; justify-content: center; align-items: center;">
 <video width="1920" height="1080" controls>
   <source src="../assets/A1_End-Effector_Trajectory_Motion.mp4" type="video/mp4">
@@ -254,7 +224,7 @@ int main(int argc, char** argv)
 </video>
 </div>
 
-#### End-Effector Pose Movement Interface
+##### End-Effector Pose Movement Interface
 | Topic Name     | Description                  | Message Type               |
 |----------------|------------------------------|----------------------------|
 | /a1_mpc_target | Target pose of end arm joint | Geometry_msgs::PoseStamped |
@@ -271,8 +241,7 @@ int main(int argc, char** argv)
 | /a1_mpc_target | pose.orientation.w | Orientation quaternion |
 
 ### Joint Angle Movement
-Start the joint movement script first. 
-This will launch an RViz instance for the A1 robotic arm, with joints initially at zero position.
+1. Firstly, initiate the joint angle movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.
 
 ```shell
 cd release/install
@@ -280,21 +249,13 @@ source setup.bash
 roslaunch mobiman jointTrackerdemo.launch
 ```
 
-In the launch file:
+2. In the file *jointTrackerdemo.launch* :
 ```shell
-<param name="joint_states_sub_topic" value="/joint_states" />
-
+<param name="joint_states_sub_topic" value="/joint_states" /> # the /joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
+<param name="joint_command" value="/a1_robot_right/arm_joint_command" /> #the /a1_robot_right/arm_joint_command topic represents the channel for issuing commands to the motors.
 ```
-`/joint_states` represents the topic for obtaining simulation values.
 
-```shell
-<param name="arm_joint_command_topic" value="/arm_joint_command_host" />
-```
-`/arm_joint_command_host` represents the topic to publish motor commands.
-
-Publish messages for joint movement. 
-The message name is `/arm_joint_target_position`, which is non-blocking and can be continuously published. 
-The robotic arm joints can move continuously.
+Publish messages for joint movement on the  `/arm_joint_target_position` topic. This operation is non-blocking, allowing for continuous publishing and enabling uninterrupted movement of the robot arm's joints.
 
 ```python
 import rospy
@@ -333,15 +294,8 @@ if __name__ == '__main__':
 ```
 
 
-
-
-#### Joint Position Movement Interface
-joint_move is a ROS package for single-joint control of A1 arms. 
-This package is used to specify the movement of each joint from the current position to the specified position, 
-the maximum speed and maximum acceleration during the movement can be specified, 
-if not specified, the default speed and acceleration will be planned. 
-The default maximum speed is 20 $rad/s$, and the maximum acceleration is $20 rad/s^2$. 
-The topic names and fields of the movement interface are shown in the following table.
+##### Joint Position Movement Interface
+The `/joint_move` is a ROS package for single-joint control of A1 arms. This package allows you to specify the movement of each joint from its current position to a target position, with configurable maximum speed and acceleration. If these parameters are not specified, default values will be used. The default maximum speed is 20 rad/s, and the default maximum acceleration is 20 rad/s². The topic names and fields of the movement interface are detailed in the following table.
 
 | Topic Name                  | Description                         | Message Type             |
 |-----------------------------|-------------------------------------|--------------------------|
