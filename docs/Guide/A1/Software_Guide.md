@@ -25,12 +25,12 @@ roslaunch signal_arm single_arm_node.launch
 The interface section describes the various control and status feedback interfaces for A1 robot arm, helping users understand how to communicate with and control the arm through the ROS package.
 #### Driver Interface
 The interface is a ROS package designed for manipulator control and status feedback. This package defines several topics for publishing and subscribing to the robot arm’s status, control commands, and associated error codes. Below are detailed descriptions of each topic and its related message types:
-<table style="width: 70%; border-collapse: collapse;">
+<table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align: left;">
-            <th style="width: 10%;">Topic Name </th>
-            <th style="width: 40%;">Description </th>
-			<th style="width: 20%;">Message Type</th>
+            <th>Topic Name </th>
+            <th>Description </th>
+	    <th>Message Type</th>
         </tr>
     </thead>
     <tbody>
@@ -51,12 +51,12 @@ The interface is a ROS package designed for manipulator control and status feedb
         </tr>
     </tbody>
 
-<table style="width: 70%; border-collapse: collapse;">
+<table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align: left">
-            <th style="width: 10%;">Topic Name</th>
-            <th style="width: 20%;">Field</th>
-            <th style="width: 40%;">Description</th>
+            <th>Topic Name</th>
+            <th>Field</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
@@ -141,11 +141,11 @@ The interface is a ROS package designed for manipulator control and status feedb
 #### Diagnostic Trouble Code
 DTC is used to feedback the error information of the ACU and the drive, and can be used to view the real-time status of each motor and the running status of the drive. The following is a detailed description of each fault code and its corresponding status.
 
-<table style="width: 70%; border-collapse: collapse;">
+<table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align:left">
-            <th style="width: 10%;">DTC</th>
-            <th style="width: 60%;">Status</th>
+            <th>DTC</th>
+            <th>Status</th>
         </tr>
     </thead>
     <tbody>
@@ -378,12 +378,12 @@ int main(int argc, char** argv)
 </div>
 
 ##### End-Effector Pose Movement Interface
-<table style="width: 70%; border-collapse: collapse;text-align:left">
+<table style="border-collapse: collapse;text-align:left">
     <thead>
         <tr style="background-color: black; color: white;">
-            <th style="width: 10%;">Topic Name</th>
-            <th style="width: 40%;">Description</th>
-            <th style="width: 30%;">Message Type</th>
+            <th>Topic Name</th>
+            <th>Description</th>
+            <th>Message Type</th>
         </tr>
     </thead>
     <tbody>
@@ -396,12 +396,12 @@ int main(int argc, char** argv)
 </table>
 
 
-<table style="width: 70%; border-collapse: collapse;text-align:left">
+<table style="border-collapse: collapse;text-align:left">
     <thead>
         <tr style="background-color: black; color: white;">
-            <th style="width: 10%;">Topic Name</th>
-            <th style="width: 30%;">Field</th>
-            <th style="width: 30%;">Description</th>
+            <th>Topic Name</th>
+            <th>Field</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
@@ -504,12 +504,12 @@ if __name__ == '__main__':
 ##### Joint Position Movement Interface
 The `/joint_move` is a ROS package for single-joint control of A1 arms. This package allows you to specify the movement of each joint from its current position to a target position, with configurable maximum speed and acceleration. If these parameters are not specified, default values will be used. The default maximum speed is 20 rad/s, and the default maximum acceleration is 20 rad/s². The topic names and fields of the movement interface are detailed in the following table.
 
-<table style="width: 70%; border-collapse: collapse;text-align:left">
+<table style="border-collapse: collapse;text-align:left">
     <thead>
         <tr style="background-color: black; color: white;">
-            <th style="width: 10%;">Topic Name</th>
-            <th style="width: 35%;">Description</th>
-            <th style="width: 35%;">Message Type</th>
+            <th>Topic Name</th>
+            <th>Description</th>
+            <th>Message Type</th>
         </tr>
     </thead>
     <tbody>
@@ -522,12 +522,12 @@ The `/joint_move` is a ROS package for single-joint control of A1 arms. This pac
 </table>
 
 
-<table style="width: 70%; border-collapse: collapse;text-align:left">
+<table style="border-collapse: collapse;text-align:left">
     <thead>
         <tr style="background-color: black; color: white;">
-            <th style="width: 10%;">Topic Name</th>
-            <th style="width: 20%;">Field</th>
-            <th style="width: 40%;">Description</th>
+            <th>Topic Name</th>
+            <th>Field</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
