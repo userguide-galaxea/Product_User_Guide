@@ -374,6 +374,6 @@ The dexterous hand boasts significant gripping strength and moderate speed, maki
 - **Keep It Clean**: To maintain the robot arm's optimal operating condition and extend its service life, regular cleaning is essential. Use alcohol wipes or clean, damp rags to gently wipe the surface of the robot arm, including the shell, base, and other components. This will effectively remove debris, oil, and other impurities.
 
 ## Next Step
-This concludes the hardware guide for the A1 robot arm. For further details, please refer to the software guide.
+This concludes the hardware guide for the A1 robot arm. For further details, please refer to [A1 Robot Arm Software Guide](../../Guide/A1/Software_Guide.md).
 
 
