@@ -256,8 +256,8 @@ We provide joint and end-effector movement control interfaces for A1 robot arm, 
 1. First, initiate the end-effector pose movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.
 ```shell
 cd release/install
-   source setup.bash
-   roslaunch mobiman eeTrackerdemo.launch
+source setup.bash
+roslaunch mobiman eeTrackerdemo.launch
 ```
 2. In the file *eeTrackerdemo.launch*：
 ```shell
@@ -332,49 +332,44 @@ roslaunch mobiman eeTrajTrackerdemo.launch
 ```
 3. PPublish messages to specify a trajectory for the end-effector movement on the   `/arm_target_trajectory` topic. This operation is non-blocking, allowing for continuous publishing. Ensure that the trajectory does not deviate significantly from the current end-effector position. It is recommended to wait until the current trajectory is completed before sending the next one to avoid inaccuracies in tracking the desired path.
 ```c++
-int main(int argc, char** argv)
-{
+#include <ros/ros.h>
+#include <geometry_msgs/PoseArray.h>
+
+geometry_msgs::Pose createPose(double x, double y, double z, double w, double ox, double oy, double oz) {
+    geometry_msgs::Pose pose;
+    pose.position.x = x;
+    pose.position.y = y;
+    pose.position.z = z;
+    pose.orientation.w = w;
+    pose.orientation.x = ox;
+    pose.orientation.y = oy;
+    pose.orientation.z = oz;
+    return pose;
+}
+
+int main(int argc, char** argv) {
     ros::init(argc, argv, "pose_array_publisher");
     ros::NodeHandle nh;
-    ros::Publisher pose_pub = nh.advertise<geometry_msgs::PoseArray>
-        ("/arm_target_trajectory", 10);
+    ros::Publisher pose_pub = nh.advertise<geometry_msgs::PoseArray>("/arm_target_trajectory", 10);
+    
     // Wait for subscribers to connect
     ros::Rate wait_rate(10);
-    while (pose_pub.getNumSubscribers() == 0){
+    while (pose_pub.getNumSubscribers() == 0) {
         wait_rate.sleep();
-        }
+    }
+
     geometry_msgs::PoseArray poseArrayMsg;
-    geometry_msgs::Pose pose1;
-    pose1.position.x = 0.08;
-    pose1.position.y = 0.0;
-    pose1.position.z = 0.3;
-    pose1.orientation.w = 0.5;
-    pose1.orientation.x = 0.5;
-    pose1.orientation.y = 0.5;
-    pose1.orientation.z = 0.5;
-    geometry_msgs::Pose pose2;
-    pose2.position.x = 0.08;
-    pose2.position.y = 0.0;
-    pose2.position.z = 0.4;
-    pose2.orientation.w = 0.5;
-    pose2.orientation.x = 0.5;
-    pose2.orientation.y = 0.5;
-    pose2.orientation.z = 0.5;
-    geometry_msgs::Pose pose3;
-    pose3.position.x = 0.08;
-    pose3.position.y = 0.0;
-    pose3.position.z = 0.54;
-    pose3.orientation.w = 0.5;
-    pose3.orientation.x = 0.5;
-    pose3.orientation.y = 0.5;
-    pose3.orientation.z = 0.5;
-    poseArrayMsg.poses.push_back(pose1);
-    poseArrayMsg.poses.push_back(pose2);
-    poseArrayMsg.poses.push_back(pose3);
+
+    poseArrayMsg.poses.push_back(createPose(0.08, 0.0, 0.3, 0.5, 0.5, 0.5, 0.5));
+    poseArrayMsg.poses.push_back(createPose(0.08, 0.0, 0.4, 0.5, 0.5, 0.5, 0.5));
+    poseArrayMsg.poses.push_back(createPose(0.08, 0.0, 0.54, 0.5, 0.5, 0.5, 0.5));
+
     pose_pub.publish(poseArrayMsg);
     ROS_INFO("Published PoseArray with 3 poses");
+
     return 0;
 }
+
 ```
 4. Usage Example:
 <div style="display: flex; justify-content: center; align-items: center;">
@@ -472,9 +467,7 @@ roslaunch mobiman jointTrackerdemo.launch
 <param name="joint_states_sub_topic" value="/joint_states" /> # the /joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
 <param name="joint_command" value="/a1_robot_right/arm_joint_command" /> #the /a1_robot_right/arm_joint_command topic represents the channel for issuing commands to the motors.
 ```
-
 Publish messages for joint movement on the  `/arm_joint_target_position` topic. This operation is non-blocking, allowing for continuous publishing and enabling uninterrupted movement of the robot arm's joints.
-
 ```python
 import rospy
 from sensor_msgs.msg import JointState
