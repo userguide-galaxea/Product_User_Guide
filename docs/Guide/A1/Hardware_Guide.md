@@ -110,7 +110,7 @@ The performance parameters highlight A1's key specifications, such as weight, pa
 </table>
 
 ## Hardware Structure
-![A1_hardware_architecture_topo](assets/A1_hardware_architecture_topo.jpg)
+![A1_hardware_architecture_topo](assets/A1_topo.jpg)
 
 ## Robot Structure 
 ### Joint
