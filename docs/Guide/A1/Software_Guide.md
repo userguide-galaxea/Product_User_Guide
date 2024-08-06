@@ -141,7 +141,7 @@ The interface is a ROS package designed for manipulator control and status feedb
     </tbody>
 </table>
 
-### Diagnostic Trouble Code
+#### Diagnostic Trouble Code
 
 DTC is used to feedback the error information of the MCU and the drive, 
 and can be used to view the real-time status of each motor and the running status of the drive. The following is a detailed description of each fault code and its corresponding status.
@@ -317,7 +317,7 @@ pass
 </div>
 
 
-### End-Effector Trajectory Movement
+#### End-Effector Trajectory Movement
 
 1. Firstly, initiate the end-effector trajectory movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.
 ```shell
@@ -458,7 +458,7 @@ int main(int argc, char** argv)
 </table>
 
 
-### Joint Angle Movement
+#### Joint Angle Movement
 
 1. Firstly, initiate the joint angle movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.
 ```shell
