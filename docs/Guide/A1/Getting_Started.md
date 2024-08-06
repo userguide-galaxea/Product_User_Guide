@@ -99,12 +99,8 @@ All users and explorers can access and contribute to the open-source code develo
 
 ### Community Updates
 We are passionate about showcasing the outstanding results that continue to emerge from our community! Every month, we will upload a new update, widely distributed through our website, mailing list, and social media platforms, featuring highlights of exciting recent research projects completed by A1 clients. When your work is ready for public display, please let us know, and we will share this honor with the entire community to ensure that your achievements receive the attention and appreciation they deserve!
-## Getting Help
-If you encounter any issues or need additional resources while developing with A1, we want to hear from you!
 
-### Forum
-A1 is proud to foster a dynamic and collaborative user community. We extend a heartfelt invitation to all users to join the Galaxea AI Forum — a valuable resource for asking questions and finding solutions. It's a goldmine for discovering problem-solving techniques. Our dedicated team of engineering experts actively engages in the forum, ensuring prompt attention and responses to a wide range of discussions. Additionally, we are committed to enriching our knowledge repository, providing users with invaluable insights, tips, and guidance tailored to meet your every need.
-### Support
+## Getting Help
 Should you encounter hardware issues, need immediate assistance, or find yourself seeking direct dialogue with Galaxea AI's engineering team, do not hesitate to contact us at products@galaxea.ai. Every interaction with our A1 users is deeply valued; your insightful feedback drives our commitment to product excellence and our dedication to meeting the diverse needs of our growing user base.
 
 ### Next Step
