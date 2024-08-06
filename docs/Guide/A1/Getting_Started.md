@@ -105,4 +105,4 @@ Should you encounter hardware issues, need immediate assistance, or find yoursel
 Every interaction with our A1 Robot Arm users is deeply valued; your insightful feedback drives our commitment to product excellence and our dedication to meeting the diverse needs of our growing user base.
 
 ### Next Step
-Our quickstart journey has come to an end. To deepen your mastery of A1 Robot Arm, we strongly recommend exploring the following chapters in A1 Robot Arm Hardware Guide and A1 Software Guide. These resources offer a wealth of additional information and practical examples, guiding you through the intricacies of programming with confidence and ease.
+Our quickstart journey has come to an end. To deepen your mastery of A1 Robot Arm, we strongly recommend exploring the following chapters in [A1 Robot Arm Hardware Guide](../../Guide/A1/Hardware_Guide.md) and [A1 Robot Arm Software Guide](../../Guide/A1/Software_Guide.md). These resources offer a wealth of additional information and practical examples, guiding you through the intricacies of programming with confidence and ease.
