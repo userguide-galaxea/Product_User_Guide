@@ -38,11 +38,11 @@ The key to safe use of the A1 arm is indeed good judgment and common sense, whil
 ## Technical Specification
 ### Electric Parameters
 The electrical parameters of A1 robot arm include its voltage, current, and communication interface. Its design ensures stable and reliable performance, even in high payload and dynamic applications.
-<table style="width: 60%; border-collapse: collapse;">
+<table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align: left;">
-            <th style="width: 30%;">Parameters</th>
-            <th style="width: 30%;">Value</th>
+            <th>Parameters</th>
+            <th>Value</th>
         </tr>
     </thead>
     <tbody>
@@ -67,11 +67,11 @@ The electrical parameters of A1 robot arm include its voltage, current, and comm
 
 ### Performance Parameters
 The performance parameters highlight A1's key specifications, such as weight, payload capacity, arm reach, and speed, reflecting its superior performance in highly dynamic operations.
-<table style="width: 60%; border-collapse: collapse;">
+<table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align: left;">
-            <th style="width: 50%;">Performance</th>
-            <th style="width: 10%;">Value</th>
+            <th>Performance</th>
+            <th>Value</th>
         </tr>
     </thead>
     <tbody>
@@ -117,12 +117,12 @@ The performance parameters highlight A1's key specifications, such as weight, pa
 The joint performance parameters detail the operating range, rated torque, and peak torque of the six joints, showcasing the robot's flexibility and power across a variety of operations.
 ![A1_joints](assets/A1_joints.png)
 
-<table style="width: 60%; border-collapse: collapse;">
+<table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align: left;">
-            <th style="width: 20%;">Joint</th>
-            <th style="width: 20%;">Range</th>
-			<th style="width: 20%;">Rated Torque</th>
+            <th>Joint</th>
+            <th>Range</th>
+	    <th>Rated Torque</th>
         </tr>
     </thead>
     <tbody>
@@ -172,11 +172,11 @@ A1 features two ports on the rear of the base for development and charging.
     <img src="../assets/A1_base.png" alt="A1_base" width="450">
 </div>
 
-<table style="width: 60%; border-collapse: collapse;">
+<table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align: left;">
-            <th style="width: 20%;">Item</th>
-            <th style="width: 40%;">Notes</th>
+            <th>Item</th>
+            <th>Notes</th>
         </tr>
     </thead>
     <tbody>
@@ -211,11 +211,11 @@ A1 robot arm consists of two Acrylonitrile Butadiene Styrene (ABS) main links mo
 
 The arm is designed to have:
 
-<table style="width: 60%; border-collapse: collapse;">
+<table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align: left;">
-            <th style="width: 30%;">Item</th>
-            <th style="width: 30%;">Notes</th>
+            <th>Item</th>
+            <th>Notes</th>
         </tr>
     </thead>
     <tbody>
@@ -260,11 +260,11 @@ The gripper is composed of one motor, two clips, and one specially designed join
 *Note: No gripper is included with the product. You can purchase end-effectors or customized tools from Galaxea AI if needed.*
 ![A1_G1_size](assets/A1_G1_size.png)
 
-<table style="width: 60%; border-collapse: collapse;">
+<table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align: left;">
-            <th style="width: 30%;">Feature</th>
-            <th style="width: 30%;">Value</th>
+            <th>Feature</th>
+            <th>Value</th>
         </tr>
     </thead>
     <tbody>
@@ -296,11 +296,11 @@ The gripper is composed of one motor, two clips, and one specially designed join
 
 A1 with end-effector G1 should have:
 
-<table style="width: 60%; border-collapse: collapse;">
+<table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align: left;">
-            <th style="width: 30%;">Item</th>
-            <th style="width: 30%;">Notes</th>
+            <th>Item</th>
+            <th>Notes</th>
         </tr>
     </thead>
     <tbody>
@@ -352,11 +352,11 @@ Here we describe how to attach grippers to A1. To remove them, simply reverse th
 
 ### Dexterous Hand
 The dexterous hand boasts significant gripping strength and moderate speed, making it suitable for grasping and manipulating tasks in robotics or prosthetic applications. Its combination of power and control allows for effective handling of various objects, similar to the versatility of a human hand, thereby enhancing the functionality of robots or prostheses in performing complex tasks.
-<table style="width: 60%; border-collapse: collapse;">
+<table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align: left;">
-            <th style="width: 30%;">Feature</th>
-            <th style="width: 30%;">Value</th>
+            <th>Feature</th>
+            <th>Value</th>
         </tr>
     </thead>
     <tbody>
