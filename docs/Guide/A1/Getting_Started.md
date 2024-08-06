@@ -40,12 +40,12 @@ Upon opening the package, you will find the robot arm as a fully assembled unit.
         <tr style="background-color: white;">
             <td>Power Cable</td>
             <td>1</td>
-            <td>Used to connect the PSU to the robot arm and the controller.</td>
+            <td>Used to connect the power supply unit to the robot arm.</td>
         </tr>
         <tr style="background-color: white;">
             <td>USB-A Cable</td>
             <td>1</td>
-            <td>Used to connect the robot arm controller to a computer with a USB-A port. </td>
+            <td>Used to connect the robot arm controller to a computer with a USB 2.0 port. </td>
         </tr>
         <tr style="background-color: white;">
             <td>Mounting Base Plate</td>
@@ -67,17 +67,17 @@ Upon opening the package, you will find the robot arm as a fully assembled unit.
 
 If you need assistance unboxing the robot arm, please refer to A1 unboxing video.
 
-### Installing Robot
+### Installing
 The installation process of A1 includes securing the arm to the mounting base to ensure its stability and operating accuracy. The design of the mounting holes allows the arm to be securely mounted on a variety of platforms, providing flexible mounting options.
 
 Please select the appropriate installation platform and fixing method according to the operating environment and usage requirements of the arm to ensure its stability and safety during operation.
 
 If you need assistance installing the robot arm on a base, please refer to the A1 installation video.
 
-### Charging
+### Powering Up
 Before we begin, confirm that all of the packing material has been removed from the robot, and the area around the robot is free and clear from any furniture or obstacles.
 
-To charge A1, please use the cable provided with the device and plug it into the charging port where the rated voltage is 48V. 
+To power up, please use the cable provided with the device and plug it into the charging port where the rated voltage is 48V. 
 
 ### Shutting Down
 In the event of an emergency where the normal shutdown procedure cannot be followed, disconnect the power cable from the power supply to immediately halt the robot arm's operation.
@@ -87,8 +87,7 @@ The power supply unit of the robot arm includes an emergency stop switch (E-stop
 
 ## Community Resources 
 While this documentation is the ideal way to get started with your robot, there are a number of other resources worth noting that provide additional information and ways to interact with A1 and the larger Galaxea AI community.
-### Forum
-The user community is vibrant and diverse, and Galaxea AI is committed to fostering communication, collaboration and information sharing among all users. We set up an open Galaxea AI Forum as a platform for user interaction. On the forum, users are free to ask questions, post project information, seek support, or access archives of solved problems. At the same time, our team of engineers regularly reviews and replies to the topics on the forum, and constantly updates the Knowledge Base with practical tips and guides to meet the needs of users.
+
 ### GitHub
 The vast majority of the code for Galaxea AI products is fully open source and freely available through Galaxea AI GitHub. Users can not only freely browse our code base, but also explore each piece of code in depth to meet your technical curiosity and learning needs.
 
