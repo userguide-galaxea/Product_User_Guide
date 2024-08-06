@@ -12,8 +12,7 @@ Galaxea robots are potentially dangerous machines with safety hazards. If improp
 - Only use the robot after inspecting the surrounding environment for potential hazards.
 
 ### Intended use
-**The Galaxea robot is explicitly designed for use by researchers in highly controlled indoor scientific environments. **
-Since it has not undergone the certification process required for other uses (e.g., consumer use in a home environment), this product is not recommended or suitable for such unspecified uses.
+The Galaxea robot is explicitly designed for use by researchers in highly controlled indoor scientific environments.Since it has not undergone the certification process required for other uses (e.g., consumer use in a home environment), this product is not recommended or suitable for such unspecified uses.
 
 ### Safety Hazards
 As described later in this document, the design of A1 is safer than previous commercial robot arms, allowing researchers to explore a broader range of use scenarios. However, A1 is still a potentially dangerous research robot. Researchers must use it with caution to avoid damage, injury, or death. Here, we outline several safety concerns that researchers must consider before and during the use of A1.
@@ -34,7 +33,7 @@ The key to safe use of the A1 arm is indeed good judgment and common sense, whil
 - **Avoid Outdoor Operation**: The A1 is designed for indoor environments. Its construction and materials may not be suitable for outdoor use. Outdoor factors such as wind, rain, dust, and temperature changes can damage the robot arm, impacting its performance and safety.
 
 ## Disclaimer
-<u>Galaxea Robots are explicitly designed for use by researchers in highly controlled indoor scientific environments. Since they have not undergone the certification process required for other uses (e.g., consumer use at home), these products are not recommended or suitable for such unspecified applications.</u>
+<u> Galaxea Robots are explicitly designed for use by researchers in highly controlled indoor scientific environments. Since they have not undergone the certification process required for other uses (e.g., consumer use at home), these products are not recommended or suitable for such unspecified applications. </u>
 
 ## Technical Specification
 ### Electric Parameters
@@ -68,41 +67,103 @@ The electrical parameters of A1 robot arm include its voltage, current, and comm
 
 ### Performance Parameters
 The performance parameters highlight A1's key specifications, such as weight, payload capacity, arm reach, and speed, reflecting its superior performance in highly dynamic operations.
-| Performance                          | Parameter  |
-|--------------------------------------|------------|
-| Weight                               | $6 kg$      |
-| Rated Payload                        | $2 kg$ |
-| Maximum Payload                      | $5 kg$ |
-| Reach                                | $700 mm$    |
-| Maximum End-Effector Linear Velocity | $10 m/s$    |
-| Maximum End-Effector Acceleration    | $40 m/s²$  |
-| Maximum Gripping Force               | $200 N$     |
-| Repeatability                        | $1 mm$      |
-
+<table style="width: 60%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white;text-align: left;">
+            <th style="width: 50%;">Performance</th>
+            <th style="width: 10%;">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;text-align: left;">
+            <td>Weight</td>
+            <td>6 kg</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Rated Payload</td>
+            <td>2 kg</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Maximum Payload</td>
+            <td>5 kg</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Reach</td>
+            <td>700 mm</td>
+        </tr>
+		<tr style="background-color: white;text-align: left;">
+            <td>Maximum End-Effector Linear Velocity</td>
+            <td>10 m/s</td>
+        </tr>
+		<tr style="background-color: white;text-align: left;">
+            <td>Maximum End-Effector Acceleration</td>
+            <td>10 m/s²</td>
+        </tr>
+		<tr style="background-color: white;text-align: left;">
+            <td>Maximum Gripping Force</td>
+            <td>200 N</td>
+        </tr>
+		<tr style="background-color: white;text-align: left;">
+            <td>Repeatability</td>
+            <td>1 mm</td>
+    </tbody>
+</table>
 
 ## Hardware Structure
 ![A1_hardware_architecture_topo](assets/A1_hardware_architecture_topo.jpg)
 
-## Robot Structure
+## Robot Structure 
 ### Joint
 The joint performance parameters detail the operating range, rated torque, and peak torque of the six joints, showcasing the robot's flexibility and power across a variety of operations.
-
 ![A1_joints](assets/A1_joints.png)
 
-| Joint   | Range           | Rated Torque |
-|---------|-----------------|--------------|
-| Joint 1 | $[-165°, 165°]$ | $20 Nm$      |
-| Joint 2 | $[0°, 180°]$    | $20 Nm$      |
-| Joint 3 | $[0°, 190°]$    | $9 Nm$       |
-| Joint 4 | $[-165°, 165°]$ | $3 Nm$       |
-| Joint 5 | $[-95°, 95°]$   | $3 Nm$       |
-| Joint 6 | $[-105°, 105°]$ | $3 Nm$       |
+<table style="width: 60%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white;text-align: left;">
+            <th style="width: 20%;">Joint</th>
+            <th style="width: 20%;">Range</th>
+			<th style="width: 20%;">Rated Torque</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;text-align: left;">
+            <td>Joint 1</td>
+            <td>[-165°, 165°]</td>
+			<td>20 Nm</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Joint 2</td>
+            <td>[0°, 180°]</td>
+			<td>20 Nm</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Joint 3</td>
+            <td>[0°, 190°]</td>
+			<td>9 Nm</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Joint 4</td>
+            <td>[-165°, 165°]</td>
+			<td>3 Nm</td>
+        </tr>
+		<tr style="background-color: white;text-align: left;">
+            <td>Joint 5</td>
+            <td>[-95°, 95°]</td>
+			<td>3 Nm</td>
+        </tr>
+		<tr style="background-color: white;text-align: left;">
+            <td>Joint 6</td>
+            <td>[-105°, 105°]</td>
+			<td>3 Nm</td>
+        </tr>
+    </tbody>
+</table>
 
 ![A1_working_space_with_gripper](assets/A1_working_space_with_gripper.png)
 
-View 1: Shows the working radius and rotation angle of Joint 1, with a rotation radius of 780 mm and a maximum rotation angle of 330 degrees.
-View 2: Displays the rotation ranges for Joint 2 and Joint 3, with a maximum rotation angle of 180 degrees for Joint 2 and 190 degrees for Joint 3.
-View 3: Illustrates the rotation angles of Joints 4, 5, and 6, as well as the end position of the robot arm. The maximum rotation angle for Joint 4 and 6 is 330 degrees, while Joint 5 has a maximum rotation angle of 190 degrees.
+- View 1: Shows the working radius and rotation angle of Joint 1, with a rotation radius of 780 mm and a maximum rotation angle of 330 degrees.
+- View 2: Displays the rotation ranges for Joint 2 and Joint 3, with a maximum rotation angle of 180 degrees for Joint 2 and 190 degrees for Joint 3.
+- View 3: Illustrates the rotation angles of Joints 4, 5, and 6, as well as the end position of the robot arm. The maximum rotation angle for Joint 4 and 6 is 330 degrees, while Joint 5 has a maximum rotation angle of 190 degrees.
 
 ### Base
 A1 features two ports on the rear of the base for development and charging.
@@ -111,14 +172,36 @@ A1 features two ports on the rear of the base for development and charging.
     <img src="../assets/A1_base.png" alt="A1_base" width="450">
 </div>
 
-
-
-| Item           | Notes                                  |
-|----------------|----------------------------------------|
-| Charging Port  | Rated voltage 48 V                      |
-| USB Port       | USB 2.0                                 |
-| Mounting Holes | Four M6 threads with a diameter of 6.3 mm |
-| Size           | 100 mm x 100 mm                          |
+<table style="width: 60%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white;text-align: left;">
+            <th style="width: 20%;">Item</th>
+            <th style="width: 40%;">Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;text-align: left;">
+            <td>Charging Port</td>
+            <td>Rated voltage 48 V</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>USB Port</td>
+            <td>USB 2.0</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Mounting Holes</td>
+            <td>Four M6 threads with a diameter of 6.3 mm</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Size</td>
+            <td>100 mm x 100 mm</td>
+        </tr>
+		<tr style="background-color: white;text-align: left;">
+            <td>Maximum End-Effector Linear Velocity</td>
+            <td>10 m/s</td>
+        </tr>
+    </tbody>
+</table>  
 
 
 ### Link
@@ -128,15 +211,45 @@ A1 robot arm consists of two Acrylonitrile Butadiene Styrene (ABS) main links mo
 
 The arm is designed to have:
 
-| Item                | Notes                                     |
-|---------------------|-------------------------------------------|
-| Length              | Deployed $775 mm$ <br/> Folded $449 mm$   |
-| Height              | Deployed $237 mm$ <br/> Folded $277 mm$ |
-| Width               | $128 mm$                                   |
-| Reach               | $700 mm$                                    |
-| Degree of Freedom   | $6$                                       |
-| Maximum Payload     | $5 kg$                                     |
-| Weight              | $6 kg$                                     |
+<table style="width: 60%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white;text-align: left;">
+            <th style="width: 30%;">Item</th>
+            <th style="width: 30%;">Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;text-align: left;">
+            <td>Length</td>
+            <td>Deployed 775 mm <br/> Folded 449 mm </td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Height</td>
+            <td>Deployed 237 mm <br/> Folded 277 mm </td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Width</td>
+            <td>128 mm</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Reach</td>
+            <td>700 mm</td>
+        </tr>
+		<tr style="background-color: white;text-align: left;">
+            <td>Degree of Freedom</td>
+            <td>6</td>
+        </tr>
+		<tr style="background-color: white;text-align: left;">
+            <td>Maximum Payload</td>
+            <td>5 kg</td>
+        </tr>
+		<tr style="background-color: white;text-align: left;">
+            <td>Weight</td>
+            <td>6 kg</td>
+        </tr>
+    </tbody>
+</table>
+
 
 
 
@@ -147,28 +260,76 @@ The gripper is composed of one motor, two clips, and one specially designed join
 *Note: No gripper is included with the product. You can purchase end-effectors or customized tools from Galaxea AI if needed.*
 ![A1_G1_size](assets/A1_G1_size.png)
 
+<table style="width: 60%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white;text-align: left;">
+            <th style="width: 30%;">Feature</th>
+            <th style="width: 30%;">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;text-align: left;">
+            <td>Length</td>
+            <td>149 mm</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Length of Fingers</td>
+            <td>77 mm </td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Diameter of Motor</td>
+            <td>60 mm</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Gripper Operating Range</td>
+            <td>0~60 mm</td>
+        </tr>
+		<tr style="background-color: white;text-align: left;">
+            <td>Gripper Operating Range</td>
+            <td>100 N</td>
+        </tr>
+    </tbody>
+</table>
 
-| Feature                 | Value       |
-|-------------------------|-------------|
-| Length                  | 149 mm    |
-| Length of Fingers       | 77 mm     |
-| Diameter of Motor       | 60 mm      |
-| Gripper Operating Range | 0~60 mm |
-| Gripper Rated Force     | 100 N       |
 
 ![A1_size_g1](assets/A1_size_G1.jpg)
 
 A1 with end-effector G1 should have:
 
-
-| Item              | Notes                            |
-|-------------------|----------------------------------|
-| Length            | Deployed 918 mm, Folded 545 mm |
-| Height            | Deployed 237 mm, Folded 277 mm |
-| Width             | 128 mm                            |
-| Degree of Freedom | 7                                |
-| Maximum Payload   | 5 kg                              |
-| Weight            | 6 kg                              |
+<table style="width: 60%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white;text-align: left;">
+            <th style="width: 30%;">Item</th>
+            <th style="width: 30%;">Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;text-align: left;">
+            <td>Length</td>
+            <td>Deployed 918 mm <br/> Folded 545 mm </td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Height</td>
+            <td>Deployed 237 mm <br/> Folded 277 mm </td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Width</td>
+            <td>128 mm</td>
+        </tr>
+		<tr style="background-color: white;text-align: left;">
+            <td>Degree of Freedom</td>
+            <td>7</td>
+        </tr>
+		<tr style="background-color: white;text-align: left;">
+            <td>Maximum Payload</td>
+            <td>5 kg</td>
+        </tr>
+		<tr style="background-color: white;text-align: left;">
+            <td>Weight</td>
+            <td>6 kg</td>
+        </tr>
+    </tbody>
+</table>
 
 
 #### Attaching
@@ -189,20 +350,46 @@ Here we describe how to attach grippers to A1. To remove them, simply reverse th
 4. **Final Check**: After tightening the screws, double-check the alignment and stability of the gripper. It should be firmly attached and not wobble or move independently of the robot arm.
 5. **Testing**: Before using the robot arm, perform a test run to ensure that the gripper moves smoothly and holds objects securely without any slippage or unexpected movement.
 
-
 ### Dexterous Hand
 The dexterous hand boasts significant gripping strength and moderate speed, making it suitable for grasping and manipulating tasks in robotics or prosthetic applications. Its combination of power and control allows for effective handling of various objects, similar to the versatility of a human hand, thereby enhancing the functionality of robots or prostheses in performing complex tasks.
-
-| Feature                   | Value   |
-|---------------------------|---------|
-| Degrees of Freedom        | 6       |
-| Number of Joints          | 12      |
-| Weight                    | 540 g    |
-| Repeatability             | ±0.20 mm |
-| Max. Finger Grip Force    | 10 N    |
+<table style="width: 60%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white;text-align: left;">
+            <th style="width: 30%;">Feature</th>
+            <th style="width: 30%;">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;text-align: left;">
+            <td>Degrees of Freedom</td>
+            <td>6</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Number of Joints</td>
+            <td>12</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Weight</td>
+            <td>540 g</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Repeatability</td>
+            <td>±0.20 mm</td>
+        </tr>
+		<tr style="background-color: white;text-align: left;">
+            <td>Max. Finger Grip Force</td>
+            <td>10 N</td>
+        </tr>
+    </tbody>
+</table>
 
 ![A1_size_dexterous_hand](assets/A1_size_dexterous_hand.jpg)
 
 
 ## Robot Care
 - **Keep It Clean**: To maintain the robot arm's optimal operating condition and extend its service life, regular cleaning is essential. Use alcohol wipes or clean, damp rags to gently wipe the surface of the robot arm, including the shell, base, and other components. This will effectively remove debris, oil, and other impurities.
+
+## Next Step
+This concludes the hardware guide for the A1 robot arm. For further details, please refer to the software guide.
+
+
