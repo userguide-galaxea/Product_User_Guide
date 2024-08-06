@@ -26,6 +26,7 @@ The interface section describes the various control and status feedback interfac
 
 #### Driver Interface
 The interface is a ROS package designed for manipulator control and status feedback. This package defines several topics for publishing and subscribing to the robot arm’s status, control commands, and associated error codes. Below are detailed descriptions of each topic and its related message types:
+
 <table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align: left;">
@@ -51,6 +52,7 @@ The interface is a ROS package designed for manipulator control and status feedb
 			<td>signal_arm/arm_control</td>
         </tr>
     </tbody>
+</table>
 
 <table style="border-collapse: collapse;">
     <thead>
@@ -139,9 +141,10 @@ The interface is a ROS package designed for manipulator control and status feedb
     </tbody>
 </table>
 
+### Diagnostic Trouble Code
 
-#### Diagnostic Trouble Code
-DTC is used to feedback the error information of the MCU and the drive, and can be used to view the real-time status of each motor and the running status of the drive. The following is a detailed description of each fault code and its corresponding status.
+DTC is used to feedback the error information of the MCU and the drive, 
+and can be used to view the real-time status of each motor and the running status of the drive. The following is a detailed description of each fault code and its corresponding status.
 
 <table style="border-collapse: collapse;">
     <thead>
@@ -237,7 +240,6 @@ DTC is used to feedback the error information of the MCU and the drive, and can 
         </tr>
     </tbody>
 </table>
-
 
 ### Joint and End-Effector Movement Control
 
