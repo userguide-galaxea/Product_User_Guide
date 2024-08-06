@@ -1,9 +1,9 @@
-# Gripper One
-![G1_title](G1_title.png )
+# Galaxea Gripper One
+![G1_title](../product_images_video/G1_title.png )
 
 
 ## Advanced Performance and Versatility
-Our high-precision gripper is designed for robust and versatile gripping solutions, making it ideal for various industrial applications. With its advanced mechanics and reliable performance, this gripper ensures secure handling and adaptability in diverse environments.
+Our high-precision Galaxea Gripper One (G1) is designed for robust and versatile gripping solutions, making it ideal for various industrial applications. With its advanced mechanics and reliable performance, this gripper ensures secure handling and adaptability in diverse environments.
 
 - High Gripping Force
 - Linear Movement
