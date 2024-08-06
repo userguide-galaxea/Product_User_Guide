@@ -142,7 +142,7 @@ The interface is a ROS package designed for manipulator control and status feedb
 
 #### Diagnostic Trouble Code
 
-DTC is used to feedback the error information of the ACU and the drive, and can be used to view the real-time status of each motor and the running status of the drive. The following is a detailed description of each fault code and its corresponding status.
+DTC is used to feedback the error information of the MCU and the drive, and can be used to view the real-time status of each motor and the running status of the drive. The following is a detailed description of each fault code and its corresponding status.
 
 <table style="border-collapse: collapse;">
     <thead>
