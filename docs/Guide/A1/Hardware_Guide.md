@@ -18,7 +18,7 @@ Since it has not undergone the certification process required for other uses (e.
 ### Safety Hazards
 As described later in this document, the design of A1 is safer than previous commercial robot arms, allowing researchers to explore a broader range of use scenarios. However, A1 is still a potentially dangerous research robot. Researchers must use it with caution to avoid damage, injury, or death. Here, we outline several safety concerns that researchers must consider before and during the use of A1.
 
-#### Operation Guide for Electrical Safety:
+#### Operation Guide for Electrical Safety: 
 A1 is a highly electrified device that integrates motors, precision electronics, intricate wires, and other critical electrical components. It is equipped with exposed connectors for power connections. While A1 is designed with fuses to mitigate potential electrical risks, users must remain extremely vigilant. Ensure the arm is dry and away from any form of liquid to prevent electric shock. Additionally, regularly inspect the power cord and wires, handle the robot's connectors carefully, and maintain continuous attention to electrical safety throughout use.
 
 #### Safety Tips for Loose Clothing and Hair
@@ -34,16 +34,37 @@ The key to safe use of the A1 arm is indeed good judgment and common sense, whil
 - **Avoid Outdoor Operation**: The A1 is designed for indoor environments. Its construction and materials may not be suitable for outdoor use. Outdoor factors such as wind, rain, dust, and temperature changes can damage the robot arm, impacting its performance and safety.
 
 ## Disclaimer
-<u>Galaxea Robots are explicitly designed for use by researchers in highly controlled indoor scientific environments. Since they have not undergone the certification process required for other uses (e.g., consumer use at home), these products are not recommended or suitable for such unspecified applications.<u>
+<u>Galaxea Robots are explicitly designed for use by researchers in highly controlled indoor scientific environments. Since they have not undergone the certification process required for other uses (e.g., consumer use at home), these products are not recommended or suitable for such unspecified applications.</u>
+
 ## Technical Specification
 ### Electric Parameters
 The electrical parameters of A1 robot arm include its voltage, current, and communication interface. Its design ensures stable and reliable performance, even in high payload and dynamic applications.
-| Parameters              | Value                 |
-|-------------------------|-----------------------|
-| Nominal Voltage         | 48 V                   |
-| Rated Current           | 30 A                   |
-| Maximum Current         | 50 A                   |
-| Communication Interface | USB serial port       |
+<table style="width: 60%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white;text-align: left;">
+            <th style="width: 30%;">Parameters</th>
+            <th style="width: 30%;">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;text-align: left;">
+            <td>Nominal Voltage</td>
+            <td>48 V</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Rated Current</td>
+            <td>30 A</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Maximum Current</td>
+            <td>50 A</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Communication Interface</td>
+            <td>USB Serial Port</td>
+        </tr>
+    </tbody>
+</table>
 
 ### Performance Parameters
 The performance parameters highlight A1's key specifications, such as weight, payload capacity, arm reach, and speed, reflecting its superior performance in highly dynamic operations.
