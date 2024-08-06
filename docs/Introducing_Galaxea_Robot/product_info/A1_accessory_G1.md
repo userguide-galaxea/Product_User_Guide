@@ -11,4 +11,4 @@ Our high-precision Galaxea Gripper One (G1) is designed for robust and versatile
 ![G1_specifications_table](../product_images_video/A1/G1_specifications_table.png) 
 
 ## Comparison with Others
-![G1_comparison](../product_images_video/A1/G1_comparison.png )
+![G1_comparison](../product_images_video/G1_comparison_1.png)
