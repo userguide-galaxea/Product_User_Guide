@@ -23,6 +23,7 @@ roslaunch signal_arm single_arm_node.launch
 ```
 
 The interface section describes the various control and status feedback interfaces for A1 robot arm, helping users understand how to communicate with and control the arm through the ROS package.
+
 #### Driver Interface
 The interface is a ROS package designed for manipulator control and status feedback. This package defines several topics for publishing and subscribing to the robot arm’s status, control commands, and associated error codes. Below are detailed descriptions of each topic and its related message types:
 <table style="border-collapse: collapse;">
@@ -139,6 +140,7 @@ The interface is a ROS package designed for manipulator control and status feedb
 </table>
 
 #### Diagnostic Trouble Code
+
 DTC is used to feedback the error information of the ACU and the drive, and can be used to view the real-time status of each motor and the running status of the drive. The following is a detailed description of each fault code and its corresponding status.
 
 <table style="border-collapse: collapse;">
@@ -238,6 +240,7 @@ DTC is used to feedback the error information of the ACU and the drive, and can 
 
 
 ### Joint and End-Effector Movement Control
+
 We provide joint and end-effector movement control interfaces for A1 robot arm, enabling efficient control through the ROS (Robot Operating System) framework. Before performing end-effector or joint movement, you must first activate the `signal_arm` interface; detailed operation instructions can be found in the  `signal_arm` documentation. This project includes several primary functions:
 
 - **End-Effector Pose Movement**: Allows users to control the position and orientation of the robot arm's end-effector by publishing target pose messages. This function is suitable for applications requiring precise positioning.
@@ -247,6 +250,7 @@ We provide joint and end-effector movement control interfaces for A1 robot arm, 
 - **Joint Angle Movement**: Provides a joint-level control interface where users can set the target positions for each individual joint, enabling coordinated whole-arm movements.
 
 #### End-Effector Pose Movement
+
 1. First, initiate the end-effector pose movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.
 ```shell
 cd release/install
@@ -312,6 +316,7 @@ pass
 
 
 ### End-Effector Trajectory Movement
+
 1. Firstly, initiate the end-effector trajectory movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.
 ```shell
 cd release/install
@@ -378,6 +383,7 @@ int main(int argc, char** argv)
 </div>
 
 ##### End-Effector Pose Movement Interface
+
 <table style="border-collapse: collapse;text-align:left">
     <thead>
         <tr style="background-color: black; color: white;">
@@ -449,6 +455,7 @@ int main(int argc, char** argv)
 </table>
 
 ### Joint Angle Movement
+
 1. Firstly, initiate the joint angle movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.
 ```shell
 cd release/install
@@ -502,6 +509,7 @@ if __name__ == '__main__':
 
 
 ##### Joint Position Movement Interface
+
 The `/joint_move` is a ROS package for single-joint control of A1 arms. This package allows you to specify the movement of each joint from its current position to a target position, with configurable maximum speed and acceleration. If these parameters are not specified, default values will be used. The default maximum speed is 20 rad/s, and the default maximum acceleration is 20 rad/s². The topic names and fields of the movement interface are detailed in the following table.
 
 <table style="border-collapse: collapse;text-align:left">
