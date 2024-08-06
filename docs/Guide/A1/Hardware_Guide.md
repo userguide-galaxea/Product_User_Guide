@@ -204,7 +204,7 @@ A1 features two ports on the rear of the base for development and charging.
 </table>  
 
 
-### Link
+### Links
 A1 robot arm consists of two Acrylonitrile Butadiene Styrene (ABS) main links mounted on a base, interconnected by six joints. Each joint is equipped with planetary gear motors that provide independent variable-speed operation, delivering high precision and torque. This design allows the arm to maneuver in any direction commanded by the controller.
 ![A1_size](assets/A1_size.jpg)
 
@@ -231,22 +231,6 @@ The arm is designed to have:
             <td>Width</td>
             <td>128 mm</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Reach</td>
-            <td>700 mm</td>
-        </tr>
-		<tr style="background-color: white;text-align: left;">
-            <td>Degree of Freedom</td>
-            <td>6</td>
-        </tr>
-		<tr style="background-color: white;text-align: left;">
-            <td>Maximum Payload</td>
-            <td>5 kg</td>
-        </tr>
-		<tr style="background-color: white;text-align: left;">
-            <td>Weight</td>
-            <td>6 kg</td>
-        </tr>
     </tbody>
 </table>
 
@@ -254,7 +238,7 @@ The arm is designed to have:
 
 
 ### End-Effector
-#### Gripper 1 Generation II
+#### Galaxea Gripper One
 
 The gripper is composed of one motor, two clips, and one specially designed joint module.
 *Note: No gripper is included with the product. You can purchase end-effectors or customized tools from Galaxea AI if needed.*
@@ -350,7 +334,7 @@ Here we describe how to attach grippers to A1. To remove them, simply reverse th
 4. **Final Check**: After tightening the screws, double-check the alignment and stability of the gripper. It should be firmly attached and not wobble or move independently of the robot arm.
 5. **Testing**: Before using the robot arm, perform a test run to ensure that the gripper moves smoothly and holds objects securely without any slippage or unexpected movement.
 
-### Dexterous Hand
+### Inspire-Robots RH56 Series Dexterous Hand
 The dexterous hand boasts significant gripping strength and moderate speed, making it suitable for grasping and manipulating tasks in robotics or prosthetic applications. Its combination of power and control allows for effective handling of various objects, similar to the versatility of a human hand, thereby enhancing the functionality of robots or prostheses in performing complex tasks.
 <table style="border-collapse: collapse;">
     <thead>
