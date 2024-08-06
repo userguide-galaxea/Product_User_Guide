@@ -25,64 +25,217 @@ roslaunch signal_arm single_arm_node.launch
 The interface section describes the various control and status feedback interfaces for A1 robot arm, helping users understand how to communicate with and control the arm through the ROS package.
 #### Driver Interface
 The interface is a ROS package designed for manipulator control and status feedback. This package defines several topics for publishing and subscribing to the robot arm’s status, control commands, and associated error codes. Below are detailed descriptions of each topic and its related message types:
+<table style="width: 70%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white;text-align: left;">
+            <th style="width: 10%;">Topic Name </th>
+            <th style="width: 40%;">Description </th>
+			<th style="width: 20%;">Message Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;text-align: left;">
+            <td>/joint_states</td>
+            <td>Robot arm joint status feedback</td>
+			<td>sensor_msgs/JointState</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>/arm_status</td>
+            <td>Robot arm motor status feedback</td>
+			<td>signal_arm/status_stamped</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>/arm_joint_command</td>
+            <td>Robot arm joint control interface</td>
+			<td>signal_arm/arm_control</td>
+        </tr>
+    </tbody>
 
-| Topic Name             | Description                         | Message Type                   |
-|------------------------|-------------------------------------|--------------------------------|
-| /joint_states          | Robot arm joint status feedback   | sensor_msgs/JointState         |
-| /arm_status            | Robot arm motor status feedback   | signal_arm/status_stamped      |
-| /arm_joint_command     | Robot arm joint control interface | signal_arm/arm_control         |
-
-
-
-| Topic Name             | Field         | Description                                          | Data Type | Unit      | Notes                  |
-|------------------------|---------------|------------------------------------------------------|-----------|-----------|------------------------|
-| /joint_states          | header        | Standard ROS message header                          | -         | -         | -                      |
-|                        | name          | Names of the robot arm joints                        | string  | -         | -                      |
-|                        | position      | Positions of the robot arm joints                    | float64 | $rad$     | -                      |
-|                        | velocity      | Velocities of the robot arm joints                   | float64 | $rad/s$   | -                      |
-|                        | effort        | Torques of the robot arm joints                      | float64 | $Nm$      | -                      |
-| /arm_status            | header        | Standard ROS message header                          | -         | -         | -                      |
-|                        | name          | Names of the robot arm joints                        | string  | -         | -                      |
-|                        | error_code    | Error codes for the robot arm joints                 | float32 | -         | -                      |
-|                        | t_mos         | MOS chip temperature of the robot arm joints         | float32 | $Celsius$ | -                      |
-|                        | t_rotor       | Internal encoder temperature of the robot arm joints | float32 | $Celsius$ | -                      |
-| /arm_joint_command     | header        | Standard ROS message header                          | -         | -         | -                      |
-|                        | p_des         | Desired position of the robot arm                    | float32| $rad$     | -                      |
-|                        | v_des         | Desired velocity of the robot arm                    | float32 | $rad/s$   | -                      |
-|                        | t_ff          | Desired torque of the robot arm                      | float32 | $Nm$      | -                      |
-|                        | kp            | Proportional gain for position                       | float32 | -         | -                      |
-|                        | kd            | Derivative gain for position                         | float32 | -         | -                      |
-|                        | mode          | Control mode                                         | uint8     | -         | Default 0, MIT control |
-| /gripper_force_control | header        | Standard ROS message header                          | -         | -         | (with optional)|
-|                        | gripper_force | Gripper support force                                | float32   | $N$       | (with optional)                      |
-
+<table style="width: 70%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white;text-align: left">
+            <th style="width: 10%;">Topic Name</th>
+            <th style="width: 20%;">Field</th>
+            <th style="width: 40%;">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;">
+            <td>/joint_states</td>
+            <td>Header</td>
+            <td>Standard header</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>name</td>
+            <td>Name of each arm joint</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>position</td>
+            <td>Position of each arm joint</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>velocity</td>
+            <td>Velocity of each arm joint</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>effort</td>
+            <td>Torque of each arm joint</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>/arm_status</td>
+            <td>header</td>
+            <td>Standard header</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>status.name</td>
+            <td>Name of each status</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>status.motor_errors</td>
+            <td>Errors of each status</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>/arm_joint_command</td>
+            <td>header</td>
+            <td>Standard header</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>p_des</td>
+            <td>Position command of robot arm</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>v_des</td>
+            <td>Velocity command of robot arm</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>t_ff</td>
+            <td>Torque command of robot arm</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>kp</td>
+            <td>Proportion coefficient of position</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>kd</td>
+            <td>Differential coefficient of position</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>mode</td>
+            <td>Control mode</td>
+        </tr>
+    </tbody>
+</table>
 
 #### Diagnostic Trouble Code
 DTC is used to feedback the error information of the ACU and the drive, and can be used to view the real-time status of each motor and the running status of the drive. The following is a detailed description of each fault code and its corresponding status.
 
-| Fault Code Position | Corresponding Status                                             |
-|---------------------|------------------------------------------------------------------|
-| 0                   | ACU Feedback: Disabled                                           |
-| 1                   | ACU Feedback: Enabled                                            |
-| 2                   | ACU Feedback: Motor Disconnected                                 |
-| 3                   | ACU Feedback: Position Jump                                      |
-| 4                   | ACU Feedback: Persistent High Current                            |
-| 5                   | ACU Feedback: Excessive Torque                                   |
-| 6                   | ACU Feedback: ECU -> ACU Timeout                                 |
-| 7                   | ACU Feedback: Position Limit Exceeded                            |
-| 8                   | ACU Feedback: Speed Limit Exceeded                               |
-| 9                   | ACU Feedback: Torque Limit Exceeded                              |
-| 10                  | ACU Feedback: Overpressure                                       |
-| 11                  | ACU Feedback: Low Pressure                                       |
-| 12                  | ACU Feedback: Overcurrent                                        |
-| 13                  | ACU Feedback: MOS Overtemperature                                |
-| 14                  | ACU Feedback: Motor Winding Overtemperature                      |
-| 15                  | ACU Feedback: Communication Loss                                 |
-| 16                  | ACU Feedback: Overload                                           |
-| 17                  | Driver Feedback: Serial Connection Disconnected (No Device File) |
-| 18                  | Driver Feedback: Device File Connected, No Messages              |
-| 19                  | Driver Feedback: Serial Read/Write Failure                       |
-| 20                  | Driver Feedback: Feedback Reception Overflow                     |
+<table style="width: 70%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white;text-align:left">
+            <th style="width: 10%;">DTC</th>
+            <th style="width: 60%;">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;">
+            <td>0</td>
+            <td>ACU feedback: Disabled</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>1</td>
+            <td>ACU feedback: Enabled</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>2</td>
+            <td>ACU feedback: Motor Disconnected</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>3</td>
+            <td>ACU feedback: Position Jump</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>4</td>
+            <td>ACU feedback: Continuous High Current</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>5</td>
+            <td>ACU feedback: Excessive Torque</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>6</td>
+            <td>ACU feedback: ECU -> ACU Timeout</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>7</td>
+            <td>ACU feedback: Position Limit Exceeded</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>8</td>
+            <td>ACU feedback: Speed Limit Exceeded</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>9</td>
+            <td>ACU feedback: Torque Limit Exceeded</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>10</td>
+            <td>ACU feedback: Overpressure</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>11</td>
+            <td>ACU feedback: Low pressure</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>12</td>
+            <td>ACU feedback: Overcurrent</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>13</td>
+            <td>ACU feedback: MOS Overtemperature</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>14</td>
+            <td>ACU feedback: Motor Winding Overtemperature</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>15</td>
+            <td>ACU feedback: Communication loss</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>16</td>
+            <td>ACU feedback: Overload</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>17</td>
+            <td>Driver feedback: Serial Connection Disconnected (No Device File)</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>18</td>
+            <td>Driver feedback: Device File Connected, No Messages</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>19</td>
+            <td>Driver feedback: Serial Read/Write Failure</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>20</td>
+            <td>Driver feedback: Feedback Reception Overflow</td>
+        </tr>
+    </tbody>
+</table>
+
 
 ### Joint and End-Effector Movement Control
 We provide joint and end-effector movement control interfaces for A1 robot arm, enabling efficient control through the ROS (Robot Operating System) framework. Before performing end-effector or joint movement, you must first activate the `signal_arm` interface; detailed operation instructions can be found in the  `signal_arm` documentation. This project includes several primary functions:
@@ -170,7 +323,7 @@ roslaunch mobiman eeTrajTrackerdemo.launch
 <param name="joint_states_topic" value="/joint_states" /> # the /joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
 <param name="joint_command" value="/a1_robot_right/arm_joint_command" /> #the /a1_robot_right/arm_joint_command topic represents the channel for issuing commands to the motors.
 ```
-3. Publish messages to specify a trajectory for the end-effector movement on the   `/arm_target_trajectory` topic. This operation is non-blocking, allowing for continuous publishing. Ensure that the trajectory does not deviate significantly from the current end-effector position. It is recommended to wait until the current trajectory is completed before sending the next one to avoid inaccuracies in tracking the desired path.
+3. PPublish messages to specify a trajectory for the end-effector movement on the   `/arm_target_trajectory` topic. This operation is non-blocking, allowing for continuous publishing. Ensure that the trajectory does not deviate significantly from the current end-effector position. It is recommended to wait until the current trajectory is completed before sending the next one to avoid inaccuracies in tracking the desired path.
 ```c++
 int main(int argc, char** argv)
 {
@@ -225,24 +378,78 @@ int main(int argc, char** argv)
 </div>
 
 ##### End-Effector Pose Movement Interface
-| Topic Name     | Description                  | Message Type               |
-|----------------|------------------------------|----------------------------|
-| /a1_mpc_target | Target pose of end arm joint | Geometry_msgs::PoseStamped |
+<table style="width: 70%; border-collapse: collapse;text-align:left">
+    <thead>
+        <tr style="background-color: black; color: white;">
+            <th style="width: 10%;">Topic Name</th>
+            <th style="width: 40%;">Description</th>
+            <th style="width: 30%;">Message Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;">
+            <td>/a1_ee_target</td>
+            <td>Target pose of end arm joint</td>
+            <td>Geometry_msgs::PoseStamped</td>
+        </tr>
+    </tbody>
+</table>
 
-| Topic Name     | Field              | Description            |
-|----------------|--------------------|------------------------|
-| /a1_mpc_target | header             | Standard Header        |
-| /a1_mpc_target | pose.position.x    | Shift in x direction   |
-| /a1_mpc_target | pose.position.y    | Shift in y direction   |
-| /a1_mpc_target | pose.position.z    | Shift in z direction   |
-| /a1_mpc_target | pose.orientation.x | Orientation quaternion |
-| /a1_mpc_target | pose.orientation.y | Orientation quaternion |
-| /a1_mpc_target | pose.orientation.z | Orientation quaternion |
-| /a1_mpc_target | pose.orientation.w | Orientation quaternion |
+
+<table style="width: 70%; border-collapse: collapse;text-align:left">
+    <thead>
+        <tr style="background-color: black; color: white;">
+            <th style="width: 10%;">Topic Name</th>
+            <th style="width: 30%;">Field</th>
+            <th style="width: 30%;">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;">
+            <td>/a1_ee_target</td>
+            <td>header</td>
+            <td>Standard Header</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>pose.position.x</td>
+            <td>Shift in x direction</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>pose.position.y</td>
+            <td>Shift in y direction</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>pose.position.z</td>
+            <td>Shift in z direction</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>pose.orientation.x</td>
+            <td>Orientation quaternion</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>pose.orientation.y</td>
+            <td>Orientation quaternion</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>pose.orientation.z</td>
+            <td>Orientation quaternion</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>pose.orientation.w</td>
+            <td>Orientation quaternion</td>
+        </tr>
+    </tbody>
+</table>
 
 ### Joint Angle Movement
 1. Firstly, initiate the joint angle movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.
-
 ```shell
 cd release/install
 source setup.bash
@@ -297,14 +504,57 @@ if __name__ == '__main__':
 ##### Joint Position Movement Interface
 The `/joint_move` is a ROS package for single-joint control of A1 arms. This package allows you to specify the movement of each joint from its current position to a target position, with configurable maximum speed and acceleration. If these parameters are not specified, default values will be used. The default maximum speed is 20 rad/s, and the default maximum acceleration is 20 rad/s². The topic names and fields of the movement interface are detailed in the following table.
 
-| Topic Name                  | Description                         | Message Type             |
-|-----------------------------|-------------------------------------|--------------------------|
-| /arm_joint_target_position  | Target position of each arm joint   | Sensor_msgs/JointState   |
+<table style="width: 70%; border-collapse: collapse;text-align:left">
+    <thead>
+        <tr style="background-color: black; color: white;">
+            <th style="width: 10%;">Topic Name</th>
+            <th style="width: 35%;">Description</th>
+            <th style="width: 35%;">Message Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;">
+            <td>/arm_joint_target_position</td>
+            <td>Target position of each joint</td>
+            <td>Sensor_msgs/JointState</td>
+        </tr>
+    </tbody>
+</table>
 
-| Topic Name                  | Field      | Description                                      |
-|-----------------------------|------------|--------------------------------------------------|
-| /arm_joint_target_position  | header     | Standard Header                                  |
-| /arm_joint_target_position  | name       | Name of each arm joint                           |
-| /arm_joint_target_position  | position   | Target position of each arm joint                |
-| /arm_joint_target_position  | velocity   | Maximum velocity of each arm joint               |
-| /arm_joint_target_position  | effort     | Maximum acceleration velocity of each arm joint  |
+
+<table style="width: 70%; border-collapse: collapse;text-align:left">
+    <thead>
+        <tr style="background-color: black; color: white;">
+            <th style="width: 10%;">Topic Name</th>
+            <th style="width: 20%;">Field</th>
+            <th style="width: 40%;">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;">
+            <td>/arm_joint_target_position</td>
+            <td>header</td>
+            <td>Standard Header</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>name</td>
+            <td>Name of each joint </td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>position</td>
+            <td>Target position of each joint</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>velocity</td>
+            <td>Maximum velocity of each joint</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td></td>
+            <td>effort</td>
+            <td>Maximum acceleration of each joint</td>
+        </tr>
+    </tbody>
+</table>
