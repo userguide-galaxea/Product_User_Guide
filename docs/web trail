@@ -1,99 +1,133 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>公司主页</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            z-index: 10;
-        }
-        .hero {
-            height: 100vh;
-            background: url('docs/page1.jpg') no-repeat center center/cover;
-            position: relative;
-        }
-        .arrow-down {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
-            background: url('docs/arrow_down.png') no-repeat center center/contain;
-            cursor: pointer;
-            z-index: 10;
-        }
-        .content {
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            background-color: #f0f0f0;
-        }
-        .company-info, .contact-info, .product-info {
-            margin: 20px 0;
-        }
-        .contact-info {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .product-info {
-            background-color: #eee;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .product-info a {
-            display: block;
-            margin: 10px 0;
-            color: #007bff;
-            text-decoration: none;
-        }
-        .product-info a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Galaxea AI</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>公司名称</h1>
+        <div class="header-content">
+            <h1>GALAXEA AI</h1>
+            <div class="menu">
+                <a href="GitHub: Let’s build from here">GitHub</a>
+            </div>
+        </div>
     </header>
-    <section class="hero">
-        <div class="arrow-down" onclick="scrollDown()"></div>
-    </section>
-    <section class="content" id="content">
-        <div class="company-info">
-            <h2>公司介绍</h2>
-            <p>这是公司介绍的描述。</p>
-        </div>
-        <div class="contact-info">
-            <h2>联系信息</h2>
-            <p>电话: 123-456-7890</p>
-            <p>邮箱: example@example.com</p>
-            <p>地址: 某地某街道</p>
-        </div>
-        <div class="product-info">
-            <h2>产品介绍</h2>
-            <a href="产品1.html">产品1</a>
-            <a href="产品2.html">产品2</a>
-            <a href="产品3.html">产品3</a>
-        </div>
-    </section>
-    <script>
-        function scrollDown() {
-            document.getElementById('content').scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+    <main>
+        <section class="company-section">
+            <h2>Our Company</h2>
+            <p>Galaxea AI is an artificial intelligence company that focuses on building "One Brain, Multiple Types" of embodied intelligent robots. We have completed the full-stack self-research from the body ontology, end-to-end algorithm, scene landing and solution.</p>
+            <p>The core team not only gathers world-class scientists in embodied intelligence perception and operation algorithms, but also possesses rich cutting-edge technology product landing ability and valuable experience in mass production of autonomous driving. Galaxea AI's vision is to create a new quality of robot productivity in the era of artificial intelligence.</p>
+        </section>
+        <section class="products-section">
+            <h2>Our Products</h2>
+            <div class="product">
+                <h3>A1 Robot Arm</h3>
+                <ul>
+                    <li><a href="#">Safety Guide</a></li>
+                    <li><a href="#">Hardware Guide</a></li>
+                    <li><a href="#">Software Guide</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <p>Email: products@galaxea.ai</p>
+            <p>Phone: +86</p>
+            <p>Address: Suzhou, China</p>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright © 2023 - 2024 Galaxea</p>
+        <p>Made with Material for MkDocs</p>
+    </footer>
 </body>
 </html>
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #2D2D2D;
+    padding: 10px 20px;
+    color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.menu a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.company-section, .products-section, .contact-section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 3px solid #E95420;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.product ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product ul li {
+    margin: 5px 0;
+}
+
+.product ul li a {
+    color: #2D7DFD;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #2D2D2D;
+    color: #FFF;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.quick-start {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #FFF;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.quick-start:hover {
+    background-color: #45a049;
+}
