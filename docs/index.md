@@ -27,7 +27,7 @@ hide:
             </section>
             <section class="contact-section">
                 <h2>Contact Us</h2>
-                <p>Email: info@galaxea.ai</p>
+                <p>Email: <a href="mailto:info@galaxea.ai">info@galaxea.ai</a></p>
             </section>
         </div>
     </main>
