@@ -40,14 +40,13 @@ main {
 }
 
 .company-section p {
-    max-width: 100%; /* 让文本部分宽度尽可能大 */
-    margin: 0 auto; /* 居中对齐 */
+    max-width: 50%; /* 让文本部分宽度尽可能大 */
+    margin: 0; /* 居中对齐 */
 }
 
 .row {
     display: flex;
     justify-content: space-between; /* 等距排列 */
-    gap: 20px; /* 元素之间的间距 */
     flex: 1 1 100%; /* 让这一行占满整行 */
 }
 
@@ -56,7 +55,7 @@ main {
     box-sizing: border-box;
 }
 
-h2 {
+#unique-page h2 {
     color: #333;
     border-bottom: 3px solid #E95420;
     display: inline-block;
@@ -69,7 +68,7 @@ h2 {
 }
 
 .product ul li {
-    margin: 5px 0;
+    margin: 0px 0;
 }
 
 .product ul li a {
@@ -77,13 +76,13 @@ h2 {
     text-decoration: none;
 }
 
-footer {
-    background-color: #2D2D2D;
-    color: #FFF;
-    text-align: center;
-    padding: 10px 20px;
-    font-size: 14px;
-}
+/*footer {*/
+/*    background-color: #2D2D2D;*/
+/*    color: #FFF;*/
+/*    text-align: center;*/
+/*    padding: 10px 20px;*/
+/*    font-size: 14px;*/
+/*}*/
 
 footer p {
     margin: 5px 0;

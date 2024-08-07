@@ -6,13 +6,7 @@ hide:
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galaxea AI</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<body id = unique-page>
     <main>
         <section class="company-section">
             <h2>Our Company</h2>
@@ -25,9 +19,9 @@ hide:
                 <div class="product">
                     <h3>A1 Robot Arm</h3>
                     <ul>
-                        <li><a href="#">Safety Guide</a></li>
-                        <li><a href="#">Hardware Guide</a></li>
-                        <li><a href="#">Software Guide</a></li>
+                        <li><a href="Guide/A1/Getting_Started">Safety Guide</a></li>
+                        <li><a href="Guide/A1/Hardware_Guide">Hardware Guide</a></li>
+                        <li><a href="Guide/A1/Software_Guide">Software Guide</a></li>
                     </ul>
                 </div>
             </section>
