@@ -27,9 +27,7 @@ hide:
             </section>
             <section class="contact-section">
                 <h2>Contact Us</h2>
-                <p>Email: xxxx@galaxea.ai</p>
-                <p>Phone: +86</p>
-                <p>Address: Suzhou, China</p>
+                <p>Email: <a href="mailto:info@galaxea.ai">info@galaxea.ai</a></p>
             </section>
         </div>
     </main>
