@@ -1,208 +1,105 @@
-/*.md-sidebar {*/
-/*    display: none;*/
-/*}*/
-
-/*.md-nav__inner {*/
-/*    display: none;*/
-/*}*/
-
-/*.md-nav {*/
-/*    margin-bottom: 20px;*/
-/*}*/
-
-/*.md-header-nav__title {*/
-/*    display: none !important;*/
-/*}*/
-
-/*.md-main {*/
-/*    margin: 0px;*/
-/*}*/
-
-
-
-/* 图片和按钮容器 */
-.image-button-container {
-    display: flex; /* 使用 Flexbox 布局 */
-    align-items: flex-end; /* 图片和按钮底部对齐 */
-    gap: 700px; /* 图片和按钮之间的间距 */
-    margin-bottom: 100px; /* 底部间距 */
-    margin-left: 50px;
-    margin-top: 0px;
-}
-
-/* 图片样式 */
-.standalone-image {
-    width: 200px; /* 自定义图片宽度 */
-    height: auto; /* 保持图片的原始宽高比 */
-}
-
-/* 按钮部分容器样式 */
-.button-container {
-    display: flex; /* 使用 Flexbox 布局 */
-    flex-direction: column; /* 文字和按钮垂直排列 */
-    align-items: flex-start; /* 文字和按钮左对齐 */
-    gap: 10px; /* 文字和按钮之间的间距 */
-    flex-wrap: nowrap; /* 防止按钮换行 */
-
-}
-
-/* 按钮包装容器样式 */
-.buttons-wrapper {
-    display: flex; /* 使用 Flexbox 布局 */
-    gap: 20px; /* 按钮之间的间距 */
-    flex-wrap: nowrap; /* 防止按钮换行 */
-}
-
-.md-content .md-button-quickstart{
-    white-space: nowrap;
-    flex: 0 1 500px;
-    margin-top: .5rem;
-    margin-right: .5rem;
-    color: #1F883D;
-}
-.md-content .md-typeset .md-button-quickstart{
-    border: .1rem solid;
-    border-radius: .1rem;
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 700;
-    padding: .625em 1.5em;
-    transition: color 125ms, background-color 125ms, border-color 125ms;
-}
-.md-content .md-button-guide{
-    white-space: nowrap;
-    flex: 0 1 500px;
-    margin-top: .5rem;
-    margin-right: .5rem;
-    color: #333333;
-}
-.md-content .md-typeset .md-button-guide{
-    border: .1rem solid;
-    border-radius: .1rem;
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 700;
-    padding: .625em 1.5em;
-    transition: color 125ms, background-color 125ms, border-color 125ms;
-}
-
-/* 文字容器样式 */
-.text-container {
-    text-align: left; /* 文字左对齐 */
-    margin-bottom: 10px; /* 文字与按钮之间的间距 */
-    max-width: 300px; /* 设置最大宽度 */
-}
-
-
-
-
-/* Top-level container styling */
-.top-hr {
-    width: 140%;
-    display: flex;
-    max-width: 61rem;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0 .2rem;
-    flex-wrap: wrap;
-}
-
-/* Feature item styling */
-.feature-item {
-    /*flex: 1 1 200px; !* Adjust the width as needed *!*/
-    /*border: 1px solid white; !* White border color *!*/
-    /*border-radius: 8px; !* Optional: for rounded corners *!*/
-    /*padding: 20px;*/
-    /*background-color: white; !* White background color *!*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*align-items: flex-start; !* Align items to the start *!*/
-    flex: 1 0 30%;
-    min-width: 0;
-}
-
-/* Feature item headings */
-.feature-item h2 {
-    color: #333;
-    font-weight: 300;
-    font-size: 25px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: normal;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-family: inherit;
-}
-
-/* Feature item links */
-.feature-item a {
-    display: block;
-    margin-bottom: 10px;
-    color: #00aaff; /* Link color */
-    text-decoration: none; /* Remove underline */
-}
-
-.feature-item a:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
-/* Adjust the alignment for the icon and title in h2 */
-/*.feature-item h2 span.twemoji {*/
-/*    margin-right: 10px;*/
-/*    display: inline-block;*/
-/*    vertical-align: middle; !* Align icon with the middle of the text *!*/
-/*}*/
-.feature-item h2 svg {
-    height: 30px;
-    float: left;
-    margin-right: 10px;
-    transform: translateY(10%);
-}
-
-.feature-item a {
-    font-size: 18px;
-    line-height: 1.8em;
-    font-weight: 400;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    color: rgb(19, 19, 236);
-    margin-left: 10px;
-    display: block;
-}
-
-
-
-
-
-html, body {
-    height: 100%;
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
-}
-
-.section {
-    height: 100vh; /* 确保每个 section 充满整个视口高度 */
-    width: 100vw; /* 确保每个 section 充满整个视口宽度 */
+    padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #2D2D2D;
+    padding: 10px 20px;
+    color: #FFF;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.menu a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* 列布局 */
+    gap: 20px; /* 各行之间的间距 */
+}
+
+.company-section {
+    flex: 1 1 100%; /* 让它占满整行 */
+    box-sizing: border-box;
+}
+
+.company-section p {
+    max-width: 100%; /* 让文本部分宽度尽可能大 */
+    margin: 0 auto; /* 居中对齐 */
+}
+
+.row {
+    display: flex;
+    justify-content: space-between; /* 等距排列 */
+    gap: 20px; /* 元素之间的间距 */
+    flex: 1 1 100%; /* 让这一行占满整行 */
+}
+
+.products-section, .contact-section {
+    flex: 1; /* 占据等量空间 */
+    box-sizing: border-box;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 3px solid #E95420;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.product ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product ul li {
+    margin: 5px 0;
+}
+
+.product ul li a {
+    color: #2D7DFD;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #2D2D2D;
+    color: #FFF;
     text-align: center;
-    color: white;
-    font-size: 2em;
+    padding: 10px 20px;
+    font-size: 14px;
 }
 
-.section1 {
-    background-color: #3498db; /* 蓝色 */
+footer p {
+    margin: 5px 0;
 }
 
-.section2 {
-    background-color: #e74c3c; /* 红色 */
+.quick-start {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #FFF;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
 }
 
-.section3 {
-    background-color: #2ecc71; /* 绿色 */
+.quick-start:hover {
+    background-color: #45a049;
 }
-
-
-
-
