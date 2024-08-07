@@ -3,6 +3,16 @@ hide:
   - navigation
   - toc
 ---
+
+<div class="section section1">
+  <p>Section 1</p>
+</div>
+
+<div class="section section2">
+  <p>Section 2</p>
+</div>
+
+
 # **Galaxea Docs**
 
 <!-- 图片和按钮容器 -->

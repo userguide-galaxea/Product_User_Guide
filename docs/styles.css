@@ -172,3 +172,37 @@
 }
 
 
+
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.section {
+    height: 100vh; /* 确保每个 section 充满整个视口高度 */
+    width: 100vw; /* 确保每个 section 充满整个视口宽度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+}
+
+.section1 {
+    background-color: #3498db; /* 蓝色 */
+}
+
+.section2 {
+    background-color: #e74c3c; /* 红色 */
+}
+
+.section3 {
+    background-color: #2ecc71; /* 绿色 */
+}
+
+
+
+
