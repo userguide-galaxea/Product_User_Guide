@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公司主页</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            z-index: 10;
+        }
+        .hero {
+            height: 100vh;
+            background: url('docs/page1.jpg') no-repeat center center/cover;
+            position: relative;
+        }
+        .arrow-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: url('docs/arrow_down.png') no-repeat center center/contain;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .company-info, .contact-info, .product-info {
+            margin: 20px 0;
+        }
+        .contact-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .product-info {
+            background-color: #eee;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .product-info a {
+            display: block;
+            margin: 10px 0;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .product-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>公司名称</h1>
+    </header>
+    <section class="hero">
+        <div class="arrow-down" onclick="scrollDown()"></div>
+    </section>
+    <section class="content" id="content">
+        <div class="company-info">
+            <h2>公司介绍</h2>
+            <p>这是公司介绍的描述。</p>
+        </div>
+        <div class="contact-info">
+            <h2>联系信息</h2>
+            <p>电话: 123-456-7890</p>
+            <p>邮箱: example@example.com</p>
+            <p>地址: 某地某街道</p>
+        </div>
+        <div class="product-info">
+            <h2>产品介绍</h2>
+            <a href="产品1.html">产品1</a>
+            <a href="产品2.html">产品2</a>
+            <a href="产品3.html">产品3</a>
+        </div>
+    </section>
+    <script>
+        function scrollDown() {
+            document.getElementById('content').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
