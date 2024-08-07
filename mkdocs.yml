@@ -31,7 +31,7 @@ extra:
           link: https://github.com/userguide-galaxea
 
 nav:
-  - Home: index.md
+  - Galaxea Docs: index.md
 #   - About us: about_us/about_us.md
   - Galaxea Robot:
 #       - About us: Introducing_Galaxea_Robot/introduction.md
