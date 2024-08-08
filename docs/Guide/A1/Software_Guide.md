@@ -156,87 +156,87 @@ and can be used to view the real-time status of each motor and the running statu
     <tbody>
         <tr style="background-color: white;">
             <td>0</td>
-            <td>ACU feedback: Disabled</td>
+            <td>Disabled</td>
         </tr>
         <tr style="background-color: white;">
             <td>1</td>
-            <td>ACU feedback: Enabled</td>
+            <td>Disabled</td>
         </tr>
         <tr style="background-color: white;">
             <td>2</td>
-            <td>ACU feedback: Motor Disconnected</td>
+            <td>Motor Disconnected</td>
         </tr>
         <tr style="background-color: white;">
             <td>3</td>
-            <td>ACU feedback: Position Jump</td>
+            <td>Position Jump</td>
         </tr>
         <tr style="background-color: white;">
             <td>4</td>
-            <td>ACU feedback: Continuous High Current</td>
+            <td>Continuous High Current</td>
         </tr>
         <tr style="background-color: white;">
             <td>5</td>
-            <td>ACU feedback: Excessive Torque</td>
+            <td>Excessive Torque</td>
         </tr>
         <tr style="background-color: white;">
             <td>6</td>
-            <td>ACU feedback: ECU -> ACU Timeout</td>
+            <td>ECU -> MCU Timeout</td>
         </tr>
         <tr style="background-color: white;">
             <td>7</td>
-            <td>ACU feedback: Position Limit Exceeded</td>
+            <td>Position Limit Exceeded</td>
         </tr>
         <tr style="background-color: white;">
             <td>8</td>
-            <td>ACU feedback: Speed Limit Exceeded</td>
+            <td>Speed Limit Exceeded</td>
         </tr>
         <tr style="background-color: white;">
             <td>9</td>
-            <td>ACU feedback: Torque Limit Exceeded</td>
+            <td>Torque Limit Exceeded</td>
         </tr>
         <tr style="background-color: white;">
             <td>10</td>
-            <td>ACU feedback: Overpressure</td>
+            <td>Overpressure</td>
         </tr>
         <tr style="background-color: white;">
             <td>11</td>
-            <td>ACU feedback: Low pressure</td>
+            <td>Low pressure</td>
         </tr>
         <tr style="background-color: white;">
             <td>12</td>
-            <td>ACU feedback: Overcurrent</td>
+            <td>Overcurrent</td>
         </tr>
         <tr style="background-color: white;">
             <td>13</td>
-            <td>ACU feedback: MOS Overtemperature</td>
+            <td>MOS Overtemperature</td>
         </tr>
         <tr style="background-color: white;">
             <td>14</td>
-            <td>ACU feedback: Motor Winding Overtemperature</td>
+            <td>Motor Winding Overtemperature</td>
         </tr>
         <tr style="background-color: white;">
             <td>15</td>
-            <td>ACU feedback: Communication loss</td>
+            <td>Communication loss</td>
         </tr>
         <tr style="background-color: white;">
             <td>16</td>
-            <td>ACU feedback: Overload</td>
+            <td>Overload</td>
         </tr>
         <tr style="background-color: white;">
             <td>17</td>
-            <td>Driver feedback: Serial Connection Disconnected (No Device File)</td>
+            <td>Serial Connection Disconnected (No Device File)</td>
         </tr>
         <tr style="background-color: white;">
             <td>18</td>
-            <td>Driver feedback: Device File Connected, No Messages</td>
+            <td>Device File Connected, No Messages</td>
         </tr>
         <tr style="background-color: white;">
             <td>19</td>
-            <td>Driver feedback: Serial Read/Write Failure</td>
+            <td>Serial Read/Write Failure</td>
         </tr>
         <tr style="background-color: white;">
             <td>20</td>
-            <td>Driver feedback: Feedback Reception Overflow</td>
+            <td>Feedback Reception Overflow</td>
         </tr>
     </tbody>
 </table>
@@ -264,9 +264,9 @@ roslaunch mobiman eeTrackerdemo.launch
 <param name="joint_states_topic" value="/joint_states" /> # the topic /joint_states  represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
 <param name="joint_command" value="/a1_robot_right/arm_joint_command" /> # the topic /a1_robot_right/arm_joint_command topic represents the channel for issuing commands to the motors.
 ```
-3. Publish messages to the end-effector movement topic, specifically named `/a1_mpc_target`. This operation is non-blocking, allowing for continuous message sending and enabling seamless movement of the robot arm's end-effector. However, it's critical that the target endpoint is not too far from the current position of the end-effector to avoid overstraining the mechanics or risking a collision.
+3. Publish messages to the end-effector movement topic, specifically named `/a1_ee_target`. This operation is non-blocking, allowing for continuous message sending and enabling seamless movement of the robot arm's end-effector. However, it's critical that the target endpoint is not too far from the current position of the end-effector to avoid overstraining the mechanics or risking a collision.
 ```shell
-rostopic pub /a1_mpc_target geometry_msgs/PoseStamped "{
+rostopic pub /a1_ee_target geometry_msgs/PoseStamped "{
 header: {
 seq: 0,
 stamp: {secs: 0, nsecs: 0},
@@ -284,7 +284,7 @@ import rospy
 from geometry_msgs.msg import PoseStamped
 def publish_pose():
 rospy.init_node('pose_stamped_publisher', anonymous=True)
-pose_pub = rospy.Publisher('/a1_mpc_target', PoseStamped, queue_size=10)
+pose_pub = rospy.Publisher('/a1_ee_target', PoseStamped, queue_size=10)
 # Create message with type PoseStamped
 pose_msg = PoseStamped()
 pose_msg.header.seq = 0
@@ -301,7 +301,7 @@ pose_msg.pose.orientation.w = 0.
 rospy.sleep(1)
 # Pulish message
 pose_pub.publish(pose_msg)
-rospy.loginfo("Published PoseStamped message to /a1_mpc_target")
+rospy.loginfo("Published PoseStamped message to /a1_ee_target")
 if __name__ == '__main__':
 try:
 publish_pose()
