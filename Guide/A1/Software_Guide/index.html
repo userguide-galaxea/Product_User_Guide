@@ -950,87 +950,87 @@ and can be used to view the real-time status of each motor and the running statu
     <tbody>
         <tr style="background-color: white;">
             <td>0</td>
-            <td>Disabled</td>
+            <td>ACU feedback: Disabled</td>
         </tr>
         <tr style="background-color: white;">
             <td>1</td>
-            <td>Disabled</td>
+            <td>ACU feedback: Enabled</td>
         </tr>
         <tr style="background-color: white;">
             <td>2</td>
-            <td>Motor Disconnected</td>
+            <td>ACU feedback: Motor Disconnected</td>
         </tr>
         <tr style="background-color: white;">
             <td>3</td>
-            <td>Position Jump</td>
+            <td>ACU feedback: Position Jump</td>
         </tr>
         <tr style="background-color: white;">
             <td>4</td>
-            <td>Continuous High Current</td>
+            <td>ACU feedback: Continuous High Current</td>
         </tr>
         <tr style="background-color: white;">
             <td>5</td>
-            <td>Excessive Torque</td>
+            <td>ACU feedback: Excessive Torque</td>
         </tr>
         <tr style="background-color: white;">
             <td>6</td>
-            <td>ECU -> MCU Timeout</td>
+            <td>ACU feedback: ECU -> ACU Timeout</td>
         </tr>
         <tr style="background-color: white;">
             <td>7</td>
-            <td>Position Limit Exceeded</td>
+            <td>ACU feedback: Position Limit Exceeded</td>
         </tr>
         <tr style="background-color: white;">
             <td>8</td>
-            <td>Speed Limit Exceeded</td>
+            <td>ACU feedback: Speed Limit Exceeded</td>
         </tr>
         <tr style="background-color: white;">
             <td>9</td>
-            <td>Torque Limit Exceeded</td>
+            <td>ACU feedback: Torque Limit Exceeded</td>
         </tr>
         <tr style="background-color: white;">
             <td>10</td>
-            <td>Overpressure</td>
+            <td>ACU feedback: Overpressure</td>
         </tr>
         <tr style="background-color: white;">
             <td>11</td>
-            <td>Low pressure</td>
+            <td>ACU feedback: Low pressure</td>
         </tr>
         <tr style="background-color: white;">
             <td>12</td>
-            <td>Overcurrent</td>
+            <td>ACU feedback: Overcurrent</td>
         </tr>
         <tr style="background-color: white;">
             <td>13</td>
-            <td>MOS Overtemperature</td>
+            <td>ACU feedback: MOS Overtemperature</td>
         </tr>
         <tr style="background-color: white;">
             <td>14</td>
-            <td>Motor Winding Overtemperature</td>
+            <td>ACU feedback: Motor Winding Overtemperature</td>
         </tr>
         <tr style="background-color: white;">
             <td>15</td>
-            <td>Communication loss</td>
+            <td>ACU feedback: Communication loss</td>
         </tr>
         <tr style="background-color: white;">
             <td>16</td>
-            <td>Overload</td>
+            <td>ACU feedback: Overload</td>
         </tr>
         <tr style="background-color: white;">
             <td>17</td>
-            <td>Serial Connection Disconnected (No Device File)</td>
+            <td>Driver feedback: Serial Connection Disconnected (No Device File)</td>
         </tr>
         <tr style="background-color: white;">
             <td>18</td>
-            <td>Device File Connected, No Messages</td>
+            <td>Driver feedback: Device File Connected, No Messages</td>
         </tr>
         <tr style="background-color: white;">
             <td>19</td>
-            <td>Serial Read/Write Failure</td>
+            <td>Driver feedback: Serial Read/Write Failure</td>
         </tr>
         <tr style="background-color: white;">
             <td>20</td>
-            <td>Feedback Reception Overflow</td>
+            <td>Driver feedback: Feedback Reception Overflow</td>
         </tr>
     </tbody>
 </table>
@@ -1059,8 +1059,8 @@ roslaunch<span class="w"> </span>mobiman<span class="w"> </span>eeTrackerdemo.la
 <div class="highlight"><pre><span></span><code>&lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_states_topic&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/joint_states&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1"># the topic /joint_states  represents the channel for acquiring simulated values, specifically the states of the robot&#39;s joints, within a simulation environment.</span>
 &lt;param<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;joint_command&quot;</span><span class="w"> </span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;/a1_robot_right/arm_joint_command&quot;</span><span class="w"> </span>/&gt;<span class="w"> </span><span class="c1"># the topic /a1_robot_right/arm_joint_command topic represents the channel for issuing commands to the motors.</span>
 </code></pre></div></li>
-<li>Publish messages to the end-effector movement topic, specifically named <code>/a1_ee_target</code>. This operation is non-blocking, allowing for continuous message sending and enabling seamless movement of the robot arm's end-effector. However, it's critical that the target endpoint is not too far from the current position of the end-effector to avoid overstraining the mechanics or risking a collision.
-<div class="highlight"><pre><span></span><code>rostopic<span class="w"> </span>pub<span class="w"> </span>/a1_ee_target<span class="w"> </span>geometry_msgs/PoseStamped<span class="w"> </span><span class="s2">&quot;{</span>
+<li>Publish messages to the end-effector movement topic, specifically named <code>/a1_mpc_target</code>. This operation is non-blocking, allowing for continuous message sending and enabling seamless movement of the robot arm's end-effector. However, it's critical that the target endpoint is not too far from the current position of the end-effector to avoid overstraining the mechanics or risking a collision.
+<div class="highlight"><pre><span></span><code>rostopic<span class="w"> </span>pub<span class="w"> </span>/a1_mpc_target<span class="w"> </span>geometry_msgs/PoseStamped<span class="w"> </span><span class="s2">&quot;{</span>
 <span class="s2">header: {</span>
 <span class="s2">seq: 0,</span>
 <span class="s2">stamp: {secs: 0, nsecs: 0},</span>
@@ -1077,7 +1077,7 @@ roslaunch<span class="w"> </span>mobiman<span class="w"> </span>eeTrackerdemo.la
 <span class="kn">from</span> <span class="nn">geometry_msgs.msg</span> <span class="kn">import</span> <span class="n">PoseStamped</span>
 <span class="k">def</span> <span class="nf">publish_pose</span><span class="p">():</span>
 <span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s1">&#39;pose_stamped_publisher&#39;</span><span class="p">,</span> <span class="n">anonymous</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">pose_pub</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Publisher</span><span class="p">(</span><span class="s1">&#39;/a1_ee_target&#39;</span><span class="p">,</span> <span class="n">PoseStamped</span><span class="p">,</span> <span class="n">queue_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">pose_pub</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Publisher</span><span class="p">(</span><span class="s1">&#39;/a1_mpc_target&#39;</span><span class="p">,</span> <span class="n">PoseStamped</span><span class="p">,</span> <span class="n">queue_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="c1"># Create message with type PoseStamped</span>
 <span class="n">pose_msg</span> <span class="o">=</span> <span class="n">PoseStamped</span><span class="p">()</span>
 <span class="n">pose_msg</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">seq</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1094,7 +1094,7 @@ roslaunch<span class="w"> </span>mobiman<span class="w"> </span>eeTrackerdemo.la
 <span class="n">rospy</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="c1"># Pulish message</span>
 <span class="n">pose_pub</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">pose_msg</span><span class="p">)</span>
-<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;Published PoseStamped message to /a1_ee_target&quot;</span><span class="p">)</span>
+<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;Published PoseStamped message to /a1_mpc_target&quot;</span><span class="p">)</span>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
 <span class="k">try</span><span class="p">:</span>
 <span class="n">publish_pose</span><span class="p">()</span>
