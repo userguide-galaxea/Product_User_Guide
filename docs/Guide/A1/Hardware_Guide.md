@@ -1,4 +1,4 @@
-# A1 Hardware Guide
+# Hardware Guide
 This manual provides engineering data and user guidance for working with the Galaxea Robot A1 hardware.
 
 ## Safety Guide
