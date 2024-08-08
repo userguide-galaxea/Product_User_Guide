@@ -480,18 +480,26 @@
 <html lang="en">
 <head>
     <style>
-        .explore-button {
+        .discover-button {
             display: inline-block;
-            background-color: green;
-            color: white;
+            background-color: white;
+            color: orange;
+            border: 2px solid orange;
             padding: 10px 20px;
             text-align: center;
             text-decoration: none;
             border-radius: 5px;
             position: absolute;
-            right: 20px;
+            right: -150px; /* 调整这个值以便按钮位于正确位置 */
             top: 20px;
+            transition: background-color 0.3s, color 0.3s;
         }
+
+        .discover-button:hover {
+            background-color: orange;
+            color: white;
+        }
+
         .products-section {
             position: relative;
         }
