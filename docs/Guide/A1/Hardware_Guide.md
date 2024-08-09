@@ -159,11 +159,42 @@ The joint performance parameters detail the operating range, rated torque, and p
     </tbody>
 </table>
 
-![A1_working_space_with_gripper](assets/A1_working_space_with_gripper.png)
+![A1_working_space_with_gripper](assets/A1_working_space.png)
 
 - View 1: Shows the working radius and rotation angle of Joint 1, with a rotation radius of 780 mm and a maximum rotation angle of 330 degrees.
 - View 2: Displays the rotation ranges for Joint 2 and Joint 3, with a maximum rotation angle of 180 degrees for Joint 2 and 190 degrees for Joint 3.
-- View 3: Illustrates the rotation angles of Joints 4, 5, and 6, as well as the end position of the robot arm. The maximum rotation angle for Joint 4 and 6 is 330 degrees, while Joint 5 has a maximum rotation angle of 190 degrees.
+- View 3: Illustrates the rotation angles of Joints 4, 5, and 6, as well as the end position of the robot arm. The maximum rotation angle for Joint 4 and 6 is 330 degrees, while Joint 5 has a maximum rotation angle of 190 degrees. 
+
+
+### Link
+A1 robot arm consists of two Acrylonitrile Butadiene Styrene (ABS) main links mounted on a base, interconnected by six joints. Each joint is equipped with planetary gear motors that provide independent variable-speed operation, delivering high precision and torque. This design allows the arm to maneuver in any direction commanded by the controller.
+![A1_size](assets/A1_size.jpg)
+
+
+The arm is designed to have:
+
+<table style="border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white;text-align: left;">
+            <th>Item</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;text-align: left;">
+            <td>Length</td>
+            <td>Deployed 775 mm; Folded 449 mm </td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Height</td>
+            <td>Deployed 237 mm; Folded 277 mm </td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>Width</td>
+            <td>128 mm</td>
+        </tr>
+    </tbody>
+</table>
 
 ### Base
 A1 features two ports on the rear of the base for development and charging.
@@ -201,40 +232,7 @@ A1 features two ports on the rear of the base for development and charging.
             <td>10 m/s</td>
         </tr>
     </tbody>
-</table>  
-
-
-### Links
-A1 robot arm consists of two Acrylonitrile Butadiene Styrene (ABS) main links mounted on a base, interconnected by six joints. Each joint is equipped with planetary gear motors that provide independent variable-speed operation, delivering high precision and torque. This design allows the arm to maneuver in any direction commanded by the controller.
-![A1_size](assets/A1_size.jpg)
-
-
-The arm is designed to have:
-
-<table style="border-collapse: collapse;">
-    <thead>
-        <tr style="background-color: black; color: white;text-align: left;">
-            <th>Item</th>
-            <th>Notes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr style="background-color: white;text-align: left;">
-            <td>Length</td>
-            <td>Deployed 775 mm; Folded 449 mm </td>
-        </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Height</td>
-            <td>Deployed 237 mm; Folded 277 mm </td>
-        </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Width</td>
-            <td>128 mm</td>
-        </tr>
-    </tbody>
-</table>
-
-
+</table> 
 
 
 ### End-Effector
