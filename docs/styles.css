@@ -1,3 +1,77 @@
+/* 图片和按钮容器 */
+.image-button-container {
+    display: flex; /* 使用 Flexbox 布局 */
+    align-items: flex-end; /* 图片和按钮底部对齐 */
+    gap: 600px; /* 图片和按钮之间的间距 */
+    margin-bottom: 100px; /* 底部间距 */
+    margin-left: 50px;
+    margin-top: 0px;
+}
+
+/* 图片样式 */
+.standalone-image {
+    width: 200px; /* 自定义图片宽度 */
+    height: auto; /* 保持图片的原始宽高比 */
+}
+
+/* 按钮部分容器样式 */
+.button-container {
+    display: flex; /* 使用 Flexbox 布局 */
+    flex-direction: column; /* 文字和按钮垂直排列 */
+    align-items: flex-start; /* 文字和按钮左对齐 */
+    gap: 10px; /* 文字和按钮之间的间距 */
+    flex-wrap: nowrap; /* 防止按钮换行 */
+
+}
+
+/* 按钮包装容器样式 */
+.buttons-wrapper {
+    display: flex; /* 使用 Flexbox 布局 */
+    gap: 20px; /* 按钮之间的间距 */
+    flex-wrap: nowrap; /* 防止按钮换行 */
+}
+
+.md-content .md-button-quickstart{
+    white-space: nowrap;
+    flex: 0 1 500px;
+    margin-top: .5rem;
+    margin-right: .5rem;
+    color: #1F883D;
+}
+.md-content .md-typeset .md-button-quickstart{
+    border: .1rem solid;
+    border-radius: .1rem;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    padding: .625em 1.5em;
+    transition: color 125ms, background-color 125ms, border-color 125ms;
+}
+.md-content .md-button-guide{
+    white-space: nowrap;
+    flex: 0 1 500px;
+    margin-top: .5rem;
+    margin-right: .5rem;
+    color: #333333;
+}
+.md-content .md-typeset .md-button-guide{
+    border: .1rem solid;
+    border-radius: .1rem;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    padding: .625em 1.5em;
+    transition: color 125ms, background-color 125ms, border-color 125ms;
+}
+
+/* 文字容器样式 */
+.text-container {
+    text-align: left; /* 文字左对齐 */
+    margin-bottom: 10px; /* 文字与按钮之间的间距 */
+    max-width: 300px; /* 设置最大宽度 */
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -50,8 +124,15 @@ main {
     flex: 1 1 100%; /* 让这一行占满整行 */
 }
 
-.products-section, .contact-section {
+.products-section {
     flex: 1; /* 占据等量空间 */
+    margin-right: 600px;
+    box-sizing: border-box;
+}
+
+.contact-section {
+    flex: 1; /* 占据等量空间 */
+    /*margin-right: 400px;*/
     box-sizing: border-box;
 }
 
