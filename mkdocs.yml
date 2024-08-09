@@ -1,6 +1,6 @@
 site_name: Galaxea
 site_url: https://userguide-galaxea.github.io/userguide-galaxea/
-repo_url: https://github.com/userguide-galaxea/userguide-galaxea
+repo_url: https://github.com/userguide-galaxea/A1_SDK
 site_description: "Galaxea"
 copyright: Copyright &copy; 2023 - 2024 Galaxea
 site_author: Galaxea Inc
@@ -8,6 +8,9 @@ site_author: Galaxea Inc
 theme:
     name: material
     logo: assets/logo.png
+    favicon: assets/logo.png
+    icon:
+         repo: fontawesome/brands/github
     palette:
         primary: black
     font:
