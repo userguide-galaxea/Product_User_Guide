@@ -8,6 +8,27 @@ We developed an efficient driver for converting serial signals through the slave
 ## Installation
 This SDK does not require recompilation. Please refer to the Developing and Operating Tutorials for direct usage instructions.
 
+## First Move
+```shell
+cd release/install
+source setup.bash
+roslaunch mobiman eeTrackerdemo.launch
+```
+```shell
+rostopic pub /a1_ee_target geometry_msgs/PoseStamped "{
+header: {
+seq: 0,
+stamp: {secs: 0, nsecs: 0},
+frame_id: 'world'
+},
+pose: {
+position: {x: 0.08, y: 0.0, z: 0.5},
+orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+}
+}"
+```
+
+
 ## Developing and Operating Tutorials
 ### A1 Driver Kit
 1. For the first use, after confirming the power supply and USB connection, run the following command to modify the read and write permissions of the serial port files:
