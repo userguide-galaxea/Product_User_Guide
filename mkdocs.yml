@@ -46,10 +46,10 @@ nav:
       - Getting Started: Guide/A1/Getting_Started.md
       - Hardware Guide: Guide/A1/Hardware_Guide.md
       - Software Guide: Guide/A1/Software_Guide.md
-  - Galaxea R1 User Guide:
-      - Getting Started: Guide/R1/Getting_Started.md
-      - Hardware Guide: Guide/R1/Hardware_Guide.md
-      - Software Guide: Guide/R1/Software_Guide.md
+#   - Galaxea R1 User Guide:
+#       - Getting Started: Guide/R1/Getting_Started.md
+#       - Hardware Guide: Guide/R1/Hardware_Guide.md
+#       - Software Guide: Guide/R1/Software_Guide.md
 #   - Galaxea X1 Guide:
 #       - Getting Started: Guide/X1/Getting_Started.md
 #       - X1 Hardware Guide: Guide/X1/A1_Hardware_Guide.md
