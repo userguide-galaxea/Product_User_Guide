@@ -3,7 +3,7 @@ name: Deploy MkDocs site to GitHub Pages
 on:
   push:
     branches:
-      - '**'  # 监听所有分支的推送
+      - 'galaxea/main'  # 监听所有分支的推送
 
 jobs:
   build:
