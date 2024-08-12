@@ -2,87 +2,117 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/A1/Getting_Started/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/A1/Hardware_Guide/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/A1/Software_Guide/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/R1/GettingStarted_Before/</loc>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/R1/GettingStarted_Connecting/</loc>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/R1/Getting_Started/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/R1/Hardware_Guide/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/R1/Software_Guide/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/R1/Software_Guide_Interface/</loc>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/R1/Software_Guide_firstmove/</loc>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/R1/Software_Guide_overall/</loc>
+         <lastmod>2024-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/R1/assets/R1%20Getting%20Started/</loc>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/X1/Getting_Started/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/X1/Software_Guide/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Guide/X1/X1_Hardware_Guide/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Introducing_Galaxea_Robot/introduction/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Introducing_Galaxea_Robot/product_info/A1/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Introducing_Galaxea_Robot/product_info/A1_accessory_G1/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Introducing_Galaxea_Robot/product_info/Dexterous_hand/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Introducing_Galaxea_Robot/product_info/R1/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/Introducing_Galaxea_Robot/product_info/X1/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://userguide-galaxea.github.io/userguide-galaxea/about_us/about_us/</loc>
-         <lastmod>2024-08-10</lastmod>
+         <lastmod>2024-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
