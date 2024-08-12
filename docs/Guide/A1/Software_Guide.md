@@ -1,5 +1,5 @@
 # Software Guide
-We developed an efficient driver for converting serial signals through the slave computer, which has been released as a ROS (Robot Operating System) topic. This driver not only enables control of the slave computer but also retrieves feedback information and error codes from the device, facilitating two-way communication and real-time control. The tutorials will guide you on how to use this program to develop and operate A1.
+We developed an efficient driver for converting serial signals through the slave computer, which has been released as a ROS (Robot Operating System) topic. This driver not only enables control of the slave computer but also retrieves feedback information and error codes from the device, facilitating two-way communication and real-time control. The tutorials will guide you on how to use this program to develop and operate Galaxea A1.
 
 ## Software Dependency
 1. Ubuntu 20.04 LTS
@@ -75,92 +75,77 @@ The interface is a ROS package designed for manipulator control and status feedb
     </tbody>
 </table>
 
-<table style="border-collapse: collapse;">
-    <thead>
-        <tr style="background-color: black; color: white;text-align: left">
-            <th>Topic Name</th>
-            <th>Field</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr style="background-color: white;">
-            <td>/joint_states</td>
-            <td>Header</td>
-            <td>Standard header</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>name</td>
-            <td>Name of each arm joint</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>position</td>
-            <td>Position of each arm joint</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>velocity</td>
-            <td>Velocity of each arm joint</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>effort</td>
-            <td>Torque of each arm joint</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td>/arm_status</td>
-            <td>header</td>
-            <td>Standard header</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>status.name</td>
-            <td>Name of each status</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>status.motor_errors</td>
-            <td>Errors of each status</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td>/arm_joint_command</td>
-            <td>header</td>
-            <td>Standard header</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>p_des</td>
-            <td>Position command of robot arm</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>v_des</td>
-            <td>Velocity command of robot arm</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>t_ff</td>
-            <td>Torque command of robot arm</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>kp</td>
-            <td>Proportion coefficient of position</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>kd</td>
-            <td>Differential coefficient of position</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>mode</td>
-            <td>Control mode</td>
-        </tr>
-    </tbody>
+<table style="border-collapse: collapse; width: 100%;">
+    <tr style="background-color: black; color: white; text-align: left;">
+        <th style="padding: 10px; border: 1px solid #ddd;">Topic Name</th>
+        <th style="padding: 10px; border: 1px solid #ddd;">Field</th>
+        <th style="padding: 10px; border: 1px solid #ddd;">Description</th>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;" rowspan="5">/joint_states</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Header</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Standard header</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">name</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Name of each arm joint</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">position</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Position of each arm joint</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">velocity</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Velocity of each arm joint</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">effort</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Torque of each arm joint</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;" rowspan="3">/arm_status</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">header</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Standard header</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">status.name</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Name of each status</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">status.motor_errors</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Errors of each status</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;" rowspan="7">/arm_joint_command</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">header</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Standard header</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">p_des</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Position command of robot arm</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">v_des</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Velocity command of robot arm</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">t_ff</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Torque command of robot arm</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">kp</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Proportion coefficient of position</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">kd</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Differential coefficient of position</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">mode</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Control mode</td>
+    </tr>
 </table>
+
 
 #### Diagnostic Trouble Code
 
@@ -264,17 +249,17 @@ and can be used to view the real-time status of each motor and the running statu
 
 ### Joint and End-Effector Movement Control
 
-We provide joint and end-effector movement control interfaces for A1 robot arm, enabling efficient control through the ROS (Robot Operating System) framework. Before performing end-effector or joint movement, you must first activate the `signal_arm` interface; detailed operation instructions can be found in the  `signal_arm` documentation. This project includes several primary functions:
+We provide joint and end-effector movement control interfaces for Galaxea A1, enabling efficient control through the ROS (Robot Operating System) framework. Before performing end-effector or joint movement, you must first activate the `signal_arm` interface; detailed operation instructions can be found in the  `signal_arm` documentation. This project includes several primary functions:
 
-- **End-Effector Pose Movement**: Allows users to control the position and orientation of the robot arm's end-effector by publishing target pose messages. This function is suitable for applications requiring precise positioning.
+- **End-Effector Pose Movement**: Allows users to control the position and orientation of the Galaxea A1's end-effector by publishing target pose messages. This function is suitable for applications requiring precise positioning.
 
-- **End-Effector Trajectory Movement**: Facilitates the movement of the robot arm's end-effector along a specified trajectory by publishing a series of pose messages. This function is ideal for complex path planning and execution.
+- **End-Effector Trajectory Movement**: Facilitates the movement of Galaxea A1's end-effector along a specified trajectory by publishing a series of pose messages. This function is ideal for complex path planning and execution.
 
 - **Joint Angle Movement**: Provides a joint-level control interface where users can set the target positions for each individual joint, enabling coordinated whole-arm movements.
 
 #### End-Effector Pose Movement
 
-1. First, initiate the end-effector pose movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.
+1. First, initiate the end-effector pose movement script. This will launch an RViz visualization for Galaxea A1, with the default joint positions set to zero.
 ```shell
 cd release/install
 source setup.bash
@@ -340,7 +325,7 @@ pass
 
 #### End-Effector Trajectory Movement
 
-1. Firstly, initiate the end-effector trajectory movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.
+1. Firstly, initiate the end-effector trajectory movement script. This will launch an RViz visualization for Galaxea A1, with the default joint positions set to zero.
 ```shell
 cd release/install
 source setup.bash
@@ -421,62 +406,52 @@ int main(int argc, char** argv) {
 </table>
 
 
-<table style="border-collapse: collapse;text-align:left">
-    <thead>
-        <tr style="background-color: black; color: white;">
-            <th>Topic Name</th>
-            <th>Field</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr style="background-color: white;">
-            <td>/a1_ee_target</td>
-            <td>header</td>
-            <td>Standard Header</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>pose.position.x</td>
-            <td>Shift in x direction</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>pose.position.y</td>
-            <td>Shift in y direction</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>pose.position.z</td>
-            <td>Shift in z direction</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>pose.orientation.x</td>
-            <td>Orientation quaternion</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>pose.orientation.y</td>
-            <td>Orientation quaternion</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>pose.orientation.z</td>
-            <td>Orientation quaternion</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>pose.orientation.w</td>
-            <td>Orientation quaternion</td>
-        </tr>
-    </tbody>
+<table style="border-collapse: collapse; text-align: left; width: 100%;">
+    <tr style="background-color: black; color: white;">
+        <th style="padding: 10px; border: 1px solid #ddd;">Topic Name</th>
+        <th style="padding: 10px; border: 1px solid #ddd;">Field</th>
+        <th style="padding: 10px; border: 1px solid #ddd;">Description</th>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;" rowspan="8">/a1_ee_target</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">header</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Standard Header</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">pose.position.x</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Shift in x direction</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">pose.position.y</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Shift in y direction</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">pose.position.z</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Shift in z direction</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">pose.orientation.x</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Orientation quaternion</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">pose.orientation.y</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Orientation quaternion</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">pose.orientation.z</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Orientation quaternion</td>
+    </tr>
+    <tr style="background-color: white;">
+        <td style="padding: 10px; border: 1px solid #ddd;">pose.orientation.w</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Orientation quaternion</td>
+    </tr>
 </table>
+
 
 
 #### Joint Angle Movement
 
-1. Firstly, initiate the joint angle movement script. This will launch an RViz visualization for A1 robot arm, with the default joint positions set to zero.
+1. Firstly, initiate the joint angle movement script. This will launch an RViz visualization for Galaxea A1, with the default joint positions set to zero.
 ```shell
 cd release/install
 source setup.bash
@@ -528,7 +503,7 @@ if __name__ == '__main__':
 
 ##### Joint Position Movement Interface
 
-The `/joint_move` is a ROS package for single-joint control of A1 arms. This package allows you to specify the movement of each joint from its current position to a target position, with configurable maximum speed and acceleration. If these parameters are not specified, default values will be used. The default maximum speed is 20 rad/s, and the default maximum acceleration is 20 rad/s². The topic names and fields of the movement interface are detailed in the following table.
+The `/joint_move` is a ROS package for single-joint control of Galaxea A1. This package allows you to specify the movement of each joint from its current position to a target position, with configurable maximum speed and acceleration. If these parameters are not specified, default values will be used. The default maximum speed is 20 rad/s, and the default maximum acceleration is 20 rad/s². The topic names and fields of the movement interface are detailed in the following table.
 
 <table style="border-collapse: collapse;text-align:left">
     <thead>
@@ -548,39 +523,28 @@ The `/joint_move` is a ROS package for single-joint control of A1 arms. This pac
 </table>
 
 
-<table style="border-collapse: collapse;text-align:left">
-    <thead>
-        <tr style="background-color: black; color: white;">
-            <th>Topic Name</th>
-            <th>Field</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr style="background-color: white;">
-            <td>/arm_joint_target_position</td>
-            <td>header</td>
-            <td>Standard Header</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>name</td>
-            <td>Name of each joint </td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>position</td>
-            <td>Target position of each joint</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>velocity</td>
-            <td>Maximum velocity of each joint</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td></td>
-            <td>effort</td>
-            <td>Maximum acceleration of each joint</td>
-        </tr>
-    </tbody>
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Topic Name</th>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Field</th>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Description</th>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;" rowspan="4">/arm_joint_target_position</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">header</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Standard Header</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">name</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Name of each joint</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">position</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Target position of each joint</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">velocity</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Maximum velocity of each joint</td>
+  </tr>
 </table>
+

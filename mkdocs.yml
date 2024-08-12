@@ -1,4 +1,4 @@
-site_name: Galaxea
+site_name: GALAXEA
 site_url: https://userguide-galaxea.github.io/userguide-galaxea/
 repo_url: https://github.com/userguide-galaxea
 site_description: "Galaxea"
@@ -15,15 +15,20 @@ theme:
         primary: black
     font:
         code: Roboto Mono
-plugins:
-    - search:
-        enabled: true
-features:
-    - search.highlight
-    - search.inline
-    - search.excerpt
-    - navigation.expand
-    - navigation.instant
+    plugins:
+        - search:
+            enabled: true
+        - navigation:
+            enable: true
+    features:
+        - search.highlight
+        - search.inline
+        - search.excerpt
+        - navigation.expand
+        - navigation.top
+        - toc.follow
+        - navigation.tracking
+        - navigation.path
 extra:
     mathjax:
         enable: true
@@ -34,7 +39,7 @@ extra:
           link: https://github.com/userguide-galaxea
 
 nav:
-  - Galaxea Docs: index.md
+  - GUIDE: index.md
 #   - About us: about_us/about_us.md
   - Galaxea Robot:
 #       - About us: Introducing_Galaxea_Robot/introduction.md
@@ -46,10 +51,15 @@ nav:
       - Getting Started: Guide/A1/Getting_Started.md
       - Hardware Guide: Guide/A1/Hardware_Guide.md
       - Software Guide: Guide/A1/Software_Guide.md
-#   - Galaxea R1 User Guide:
-#       - Getting Started: Guide/R1/Getting_Started.md
-#       - Hardware Guide: Guide/R1/Hardware_Guide.md
-#       - Software Guide: Guide/R1/Software_Guide.md
+  - Galaxea R1 User Guide:
+      - Getting Started:
+          - Before You Begin: Guide/R1/GettingStarted_Before.md
+          - Connecting and Installing: Guide/R1/GettingStarted_Connecting.md
+      - Hardware Guide: Guide/R1/Hardware_Guide.md
+      - Software Guide:
+        - Software Overview: Guide/R1/Software_Guide_firstmove.md
+        - Software Interface: Guide/R1/Software_Guide_Interface.md
+
 #   - Galaxea X1 Guide:
 #       - Getting Started: Guide/X1/Getting_Started.md
 #       - X1 Hardware Guide: Guide/X1/A1_Hardware_Guide.md
@@ -60,6 +70,7 @@ extra_css:
   - Introducing_Galaxea_Robot/detail_intro.css
 
 markdown_extensions:
+  - toc
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.arithmatex:
