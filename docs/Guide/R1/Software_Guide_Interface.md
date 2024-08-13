@@ -498,7 +498,7 @@ The following are detailed descriptions of each topic and its related message ty
   </tr>
   <tr>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">/left_arm/arm_target_pose/right_arm/arm_target_pose</td>
-    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Target positions of each robotic arm end joint</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Target positions of the end of the robot arm</td>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
   </tr>
 </table>
@@ -613,7 +613,9 @@ The following are detailed descriptions of each topic and its related message ty
 
 ### Torso Control Interface
 The coordinate system is defined as follows:
+
 - The coordinate axes represent the end of the torso.
+
 - The red, green, and blue lines represent the X, Y, and Z axes, respectively.
 
 ![R1_torso_control_interface](assets/R1_torso_control_interface.png)
@@ -735,12 +737,12 @@ This pose is subject to certain constraints, as described below.
 
 Before performing zero-point calibration, please first disable the auto-start torso control algorithm.
 
-- ```Bash
+ ```Bash
     ps aux | grep torso_control 
     ### Find the Torso Control Node PID First
     kill -9 (PID)
     ### PID is the found PID
-    ```
+ ```
 
 ### Adjust Single-joint Position Control Interface
 
