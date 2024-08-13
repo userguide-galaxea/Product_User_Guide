@@ -1,4 +1,4 @@
-> Congratulations on becoming the proud owner of a Galaxea robot! We are thrilled to extend a warm welcome to the Galaxea Developer Community. This specially curated guide is designed to introduce beginners to the unique appeal and impressive functionalities of Galaxea robots. Our goal is to help you quickly get started with Galaxea robotics and empower you to explore the full range of possibilities that await you.
+> Congratulations on becoming the proud owner of a Galaxea Robot! We are thrilled to extend a warm welcome to the Galaxea Developer Community. This specially curated guide is designed to introduce beginners to the unique appeal and impressive functionalities of Galaxea Robot. Our goal is to help you quickly get started with us and empower you to explore the full range of possibilities that await you.
 # Getting Started
 In this series of step-by-step Galaxea A1 Getting Started tutorials, we will not only lay a solid foundation for using Galaxea A1 but also guide you through the mechanics and performance of each component. Together, we will explore and perform a series of exciting demonstrations to unlock Galaxea A1's amazing advanced features.
 
@@ -72,12 +72,10 @@ The installation process of Galaxea A1 includes securing the arm to the mounting
 Please select the appropriate installation platform and fixing method according to the operating environment and usage requirements of the arm to ensure its stability and safety during operation.
 
 ### Powering Up
-Before you begin, make sure all packing materials have been removed from the robot and that the area around the robot is free of furniture and obstacles.
-
-To power up Galaxea A1, use the provided power adapter and cable, and plug the power cable into the charging port, ensuring the voltage is 48V.
+To power up, with the provided power adapter and cable, plug one end of the power adapter cable into the power port on the base of the robot arm, and connect the other end to the power source, ensuring the voltage is 48V.
 
 ### Powering Off
-Once the robotic arm and control system have completely stopped, you can just unplug the power cable to turn off Galaxea A1.
+Once the robot arm and control system have completely stopped, you can just unplug the power cable to turn off Galaxea A1.
 
 In the current version of Galaxea A1, the motor does not have a brake, so cutting off the power may cause the robotic arm to drop suddenly. We will continue to improve the product to address this issue.
 

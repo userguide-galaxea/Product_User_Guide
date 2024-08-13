@@ -1,5 +1,5 @@
 # Galaxea A1 Hardware Guide
-This manual provides engineering data and user guidance for working with the Galaxea A1 hardware.
+This manual provides engineering data and user guidance for working with Galaxea A1 hardware.
 
 ## Safety Guide
 <div>
@@ -148,7 +148,8 @@ The joint performance parameters detail the operating range, rated torque, and p
 
 
 ### Link
-Galaxea A1 robot arm consists of two Acrylonitrile Butadiene Styrene (ABS) main links mounted on a base, interconnected by six joints. Each joint is equipped with planetary gear motors that provide independent variable-speed operation, delivering high precision and torque. This design allows the arm to maneuver in any direction commanded by the controller.
+Galaxea A1 consists of two main links made from Acrylonitrile Butadiene Styrene (ABS), which is lightweight, rigid and durable. Each joint is equipped with planetary gear motors, enabling independent variable-speed operation with high precision and torque. This design allows the arm to maneuver in any direction commanded by the controller.
+In the current version, the motor does not have a brake, so cutting off the power may cause the robot arm to drop suddenly. We will continue to improve the product to address this issue.
 ![A1_size](../A1/assets/A1_size_1.jpg)
 
 
@@ -164,11 +165,11 @@ The arm is designed to have:
     <tbody>
         <tr style="background-color: white;text-align: left;">
             <td>Length</td>
-            <td>Deployed 775 mm; Folded 449 mm </td>
+            <td>Deployed 775 mm <br/> Folded 449 mm </td>
         </tr>
         <tr style="background-color: white;text-align: left;">
             <td>Height</td>
-            <td>Deployed 237 mm; Folded 277 mm </td>
+            <td>Deployed 237 mm <br/> Folded 277 mm </td>
         </tr>
         <tr style="background-color: white;text-align: left;">
             <td>Width</td>
@@ -192,7 +193,7 @@ Galaxea A1 features two ports on the rear of the base for development and chargi
     </thead>
     <tbody>
         <tr style="background-color: white;text-align: left;">
-            <td>Charging Port</td>
+            <td>Power Port</td>
             <td>Rated voltage 48 V</td>
         </tr>
         <tr style="background-color: white;text-align: left;">
@@ -219,7 +220,8 @@ Galaxea A1 features two ports on the rear of the base for development and chargi
 #### Galaxea G1
 
 Galaxea G1 is composed of one motor, two clips, and one specially designed joint module. 
-*Note: No gripper is included with the product. You can contact us and purchase end-effectors or customized tools if needed.*
+
+*Note: No gripper is included with the product. Contact us and purchase end-effectors or customized tools if needed.*
 ![A1_G1_size](assets/A1_G1_size.png)
 
 <table style="border-collapse: collapse;">
@@ -295,7 +297,7 @@ Equipped with the end-effector, [Galaxea G1](../../Introducing_Galaxea_Robot/pro
 
 
 #### Attaching
-Here it shows how to attach gripper to A1. To remove them, simply reverse these steps.
+Here it shows how to attach gripper to Galaxea A1. To remove them, simply reverse these steps.
 
 <div style="text-align: center;">
     <img src="../assets/A1_attaching_g1.png" alt="A1_attaching_g1" width="680">
@@ -309,7 +311,7 @@ Here it shows how to attach gripper to A1. To remove them, simply reverse these 
 1. **Alignment Check**: Ensure that the four protruding points on the gripper align perfectly with the corresponding recessed points on the robot arm's end-effector mount. Proper alignment ensures the gripper is correctly positioned and centered.
 2. **Initial Placement**: Carefully place the gripper onto the robot arm's end effector mount, ensuring that the protrusions fit snugly into the recesses. This step is crucial for achieving the correct orientation and balance.
 3. **Screw Fixation**: Once aligned, secure the gripper to the robot arm using the three screws provided. These screws should be placed around the outer circle of the mounting area, as shown in the figure. Tighten the screws evenly to prevent any skewing or misalignment.
-****4. **Final Check**: After tightening the screws, double-check the alignment and stability of the gripper. It should be firmly attached and not wobble or move independently of the robot arm.****
+4. **Final Check**: After tightening the screws, double-check the alignment and stability of the gripper. It should be firmly attached and not wobble or move independently of the robot arm.
 5. **Testing**: Before using the robot arm, perform a test run to ensure that the gripper moves smoothly and holds objects securely without any slippage or unexpected movement.
 
 ### [Inspire-Robots RH56 Series Dexterous Hand](https://en.inspire-robots.com/product-category/the-dexterous-hands)

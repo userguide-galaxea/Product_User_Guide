@@ -6,7 +6,7 @@
 
 ## Installation
 
-This SDK does not require recompilation, just refer to contents below.
+This SDK does not require recompilation. Please refer to the contents below.
 
 ## First Move
 
@@ -41,13 +41,12 @@ angular:
 
 ### Torso - Squat & Stand
 
-Controller teleoperation actually is making `/controller` topic message mapping to another topic `/target_torso_speed`by a python script.   (`/controller` topic is sent by chassis control unit to control unit by CAN.) So the torso is actually controlled by `/target_torso_speed`.
+Controller teleoperation primarily involves using a Python script to map messages from the topic `/controller` to the topic `/target_torso_speed`. (`/controller` is sent by Chassis Control Unit to Control Unit via CAN.) Therefore, the torso is actually controlled by the topic `/target_torso_speed`. 
 
-* Step 1: Switch SWB and SWC to the other position not at the bottom to quit the Torso Control Mode in the controller,  making `/controller` not published.
+Please follow the following commands:
 
-
-
-* Step 2: Using this command below to move the torso.
+1. **Quit Torso Control Mode:** Switch SWB and SWC to positions other than the bottom to ensure that the topic `/controller` is NOT published.
+2.  **Move the torso:**
 
 ```Bash
 ##############
@@ -66,7 +65,7 @@ angular:
   ###angular.y > 0 means anti-clockwise the wrist and < 0 means clockwise the wrist
 ```
 
-* Step 3: Using this command below to stop the torso.
+3. **Stop the torso:**
 
 ```Bash
 ##############
@@ -87,13 +86,13 @@ angular:
 
 ### Arm - Wave & Salute
 
-- Arm control is complex and cannot be managed with just two joysticks. Therefore, we have stored a preset trajectory in the Galaxea R1's Control Unit in the format of rosbag.
+Since the arm control is complex and cannot be managed with just two joysticks, we have stored a preset trajectory in the Galaxea R1's Control Unit in the format of rosbag.
 
-- Before operating the Galaxea R1's arms, ensure that the pose is as shown below, particularly for joints 4, 5, and 6 of both arms. Since the arm is frozen when powered on, you can shut it down to manually adjust the arm's pose.
+Before operating arms, ensure that the pose is as shown below, especially for joints 4, 5, and 6 of both arms. Since the arm remains stationary when powered on, you can turn it off to manually adjust the arm's pose.
 
   ![R1_arm_wave](assets/R1_arm_wave.png)
 
-- Using the command below, we can make the arm wave first and salute next.
+Use the command below to first make the arm wave and then perform a salute.
 
 ```Bash
 rosbag play ~/Downloads/test_wave_salute.bag
