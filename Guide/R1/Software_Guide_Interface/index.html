@@ -1157,11 +1157,11 @@
 
 
 <h1 id="software-interface">Software Interface</h1>
-<p>This section describes the various control and status feedback interfaces for Galaxea R1, to help users better understand how to communicate and control the arm through the ROS package.</p>
+<p>In this chapter, we describe the various control and status feedback interfaces for Galaxea R1, to help users better understand how to communicate and control the arm through the ROS package.</p>
 <h2 id="driver-interface">Driver Interface</h2>
-<p>The current Galaxea R1 driver is mainly composed of three parts, including four independent Rosnodes, which are the driver of the chassis, arms (left and right arm), and the torso. The interfaces provided by the three drivers are in the form of  ROS topic, and are described as follows.</p>
+<p>The current Galaxea R1 driver is mainly composed of three parts, including four independent Ros nodes: the drivers of the chassis, the left and right arms, and the torso. The interfaces provided by these drivers are in the form of ROS topics, as described below.</p>
 <h3 id="chassis-driver-interface">Chassis Driver Interface</h3>
-<p>This interface is used for chassis status feedback ROS package. The package defines multiple topics for posting the status of multiple motors in the chassis. The following are detailed descriptions of each topic and its related message types:</p>
+<p>This interface is used for the chassis status feedback ROS package. The package defines multiple topics for posting the status of multiple motors in the chassis. The following are detailed descriptions of each topic and its related message types:</p>
 <table style="width: 100%; border-collapse: collapse;">
   <tr>
     <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Topic Name</th>
@@ -1254,7 +1254,7 @@
 </table>
 
 <h3 id="arms-driver-interface">Arms Driver Interface</h3>
-<p>The interface is a ROS package for robotic arm control and status feedback. This package defines several topics for posting and subscribing to the status of the robot arm, control commands, and associated error code information. Below are detailed descriptions of each topic and its related message types:</p>
+<p>This interface is used for arm control and status feedback ROS package. The package defines multiple topics for publishing and subscribing to the status of the robot arm, control commands, and associated error code information. The following are detailed descriptions of each topic and its related message types:</p>
 <table style="width: 100%; border-collapse: collapse;">
   <tr>
     <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Topic Name</th>
@@ -1263,17 +1263,17 @@
   </tr>
   <tr>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">/left_arm/joint_states/right_arm/joint_states</td>
-    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Robotic arm joint status feedback</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Arm joint status feedback</td>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">sensor_msgs/JointState</td>
   </tr>
   <tr>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">/left_arm/arm_status/right_arm/arm_status</td>
-    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Robotic arm motor status feedback</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Arm motor status feedback</td>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">signal_arm/status_stamped</td>
   </tr>
   <tr>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">/left_arm/arm_joint_command/right_arm/arm_joint_command</td>
-    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Robotic arm control interface</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Arm control interface</td>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">signal_arm/arm_control</td>
   </tr>
   <tr>
@@ -1326,15 +1326,15 @@
   </tr>
   <tr>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">p_des</td>
-    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Position command of robot arm</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Position command of the arm</td>
   </tr>
   <tr>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">v_des</td>
-    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Velocity command of robot arm</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Velocity command of the arm</td>
   </tr>
   <tr>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">t_ff</td>
-    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Torque command of robot arm</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Torque command of the arm</td>
   </tr>
   <tr>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">kp</td>
@@ -1356,7 +1356,7 @@
 </table>
 
 <h4 id="diagnostic-trouble-code">Diagnostic Trouble Code</h4>
-<p>DTC is used to feedback the error information of the MCU and the drive, and can be used to view the real-time status of each motor and the running status of the drive. The following is a detailed description of each fault code and its corresponding status.</p>
+<p>DTC is used to feedback the error information of the MCU and the driver, and can be used to view the real-time status of each motor and the running status of the driver. The following is a detailed description of each fault code and its corresponding status.</p>
 <table style="width: 100%; border-collapse: collapse;">
   <tr>
     <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">DTC</th>
@@ -1449,7 +1449,7 @@
 </table>
 
 <h3 id="torso-driver-interface">Torso Driver Interface</h3>
-<p>This interface is used for the ROS package for torso control and status feedback. The package defines several topics for publishing and subscribing to information about the status of torso motors, and control commands. The following is a detailed description of each topic and its associated message types:</p>
+<p>This interface is used for torso control and status feedback ROS package. The package defines multiple  topics for publishing and subscribing to the status of torso motors and control commands. The following are detailed descriptions of each topic and its related message types:</p>
 <table style="width: 100%; border-collapse: collapse;">
   <tr>
     <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Topic Name</th>
@@ -1458,7 +1458,7 @@
   </tr>
   <tr>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">/torso_feedback</td>
-    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Torso motor joint status feedback</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Joint status feedback of the torso motor</td>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">sensor_msgs/JointState</td>
   </tr>
   <tr>
@@ -1523,9 +1523,9 @@
 </table>
 
 <h2 id="operation-control-interface">Operation Control Interface</h2>
-<p>The current Galaxea R1 operation control interface mainly consists of three parts, which are operation control interfaces of the chassis, arms (left and right arm) and the torso. Among them, each drive has different motion interface exposure. All interfaces are exposed in the form of ROS topic and made available to the user.</p>
+<p>The current Galaxea R1 operation and control interface is mainly composed of three parts: the chassis, the left and right arms, and the torso. Each drive has different motion interface exposure. The interfaces provided by these drivers are in the form of ROS topics as described below and available to users.</p>
 <h3 id="chassis-control-interface">Chassis Control Interface</h3>
-<p>The operation and control interface of the chassis is exposed in the form of ROS topic, which is used to specify the chassis to agree at the expected speed. The speed includes the superposition of X,Y and Yaw Rate.</p>
+<p>The chassis control interface can be used to command the chassis to move at the target speed, which includes the combination of X, Y, and Yaw Rate:</p>
 <table style="width: 100%; border-collapse: collapse;">
   <tr>
     <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Topic Name</th>
@@ -1534,7 +1534,7 @@
   </tr>
   <tr>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">/cmd_vel</td>
-    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Chassis control signal sent</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Issuing the chassis control signal </td>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">geometry_msgs/Twist</td>
   </tr>
 </table>
@@ -1573,9 +1573,9 @@
 </table>
 
 <h3 id="arms-control-interface">Arms Control Interface</h3>
-<p>The operation and control interface of the arms is exposed in the form of ROS topic.</p>
 <h4 id="joint-position-movement-interface">Joint Position Movement Interface</h4>
-<p><code>joint_move</code> is a ROS package for single-joint control of robotic arms. This package is used to specify the movement of each joint from the current position to the specified position, the maximum speed and maximum acceleration during the movement can be specified, if not specified, the default speed and acceleration will be planned. The default maximum speed is 20 rad/s, and the maximum acceleration is 20 rad/s². The topics and fields of the motion interface are shown in the following table.</p>
+<p><code>joint_move</code> is a ROS package for the single-joint control of robot arms and is used to move each joint from the current position to the target position. The maximum speed and maximum acceleration can be specified; if not, the default maximum speed, 20 rad/s, and the default maximum acceleration, 20 rad/s², will be used for planning. 
+The following are detailed descriptions of each topic and its related message types:</p>
 <table style="width: 100%; border-collapse: collapse;">
   <tr>
     <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Topic Name</th>
@@ -1584,7 +1584,7 @@
   </tr>
   <tr>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">/left_arm/arm_joint_target_position/right_arm/arm_joint_target_position</td>
-    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Target positions of each robotic arm joint</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Target position and pose of each arm joint</td>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Sensor_msgs/JointState</td>
   </tr>
 </table>
@@ -1619,78 +1619,65 @@
 </table>
 
 <h4 id="end-pose-movement-interface">End Pose Movement Interface</h4>
-<p><code>eef_move</code>is a ROS package for robotic arm end control. This package is used to specify the end of the robot arm to reach the specified position with the specified attitude, and its interface is shown below.</p>
-<p><strong>Note:</strong> If the given position and attitude are unreachable, the robot arm will be as close to the target pose as possible through the optimization function. When the objective function is set, the weight of the position gap is twice the weight of the attitude gap).</p>
-<table>
-<thead>
-<tr>
-<th>Topic Name</th>
-<th>Description</th>
-<th>Message Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>/left_arm/arm_target_pose/right_arm/arm_target_pose</td>
-<td>Target positions of each robotic arm end joint</td>
-<td>Geometry_msgs::PoseStamped</td>
-</tr>
-</tbody>
+<p><code>eef_move</code>is a ROS package for the end control of robot arms and is used to move the end of the robot arm to the target position with the target pose. </p>
+<p><strong>Note:</strong> If the given position and pose are unreachable, the robot arm will be as close to the target position and pose as possible through the optimization function. When setting the targets, the weight of the position gap is twice the weight of the pose gap.</p>
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Topic Name</th>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Description</th>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Message Type</th>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">/left_arm/arm_target_pose/right_arm/arm_target_pose</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Target positions of each robotic arm end joint</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
+  </tr>
 </table>
-<table>
-<thead>
-<tr>
-<th>Topic Name</th>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>/left_arm/arm_target_pose/right_arm/arm_target_pose</td>
-<td>header</td>
-<td>Standard header</td>
-</tr>
-<tr>
-<td></td>
-<td>pose.position.x</td>
-<td>Shift in the X direction</td>
-</tr>
-<tr>
-<td></td>
-<td>pose.position.y</td>
-<td>Shift in the Y direction</td>
-</tr>
-<tr>
-<td></td>
-<td>pose.position.z</td>
-<td>Shift in the Z direction</td>
-</tr>
-<tr>
-<td></td>
-<td>pose.orientation.x</td>
-<td>Orientation quaternion</td>
-</tr>
-<tr>
-<td></td>
-<td>pose.orientation.y</td>
-<td>Orientation quaternion</td>
-</tr>
-<tr>
-<td></td>
-<td>pose.orientation.z</td>
-<td>Orientation quaternion</td>
-</tr>
-<tr>
-<td></td>
-<td>pose.orientation.w</td>
-<td>Orientation quaternion</td>
-</tr>
-</tbody>
+
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Topic Name</th>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Field</th>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Description</th>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;" rowspan="8">/left_arm/arm_target_pose/right_arm/arm_target_pose</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">header</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Standard header</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">pose.position.x</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Shift in the X direction</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">pose.position.y</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Shift in the Y direction</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">pose.position.z</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Shift in the Z direction</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">pose.orientation.x</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Orientation quaternion</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">pose.orientation.y</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Orientation quaternion</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">pose.orientation.z</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Orientation quaternion</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">pose.orientation.w</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Orientation quaternion</td>
+  </tr>
 </table>
+
 <h4 id="end-trajectory-movement-interface">End Trajectory Movement interface</h4>
-<p><code>eef_follow</code> is a ROS package for robotic arm end control. This package is used to specify the end of the manipulator to follow the specified trajectory to the specified position, and its interface is shown below.</p>
-<p><strong>Note:</strong> If the given position and attitude are unreachable by the robot arm, the robot arm will be as close to the target pose as possible through the optimization function. When the objective function is set, the weight of the position gap is twice the weight of the attitude gap).</p>
+<p><code>eef_follow</code> is a ROS package for the end control of robot arms and is used to move the end following the target trajectory to the target position.</p>
+<p><strong>Note:</strong> If the given position and pose are unreachable, the robot arm will be as close to the target position and pose as possible through the optimization function. When setting the targets, the weight of the position gap is twice the weight of the pose gap.</p>
 <table style="width: 100%; border-collapse: collapse;">
   <tr>
     <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Topic Name</th>
@@ -1699,7 +1686,7 @@
   </tr>
   <tr>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">/left_arm/arm_target_trajectory/right_arm/arm_target_trajectory</td>
-    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Target track of robotic arm end joint</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Target trajectory of the end of arms</td>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Geometry_msgs::PoseArray</td>
   </tr>
 </table>
@@ -1750,10 +1737,12 @@
 </table>
 
 <h3 id="torso-control-interface">Torso Control Interface</h3>
-<p>The operation control interface of the torso is exposed in the form of ROS topic. The coordinate system is defined as follows: RGB three colors against XYZ, and the definition of the end of the torso is the coordinate axis shown in the figure.</p>
+<p>The coordinate system is defined as follows:
+- The coordinate axes represent the end of the torso.
+- The red, green, and blue lines represent the X, Y, and Z axes, respectively.</p>
 <p><img alt="R1_torso_control_interface" src="../assets/R1_torso_control_interface.png" /></p>
 <h4 id="torso-speed-control-interface">Torso Speed Control Interface</h4>
-<p><code>torso_control</code> is a ROS package for the end control of the torso, which is used to specify the end of the torso to move at a specified speed.</p>
+<p><code>torso_control</code> is a ROS package for the end control of the torso and is used to move the end of the torso at a target speed.</p>
 <table style="width: 100%; border-collapse: collapse;">
   <tr>
     <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Topic Name</th>
@@ -1762,7 +1751,7 @@
   </tr>
   <tr>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">/target_torso_speed</td>
-    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Torso control signal sent</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Issuing the torso control signal</td>
     <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">geometry_msgs/Twist</td>
   </tr>
 </table>
@@ -1801,8 +1790,8 @@
 </table>
 
 <h4 id="torso-pose-control-interface">Torso Pose Control Interface</h4>
-<p><code>torso_control</code> is a ROS package for the end control of the torso, which is used to specify when the torso reaches a specified height and the corresponding pitch and yaw.</p>
-<p>This position is subject to certain constraints, which are described as below.</p>
+<p><code>torso_control</code> is a ROS package for the end control of the torso and is used to move the pose of the torso to the target height and to the corresponding pitch and yaw.
+This pose is subject to certain constraints, as described below.</p>
 <table style="width: 100%; border-collapse: collapse;">
   <tr>
     <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Topic Name</th>
@@ -1868,7 +1857,7 @@
     ### PID is the found PID</code></li>
 </ul>
 <h3 id="adjust-single-joint-position-control-interface">Adjust Single-joint Position Control Interface</h3>
-<p>Please proceed with caution during the adjustment and ensure that the delta position of each joint is less than 10 degrees each time. Adjust each Torso joint one at a time, and support the Galaxea R1 during the adjustment to prevent any potential tipping.</p>
+<p>Please proceed with caution during the adjustment and ensure that the delta position of each joint is less than 10 degrees each time. Adjust each Torso joint one at a time, and hold the robot during the adjustment to prevent any potential tipping.</p>
 <div class="highlight"><pre><span></span><code>rostopic<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>/torso_feedback<span class="w"> </span>
 <span class="c1">## Find Current Torso Feedback Position First, p1, p2, p3, p4 for the current degree</span>
 <span class="nb">source</span><span class="w"> </span><span class="si">${</span><span class="nv">SDK_PATH</span><span class="si">}</span>/install/setup.bash
@@ -1890,8 +1879,8 @@ rostopic<span class="w"> </span>pub<span class="w"> </span>/torso_control<span c
 <span class="c1">### delta_p4 &gt; 0 -&gt; T4 Moves anticlockwise </span>
 </code></pre></div>
 <h3 id="rosservice-call">Rosservice Call</h3>
-<p><u>Importance: Keep your hands on the robot for support.</u></p>
-<p>Once near the zero-point, you can use the following interface for calibration. The zero-point posture is as shown. When issuing commands, the motor brakes will briefly release, so please support the robot to prevent calibration errors.</p>
+<p><u>Importance: Hold the robot by hand.</u></p>
+<p>Once near the zero-point, you can use the following interface for calibration. The zero-point posture is as shown. When issuing commands, the motor brakes will briefly release, so please hold the robot to prevent calibration errors.</p>
 <p><img alt="R1_torso_recalibration" src="../assets/R1_torso_recalibration.png" /></p>
 <div class="highlight"><pre><span></span><code>rosservice<span class="w"> </span>call<span class="w"> </span>/torso_node/function_frame<span class="w"> </span><span class="s2">&quot;0x03&quot;</span>
 </code></pre></div>

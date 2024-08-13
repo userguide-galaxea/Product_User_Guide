@@ -1069,16 +1069,16 @@
 
 
 <blockquote>
-<p>Congratulations on becoming the proud owner of a Galaxea robot! We are thrilled to extend a warm welcome to the Galaxea Developer Community. This specially curated guide is designed to introduce beginners to the unique appeal and impressive functionalities of Galaxea robots. Our goal is to help you quickly get started with Galaxea robotics and empower you to explore the full range of possibilities that await you.</p>
+<p>Congratulations on becoming the proud owner of a Galaxea Robot! We are thrilled to extend a warm welcome to the Galaxea Developer Community. This specially curated guide is designed to introduce beginners to the unique appeal and impressive functionalities of Galaxea Robot. Our goal is to help you quickly get started with us and empower you to explore the full range of possibilities that await you.</p>
 </blockquote>
 <h1 id="before-you-begin">Before You Begin</h1>
-<p>In this first tutorial, you will learn how to power on and operate this new product, beginning your journey of interacting with the Galaxea R1.</p>
+<p>In this first tutorial, you will learn how to power on and operate this new product, beginning your journey of interacting with Galaxea R1.</p>
 <h2 id="safety">Safety</h2>
 <p>Galaxea R1 has the potential to cause harm if not properly used. We recommend that all users review the Safety Guide before operating the robot.</p>
 <h2 id="installing">Installing</h2>
 <p>For detailed instructions on how to install each component of Galaxea R1, please refer to the <a href="../GettingStarted_Connecting/">Connecting and Installing</a> section. These tutorials provide step-by-step guidance to ensure proper assembly and setup.</p>
 <h2 id="turning-on">Turning On</h2>
-<p>To turn on the Galaxea R1, please press the boat-shaped button on the side of the chassis. </p>
+<p>To turn on Galaxea R1, please press the boat-shaped button on the side of the chassis. </p>
 <h2 id="charging">Charging</h2>
 <p>To charge Galaxea R1, please use the provided power cable and insert it into the 48V power supply port located at the bottom of the rear of the chassis. </p>
 <h2 id="shutting-down">Shutting Down</h2>
@@ -1086,6 +1086,7 @@
 <h3 id="emergency-stop">Emergency Stop</h3>
 <p>The emergency stop switch is located at the rear of the chassis. It can be used to immediately halt all operations in case of an emergency or if you encounter any dangerous situations.</p>
 <h2 id="joystick-controller-instruction">Joystick Controller Instruction</h2>
+<p>Use the provided joystick controller to operate the robot and quickly test Galaxea R1's various functions.</p>
 <p><img alt="R1_controller" src="../assets/R1_controller.png" /></p>
 <table>
 <thead>
@@ -1152,45 +1153,42 @@
 </tr>
 </tbody>
 </table>
-<p>Use the provided joystick controller to operate the robot and quickly test Galaxea R1's various functions.</p>
 <h3 id="turning-off-the-controller">Turning Off the Controller</h3>
 <p>Press and hold both power buttons on the controller simultaneously until the screen turns off and the controller shuts down.</p>
 <h3 id="teleoperation-guide">Teleoperation Guide</h3>
 <h4 id="galaxea-r1-chassis-control">Galaxea R1 Chassis Control</h4>
 <p>There are two ways to control and operate the chassis, using Joystick Controller or Computing Unit.</p>
 <ol>
-<li>Joystick Controller：</li>
+<li>
+<p><strong>Joystick Controller:</strong></p>
+</li>
+<li>
+<p><strong>Enter Chassis Control Mode:</strong> Switch SWB to the middle position.</p>
+</li>
+<li><strong>Left joystick:</strong> Move up/down to control the forward/backward movement of the chassis. Move left/right to control the left/right translations of the chassis.</li>
+<li>
+<p><strong>Right joystick:</strong> Move left/right to control the rotational speed of the chassis in the yaw direction.</p>
+</li>
+<li>
+<p><strong>Computing Unit</strong>:</p>
+</li>
+<li><strong>Enter Chassis Control Mode:</strong> Switch SWB to the bottom position and switch SWC to the middle position.</li>
+<li>Then follow the steps in the Development and Operation Tutorials to start the action.</li>
 </ol>
-<p>First, Switch SWB to the middle position to enter Chassis Control Mode.</p>
-<ul>
-<li>
-<p>Left joystick: Move up and down to control the forward and backward movement of the chassis. Move left and right to control the left and right translations of the chassis.</p>
-</li>
-<li>
-<p>Right joystick: Move left and right to control the rotational speed of the chassis in the yaw direction.</p>
-</li>
-<li>
-<p>Computing Unit:</p>
-</li>
-<li>
-<p>Switch SWB to the bottom position and switch SWC to the middle position to enter upper computer chassis control mode. Then follow the steps in the Development and Operation Tutorials to start the action.</p>
-</li>
-</ul>
 <h4 id="galaxea-r1-torso-control">Galaxea R1 Torso Control</h4>
 <p><u>Important: Before you start, please check if there has been any zero-point drift in torso after long distance transportation.</u> </p>
 <ul>
-<li>First, connect to the Main Control Board as described in the <a href="../GettingStarted_Connecting/">Connecting and Installing</a> tutorials.</li>
-<li>Then, use the ROS interface below to check whether the current motor position is near [-2.2, 2.6, 0.4, 0] within +/-5%, as the pose shown in the image below. </li>
-<li><code>shell
+<li>Connect to the Main Control Board as described in the <a href="../GettingStarted_Connecting/">Connecting and Installing</a> tutorials.</li>
+<li>Then use the ROS interface below to check whether the current motor position is near <code>[-2.2, 2.6, 0.4, 0]</code> within +/-5%, as the pose shown in the image below. 
+<code>shell
  rostopic echo /torso_feedback</code></li>
 </ul>
 <p><img alt="R1_torso_control" src="../assets/R1_torso_control.png" /></p>
 <p>If the position is wrong, it means that zero-point drift is observed, and please refer to the <a href="../Software_Guide_Interface/">Torso Zero-Point Calibration</a> tutorial.</p>
-<p>Please make sure the torso SDK is enabled first. We shall use the joystick controller to operate the torso of Galaxea R1. Switch the SWB and SWC down to enter Torso Control Mode. Use the joystick controller to control and operate the robot's torso. </p>
-<ol>
-<li><strong>Left joystick:</strong> Move up and down to control the raising and lowering of the torso. </li>
-<li><strong>Right joystick:</strong> Move up (positive) and down (negative) to control the angular velocity of the torso's pitch angle. Move left (positive) and right (negative) to control the angular velocity of the yaw angle of R1.</li>
-</ol>
+<p>Please make sure the torso SDK is enabled first. Then we shall use the joystick controller to operate the torso of Galaxea R1. 
+* <strong>Enter Torso Control Mode:</strong> Switch SWB and SWC down to the bottom position.
+* <strong>Left joystick:</strong> Move up/down to control the raising/lowering of the torso.
+* <strong>Right joystick:</strong> Move up/down to control the positive/negative angular velocity of the torso's pitch angle. Move left/right to control the positive/negative angular velocity of the yaw angle.</p>
 <h2 id="next-step">Next Step</h2>
 <p>The next guide, <a href="../GettingStarted_Connecting/">Connecting and Installing</a>, will explain how to connect Galaxea R1 to a computing unit and explore its functions in more detail.</p>
 

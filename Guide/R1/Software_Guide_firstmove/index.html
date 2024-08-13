@@ -889,7 +889,7 @@
 <li>ROS Noetic</li>
 </ol>
 <h2 id="installation">Installation</h2>
-<p>This SDK does not require recompilation, just refer to contents below.</p>
+<p>This SDK does not require recompilation. Please refer to the contents below.</p>
 <h2 id="first-move">First Move</h2>
 <h3 id="chassis-spins-in-place">Chassis - Spins in place</h3>
 <div class="highlight"><pre><span></span><code><span class="c1">#Switch SWB to the bottom position and switch SWC to the middle position to enter upper computer chassis control mode.</span>
@@ -918,15 +918,12 @@ rostopic<span class="w"> </span>pub<span class="w"> </span>/cmd_vel<span class="
 <span class="w">  </span><span class="c1">### Change SWB / SWC to quit Upper Computer Control mode of chassis</span>
 </code></pre></div>
 <h3 id="torso-squat-stand">Torso - Squat &amp; Stand</h3>
-<p>Controller teleoperation actually is making <code>/controller</code> topic message mapping to another topic <code>/target_torso_speed</code>by a python script.   (<code>/controller</code> topic is sent by chassis control unit to control unit by CAN.) So the torso is actually controlled by <code>/target_torso_speed</code>.</p>
-<ul>
-<li>
-<p>Step 1: Switch SWB and SWC to the other position not at the bottom to quit the Torso Control Mode in the controller,  making <code>/controller</code> not published.</p>
-</li>
-<li>
-<p>Step 2: Using this command below to move the torso.</p>
-</li>
-</ul>
+<p>Controller teleoperation primarily involves using a Python script to map messages from the topic <code>/controller</code> to the topic <code>/target_torso_speed</code>. (<code>/controller</code> is sent by Chassis Control Unit to Control Unit via CAN.) Therefore, the torso is actually controlled by the topic <code>/target_torso_speed</code>. </p>
+<p>Please follow the following commands:</p>
+<ol>
+<li><strong>Quit Torso Control Mode:</strong> Switch SWB and SWC to positions other than the bottom to ensure that the topic <code>/controller</code> is NOT published.</li>
+<li><strong>Move the torso:</strong></li>
+</ol>
 <div class="highlight"><pre><span></span><code><span class="c1">##############</span>
 rostopic<span class="w"> </span>pub<span class="w"> </span>/target_torso_speed<span class="w"> </span>geometry_msgs/Twist<span class="w"> </span><span class="s2">&quot;linear:</span>
 <span class="s2">  x: 0.0</span>
@@ -942,9 +939,9 @@ rostopic<span class="w"> </span>pub<span class="w"> </span>/target_torso_speed<s
 <span class="w">  </span><span class="c1">###angular.x &gt; 0 means increase the pitch and &lt;0 means decrease the pitch</span>
 <span class="w">  </span><span class="c1">###angular.y &gt; 0 means anti-clockwise the wrist and &lt; 0 means clockwise the wrist</span>
 </code></pre></div>
-<ul>
-<li>Step 3: Using this command below to stop the torso.</li>
-</ul>
+<ol>
+<li><strong>Stop the torso:</strong></li>
+</ol>
 <div class="highlight"><pre><span></span><code><span class="c1">##############</span>
 rostopic<span class="w"> </span>pub<span class="w"> </span>/target_torso_speed<span class="w"> </span>geometry_msgs/Twist<span class="w"> </span><span class="s2">&quot;linear:</span>
 <span class="s2">  x: 0.0</span>
@@ -961,18 +958,10 @@ rostopic<span class="w"> </span>pub<span class="w"> </span>/target_torso_speed<s
 <span class="w">  </span><span class="c1">###angular.y &gt; 0 means anti-clockwise the wrist and &lt; 0 means clockwise the wrist</span>
 </code></pre></div>
 <h3 id="arm-wave-salute">Arm - Wave &amp; Salute</h3>
-<ul>
-<li>
-<p>Arm control is complex and cannot be managed with just two joysticks. Therefore, we have stored a preset trajectory in the Galaxea R1's Control Unit in the format of rosbag.</p>
-</li>
-<li>
-<p>Before operating the Galaxea R1's arms, ensure that the pose is as shown below, particularly for joints 4, 5, and 6 of both arms. Since the arm is frozen when powered on, you can shut it down to manually adjust the arm's pose.</p>
-</li>
-</ul>
+<p>Since the arm control is complex and cannot be managed with just two joysticks, we have stored a preset trajectory in the Galaxea R1's Control Unit in the format of rosbag.</p>
+<p>Before operating arms, ensure that the pose is as shown below, especially for joints 4, 5, and 6 of both arms. Since the arm remains stationary when powered on, you can turn it off to manually adjust the arm's pose.</p>
 <p><img alt="R1_arm_wave" src="../assets/R1_arm_wave.png" /></p>
-<ul>
-<li>Using the command below, we can make the arm wave first and salute next.</li>
-</ul>
+<p>Use the command below to first make the arm wave and then perform a salute.</p>
 <div class="highlight"><pre><span></span><code>rosbag<span class="w"> </span>play<span class="w"> </span>~/Downloads/test_wave_salute.bag
 </code></pre></div>
 
