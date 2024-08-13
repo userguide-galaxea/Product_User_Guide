@@ -94,9 +94,9 @@ The ZED2 3D + DEPTH Camera is attached to the robot head. It provides high-defin
 
 ### Arm
 
-Galaxea R1 features two Galaxea A1 robotic arms. Each arm consists of two main links made from Acrylonitrile Butadiene Styrene (ABS), which is lightweight, rigid and durable. These links are mounted on a base inserted inside the body, and interconnected by six joints. Each joint is equipped with planetary gear motors, enabling independent variable-speed operation with high precision and torque.
+Galaxea R1 features two [Galaxea A1](docs/Introducing_Galaxea_Robot/product_info/A1.md) robot arms. Each arm consists of two main links made from Acrylonitrile Butadiene Styrene (ABS), which is lightweight, rigid and durable. These links are mounted on a base inserted inside the body, and interconnected by six joints. Each joint is equipped with planetary gear motors, enabling independent variable-speed operation with high precision and torque.
 
-In the current version of Galaxea A1 Robot Arm, the motor does not have a brake, so cutting off the power may cause the robotic arm to drop suddenly. We will continue to improve the product to address this issue.
+In the current version of Galaxea A1, the motor does not have a brake, so cutting off the power may cause the robotic arm to drop suddenly. We will continue to improve the product to address this issue.
 
 ![R1_A1_size](assets/R1_A1_size.png)
 
@@ -122,7 +122,6 @@ The arm is designed to have:
 </table>
 
 
-See [Galaxea A1 User Guide](../A1/Getting_Started.md) if you want to explore more.
 
 ### Base
 
@@ -264,7 +263,7 @@ The [ZED2](https://www.stereolabs.com/products/zed-2) 3D + DEPTH Camera is attac
   </tr>
   <tr>
     <td style="vertical-align: middle;">Depth Accuracy</td>
-    <td>&lt; 1% up to 3 m (9.84 ft) &lt; 5% up to 15 m</td>
+    <td>&lt; 1% up to 3 m &lt; 5% up to 15 m</td>
   </tr>
   <tr>
     <td style="vertical-align: middle;">Dimension</td>
