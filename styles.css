@@ -6,6 +6,7 @@ main {
     gap: 20px; /* 各列之间的间距 */
 }
 
+
 .row {
     display: flex;
     justify-content: space-between; /* 等距排列 */
