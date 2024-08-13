@@ -217,9 +217,9 @@ Galaxea A1 features two ports on the rear of the base for development and chargi
 
 
 ### End-Effector
-#### Galaxea G1
+#### [Galaxea G1](../../Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md) 
 
-Galaxea G1 is composed of one motor, two clips, and one specially designed joint module. 
+G1 is composed of one motor, two clips, and one specially designed joint module. 
 
 *Note: No gripper is included with the product. Contact us and purchase end-effectors or customized tools if needed.*
 ![A1_G1_size](assets/A1_G1_size.png)
@@ -258,7 +258,6 @@ Galaxea G1 is composed of one motor, two clips, and one specially designed joint
 
 ![A1_size_g1](assets/A1_size_G1.jpg)
 
-Equipped with the end-effector, [Galaxea G1](../../Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md), should have:
 
 <table style="border-collapse: collapse;">
     <thead>
