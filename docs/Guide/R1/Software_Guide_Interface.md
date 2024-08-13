@@ -490,20 +490,61 @@ The following are detailed descriptions of each topic and its related message ty
 
 **Note:** If the given position and pose are unreachable, the robot arm will be as close to the target position and pose as possible through the optimization function. When setting the targets, the weight of the position gap is twice the weight of the pose gap.
 
-| Topic Name                                          | Description                                    | Message Type               |
-| --------------------------------------------------- | ---------------------------------------------- | -------------------------- |
-| /left_arm/arm_target_pose/right_arm/arm_target_pose | Target position and pose of the end of arms  | Geometry_msgs::PoseStamped |
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Topic Name</th>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Description</th>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Message Type</th>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">/left_arm/arm_target_pose/right_arm/arm_target_pose</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Target positions of each robotic arm end joint</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
+  </tr>
+</table>
 
-| Topic Name                                          | Field              | Description              |
-| --------------------------------------------------- | ------------------ | ------------------------ |
-| /left_arm/arm_target_pose/right_arm/arm_target_pose | header             | Standard header          |
-|                                                     | pose.position.x    | Shift in the X direction |
-|                                                     | pose.position.y    | Shift in the Y direction |
-|                                                     | pose.position.z    | Shift in the Z direction |
-|                                                     | pose.orientation.x | Orientation quaternion   |
-|                                                     | pose.orientation.y | Orientation quaternion   |
-|                                                     | pose.orientation.z | Orientation quaternion   |
-|                                                     | pose.orientation.w | Orientation quaternion   |
+
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Topic Name</th>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Field</th>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Description</th>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;" rowspan="8">/left_arm/arm_target_pose/right_arm/arm_target_pose</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">header</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Standard header</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">pose.position.x</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Shift in the X direction</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">pose.position.y</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Shift in the Y direction</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">pose.position.z</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Shift in the Z direction</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">pose.orientation.x</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Orientation quaternion</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">pose.orientation.y</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Orientation quaternion</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">pose.orientation.z</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Orientation quaternion</td>
+  </tr>
+  <tr>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">pose.orientation.w</td>
+    <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;">Orientation quaternion</td>
+  </tr>
+</table>
+
 
 #### End Trajectory Movement interface
 
