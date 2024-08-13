@@ -40,7 +40,6 @@ extra:
 
 nav:
   - GUIDE: index.md
-#   - About us: about_us/about_us.md
   - Galaxea Robot:
 #       - About us: Introducing_Galaxea_Robot/introduction.md
       - A1 Robot Arm: Introducing_Galaxea_Robot/product_info/A1.md
