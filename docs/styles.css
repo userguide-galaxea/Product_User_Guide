@@ -14,7 +14,7 @@ main {
     gap: 0px;
 }
 .products-section {
-    /*flex: 1 1 33%; !* 使这两个部分等宽，占据等量空间 *!*/
+    flex: 1 1 33%; /* 使这两个部分等宽，占据等量空间 */
     /*margin-right: 450px;*/
     box-sizing: border-box;
 }
