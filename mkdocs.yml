@@ -20,6 +20,8 @@ theme:
             enabled: true
         - navigation:
             enable: true
+        - toc:
+            enable: true
     features:
         - search.highlight
         - search.inline
@@ -41,11 +43,10 @@ extra:
 nav:
   - GUIDE: index.md
   - Galaxea Robot:
-#       - About us: Introducing_Galaxea_Robot/introduction.md
+      - R1 Robot: Introducing_Galaxea_Robot/product_info/R1.md
       - A1 Robot Arm: Introducing_Galaxea_Robot/product_info/A1.md
       - Advanced Accessories: Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md
-#       - R1: Introducing_Galaxea_Robot/product_info/R1.md
-#       - X1: Introducing_Galaxea_Robot/product_info/X1.md
+      - Aloha: Guide/Aloha/Aloha.md
   - Galaxea A1 User Guide:
       - Getting Started: Guide/A1/Getting_Started.md
       - Hardware Guide: Guide/A1/Hardware_Guide.md
@@ -58,10 +59,10 @@ nav:
       - Software Guide:
         - Software Overview: Guide/R1/Software_Guide_firstmove.md
         - Software Interface: Guide/R1/Software_Guide_Interface.md
-
-#   - Galaxea X1 Guide:
-#       - Getting Started: Guide/X1/Getting_Started.md
-#       - X1 Hardware Guide: Guide/X1/A1_Hardware_Guide.md
+  - Galaxea B1 User Guide:
+      - Getting Started: Guide/B1/B1_Getting_Started.md
+      - Hardware Guide: Guide/B1/B1_Hardware_Guide.md
+      - Software Guide: Guide/B1/B1_Software_Guide.md
 
 extra_css:
   - styles.css

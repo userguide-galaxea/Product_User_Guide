@@ -4,15 +4,17 @@ main {
     display: flex;
     flex-direction: row; /* 横向布局 */
     gap: 20px; /* 各列之间的间距 */
+    margin: 20px;
 }
 
 .row {
     display: flex;
     justify-content: space-between; /* 等距排列 */
     flex: 1 1 100%; /* 让这一行占满整行 */
+    gap: 0px;
 }
 .products-section {
-    flex: 1 1 50%; /* 使这两个部分等宽，占据等量空间 */
+    /*flex: 1 1 33%; !* 使这两个部分等宽，占据等量空间 *!*/
     /*margin-right: 450px;*/
     box-sizing: border-box;
 }
