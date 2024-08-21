@@ -24,7 +24,7 @@ hide:
                 <div class="container">
                     <div class="text-button-container">
                         <img src="assets/R1_title.png" alt="R1_title">
-                        <a href="Guide/R1/GettingStarted_Before" class="btn btn-primary">Learn More</a>
+                        <a href="Introducing_Galaxea_Robot/product_info/R1" class="btn btn-primary">Learn More</a>
                     </div>
                     <div class="image-container">
                         <img src="assets/R1_product.png" alt="R1_product" class="responsive-image">
