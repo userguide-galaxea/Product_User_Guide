@@ -126,13 +126,13 @@ Galaxea R1 is intended for research applications by users experienced in operati
 
 ### Head
 
-The ZED2 3D + DEPTH Camera is attached to the robot head. It provides high-definition 3D video and neural depth perception of the environment, with a wide field of view and an electronically synchronized rolling shutter, making it an ideal choice for applications requiring precise spatial awareness and real-time 3D mapping.
+The [ZED2 3D + DEPTH Camera](https://www.stereolabs.com/en-sg/store/products/zed-2) is attached to the robot head. It provides high-definition 3D video and neural depth perception of the environment, with a wide field of view and an electronically synchronized rolling shutter, making it an ideal choice for applications requiring precise spatial awareness and real-time 3D mapping.
 
 ![R1_head](assets/R1_head.png)
 
 ### Arm
 
-Galaxea R1 features two Galaxea A1 robotic arms and two Galaxea G1 grippers. Each arm consists of two main links which are lightweight, rigid and durable. Arm joints are equipped with planetary gear motors, enabling independent variable-speed operation with high precision and torque.
+Galaxea R1 features two [Galaxea A1 robotic arms](../../Introducing_Galaxea_Robot/product_info/A1.md) and two [Galaxea G1 grippers](../../Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md). Each arm consists of two main links which are lightweight, rigid and durable. Arm joints are equipped with planetary gear motors, enabling independent variable-speed operation with high precision and torque.
 
 ![R1_size_G1](assets/R1_size_G1.jpg)
 
@@ -332,9 +332,9 @@ After removing the shoulder and chest covers, connect the HDMI and USB cables.
 The current main control board* of R1 is the industrial computer running Linux Ubuntu, with the username `r1` and the default password `1`.<br>
 After connecting to Wi-Fi, you can remotely connect to R1 via SSH using the command, with `192.168.xxx.xxx` as its IP address.
 
-    ```Bash
-    ssh r1@192.168.xxx.xxx
-    ```
+```shell
+ssh r1@192.168.xxx.xxx
+```
 
 When you finished the above procedures, **disconnect the HDMI and USB cables.**<br>
 *It is configurable: Industrial Computer/ECU/etc.
@@ -393,7 +393,7 @@ Please ensure all switches (SWA/SWB/SWC/SWD) are in the top position before you 
 
 ### Torso Control
 
-<u>Important: Before the first use, conduct a zero-point calibration of the torso, as shown in the Torso Zero-Point Calibration in the Galaxea R1 Software Guide.</u>
+<u>Important: Before the first use, conduct a zero-point calibration of the torso, as shown in the Torso Zero-Point Calibration in the [Galaxea R1 Software Guide](Software_Guide.md).</u>
 
 - Connect to the Main Control Board.
 
@@ -442,5 +442,5 @@ Please ensure all switches (SWA/SWB/SWC/SWD) are in the top position before you 
 
 
 ## Next Step
-This concludes the hardware guide for Galaxea R1. For further details, please refer to Galaxea R1 Software Guide.
+This concludes the hardware guide for Galaxea R1. For further details, please refer to [Galaxea R1 Software Guide](Software_Guide.md).
 

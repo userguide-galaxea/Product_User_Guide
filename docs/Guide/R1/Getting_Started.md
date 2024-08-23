@@ -22,7 +22,7 @@ To charge Galaxea R1, please use the provided power cable and insert it into the
 
 ### Shutting Down
 
-1. Galaxea R1 can be turned off by simply switching off the button on the left side of the chassis.
+Galaxea R1 can be turned off by simply switching off the button on the left side of the chassis.
 
 #### Emergency Stop
 
@@ -44,4 +44,4 @@ The emergency stop button is located at the rear of the chassis. It can be used 
 
 ## Next Step
 
-Our quickstart journey has come to an end. To deepen your mastery of Galaxea R1, we strongly recommend exploring the following chapters in Galaxea R1 Hardware User Guide and Software User Guide. These resources offer a wealth of additional information and practical examples, guiding you through the intricacies of programming with confidence and ease.
+Our quickstart journey has come to an end. To deepen your mastery of Galaxea R1, we strongly recommend exploring the following chapters in [Galaxea R1 Hardware User Guide](Hardware_Guide.md) and [Galaxea R1 Software User Guide](Software_Guide.md). These resources offer a wealth of additional information and practical examples, guiding you through the intricacies of programming with confidence and ease.

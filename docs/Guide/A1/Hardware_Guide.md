@@ -240,7 +240,7 @@ Galaxea G1 is composed of one motor, two clips, and one specially designed joint
 
 ![A1_size_g1](assets/A1_size_G1.jpg)
 
-Equipped with the end-effector, Galaxea G1, should have:
+Equipped with the end-effector, [Galaxea G1](../../Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md), should have:
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -287,7 +287,7 @@ Here it shows how to attach gripper to A1. To remove them, simply reverse these 
 4. **Final Check**: After tightening the screws, double-check the alignment and stability of the gripper. It should be firmly attached and not wobble or move independently of the robot arm.
 5. **Testing**: Before using the robot arm, perform a test run to ensure that the gripper moves smoothly and holds objects securely without any slippage or unexpected movement.
 
-#### Inspire-Robots RH56 Series Dexterous Hand
+#### [Inspire-Robots RH56 Series Dexterous Hand](https://en.inspire-robots.com/product/rh56dfx)
 
 The dexterous hand boasts significant gripping strength and moderate speed, making it suitable for grasping and manipulating tasks in robotics or prosthetic applications. Its combination of power and control allows for effective handling of various objects, similar to the versatility of a human hand, thereby enhancing the functionality of robots or prostheses in performing complex tasks.
 
@@ -328,5 +328,5 @@ The dexterous hand boasts significant gripping strength and moderate speed, maki
 
 ## Next Step
 
-This concludes the hardware guide for Galaxea A1. For further details, please refer to Galaxea A1 Software Guide.
+This concludes the hardware guide for Galaxea A1. For further details, please refer to [Galaxea A1 Software Guide](Software_Guide.md).
 

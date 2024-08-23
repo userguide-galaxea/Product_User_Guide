@@ -271,5 +271,5 @@ To check if the CAN connection is functioning correctly, please refer to the CAN
 
 ### Next Step
 
-This concludes the hardware information of Galaxea B1. For further coding and interface details, please refer to Galaxea B1 Software Guide.
+This concludes the hardware information of Galaxea B1. For further coding and interface details, please refer to [Galaxea B1 Software Guide](B1_Software_Guide.md).
 

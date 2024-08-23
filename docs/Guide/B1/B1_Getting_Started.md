@@ -49,5 +49,5 @@ Galaxea B1 is a 6 DoF omni-directional vector chassis, featuring advanced capabi
 
 ### Next Step
 
-Our quickstart journey has come to an end. To deepen your mastery of Galaxea B1, we strongly recommend exploring the following chapters in Galaxea B1 Hardware Guide and Galaxea B1 Software Guide.  These resources offer a wealth of additional information and practical examples, guiding you through the intricacies of programming with confidence and ease.
+Our quickstart journey has come to an end. To deepen your mastery of Galaxea B1, we strongly recommend exploring the following chapters in [Galaxea B1 Hardware Guide](B1_Hardware_Guide.md) and [Galaxea B1 Software Guide](B1_Hardware_Guide.md).  These resources offer a wealth of additional information and practical examples, guiding you through the intricacies of programming with confidence and ease.
 

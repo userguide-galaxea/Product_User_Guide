@@ -95,4 +95,4 @@ The power supply unit of the robot arm includes an Emergency Stop switch (E-Stop
 
 ## Next Step
 
-Our quickstart journey has come to an end. To deepen your mastery of Galaxea A1, we strongly recommend exploring the following chapters in Galaxea A1 Hardware User Guide and Galaxea A1 Software User Guide.  These resources offer a wealth of additional information and practical examples, guiding you through the intricacies of programming with confidence and ease.
+Our quickstart journey has come to an end. To deepen your mastery of Galaxea A1, we strongly recommend exploring the following chapters in [Galaxea A1 Hardware User Guide](Hardware_Guide.md) and [Galaxea A1 Software User Guide](Software_Guide.md).  These resources offer a wealth of additional information and practical examples, guiding you through the intricacies of programming with confidence and ease.

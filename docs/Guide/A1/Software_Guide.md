@@ -9,7 +9,7 @@ We developed an efficient driver for converting serial signals through the slave
 
 ## Installation
 
-The SDK does not require recompilation. Please refer to the contents below.
+The [SDK](https://github.com/userguide-galaxea/A1_SDK) does not require recompilation. Please refer to the contents below.
 
 ## First Move
 
@@ -29,7 +29,7 @@ roslaunch signal_arm single_arm_node.launch
 
 Try to move the arm:
 
-```SQL
+```Bash
 cd release/install
 source setup.bash
 roslaunch mobiman jointTrackerdemo.launch

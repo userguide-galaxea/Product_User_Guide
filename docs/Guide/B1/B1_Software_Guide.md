@@ -7,7 +7,7 @@
 
 ### Installation
 
-The SDK does not require recompilation. Please refer to the contents below.
+The [SDK](https://github.com/userguide-galaxea/B1_SDK) does not require recompilation. Please refer to the contents below.
 
 ### CAN Connection Tutorial
 
