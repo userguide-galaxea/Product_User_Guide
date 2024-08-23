@@ -1,15 +1,15 @@
-# Galaxea B1 Software Guide
+## Galaxea B1 Software Guide
 
-## Software Dependency
+### Software Dependency
 
 1. [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu) 20.04 LTS
 2. ROS Noetic
 
-## Installation
+### Installation
 
-This [SDK](https://github.com/userguide-galaxea/B1_SDK) does not require recompilation. Please refer to the contents below.
+The SDK does not require recompilation. Please refer to the contents below.
 
-## CAN Connection Tutorial
+### CAN Connection Tutorial
 
 <u>Important: To ensure the USB-to-CAN Adapter works properly on Linux, please install the driver file that matches your system’s kernel version; otherwise, it may cause errors.</u>
 
@@ -17,7 +17,7 @@ This [SDK](https://github.com/userguide-galaxea/B1_SDK) does not require recompi
 
 Use the following command to check the current kernel version:
 
-```Bash
+```Plain
 name -r
 ```
 
@@ -43,6 +43,7 @@ The driver file name usually includes the version information. If you need drive
 </table>
 
 
+
 Use the following command to load the kernel module:
 
 ```Bash
@@ -54,7 +55,7 @@ sudo insmod 5.15.0_101.ko
 
 Use the following command to set the CAN interface baud rate to 1 Mbps:
 
-```Bash
+```Plain
 sudo ip link set can0 type can bitrate 1000000
 ```
 
@@ -62,13 +63,13 @@ sudo ip link set can0 type can bitrate 1000000
 
 Use the following command to bring up the CAN interface:
 
-```Bash
+```Plain
 sudo ip link set up can0
 ```
 
 If no errors occurred in the previous steps, use the following commands to check the CAN interface's configuration and status:
 
-```Bash
+```Plain
 sudo apt-get install net-tools
 ifconfig can0
 ```
@@ -77,7 +78,7 @@ ifconfig can0
 
 Use the following command to install the necessary dependencies for the driver:
 
-```Bash
+```Plain
  sudo apt-get install ros-noetic-socketcan-interface ros-noetic-can-msgs
 ```
 
@@ -88,23 +89,21 @@ Use the following commands to install the tool and monitor data from Galaxea B1 
 - B1 is already running, and
 - The CAN-to-USB Adapter is properly connected.
 
-```Bash
+```Plain
 sudo apt-get install can_utils
 candump can0
 ```
 
-## Development and Operation Tutorials
+## Operation and Control
 
-### First Move
+### Launch the Chassis Node
 
-#### Launch the Chassis Node
-
-```Bash
+```Plain
 source devel/setup.bash
 roslaunch signal_chassis chassis_node.launch
 ```
 
-#### Run Keyboard Control
+### Run Keyboard Control
 
 ```Bash
 rosrun signal_chassis keyboard_control.py
@@ -160,23 +159,20 @@ Use the following instructions to control the speed, angle, and motion mode of G
 </table>
 
 
+To connect remotely, use the following command to establish an SSH connection.
 
-
-
-To connect remotely, use the following command to establish an SSH connection. 
-
-- Replace the `name` and `IP` with the actual name and address of the industrial computer. 
+- Replace the `name` and `IP` with the actual name and address of the industrial computer.
 - The `-X` option enables X11 (X Window System) forwarding to allow the handling of remote graphical interfaces and the transmission of local keyboard and mouse inputs.
 
 ```Bash
 ssh name@IP -X
 ```
 
-### Software Interface
+## Software Interface
 
-#### Driver Interface
+### Driver Interface
 
-This interface is used for the chassis status feedback ROS package. The package defines multiple topics for posting the status of multiple motors in the chassis. The following are detailed descriptions of each topic and its related message types: 
+This interface is used for the chassis status feedback ROS package. The package defines multiple topics for posting the status of multiple motors in the chassis. The following are detailed descriptions of each topic and its related message types:
 
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
@@ -194,6 +190,7 @@ This interface is used for the chassis status feedback ROS package. The package 
     </tr>
   </tbody>
 </table>
+
 
 
 
@@ -261,10 +258,10 @@ This interface is used for the chassis status feedback ROS package. The package 
 
 
 
-
-#### Control Interface
+### Control Interface
 
 The chassis control interface can be used to command the chassis to move at the target speed, which includes the combination of X, Y, and Yaw Rate:
+
 <table style="border-collapse: collapse; width: 100%;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -281,6 +278,7 @@ The chassis control interface can be used to command the chassis to move at the 
         </tr>
     </tbody>
 </table>
+
 
 
 <table style="border-collapse: collapse; width: 100%;">
@@ -331,5 +329,4 @@ The chassis control interface can be used to command the chassis to move at the 
         </tr>
     </tbody>
 </table>
-
 

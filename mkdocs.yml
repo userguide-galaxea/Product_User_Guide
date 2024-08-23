@@ -52,13 +52,9 @@ nav:
       - Hardware Guide: Guide/A1/Hardware_Guide.md
       - Software Guide: Guide/A1/Software_Guide.md
   - Galaxea R1 User Guide:
-      - Getting Started:
-          - Before You Begin: Guide/R1/GettingStarted_Before.md
-          - Connecting and Installing: Guide/R1/GettingStarted_Connecting.md
+      - Getting Started: Guide/R1/Getting_Started.md
       - Hardware Guide: Guide/R1/Hardware_Guide.md
-      - Software Guide:
-        - Software Overview: Guide/R1/Software_Guide_firstmove.md
-        - Software Interface: Guide/R1/Software_Guide_Interface.md
+      - Software Guide: Guide/R1/Software_Guide.md
   - Galaxea B1 User Guide:
       - Getting Started: Guide/B1/B1_Getting_Started.md
       - Hardware Guide: Guide/B1/B1_Hardware_Guide.md

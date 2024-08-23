@@ -1,14 +1,12 @@
-# Galaxea B1 Hardware Guide
+## Galaxea B1 Hardware Guide
 
 This manual provides engineering data and user guidance for working with the Galaxea B1 hardware.
 
-## Disclaimer
+### Disclaimer
 
-<u>Galaxea B1 is intended for research applications by users experienced in operating and programming research robots. This product is not designed for general consumer use in the home and does not have the necessary certifications for such purposes.</u> 
+<u>Galaxea B1 is intended for research applications by users experienced in operating and programming research robots. This product is not designed for general consumer use in the home and does not have the necessary certifications for such purposes.</u>
 
-## Technical Specification
-
-![B1_hardware_size](assets/B1_hardware_size.png)
+### Technical Specification
 
 
 
@@ -59,6 +57,9 @@ This manual provides engineering data and user guidance for working with the Gal
     </tbody>
 </table>
 
+
+
+
 <table style="border-collapse: collapse; width: 100%;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -81,6 +82,7 @@ This manual provides engineering data and user guidance for working with the Gal
         </tr>
     </tbody>
 </table>
+
 
 <table style="border-collapse: collapse; width: 100%;">
     <thead>
@@ -107,9 +109,10 @@ This manual provides engineering data and user guidance for working with the Gal
 
 
 
-## Chassis Operation
 
-Galaxea B1 features four steering wheels, each equipped with two steering motors, totaling 8 motors. 
+### Chassis Operation
+
+Galaxea B1 features four steering wheels, each equipped with two steering motors, totaling 8 motors.
 
 ![B1_hardware_ports](assets/B1_hardware_ports.png)
 
@@ -145,11 +148,13 @@ Galaxea B1 features four steering wheels, each equipped with two steering motors
 </table>
 
 
-### **Operation Guide**
 
-The chassis can be controlled and operated using either a Joystick Controller or a Computing Unit.
 
-Please ensure all switches (SWA/SWB/SWC/SWD) are in the top position before you do any actions. This will place the machine in a stop state, preventing the chassis from operating. 
+#### Teleoperation
+
+The chassis can be controlled and operated using either the Joystick Controller or the Computing Unit.
+
+Please ensure all switches (SWA/SWB/SWC/SWD) are in the top position before you do any actions. This will place the machine in a stop state, preventing the chassis from operating.
 
 <table style="border-collapse: collapse; width: 100%;">
     <thead>
@@ -196,16 +201,17 @@ Please ensure all switches (SWA/SWB/SWC/SWD) are in the top position before you 
         <tr style="background-color: white;">
             <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Switches</td>
             <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Switch SWB to bottom and switch SWC to middle</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" colspan="3">Follow the steps in the <a href="../B1_Software_Guide">Development and Operation Tutorials</a> to start the action.</td>
+            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" colspan="3">Follow the steps in the Development and Operation Tutorials to start the action.</td>
         </tr>
     <tbody>        
 </table>
 
-### PC Connection
 
-To achieve efficient data communication and control within the system, we provided a USB-to-CAN Adapter for users to connect the chassis to PC. 
+#### PC Connection
 
+To achieve efficient data communication and control within the system, we provided a USB-to-CAN Adapter for users to connect the chassis to PC.
 
+![B1_UABCAN](assets/B1_USBCAN.png)
 
 <table style="border-collapse: collapse; width: 100%;">
     <thead>
@@ -247,21 +253,23 @@ To achieve efficient data communication and control within the system, we provid
 </table>
 
 
+
 **Please follow the steps:**
 
 1. Use the provided 2-pin aviation connector and cable and connect the USB-to-CAN Adapter to the CAN interface located on the rear of the chassis.
-
 2. Press the boat-shaped power button to turn on the chassis and rotate the emergency stop button clockwise to release it.
-
 3. Verify the wiring of the USB-to-CAN Adapter: red wire to the H port and the black wire to the L port.
-
 4. Use the USB cable and connect the USB-to-CAN Adapter to PC.
 
-![B1_USB_CAN](assets/B1_USB_CAN.png)
+![B1_usbcan](assets/B1_USB_CAN.png)
 
-To check if the CAN connection is functioning correctly, please refer to the CAN Connection in the following chapters.
 
-## Next Step
 
-This concludes the hardware information of Galaxea B1. For further coding and interface details, please refer to [Galaxea B1 Software Guide](B1_Software_Guide.md).
+To check if the CAN connection is functioning correctly, please refer to the CAN Connection in the Galaxea B1 Software Guide.
+
+
+
+### Next Step
+
+This concludes the hardware information of Galaxea B1. For further coding and interface details, please refer to Galaxea B1 Software Guide.
 

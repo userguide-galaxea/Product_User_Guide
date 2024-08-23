@@ -72,7 +72,7 @@ hide:
             <section class="products-section">
                 <h2><img src="assets/R1_series.png" alt="R1" width="50"></h2>
                 <div class="product">
-                        <a href="Guide/R1/GettingStarted_Before">Getting Started</a> <br>
+                        <a href="Guide/R1/Getting_Started">Getting Started</a> <br>
                         <a href="Guide/R1/Hardware_Guide">Hardware Guide</a> <br>
                         <a href="Guide/R1/Software_Guide">Software Guide</a> <br>
                 </div>
