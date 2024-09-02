@@ -1,5 +1,6 @@
-![Aloha_title](assets/aloha_1.png)
+# Tabletop Teleopration
 
+![Aloha_title](assets/Tabletop_Teleopration.png)
 ## Technical Specification
 
 <table style="border-collapse: collapse; width: 100%;">
