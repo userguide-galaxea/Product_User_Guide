@@ -810,8 +810,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -840,8 +838,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -850,6 +846,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#galaxea-b1-software-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Galaxea B1 Software Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Galaxea B1 Software Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#software-dependency" class="md-nav__link">
     <span class="md-ellipsis">
       Software Dependency
@@ -857,8 +863,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       Installation
@@ -866,8 +872,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#can-connection-tutorial" class="md-nav__link">
     <span class="md-ellipsis">
       CAN Connection Tutorial
@@ -875,16 +881,6 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#development-and-operation-tutorials" class="md-nav__link">
-    <span class="md-ellipsis">
-      Development and Operation Tutorials
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Development and Operation Tutorials">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#first-move" class="md-nav__link">
@@ -906,9 +902,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#run-keyboard-control" class="md-nav__link">
+  <a href="#control-the-chassis" class="md-nav__link">
     <span class="md-ellipsis">
-      Run Keyboard Control
+      Control the Chassis
     </span>
   </a>
   
@@ -990,8 +986,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1000,6 +994,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#galaxea-b1-software-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Galaxea B1 Software Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Galaxea B1 Software Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#software-dependency" class="md-nav__link">
     <span class="md-ellipsis">
       Software Dependency
@@ -1007,8 +1011,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       Installation
@@ -1016,8 +1020,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#can-connection-tutorial" class="md-nav__link">
     <span class="md-ellipsis">
       CAN Connection Tutorial
@@ -1025,16 +1029,6 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#development-and-operation-tutorials" class="md-nav__link">
-    <span class="md-ellipsis">
-      Development and Operation Tutorials
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Development and Operation Tutorials">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#first-move" class="md-nav__link">
@@ -1056,9 +1050,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#run-keyboard-control" class="md-nav__link">
+  <a href="#control-the-chassis" class="md-nav__link">
     <span class="md-ellipsis">
-      Run Keyboard Control
+      Control the Chassis
     </span>
   </a>
   
@@ -1125,19 +1119,21 @@
   
 
 
-<h1 id="galaxea-b1-software-guide">Galaxea B1 Software Guide</h1>
-<h2 id="software-dependency">Software Dependency</h2>
+  <h1>Software Guide</h1>
+
+<h2 id="galaxea-b1-software-guide">Galaxea B1 Software Guide</h2>
+<h3 id="software-dependency">Software Dependency</h3>
 <ol>
 <li><a href="https://en.wikipedia.org/wiki/Ubuntu">Ubuntu</a> 20.04 LTS</li>
 <li>ROS Noetic</li>
 </ol>
-<h2 id="installation">Installation</h2>
-<p>This <a href="https://github.com/userguide-galaxea/B1_SDK">SDK</a> does not require recompilation. Please refer to the contents below.</p>
-<h2 id="can-connection-tutorial">CAN Connection Tutorial</h2>
+<h3 id="installation">Installation</h3>
+<p>The SDK does not require recompilation. Please refer to the contents below.</p>
+<h3 id="can-connection-tutorial">CAN Connection Tutorial</h3>
 <p><u>Important: To ensure the USB-to-CAN Adapter works properly on Linux, please install the driver file that matches your system’s kernel version; otherwise, it may cause errors.</u></p>
 <p><strong>1. Launch the Driver</strong></p>
 <p>Use the following command to check the current kernel version:</p>
-<div class="highlight"><pre><span></span><code>name<span class="w"> </span>-r
+<div class="highlight"><pre><span></span><code>name -r
 </code></pre></div>
 <p>The driver file name usually includes the version information. If you need drivers for other kernel versions, please contact us for assistance.</p>
 <table style="border-collapse: collapse; width: 100%;">
@@ -1165,19 +1161,19 @@ sudo<span class="w"> </span>insmod<span class="w"> </span><span class="m">5</spa
 </code></pre></div>
 <p><strong>2. Set 1M Baud Rate</strong></p>
 <p>Use the following command to set the CAN interface baud rate to 1 Mbps:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>can0<span class="w"> </span><span class="nb">type</span><span class="w"> </span>can<span class="w"> </span>bitrate<span class="w"> </span><span class="m">1000000</span>
+<div class="highlight"><pre><span></span><code>sudo ip link set can0 type can bitrate 1000000
 </code></pre></div>
 <p><strong>3. Open the CAN Interface</strong></p>
 <p>Use the following command to bring up the CAN interface:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>up<span class="w"> </span>can0
+<div class="highlight"><pre><span></span><code>sudo ip link set up can0
 </code></pre></div>
 <p>If no errors occurred in the previous steps, use the following commands to check the CAN interface's configuration and status:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>net-tools
-ifconfig<span class="w"> </span>can0
+<div class="highlight"><pre><span></span><code>sudo apt-get install net-tools
+ifconfig can0
 </code></pre></div>
 <p><strong>4. Install Driver Dependencies</strong></p>
 <p>Use the following command to install the necessary dependencies for the driver:</p>
-<div class="highlight"><pre><span></span><code><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ros-noetic-socketcan-interface<span class="w"> </span>ros-noetic-can-msgs
+<div class="highlight"><pre><span></span><code> sudo apt-get install ros-noetic-socketcan-interface ros-noetic-can-msgs
 </code></pre></div>
 <p><strong>5. Install and Use can_utils</strong></p>
 <p>Use the following commands to install the tool and monitor data from Galaxea B1 in real-time, provided that:</p>
@@ -1185,82 +1181,33 @@ ifconfig<span class="w"> </span>can0
 <li>B1 is already running, and</li>
 <li>The CAN-to-USB Adapter is properly connected.</li>
 </ul>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>can_utils
-candump<span class="w"> </span>can0
+<div class="highlight"><pre><span></span><code>sudo apt-get install can_utils
+candump can0
 </code></pre></div>
-<h2 id="development-and-operation-tutorials">Development and Operation Tutorials</h2>
 <h3 id="first-move">First Move</h3>
 <h4 id="launch-the-chassis-node">Launch the Chassis Node</h4>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>devel/setup.bash
-roslaunch<span class="w"> </span>signal_chassis<span class="w"> </span>chassis_node.launch
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>install/setup.bash
+roslaunch<span class="w"> </span>signal_chassis<span class="w"> </span>r1.launch<span class="w">   </span>
 </code></pre></div>
-<h4 id="run-keyboard-control">Run Keyboard Control</h4>
-<div class="highlight"><pre><span></span><code>rosrun<span class="w"> </span>signal_chassis<span class="w"> </span>keyboard_control.py
-</code></pre></div>
-<p>Use the following instructions to control the speed, angle, and motion mode of Galaxea B1.</p>
-<table style="border-collapse: collapse; width: 100%;">
-    <thead>
-        <tr style="background-color: black; color: white; text-align: left;">
-            <th style="padding: 8px; width: 100px;">Item</th>
-            <th style="padding: 8px; width: 650px;">Description</th>
-            <th style="padding: 8px;">Notes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px;">⬆️</td>
-            <td style="padding: 8px;">Used to increase the linear speed, which returns to 0 when the key is released.</td>
-            <td style="padding: 8px;">Range (m/s): (-1, 1)</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px;">⬇️</td>
-            <td style="padding: 8px;">Used to decrease the linear speed, which returns to 0 when the key is released.</td>
-            <td style="padding: 8px;"></td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px;">⬅️</td>
-            <td style="padding: 8px;">Used to increase the steering angle, which returns to 0 when the key is released.</td>
-            <td style="padding: 8px;">Range (°): <br />Motion Mode 0: (-45,45) <br />Motion Mode 1: (-90,90)</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px;">➡️</td>
-            <td style="padding: 8px;">Used to decrease the steering angle, which returns to 0 when the key is released.</td>
-            <td style="padding: 8px;"></td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px;">0</td>
-            <td style="padding: 8px;">Switch to Dual Ackerman Mode</td>
-            <td style="padding: 8px;"></td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px;">1</td>
-            <td style="padding: 8px;">Switch to Parallel Mode</td>
-            <td style="padding: 8px;"></td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px;">2</td>
-            <td style="padding: 8px;">Switch to Spinning Mode</td>
-            <td style="padding: 8px;"></td>
-        </tr>
-    </tbody>
-</table>
-
-<p>To connect remotely, use the following command to establish an SSH connection. </p>
-<ul>
-<li>Replace the <code>name</code> and <code>IP</code> with the actual name and address of the industrial computer. </li>
-<li>The <code>-X</code> option enables X11 (X Window System) forwarding to allow the handling of remote graphical interfaces and the transmission of local keyboard and mouse inputs.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>name@IP<span class="w"> </span>-X
+<h4 id="control-the-chassis">Control the Chassis</h4>
+<div class="highlight"><pre><span></span><code>rostopic<span class="w"> </span>pub<span class="w"> </span>/control_command<span class="w"> </span>signal_chassis/ControlCommand<span class="w"> </span><span class="s2">&quot;header:</span>
+<span class="s2">  seq: 0</span>
+<span class="s2">  stamp: {secs: 0, nsecs: 0}</span>
+<span class="s2">  frame_id: &#39;&#39;</span>
+<span class="s2">motion_mode: 0</span>
+<span class="s2">x: 0.5</span>
+<span class="s2">y: 0.0</span>
+<span class="s2">w: 0.0&quot;</span>
 </code></pre></div>
 <h3 id="software-interface">Software Interface</h3>
 <h4 id="driver-interface">Driver Interface</h4>
-<p>This interface is used for the chassis status feedback ROS package. The package defines multiple topics for posting the status of multiple motors in the chassis. The following are detailed descriptions of each topic and its related message types: </p>
+<p>This interface is used for the chassis status feedback ROS package. The package defines multiple topics for posting the status of multiple motors in the chassis. The following are detailed descriptions of each topic and its related message types:</p>
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
     <tr style="background-color: black; color: white; text-align: left;">
       <th style="padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="padding: 8px; border: 1px solid #ddd; width: 300px;">Description</th>
-      <th style="padding: 8px; border: 1px solid #ddd;">Message Type</th>
+      <th style="padding: 8px; border: 1px solid #ddd; width: 200px;">Description</th>
+      <th style="padding: 8px; border: 1px solid #ddd; width: 400px;">Message Type</th>
     </tr>
   </thead>
   <tbody>
@@ -1275,8 +1222,8 @@ roslaunch<span class="w"> </span>signal_chassis<span class="w"> </span>chassis_n
 <table style="width: 100%; border-collapse: collapse;">
   <tr>
     <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-    <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Field</th>
-    <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Description</th>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Field</th>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 350px;">Description</th>
   </tr>
   <tr style="background-color: white;">
     <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="13">/hdas/motor_state</td>
@@ -1329,25 +1276,25 @@ roslaunch<span class="w"> </span>signal_chassis<span class="w"> </span>chassis_n
   </tr>
   <tr style="background-color: white;">
     <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.motion_mode</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Motion Mode 0: Dual Ackerman Mode <br /> Motion Mode 1: Parallel Mode <br /> Motion Mode 2: Spinning Mode</td>
+    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">0: Dual Ackerman Mode <br /> 1: Parallel Mode <br />: Spinning Mode</td>
   </tr>
 </table>
 
 <h4 id="control-interface">Control Interface</h4>
-<p>The chassis control interface can be used to command the chassis to move at the target speed, which includes the combination of X, Y, and Yaw Rate:</p>
+<p>The  chassis control interface can be used to command the chassis to move at  the target speed, which includes the combination of X, Y, and Yaw Rate:</p>
 <table style="border-collapse: collapse; width: 100%;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
             <th style="padding: 8px; width: 200px;">Topic Name</th>
-            <th style="padding: 8px; width: 300px;">Description</th>
-            <th style="padding: 8px;">Message Type</th>
+            <th style="padding: 8px; width: 200px;">Description</th>
+            <th style="padding: 8px; width: 400px;">Message Type</th>
         </tr>
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px;">/cmd_vel</td>
+            <td style="padding: 8px;">/control_command</td>
             <td style="padding: 8px;">Issuing the chassis control signal</td>
-            <td style="padding: 8px;">geometry_msgs/Twist</td>
+            <td style="padding: 8px;">signal_chassis/ControlCommand.msg</td>
         </tr>
     </tbody>
 </table>
@@ -1356,47 +1303,31 @@ roslaunch<span class="w"> </span>signal_chassis<span class="w"> </span>chassis_n
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
             <th style="padding: 8px; width: 200px;">Topic Name</th>
-            <th style="padding: 8px; width: 300px;">Field</th>
-            <th style="padding: 8px;">Description</th>
+            <th style="padding: 8px; width: 200px;">Field</th>
+            <th style="padding: 8px; width: 400px;">Description</th>
         </tr>
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px;"rowspan="13">/cmd_vel</td>
+            <td style="vertical-align: middle; padding: 8px;"rowspan="13">/control_command</td>
             <td style="padding: 8px;">header</td>
             <td style="padding: 8px;">Standard ROS header</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px;">linear</td>
-            <td style="padding: 8px;">Control of linear speed</td>
+            <td style="padding: 8px;">.motion_mode</td>
+            <td style="padding: 8px;">0: Dual Ackerman Mode <br>1: Transition Mode<br>2: Spinning Mode<br>3: Vector Control Mode<br>4: Breaking Mode</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px;">.x</td>
-            <td style="padding: 8px;">Linear speed of x;<br />Range (m/s): (-1, 1)</td>
+            <td style="padding: 8px;">Not used for Mode 2 & Mode 4;<br> Mode 0: Linear speed of x in the range of (-1, 1) m/s<br>Mode 1: Linear speed of x-direction in the range of (-1, 1) m/s<br>Mode 3: Linear speed of x-direction in the range of (-1, 1) m/s</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px;">.y</td>
-            <td style="padding: 8px;">Not used</td>
+            <td style="padding: 8px;">Not used for Mode 0 & Mode 2 & Mode 4<br>Mode 1: Linear speed of y-direction in the range of (-1, 1) m/s<br>Mode 3: Linear speed of y-direction in the range of  (-1, 1) m/s </td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px;">.z</td>
-            <td style="padding: 8px;">Not used</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px;">angular</td>
-            <td style="padding: 8px;">Control of motion mode and steering angle</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px;">.x</td>
-            <td style="padding: 8px;">Motion Mode 0: Dual Ackerman Mode <br />Motion Mode 1: Translation Mode<br />Motion Mode 2: Spinning Mode</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px;">.y</td>
-            <td style="padding: 8px;">Not used</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px;">.z</td>
-            <td style="padding: 8px;">Control of steering angle;<br />Range (°): <br />Motion Mode 0: (-45, 45) <br />Motion Mode 1: (-90, 90) <br />Motion Mode 2: 0 by default</td>
+            <td style="padding: 8px;">.w</td>
+            <td style="padding: 8px;">Not used for Mode 1 & Mode 4;<br>Motion Mode 0: (-45°, 45°) <br />Motion Mode 2: angular speed in the range of (-3.7, 3.7) rad/s <br />Motion Mode 3: angular speed in the range of (-3.7, 3.7) rad/s</td>
         </tr>
     </tbody>
 </table>
