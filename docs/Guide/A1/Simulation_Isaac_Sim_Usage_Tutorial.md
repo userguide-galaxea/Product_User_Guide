@@ -23,9 +23,9 @@ The download size is approximately 8 GB, so please plan your time accordingly.
 3. **Select version:** Ensure you install **<u>version 4.0.0</u>** of Isaac Sim to avoid potential issues with the ROS bridge. Please note that the version number might be hidden in a dropdown menu, so carefully check and select the correct version.
 4. **Install** **Isaac Sim:** After selecting the version, click the "Install" button to begin the installation of Isaac Sim.
 
-![exchange1_en](../product_images_video/Simulation_Isaac_Sim_Usage_Tutorial/exchange1_en.png)
+![exchange1_en](assets/exchange1_en.png)
 
-![exchange2_en](../product_images_video/Simulation_Isaac_Sim_Usage_Tutorial/exchange2_en.png)
+![exchange2_en](assets/exchange2_en.png)
 
 <u>**Important:** The installed applications can be found in the "Library" tab. Simply locate the desired application and launch it from there.</u>
 
@@ -49,17 +49,17 @@ Visit [A1 Simulation Isaac Sim Usage Tutorial](https://github.com/userguide-gala
 
 1. **Open Isaac Sim:** Start Isaac Sim 4.0.0 from Omniverse Launcher. Ensure you select `omni.isaac.ros_bridge(deprecated)` at startup to enable communication between Isaac Sim and ROS nodes.
 
-   ![library_en](../product_images_video/Simulation_Isaac_Sim_Usage_Tutorial/library_en.png)
+   ![library_en](assets/library_en.png)
 
 2. **Open the USD File:** After starting Isaac Sim, select **"File -> Open"**. In the file dialog that appears, choose the `A1_fixed_base_scene.usd` file from the folder. Do not select the A1 simulation raw file `A1_raw.usd`.
 
-   ![launcher1_en](../product_images_video/Simulation_Isaac_Sim_Usage_Tutorial/launcher1_en.png)
+   ![launcher1_en](assets/launcher1_en.png)
 
 
 
 3. **Run the Synchronization Script:** After opening the file, you will see the corresponding scene. Click the "**Play"** button on the left sidebar.
 
-   ![launcher2_en](../product_images_video/Simulation_Isaac_Sim_Usage_Tutorial/launcher2_en.png)
+   ![launcher2_en](assets/launcher2_en.png)
 
    Run the `a1_jointsync.py` script from the folder to synchronize the RViz simulation with the Isaac Sim simulation.
     ```shell
@@ -74,13 +74,13 @@ Visit [A1 Simulation Isaac Sim Usage Tutorial](https://github.com/userguide-gala
 
 After clicking the Play button, start the `python a1_joint_move_sin.py` script. A1 robot arm will begin executing a sinusoidal trajectory in joint space, as shown in the image below.
 
-![launcher3_en](../product_images_video/Simulation_Isaac_Sim_Usage_Tutorial/launcher3_en.jpg)
+![launcher3_en](assets/launcher3_en.jpg)
 
 With this, the Isaac Sim A1 robot arm simulation process is complete. You may play the demo in the system with the code provided, like shown below.
 
 <div style="display: flex; justify-content: center; align-items: center;">
 <video width="1920" height="1080" controls>
-  <source src="../../product_images_video/Simulation_Isaac_Sim_Usage_Tutorial/a1_asaacsim_demo.mp4" type="video/mp4">
+  <source src="../assets/a1_asaacsim_demo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 </div>

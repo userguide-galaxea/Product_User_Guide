@@ -47,11 +47,12 @@ nav:
       - A1 Robot Arm: Introducing_Galaxea_Robot/product_info/A1.md
       - Advanced Accessories: Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md
       - Tabletop Teleopration: Guide/Tabletop_Teleopration/Tabletop_Teleopration.md
-      - Simulation Isaac Sim Usage Tutorial: Introducing_Galaxea_Robot/product_info/Simulation_Isaac_Sim_Usage_Tutorial.md
   - Galaxea A1 User Guide:
       - Getting Started: Guide/A1/Getting_Started.md
       - Hardware Guide: Guide/A1/Hardware_Guide.md
       - Software Guide: Guide/A1/Software_Guide.md
+      - Simulation Isaac Sim Usage Tutorial: Guide/A1/Simulation_Isaac_Sim_Usage_Tutorial.md
+
   - Galaxea R1 User Guide:
       - Getting Started:
           - Before You Begin: Guide/R1/GettingStarted_Before.md
