@@ -88,6 +88,7 @@ Use the following commands to install the tool and monitor data from Galaxea B1 
 
 - B1 is already running, and
 - The CAN-to-USB Adapter is properly connected.
+- Make sure to switch the joystick controller SWB to the bottom and SWC to the middle. Otherwise, `candump can0` cwill be unable to access the CAN data, and the upper computer will not be able to control the chassis.
 
 ```Plain
 sudo apt-get install can_utils
