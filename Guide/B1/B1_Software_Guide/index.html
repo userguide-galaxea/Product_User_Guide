@@ -1201,6 +1201,7 @@ ifconfig can0
 <ul>
 <li>B1 is already running, and</li>
 <li>The CAN-to-USB Adapter is properly connected.</li>
+<li>Make sure to switch the joystick controller SWB to the bottom and SWC to the middle. Otherwise, <code>candump can0</code> cwill be unable to access the CAN data, and the upper computer will not be able to control the chassis.</li>
 </ul>
 <div class="highlight"><pre><span></span><code>sudo apt-get install can_utils
 candump can0
