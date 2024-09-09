@@ -1,4 +1,4 @@
-# Galaxea G1
+# Gripper
 ![G1_title](../product_images_video/G1_title.png)
 
 

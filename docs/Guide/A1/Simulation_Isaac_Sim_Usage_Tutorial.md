@@ -48,17 +48,12 @@ The following is the official tutorial to help you understand the basic Isaac Si
 Visit [A1 Simulation Isaac Sim Usage Tutorial](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial) in our GitHub to get coding files.
 
 1. **Open Isaac Sim:** Start Isaac Sim 4.0.0 from Omniverse Launcher. Ensure you select `omni.isaac.ros_bridge(deprecated)` at startup to enable communication between Isaac Sim and ROS nodes.
-
    ![library_en](assets/library_en.png)
 
 2. **Open the USD File:** After starting Isaac Sim, select **"File -> Open"**. In the file dialog that appears, choose the `A1_fixed_base_scene.usd` file from the folder. Do not select the A1 simulation raw file `A1_raw.usd`.
-
    ![launcher1_en](assets/launcher1_en.png)
 
-
-
 3. **Run the Synchronization Script:** After opening the file, you will see the corresponding scene. Click the "**Play"** button on the left sidebar.
-
    ![launcher2_en](assets/launcher2_en.png)
 
    Run the `a1_jointsync.py` script from the folder to synchronize the RViz simulation with the Isaac Sim simulation.

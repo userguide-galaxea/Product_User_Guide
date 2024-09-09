@@ -1,6 +1,6 @@
 site_name: GALAXEA
 site_url: https://userguide-galaxea.github.io/Product_User_Guide/
-repo_url: https://github.com/Product_User_Guide
+repo_url: https://github.com/userguide-galaxea/Product_User_Guide
 site_description: "Galaxea"
 copyright: Copyright &copy; 2023 - 2024 Galaxea
 site_author: Galaxea Inc
@@ -43,10 +43,12 @@ extra:
 nav:
   - GUIDE: index.md
   - Galaxea Robot:
-      - R1 Robot: Introducing_Galaxea_Robot/product_info/R1.md
-      - A1 Robot Arm: Introducing_Galaxea_Robot/product_info/A1.md
-      - Advanced Accessories: Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md
+      - R1: Introducing_Galaxea_Robot/product_info/R1.md
+      - A1: Introducing_Galaxea_Robot/product_info/A1.md
       - Tabletop Teleopration: Guide/Tabletop_Teleopration/Tabletop_Teleopration.md
+      - Accessories:
+          - Gripper: Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md
+          - Dexterous Hand: Introducing_Galaxea_Robot/product_info/Dexterous_Hands.md
   - Galaxea A1 User Guide:
       - Getting Started: Guide/A1/Getting_Started.md
       - Hardware Guide: Guide/A1/Hardware_Guide.md
