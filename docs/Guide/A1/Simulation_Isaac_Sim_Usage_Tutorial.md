@@ -79,3 +79,56 @@ With this, the Isaac Sim A1 robot arm simulation process is complete. You may pl
   Your browser does not support the video tag.
 </video>
 </div>
+
+
+## Gripping
+
+After clicking the “Play”, please refer to the file "Joint and End-Effector Motion Interface" in A1 SDK to complete the simuation process in Isaacsim.
+
+Take the following code as an example:
+
+- Trace the end pose and position
+
+```python
+##Initiate the end motion script to start one RViz of the arm. Joint position is on zero-point by default.
+cd release/install
+source setup.bash
+roslaunch mobiman eeTrackerdemo.launch
+
+##Initiate one terminal,e.g. "terminal_1", open the A1 simulation sync.
+python a1_jointsync.py
+
+##Initiate one terminal,e.g. "terminal_2", publish the example trajactory ponits.
+rostopic pub /a1_ee_target geometry_msgs/PoseStamped "{
+header: {
+seq: 0,
+stamp: {secs: 0, nsecs: 0},
+frame_id: 'world'
+},
+pose: {
+position: {x: 0.08, y: 0.0, z: 0.5},
+orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+}
+}"
+```
+
+- Gripping the object. demo
+
+```Bash
+##Initiate the end motion script to start one RViz of the arm. Joint position is on zero-point by default.
+cd release/install
+source setup.bash
+roslaunch mobiman eeTrackerdemo.launch
+
+##Initiate one terminal,e.g. "terminal_3", run the script.
+python mpc_picker.py
+```
+
+- Demo Video
+
+<div style="display: flex; justify-content: center; align-items: center;">
+<video width="1920" height="1080" controls>
+  <source src="../assets/mp4_1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
