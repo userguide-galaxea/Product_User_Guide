@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1179,42 +1179,35 @@
 </li>
 </ul>
 <h2 id="importing-a1-usd-file">Importing A1 USD File</h2>
-<p>Visit <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial">A1 Simulation Isaac Sim Usage Tutorial</a> in our GitHub to get coding files.</p>
 <ol>
-<li>
-<p><strong>Open Isaac Sim:</strong> Start Isaac Sim 4.0.0 from Omniverse Launcher. Ensure you select <code>omni.isaac.ros_bridge(deprecated)</code> at startup to enable communication between Isaac Sim and ROS nodes.
-   <img alt="library_en" src="../assets/library_en.png" /></p>
-</li>
-<li>
-<p><strong>Open the USD File:</strong> After starting Isaac Sim, select <strong>"File -&gt; Open"</strong>. In the file dialog that appears, choose the <code>A1_fixed_base_scene.usd</code> file from the folder. Do not select the A1 simulation raw file <code>A1_raw.usd</code>.
-   <img alt="launcher1_en" src="../assets/launcher1_en.png" /></p>
-</li>
-<li>
-<p><strong>Run the Synchronization Script:</strong> After opening the file, you will see the corresponding scene. Click the "<strong>Play"</strong> button on the left sidebar.
-   <img alt="launcher2_en" src="../assets/launcher2_en.png" /></p>
-</li>
+<li><strong>Open Isaac Sim:</strong> Start Isaac Sim 4.0.0 from Omniverse Launcher. Ensure you select <code>omni.isaac.ros_bridge(deprecated)</code> at startup to enable communication between Isaac Sim and ROS nodes.</li>
 </ol>
-<p>Run the <code>a1_jointsync.py</code> script from the folder to synchronize the RViz simulation with the Isaac Sim simulation.
-    <div class="highlight"><pre><span></span><code>python<span class="w"> </span>a1_jointsync.py
-</code></pre></div></p>
+<p><img alt="library_en" src="../assets/library_en.png" /></p>
+<ol>
+<li><strong>Open the USD File:</strong> After starting Isaac Sim, select <strong>"File -&gt; Open"</strong>. In the file dialog that appears, choose the <code>A1_fixed_base_scene.usd</code> file from the folder. Do not select the A1 simulation raw file <code>A1_raw.usd</code>.</li>
+</ol>
+<p><img alt="launcher1_en" src="../assets/launcher1_en.png" /></p>
+<ol>
+<li><strong>Run the Synchronization Script:</strong> After opening the file, you will see the corresponding scene. Click the "<strong>Play"</strong> button on the left sidebar.</li>
+</ol>
+<p><img alt="launcher2_en" src="../assets/launcher2_en.png" /></p>
+<p>Run the <code>a1_jointsync.py</code> script from the folder to synchronize the RViz simulation with the Isaac Sim simulation.</p>
+<pre><code>```shell
+  python a1_jointsync.py
+```
+</code></pre>
 <p><u><strong>Important:</strong> The Isaac Sim ROS Bridge can only publish/subscribe to <code>rostopic</code> when <code>roscore</code> is running.</u></p>
 <h2 id="demonstration-example">Demonstration Example</h2>
-<p>After clicking the Play button, start the <code>python a1_joint_move_sin.py</code> script. A1 robot arm will begin executing a sinusoidal trajectory in joint space, as shown in the image below.</p>
+<p>After clicking the Play button, start the <code>python a1_joint_move_sin.py</code> script. A1 robot arm will begin executing a sinusoidal trajectory in joint space, as shown in the image below. You can also play the controller trajectory by running <code>python a1_control_from_traj.py</code>. This will play the trajectory based on the given <code>joint_trajectory.npz</code> data.</p>
 <p><img alt="launcher3_en" src="../assets/launcher3_en.jpg" /></p>
 <p>With this, the Isaac Sim A1 robot arm simulation process is complete. You may play the demo in the system with the code provided, like shown below.</p>
-<div style="display: flex; justify-content: center; align-items: center;">
-<video width="1920" height="1080" controls>
-  <source src="../assets/a1_asaacsim_demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-</div>
-
+<p><img alt="video_git" src="../assets/a1_asaacsim_demo.gif" /></p>
 <h2 id="gripping">Gripping</h2>
 <p>After clicking the “Play”, please refer to the file "Joint and End-Effector Motion Interface" in A1 SDK to complete the simuation process in Isaacsim.</p>
 <p>Take the following code as an example:</p>
-<ul>
-<li>Trace the end pose and position</li>
-</ul>
+<ol>
+<li>
+<p>Trace the end pose and position
 <div class="highlight"><pre><span></span><code><span class="c1">##Initiate the end motion script to start one RViz of the arm. Joint position is on zero-point by default.</span>
 <span class="n">cd</span> <span class="n">release</span><span class="o">/</span><span class="n">install</span>
 <span class="n">source</span> <span class="n">setup</span><span class="o">.</span><span class="n">bash</span>
@@ -1226,30 +1219,32 @@
 <span class="c1">##Initiate one terminal,e.g. &quot;terminal_2&quot;, publish the example trajactory ponits.</span>
 <span class="n">rostopic</span> <span class="n">pub</span> <span class="o">/</span><span class="n">a1_ee_target</span> <span class="n">geometry_msgs</span><span class="o">/</span><span class="n">PoseStamped</span> <span class="s2">&quot;{</span>
 <span class="n">header</span><span class="p">:</span> <span class="p">{</span>
-<span class="n">seq</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-<span class="n">stamp</span><span class="p">:</span> <span class="p">{</span><span class="n">secs</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nsecs</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
-<span class="n">frame_id</span><span class="p">:</span> <span class="s1">&#39;world&#39;</span>
+    <span class="n">seq</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">stamp</span><span class="p">:</span> <span class="p">{</span><span class="n">secs</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nsecs</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="n">frame_id</span><span class="p">:</span> <span class="s1">&#39;world&#39;</span>
 <span class="p">},</span>
 <span class="n">pose</span><span class="p">:</span> <span class="p">{</span>
-<span class="n">position</span><span class="p">:</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mf">0.08</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span>
-<span class="n">orientation</span><span class="p">:</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">w</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
+    <span class="n">position</span><span class="p">:</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mf">0.08</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span>
+    <span class="n">orientation</span><span class="p">:</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">w</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
 <span class="p">}</span>
 <span class="p">}</span><span class="s2">&quot;</span>
-</code></pre></div>
-<ul>
-<li>Gripping the object. demo</li>
-</ul>
+</code></pre></div></p>
+</li>
+<li>
+<p>Gripping the object. demo
 <div class="highlight"><pre><span></span><code><span class="c1">##Initiate the end motion script to start one RViz of the arm. Joint position is on zero-point by default.</span>
 <span class="nb">cd</span><span class="w"> </span>release/install
 <span class="nb">source</span><span class="w"> </span>setup.bash
 roslaunch<span class="w"> </span>mobiman<span class="w"> </span>eeTrackerdemo.launch
 
-<span class="c1">##Initiate one terminal,e.g. &quot;terminal_3&quot;, run the script.</span>
+<span class="c1">##Initiate another terminal,e.g. &quot;terminal_3&quot;, run the script.</span>
 python<span class="w"> </span>mpc_picker.py
-</code></pre></div>
-<ul>
-<li>Demo Video</li>
-</ul>
+</code></pre></div></p>
+</li>
+<li>
+<p>Demo Video</p>
+</li>
+</ol>
 <div style="display: flex; justify-content: center; align-items: center;">
 <video width="1920" height="1080" controls>
   <source src="../assets/mp4_1.mp4" type="video/mp4">
@@ -1338,10 +1333,10 @@ python<span class="w"> </span>mpc_picker.py
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.highlight", "search.inline", "search.excerpt", "navigation.expand", "navigation.top", "toc.follow", "navigation.tracking", "navigation.path"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.highlight", "search.inline", "search.excerpt", "navigation.expand", "navigation.top", "toc.follow", "navigation.tracking", "navigation.path"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       
