@@ -10,7 +10,7 @@ This SDK does not require recompilation. Please refer to the Developing and Oper
 
 ## First Move
 ```shell
-cd release/install
+cd A1_SDK/install
 source setup.bash
 roslaunch mobiman eeTrackerdemo.launch
 ```
@@ -38,7 +38,7 @@ sudo chmod 777 /dev/ttyACM0
 
 2. After confirming the modification, you can initialize the SDK:
 ```shell
-cd a1_driver_sdk/install
+cd A1_SDK/install
 source setup.bash
 roslaunch signal_arm single_arm_node.launch
 ```
@@ -58,94 +58,263 @@ The interface is a ROS package designed for manipulator control and status feedb
     </thead>
     <tbody>
         <tr style="background-color: white;text-align: left;">
-            <td>/joint_states</td>
-            <td>Robot arm joint status feedback</td>
+            <td>/joint_states_host</td>
+            <td>Robot Arm Joint State Feedback</td>
 			<td>sensor_msgs/JointState</td>
         </tr>
         <tr style="background-color: white;text-align: left;">
-            <td>/arm_status</td>
-            <td>Robot arm motor status feedback</td>
-			<td>signal_arm/status_stamped</td>
+            <td>/arm_status_host</td>
+            <td>Robot Arm Motor State Feedback</td>
+			<td>signal_arm/arm_status</td>
         </tr>
         <tr style="background-color: white;text-align: left;">
-            <td>/arm_joint_command</td>
-            <td>Robot arm joint control interface</td>
+            <td>/arm_joint_command_host</td>
+            <td>Robot Arm Control Interface</td>
 			<td>signal_arm/arm_control</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>/gripper_force_control_host</td>
+            <td>Gripper Force Control Interface</td>
+			<td>signal_arm/gripper_joint_command</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>/gripper_position_control_host</td>
+            <td>Gripper Position Control Interface</td>
+			<td>signal_arm/gripper_position_control</td>
+        </tr>
+        <tr style="background-color: white;text-align: left;">
+            <td>/gripper_stroke_host</td>
+            <td>Gripper Stroke Feedback Interface</td>
+			<td>sensor_msgs/JointState</td>
         </tr>
     </tbody>
 </table>
 
+
 <table style="border-collapse: collapse; width: 100%;">
-    <tr style="background-color: black; color: white; text-align: left;">
-        <th style="padding: 10px; border: 1px solid #ddd;">Topic Name</th>
-        <th style="padding: 10px; border: 1px solid #ddd;">Field</th>
-        <th style="padding: 10px; border: 1px solid #ddd;">Description</th>
-    </tr>
-    <tr style="background-color: white;">
-        <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;" rowspan="5">/joint_states</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Header</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-        <td style="padding: 10px; border: 1px solid #ddd;">name</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Name of each arm joint</td>
-    </tr>
-    <tr style="background-color: white;">
-        <td style="padding: 10px; border: 1px solid #ddd;">position</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Position of each arm joint</td>
-    </tr>
-    <tr style="background-color: white;">
-        <td style="padding: 10px; border: 1px solid #ddd;">velocity</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Velocity of each arm joint</td>
-    </tr>
-    <tr style="background-color: white;">
-        <td style="padding: 10px; border: 1px solid #ddd;">effort</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Torque of each arm joint</td>
-    </tr>
-    <tr style="background-color: white;">
-        <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;" rowspan="3">/arm_status</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">header</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-        <td style="padding: 10px; border: 1px solid #ddd;">status.name</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Name of each status</td>
-    </tr>
-    <tr style="background-color: white;">
-        <td style="padding: 10px; border: 1px solid #ddd;">status.motor_errors</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Errors of each status</td>
-    </tr>
-    <tr style="background-color: white;">
-        <td style="vertical-align: middle; padding: 10px; border: 1px solid #ddd;" rowspan="7">/arm_joint_command</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">header</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-        <td style="padding: 10px; border: 1px solid #ddd;">p_des</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Position command of robot arm</td>
-    </tr>
-    <tr style="background-color: white;">
-        <td style="padding: 10px; border: 1px solid #ddd;">v_des</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Velocity command of robot arm</td>
-    </tr>
-    <tr style="background-color: white;">
-        <td style="padding: 10px; border: 1px solid #ddd;">t_ff</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Torque command of robot arm</td>
-    </tr>
-    <tr style="background-color: white;">
-        <td style="padding: 10px; border: 1px solid #ddd;">kp</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Proportion coefficient of position</td>
-    </tr>
-    <tr style="background-color: white;">
-        <td style="padding: 10px; border: 1px solid #ddd;">kd</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Differential coefficient of position</td>
-    </tr>
-    <tr style="background-color: white;">
-        <td style="padding: 10px; border: 1px solid #ddd;">mode</td>
-        <td style="padding: 10px; border: 1px solid #ddd;">Control mode</td>
-    </tr>
+    <thead>
+        <tr tr style="background-color: black; color: white;text-align: left;">
+            <th style="padding: 10px; border: 1px solid #ddd;">Topic Name</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Field</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Description</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Data Type</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Unit</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Remarks</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white;">
+            <td rowspan="5" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/joint_states_host</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Standard ROS Header</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">name</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Robot Arm Joint Names</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">string[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">position</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Robot Arm Joint Positions</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">float64[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">rad</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">velocity</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Robot Arm Joint Velocities</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">float64[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">rad/s</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">effort</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Robot Arm Joint Efforts</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">float64[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Nm</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td rowspan="4" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/arm_status_host</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Standard ROS Header</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">data.name</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Robot Arm Joint Names</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">string[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">data.motor_errors.error_code</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Robot Arm Joint Error Codes</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">float32[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">data.motor_errors.error_description</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Robot Arm Joint Error Descriptions</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">float32[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">°C</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td rowspan="7" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/arm_joint_command_host</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Standard ROS Header</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">p_des</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Desired Position</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">float32[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">rad</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">v_des</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Desired Velocity</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">float32[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">rad/s</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">t_ff</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Desired Torque</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">float32[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Nm</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">kp</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Position Proportional Gain</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">float32[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">kd</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Position Derivative Gain</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">float32[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">mode</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Control Mode</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">uint8</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Default is 0, MIT control</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td rowspan="2" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/gripper_force_control_host</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Standard ROS Header</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">gripper_force</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Gripper Force</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">float32</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">N</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td rowspan="2" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/gripper_position_control_host</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Standard ROS Header</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">gripper_stroke</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Desired Gripper Stroke</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">float32</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">mm</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td rowspan="5" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/gripper_stroke_host</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Standard ROS Header</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">name</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Gripper Names</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">string[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">position</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Gripper Stroke</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">float64[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">mm</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">velocity</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Gripper Velocity</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">float64[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td style="padding: 10px; border: 1px solid #ddd;">effort</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Gripper Effort</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">float64[]</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+        </tr>
+    </tbody>
 </table>
 
+#### Gripper Control Examples
+
+1. Gripper Force Control Interface
+
+```sh
+# Control the gripper to a specified force
+# Positive gripper_force closes the gripper; negative gripper_force opens it
+rostopic pub /gripper_force_control_host signal_arm/gripper_joint_command "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+gripper_force: 10.0"
+```
+
+2. Gripper Position Control Interface
+
+```sh
+# Control the gripper to a specified position, 60 for open, 0 for closed
+rostopic pub /gripper_position_control_host signal_arm/gripper_position_control "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+gripper_stroke: 40.0"
+```
 
 #### Diagnostic Trouble Code
 
@@ -261,14 +430,14 @@ We provide joint and end-effector movement control interfaces for Galaxea A1, en
 
 1. First, initiate the end-effector pose movement script. This will launch an RViz visualization for Galaxea A1, with the default joint positions set to zero.
 ```shell
-cd release/install
+cd A1_SDK/install
 source setup.bash
 roslaunch mobiman eeTrackerdemo.launch
 ```
 2. In the file *eeTrackerdemo.launch*：
 ```shell
 <param name="joint_states_topic" value="/joint_states" /> # the topic /joint_states  represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
-<param name="joint_command" value="/a1_robot_right/arm_joint_command" /> # the topic /a1_robot_right/arm_joint_command topic represents the channel for issuing commands to the motors.
+<param name="arm_joint_command_topic" value="/arm_joint_command_host" /> # the topic /arm_joint_command_host topic represents the channel for issuing commands to the motors.
 ```
 3. Publish messages to the end-effector movement topic, specifically named `/a1_ee_target`. This operation is non-blocking, allowing for continuous message sending and enabling seamless movement of the robot arm's end-effector. However, it's critical that the target endpoint is not too far from the current position of the end-effector to avoid overstraining the mechanics or risking a collision.
 ```shell
@@ -288,31 +457,33 @@ orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
 #!/usr/bin/env python
 import rospy
 from geometry_msgs.msg import PoseStamped
+
 def publish_pose():
-rospy.init_node('pose_stamped_publisher', anonymous=True)
-pose_pub = rospy.Publisher('/a1_ee_target', PoseStamped, queue_size=10)
-# Create message with type PoseStamped
-pose_msg = PoseStamped()
-pose_msg.header.seq = 0
-pose_msg.header.stamp = rospy.Time.now()
-pose_msg.header.frame_id = 'world'
-pose_msg.pose.position.x = 0.
-pose_msg.pose.position.y = 0.
-pose_msg.pose.position.z = 0.
-pose_msg.pose.orientation.x = 0.
-pose_msg.pose.orientation.y = 0.
-pose_msg.pose.orientation.z = 0.
-pose_msg.pose.orientation.w = 0.
-# Wait for subscribers to connect
-rospy.sleep(1)
-# Pulish message
-pose_pub.publish(pose_msg)
-rospy.loginfo("Published PoseStamped message to /a1_ee_target")
+    rospy.init_node('pose_stamped_publisher', anonymous=True)
+    pose_pub = rospy.Publisher('/a1_ee_target', PoseStamped, queue_size=10)
+    # Create PoseStamped message
+    pose_msg = PoseStamped()
+    pose_msg.header.seq = 0
+    pose_msg.header.stamp = rospy.Time.now()
+    pose_msg.header.frame_id = 'world'
+    pose_msg.pose.position.x = 0.
+    pose_msg.pose.position.y = 0.
+    pose_msg.pose.position.z = 0.
+    pose_msg.pose.orientation.x = 0.
+    pose_msg.pose.orientation.y = 0.
+    pose_msg.pose.orientation.z = 0.
+    pose_msg.pose.orientation.w = 0.
+    # Wait for subscribers to connect
+    rospy.sleep(1)
+    # Publish message
+    pose_pub.publish(pose_msg)
+    rospy.loginfo("Published PoseStamped message to /a1_ee_target")
+
 if __name__ == '__main__':
-try:
-publish_pose()
-except rospy.ROSInterruptException:
-pass
+    try:
+        publish_pose()
+    except rospy.ROSInterruptException:
+        pass
 ```
 4. Usage Example:
 <div style="display: flex; justify-content: center; align-items: center;">
@@ -327,14 +498,14 @@ pass
 
 1. Firstly, initiate the end-effector trajectory movement script. This will launch an RViz visualization for Galaxea A1, with the default joint positions set to zero.
 ```shell
-cd release/install
+cd A1_SDK/install
 source setup.bash
 roslaunch mobiman eeTrajTrackerdemo.launch
 ```
 2. In the file *eeTrajTrackerdemo.launch* :
 ```shell
 <param name="joint_states_topic" value="/joint_states" /> # the /joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
-<param name="joint_command" value="/a1_robot_right/arm_joint_command" /> #the /a1_robot_right/arm_joint_command topic represents the channel for issuing commands to the motors.
+<param name="joint_command" value="/arm_joint_command_host" /> #the /arm_joint_command_host topic represents the channel for issuing commands to the motors.
 ```
 3. PPublish messages to specify a trajectory for the end-effector movement on the   `/arm_target_trajectory` topic. This operation is non-blocking, allowing for continuous publishing. Ensure that the trajectory does not deviate significantly from the current end-effector position. It is recommended to wait until the current trajectory is completed before sending the next one to avoid inaccuracies in tracking the desired path.
 ```c++
@@ -453,7 +624,7 @@ int main(int argc, char** argv) {
 
 1. Firstly, initiate the joint angle movement script. This will launch an RViz visualization for Galaxea A1, with the default joint positions set to zero.
 ```shell
-cd release/install
+cd A1_SDK/install
 source setup.bash
 roslaunch mobiman jointTrackerdemo.launch
 ```
@@ -461,7 +632,7 @@ roslaunch mobiman jointTrackerdemo.launch
 2. In the file *jointTrackerdemo.launch* :
 ```shell
 <param name="joint_states_sub_topic" value="/joint_states" /> # the /joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
-<param name="joint_command" value="/a1_robot_right/arm_joint_command" /> #the /a1_robot_right/arm_joint_command topic represents the channel for issuing commands to the motors.
+<param name="joint_command" value="/arm_joint_command_host" /> #the /arm_joint_command_host topic represents the channel for issuing commands to the motors.
 ```
 Publish messages for joint movement on the  `/arm_joint_target_position` topic. This operation is non-blocking, allowing for continuous publishing and enabling uninterrupted movement of the robot arm's joints.
 ```python
@@ -483,15 +654,15 @@ def publish_joint_state():
     joint_state.position = [0, 0, 0, 0, 0, 0]
     steps = 100 # Number of steps
 
- #to reach the target position
-    target_position = [0.5, 0, 0, 0, 0, 0]
-    step_increment = [(target - current) / steps for target, current in zip(target_position, joint_state.position)]
-    for step in range(steps):
-        joint_state.header.stamp = rospy.Time.now() # Update the timestamp
-        joint_state.position = [current + increment for current, increment in zip(joint_state.position, step_increment)]
-        pub.publish(joint_state)
-        rate.sleep()
-    rospy.loginfo("Published JointState message to /arm_joint_target_position")
+to reach the target position
+target_position = [0.5, 0, 0, 0, 0, 0]
+step_increment = [(target - current) / steps for target, current in zip(target_position, joint_state.position)]
+for step in range(steps):
+    joint_state.header.stamp = rospy.Time.now() # Update the timestamp
+    joint_state.position = [current + increment for current, increment in zip(joint_state.position, step_increment)]
+    pub.publish(joint_state)
+    rate.sleep()
+rospy.loginfo("Published JointState message to /arm_joint_target_position")
 
 if __name__ == '__main__':
     try:

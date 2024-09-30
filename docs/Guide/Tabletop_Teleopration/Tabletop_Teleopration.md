@@ -49,4 +49,4 @@
 <u>Important: please use the M3*10 mounting screws to secure the camera holder on the arm.</u>
 ![img](assets/aloha_2.png)
 
-If you need structural files, please visit our [aloha stp files repository](https://github.com/userguide-galaxea/aloha) to access the resources.
+If you need structural files, please visit our [Tabletop Teleoperation STP repository](https://github.com/userguide-galaxea/STP) to access the resources.

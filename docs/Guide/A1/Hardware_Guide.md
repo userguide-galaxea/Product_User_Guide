@@ -256,44 +256,6 @@ G1 is composed of one motor, two clips, and one specially designed joint module.
 </table>
 
 
-![A1_size_g1](assets/A1_size_G1.jpg)
-
-
-<table style="border-collapse: collapse;">
-    <thead>
-        <tr style="background-color: black; color: white;text-align: left;">
-            <th>Item</th>
-            <th>Notes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr style="background-color: white;text-align: left;">
-            <td>Length</td>
-            <td>Deployed 918 mm <br/> Folded 545 mm </td>
-        </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Height</td>
-            <td>Deployed 237 mm <br/> Folded 277 mm </td>
-        </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Width</td>
-            <td>128 mm</td>
-        </tr>
-		<tr style="background-color: white;text-align: left;">
-            <td>Degree of Freedom</td>
-            <td>7</td>
-        </tr>
-		<tr style="background-color: white;text-align: left;">
-            <td>Maximum Payload</td>
-            <td>5 kg</td>
-        </tr>
-		<tr style="background-color: white;text-align: left;">
-            <td>Weight</td>
-            <td>6 kg</td>
-        </tr>
-    </tbody>
-</table>
-
 
 #### Attaching
 Here it shows how to attach gripper to Galaxea A1. To remove them, simply reverse these steps.
@@ -302,16 +264,6 @@ Here it shows how to attach gripper to Galaxea A1. To remove them, simply revers
     <img src="../assets/A1_attaching_g1.png" alt="A1_attaching_g1" width="680">
 </div>
 
-<div style="text-align: center;">
-    <img src="../assets/A1_attaching_a1.png" alt="A1_attaching_a1" width="680">
-</div>
-
-
-1. **Alignment Check**: Ensure that the four protruding points on the gripper align perfectly with the corresponding recessed points on the robot arm's end-effector mount. Proper alignment ensures the gripper is correctly positioned and centered.
-2. **Initial Placement**: Carefully place the gripper onto the robot arm's end effector mount, ensuring that the protrusions fit snugly into the recesses. This step is crucial for achieving the correct orientation and balance.
-3. **Screw Fixation**: Once aligned, secure the gripper to the robot arm using the three screws provided. These screws should be placed around the outer circle of the mounting area, as shown in the figure. Tighten the screws evenly to prevent any skewing or misalignment.
-4. **Final Check**: After tightening the screws, double-check the alignment and stability of the gripper. It should be firmly attached and not wobble or move independently of the robot arm.
-5. **Testing**: Before using the robot arm, perform a test run to ensure that the gripper moves smoothly and holds objects securely without any slippage or unexpected movement.
 
 ### [Inspire-Robots RH56 Series Dexterous Hand](https://en.inspire-robots.com/product-category/the-dexterous-hands)
 The dexterous hand boasts significant gripping strength and moderate speed, making it suitable for grasping and manipulating tasks in robotics or prosthetic applications. Its combination of power and control allows for effective handling of various objects, similar to the versatility of a human hand, thereby enhancing the functionality of robots or prostheses in performing complex tasks.
@@ -347,6 +299,9 @@ The dexterous hand boasts significant gripping strength and moderate speed, maki
 </table>
 
 ![A1_size_dexterous_hand](assets/A1_size_dexterous_hand.jpg)
+
+#### Attaching
+![](assets/hand_adapter.png)
 
 
 ## Next Step

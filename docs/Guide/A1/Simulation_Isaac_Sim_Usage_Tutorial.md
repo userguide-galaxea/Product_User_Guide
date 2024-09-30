@@ -45,20 +45,25 @@ The following is the official tutorial to help you understand the basic Isaac Si
 
 
 ## Importing A1 USD File
-Visit [A1 Simulation Isaac Sim Usage Tutorial](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial) in our GitHub to get coding files.
 
 1. **Open Isaac Sim:** Start Isaac Sim 4.0.0 from Omniverse Launcher. Ensure you select `omni.isaac.ros_bridge(deprecated)` at startup to enable communication between Isaac Sim and ROS nodes.
+
    ![library_en](assets/library_en.png)
 
 2. **Open the USD File:** After starting Isaac Sim, select **"File -> Open"**. In the file dialog that appears, choose the `A1_fixed_base_scene.usd` file from the folder. Do not select the A1 simulation raw file `A1_raw.usd`.
+
    ![launcher1_en](assets/launcher1_en.png)
 
+
+
 3. **Run the Synchronization Script:** After opening the file, you will see the corresponding scene. Click the "**Play"** button on the left sidebar.
+
    ![launcher2_en](assets/launcher2_en.png)
 
    Run the `a1_jointsync.py` script from the folder to synchronize the RViz simulation with the Isaac Sim simulation.
+
     ```shell
-    python a1_jointsync.py
+      python a1_jointsync.py
     ```
 
    <u>**Important:** The Isaac Sim ROS Bridge can only publish/subscribe to `rostopic` when `roscore` is running.</u>
@@ -67,18 +72,13 @@ Visit [A1 Simulation Isaac Sim Usage Tutorial](https://github.com/userguide-gala
 
 ## Demonstration Example
 
-After clicking the Play button, start the `python a1_joint_move_sin.py` script. A1 robot arm will begin executing a sinusoidal trajectory in joint space, as shown in the image below.
+After clicking the Play button, start the `python a1_joint_move_sin.py` script. A1 robot arm will begin executing a sinusoidal trajectory in joint space, as shown in the image below. You can also play the controller trajectory by running `python a1_control_from_traj.py`. This will play the trajectory based on the given `joint_trajectory.npz` data.
 
 ![launcher3_en](assets/launcher3_en.jpg)
 
 With this, the Isaac Sim A1 robot arm simulation process is complete. You may play the demo in the system with the code provided, like shown below.
 
-<div style="display: flex; justify-content: center; align-items: center;">
-<video width="1920" height="1080" controls>
-  <source src="../assets/a1_asaacsim_demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-</div>
+![video_git](./assets/a1_asaacsim_demo.gif)
 
 
 ## Gripping
@@ -87,8 +87,7 @@ After clicking the “Play”, please refer to the file "Joint and End-Effector 
 
 Take the following code as an example:
 
-- Trace the end pose and position
-
+1. Trace the end pose and position
 ```python
 ##Initiate the end motion script to start one RViz of the arm. Joint position is on zero-point by default.
 cd release/install
@@ -101,31 +100,29 @@ python a1_jointsync.py
 ##Initiate one terminal,e.g. "terminal_2", publish the example trajactory ponits.
 rostopic pub /a1_ee_target geometry_msgs/PoseStamped "{
 header: {
-seq: 0,
-stamp: {secs: 0, nsecs: 0},
-frame_id: 'world'
+    seq: 0,
+    stamp: {secs: 0, nsecs: 0},
+    frame_id: 'world'
 },
 pose: {
-position: {x: 0.08, y: 0.0, z: 0.5},
-orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+    position: {x: 0.08, y: 0.0, z: 0.5},
+    orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
 }
 }"
 ```
 
-- Gripping the object. demo
-
+2. Gripping the object. demo
 ```Bash
 ##Initiate the end motion script to start one RViz of the arm. Joint position is on zero-point by default.
 cd release/install
 source setup.bash
 roslaunch mobiman eeTrackerdemo.launch
 
-##Initiate one terminal,e.g. "terminal_3", run the script.
+##Initiate another terminal,e.g. "terminal_3", run the script.
 python mpc_picker.py
 ```
 
-- Demo Video
-
+3. Demo Video
 <div style="display: flex; justify-content: center; align-items: center;">
 <video width="1920" height="1080" controls>
   <source src="../assets/mp4_1.mp4" type="video/mp4">
