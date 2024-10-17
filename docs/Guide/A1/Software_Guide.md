@@ -654,7 +654,7 @@ def publish_joint_state():
     joint_state.position = [0, 0, 0, 0, 0, 0]
     steps = 100 # Number of steps
 
-to reach the target position
+#to reach the target position
 target_position = [0.5, 0, 0, 0, 0, 0]
 step_increment = [(target - current) / steps for target, current in zip(target_position, joint_state.position)]
 for step in range(steps):
