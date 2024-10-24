@@ -635,9 +635,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#importing-a1-usd-file" class="md-nav__link">
+  <a href="#importing-usd-file" class="md-nav__link">
     <span class="md-ellipsis">
-      Importing A1 USD File
+      Importing USD File
     </span>
   </a>
   
@@ -1092,9 +1092,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#importing-a1-usd-file" class="md-nav__link">
+  <a href="#importing-usd-file" class="md-nav__link">
     <span class="md-ellipsis">
-      Importing A1 USD File
+      Importing USD File
     </span>
   </a>
   
@@ -1178,15 +1178,16 @@
 </ul>
 </li>
 </ul>
-<h2 id="importing-a1-usd-file">Importing A1 USD File</h2>
-<p>Before you start, please visit <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial">A1 Simulation Tutorial</a> on GitHub to access our resources.</p>
+<h2 id="importing-usd-file">Importing USD File</h2>
+<p>Please visit <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_SDK">A1 Simulation SDK</a> on our GitHub to get the resources <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_fixed_base_scene.usd">A1_fixed_base_scene.usd</a> and <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_raw.usd">A1_raw.usd </a> for A1.</p>
+<p>Please visit <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_A1_G1_SDK">A1G1 Simulation SDK</a> on our GitHub to get the resources <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_scene.usd">A1_G1_scene.usd</a> and <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_raw.usd">A1_G1_raw.usd</a> for A1 with gripper G1.</p>
 <ol>
 <li>
 <p><strong>Open Isaac Sim:</strong> Start Isaac Sim 4.0.0 from Omniverse Launcher. Ensure you select <code>omni.isaac.ros_bridge(deprecated)</code> at startup to enable communication between Isaac Sim and ROS nodes.
    <img alt="library_en" src="../assets/library_en.png" /></p>
 </li>
 <li>
-<p><strong>Open the USD File:</strong> After starting Isaac Sim, select <strong>"File -&gt; Open"</strong>. In the file dialog that appears, choose the <code>A1_fixed_base_scene.usd</code> file from the folder. Do not select the A1 simulation raw file <code>A1_raw.usd</code>.
+<p><strong>Open the USD File:</strong> After starting Isaac Sim, select <strong>"File -&gt; Open"</strong>. In the file dialog that appears, choose the <code>A1_fixed_base_scene.usd</code> file from the folder if you are using A1, or choose <code>A1_G1_scene.usd</code> file if you are using A1 with gripper G1.
    <img alt="launcher1_en" src="../assets/launcher1_en.png" /></p>
 </li>
 <li>
@@ -1199,12 +1200,14 @@
 </li>
 </ol>
 <h2 id="demonstration-example">Demonstration Example</h2>
-<p>After clicking the Play button, start the <code>python a1_joint_move_sin.py</code> script. A1 robot arm will begin executing a sinusoidal trajectory in joint space, as shown in the image below. You can also play the controller trajectory by running <code>python a1_control_from_traj.py</code>. This will play the trajectory based on the given <code>joint_trajectory.npz</code> data.</p>
+<p>After clicking the Play button, start the python script <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/a1_joint_move_sin.py">a1_joint_move_sin.py</a>. 
+A1 robot arm will begin executing a sinusoidal trajectory in joint space, as shown in the image below. You can also play the controller trajectory by running the python file <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/a1_control_from_traj.py">a1_control_from_traj.py</a>. 
+This will play the trajectory based on the given data file <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/joint_trajectory.npz">joint_trajectory.npz</a>.</p>
 <p><img alt="launcher3_en" src="../assets/launcher3_en.jpg" /></p>
 <p>With this, the Isaac Sim A1 robot arm simulation process is complete. You may play the demo in the system with the code provided, like shown below.</p>
 <p><img src="../assets/a1_asaacsim_demo.gif" alt="video_git" width="1080" /></p>
 <h2 id="gripping">Gripping</h2>
-<p>After clicking the “Play”, please refer to the file "Joint and End-Effector Motion Interface" in A1 SDK to complete the simuation process in Isaacsim.</p>
+<p>After clicking the “Play”, please refer to the <a href="https://github.com/userguide-galaxea/A1_SDK/blob/galaxea/main/README_CONTROL.md#end-effector-movement-example">End-Effector Movement Example</a> in A1 SDK to complete the simuation process in Isaac Sim.</p>
 <p>Take the following code as an example:</p>
 <ol>
 <li>
