@@ -46,29 +46,33 @@ The following is the official tutorial to help you understand the basic Isaac Si
 
 ## Importing USD File
 
-Please visit [A1 Simulation SDK](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_SDK) on our GitHub to get the resources [A1_fixed_base_scene.usd](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_fixed_base_scene.usd) and [A1_raw.usd ](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_raw.usd) for A1.
+First，you need to clone our repositry [A1_Simulation_Isaac_Sim_Usage_Tutorial](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial) in our GitHub.
 
-Please visit [A1G1 Simulation SDK](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_A1_G1_SDK) on our GitHub to get the resources [A1_G1_scene.usd](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_scene.usd) and [A1_G1_raw.usd](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_raw.usd) for A1 with gripper G1.
+Visit [A1_Simulation_SDK](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_SDK) to get the resources of  [A1_fixed_base_scene.usd](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_fixed_base_scene.usd) and [A1_raw.usd ](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_raw.usd) for A1.
 
-1. **Open Isaac Sim:** Start Isaac Sim 4.0.0 from Omniverse Launcher. Ensure you select `omni.isaac.ros_bridge(deprecated)` at startup to enable communication between Isaac Sim and ROS nodes.
+Visit [A1_Simulation_A1 G1_SDK](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_A1_G1_SDK) to get the resources of [A1_G1_scene.usd](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_scene.usd) and [A1_G1_raw.usd](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_raw.usd) for A1 with gripper G1.
+
+1. **Open Isaac Sim:** Start Isaac Sim 4.0.0 from Omniverse Launcher. Ensure you select `omni.isaac.ros_bridge(deprecated)` at startup to enable communication between Isaac Sim and ROS nodes.   
    ![library_en](assets/library_en.png)
 
-2. **Open the USD File:** After starting Isaac Sim, select **"File -> Open"**. In the file dialog that appears, choose the `A1_fixed_base_scene.usd` file from the folder if you are using A1, or choose `A1_G1_scene.usd` file if you are using A1 with gripper G1.
+2. **Open the USD File:** After starting Isaac Sim, select **"File -> Open"**. In the file dialog that appears, choose the `A1_fixed_base_scene.usd` file from the folder if you are using A1, or choose `A1_G1_scene.usd` file if you are using A1 with gripper G1.  
    ![launcher1_en](assets/launcher1_en.png)
 
-3. **Run the Synchronization Script:** After opening the file, you will see the corresponding scene. Click the "**Play"** button on the left sidebar.
+3. **Run the Synchronization Script:** After opening the file, you will see the corresponding scene. Click the "**Play"** button on the left sidebar.   
    ![launcher2_en](assets/launcher2_en.png)
-   Run the `a1_jointsync.py` script from the folder to synchronize the RViz simulation with the Isaac Sim simulation.
-    ```shell
-      python a1_jointsync.py
-    ```
-   <u>**Important:** The Isaac Sim ROS Bridge can only publish/subscribe to `rostopic` when `roscore` is running.</u>
-
+   Run the `a1_jointsync.py` script from the folder to synchronize the RViz simulation with the Isaac Sim simulation, which is further elaborated in the following tutorial.    
+```shell
+  python a1_jointsync.py
+```
+    <u>**Important:** The Isaac Sim ROS Bridge can only publish/subscribe to `rostopic` when `roscore` is running.</u>
+   
 ## Demonstration Example
 
-After clicking the Play button, start the python script [a1_joint_move_sin.py](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/a1_joint_move_sin.py). 
-A1 robot arm will begin executing a sinusoidal trajectory in joint space, as shown in the image below. You can also play the controller trajectory by running the python file [a1_control_from_traj.py](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/a1_control_from_traj.py). 
-This will play the trajectory based on the given data file [joint_trajectory.npz](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/joint_trajectory.npz).
+After clicking the Play button, start the python script [A1_simulation_SDK/a1_joint_move_sin.py](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/a1_joint_move_sin.py). 
+
+A1 robot arm will begin executing a sinusoidal trajectory in joint space, as shown in the image below. You can also play the controller trajectory by running the python file [A1_simulation_SDK/a1_control_from_traj.py](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/a1_control_from_traj.py). 
+
+This will play the trajectory based on the given data file [A1_simulation_SDK/joint_trajectory.npz](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/joint_trajectory.npz).
 
 ![launcher3_en](assets/launcher3_en.jpg)
 
@@ -78,14 +82,14 @@ With this, the Isaac Sim A1 robot arm simulation process is complete. You may pl
 
 ## Gripping
 
-After clicking the “Play”, please refer to the [End-Effector Movement Example](https://github.com/userguide-galaxea/A1_SDK/blob/galaxea/main/README_CONTROL.md#end-effector-movement-example) in A1 SDK to complete the simuation process in Isaac Sim.
+After clicking the “Play”, please refer to the [End-Effector Movement Example](https://github.com/userguide-galaxea/A1_SDK/blob/galaxea/main/README_CONTROL.md#end-effector-movement-example) in A1_SDK and clone the A1_SDK repository to complete the simuation process in Isaac Sim.
 
 Take the following code as an example:
 
 1. Trace the end pose and position
 ```python
 ##Initiate the end motion script to start one RViz of the arm. Joint position is on zero-point by default.
-cd release/install
+cd A1_SDK/install
 source setup.bash
 roslaunch mobiman eeTrackerdemo.launch
 
@@ -109,7 +113,7 @@ pose: {
 2. Gripping the object. demo
 ```Bash
 ##Initiate the end motion script to start one RViz of the arm. Joint position is on zero-point by default.
-cd release/install
+cd A1_SDK/install
 source setup.bash
 roslaunch mobiman eeTrackerdemo.launch
 
