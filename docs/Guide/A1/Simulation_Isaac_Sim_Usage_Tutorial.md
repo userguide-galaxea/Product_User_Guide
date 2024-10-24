@@ -34,41 +34,33 @@ The download size is approximately 8 GB, so please plan your time accordingly.
 The following is the official tutorial to help you understand the basic Isaac Sim interface.
 
 - **UI** **Interface**
-    - https://docs.omniverse.nvidia.com/isaacsim/latest/introductory_tutorials/tutorial_intro_interface.html
-    - https://docs.omniverse.nvidia.com/isaacsim/latest/introductory_tutorials/tutorial_intro_workflows.html
+    - [Isaac Sim Interface](https://docs.omniverse.nvidia.com/isaacsim/latest/introductory_tutorials/tutorial_intro_interface.html)
+    - [Isaac Sim Workflows](https://docs.omniverse.nvidia.com/isaacsim/latest/introductory_tutorials/tutorial_intro_workflows.html)
 - **Add Objects and** **Set** **Physical Properties**
-    - https://docs.omniverse.nvidia.com/isaacsim/latest/gui_tutorials/tutorial_intro_simple_objects.html#isaac-sim-app-tutorial-intro-simple-objects
+    - [Add Simple Objects](https://docs.omniverse.nvidia.com/isaacsim/latest/gui_tutorials/tutorial_intro_simple_objects.html#isaac-sim-app-tutorial-intro-simple-objects)
 - **Assemble Robots and Import**
-    - https://docs.omniverse.nvidia.com/isaacsim/latest/gui_tutorials/tutorial_gui_simple_robot.html
-    - https://docs.omniverse.nvidia.com/isaacsim/latest/features/environment_setup/ext_omni_isaac_urdf.html
+    - [Assemble a Simple Robot](https://docs.omniverse.nvidia.com/isaacsim/latest/gui_tutorials/tutorial_gui_simple_robot.html)
+    - [URDF Importer](https://docs.omniverse.nvidia.com/isaacsim/latest/features/environment_setup/ext_omni_isaac_urdf.html)
 
 
 
 ## Importing A1 USD File
 
-1. **Open Isaac Sim:** Start Isaac Sim 4.0.0 from Omniverse Launcher. Ensure you select `omni.isaac.ros_bridge(deprecated)` at startup to enable communication between Isaac Sim and ROS nodes.
+Before you start, please visit [A1 Simulation Tutorial](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial) on GitHub to access our resources.
 
+1. **Open Isaac Sim:** Start Isaac Sim 4.0.0 from Omniverse Launcher. Ensure you select `omni.isaac.ros_bridge(deprecated)` at startup to enable communication between Isaac Sim and ROS nodes.
    ![library_en](assets/library_en.png)
 
 2. **Open the USD File:** After starting Isaac Sim, select **"File -> Open"**. In the file dialog that appears, choose the `A1_fixed_base_scene.usd` file from the folder. Do not select the A1 simulation raw file `A1_raw.usd`.
-
    ![launcher1_en](assets/launcher1_en.png)
 
-
-
 3. **Run the Synchronization Script:** After opening the file, you will see the corresponding scene. Click the "**Play"** button on the left sidebar.
-
    ![launcher2_en](assets/launcher2_en.png)
-
    Run the `a1_jointsync.py` script from the folder to synchronize the RViz simulation with the Isaac Sim simulation.
-
     ```shell
       python a1_jointsync.py
     ```
-
    <u>**Important:** The Isaac Sim ROS Bridge can only publish/subscribe to `rostopic` when `roscore` is running.</u>
-
-
 
 ## Demonstration Example
 
@@ -78,8 +70,7 @@ After clicking the Play button, start the `python a1_joint_move_sin.py` script. 
 
 With this, the Isaac Sim A1 robot arm simulation process is complete. You may play the demo in the system with the code provided, like shown below.
 
-![video_git](./assets/a1_asaacsim_demo.gif)
-
+<img src="../assets/a1_asaacsim_demo.gif" alt="video_git" width="1080" />
 
 ## Gripping
 
