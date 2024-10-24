@@ -44,14 +44,16 @@ The following is the official tutorial to help you understand the basic Isaac Si
 
 
 
-## Importing A1 USD File
+## Importing USD File
 
-Before you start, please visit [A1 Simulation Tutorial](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial) on GitHub to access our resources.
+Please visit [A1 Simulation SDK](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_SDK) on our GitHub to get the resources [A1_fixed_base_scene.usd](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_fixed_base_scene.usd) and [A1_raw.usd ](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_raw.usd) for A1.
+
+Please visit [A1G1 Simulation SDK](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_A1_G1_SDK) on our GitHub to get the resources [A1_G1_scene.usd](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_scene.usd) and [A1_G1_raw.usd](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_raw.usd) for A1 with gripper G1.
 
 1. **Open Isaac Sim:** Start Isaac Sim 4.0.0 from Omniverse Launcher. Ensure you select `omni.isaac.ros_bridge(deprecated)` at startup to enable communication between Isaac Sim and ROS nodes.
    ![library_en](assets/library_en.png)
 
-2. **Open the USD File:** After starting Isaac Sim, select **"File -> Open"**. In the file dialog that appears, choose the `A1_fixed_base_scene.usd` file from the folder. Do not select the A1 simulation raw file `A1_raw.usd`.
+2. **Open the USD File:** After starting Isaac Sim, select **"File -> Open"**. In the file dialog that appears, choose the `A1_fixed_base_scene.usd` file from the folder if you are using A1, or choose `A1_G1_scene.usd` file if you are using A1 with gripper G1.
    ![launcher1_en](assets/launcher1_en.png)
 
 3. **Run the Synchronization Script:** After opening the file, you will see the corresponding scene. Click the "**Play"** button on the left sidebar.
@@ -64,7 +66,9 @@ Before you start, please visit [A1 Simulation Tutorial](https://github.com/userg
 
 ## Demonstration Example
 
-After clicking the Play button, start the `python a1_joint_move_sin.py` script. A1 robot arm will begin executing a sinusoidal trajectory in joint space, as shown in the image below. You can also play the controller trajectory by running `python a1_control_from_traj.py`. This will play the trajectory based on the given `joint_trajectory.npz` data.
+After clicking the Play button, start the python script [a1_joint_move_sin.py](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/a1_joint_move_sin.py). 
+A1 robot arm will begin executing a sinusoidal trajectory in joint space, as shown in the image below. You can also play the controller trajectory by running the python file [a1_control_from_traj.py](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/a1_control_from_traj.py). 
+This will play the trajectory based on the given data file [joint_trajectory.npz](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/joint_trajectory.npz).
 
 ![launcher3_en](assets/launcher3_en.jpg)
 
@@ -74,7 +78,7 @@ With this, the Isaac Sim A1 robot arm simulation process is complete. You may pl
 
 ## Gripping
 
-After clicking the “Play”, please refer to the file "Joint and End-Effector Motion Interface" in A1 SDK to complete the simuation process in Isaacsim.
+After clicking the “Play”, please refer to the [End-Effector Movement Example](https://github.com/userguide-galaxea/A1_SDK/blob/galaxea/main/README_CONTROL.md#end-effector-movement-example) in A1 SDK to complete the simuation process in Isaac Sim.
 
 Take the following code as an example:
 
