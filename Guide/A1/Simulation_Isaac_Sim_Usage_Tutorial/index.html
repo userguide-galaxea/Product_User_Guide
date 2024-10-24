@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
     
     
       
@@ -1164,44 +1164,45 @@
 <p>The following is the official tutorial to help you understand the basic Isaac Sim interface.</p>
 <ul>
 <li><strong>UI</strong> <strong>Interface</strong><ul>
-<li>https://docs.omniverse.nvidia.com/isaacsim/latest/introductory_tutorials/tutorial_intro_interface.html</li>
-<li>https://docs.omniverse.nvidia.com/isaacsim/latest/introductory_tutorials/tutorial_intro_workflows.html</li>
+<li><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/introductory_tutorials/tutorial_intro_interface.html">Isaac Sim Interface</a></li>
+<li><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/introductory_tutorials/tutorial_intro_workflows.html">Isaac Sim Workflows</a></li>
 </ul>
 </li>
 <li><strong>Add Objects and</strong> <strong>Set</strong> <strong>Physical Properties</strong><ul>
-<li>https://docs.omniverse.nvidia.com/isaacsim/latest/gui_tutorials/tutorial_intro_simple_objects.html#isaac-sim-app-tutorial-intro-simple-objects</li>
+<li><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/gui_tutorials/tutorial_intro_simple_objects.html#isaac-sim-app-tutorial-intro-simple-objects">Add Simple Objects</a></li>
 </ul>
 </li>
 <li><strong>Assemble Robots and Import</strong><ul>
-<li>https://docs.omniverse.nvidia.com/isaacsim/latest/gui_tutorials/tutorial_gui_simple_robot.html</li>
-<li>https://docs.omniverse.nvidia.com/isaacsim/latest/features/environment_setup/ext_omni_isaac_urdf.html</li>
+<li><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/gui_tutorials/tutorial_gui_simple_robot.html">Assemble a Simple Robot</a></li>
+<li><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/features/environment_setup/ext_omni_isaac_urdf.html">URDF Importer</a></li>
 </ul>
 </li>
 </ul>
 <h2 id="importing-a1-usd-file">Importing A1 USD File</h2>
+<p>Before you start, please visit <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial">A1 Simulation Tutorial</a> on GitHub to access our resources.</p>
 <ol>
-<li><strong>Open Isaac Sim:</strong> Start Isaac Sim 4.0.0 from Omniverse Launcher. Ensure you select <code>omni.isaac.ros_bridge(deprecated)</code> at startup to enable communication between Isaac Sim and ROS nodes.</li>
+<li>
+<p><strong>Open Isaac Sim:</strong> Start Isaac Sim 4.0.0 from Omniverse Launcher. Ensure you select <code>omni.isaac.ros_bridge(deprecated)</code> at startup to enable communication between Isaac Sim and ROS nodes.
+   <img alt="library_en" src="../assets/library_en.png" /></p>
+</li>
+<li>
+<p><strong>Open the USD File:</strong> After starting Isaac Sim, select <strong>"File -&gt; Open"</strong>. In the file dialog that appears, choose the <code>A1_fixed_base_scene.usd</code> file from the folder. Do not select the A1 simulation raw file <code>A1_raw.usd</code>.
+   <img alt="launcher1_en" src="../assets/launcher1_en.png" /></p>
+</li>
+<li>
+<p><strong>Run the Synchronization Script:</strong> After opening the file, you will see the corresponding scene. Click the "<strong>Play"</strong> button on the left sidebar.
+   <img alt="launcher2_en" src="../assets/launcher2_en.png" />
+   Run the <code>a1_jointsync.py</code> script from the folder to synchronize the RViz simulation with the Isaac Sim simulation.
+    <div class="highlight"><pre><span></span><code><span class="w">  </span>python<span class="w"> </span>a1_jointsync.py
+</code></pre></div>
+   <u><strong>Important:</strong> The Isaac Sim ROS Bridge can only publish/subscribe to <code>rostopic</code> when <code>roscore</code> is running.</u></p>
+</li>
 </ol>
-<p><img alt="library_en" src="../assets/library_en.png" /></p>
-<ol>
-<li><strong>Open the USD File:</strong> After starting Isaac Sim, select <strong>"File -&gt; Open"</strong>. In the file dialog that appears, choose the <code>A1_fixed_base_scene.usd</code> file from the folder. Do not select the A1 simulation raw file <code>A1_raw.usd</code>.</li>
-</ol>
-<p><img alt="launcher1_en" src="../assets/launcher1_en.png" /></p>
-<ol>
-<li><strong>Run the Synchronization Script:</strong> After opening the file, you will see the corresponding scene. Click the "<strong>Play"</strong> button on the left sidebar.</li>
-</ol>
-<p><img alt="launcher2_en" src="../assets/launcher2_en.png" /></p>
-<p>Run the <code>a1_jointsync.py</code> script from the folder to synchronize the RViz simulation with the Isaac Sim simulation.</p>
-<pre><code>```shell
-  python a1_jointsync.py
-```
-</code></pre>
-<p><u><strong>Important:</strong> The Isaac Sim ROS Bridge can only publish/subscribe to <code>rostopic</code> when <code>roscore</code> is running.</u></p>
 <h2 id="demonstration-example">Demonstration Example</h2>
 <p>After clicking the Play button, start the <code>python a1_joint_move_sin.py</code> script. A1 robot arm will begin executing a sinusoidal trajectory in joint space, as shown in the image below. You can also play the controller trajectory by running <code>python a1_control_from_traj.py</code>. This will play the trajectory based on the given <code>joint_trajectory.npz</code> data.</p>
 <p><img alt="launcher3_en" src="../assets/launcher3_en.jpg" /></p>
 <p>With this, the Isaac Sim A1 robot arm simulation process is complete. You may play the demo in the system with the code provided, like shown below.</p>
-<p><img alt="video_git" src="../assets/a1_asaacsim_demo.gif" /></p>
+<p><img src="../assets/a1_asaacsim_demo.gif" alt="video_git" width="1080" /></p>
 <h2 id="gripping">Gripping</h2>
 <p>After clicking the “Play”, please refer to the file "Joint and End-Effector Motion Interface" in A1 SDK to complete the simuation process in Isaacsim.</p>
 <p>Take the following code as an example:</p>
