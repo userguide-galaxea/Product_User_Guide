@@ -1180,8 +1180,8 @@
 </ul>
 <h2 id="importing-usd-file">Importing USD File</h2>
 <p>First，you need to clone our repositry <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial">A1_Simulation_Isaac_Sim_Usage_Tutorial</a> in our GitHub.</p>
-<p>Visit <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_SDK">A1_Simulation_SDK</a> to get the resources of  <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_fixed_base_scene.usd">A1_fixed_base_scene.usd</a> and <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_raw.usd">A1_raw.usd </a> for A1.</p>
-<p>Visit <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_A1_G1_SDK">A1_Simulation_A1 G1_SDK</a> to get the resources of <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_scene.usd">A1_G1_scene.usd</a> and <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_raw.usd">A1_G1_raw.usd</a> for A1 with gripper G1.</p>
+<p>Visit <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_SDK">A1_Simulation_SDK</a> to the resources of  <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_fixed_base_scene.usd">A1_fixed_base_scene.usd</a> and <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_raw.usd">A1_raw.usd </a> for A1.</p>
+<p>Visit <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_A1_G1_SDK">A1_Simulation_A1 G1_SDK</a> to the resources of <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_scene.usd">A1_G1_scene.usd</a> and <a href="https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_raw.usd">A1_G1_raw.usd</a> for A1 with gripper G1.</p>
 <ol>
 <li>
 <p><strong>Open Isaac Sim:</strong> Start Isaac Sim 4.0.0 from Omniverse Launcher. Ensure you select <code>omni.isaac.ros_bridge(deprecated)</code> at startup to enable communication between Isaac Sim and ROS nodes. <br />
@@ -1208,7 +1208,16 @@
 <p>With this, the Isaac Sim A1 robot arm simulation process is complete. You may play the demo in the system with the code provided, like shown below.</p>
 <p><img src="../assets/a1_asaacsim_demo.gif" alt="video_git" width="1080" /></p>
 <h2 id="gripping">Gripping</h2>
-<p>After clicking the “Play”, please refer to the <a href="https://github.com/userguide-galaxea/A1_SDK/blob/galaxea/main/README_CONTROL.md#end-effector-movement-example">End-Effector Movement Example</a> in A1_SDK and clone the A1_SDK repository to complete the simuation process in Isaac Sim.</p>
+<p>After clicking the “Play”, please refer to the <a href="https://github.com/userguide-galaxea/A1_SDK/blob/galaxea/main/README_CONTROL.md#end-effector-movement-example">End-Effector Movement Example</a> in A1 SDK and clone the A1_SDK repository to complete the simuation process in Isaac Sim.</p>
+<p>Note:</p>
+<ul>
+<li>After launching the <code>eeTrackerdemo.launch</code>, make sure to select the <code>base_link</code> as the Fixed Frame, and add the <code>RobotModel</code> to it, then you can see the visualized A1 in RViz screen.</li>
+</ul>
+<p><img alt="gripping_joint_states1" src="../assets/gripping_joint_states1.png" /></p>
+<ul>
+<li>If the arm does not move after conducting all the commands (only in pure simulation scenario), go to <a href="https://github.com/userguide-galaxea/A1_SDK/blob/galaxea/main/install/share/mobiman/launch/simpleExample/eeTrackerdemo.launch">the file</a> in A1_SDK and change the <code>joint_states_sub_topic</code> from <code>/joint_states_host</code> to <code>/joint_states</code>. It changes the control mode from real hardware to pure simulation mode.</li>
+</ul>
+<p><img alt="gripping_joint_states2" src="../assets/gripping_joint_states2.png" /></p>
 <p>Take the following code as an example:</p>
 <ol>
 <li>
