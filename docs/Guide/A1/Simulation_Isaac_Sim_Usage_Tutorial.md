@@ -48,9 +48,9 @@ The following is the official tutorial to help you understand the basic Isaac Si
 
 First，you need to clone our repositry [A1_Simulation_Isaac_Sim_Usage_Tutorial](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial) in our GitHub.
 
-Visit [A1_Simulation_SDK](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_SDK) to get the resources of  [A1_fixed_base_scene.usd](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_fixed_base_scene.usd) and [A1_raw.usd ](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_raw.usd) for A1.
+Visit [A1_Simulation_SDK](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_SDK) to the resources of  [A1_fixed_base_scene.usd](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_fixed_base_scene.usd) and [A1_raw.usd ](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/A1_raw.usd) for A1.
 
-Visit [A1_Simulation_A1 G1_SDK](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_A1_G1_SDK) to get the resources of [A1_G1_scene.usd](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_scene.usd) and [A1_G1_raw.usd](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_raw.usd) for A1 with gripper G1.
+Visit [A1_Simulation_A1 G1_SDK](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/tree/galaxea/main/A1_simulation_A1_G1_SDK) to the resources of [A1_G1_scene.usd](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_scene.usd) and [A1_G1_raw.usd](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_A1_G1_SDK/A1_G1_raw.usd) for A1 with gripper G1.
 
 1. **Open Isaac Sim:** Start Isaac Sim 4.0.0 from Omniverse Launcher. Ensure you select `omni.isaac.ros_bridge(deprecated)` at startup to enable communication between Isaac Sim and ROS nodes.   
    ![library_en](assets/library_en.png)
@@ -82,7 +82,17 @@ With this, the Isaac Sim A1 robot arm simulation process is complete. You may pl
 
 ## Gripping
 
-After clicking the “Play”, please refer to the [End-Effector Movement Example](https://github.com/userguide-galaxea/A1_SDK/blob/galaxea/main/README_CONTROL.md#end-effector-movement-example) in A1_SDK and clone the A1_SDK repository to complete the simuation process in Isaac Sim.
+After clicking the “Play”, please refer to the [End-Effector Movement Example](https://github.com/userguide-galaxea/A1_SDK/blob/galaxea/main/README_CONTROL.md#end-effector-movement-example) in A1 SDK and clone the A1_SDK repository to complete the simuation process in Isaac Sim.
+
+Note:
+
+- After launching the `eeTrackerdemo.launch`, make sure to select the `base_link` as the Fixed Frame, and add the `RobotModel` to it, then you can see the visualized A1 in RViz screen.
+
+  ![gripping_joint_states1](assets/gripping_joint_states1.png)
+
+- If the arm does not move after conducting all the commands (only in pure simulation scenario), go to [the file](https://github.com/userguide-galaxea/A1_SDK/blob/galaxea/main/install/share/mobiman/launch/simpleExample/eeTrackerdemo.launch) in A1_SDK and change the `joint_states_sub_topic` from `/joint_states_host` to `/joint_states`. It changes the control mode from real hardware to pure simulation mode.
+
+  ![gripping_joint_states2](assets/gripping_joint_states2.png)
 
 Take the following code as an example:
 
