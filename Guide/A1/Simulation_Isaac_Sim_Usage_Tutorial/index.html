@@ -484,6 +484,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../R1_Step_by_Step_Guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    R1 Step-By-Step Startup Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Getting_Started/" class="md-nav__link">
         
   
@@ -1228,7 +1249,8 @@
 <span class="n">roslaunch</span> <span class="n">mobiman</span> <span class="n">eeTrackerdemo</span><span class="o">.</span><span class="n">launch</span>
 
 <span class="c1">##Initiate one terminal,e.g. &quot;terminal_1&quot;, open the A1 simulation sync.</span>
-<span class="n">python</span> <span class="n">a1_jointsync</span><span class="o">.</span><span class="n">py</span>
+<span class="n">python</span> <span class="n">A1_simulation_SDK</span><span class="o">/</span><span class="n">a1_jointsync</span><span class="o">.</span><span class="n">py</span>
+<span class="c1">##or if you are using the A1-G1, run: python A1_simulation_A1_G1_SDK/a1_jointsync_A1G1.py</span>
 
 <span class="c1">##Initiate one terminal,e.g. &quot;terminal_2&quot;, publish the example trajactory ponits.</span>
 <span class="n">rostopic</span> <span class="n">pub</span> <span class="o">/</span><span class="n">a1_ee_target</span> <span class="n">geometry_msgs</span><span class="o">/</span><span class="n">PoseStamped</span> <span class="s2">&quot;{</span>
