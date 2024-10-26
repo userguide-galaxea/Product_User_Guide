@@ -104,7 +104,8 @@ source setup.bash
 roslaunch mobiman eeTrackerdemo.launch
 
 ##Initiate one terminal,e.g. "terminal_1", open the A1 simulation sync.
-python a1_jointsync.py
+python A1_simulation_SDK/a1_jointsync.py
+##or if you are using the A1-G1, run: python A1_simulation_A1_G1_SDK/a1_jointsync_A1G1.py
 
 ##Initiate one terminal,e.g. "terminal_2", publish the example trajactory ponits.
 rostopic pub /a1_ee_target geometry_msgs/PoseStamped "{
