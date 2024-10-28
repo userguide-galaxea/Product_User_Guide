@@ -30,7 +30,7 @@ Please ensure that the following items/environments are prepared before powering
 Locate two locks on the left side of the box, flip the lock tabs and rotate counterclockwise to open the front door. <u>You will see a folded R1 with head, chest cavity, torso, chassis and no arms installed, a sealed box containing a full set of screwdrivers and a joystick controller, and replacement wiring harnesses.</u>
 
 ### 2.2 Remove Box Fixings
-Lower the board. Remove six fixing screws inside the box, as shown in the figure. 
+Lower the board. Remove six fixing screws inside the box, as shown in the figure above. 
 
 ### 2.3 Pull It Out 
 It might require at least two people to pull the robot out of the box to avoid collision. 
@@ -70,13 +70,14 @@ Remove two M3 screws on the peripheral interface cover on the chassis. Connect H
 ![3.1_HDMI_Connecting](assets/3.1_HDMI_Connecting.png)
 
 Connect the mouse and keyboard to the USB ports. 
+
 <u>Note: Please ensure a firm connection to avoid cable looseness.</u>
 
 ![3.1_USB_Connecting](assets/3.1_USB_Connecting.png)
 
 ### 3.2 Power On
 
-The battery is located at the bottom of the right side of the chassis. Remove four screws and slide the cover right to detach it. Then, put the battery into the chassis, connect the battery cable, and close the cover. 
+The battery is located at the bottom of the right side of the chassis. Remove two screws and slide the cover right to detach it. Then, put the battery into the chassis, connect the battery cable, and close the cover. 
 To remove and change the battery, reverse those steps.
 
 ![3.2_battery_in](assets/3.2_battery_in.png)
@@ -160,7 +161,8 @@ source ~/work/ci_pipeline/workspace/body/install/setup.bash
 
 # Start the following launch files in different terminals in sequence.
 roslaunch HDAS hdas.launch
-roslaunch r1_jointTrackerdemo.launch
+roslaunch mobiman r1_jointTrackerdemo.launch
+roslaunch mobiman r1_chassis_control.launch
 ```
 
 **Step 2:** Switch SWA, SWD to the bottom, and switch SWB,SWC to the middle. 
