@@ -27,30 +27,34 @@ Please ensure that the following items/environments are prepared before powering
 
 ### 2.1 Unlock the Box
 
-Locate two locks on the left side of the box. Open the two locks on the left side of the box door, take out the lock tabs and rotate counterclockwise to open the front door. <u>You will see a folded R1 with head, chest cavity, torso, chassis and no arms, a sealed box containing a full set of screwdrivers and a joustick controller, and replacement wiring harnesses.</u>
+Locate two locks on the left side of the box, flip the lock tabs and rotate counterclockwise to open the front door. <u>You will see a folded R1 with head, chest cavity, torso, chassis and no arms installed, a sealed box containing a full set of screwdrivers and a joystick controller, and replacement wiring harnesses.</u>
 
 ### 2.2 Remove Box Fixings
-Lower the board. Use the L-hex key to remove six fixing screws shown in the figure. It might require at least two people to pull the robot out of the box to avoid collision. 
+Lower the board. Remove six fixing screws inside the box, as shown in the figure. 
 
-### 2.3 Remove Chassis Fixings
-There are fixings on both sides of the front and at the rear of the chassis. Rotate the wheels of the fixings to both sides to expose the fixed screws. Use the matching L-hex key to remove the fixing screws on the wheels, and then turn the wheels back to their original positions.
+### 2.3 Pull It Out 
+It might require at least two people to pull the robot out of the box to avoid collision. 
 
-![2.3_chassis_fixings_remove](assets/2.3_chassis_fixings_remove.png)
+### 2.4 Remove Chassis Fixings
+There are fixings on both sides of the front and at the rear of the chassis. Rotate each wheel to expose the fixed screws, remove them and then turn the wheels back to their original positions.
 
-### 2.4 Detach Rear Shell
-Open the peripheral interface cover on the rear shell. Use the L-hex key to remove two M4 screw. Use the L-hex key to remove two M5 screws on each side of the chest. Then you can detach the rear shell. 
+![2.4_chassis_fixings_remove](assets/2.3_chassis_fixings_remove.png)
 
-![2.4_detach_rear_shell](assets/2.4_detach_rear_shell.png)
+### 2.5 Detach Rear Shell
+Open the peripheral interface cover on the rear shell and remove two M4 screws on the side. 
+Next, remove two M5 screws on each side of the chest, then you can detach the rear shell. 
 
-### 2.5 Detach Front Shell
-Use the L-hex key to remove six M5 screws on two sides of the chest, as boxed in the figure, then you can detach the front shell.
+![2.5_detach_rear_shell](assets/2.4_detach_rear_shell.png)
 
-![2.5_front_shell_remove](assets/2.5_front_shell_remove.png)
+### 2.6 Detach Front Shell
+Remove six M5 screws on two sides of the chest, as boxed in the figure, then you can detach the front shell.
 
-### 2.6 Remove Arm Fixings
+![2.6_front_shell_remove](assets/2.5_front_shell_remove.png)
+
+### 2.7 Remove Arm Fixings
 Use the largest L-hex key to remove two screws inside the chest, as boxed in the figure, then you can detach the fixing stick.
 
-![2.6_arm_fixings_remove](assets/2.6_arm_fixings_remove.png)
+![2.7_arm_fixings_remove](assets/2.6_arm_fixings_remove.png)
 
 
 
@@ -59,20 +63,21 @@ Use the largest L-hex key to remove two screws inside the chest, as boxed in the
 ### 3.1 Connect the Display, Keyboard and Mouse
 <span style="color:red;">**Important: For your safety, please power off R1 before connecting any cables.**</span>
 
-Use the L-hex key to remove two M3 screws on the peripheral interface cover on the chassis. Connect HDMI cable to the chassis and the display. 
+Remove two M3 screws on the peripheral interface cover on the chassis. Connect HDMI cable to the chassis and the display. 
 
-<u>Note: Please ensure a firm connection to avoid looseness.</u>
+<u>Note: Please ensure a firm connection to avoid cable looseness.</u>
 
 ![3.1_HDMI_Connecting](assets/3.1_HDMI_Connecting.png)
 
-Connect the mouse and keyboard to the USB interface on the chest. 
-<u>Note: Please ensure a firm connection to avoid looseness.</u>
+Connect the mouse and keyboard to the USB ports. 
+<u>Note: Please ensure a firm connection to avoid cable looseness.</u>
 
 ![3.1_USB_Connecting](assets/3.1_USB_Connecting.png)
 
 ### 3.2 Power On
 
-The battery is located at the bottom of the right side of the chassis. Remove four screws and slide the cover right to detach it. Then, put the battery into the chassis, connect the battery cable to the chassis, and close the cover. To remove and change the battery, reverse the above steps.
+The battery is located at the bottom of the right side of the chassis. Remove four screws and slide the cover right to detach it. Then, put the battery into the chassis, connect the battery cable, and close the cover. 
+To remove and change the battery, reverse those steps.
 
 ![3.2_battery_in](assets/3.2_battery_in.png)
 
@@ -84,11 +89,11 @@ The power supply port is located at the bottom of the rear of the chassis. Unscr
 
 
 ### 3.3 Obtain IP Address
-After the R1 is powered on, wait for the display to show the desktop. Click "Settings" and connect to WiFi.
+After R1 is powered on, wait for the display to show the desktop. Then click "Settings" and connect to WiFi.
 
 ![3.4_wifi_connect](assets/3.3_wifi_connect.png)
 
-Then open the command terminal and enter the following command:
+Open the command terminal and enter the following command:
 
 ```bash
 ifconfig
@@ -116,7 +121,7 @@ After completing the above steps, if the connection is successful, disconnect th
 ### 3.5 The First Remote Self-Check
 <span style="color:red;">**Important: Before you do any actions on R1, you must complete R1 remote self-checks to ensure the safety.**</span>
 
-Perform the first remote self-check according to the following steps. Please make sure:
+Perform the first remote self-check based on the following steps. Please make sure:
 
 - R1 has pulled out of the box and all fixings are removed, **and**
 - R1 remains folded and does not have the robot arms installed.
@@ -133,13 +138,13 @@ rosrun HDAS check_node
 
 ### 3.6 Stand Up
 
-<u>Note: Please ensure that R1 is out of the box and there is no interference or fixings. Otherwise, the torso may enter the locked-rotor protection state.</u>
+<u>Note: Please ensure that R1 is out of the box and there is no interference or fixings. Otherwise, R1's torso may enter the locked-rotor protection state.</u>
 
-Once the self-check is completed, you can make R1 standing up with the following steps by using the joystick controller. 
+Once the self-check is completed, you can make R1 standing up based on the following steps, by using the joystick controller. 
 
 ![3.6_controller](assets/3.6_controller.png)
 
-<u>Note: Please ensure all switches (SWA/SWB/SWC/SWD) are in the top position before you do any actions. This will place the machine in a stop state, preventing the robot from operating.</u> 
+<u>Note: Please ensure all switches (SWA/SWB/SWC/SWD) are at top before you do any actions. This will place the machine in a stop state, preventing the robot from operating.</u> 
 
 ![3.6_controller_warnning](assets/3.6_controller_warnning.png)
 
@@ -175,7 +180,7 @@ roslaunch r1_jointTrackerdemo.launch
 ![3.7_G1GEN2_attaching](assets/3.7_G1GEN2_attaching.png)
 
 
-- **Alignment Check:** Ensure that the three mounting holes around the gripper are aligned with the three mounting holes at the end of A1.
+- **Alignment Check:** Ensure that three mounting holes around the gripper are aligned with three mounting holes at the end of A1.
 - **Screw Fixation:** Once aligned, secure and tighten the gripper to the arm using the three screws provided.
 - **Final Check:** After tightening the screws, double-check the alignment and stability of the gripper. It should be firmly attached and not wobble or move independently of the robot arm.
 
@@ -183,16 +188,16 @@ roslaunch r1_jointTrackerdemo.launch
 
 ![3.7_arm_install](assets/3.7_arm_install.png)
 
-<u>Note: When installing the robot arm, you must ensure that the ports on the arm base are facing backward.</u>
+<u>Note: When installing the robot arm, you must ensure that arm base ports are facing backward, like showing in the figure below.</u>
 
 **Step 3:** Connect the power and CAN cables provided with arms to the ports on the arm base.
 
 ![3.7_arm_cables](assets/3.7_arm_cables.png)
 
-**Step 4:** After confirming that the communication connection with the robot arms is successful, reattach the covers by reversing the steps in **2.4** and **2.5** above.
+**Step 4:** After confirming that the communication connection with the robot arms is successful, reattach the covers by reversing the steps in **2.5** and **2.6** above.
 
 ### 3.8 The Second Remote Self-Check
-Power on R1 and perform the second remote self-check according to the following steps. Please make sure:
+Power on R1 and perform the second remote self-check based on the following steps. Please make sure:
 - R1 has stood up, **and**
 - R1 has arms installed correctly.
 
@@ -206,4 +211,4 @@ rosrun HDAS check_node
 ```
 
 ## Instruction Video
-**Comming soon**
+**Coming soon**
