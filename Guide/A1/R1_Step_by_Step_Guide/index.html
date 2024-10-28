@@ -1434,7 +1434,7 @@
 <h3 id="21-unlock-the-box">2.1 Unlock the Box</h3>
 <p>Locate two locks on the left side of the box, flip the lock tabs and rotate counterclockwise to open the front door. <u>You will see a folded R1 with head, chest cavity, torso, chassis and no arms installed, a sealed box containing a full set of screwdrivers and a joystick controller, and replacement wiring harnesses.</u></p>
 <h3 id="22-remove-box-fixings">2.2 Remove Box Fixings</h3>
-<p>Lower the board. Remove six fixing screws inside the box, as shown in the figure. </p>
+<p>Lower the board. Remove six fixing screws inside the box, as shown in the figure above. </p>
 <h3 id="23-pull-it-out">2.3 Pull It Out</h3>
 <p>It might require at least two people to pull the robot out of the box to avoid collision. </p>
 <h3 id="24-remove-chassis-fixings">2.4 Remove Chassis Fixings</h3>
@@ -1456,11 +1456,11 @@ Next, remove two M5 screws on each side of the chest, then you can detach the re
 <p>Remove two M3 screws on the peripheral interface cover on the chassis. Connect HDMI cable to the chassis and the display. </p>
 <p><u>Note: Please ensure a firm connection to avoid cable looseness.</u></p>
 <p><img alt="3.1_HDMI_Connecting" src="../assets/3.1_HDMI_Connecting.png" /></p>
-<p>Connect the mouse and keyboard to the USB ports. 
-<u>Note: Please ensure a firm connection to avoid cable looseness.</u></p>
+<p>Connect the mouse and keyboard to the USB ports. </p>
+<p><u>Note: Please ensure a firm connection to avoid cable looseness.</u></p>
 <p><img alt="3.1_USB_Connecting" src="../assets/3.1_USB_Connecting.png" /></p>
 <h3 id="32-power-on">3.2 Power On</h3>
-<p>The battery is located at the bottom of the right side of the chassis. Remove four screws and slide the cover right to detach it. Then, put the battery into the chassis, connect the battery cable, and close the cover. 
+<p>The battery is located at the bottom of the right side of the chassis. Remove two screws and slide the cover right to detach it. Then, put the battery into the chassis, connect the battery cable, and close the cover. 
 To remove and change the battery, reverse those steps.</p>
 <p><img alt="3.2_battery_in" src="../assets/3.2_battery_in.png" /></p>
 <p>The power supply port is located at the bottom of the rear of the chassis. Unscrew the plug case, and insert the power cord into the port. When the red light on the charger is on, it indicates that R1 is charging.</p>
@@ -1511,7 +1511,8 @@ sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </spa
 
 <span class="c1"># Start the following launch files in different terminals in sequence.</span>
 roslaunch<span class="w"> </span>HDAS<span class="w"> </span>hdas.launch
-roslaunch<span class="w"> </span>r1_jointTrackerdemo.launch
+roslaunch<span class="w"> </span>mobiman<span class="w"> </span>r1_jointTrackerdemo.launch
+roslaunch<span class="w"> </span>mobiman<span class="w"> </span>r1_chassis_control.launch
 </code></pre></div>
 <p><strong>Step 2:</strong> Switch SWA, SWD to the bottom, and switch SWB,SWC to the middle. </p>
 <p><strong>Step 3:</strong> Move the left joystick to the upper left, and move the right joystick to the upper right simultaneously. Waiting for 3 seconds,  <strong>R1 will stand up.</strong></p>
