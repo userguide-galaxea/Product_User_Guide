@@ -17,7 +17,7 @@ Please ensure that the following items/environments are prepared before powering
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">R1</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">R1 Base</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
