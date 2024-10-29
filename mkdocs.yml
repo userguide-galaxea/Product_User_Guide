@@ -57,7 +57,8 @@ nav:
 
   - Galaxea R1 User Guide:
       - Getting Started:
-          - R1 Step-By-Step Startup Guide: Guide/R1/R1_Step_by_Step_Guide.md
+          - Step-By-Step Startup Guide: Guide/R1/R1_Step_by_Step_Guide.md
+          - Demo: Guide/R1/R1_demo_test.md
           - Before You Begin: Guide/R1/GettingStarted_Before.md
           - Connecting and Installing: Guide/R1/GettingStarted_Connecting.md
       - Hardware Guide: Guide/R1/Hardware_Guide.md
