@@ -34,7 +34,7 @@ Galaxea R1 is intended for research applications by users experienced in operati
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Nominal Voltage</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">48 V</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">54.6 V</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Rated Capacity</td>
@@ -127,10 +127,7 @@ Galaxea R1 is intended for research applications by users experienced in operati
 
 
 ### Head
-
-The ZED2 3D + DEPTH Camera is attached to the robot head. It provides high-definition 3D video and neural depth perception of the environment, with a wide field of view and an electronically synchronized rolling shutter, making it an ideal choice for applications requiring precise spatial awareness and real-time 3D mapping.
-
-
+Coming soon
 
 ### Arm
 
@@ -215,41 +212,7 @@ See [Galaxea A1 User Guide](../A1/Hardware_Guide.md) if you want to explore more
 
 
 ### Base
-
-The chassis is triangular in shape and equipped with three steering wheels. The power button is on the left side of the chassis and the emergency stop button is at the rear of the chassis.
-
-To charge the robot, please use the provided power cable and insert it into the 48 V power supply port located at the bottom of the rear of the chassis.
-
-![R1_chassis](assets/R1_chassis.png)
-
-<table style="width: 100%; border-collapse: collapse;">
-    <thead>
-        <tr style="background-color: black; color: white; text-align: left;">
-            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">Item</th>
-            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">Notes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Dimensions</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">445L x 476W x 313H mm</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Power Button</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Used to turn on/off the robot</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Emergency Stop Button</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Used for immediate power interruption during emergencies</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Power Supply Port</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Rated voltage 48 V</td>
-        </tr>
-    </tbody>
-</table>
-
-
+Coming soon
 
 
 ### Sensors
@@ -278,8 +241,6 @@ Galaxea R1 includes a number of sensors that allow it to perceive the environmen
 
 
 #### Camera
-
-![R1_camera_zed2](assets/R1_camera_zed2.png)
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -331,8 +292,6 @@ Galaxea R1 includes a number of sensors that allow it to perceive the environmen
 </table>
 
 #### LiDAR
-
-[LIVOX MID-360](https://www.livoxtech.com/mid-360) delivers 3D perception in 360 degrees for robots, featuring active anti-interference capabilities and resilience in both bright and low-light environments.
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
