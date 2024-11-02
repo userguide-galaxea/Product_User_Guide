@@ -1,4 +1,4 @@
-# R1 Isaac Lab User Guide
+# R1 Simulation Isaac Lab User Tutorial
 
 ## Get Started
 
