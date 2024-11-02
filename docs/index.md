@@ -74,7 +74,7 @@ hide:
                 <div class="product">
                         <a href="Guide/R1/GettingStarted_Before">Getting Started</a> <br>
                         <a href="Guide/R1/Hardware_Guide">Hardware Guide</a> <br>
-                        <a href="Guide/R1/Software_Guide_firstmove">Software Guide</a> <br>
+                        <a href="Guide/R1/Software_Guide">Software Guide</a> <br>
                 </div>
             </section>
             <section class="products-section">
