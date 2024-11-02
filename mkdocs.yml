@@ -63,7 +63,7 @@ nav:
 #           - Connecting and Installing: Guide/R1/GettingStarted_Connecting.md
       - Hardware Guide: Guide/R1/Hardware_Guide.md
       - Software Guide: Guide/R1/Software_Guide.md
-      - R1-DVT Isaac Lab User Guide: Guide/R1/R1_DVT_Isaac_Lab_User_Guide.md
+      - Simulation Isaac Sim Usage Tutorial: Guide/R1/R1_DVT_Isaac_Lab_User_Guide.md
   - Galaxea B1 User Guide:
       - Getting Started: Guide/B1/B1_Getting_Started.md
       - Hardware Guide: Guide/B1/B1_Hardware_Guide.md

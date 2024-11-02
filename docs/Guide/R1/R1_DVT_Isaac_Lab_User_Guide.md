@@ -1,4 +1,4 @@
-# R1-DVT Isaac Lab User Guide
+# R1 Isaac Lab User Guide
 
 ## Get Started
 
