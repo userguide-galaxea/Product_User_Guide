@@ -1,4 +1,4 @@
-# Software Guide
+# Galaxea A1 Software Guide
 We developed an efficient driver for converting serial signals through the slave computer, which has been released as a ROS (Robot Operating System) topic. This driver not only enables control of the slave computer but also retrieves feedback information and error codes from the device, facilitating two-way communication and real-time control. The tutorials will guide you on how to use this program to develop and operate Galaxea A1.
 
 ## Software Dependency

@@ -1,4 +1,4 @@
-# Overview
+# Galaxea R1 Overview
 
 In this tutorial, <u>you will learn how to power on and operate this new product,</u> beginning your journey of interacting with Galaxea R1.
 
@@ -92,4 +92,4 @@ The following table shows how to switch SWA/SWB/SWC/SWD to different positions i
 
 ## Next Step
 
-Our quickstart journey has come to an end. To deepen your mastery of Galaxea R1, we strongly recommend exploring the following chapters in [Galaxea R1 Hardware Guide](Hardware_Guide.md) and [Software Guide](Software_Guide_firstmove.md). These resources offer a wealth of additional information and practical examples, guiding you through the intricacies of programming with confidence and ease.
+Our quickstart journey has come to an end. To deepen your mastery of Galaxea R1, we strongly recommend exploring the following chapters in [Galaxea R1 Hardware Guide](Hardware_Guide.md) and [Software Guide](Software_Guide.md). These resources offer a wealth of additional information and practical examples, guiding you through the intricacies of programming with confidence and ease.

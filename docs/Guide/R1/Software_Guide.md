@@ -1,7 +1,7 @@
 # Galaxea R1 Software Guide
 ## Software Dependency
 
-1. [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu) 20.04 LTS
+1. Ubuntu 20.04 LTS
 2. ROS Noetic
 
 ## Installation
@@ -942,44 +942,7 @@ This interface is used for torso control and status feedback ROS package. The pa
 
 
 #### IMU Interface
-
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Message Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/lidar_chassis_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Lidar pointcloud</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::PointCloud2</td>
-    </tr>
-  </tbody>
-</table>
-
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Field</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 400px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="2">/hdas/lidar_chassis_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">fields</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">LiDAR data</td>
-    </tr>
-  </tbody>
-</table>
+Coming Soon
 
 
 #### BMS Interface
@@ -988,8 +951,8 @@ This interface is used for torso control and status feedback ROS package. The pa
   <thead>
     <tr>
       <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Message Type</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Description</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 400px;">Message Type</th>
     </tr>
   </thead>
   <tbody>

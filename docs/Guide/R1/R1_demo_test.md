@@ -1,4 +1,4 @@
-# R1 Demo
+# Galaxea R1 Demo
 ## Preparation Before Use
 <span style="color:red;">**Important: Please conduct the test strictly in the order listed in the "Script Execution".**</span>
 Before you start testing, please ensure that:

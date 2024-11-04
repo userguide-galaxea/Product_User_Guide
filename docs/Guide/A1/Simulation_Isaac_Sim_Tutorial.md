@@ -1,4 +1,4 @@
-# A1 Simulation Isaac Sim Usage Tutorial
+# Galaxea A1 Simulation Isaac Sim Tutorial
 
 ## Install Isaac Sim 4.0.0
 
