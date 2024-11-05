@@ -200,6 +200,14 @@ See [Galaxea A1 User Guide](../A1/Getting_Started.md) if you want to explore mor
             <td style="padding: 8px; border: 1px solid #ddd;">Torso Motor Torque</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Rated: 108 NM<br>Max.: 304 NM</td>
         </tr>  
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">USB</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Used to connect the mouse and keyboard.</td>
+        </tr>  
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">3-Pin Aviation Plug</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Used to power external devices. One thick red wire of 24V, one thin red wire of 5V, and one black earth wire.</td>
+        </tr>  
     </tbody>
 </table>
 
@@ -266,7 +274,7 @@ The peripheral interfaces are located on the top of the rear of the chassis.
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">3-pin Aviation Plug</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Used to provide electricity (24V/5V) for external devices.</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Used to power external devices. One thick red wire of 24V, one thin red wire of 5V, and one black earth wire.</td>
         </tr>
     </tbody>
 </table>
