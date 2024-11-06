@@ -28,16 +28,16 @@ The electrical parameters of Galaxea A1 include its voltage, current, and commun
     </thead>
     <tbody>
         <tr style="background-color: white;text-align: left;">
-            <td>Nominal Voltage</td>
+            <td>Rated Voltage</td>
             <td>48 V</td>
         </tr>
         <tr style="background-color: white;text-align: left;">
             <td>Rated Current</td>
-            <td>30 A</td>
+            <td>6 A</td>
         </tr>
         <tr style="background-color: white;text-align: left;">
             <td>Maximum Current</td>
-            <td>50 A</td>
+            <td>10 A</td>
         </tr>
         <tr style="background-color: white;text-align: left;">
             <td>Communication Interface</td>
@@ -56,6 +56,10 @@ The performance parameters highlight Galaxea A1's key specifications, such as we
         </tr>
     </thead>
     <tbody>
+        <tr style="background-color: white;text-align: left;">
+            <td>Dimensions</td>
+            <td>Deployed: 775L x 128W x 237H <br> Folded: 449L x 128W x 277H </td>
+        </tr>
         <tr style="background-color: white;text-align: left;">
             <td>Weight</td>
             <td>6 kg</td>
@@ -219,10 +223,11 @@ Galaxea A1 features two ports on the rear of the base for development and chargi
 ### End-Effector
 #### [Galaxea G1](../../Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md) 
 
-G1 is composed of one motor, two clips, and one specially designed joint module. 
+G1 is composed of one motor, two clips, and one specially designed joint module.
+
+![G1_size](assets/G1_size.png)
 
 *Note: No gripper is included with the product. Contact us and purchase end-effectors or customized tools if needed.*
-![A1_G1_size](assets/A1_G1_size.png)
 
 <table style="border-collapse: collapse;">
     <thead>
@@ -234,19 +239,19 @@ G1 is composed of one motor, two clips, and one specially designed joint module.
     <tbody>
         <tr style="background-color: white;text-align: left;">
             <td>Length</td>
-            <td>149 mm</td>
+            <td>145 mm</td>
         </tr>
         <tr style="background-color: white;text-align: left;">
             <td>Length of Fingers</td>
-            <td>77 mm </td>
+            <td>78 mm </td>
         </tr>
         <tr style="background-color: white;text-align: left;">
             <td>Diameter of Motor</td>
-            <td>60 mm</td>
+            <td>57 mm</td>
         </tr>
         <tr style="background-color: white;text-align: left;">
             <td>Gripper Operating Range</td>
-            <td>0~60 mm</td>
+            <td>0 ~ 100 mm</td>
         </tr>
 		<tr style="background-color: white;text-align: left;">
             <td>Gripper Operating Range</td>
@@ -255,15 +260,17 @@ G1 is composed of one motor, two clips, and one specially designed joint module.
     </tbody>
 </table>
 
+Equipped with the end-effector, Galaxea G1, should have:
 
+![A1_G1_size](assets/A1_G1_size.png)
 
 #### Attaching
 Here it shows how to attach gripper to Galaxea A1. To remove them, simply reverse these steps.
+![A1G1_attaching](assets/A1G1_attaching.png)
 
-<div style="text-align: center;">
-    <img src="../assets/A1_attaching_g1.png" alt="A1_attaching_g1" width="680">
-</div>
-
+1. **Alignment Check:** Ensure that the three mounting holes around the gripper are aligned with the three mounting holes at the end of arm.
+2. **Screw Fixation:** Once aligned, secure and tighten the gripper to the arm using the three screws provided.
+3. **Final Check:** After tightening the screws, double-check the alignment and stability of the gripper. It should be firmly attached and not wobble or move independently of the robot arm.
 
 ### [Inspire-Robots RH56 Series Dexterous Hand](https://en.inspire-robots.com/product-category/the-dexterous-hands)
 The dexterous hand boasts significant gripping strength and moderate speed, making it suitable for grasping and manipulating tasks in robotics or prosthetic applications. Its combination of power and control allows for effective handling of various objects, similar to the versatility of a human hand, thereby enhancing the functionality of robots or prostheses in performing complex tasks.
