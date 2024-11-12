@@ -360,4 +360,9 @@ You can find the document and python scripts in [R1_Demo](R1_demo_test.md).
 
 ## Instruction Video
 
-**Coming Soon**
+<div style="display: flex; justify-content: center; align-items: center;">
+<video width="1920" height="1080" controls>
+  <source src="../assets/r1_step_by_step_video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
