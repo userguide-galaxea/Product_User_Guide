@@ -22,6 +22,9 @@ theme:
             enable: true
         - toc:
             enable: true
+        - mkdocs-markdown-it-embed:
+            enable: true
+
     features:
         - search.highlight
         - search.inline

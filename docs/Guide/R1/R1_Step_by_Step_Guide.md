@@ -2,8 +2,8 @@
 
 In this step-by-step guide, we will provide detailed instructions on how to unpack Galaxea R1 correctly, connect cables, install the robot arm, and how to remotely control R1 to achieve better communication and explore more functions.
 
-**At the end of the page, there will be an unboxing instruction video .**
-
+## Instruction Video
+<iframe width="720" height="540" src="https://www.youtube.com/embed/l3ULLs7gBdI?si=yIIOsdgYPhBADIAt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 ## 1. Preparation
@@ -357,12 +357,3 @@ Then,  <span style="color:red;">**power it on**</span> and:
 After completing all the operations above, <span style="color:red;">move R1 to an open area to ensure there are no obstacles around. </span> Then remotely command R1 to perform demo testing.
 
 You can find the document and python scripts in [R1_Demo](R1_demo_test.md).
-
-## Instruction Video
-
-<div style="display: flex; justify-content: center; align-items: center;">
-<video width="1920" height="1080" controls>
-  <source src="../assets/r1_step_by_step_video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-</div>
