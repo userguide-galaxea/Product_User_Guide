@@ -15,7 +15,7 @@ Can't wait to see the Galaxea robot？Let's start now!
 
 ## Installation
 
-To install our Galaxea Lab, follow these steps. Firsly, install the latest Isaac Sim. You can do this either through the [official Ominivese launcher](../A1/Simulation_Isaac_Sim_Tutorial) or use the [pip test version](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/binaries_installation.html#installing-isaac-sim) (though it hasn't been tested in our case). We recommend the former option. Ensure that the latest version of Isaac Sim is installed. 
+To install our Galaxea Lab, follow these steps. Firsly, install the latest Isaac Sim. You can do this either through the [official Ominivese launcher](../A1/Simulation_Isaac_Sim_Tutorial.md) or use the [pip test version](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/binaries_installation.html#installing-isaac-sim) (though it hasn't been tested in our case). We recommend the former option. Ensure that the latest version of Isaac Sim is installed. 
 
 Once Isaac Sim is successfully installed, proceed to install our Galaxea Lab. Start by cloning the repository.
 
