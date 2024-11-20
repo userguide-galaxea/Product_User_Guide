@@ -301,11 +301,12 @@ roslaunch mobiman r1_chassis_control.launch
 <span style="color:red;">Note: Ensure that all switches (SWA/SWB/SWC/SWD) are in the top position before you do any actions. </span> This will place the machine in a stop state, preventing the robot from operating. Please visit Joystick Controller Guide in Galaxea R1 User Guide for more detailed information and operation, if you need.
 
 1. To turn on/off the controller, press and hold both power buttons until the touchscreen lights up/off.
-2. Switch SWA, SWD to the bottom, and switch SWB,SWC to the middle.
+2. Switch SWA to the bottom, and switch SWB to the middle.
 3. Move the left joystick to the upper left, and move the right joystick to the upper right simultaneously, as shown below. Waiting for 3 seconds, **R1 will stand up**.
 
-![3.6.3_controller_standup](assets/3.6.3_controller_standup.png)
-
+<div style="text-align: center;">
+  <img src="../assets/3.6.3_controller_standup.png" width="500">
+</div>
 ### 3.7 Install Arms
 
 <span style="color:red;">**Important: For your safety, please make R1 stand up and powered off before installing arms.**</span>
