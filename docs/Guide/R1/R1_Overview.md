@@ -10,11 +10,21 @@ Galaxea R1 has the potential to cause harm if not properly used. We recommend th
 
 ### Power On/Off
 
-To turn on Galaxea R1, please press the boat-shaped power button on the bottom of the rear of the chassis. 
+#### Hard Switch
 
-To turn off, switch off the power button. 
+One black and boat-shaped power button is located on the bottom of the rear of the chassis.
+Press the button to power R1 on and off.
 
 ![R1_charge](assets/R1_charge.png)
+
+#### Soft Switch
+
+One silver and circular power button is located on the back of the neck.
+
+- Press down the button and release it. The blue light will turn on, indicating that R1 is powered on.
+- Press down and hold the button for more than 3 seconds, then release it. The blue light will turn off, indicating that R1 is powered off.
+
+![R1_soft_switch](assets/R1_soft_switch.png)
 
 ### Battery Charge
 

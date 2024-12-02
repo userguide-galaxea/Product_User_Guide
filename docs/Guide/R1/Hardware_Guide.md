@@ -16,11 +16,7 @@
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Height</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">1700 mm when standing</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Depth</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">215 mm for chest<br />625 mm for chassis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1695 mm when standing</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Width</td>
@@ -32,7 +28,7 @@
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Nominal Voltage</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">54.6 V</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">48 V</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Rated Capacity</td>
@@ -101,7 +97,7 @@
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Communication Interface</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">CAN</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Ethernet, USB</td>
         </tr>
     </tbody>
 </table>
@@ -177,7 +173,7 @@ See [Galaxea A1 User Guide](../A1/Getting_Started.md) if you want to explore mor
     <tbody>
         <tr style="background-color: white; text-align: left;">       
             <td style="padding: 8px; border: 1px solid #ddd;">Dimension</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">1400H x 340W x mm </td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1400H x 340W</td>
         </tr>        
         <tr style="background-color: white; text-align: left;">       
             <td style="padding: 8px; border: 1px solid #ddd;">Function</td>
@@ -215,7 +211,7 @@ See [Galaxea A1 User Guide](../A1/Getting_Started.md) if you want to explore mor
 
 ### Base 
 
-![R1PRO_turn_on_off](assets/R1PRO_turn_on_off.png)
+![R1_turn_on_off](assets/R1_turn_on_off.png)
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -235,11 +231,11 @@ See [Galaxea A1 User Guide](../A1/Getting_Started.md) if you want to explore mor
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Power Supply Port</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Rated voltage 54.6 V</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Rated voltage 48 V</td>
         </tr>        
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Emergency Stop Button</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Used for immediate power interruption during emergencies</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Used immediately halt all operations in case of an emergency.</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Air Duct</td>
@@ -266,7 +262,7 @@ The peripheral interfaces are located on the top of the rear of the chassis.
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Ethernet</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Used to connect the ethernet.</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Used to connect to an Ethernet network.</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">HDMI</td>
@@ -303,7 +299,7 @@ Galaxea R1 is equipped with a multitude of sensors, among which are eight HD cam
         </tr>
     </tbody>
 </table>
-![R1PRO_sensor_chassis](assets/R1PRO_sensor_chassis.png)
+![R1_sensor_chassis](assets/R1_sensor_chassis.png)
 
 
 #### Camera

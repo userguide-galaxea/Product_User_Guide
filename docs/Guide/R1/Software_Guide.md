@@ -1,7 +1,7 @@
 # Galaxea R1 Software Guide
 ## Software Dependency
 
-1. Ubuntu 20.04 LTS
+1. [Ubuntu](https://ubuntu.com/download) 20.04 LTS
 2. ROS Noetic
 
 ## Installation
@@ -14,13 +14,14 @@ Visit the page [R1_Demo](R1_demo_test.md) and get started to operate R1 followin
 
 ## Software Interface
 
-In this chapter, we describe the various control and status feedback interfaces for Galaxea R1, to help users better understand how to communicate and control the arm through the ROS package.
+In this chapter, we describe the various control and status feedback interfaces for the Galaxea R1 to help users better understand how to communicate with and control the arm via the ROS package.
 
 ### Driver Interface
 
-The current Galaxea R1 driver is mainly composed of three parts, including four independent ROS nodes: the drivers of the chassis, the left and right arms, and the torso. The interfaces provided by these drivers are in the form of ROS topics, as described below.
+The current Galaxea R1 driver consists of three main components, including four independent ROS nodes: the drivers for the chassis, left and right arms, and torso. 
+The interfaces provided by these drivers are available as ROS topics, as described below.
 
-Please type the following command to launch the corresponding driver:
+To launch the corresponding driver, please enter the following command:
 
 1. Chassis, Arms, Torso, IMU, BMS, Remote Controller
 
@@ -49,14 +50,15 @@ Please type the following command to launch the corresponding driver:
 
 #### Chassis Driver Interface
 
-This interface is used for the chassis status feedback ROS package. The package defines multiple topics for posting the status of multiple motors in the chassis. The following are detailed descriptions of each topic and its related message types:
+This interface is used for the chassis status feedback ROS package, which defines multiple topics to report the status of the chassis' motors. 
+Below are detailed descriptions of each topic and its associated message types:
 
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
     <tr style="background-color: black; color: white; text-align: left;">
       <th style="padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
       <th style="padding: 8px; border: 1px solid #ddd; width: 300px;">Description</th>
-      <th style="padding: 8px; border: 1px solid #ddd;">Message Type</th>
+      <th style="padding: 8px; border: 1px solid #ddd; width: 300px;">Message Type</th>
     </tr>
   </thead>
   <tbody>
@@ -76,12 +78,14 @@ This interface is used for the chassis status feedback ROS package. The package 
       <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
     </tr>
   </tbody>
+
+
 </table>
 <table style="width: 100%; border-collapse: collapse;">
   </thead>
     <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
     <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Field</th>
-    <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Description</th>
+    <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -155,7 +159,8 @@ This interface is used for the chassis status feedback ROS package. The package 
 
 #### Arms Driver Interface
 
-This interface is used for robot arm control and status feedback ROS package. The package defines multiple  topics for publishing and subscribing to the status of the robot arm, control commands, and associated error code information. The following are detailed descriptions of each topic and its related message types:
+This interface is used for the robot arm control and status feedback ROS package, which defines multiple topics for publishing and subscribing to the arm's status, control commands, and associated error codes. 
+Below are detailed descriptions of each topic and its corresponding message types:
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -522,14 +527,15 @@ This interface is used for robot arm control and status feedback ROS package. Th
 
 #### Torso Driver Interface
 
-This interface is used for torso control and status feedback ROS package. The package defines multiple  topics for publishing and subscribing to the status of torso motors and control commands. The following are detailed descriptions of each topic and its related message types:
+This interface is used for the torso control and status feedback ROS package, which defines multiple topics for publishing and subscribing to the status of the torso motors and control commands. 
+Below are detailed descriptions of each topic and its corresponding message types:
 
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
     <tr>
       <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 400px;">">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 400px;">">Message Type</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 400px;">Description</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 400px;">Message Type</th>
     </tr>
   </thead>
   <tbody>
@@ -555,8 +561,8 @@ This interface is used for torso control and status feedback ROS package. The pa
   <thead>
     <tr>
       <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 200;">">Field</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 500px;">">Description</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 200;">Field</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 500px;">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -578,7 +584,7 @@ This interface is used for torso control and status feedback ROS package. The pa
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Not used</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="3">/hdas/feedback_status_arm_left</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="3">/hdas/feedback_status_torso</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
     </tr>
@@ -591,7 +597,7 @@ This interface is used for torso control and status feedback ROS package. The pa
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Contains error code and error description</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="8">/motion_control/control_arm_left</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="8">/motion_control/control_torso</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
     </tr>
@@ -701,7 +707,7 @@ This interface is used for torso control and status feedback ROS package. The pa
     <tr>
       <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
       <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Field</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Description</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -906,8 +912,8 @@ This interface is used for torso control and status feedback ROS package. The pa
   <thead>
     <tr>
       <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Message Type</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Description</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Message Type</th>
     </tr>
   </thead>
   <tbody>
@@ -947,8 +953,8 @@ This interface is used for torso control and status feedback ROS package. The pa
   <thead>
     <tr>
       <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 300px;">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 400px;">Message Type</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Description</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 400px;">Message Type</th>
     </tr>
   </thead>
   <tbody>
@@ -1168,7 +1174,7 @@ This interface is used for torso control and status feedback ROS package. The pa
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">2: Chassis control via controller <br> 5: ECU takes over</td>
     </tr>
   </tbody>
 </table>
@@ -1176,7 +1182,8 @@ This interface is used for torso control and status feedback ROS package. The pa
 
 ### Control Interface
 
-The current Galaxea R1 control diagram is shown as below, consisting of mainly 5 parts, R1 Pose Feedback, R1 Joint Control, R1 Chassis Control, R1 Arm Pose Control, and R1 Torso Pose Control. Details will be illustrated in below chapters. The whole package name is "mobiman", short for mobile manipulation.
+The current Galaxea R1 control diagram is shown below, consisting of five main parts: R1 Pose Feedback, R1 Joint Control, R1 Chassis Control, R1 Arm Pose Control, and R1 Torso Pose Control. 
+Details will be provided in the following chapters. The entire package is called 'mobiman,' short for mobile manipulation.
 
 ![R1_control_interface_draw](assets/R1_control_interface_draw.png)
 
@@ -1184,13 +1191,15 @@ The current Galaxea R1 control diagram is shown as below, consisting of mainly 5
 
 #### R1 Chassis Control
 
-R1 Chassis Control is the node which can control R1 chassis by vector control, which means you can send speed in three directions at the same time, which are direction x, direction y, and direction yaw(w).  It can be brought up by command.
+R1 Chassis Control is the node that controls the R1 chassis using vector control, allowing you to send speed commands in three directions simultaneously: x, y, and w. 
+It can be launched using a command.
 
 ```bash
 roslaunch mobiman r1_chassis_control.launch
 ```
 
-This launch file will bring up two nodes, which are chassis_control_node and r1_control_manager. Chassis_control_node is the main function for R1 chassis speed control, the interface is shown as blow.
+This launch file will bring up two nodes: chassis_control_node and r1_control_manager. 
+The `chassis_control_node` is responsible for R1 chassis speed control. The interface is shown below:
 
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
@@ -1308,15 +1317,17 @@ This launch file will bring up two nodes, which are chassis_control_node and r1_
 
 #### R1 Joint Control
 
-R1 Chassis Control is the node which can control R1 each joint of torso, arms, 16 joints in total.  It can be brought up by command.
+R1 Chassis Control is the node that controls each joint of the R1 torso and arms, with a total of 16 joints. It can be launched using a command.
 
 ```bash
 roslaunch mobiman r1_jointTrackerdemo.launch
 ```
 
-This launch file will bring up robot state publisher, `eepose_pub_node` and `r1_jointTracker_demo_node`. Robot state publisher is a ros-provided tool, providing tf for RVIZ according to `/joint_states.` and`r1_jointTracker_demo_node` is the main function node to control each joint. 
-
+This launch file will bring up the robot state publisher, `eepose_pub_node`, and `r1_jointTracker_demo_node`. 
+The robot state publisher is a ROS-provided tool that publishes tf data for RVIZ based on `/joint_states`. `r1_jointTracker_demo_node` is the main node responsible for controlling each joint.
 `r1_jointTracker_demo_node` interface is shown below.
+
+The interface of `r1_jointTracker_demo_node` is shown below.
 
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
@@ -1435,7 +1446,7 @@ This launch file will bring up robot state publisher, `eepose_pub_node` and `r1_
   </tbody>
 </table>
 
-`eepose_pub_node` defines two frames, which are base link frame (Left), floating base frame (Middle) and ee pose frame(Right).
+`eepose_pub_node` defines three frames: the base link frame (Left), the floating base frame (Middle), and the end-effector (ee) pose frame (Right).
 
 ![R1_joint_control](assets/R1_joint_control.png)
 
@@ -1476,7 +1487,7 @@ This launch file will bring up robot state publisher, `eepose_pub_node` and `r1_
   </thead>
   <tbody>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="9">/motion_control/pose_floating_base<br>/motion_control/pose_ee_arm_right<br>/motion_control/pose_ee_arm_left</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="9">/motion_control/pose_ee_arm_right<br>/motion_control/pose_ee_arm_left<br>/motion_control/pose_floating_base</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">position</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">This is the translation information in X, Y, Z position</td>
     </tr>
@@ -1517,7 +1528,7 @@ This launch file will bring up robot state publisher, `eepose_pub_node` and `r1_
 
 #### R1 Arm Pose Control - Coming Soon
 
-R1 Arm Pose Control is a ROS Package for controlling arm movement to target arm ee frame, and it can be brought up by 
+R1 Arm Pose Control is a ROS package for controlling arm movement to the target end effector (ee) frame. It can be launched using the following command:
 
 ```bash
 roslaunch mobiman r1_arm_pose_control.launch
@@ -1610,7 +1621,7 @@ The interface is shown below.
 
 #### R1 Torso Pose Control - Coming Soon
 
-R1 Torso Pose Control is a ROS Package for controlling torso movement to target floating base frame. It can be brought up by 
+R1 Torso Pose Control is a ROS package for controlling torso movement to the target floating base frame. It can be launched using the following command:
 
 ```bash
 roslaunch mobiman r1_torso_pos_control.launch
