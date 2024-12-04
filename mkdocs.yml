@@ -16,6 +16,7 @@ theme:
     font:
         code: Roboto Mono
     plugins:
+        - optimize
         - search:
             enabled: true
         - navigation:
@@ -26,6 +27,9 @@ theme:
             enable: true
 
     features:
+        - navigation.instant
+        - navigation.instant.prefetch
+        - navigation.instant.progress
         - search.highlight
         - search.inline
         - search.excerpt
