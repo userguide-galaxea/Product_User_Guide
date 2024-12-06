@@ -889,75 +889,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#36-stand-up" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.6 Stand Up
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.6 Stand Up">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#361-start-torso-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.6.1 Start Torso Control
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#362-start-chassis-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.6.2 Start Chassis Control
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#363-joystick-controller-operation" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.6.3 Joystick Controller Operation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#37-install-arms" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.7 Install Arms
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#38-the-second-self-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.8 The Second Self-Check
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#39-demo-testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.9 Demo Testing
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1449,75 +1380,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#36-stand-up" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.6 Stand Up
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.6 Stand Up">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#361-start-torso-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.6.1 Start Torso Control
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#362-start-chassis-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.6.2 Start Chassis Control
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#363-joystick-controller-operation" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.6.3 Joystick Controller Operation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#37-install-arms" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.7 Install Arms
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#38-the-second-self-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.8 The Second Self-Check
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#39-demo-testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.9 Demo Testing
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1740,7 +1602,7 @@ The battery is located at the bottom of the right side of the chassis. To remove
 </li>
 <li>
 <p>Press <code>Ctrl + B</code> then <code>C</code> to create a new terminal. Then start HDAS.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/work/ci_pipeline/workspace/body/install/setup.bash
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/work/galaxea/install/setup.bash
 roslaunch<span class="w"> </span>HDAS<span class="w"> </span>hdas.launch
 </code></pre></div>
 </li>
@@ -1756,10 +1618,11 @@ roslaunch<span class="w"> </span>HDAS<span class="w"> </span>hdas.launch
 <ol>
 <li>
 <p>Press <code>Ctrl + B</code> then <code>C</code> to create a new terminal. Then start self-check.</p>
-<div class="highlight"><pre><span></span><code>source ~/work/ci_pipeline/workspace/body/install/setup.bash
-rosrun HDAS check_node 
-#after executed the command, please press 0. (0 means the self-check when the arms are uninstalled.)
-</code></pre></div>
+<p>```bash
+   source ~/work/galaxea/install/setup.bash
+rosrun HDAS check_node </p>
+<h1 id="after-executed-the-command-please-press-0-0-means-the-self-check-when-the-arms-are-uninstalled">after executed the command, please press 0. (0 means the self-check when the arms are uninstalled.)</h1>
+<p>```</p>
 </li>
 <li>
 <p>If it shows "self-check completed" as shown below, press <code>ctrl+c</code> to exit.
@@ -1775,13 +1638,13 @@ rosrun HDAS check_node
 <p>Once the self-check is completed, you can make R1 standing up by commanding torso and chassis and using the joystick controller.</p>
 <h4 id="361-start-torso-control">3.6.1 Start Torso Control</h4>
 <p>Press <code>Ctrl + B</code> then <code>C</code> to create a new terminal. Then, start arm and torso control.</p>
-<div class="highlight"><pre><span></span><code>source ~/work/ci_pipeline/workspace/body/install/setup.bash
-roslaunch mobiman r1_jointTrackerdemo.launch
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/work/galaxea/install/setup.bash
+roslaunch<span class="w"> </span>mobiman<span class="w"> </span>r1_jointTrackerdemo.launch
 </code></pre></div>
 <h4 id="362-start-chassis-control">3.6.2 Start Chassis Control</h4>
 <p>Press <code>Ctrl + B</code> then <code>C</code> to create a new terminal. Then, start chassis control.</p>
-<div class="highlight"><pre><span></span><code>source ~/work/ci_pipeline/workspace/body/install/setup.bash
-roslaunch mobiman r1_chassis_control.launch
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/work/galaxea/install/setup.bash
+roslaunch<span class="w"> </span>mobiman<span class="w"> </span>r1_chassis_control.launch
 </code></pre></div>
 <h4 id="363-joystick-controller-operation">3.6.3 Joystick Controller Operation</h4>
 <p><span style="color:red;">Note: Ensure that all switches (SWA/SWB/SWC/SWD) are in the top position before you do any actions. </span> This will place the machine in a stop state, preventing the robot from operating. Please visit Joystick Controller Guide in Galaxea R1 User Guide for more detailed information and operation, if you need.</p>
@@ -1833,8 +1696,8 @@ roslaunch mobiman r1_chassis_control.launch
 </li>
 <li>
 <p>Press <code>Ctrl + B</code> then <code>C</code> to create a new terminal. Now, start the second self-check.</p>
-<div class="highlight"><pre><span></span><code>source work/ci_pipeline/workspace/body/install/setup.bash
-rosrun HDAS check_node #after executed the command, please press 1. (1 means the self-check when the arms are installed.)
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/work/galaxea/install/setup.bash
+rosrun<span class="w"> </span>HDAS<span class="w"> </span>check_node<span class="w"> </span><span class="c1">#after executed the command, please press 1. (1 means the self-check when the arms are installed.)</span>
 </code></pre></div>
 </li>
 <li>

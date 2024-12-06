@@ -1076,24 +1076,24 @@ sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </spa
 </code></pre></div>
 <p><strong>Step 5:</strong> Press <code>Ctrl + B</code> then <code>C</code> to create a new terminal, and execute launch file.  </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Execute the following launch files in different terminals by sequence.</span>
-<span class="nb">source</span><span class="w"> </span>~/work/ci_pipeline/workspace/body/install/setup.bash
+<span class="nb">source</span><span class="w"> </span>~/work/galaxea/install/setup.bash
 roslaunch<span class="w"> </span>HDAS<span class="w"> </span>hdas.launch
 </code></pre></div>
 <p><strong>Step 6:</strong> Press <code>Ctrl + B</code> then <code>C</code> to create a new terminal. Then, start self-check.</p>
 <p><span style="color:red;"><strong>Important: If there is any error, please contact us in time for technical support. If there is no abnormality, press <code>ctrl+c</code> to close .</strong></span></p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>work/ci_pipeline/workspace/body/install/setup.bash
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/work/galaxea/install/setup.bash
 rosrun<span class="w"> </span>HDAS<span class="w"> </span>check_node<span class="w"> </span><span class="c1">#press 1  #1 means the self-check when the arms are installed.</span>
 </code></pre></div>
 <p><strong>Step 7:</strong> Press <code>Ctrl + B</code> then <code>C</code> to create a new terminal. Then, start chassis control.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>work/ci_pipeline/workspace/body/install/setup.bash
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/work/galaxea/install/setup.bash
 roslaunch<span class="w"> </span>mobiman<span class="w"> </span>r1_chassis_control.launch
 </code></pre></div>
 <p><strong>Step 8:</strong> <code>Ctrl + B</code> then <code>C</code> to create a new terminal. Then, start arm and torso control.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>work/ci_pipeline/workspace/body/install/setup.bash
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/work/galaxea/install/setup.bash
 roslaunch<span class="w"> </span>mobiman<span class="w"> </span>r1_jointTrackerdemo.launch
 </code></pre></div>
 <p><strong>Step 9:</strong> Press <code>Ctrl + B</code> then <code>C</code> to create a new terminal. Then, start the test script.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/work/ci_pipeline/workspace/body/install/setup.bash
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/work/galaxea/install/setup.bash
 python3<span class="w"> </span>r1_test.py
 </code></pre></div>
 <p><strong>Step 10:</strong> Enter the number corresponding to each test action and press Enter. Then, R1 will start to perform the test action.</p>
