@@ -242,7 +242,7 @@ Now, you can start CAN driver in the following steps.
 4. Press `Ctrl + B` then `C` to create a new terminal. Then start HDAS.
 
     ```bash
-    source ~/work/ci_pipeline/workspace/body/install/setup.bash
+    source ~/work/galaxea/install/setup.bash
     roslaunch HDAS hdas.launch
     ```
 
@@ -260,8 +260,8 @@ Now, you can start the first self-check in the following steps.
 
 1. Press `Ctrl + B` then `C` to create a new terminal. Then start self-check.
 
-    ```Plain
-    source ~/work/ci_pipeline/workspace/body/install/setup.bash
+    ```bash
+   source ~/work/galaxea/install/setup.bash
     rosrun HDAS check_node 
     #after executed the command, please press 0. (0 means the self-check when the arms are uninstalled.)
     ```
@@ -282,8 +282,8 @@ Once the self-check is completed, you can make R1 standing up by commanding tors
 
 Press `Ctrl + B` then `C` to create a new terminal. Then, start arm and torso control.
 
-```
-source ~/work/ci_pipeline/workspace/body/install/setup.bash
+```bash
+source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_jointTrackerdemo.launch
 ```
 
@@ -291,8 +291,8 @@ roslaunch mobiman r1_jointTrackerdemo.launch
 
 Press `Ctrl + B` then `C` to create a new terminal. Then, start chassis control.
 
-```
-source ~/work/ci_pipeline/workspace/body/install/setup.bash
+```bash
+source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_chassis_control.launch
 ```
 
@@ -344,8 +344,8 @@ Then,  <span style="color:red;">**power it on**</span> and:
 
 2. Press `Ctrl + B` then `C` to create a new terminal. Now, start the second self-check.
 
-    ```Plain
-    source work/ci_pipeline/workspace/body/install/setup.bash
+    ```bash
+    source ~/work/galaxea/install/setup.bash
     rosrun HDAS check_node #after executed the command, please press 1. (1 means the self-check when the arms are installed.)
     ```
 

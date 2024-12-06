@@ -101,7 +101,7 @@ roscore
 
 ```Bash
 # Execute the following launch files in different terminals by sequence.
-source ~/work/ci_pipeline/workspace/body/install/setup.bash
+source ~/work/galaxea/install/setup.bash
 roslaunch HDAS hdas.launch
 ```
 
@@ -110,28 +110,28 @@ roslaunch HDAS hdas.launch
 <span style="color:red;">**Important: If there is any error, please contact us in time for technical support. If there is no abnormality, press `ctrl+c` to close .**</span>
 
 ```Bash
-source work/ci_pipeline/workspace/body/install/setup.bash
+source ~/work/galaxea/install/setup.bash
 rosrun HDAS check_node #press 1  #1 means the self-check when the arms are installed.
 ```
 
 **Step 7:** Press `Ctrl + B` then `C` to create a new terminal. Then, start chassis control.
 
 ```Bash
-source work/ci_pipeline/workspace/body/install/setup.bash
+source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_chassis_control.launch
 ```
 
 **Step 8:** `Ctrl + B` then `C` to create a new terminal. Then, start arm and torso control.
 
 ```Bash
-source work/ci_pipeline/workspace/body/install/setup.bash
+source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_jointTrackerdemo.launch
 ```
 
 **Step 9:** Press `Ctrl + B` then `C` to create a new terminal. Then, start the test script.
 
 ```Bash
-source ~/work/ci_pipeline/workspace/body/install/setup.bash
+source ~/work/galaxea/install/setup.bash
 python3 r1_test.py
 ```
 

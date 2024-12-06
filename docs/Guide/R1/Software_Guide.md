@@ -23,30 +23,10 @@ The interfaces provided by these drivers are available as ROS topics, as describ
 
 To launch the corresponding driver, please enter the following command:
 
-1. Chassis, Arms, Torso, IMU, BMS, Remote Controller
-
-    ```Bash
-    roslaunch HDAS hdas.launch
-    ```
-
-2. Chassis Camera
-
-    ```Bash
-    sudo chmod 777 /dev/ttyTHS1
-    roslaunch signal_camera signal_camera.launch
-    ```
-
-3. Wrist Camera
-
-    ```Bash
-    roslaunch realsense_camera rs_multiple_devices.launch
-    ```
-
-4. LiDAR
-
-    ```Bash
-    roslaunch livox_ros_driver2 msg_MID360.launch
-    ```
+```bash
+cd ~/work/galaxea/install/share/startup_config/script/
+./ota_script.sh boot
+```
 
 #### Chassis Driver Interface
 
@@ -1195,6 +1175,7 @@ R1 Chassis Control is the node that controls the R1 chassis using vector control
 It can be launched using a command.
 
 ```bash
+source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_chassis_control.launch
 ```
 
@@ -1320,6 +1301,7 @@ The `chassis_control_node` is responsible for R1 chassis speed control. The inte
 R1 Chassis Control is the node that controls each joint of the R1 torso and arms, with a total of 16 joints. It can be launched using a command.
 
 ```bash
+source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_jointTrackerdemo.launch
 ```
 
@@ -1531,6 +1513,7 @@ The interface of `r1_jointTracker_demo_node` is shown below.
 R1 Arm Pose Control is a ROS package for controlling arm movement to the target end effector (ee) frame. It can be launched using the following command:
 
 ```bash
+source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_arm_pose_control.launch
 ```
 
@@ -1624,6 +1607,7 @@ The interface is shown below.
 R1 Torso Pose Control is a ROS package for controlling torso movement to the target floating base frame. It can be launched using the following command:
 
 ```bash
+source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_torso_pos_control.launch
 ```
 
