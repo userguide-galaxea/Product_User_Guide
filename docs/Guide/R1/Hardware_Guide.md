@@ -16,7 +16,7 @@
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Height</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">1695 mm when standing</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1700 mm when standing</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Width</td>
@@ -70,11 +70,11 @@
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Arm Payload</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Rated: 2 kg@0.5 m<br>Max.: 5 kg@0.5m</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Rated: 2.5 kg@0.5 m<br>Max.: 5 kg@0.5m</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Operating Range</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Vertical: 0 ~ 2000 mm <br> Horizontal: 700 mm (86 mm with gripper)</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Vertical: 0 ~ 2000 mm <br> Horizontal: 700 mm (860 mm with gripper)</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Function</td>
@@ -450,7 +450,7 @@ The chassis is equipped with up to two 360-degree LiDARs*, which are of high pre
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Deep Learning Computing Capability</td>
             <td style="padding: 8px; border: 1px solid #ddd;">200 TOPS</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">550 TOPS</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">500 TOPS</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Memory</td>
