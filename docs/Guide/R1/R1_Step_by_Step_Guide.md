@@ -39,6 +39,28 @@ When you receive our products, please check whether the items in the box are com
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Charger & Cable Set</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+        </tr>          
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Wiring Harness Repairing Bag</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+        </tr>     
+        </tr>
+    </tbody>
+</table>
+
+You should also prepare:
+
+<table style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">Item</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Display & Keyboard & Mouse</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
         </tr>
@@ -49,15 +71,7 @@ When you receive our products, please check whether the items in the box are com
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">WiFi Network</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
-        </tr>      
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Charger & Cable Set</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
-        </tr>          
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Wiring Harness Repairing Bag</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
-        </tr>          
+        </tr>       
     </tbody>
 </table>
 
