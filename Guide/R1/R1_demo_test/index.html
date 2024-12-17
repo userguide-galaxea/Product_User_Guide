@@ -697,9 +697,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#script-execution" class="md-nav__link">
+  <a href="#code-execution" class="md-nav__link">
     <span class="md-ellipsis">
-      Script Execution
+      Code Execution
     </span>
   </a>
   
@@ -957,9 +957,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#script-execution" class="md-nav__link">
+  <a href="#code-execution" class="md-nav__link">
     <span class="md-ellipsis">
-      Script Execution
+      Code Execution
     </span>
   </a>
   
@@ -985,10 +985,9 @@
 
 <h1 id="galaxea-r1-demo">Galaxea R1 Demo</h1>
 <h2 id="preparation-before-use">Preparation Before Use</h2>
-<p><span style="color:red;"><strong>Important: Please conduct the test strictly in the order listed in the "Script Execution".</strong></span>
-Before you start testing, please ensure that:</p>
+<p>Before you start testing, please ensure that:</p>
 <ol>
-<li>Two arms are correctly installed. Ensue that the elbow joints (J3 &amp; J4) are facing outward and the gripper tipping downward to the ground.</li>
+<li>Two arms are correctly installed. Ensue that the elbow joints (J3 &amp; J4) are facing outward and the grippers are tipping downward to the ground.</li>
 <li>Torso is in the standing posture.</li>
 <li>No personnel and obstacles within a radius of 1.5 meters. (As shown in the figure below.)</li>
 </ol>
@@ -999,7 +998,7 @@ Before you start testing, please ensure that:</p>
 </code></pre></div>
 <strong>Due to the following steps need to this python file, after cloning this repository you should use path <code>${your_work_path}/Demo/blob/main/demo_r1/r1_demo_easy.py</code>.</strong></p>
 <h2 id="action-description">Action Description</h2>
-<p><span style="color:red;"><strong>Important: For your safety, in case of danger during the test, be sure to enter ctrl + C , in the Python 3 terminal where "r1_demo_easy.py" is located, to stop the running action.</strong></span></p>
+<p><span style="color:red;"><strong>Important: For your safety, in case of danger during the test, be sure to enter <code>Ctrl + C</code> , in the Python 3 terminal where "r1_demo_easy.py" is located, to stop the running action.</strong></span></p>
 <ul>
 <li>
 <p><strong>arm_test_1:</strong> Both arms are lifted vertically upward and then lowered, where the grippers are tipping vertically downward to the ground.
@@ -1023,7 +1022,7 @@ Before you start testing, please ensure that:</p>
   </div></p>
 </li>
 <li>
-<p><strong>arm_test_3:</strong> Both arms are lowered down to the original pose. Then, both arms are lifted vertically upward 90 degrees from both sides of the torso. Next, both arms are moved horizontally forward 90 degrees from both sides to the middle and hold for a while. Afterwards, both arms are lifted upward from both sides respectively, and are raised over the head to make pose in a heart shape. Finally, arms are lowered respectively, and the grippers point vertically downward to the ground again.
+<p><strong>arm_test_3:</strong> Both arms are lowered down to the original pose, then are lifted vertically upward 90 degrees from both sides of the torso. Arms are moved horizontally forward 90 degrees from both sides to the middle, lifted upward from both sides respectively, and raised over the head to make pose in a heart shape. At the end, arms are lowered down, and the grippers point vertically downward to the ground again.
 <br />
 <div style="display: flex; justify-content: center; align-items: center;">
   <video width="1920" height="1080" controls>
@@ -1043,7 +1042,7 @@ Before you start testing, please ensure that:</p>
   </div></p>
 </li>
 <li>
-<p><strong>torso_test_2:</strong> The torso raised to stand, and arms are back to the sides. Then turn the waist 45 degrees to the left, 90 degrees to the right, and then 45 degrees to the left where backs to the front. (This action is used to test the torso motor T4.)
+<p><strong>torso_test_2:</strong> The torso raises to stand, and arms are back to the sides. Then turn the waist 45 degrees to the left, 90 degrees to the right, and then 45 degrees to the left where backs to the front. (This action is used to test the torso motor T4.)
 <br />
 <div style="display: flex; justify-content: center; align-items: center;">
   <video width="1920" height="1080" controls>
@@ -1054,9 +1053,10 @@ Before you start testing, please ensure that:</p>
 </p>
 </li>
 </ul>
-<h2 id="script-execution">Script Execution</h2>
+<h2 id="code-execution">Code Execution</h2>
+<p><span style="color:red;"><strong>Important: Please conduct the test strictly in the order.</strong></span></p>
 <p><strong>Only after the above preparation work is completed can the robot be used to start the test.</strong></p>
-<p><span style="color:red;"><strong>Important: If there is any error, please contact us in time for technical support. If there is no abnormality, press <code>ctrl+c</code> to close .</strong></span></p>
+<p><span style="color:red;"><strong>Important: If there is any error, please contact us in time for technical support. If there is no abnormality, press <code>Ctrl + C</code> to close .</strong></span></p>
 <p><strong>Step 1:</strong> Stop all TMUXs running and close all ROS programs.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># The following commands will terminate all TMUX. </span>
 sudo<span class="w"> </span>tmux<span class="w"> </span>kill-server
@@ -1094,12 +1094,12 @@ roslaunch<span class="w"> </span>mobiman<span class="w"> </span>r1_jointTrackerd
 </code></pre></div>
 <p><strong>Step 9:</strong> Press <code>Ctrl + B</code> then <code>C</code> to create a new terminal. Then, start the test script.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/work/galaxea/install/setup.bash
-python3<span class="w"> </span>r1_test.py
+python3<span class="w"> </span>r1_demo_easy.py
 </code></pre></div>
 <p><strong>Step 10:</strong> Enter the number corresponding to each test action and press Enter. Then, R1 will start to perform the test action.</p>
 <p><span style="color:red;"><strong>Important: Before performing torso_test_1, make sure arm_test_3 is verified first.</strong> This is to avoid interference with R1 itself or ground when squatting with the arms in an uncontrollable state.</span></p>
 <p><img alt="enter_no" src="../assets/enter_no.png" /></p>
-<p>When you completed all tests, press <code>q</code> to quit testing. R1 will be back to the original pose.</p>
+<p>When you completed all tests, press <code>Q</code> to quit testing. R1 will be back to the original pose.</p>
 <div style="display: flex; justify-content: center; align-items: center;">
   <video width="1920" height="1080" controls>
     <source src="../assets/R1_quit_test.mp4" type="video/mp4">
