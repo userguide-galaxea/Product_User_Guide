@@ -76,11 +76,12 @@ You should also prepare:
 </table>
 
 
-<u>Note: To ensure the normal operation of the product, place R1 in a dry and well-ventilated environment, and ensure that there are no obstacles or dangerous items around</u>
+<u>Note: To ensure the normal operation of the product, place R1 in a dry and well-ventilated environment, and ensure that there are no obstacles or dangerous items around.</u>
 
 
 ## 2. Unboxing
 
+![2.1_2.4](assets/2.1_2.4.png)
 ### 2.1 Unlock the Box
 
 Locate two locks on the left side of the box. Open the two locks on the left side of the box door, take out the lock tabs and rotate counterclockwise to open the front door.
@@ -99,7 +100,7 @@ Use the L-hex key (M6) to remove six fixing screws, as shown in the figure.
 
 It might require at least two people to pull the robot out of the box to avoid collision.
 
-![2.1_2.4](assets/2.1_2.4.png)
+
 
 ### 2.5 Remove Chassis Fixings
 
@@ -279,7 +280,7 @@ Now, you can start the first self-check in the following steps.
    #after executed the command, please press 0. (0 means the self-check when the arms are uninstalled.)
    ```
 
-2. If it shows "self-check completed" as shown below, press `ctrl+c` to exit.
+2. If it shows "self-check completed" as shown below, press `Ctrl + C` to exit.
    ![3.5_selfcheck_completed](assets/3.5_selfcheck_completed.png)
 
 3. <u>If it appears warning, please contact us in time for technical support.</u>

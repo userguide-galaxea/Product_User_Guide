@@ -70,7 +70,7 @@
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Arm Payload</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Rated: 2.5 kg@0.5 m<br>Max.: 5 kg@0.5m</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Rated: 2.5 KG@0.5 m<br>Max.: 5 KG@0.5m</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Operating Range</td>
@@ -140,7 +140,7 @@ Galaxea R1 features two [Galaxea A1](../../Introducing_Galaxea_Robot/product_inf
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Maximum Payload</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">5 kg for single arm</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">5 KG for single arm</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Weight</td>
@@ -194,7 +194,7 @@ See [Galaxea A1 User Guide](../A1/Getting_Started.md) if you want to explore mor
         </tr> 
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Torso Motor Torque</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Rated: 108 NM<br>Max.: 304 NM</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Rated: 108 NM<br>Max.: 304 Nm</td>
         </tr>  
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">USB</td>
