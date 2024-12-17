@@ -177,7 +177,7 @@ If remote connection and control of R1 is not needed, continue to operate on the
 
 #### 3.3.2 Remotely Connecting
 
-##### 3.3.2.1 Obtain IP address
+**3.3.2.1 Obtain IP address**
 
 After R1 is powered on, wait for the display to show the desktop. Then, you should:
 
@@ -193,7 +193,7 @@ After R1 is powered on, wait for the display to show the desktop. Then, you shou
 3. Find `mlan0`. The IP address of R1 Orin is: `192.168.xxx.xxx`.
    ![3.3_IP_address](assets/3.3_IP_address.png)
 
-##### 3.3.2.2 Connecting by SSH
+**3.3.2.2 Connecting by SSH**
 
 To remotely connect and futher control the robot, you should:
 
@@ -259,12 +259,11 @@ Make sure that:
 Now, you can start the first self-check in the following steps.
 
 1. Press `Ctrl + B` then `C` to create a new terminal. Then start self-check.
-
-    ```bash
+   ```shell
    source ~/work/galaxea/install/setup.bash
-    rosrun HDAS check_node 
-    #after executed the command, please press 0. (0 means the self-check when the arms are uninstalled.)
-    ```
+   rosrun HDAS check_node 
+   #after executed the command, please press 0. (0 means the self-check when the arms are uninstalled.)
+   ```
 
 2. If it shows "self-check completed" as shown below, press `ctrl+c` to exit.
    ![3.5_selfcheck_completed](assets/3.5_selfcheck_completed.png)
@@ -311,24 +310,24 @@ roslaunch mobiman r1_chassis_control.launch
 
 <span style="color:red;">**Important: For your safety, please make R1 stand up and powered off before installing arms.**</span>
 
-1. Attach gripper to arm. To remove them, simply reverse these steps.
+1.Attach gripper to arm. To remove them, simply reverse these steps.
 
 ![3.7_G1GEN2_attaching](assets/3.7_G1GEN2_attaching.png)
 
+   - Alignment Check: Ensure that the three mounting holes around the gripper are aligned with the three mounting holes at the end of A1.
+   - Screw Fixation: Once aligned, secure and tighten the gripper to the arm using the three screws provided.
+   - Final Check: After tightening the screws, double-check the alignment and stability of the gripper. It should be firmly attached and not wobble or move independently of the robot arm.
 
-- Alignment Check: Ensure that the three mounting holes around the gripper are aligned with the three mounting holes at the end of A1.
-- Screw Fixation: Once aligned, secure and tighten the gripper to the arm using the three screws provided.
-- Final Check: After tightening the screws, double-check the alignment and stability of the gripper. It should be firmly attached and not wobble or move independently of the robot arm.
+2.Use the hex L-key (5 mm) and four M6 screws to secure the arm.
 
-2. Use the hex L-key (5 mm) and four M6 screws to secure the arm.
    <span style="color:red;">**Note: When installing the robot arm, you must ensure that the ports on the arm base are facing backward, as shown in the figure.**</span>
    ![3.8_arm_install](assets/3.8_arm_install.png)
 
-3. Connect the power and CAN cable provided with A1 arms to arm base ports.
+3.Connect the power and CAN cable provided with A1 arms to arm base ports.
    Before plugging CAN cable, you must remove the resistance rod.
    ![3.8_arm_cables](assets/3.8_arm_cables.png)
 
-4. After confirming that the communication connection with the robot arms is successful, reattach the covers by reversing the steps in [2.6 Detach Rear Shell](#26-detach-rear-shell) and [2.7 Detach Front Shell](#27-detach-front-shell) above.
+4.After confirming that the communication connection with the robot arms is successful, reattach the covers by reversing the steps in [2.6 Detach Rear Shell](#26-detach-rear-shell) and [2.7 Detach Front Shell](#27-detach-front-shell) above.
 
 ### 3.8 The Second Self-Check
 
