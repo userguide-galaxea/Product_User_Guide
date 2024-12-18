@@ -242,11 +242,13 @@ Now, you can start CAN driver in the following steps.
     tmux
     ```
 
-2. Start FDCAN Communication
+   2. Start FDCAN Communication
 
-    ```bash
-    ./can.bash    
-    ```
+      ```Bash
+      sudo ip link set dev can0 type can bitrate 1000000 dbitrate 5000000 fd on
+      # If "RTNETLINK answers: Device or resource busy" appears, it indicates that the CAN transceiver has been configured and is currently running.
+      sudo ip link set up can0
+      ```
 
 3. Start roscore
 
@@ -312,7 +314,7 @@ roslaunch mobiman r1_chassis_control.launch
 
 #### 3.6.3 Joystick Controller Operation
 
-<span style="color:red;">Note: Ensure that all switches (SWA/SWB/SWC/SWD) are in the top position before you do any actions. </span> This will place the machine in a stop state, preventing the robot from operating. Please visit Joystick Controller Guide in Galaxea R1 User Guide for more detailed information and operation, if you need.
+<span style="color:red;">Note: Ensure that all switches (SWA/SWB/SWC/SWD) are in the top position before you do any actions. </span> This will place the machine in a stop state, preventing the robot from operating. Please visit [Joystick Controller Guide](R1_Overview.md/#joystick-controller-teleoperation) in Galaxea R1 User Guide for more detailed information and operation, if you need.
 
 1. To turn on/off the controller, press and hold both power buttons until the touchscreen lights up/off.
 2. Switch SWA to the bottom, and switch SWB to the middle.
