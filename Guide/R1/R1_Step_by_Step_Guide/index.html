@@ -1695,7 +1695,9 @@ The battery is located at the bottom of the right side of the chassis. To remove
 </li>
 <li>
 <p>Start FDCAN Communication</p>
-<div class="highlight"><pre><span></span><code>./can.bash<span class="w">    </span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>dev<span class="w"> </span>can0<span class="w"> </span><span class="nb">type</span><span class="w"> </span>can<span class="w"> </span>bitrate<span class="w"> </span><span class="m">1000000</span><span class="w"> </span>dbitrate<span class="w"> </span><span class="m">5000000</span><span class="w"> </span>fd<span class="w"> </span>on
+<span class="c1"># If &quot;RTNETLINK answers: Device or resource busy&quot; appears, it indicates that the CAN transceiver has been configured and is currently running.</span>
+sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>up<span class="w"> </span>can0
 </code></pre></div>
 </li>
 <li>
@@ -1749,7 +1751,7 @@ roslaunch<span class="w"> </span>mobiman<span class="w"> </span>r1_jointTrackerd
 roslaunch<span class="w"> </span>mobiman<span class="w"> </span>r1_chassis_control.launch
 </code></pre></div>
 <h4 id="363-joystick-controller-operation">3.6.3 Joystick Controller Operation</h4>
-<p><span style="color:red;">Note: Ensure that all switches (SWA/SWB/SWC/SWD) are in the top position before you do any actions. </span> This will place the machine in a stop state, preventing the robot from operating. Please visit Joystick Controller Guide in Galaxea R1 User Guide for more detailed information and operation, if you need.</p>
+<p><span style="color:red;">Note: Ensure that all switches (SWA/SWB/SWC/SWD) are in the top position before you do any actions. </span> This will place the machine in a stop state, preventing the robot from operating. Please visit <a href="../R1_Overview/#joystick-controller-teleoperation">Joystick Controller Guide</a> in Galaxea R1 User Guide for more detailed information and operation, if you need.</p>
 <ol>
 <li>To turn on/off the controller, press and hold both power buttons until the touchscreen lights up/off.</li>
 <li>Switch SWA to the bottom, and switch SWB to the middle.</li>
