@@ -25,7 +25,6 @@ theme:
             enable: true
         - mkdocs-markdown-it-embed:
             enable: true
-
     features:
         - navigation.instant
         - navigation.instant.prefetch
@@ -46,7 +45,6 @@ extra:
           link: https://x.com/Galaxea_AI
         - icon: material/github
           link: https://github.com/userguide-galaxea
-
 nav:
   - GUIDE: index.md
   - Galaxea Robot:
@@ -85,9 +83,50 @@ markdown_extensions:
   - toc
   - pymdownx.details
   - pymdownx.superfences
+  - admonition
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.arithmatex:
       generic: true
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: false
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: zh
+          name: 中文
+          build: true
+          nav_translations:
+            GUIDE: 导航
+            Galaxea Robot: 产品信息
+            Galaxea A1 User Guide: A1用户手册
+            Galaxea R1 User Guide: R1用户手册
+            Galaxea B1 User Guide: B1用户手册
+            Getting Started: 快速开始
+            Hardware Guide: 硬件手册
+            Software Guide: 软件手册
+            Simulation Isaac Sim Usage Tutorial: Simulation Isaac Sim Usage Tutorial教程
+            Simulation Isaac Lab Usage Tutorial: Simulation Isaac Lab Usage教程
+            Accessories: 附件
+            Gripper: 夹爪
+            Dexterous Hand: 灵巧手
+            Tabletop Teleopration: 桌面遥操
+            Step-By-Step Startup Guide: R1开箱指南
