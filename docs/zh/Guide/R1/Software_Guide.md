@@ -1,1696 +1,1741 @@
-# Galaxea R1 Software Guide
-## Software Dependency
+# Galaxea R1_软件指南
+
+
+
+## **软件依赖**
 
 1. [Ubuntu](https://ubuntu.com/download) 20.04 LTS
 2. ROS Noetic
 
-## Installation
 
-The [SDK](https://github.com/userguide-galaxea/R1_SDK) does not require recompilation. Please refer to the contents below.
 
-## First Move
+## **安装**
 
-Visit the page [R1_Demo](R1_demo_test.md) and get started to operate R1 following the instructions.
+[SDK](https://github.com/userguide-galaxea/R1_SDK) 不需要重新编译。请参考以下内容。
 
-## Software Interface
 
-In this chapter, we describe the various control and status feedback interfaces for the Galaxea R1 to help users better understand how to communicate with and control the arm via the ROS package.
 
-### Driver Interface
+## **首次操作指引**
 
-The current Galaxea R1 driver consists of three main components, including four independent ROS nodes: the drivers for the chassis, left and right arms, and torso. 
-The interfaces provided by these drivers are available as ROS topics, as described below.
+访问页面  R1_Demo ，并按照说明操作R1。
 
-To launch the corresponding driver, please enter the following command:
 
-```bash
+
+## **软件接口**
+
+本章描述了 Galaxea R1 的各种控制和状态反馈接口，指导用户如何通过 ROS 软件包与 R1 通信和控制 R1。
+
+### **驱动接口**
+
+当前的Galaxea R1驱动由三个主要部分组成，包括四个独立的ROS节点：底盘、左右臂和躯干的驱动程序。这些驱动程序提供的接口可作为ROS话题，如下所述。
+
+要启动相应的驱动程序，请输入以下命令：
+
+```Bash
 cd ~/work/galaxea/install/share/startup_config/script/
 ./ota_script.sh boot
 ```
 
-#### Chassis Driver Interface
+#### 底盘驱动接口
 
-This interface is used for the chassis status feedback ROS package, which defines multiple topics to report the status of the chassis' motors. 
-Below are detailed descriptions of each topic and its associated message types:
+本接口定义了多个话题以报告底盘电机的状态。以下是每个话题及其相关消息类型的详细描述：
 
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr style="background-color: black; color: white; text-align: left;">
-      <th style="padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="padding: 8px; border: 1px solid #ddd; width: 300px;">Description</th>
-      <th style="padding: 8px; border: 1px solid #ddd; width: 300px;">Message Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white; text-align: left;">
-      <td style="padding: 8px; border: 1px solid #ddd; width: 200px;">/hdas/feedback_chassis</td>
-      <td style="padding: 8px; border: 1px solid #ddd; width: 300px;">Feedback of chassis</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
-    </tr>
-     <tr style="background-color: white; text-align: left;">
-      <td style="padding: 8px; border: 1px solid #ddd; width: 200px;">/hdas/feedback_status_chassis</td>
-      <td style="padding: 8px; border: 1px solid #ddd; width: 300px;">Status of chassis</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
-    </tr>
-      <tr style="background-color: white; text-align: left;">
-      <td style="padding: 8px; border: 1px solid #ddd; width: 200px;">/motion_control/control_chassis</td>
-      <td style="padding: 8px; border: 1px solid #ddd; width: 300px;">Motor control of chassis</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
-    </tr>
-  </tbody>
-
-
-</table>
-<table style="width: 100%; border-collapse: collapse;">
-  </thead>
-    <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-    <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Field</th>
-    <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="4">/hdas/feedback_chassis</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-  </tr>
-  <tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">position</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[angle_front_left, angle_front_right, angle_rear]</td>
-  </tr>
-  <tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">velocity</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[linear_velocity_front_left, linear_velocity_front_right, linear_velocity_rear
-0.0, 0.0, 0.0]</td>
-  </tr>
-  <tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">effort</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]</td>
-  </tr>
-  <tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="3">hdas/feedback_status_arm_right</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-  </tr>
-  <tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name_id</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Joint name</td>
-  </tr>
-  <tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">errors</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Contains error code and error description</td>
-  </tr>
-<tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="8">/motion_control/control_chassis</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-  </tr>
-  <tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-  </tr>
-  <tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">p_des</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[angle_front_left, angle_front_right, angle_rear]</td>
-  </tr>
-  <tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">v_des</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[linear_velocity_front_left, linear_velocity_front_right, linear_velocity_rear]</td>
-  </tr>
-  <tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kp</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-  </tr>
-  <tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kd</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-  </tr>    
-  <tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">t_ff</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-  </tr> 
-  <tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-  	</tr>  
-   </tbody>
-</table>
-
-
-#### Arms Driver Interface
-
-This interface is used for the robot arm control and status feedback ROS package, which defines multiple topics for publishing and subscribing to the arm's status, control commands, and associated error codes. 
-Below are detailed descriptions of each topic and its corresponding message types:
-
-<table style="width: 100%; border-collapse: collapse;">
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
-            <th style="width: 200px; vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Topic Name</th>
-            <th style="width: 300px; vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Description</th>
-            <th style="width: 300px; vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Message Type</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">消息类型</th>
         </tr>
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Joint feedback of left arm</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_chassis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">底盘轮毂和转向电机反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_right</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Joint feedback of right arm</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_chassis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">底盘状态反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_gripper_left</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Gripper stroke of left gripper</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_chassis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">底盘轮毂和转向电机控制</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">字段</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="4">/hdas/feedback_chassis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_gripper_right</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Gripper stroke of right gripper</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">position</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[左前轮角度,右前轮角度,后轮角度]</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_arm_left</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Status of left arm</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">velocity</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[左前轮线速度,右前轮线速度,</br>  后轮线速度, 0.0, 0.0, 0.0]</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_arm_right</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Status of right arm</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">effort</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_gripper_left</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Status of left gripper</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="3">/hdas/feedback_status_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_gripper_right</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Status of right gripper</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">name_id</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节名称</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Motor control of left arm</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">errors</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">包含错误码和对应的错误描述</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_right</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Motor control of right arm</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="8">/motion_control/control_chassis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_gripper_left</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Motor control of left gripper</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">name</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_gripper_right</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Motor control of right gripper</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">p_des</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[左前轮角度, 右前轮角度期望,</br>  后轮角度期望]</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/position_control_gripper_left</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Position control of left gripper</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">std_msgs::Float32</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">v_des</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[左前轮线速度,右前轮线速度, </br> 后轮线速度]</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/position_control_gripper_right</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Position control of right gripper</td>
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">std_msgs::Float32</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">kp</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">kd</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">t_ff</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">mode</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+#### 手臂驱动接口
+
+本接口定义了多个话题来发布和订阅臂的状态、控制命令和相关错误代码。以下是每个话题及其对应消息类型的详细描述：
+
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;table-layout: fixed;">
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">消息类型</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">左臂关节反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">右臂关节反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_gripper_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">左夹爪行程</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_gripper_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">右夹爪行程</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_arm_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">左臂状态反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">右臂状态反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_gripper_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">左夹爪状态反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_gripper_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">右夹爪状态反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">左臂电机控制</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">右臂电机控制</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_gripper_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">左夹爪电机控制</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_gripper_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">右夹爪电机控制</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/position_control_gripper_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">左夹爪位置控制</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">std_msgs::Float32</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/position_control_gripper_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">右夹爪位置控制</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">std_msgs::Float32</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">字段</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="4">/hdas/feedback_arm_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">position</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置,  关节5位置, 关节6位置, 夹爪关节位置]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">velocity</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1速度, 关节2速度, 关节3速度, 关节4速度, 关节5速度, 关节6速度, 夹爪关节速度]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">effort</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1力矩, 关节2力矩, 关节3力矩, 关节4力矩,关节5力矩, 关节6力矩, 夹爪关节力矩]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="4">/hdas/feedback_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">position</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 夹爪关节位置]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">velocity</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1速度, 关节2速度, 关节3速度, 关节4速度, 关节5速度, 关节6速度, 夹爪关节速度]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">effort</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1力矩, 关节2力矩, 关节3力矩, 关节4力矩, 关节5力矩, 关节6力矩, 夹爪关节力矩]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="4">/hdas/feedback_gripper_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">position</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">夹爪行程 (0-100mm)</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">velocity</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Not used</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">effort</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Not used</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="4">/hdas/feedback_gripper_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">position</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[gripper_stroke]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">velocity</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Not used</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">effort</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Not used</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="3">/hdas/feedback_status_arm_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">name_id</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节名称</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">errors</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">包含错误码和对应的错误描述</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="3">/hdas/feedback_status_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">name_id</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节名称</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">errors</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">包含错误码和对应的错误描述</td>
+        </tr>
+        <tr>
+            <td rowspan="3" style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_gripper_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">name_id</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节名称</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">errors</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">包含错误码和对应的错误描述</td>
+        </tr>
+        <tr>
+            <td rowspan="3" style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_gripper_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">name_id</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节名称</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">errors</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">包含错误码和对应的错误描述</td>
+        </tr>
+        <tr>
+            <td rowspan="8" style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">name</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">p_des</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 夹爪关节位置]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">v_des</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1速度, 关节2速度, 关节3速度, 关节4速度, 关节5速度, 关节6速度, 夹爪关节速度]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">kp</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1kp, 关节2kp, 关节3kp, 关节4kp, 关节5kp, 关节6kp, 夹爪关节kp]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">kd</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1kd, 关节2kd, 关节3kd, 关节4kd, 关节5kd, 关节6kd, 夹爪关节kd]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">t_ff</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1力矩, 关节2力矩, 关节3力矩, 关节4力矩, 关节5力矩, 关节6力矩, 夹爪关节力矩]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">mode</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr>
+            <td rowspan="8" style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">name</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">p_des</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置,关节5位置, 关节6位置, 夹爪关节位置]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">v_des</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1速度, 关节2速度, 关节3速度, 关节4速度,关节5速度, 关节6速度, 夹爪关节速度]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">kp</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1kp, 关节2kp, 关节3kp, 关节4kp, 关节5kp, 关节6kp, 夹爪关节kp]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">kd</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1kd, 关节2kd, 关节3kd, 关节4kd, 关节5kd, 关节6kd, 夹爪关节kd]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">t_ff</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1力矩, 关节2力矩, 关节3力矩, 关节4力矩, 关节5力矩, 关节6力矩, 夹爪关节力矩]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">mode</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr>
+            <td rowspan="8" style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_gripper_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">name</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">p_des</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[夹爪电机位置]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">v_des</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[夹爪电机速度]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">kp</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[夹爪电机kp]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">kd</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[夹爪电机kd]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">t_ff</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[夹爪电机力矩]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">mode</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr>
+            <td rowspan="8" style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_gripper_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">name</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">p_des</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[夹爪电机位置]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">v_des</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[夹爪电机速度]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">kp</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[夹爪电机kp]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">kd</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[夹爪电机kd]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">t_ff</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[夹爪电机力矩]</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">mode</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+         <tr>
+            <td rowspan="2" style="padding: 8px; border: 1px solid #ddd;">/motion_control/position_control_gripper_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">data</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">夹爪行程 (0-100mm)</td>
+        </tr>
+        <tr>
+            <td rowspan="2" style="padding: 8px; border: 1px solid #ddd;">/motion_control/position_control_gripper_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">data</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">夹爪行程 (0-100mm)</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+#### 躯干驱动接口
+
+本接口定义了多个话题，用于发布和订阅躯干电机的状态和控制命令。以下是每个话题及其对应消息类型的详细描述：
+
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">消息类型</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">躯干关节反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs/JointState</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">躯干状态反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">躯干电机控制</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">字段</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="4">/hdas/feedback_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">position</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置]</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">velocity</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1速度, 关节2速度, 关节3速度, 关节4速度]</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">effort</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1力矩, 关节2力矩, 关节3力矩, 关节4力矩]</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="3">/hdas/feedback_status_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">name_id</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节名称</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">errors</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">包含错误码和对应的错误描述</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="8">/motion_control/control_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">name</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">p_des</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置]</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">v_des</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1速度, 关节2速度, 关节3速度, 关节4速度]</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">kp</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1kp, 关节2kp, 关节3kp, 关节4kp]</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">kd</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1kd, 关节2kd, 关节3kd, 关节4kd]</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">t_ff</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[关节1力矩, 关节2力矩, 关节3力矩, 关节4力矩]</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">mode</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+#### 相机接口
+
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">消息类型</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/camera_chassis_front_left/rgb/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">底盘左前相机RGB压缩图</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/camera_chassis_front_right/rgb/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">底盘右前相机RGB压缩图</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/camera_chassis_left/rgb/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">底盘左相机RGB压缩图</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/camera_chassis_right/rgb/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">底盘右相机RGB压缩图</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/camera_chassis_rear/rgb/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">底盘后相机RGB压缩图</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/camera_wrist_left/color/image_raw/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">左腕相机RGB压缩图（如存在）</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/camera_wrist_right/color/image_raw/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">右腕相机RGB压缩图（如存在）</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/camera_head/left_raw/image_raw_color/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">头部相机RGB压缩图（如存在）</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/camera_wrist_left/aligned_depth_to_color/image_raw</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">左腕相机深度图（如存在）</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::Image</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/camera_wrist_right/aligned_depth_to_color/image_raw</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">右腕相机深度图（如存在）</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::Image</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/camera_head/depth/depth_registered</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">头部相机深度图（如存在）</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::Image</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">字段</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="3">/hdas/camera_chassis_front_left/rgb/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">format</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">JPEG格式</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">data</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">图像数据</td>
+        </tr>
+         <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="3">/hdas/camera_chassis_front_right/rgb/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">format</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">JPEG格式</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">data</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">图像数据</td>
+        </tr>
+       	 <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="3">/hdas/camera_chassis_left/rgb/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">format</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">JPEG格式</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">data</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">图像数据</td>
+        </tr>
+        	<tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="3">/hdas/camera_chassis_right/rgb/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">format</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">JPEG格式</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">data</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">图像数据</td>
+        </tr>
+        </tr>
+        	<tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="3">/hdas/camera_chassis_rear/rgb/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">format</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">JPEG格式</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">data</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">图像数据</td>
+        </tr>
+        <!-- ... -->
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="3">/hdas/camera_wrist_left/color/image_raw/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">format</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">JPEG格式</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">data</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">图像数据</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="3">/hdas/camera_wrist_right/color/image_raw/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">format</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">JPEG格式</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">data</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">图像数据</td>
+        </tr>
+<tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="3">/hdas/camera_head/left_raw/image_raw_color/compressed</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">format</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">JPEG格式</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">data</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">图像数据</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="7">/hdas/camera_wrist_left/aligned_depth_to_color/image_raw</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">height</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">取决于设置</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">width</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">取决于设置</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">encoding</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">16UC1</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">is_bigendian</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">step</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">取决于设置</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">data</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">图像数据</td>
+        </tr>
+         <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="7">/hdas/camera_wrist_right/aligned_depth_to_color/image_raw</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">height</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">取决于设置</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">width</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">取决于设置</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">encoding</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">16UC1</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">is_bigendian</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">step</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">取决于设置</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">data</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">图像数据</td>
+        </tr>
+        <!-- Repeat the above structure for the other depth cameras -->
+        <!-- ... -->
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="7">/hdas/camera_head/depth/depth_registered</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">height</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">取决于设置</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">width</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">取决于设置</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">encoding</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">32FC1</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">is_bigendian</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">step</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">取决于设置</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">data</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">图像数据</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+#### 激光雷达接口
+
+<table style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">消息类型</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/lidar_chassis_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">雷达点云</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::PointCloud2</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<table style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">字段</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;"rowspan="2">/hdas/lidar_chassis_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+         <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">fields</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">雷达数据</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+#### IMU 接口
+
+<table style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">消息类型</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/imu_chassis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">底盘IMU反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::Imu</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/imu_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">躯干IMU反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::Imu</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<table style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">字段</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="11">/hdas/imu_chassis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">orientation.x</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">四元数 x</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">orientation.y</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">四元数 y</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">orientation.z</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">四元数 z</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">orientation.w</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">四元数 w</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">angular_velocity.x</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">陀螺仪角速度 x</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">angular_velocity.y</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">陀螺仪角速度 y</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">angular_velocity.z</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">陀螺仪角速度 z</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">linear_acceleration.x</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">线加速度 x</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">linear_acceleration.y</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">线加速度 y</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">linear_acceleration.z</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">线加速度 z</td>
+        </tr>
+        <!-- Repeat the structure for /hdas/imu_torso -->
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="11">/hdas/imu_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">orientation.x</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">四元数 x</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">orientation.y</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">四元数 y</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">orientation.z</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">四元数 z</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">orientation.w</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">四元数 w</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">angular_velocity.x</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">陀螺仪角速度x</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">angular_velocity.y</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">陀螺仪角速度y</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">angular_velocity.z</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">陀螺仪角速度 z</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">linear_acceleration.x</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">线加速度 x</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">linear_acceleration.y</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">线加速度 y</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">linear_acceleration.z</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">线加速度 z</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+#### BMS 接口
+
+<table style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">消息类型</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/bms</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">电池BMS信息</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::bms</td>
         </tr>
     </tbody>
 </table>
 <table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Field</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 600px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="4">/hdas/feedback_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">position</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_position, Joint2_position, Joint3_position, Joint4_position, Joint5_position, Joint6_position, gripper_position]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">velocity</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_velocity, Joint2_velocity, Joint3_velocity, Joint4_velocity, Joint5_velocity, Joint6_velocity, gripper_velocity]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">effort</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_effort, Joint2_effort, Joint3_effort, Joint4_effort, Joint5_effort, Joint6_effort, gripper_effort]</td>
-<tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="4">/hdas/feedback_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">position</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_position, Joint2_position, Joint3_position, Joint4_position, Joint5_position, Joint6_position, gripper_position]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">velocity</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_velocity, Joint2_velocity, Joint3_velocity, Joint4_velocity, Joint5_velocity, Joint6_velocity, gripper_velocity]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">effort</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_effort, Joint2_effort, Joint3_effort, Joint4_effort, Joint5_effort, Joint6_effort, gripper_effort]</td>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="4">/hdas/feedback_gripper_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">position</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[gripper_stroke]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">velocity</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Not used</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">effort</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Not used</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="4">/hdas/feedback_gripper_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">position</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[gripper_stroke]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">velocity</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Not used</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">effort</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Not used</td>
-    </tr>        
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="3">/hdas/feedback_status_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name_id</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Joint name</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">errors</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Contains error code and error description</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="3">/hdas/feedback_status_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name_id</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Joint name</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">errors</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Contains error code and error description</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="3">/hdas/feedback_status_gripper_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name_id</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Joint name</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">errors</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Contains error code and error description</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="3">/hdas/feedback_status_gripper_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name_id</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Joint name</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">errors</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Contains error code and error description</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="8">/motion_control/control_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">p_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_position, Joint2_position, Joint3_position, Joint4_position, Joint5_position, Joint6_position]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">v_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_velocity, Joint2_velocity, Joint3_velocity, Joint4_velocity, Joint5_velocity, Joint6_velocity]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kp</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_kp, Joint2_kp, Joint3_kp, Joint4_kp, Joint5_kp, Joint6_kp]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kd</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_kd, Joint2_kd, Joint3_kd, Joint4_kd, Joint5_kd, Joint6_kd]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">t_ff</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_effort, Joint2_effort, Joint3_effort, Joint4_effort, Joint5_effort, Joint6_effort]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="8">/motion_control/control_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">p_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_position, Joint2_position, Joint3_position, Joint4_position, Joint5_position, Joint6_position]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">v_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_velocity, Joint2_velocity, Joint3_velocity, Joint4_velocity, Joint5_velocity, Joint6_velocity]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kp</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_kp, Joint2_kp, Joint3_kp, Joint4_kp, Joint5_kp, Joint6_kp]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kd</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_kd, Joint2_kd, Joint3_kd, Joint4_kd, Joint5_kd, Joint6_kd]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">t_ff</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_effort, Joint2_effort, Joint3_effort, Joint4_effort, Joint5_effort, Joint6_effort]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="8">/motion_control/control_gripper_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">p_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[gripper_position]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">v_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[gripper_velocity]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kp</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[gripper_kp]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kd</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[gripper_kd]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">t_ff</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[gripper_effort]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="8">/motion_control/control_gripper_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">p_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[gripper_position]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">v_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[gripper_velocity]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kp</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[gripper_kp]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kd</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[gripper_kd]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">t_ff</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[gripper_effort]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="2">/motion_control/position_control_gripper_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">desired_gripper_stroke, range (0 to 100) mm</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="2">/motion_control/position_control_gripper_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">desired_gripper_stroke, range (0 to 100) mm</td>
-    </tr>
-  </tbody>
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">字段</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="4">/hdas/bms</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">voltage</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">电压(V)</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">current</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">电流(A)</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">capital</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">电量剩余 (%)</td>
+        </tr>
+    </tbody>
 </table>
 
 
 
-#### Torso Driver Interface
 
-This interface is used for the torso control and status feedback ROS package, which defines multiple topics for publishing and subscribing to the status of the torso motors and control commands. 
-Below are detailed descriptions of each topic and its corresponding message types:
+
+#### 遥控器接口
 
 <table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 400px;">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 400px;">Message Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Joint feedback of torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs/JointState</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Torso motor status feedback</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Motor control of torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
-    </tr>
-  </tbody>
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">消息类型</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/controller</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">遥控器信号</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::controller_signal_stamped</td>
+        </tr>
+    </tbody>
 </table>
+
 
 <table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 200;">Field</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 500px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="4">/hdas/feedback_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">position</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[joint1_position, joint2_position, joint3_position, joint4_position]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">velocity</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[joint1_velocity, joint2_velocity, joint3_velocity, joint4_velocity]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">effort</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Not used</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="3">/hdas/feedback_status_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name_id</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Joint name</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">errors</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Contains error code and error description</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="8">/motion_control/control_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">p_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_position, Joint2_position, Joint3_position, Joint4_position]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">v_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_velocity, Joint2_velocity, Joint3_velocity, Joint4_velocity]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kp</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_kp, Joint2_kp, Joint3_kp, Joint4_kp]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kd</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_kd, Joint2_kd, Joint3_kd, Joint4_kd]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">t_ff</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_effort, Joint2_effort, Joint3_effort, Joint4_effort]</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-    </tr>
-  </tbody>
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">字段</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="6">/hdas/controller</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">data.left_x_axis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">左摇杆x方向</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">data.left_y_axis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">左摇杆y方向</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">data.right_x_axis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">右摇杆x方向</td>
+        </tr>
+         <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">data.right_y_axis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">	右摇杆y方向</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">mode</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">2: 遥控器控制底盘 </br>
+5: 遥控器控制底盘</td>
+        </tr>
+    </tbody>
 </table>
 
 
-#### Camera Interface
-
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;200px;">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;200px;">Message Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/camera_chassis_front_left/rgb/compressed</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Compressed Image from front_left chassis camera</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/camera_chassis_front_right/rgb/compressed</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Compressed Image from front_right chassis camera</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/camera_chassis_left/rgb/compressed</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Compressed Image from left chassis camera</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/camera_chassis_right/rgb/compressed</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Compressed Image from right chassis camera</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/camera_chassis_rear/rgb/compressed</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Compressed Image from rear chassis camera</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/camera_wrist_left/color/image_raw/compressed</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Compressed Image from left wrist camera</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/camera_wrist_right/color/image_raw/compressed</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Compressed Image from right wrist camera</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/camera_head/left_raw/image_raw_color/compressed</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Compressed Image from head camera</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::CompressedImage</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/camera_wrist_left/aligned_depth_to_color/image_raw</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Depth Image from left wrist camera</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::Image</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/camera_wrist_right/aligned_depth_to_color/image_raw</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Depth Image from right wrist camera</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::Image</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/camera_head/depth/depth_registered</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Depth Image from head camera</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::Image</td>
-    </tr>
-  </tbody>
-</table>
-
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Field</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="3">/hdas/camera_chassis_front_left/rgb/compressed</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">format</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">JPEG</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Image data</td>
-    </tr>
-<tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="3">/hdas/camera_chassis_front_right/rgb/compressed</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-      <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">format</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">JPEG</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Image data</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="3">/hdas/camera_chassis_left/rgb/compressed</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-      <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">format</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">JPEG</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Image data</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="3">/hdas/camera_chassis_right/rgb/compressed</td>
-       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-      <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">format</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">JPEG</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Image data</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="3">/hdas/camera_chassis_rear/rgb/compressed</td>
-       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-      <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">format</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">JPEG</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Image data</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="3">/hdas/camera_wrist_left/color/image_raw/compressed</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-      <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">format</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">JPEG</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Image data</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="3">/hdas/camera_wrist_right/color/image_raw/compressed</td>
-        <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-      <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">format</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">JPEG</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Image data</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="3">/hdas/camera_head/left_raw/image_raw_color/compressed</td>
-       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-      <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">format</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">JPEG</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Image data</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="7">/hdas/camera_wrist_left/aligned_depth_to_color/image_raw</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">height</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Depend on settings</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">width</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Depend on settings</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">encoding</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">16UC1</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">is_bigendian</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">0</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">step</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Depend on setttings</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Image data</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="7">/hdas/camera_wrist_right/aligned_depth_to_color/image_raw</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">height</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Depend on settings</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">width</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Depend on settings</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">encoding</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">16UC1</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">is_bigendian</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">0</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">step</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Depend on setttings</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Image data</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="7">/hdas/camera_head/depth/depth_registered</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">height</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Depend on settings</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">width</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Depend on settings</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">encoding</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">32FC1</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">is_bigendian</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">0</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">step</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Depend on setttings</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Image data</td>
-    </tr>
-  </tbody>
-</table>
 
 
-#### LiDAR Interface
+### **控制接口**
 
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Message Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/lidar_chassis_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Lidar pointcloud</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::PointCloud2</td>
-    </tr>
-  </tbody>
-</table>
+当前Galaxea R1的控制由五个主要部分组成：R1姿态反馈 (R1 Pose Feedback) 、R1关节控制 (R1 Joint Control) 、R1底盘控制 (R1 Chassis Control) 、R1手臂姿态控制 (R1 Arm Pose Control) 和R1躯干姿态控制 ( R1 Torso Pose Control) ，如下图所示。整个软件包被简称为“mobiman”,表示移动操作。
 
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Field</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 400px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="2">/hdas/lidar_chassis_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">fields</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">LiDAR data</td>
-    </tr>
-  </tbody>
-</table>
+![R1_control_interface_draw](assets/R1_control_interface_draw_cn.png)
 
+#### **R1 底盘控制**
 
-#### IMU Interface
+R1底盘控制是一个使用矢量控制来控制R1底盘的节点，它允许您同时发送三个方向的速度命令：x、y 和w。这个节点可以通过命令来启动。
 
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 400px;">Message Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/imu_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Imu information</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::Imu</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/imu_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Imu information</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::Imu</td>
-    </tr>
-  </tbody>
-</table>
-
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 400px;">Field</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 400px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="11">/hdas/imu_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">orientation.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">quaternion x</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">orientation.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">quaternion y</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">orientation.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">quaternion z</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">orientation.w</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">quaternion w</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">angular_velocity.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Groyscope angular velocity x</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">angular_velocity.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Groyscope angular velocity y</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">angular_velocity.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Groyscope angular velocity z</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">linear_acceleration.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Linear acceleration x</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">linear_acceleration.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Linear acceleration y</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">linear_acceleration.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Linear acceleration z</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="12">/hdas/imu_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">orientation.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">quaternion x</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">orientation.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">quaternion y</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">orientation.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">quaternion z</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">orientation.w</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">quaternion w</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">angular_velocity.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Groyscope angular velocity x</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">angular_velocity.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Groyscope angular velocity y</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">angular_velocity.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Groyscope angular velocity z</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">linear_acceleration.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Linear acceleration x</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">linear_acceleration.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Linear acceleration y</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">linear_acceleration.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Linear acceleration z</td>
-    </tr>
-  </tbody>
-</table>
-
-
-#### BMS Interface
-
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 400px;">Message Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/bms</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Battery BMS information</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::bms</td>
-    </tr>
-  </tbody>
-</table>
-
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Field</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 400px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="4">/hdas/bms</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">voltage</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Voltage in V</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">current</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Current in A</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">capital</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Capital in %</td>
-    </tr>
-  </tbody>
-</table>
-
-
-#### Remote Controller Interface
-
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Message Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/controller</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Signal from remote controler</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::controller_signal_stamped</td>
-    </tr>
-  </tbody>
-</table>
-
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Field</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 400px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="6">/hdas/controller</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data.left_x_axis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">X axis of left joystick</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data.left_y_axis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Y axis of left joystick</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data.right_x_axis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">X axis of right joystick</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data.right_y_axis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Y axis of right joystick</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">2: Chassis control via controller <br> 5: ECU takes over</td>
-    </tr>
-  </tbody>
-</table>
-
-
-### Control Interface
-
-The current Galaxea R1 control diagram is shown below, consisting of five main parts: R1 Pose Feedback, R1 Joint Control, R1 Chassis Control, R1 Arm Pose Control, and R1 Torso Pose Control. 
-Details will be provided in the following chapters. The entire package is called 'mobiman,' short for mobile manipulation.
-
-![R1_control_interface_draw](assets/R1_control_interface_draw.png)
-
-
-
-#### R1 Chassis Control
-
-R1 Chassis Control is the node that controls the R1 chassis using vector control, allowing you to send speed commands in three directions simultaneously: x, y, and w. 
-It can be launched using a command.
-
-```bash
-source ~/work/galaxea/install/setup.bash
+```Plain
 roslaunch mobiman r1_chassis_control.launch
 ```
 
-This launch file will bring up two nodes: chassis_control_node and r1_control_manager. 
-The `chassis_control_node` is responsible for R1 chassis speed control. The interface is shown below:
+这个启动文件将启动两个节点：chassis_control_node 和 r1_control_manager。`chassis_control_node `负责R1底盘的速度控制。其接口如下所示：
 
 <table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 500px;">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Message Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_speed_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Issue the target speed of chassis, consisting of three directions, x, y and w</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::Twist</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/chassis_acc_limit</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Issuing the chassis control acceleration limit, the max value for x, y, w is 2.5, 1.0, 1.0.</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::Twist</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/brake_mode</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Issuing whether the chassis is entering brake mode. If in brake mode, when speed is 0, the chassis will lock itself by turning the wheel to a certain degree.</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">std_msgs::Bool</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">R1 chassis control subscribes to this topic and controls the chassis the target speed</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">R1 chassis control publishes this topic to control the motor</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
-    </tr>
-  </tbody>
-</table>
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Field</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 500px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="6">/motion_target/target_speed_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard ROS header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">linear</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">control of linear speed</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">linear_speed of x, range (-1.5 to 1.5) m/s</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">linear_speed of y, range (-1.5 to 1.5) m/s</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">angular</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">control of yaw rate</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">control of angular speed, range (-3 to 3) rad/s</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="6">/motion_target/chassis_acc_limit</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard ROS header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">linear</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Acc limit of linear speed</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Acc limit of x, range (-2.5 to 2.5) m/s²</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Acc limit of y, range (-1.0 to 1.0) m/s²</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">angular</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">control of yaw rate</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Acc limit of angular speed, range (-3 to 3) rad/s²</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/brake_mode</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Bool, True for entering brake mode; False for quitting brake mode.</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Refer to HDAS msg Description</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Refer to HDAS msg Description</td>
-    </tr>
-  </tbody>
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">消息类型</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_speed_chassis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">底盘的目标速度，包括vx, vy and omega.</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">geometry_msgs::Twist</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/chassis_acc_limit</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">底盘的加速度限制，最大值分别为2.5, 1.0, 1.0</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">geometry_msgs::Twist</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/brake_mode</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">发出底盘是否进入制动模式的指令。如果处于制动模式，当速度为0 时，底盘将通过将车轮转动一定角度来锁定自身。</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">std_msgs::Bool</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_chassis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考底盘驱动接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_chassis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考底盘驱动接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+        </tr>
+    </tbody>
 </table>
 
 
-#### R1 Joint Control
+<table style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">字段</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="6">/motion_target/target_speed_chassis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">linear</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">线速度</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">.x</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">线速度 x, 范围 (-1.5 to 1.5) m/s</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">.y</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">线速度 y, 范围 (-1.5 to 1.5) m/s</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">angular</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">角速度</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">.z</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">角速度，范围（-3 - 3） rad/s</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="6">/motion_target/chassis_acc_limit</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">linear</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">线速度</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">.x</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">加速度限制 x, 范围 (-2.5 to 2.5) m/s^2</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">.y</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">加速度限制 y, 范围 (-1.0 to 1.0) m/s^2</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">angular</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">角速度</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">.z</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">角速度限制，范围 (-3 - 3) rad/s^2</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/brake_mode</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">data</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">布尔值，</br>
+进入刹车模式：True</br>
+退出刹车模式：False</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_chassis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考底盘驱动接口</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_chassis</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考底盘驱动接口</td>
+        </tr>
+    </tbody>
+</table>
 
-R1 Chassis Control is the node that controls each joint of the R1 torso and arms, with a total of 16 joints. It can be launched using a command.
 
-```bash
+
+#### R1关节控制
+
+R1底盘控制节点负责控制R1躯干和手臂的每个关节，总共有16个关节。它可以通过命令启动。
+
+```Plain
 source ~/work/galaxea/install/setup.bash
-roslaunch mobiman r1_jointTrackerdemo.launch
+roslaunch mobiman r1_jointTrackerdemo.launchch
 ```
 
-This launch file will bring up the robot state publisher, `eepose_pub_node`, and `r1_jointTracker_demo_node`. 
-The robot state publisher is a ROS-provided tool that publishes tf data for RVIZ based on `/joint_states`. `r1_jointTracker_demo_node` is the main node responsible for controlling each joint.
-`r1_jointTracker_demo_node` interface is shown below.
+这个启动文件将启动机器人状态发布器、`eepose_pub_node`和`r1_jointTracker_demo_node`。机器人状态发布器是一个ROS提供的工具，它基于`/joint_states`发布tf数据给RVIZ。`r1_jointTracker_demo_node`是负责控制每个关节的主要节点。
 
-The interface of `r1_jointTracker_demo_node` is shown below.
+`r1_jointTracker_demo_node`的接口如下所示。
 
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Message Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Target position of each left arm joint</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Target position of each right arm joint</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Target position of each torso joint</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Feedback of left arm motor</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Feedback of right arm motor</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Feedback of torso motor</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Control of left arm motor</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Control of right arm motor</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Control of torso motor</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
-    </tr>
-  </tbody>
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">消息类型</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">左臂各关节的目标位置</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">右臂各关节的目标位置</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">躯干各关节目标位置</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考躯干驱动接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考躯干驱动接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+        </tr>
+    </tbody>
 </table>
 
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Field</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 500px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="2">/motion_target/target_joint_state_arm_left <br>/motion_target/target_joint_state_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">position</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">This is a vector of six elements. 6 joint target positions for each joint.</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">velocity</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">This is a vector of six elements. Standing for max velocity of each joint during movement.<br>The max speed is below, {3, 3, 3, 5, 5, 5}. <br>The acc & jerk limit is set to 1.5* speed limit.</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="2">/motion_target/target_joint_state_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">position</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">This is a vector of four elements. 4 joint target positions for each joint.</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">velocity</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">This is a vector of four elements. Standing for four velocity of each joint during movement.<br>The max speed is below, {1.5, 1.5, 1.5, 1.5}. <br>The acc & jerk limit is set to 1.5* speed limit.</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Refer to HDAS msg Description</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Refer to HDAS msg Description</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Refer to HDAS msg Description</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Refer to HDAS msg Description</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Refer to HDAS msg Description</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Refer to HDAS msg Description</td>
-    </tr>
-  </tbody>
+
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">字段</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="2">/motion_target/target_joint_state_arm_left<br>/motion_target/target_joint_state_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">position</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">是一个包含六个元素的向量，代表每个关节的六个目标位置。</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">velocity</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">这是一个包含六个元素的向量，代表每个关节在运动过程中的最大速度。最大速度如下：{3, 3, 3, 5, 5, 5}。 加速度和加加速度限制设置为速度限制的1.5倍。</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="2">/motion_target/target_joint_state_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">position</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">这是一个包含四个元素的向量，代表每个关节的四个目标位置。</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">velocity</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">这是一个包含四个元素的向量，代表每个关节在运动过程中的速度。最大速度如下：{1.5, 1.5, 1.5, 1.5}。
+加速度和加加速度限制设置为速度限制的1.5倍。</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考躯干驱动接口</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考躯干驱动接口</td>
+        </tr>
+    </tbody>
 </table>
 
-`eepose_pub_node` defines three frames: the base link frame (Left), the floating base frame (Middle), and the end-effector (ee) pose frame (Right).
+
+`eepose_pub_node`定义了三个坐标帧：基座链接帧 the base link frame（左），浮动基座帧 the floating base frame（中），和末端执行器姿态帧 the end-effector (ee) pose frame（右）。
 
 ![R1_joint_control](assets/R1_joint_control.png)
 
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 500px;">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Message Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/pose_ee_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Transform from floating base to left EE pose</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/pose_ee_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Transform from floating base to right EE pose</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/pose_floating_base</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Transform from base-link to floating base</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
-    </tr>
-  </tbody>
-</table>
-
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 400px;">Field</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 600px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="9">/motion_control/pose_ee_arm_right<br>/motion_control/pose_ee_arm_left<br>/motion_control/pose_floating_base</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">position</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">This is the translation information in X, Y, Z position</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.position.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Shift in the X direction</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.position.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Shift in the Y direction</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.position.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Shift in the Z direction</td>
-    </tr>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">orientation</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">This is orientation information</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.orientation.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Orientation quaternion</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.orientation.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Orientation quaternion</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.orientation.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Orientation quaternion</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.orientation.w</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Orientation quaternion</td>
-    </tr>
-  </tbody>
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">消息类型</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/pose_ee_arm_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">从浮动基座变换到左端执行器姿态</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/pose_ee_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">从浮动基座变换到右端执行器姿态</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/pose_floating_base</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">从基座链接变换到浮动基座</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
+        </tr>
+    </tbody>
 </table>
 
 
-#### R1 Arm Pose Control - Coming Soon
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">字段</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="9" style="padding: 8px; border: 1px solid #ddd;">/motion_control/pose_ee_arm_right<br>/motion_control/pose_ee_arm_left<br>/motion_control/pose_floating_base</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">position</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">平移信息</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.position.x</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">X 轴偏移</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.position.y</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Y 轴偏移</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.position.z</td>
+            <td style="padding: 8px; border: 1px solid #ddd;"> Z 轴偏移</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">orientation</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">旋转信息</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.x</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.y</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.z</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.w</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>
+        </tr>
+    </tbody>
+</table>
 
-R1 Arm Pose Control is a ROS package for controlling arm movement to the target end effector (ee) frame. It can be launched using the following command:
 
-```bash
+
+
+#### R1手臂姿态控制 - 即将推出
+
+R1臂部姿态控制是一个用于控制手臂移动到目标末端执行器（ee）坐标帧的ROS软件包。它可以通过以下命令启动：
+
+```Plain
 source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_arm_pose_control.launch
 ```
 
-The interface is shown below.
+该接口如下所示。
 
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 500px;">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Message Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/pose_ee_arm_left<br>/motion_target/pose_ee_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Target pose of arm ee frame</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_left<br>/motion_target/target_joint_state_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Target Joint position of each joint of arm </td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left<br>/hdas/feedback_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Feedback of arm joint</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
-    </tr>
-  </tbody>
-</table>
-
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 500px;">Field</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 500px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="8">/motion_target/pose_ee_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard Header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.position.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Shift in x-direction</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.position.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Shift in y-direction</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.position.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Shift in z-direction</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.orientation.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Orientation quaternion</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.orientation.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Orientation quaternion</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.orientation.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Orientation quaternion</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.orientation.w</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Orientation quaternion</td>
-    </tr>      
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_left<br>/motion_target/target_joint_state_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">- </td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Refer to R1 Joint Control Chapter</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left<br>/hdas/feedback_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Refer to HDAS msg</td>
-    </tr>
-  </tbody>
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">消息类型</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/pose_ee_arm_left/motion_target/pose_ee_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">目标手臂末端执行器姿态</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_left/motion_target/target_joint_state_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;"> 目标手臂各关节位置</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left/hdas/feedback_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">手臂关节反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+        </tr>
+    </tbody>
 </table>
 
 
-#### R1 Torso Pose Control - Coming Soon
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">字段</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;"rowspan="8">/motion_target/pose_ee_arm_left/motion_target/pose_ee_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.position.x</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">X轴偏移</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.position.y</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Y轴偏移</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.position.z</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Z轴偏移</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.x</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.y</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.z</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.w</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_left/motion_target/target_joint_state_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考R1关节控制</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left/hdas/feedback_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+        </tr>
+    </tbody>
+</table>
 
-R1 Torso Pose Control is a ROS package for controlling torso movement to the target floating base frame. It can be launched using the following command:
 
-```bash
+
+
+#### R1躯干姿态控制 - 即将推出
+
+R1躯干姿态控制是一个用于控制躯干移动到目标浮动基座坐标帧的ROS软件包。它可以通过以下命令启动：
+
+```Plain
 source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_torso_pos_control.launch
 ```
 
-This pose is subject to certain constraints, as described below.
+这个姿态受到某些约束，如下所述。
 
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 500px;">Description</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Message Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_pose_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Target pose of floating base frame</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Target joint position of each joint of torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Feedback of torso joint</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
-    </tr>
-  </tbody>
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style=" padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">消息类型</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_pose_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">目标浮动基座姿态</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">目标躯干各关节位置 </td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">躯干关节反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+        </tr>
+    </tbody>
 </table>
-
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Field</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 600px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="8">/motion_target/pose_ee_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard Header</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.position.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Shift in x-direction in the range of (0,0.25)</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.position.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Shift in z-direction in the range of (0,1)</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.orientation.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">The constraint of -Pitch satisfies sin(pitch) (-x/0.32, (0.25-x)/0.32).<br>The constraint of -Yaw is satisfied with ±3.05.</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.orientation.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Orientation quaternion</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.orientation.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Orientation quaternion</td>
-    </tr>      
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.orientation.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Orientation quaternion</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.orientation.w</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Orientation quaternion</td>
-    </tr>      
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">- </td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Refer to R1 Joint Control Chapter</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Refer to HDAS msg</td>
-    </tr>
-  </tbody>
+<table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 33%; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 25%; padding: 8px; border: 1px solid #ddd;">字段</th>
+            <th style="width: 42%; padding: 8px; border: 1px solid #ddd;">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td rowspan="8" style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_pose_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">header</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Standard Header</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.position.x</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">X轴偏移 范围 (0,0.25)</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.position.z</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Z轴偏移 范围 (0,1)</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">俯仰角的约束满足 sin(pitch) 在 (-x/0.32, (0.25-x)/0.32) 范围内。</br>偏航角的约束满足 ±3.05. 范围内。</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.x</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.y</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.z</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.w</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考R1关节控制</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">请参考躯干驱动接口</td>
+        </tr>
+    </tbody>
 </table>

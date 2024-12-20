@@ -1,59 +1,58 @@
-# Galaxea R1 Simulation Isaac Lab Tutorial
-
-## Get Started
-
-Galaxea Lab is a repository that originates from [Isaac Lab](https://isaac-sim.github.io/IsaacLab/main/index.html). Based on the settings of Isaac Lab, we have developed our own standalone version where you can configure your own operational environment. Along with Galaxea Lab, our Real-to-Sim asset is also provided, which mainly consists of a 3D-reconstructed kitchen scene and a table-fruit-basket pick-up scene. By going through this user guide, you will get access to the following knowledge:
-
-- How to install our Galaxea Lab environment.
-- How to run our pick-fruit example.
-- How to access the Galaxea Lab interface and set up your own tasks.
-- Different 3D reconstructed assets (continuous updating...)
-
-Can't wait to see the Galaxea robot？Let's start now!
+# R1_Isaac Lab 仿真教程
 
 
 
-## Installation
+## **开始使用**
 
-To install our Galaxea Lab, follow these steps. Firsly, install the latest Isaac Sim. You can do this either through the [official Ominivese launcher](../A1/Simulation_Isaac_Sim_Tutorial.md) or use the [pip test version](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/binaries_installation.html#installing-isaac-sim) (though it hasn't been tested in our case). We recommend the former option. Ensure that the latest version of Isaac Sim is installed. 
+**Galaxea Lab**基于**[Isaac Lab](https://isaac-sim.github.io/IsaacLab/main/index.html)** 代码库开发，我们在其基础上打造了一个专属的独立版本，用户可以在其中配置个人的仿真操作环境和操作任务。此外，我们还提供了内部的**Real-to-Sim资产**，包括一个桌面果篮抓取场景（持续更新中）。
 
-Once Isaac Sim is successfully installed, proceed to install our Galaxea Lab. Start by cloning the repository.
+通过阅读本用户指南，您将了解到以下信息：
 
+- 如何安装 Galaxea Lab 环境。
+
+- 如何运行抓取水果示例教程。
+
+- 如何定义个人操作任务。
+
+- 不同的3D重建资产（持续更新中...）
+
+
+
+## **安装**
+
+安装Galaxea Lab的主要步骤如下：
+
+1. 安装最新版本的Isaac Sim（推荐4.2.0），可以通过[omniverse launcher](https://galaxea.ai/Guide/A1/Simulation_Isaac_Sim_Tutorial/)安装（推荐）, 或者[pip](https://docs.omniverse.nvidia.com/isaacsim/latest/installation/install_python.html)安装（仅支持GLIBC 2.34+）
+2. 安装Galaxea Lab后克隆代码库。
 ```Bash
-git clone https://github.com/userguide-galaxea/Galaxea_Lab.git
+git clone https://github.com/userguide-galaxea/galaxea_lab.git
 ```
 
+3. 后续请参考[IsaacLab Binary Installation Guide](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/binaries_installation.html#creating-the-isaac-sim-symbolic-link)的教程进行安装。
 
+请注意：
 
-From now on, you can refer to the tutorial of [Isaac Lab binary installation guide](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/binaries_installation.html#installing-isaac-lab). Note that you do not need to git clone the original Isaac Lab repo again as we are derived from that repo.
-
-One important aspect to note is that all default 3D assets are defined in the variable **`NUCLEUS_ASSET_ROOT_DIR`** in the following script: <u>*source/extensions/omni.isaac.lab/omni/isaac/lab/utils/assets.py.*</u> 
-
-By default, these assets are stored on the AWS cloud, and loading them might be very slow, sometimes even infeasible. 
-
-
-
-In the given repository, we have already made a minimal folder containing related assets under this path: *<u>isaac-sim-assets-1-4.0.0/Assets/Isaac/4.0/Isaac</u>.* If you need further development, you can download all the 3D models by following the instructions :https://docs.omniverse.nvidia.com/IsaacSim/latest/installation/install_faq.html#assets-pack
-
-**Latest Note: The link above might not be able to open due to Nvidia maintenance. Nevertheless, you can still run our tutorial scripts since we have already copied all the necessary assets to the path *<u>isaac-sim-assets-1-4.0.0/Assets/Isaac/4.0/Isaac</u>* above.**
-
+1. 由于Galaxea Lab依赖Isaac Lab代码库，因此无需再次克隆原始的Isaac Lab代码库。
+2. 在文件*source/extensions/omni.isaac.lab/omni/isaac/lab/utils/assets.py* 内，所有默认的3D资产都定义在**`NUCLEUS_ASSET_ROOT_DIR`** 变量中。默认情况下，这些资产存储在AWS云上，加载速度较慢，甚至可能无法顺利加载。因此，我们在代码库中提供了一个包含相关资产的最小文件夹，路径为：*<u>isaac-sim-assets-1-4.0.0/Assets/Isaac/4.0/Isaac</u>*。如需自定义开发，您可以按照以下方法下载nv官方提供的3D模型：https://docs.omniverse.nvidia.com/IsaacSim/latest/installation/install_faq.html#assets-pack**（最新说明：由于 Nvidia 的维护，上述链接可能无法打开。不过，您仍然可以正常运行我们教程中的脚本，所有必要的资产已被复制到以下路径：isaac-sim-assets-1-4.0.0/Assets/Isaac/4.0/Isaac）**
 ![R1_isaacsim_installation](assets/R1_isaacsim_installation.png)
 
-After downloading the assets, set the **`NUCLEUS_ASSET_ROOT_DIR`** to your local path.
+下载所有资产后，请将 `NUCLEUS_ASSET_ROOT_DIR `设置为本地路径。
 
-You can run the following command to verify the installation.
+您可以通过运行以下命令来验证安装是否成功：
 
 ```Bash
 ./isaaclab.sh -p source/standalone/galaxea/basic/spawn_robot.py
 ```
 
-If everything goes fine, you should be able to see your Galaxea R1 robot.
+当R1模型成功加载并显示时，即表示安装成功（如下图所示）。
 
-![R1_isaac_installation](assets/R1_isaac_installation.PNG)
+![R1_isaacsim_installation2](assets/R1_isaacsim_installation2.PNG)
 
-## Examples
 
-We have provided several basic examples under the directory *<u>source/standalone/galaxea/basic</u>.* Here are some simple commands:
+
+## **示例**
+
+在目录 source/standalone/galaxea/basic 下，我们提供了部分基本示例：
 
 ```Bash
 # spawn the R1 robot and set random joint positions
@@ -66,30 +65,26 @@ We have provided several basic examples under the directory *<u>source/standalon
 ./isaaclab.sh -p source/standalone/galaxea/rule_based_policy/collect_demos.py
 ```
 
-By running the last line of code, you will see the demo as shown below. R1 will start to collect the fruit inside the basket. Trajectory data will be saved in the hdf5 format.
+运行最后一行代码后，您将看到如下演示：R1 将开始收集篮子里的水果，同时轨迹数据将以hdf5格式保存。
+![isaaclab_pickcarrot](assets/isaaclab_pickcarrot.mp4)
 
-<div style="display: flex; justify-content: center; align-items: center;">
-<video width="1920" height="1080" controls>
-  <source src="../assets/R1_isaaclab_pickcarrot.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-</div>
-## Real-to-Sim Asset 
+## **Real-to-Sim 资产**
 
-Here we provide our reconstructed asset under the following path. All the R1 robot USD asset and the fruits model are listed there. 
-
-<u>*source/extensions/omni.isaac.lab_assets/data*</u>
+所有R1的USD资产和水果模型都存储在以下路径：<u>*source/extensions/omni.isaac.lab_assets/data*</u>
 
 ![R1_real_to_sim](assets/R1_real_to_sim.png)
 
-### R1 URDF
-To download the R1 URDF file, please go to [R1_URDF](https://github.com/userguide-galaxea/URDF/tree/galaxea/main/R1) on our GitHub website.
+###  **R1 URDF**
 
-## The Task Env Interface
+如需下载R1的URDF文件，请访问我们的开源GitHub社区进行下载[URDF](https://github.com/userguide-galaxea/URDF/tree/galaxea/main/R1/urdf)。
 
-Here, we use the OpenAI Gym as our basic environment. For customizing your own task, you need to pay attention to the following key interfaces. We also provide minimal executable code snippets for you to understand the logic.
 
-### Initiallization
+
+## **任务环境界面**
+
+我们使用**OpenAI Gym**作为基本环境。对于自定义任务，请关注以下关键接口。我们提供了最小可执行的代码片段，帮助您理解任务逻辑。
+
+### **初始化**
 
 ```Bash
 from omni.isaac.lab_tasks.utils.parse_cfg import parse_env_cfg 
@@ -102,63 +97,71 @@ env_cfg = parse_env_cfg(
 )
 ```
 
-- **task_name**: Defines the specific env interface and can be viewed via this path: <u>*source/extensions/omni.isaac.lab_tasks/omni/isaac/lab_tasks/galaxea/direct/lift/\_\_init\_\_.py*</u>
+- **task_name**：定义特定的环境接口，您可以通过以下路径查看：： *<u>source/extensions/omni.isaac.lab_tasks/omni/isaac/lab_tasks/galaxea/direct/lift/init.py</u>*
+- **use_gpu**：表示是否使用 GPU 进行模拟。
+- **num_envs**：定义并行环境的数量。当值大于1时，将开始并行收集数据。
+- **use_fabric**：定义是否使用当前 USD 进行 I/O。默认值为 True。
 
-- **use_gpu**: Indicates whether to use the GPU for the simulation.
-- **num_envs**: Defines the number of parallel environments. When the value is greater than 1, it will start to collect the data parallelly.
-- **use_fabric**: Defines whether to use the current USD for I/O. The default value is True.
 
-### Take the Action
 
-```python
+### **执行动作**
+
+```Bash
 obs, reward, terminated, truncated, info = env.step(actions)
 ```
 
-- **obs**: Represents the observation data in the observation space, which is defined in the _get_observations() function shown as below:
+- **obs**: 代表观察空间中的观察数据，定义在 _get_observations() 函数中，如下所示：
 
     ```Bash
-    obs = {
-        "joint_pos": 
-        "joint_vel": 
-        "left_ee_pose":
-        "right_ee_pose": 
-        "object_pose": 
-        "goal_pose": 
-        "last_joints":
-        "front_rgb": 
-        "front_depth": 
-        "left_rgb": 
-        "left_depth": 
-        "right_rgb": 
-        "right_depth"：
-    }
+     obs = {
+         "joint_pos": 
+         "joint_vel": 
+         "left_ee_pose":
+         "right_ee_pose": 
+         "object_pose": 
+         "goal_pose": 
+         "last_joints":
+         "front_rgb": 
+         "front_depth": 
+         "left_rgb": 
+         "left_depth": 
+         "right_rgb": 
+         "right_depth"：
+     }
     ```
 
-- **actions**: A 16 dimensional torch tensor.
-  	1. dim0 - dim6: Represent the pose of the left arm end-effector, specifically position_x, position_y, position_z , quaternion_z,  quaternion_w,  quaternion_x,  and quaternion_y.
-  	2. dim7: Represents the state of the left arm gripper, with a value of 0 and 1.
- 	3. dim8 - dim14: Represent the pose of the right arm end effector, specifically position_x, position_y, position_z, quaternion_z,  quaternion_w,  quaternion_x,  and quaternion_y.
-  	4. dim15: Represents the state of the right arm gripper, with a value of 0 and 1.
-  
-    ```Bash
-    actions = torch.tensor([left_ee_pose, left_gripper_state, right_ee_pose, right_gripper_state])##7+1+7+1=16 dim
-    ```
-  
-- **terminated**: Represents whether a task is finished or not. It is a boolean value. The definition cretiera is the carrot falling into the basket. This is defined in the `_get_dones()` function below.
+- **actions:**一个16维的 torch 张量。
 
-    ```Bash
-    def _get_dones(self) -> tuple[torch.Tensor, torch.Tensor]:
-         reached = self._object_reached_goal()
-         time_out = self.episode_length_buf >= self.max_episode_length - 1
-         return reached, time_out
-    ```
+     - dim0 - dim6：代表左臂末端执行器的姿态，具体为 position_x, position_y, position_z, quaternion_z, quaternion_w, quaternion_x, 和 quaternion_y。
 
-- **truncated:** Represents whether the task ends exceeding the time threshold. The current value is 4 seconds, (400 steps with dt = 0.01s) 
-- **info**: Saves any extra information that users want to save. Currently, it is set as an empty dictionary.
+     - dim7：代表左臂夹爪的状态，值为0和1。
 
-### Minimal Executable Code Unit
+     - dim8 - dim14：代表右臂末端执行器的姿态，具体为 position_x, position_y, position_z, quaternion_z, quaternion_w, quaternion_x, 和 quaternion_y。
 
-Here, we provide a minimal unit of executable code that contains all the information introduced above. The code is located at *<u>source/standalone/galaxea/basic/simple_env.py</u>*
+     - dim15：代表右臂夹爪的状态，值为0和1。
+
+      ```Bash
+      actions = torch.tensor([left_ee_pose, left_gripper_state, right_ee_pose, right_gripper_state])##7+1+7+1=16 dim
+      ```
+
+  - **terminated:** 一个布尔值，表示任务是否完成。任务完成的标准是胡萝卜成功落入篮子中。 该逻辑在`_get_dones() `函数中被定义。
+
+      ```Bash
+      def _get_dones(self) -> tuple[torch.Tensor, torch.Tensor]:
+                  reached = self._object_reached_goal()
+                  time_out = self.episode_length_buf >= self.max_episode_length - 1
+                  return reached, time_out
+      ```
+
+- **truncated:**  表示任务是否因超出时间阈值而结束。当前的时间阈值为4秒（即400步，每步=0.01秒）
+
+- **info:** 保存用户希望存储的任何额外信息。当前设置为空字典。
+
+
+
+### **最小可执行代码单元**
+
+我们为您提供了一个包含上述所有信息的最小可执行代码单元。您可以在以下路径找到该代码：  *<u>source/standalone/galaxea/basic/simple_env.py</u>* 。
 
 ```Bash
 """Script to run an environment with zero action agent."""
@@ -227,45 +230,38 @@ if __name__ == "__main__":
     simulation_app.close()
 ```
 
-After running the following code, ideally, you will see the demo as shown below, where we send random joint commands to our R1 robot. 
+在运行以下代码后，理想情况下，您将看到如下所示的demo：向R1发送随机的关节命令。
 
 ```Bash
 ./isaaclab.sh -p source/standalone/galaxea/basic/simple_env.py
 ```
 
-<div style="display: flex; justify-content: center; align-items: center;">
-<video width="1920" height="1080" controls>
-  <source src="../assets/R1_isaaclab_spawn_env_randomactionv2.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-</div>
+![isaaclab_spawn_env_randomactionv2](assets/isaaclab_spawn_env_randomactionv2.mp4)
 
 
-## Define Your Own Task
+## **自定义任务**
 
-### Define A Robot
+### **自定义机器人**
 
-The robot is set as an **Articulation** class in our Galaxea Lab. You can refer to the following path to see how to modify related parameters, e.g. the kp, kd parameters.
+机器人被设置为 Galaxea Lab 中的 **Articulation** 类。您可以参考以下路径来修改 kp、kd 等相关参数：
 
-<u>*source/extensions/omni.isaac.lab_assets/omni/isaac/lab_assets/galaxea_robots.py*</u> 
+<u>*source/extensions/omni.isaac.lab_assets/omni/isaac/lab_assets/galaxea_robots.py*</u>
 
 ![R1_isaacsim_define_a_robot](assets/R1_isaacsim_define_a_robot.png)
 
-The task environment can be set by referring to the following script:
+您可以通过以下脚本设置任务环境：
 
 <u>*source/extensions/omni.isaac.lab_tasks/omni/isaac/lab_tasks/galaxea/direct/lift/lift_env_cfg.py*</u>
 
 ![R1_isaacsim_define_a_robot2](assets/R1_isaacsim_define_a_robot2.png)
 
+### **自定义任务**
 
+您可以通过参考以下脚本来定义新的任务和新的入口点：
 
-### Define Your Task
+*<u>source/extensions/omni.isaac.lab_tasks/omni/isaac/lab_tasks/galaxea/direct/lift/__init__.py</u>*
 
-You can define new tasks and your new entry points via referring to the following scripts:
-
- <u>*source/extensions/omni.isaac.lab_tasks/omni/isaac/lab_tasks/galaxea/direct/lift/\_\_init\_\_.py*</u>
-
- <u>*source/extensions/omni.isaac.lab_tasks/omni/isaac/lab_tasks/galaxea/direct/lift/pick_fruit_env.py*</u>
+*<u>source/extensions/omni.isaac.lab_tasks/omni/isaac/lab_tasks/galaxea/direct/lift/pick_fruit_env.py</u>*
 
 ```Bash
 gym.register(
@@ -278,11 +274,9 @@ gym.register(
 )
 ```
 
+### **自定义观察、动作、奖励等**
 
-
-### Define Observation, Action, Reward, etc. 
-
-Under the path *<u>source/extensions/omni.isaac.lab_tasks/omni/isaac/lab_tasks/galaxea/direct/lift/pick_fruit_env.py</u>*, you can see how we define our environment's observation, action, rewards, etc. The following are the related code snippets.
+您可以通过路径*<u>source/extensions/omni.isaac.lab_tasks/omni/isaac/lab_tasks/galaxea/direct/lift/pick_fruit_env.py</u>*，查看我们如何定义环境的观察、动作、奖励等。以下是相关的代码段：
 
 - **obs:**
 

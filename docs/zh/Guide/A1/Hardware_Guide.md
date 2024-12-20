@@ -1,317 +1,384 @@
-# Galaxea A1 Hardware Guide
-This manual provides engineering data and user guidance for working with Galaxea A1 hardware.
+# A1硬件指南
 
-## Safety Guide
-<div>
-<img src="../assets/warning_sign.jpg" alt="warning_sign" width="320">
+
+
+本用户指南将为您详尽解读 Galaxea A1 硬件部分的数据。
+
+
+
+## **安全指南**
+<div style="text-align: left;">
+    <img src="../assets/warning_sign.jpg" style="width: 300px; height: auto;" alt="warning_sign">
 </div>
-Galaxea robots are potentially dangerous machines with safety hazards. If improperly used, they can cause injury.
 
-- All users must carefully read the following safety information before using the robot.
-- Anyone near the robot who has not read this safety information must be closely supervised at all times and made aware that the robot could be dangerous.
-- Only use the robot after inspecting the surrounding environment for potential hazards.
+Galaxea 机械臂在操作不当的情况下可能带来安全隐患，有造成人身伤害的风险。
 
-Please refer to the Safety Guide for more information.
+- 在使用机械臂之前，请务必仔细阅读以下安全须知。
+- 对于尚未熟悉本安全指南的人员，在靠近机器时必须受到严格监督，并需被明确告知机器操作可能存在的风险。
+- 在使用产品之前，请务必对周围环境进行全面检查，以排除任何潜在的安全威胁。
 
-## Disclaimer
-<u> Galaxea A1 is intended for research applications by users experienced in operating and programming research robots. This product is not designed for general consumer use in the home and does not have the necessary certifications for such purposes. </u>
+更多安全信息，请查阅随附的安全指南。
 
-## Technical Specification
-### Electric Parameters
-The electrical parameters of Galaxea A1 include its voltage, current, and communication interface. Its design ensures stable and reliable performance, even in high payload and dynamic applications.
-<table style="border-collapse: collapse;">
+
+
+## **声明**
+
+<u>Galaxea A1 目前仅适用于科研开发应用，需要有经验的操作员和程序员使用。该产品不面向家庭消费者，且未获得相关认证以支持此类用途。</u>
+
+
+
+## **技术规格**
+
+### **电气参数**
+
+Galaxea A1的电气特性是其卓越性能的关键。通过精心设计的电压、电流和通信接口参数，我们确保了机械臂在处理高负载和执行复杂动态任务时的稳定性与可靠性。
+
+<table style="width: 100%; border-collapse: collapse;">
     <thead>
-        <tr style="background-color: black; color: white;text-align: left;">
-            <th>Parameters</th>
-            <th>Value</th>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">电气参数</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">数值</th>
         </tr>
     </thead>
     <tbody>
-        <tr style="background-color: white;text-align: left;">
-            <td>Rated Voltage</td>
-            <td>48 V</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">额定电压</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">48 V</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Rated Current</td>
-            <td>6 A</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">额定电流</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">6 A</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Maximum Current</td>
-            <td>10 A</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">最大电流</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">10 A</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Communication Interface</td>
-            <td>USB 2.0 Port</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">通信接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">USB 2.0 端口</td>
         </tr>
     </tbody>
 </table>
 
-### Performance Parameters
-The performance parameters highlight Galaxea A1's key specifications, such as weight, payload capacity, arm reach, and speed, reflecting its superior performance in highly dynamic operations.
-<table style="border-collapse: collapse;">
+
+
+### **性能参数**
+
+Galaxea A1的性能参数凸显了其核心优势，包括轻盈的自重、出色的负载能力、宽广的工作范围和迅捷的运行速度，这些特性共同确保了其在高速动态作业中的非凡表现。
+
+<table style="width: 100%; border-collapse: collapse;">
     <thead>
-        <tr style="background-color: black; color: white;text-align: left;">
-            <th>Performance</th>
-            <th>Value</th>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">性能参数</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">数值</th>
         </tr>
     </thead>
     <tbody>
-        <tr style="background-color: white;text-align: left;">
-            <td>Dimensions</td>
-            <td>Deployed: 775L x 128W x 237H <br> Folded: 449L x 128W x 277H </td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">尺寸</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">展开：775L x 128W x 237H mm，</br>折叠：449L x 128W x 277H mm</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Weight</td>
-            <td>6 kg</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">重量</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">6 kg</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Rated Payload</td>
-            <td>2 kg</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">额定负载</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">2.5 kg</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Maximum Payload</td>
-            <td>5 kg</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">最大负载</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">5 kg</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Reach</td>
-            <td>700 mm</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">臂展</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">700 mm</td>
         </tr>
-		<tr style="background-color: white;text-align: left;">
-            <td>Maximum End-Effector Linear Velocity</td>
-            <td>10 m/s</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">最大末端线速度</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">10 m/s</td>
         </tr>
-		<tr style="background-color: white;text-align: left;">
-            <td>Maximum End-Effector Acceleration</td>
-            <td>10 m/s²</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">最大末端加速度</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">10 m/s²</td>
         </tr>
-		<tr style="background-color: white;text-align: left;">
-            <td>Degree of Freedom</td>
-            <td>6</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">自由度</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">6</td>
         </tr>
-		<tr style="background-color: white;text-align: left;">
-            <td>Repeatability</td>
-            <td>1 mm</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">重复定位精度</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1 mm</td>
+        </tr>
     </tbody>
 </table>
 
-## Hardware Structure
-![A1_hardware_architecture_topo](assets/A1_topo.jpg)
 
-## Robot Structure 
-### Joint
-The joint performance parameters detail the operating range, rated torque, and peak torque of the six joints, showcasing the robot's flexibility and power across a variety of operations.
+
+
+## **硬件架构**
+
+![A1_topo](assets/A1_topo.jpg)
+
+
+
+## **机结构**
+
+### **关节**
+
+本节详细说明了六个关节的工作范围、额定扭矩和峰值扭矩，展示了机械臂在各种操作中的灵活性和力量性。
+
 ![A1_joints](assets/A1_joints.png)
 
-<table style="border-collapse: collapse;">
+<table style="width: 100%; border-collapse: collapse;">
     <thead>
-        <tr style="background-color: black; color: white;text-align: left;">
-            <th>Joint</th>
-            <th>Range</th>
-	    <th>Rated Torque</th>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">关节</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">范围</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">额定扭矩</th>
         </tr>
     </thead>
     <tbody>
-        <tr style="background-color: white;text-align: left;">
-            <td>Joint 1</td>
-            <td>[-165°, 165°]</td>
-			<td>20 Nm</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Joint 1</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[-165°,165°]</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">20 Nm</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Joint 2</td>
-            <td>[0°, 180°]</td>
-			<td>20 Nm</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Joint 2</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[0°,180°]</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">20 Nm</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Joint 3</td>
-            <td>[0°, 190°]</td>
-			<td>9 Nm</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Joint 3</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[0°,190°]</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">9 Nm</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Joint 4</td>
-            <td>[-165°, 165°]</td>
-			<td>3 Nm</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Joint 4</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[-165°,165°]</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">3 Nm</td>
         </tr>
-		<tr style="background-color: white;text-align: left;">
-            <td>Joint 5</td>
-            <td>[-95°, 95°]</td>
-			<td>3 Nm</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Joint 5</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[-95°,95°]</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">3 Nm</td>
         </tr>
-		<tr style="background-color: white;text-align: left;">
-            <td>Joint 6</td>
-            <td>[-105°, 105°]</td>
-			<td>3 Nm</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Joint 6</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[-105°,105°]</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">3 Nm</td>
         </tr>
     </tbody>
 </table>
+
 
 ![A1_working_space](assets/A1_working_space.png)
 
-- **View 1:** Shows the working radius and rotation angle of Joint 1, with a rotation radius of 715 mm and a maximum rotation angle of 330 degrees.
-- **View 2:** Displays the rotation ranges for Joint 2 and Joint 3, with a maximum rotation angle of 180 degrees for Joint 2 and 190 degrees for Joint 3.
-- **View 3:** Illustrates the rotation angles of Joints 4, 5, and 6, as well as the end position of the robot arm. The maximum rotation angle for Joint 4 and 6 is 330 degrees, while Joint 5 has a maximum rotation angle of 190 degrees.
+- **view1**：显示关节1的工作半径和旋转角度，旋转半径为715 mm，最大旋转角度为330度。
+- **view2**：显示关节2和关节3的旋转范围，关节2的最大旋转角度为180度，关节3为190度。
+- **view3**：显示关节4、5、6的旋转角度，以及机械臂的末端位置。关节4和6的最大旋转角度为330度，关节5的最大旋转角度为190度。
 
 
-### Link
-Galaxea A1 consists of two main links made from Acrylonitrile Butadiene Styrene (ABS), which is lightweight, rigid and durable. Each joint is equipped with planetary gear motors, enabling independent variable-speed operation with high precision and torque. This design allows the arm to maneuver in any direction commanded by the controller.
-In the current version, the motor does not have a brake, so cutting off the power may cause the robot arm to drop suddenly. We will continue to improve the product to address this issue.
-![A1_size](../A1/assets/A1_size_1.jpg)
 
+### **连接**
 
-The arm is designed to have:
+Galaxea A1机械臂由两个主要的连接组成，这些连接由轻巧、坚固且耐用的丙烯腈-丁二烯-苯乙烯（ABS）材料制成。每个关节均配备了行星齿轮电机，具有高精度和扭矩，能够实现独立的变速操作。这种设计使得机械臂能够在控制器指挥的任何方向上灵活操作。
 
-<table style="border-collapse: collapse;">
+在当前版本中，电机尚未配备制动器，因此切断电源可能会导致机械臂突然掉落。我们将持续对产品进行改进，以解决这一问题。
+
+![A1_size_1](assets/A1_size_1.jpg)
+
+机械臂的设计包括：
+
+<table style="width: 100%; border-collapse: collapse;">
     <thead>
-        <tr style="background-color: black; color: white;text-align: left;">
-            <th>Item</th>
-            <th>Notes</th>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">条目</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">说明</th>
         </tr>
     </thead>
     <tbody>
-        <tr style="background-color: white;text-align: left;">
-            <td>Length</td>
-            <td>Deployed 775 mm <br/> Folded 449 mm </td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">长</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">展开：775 mm，折叠：449 mm</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Height</td>
-            <td>Deployed 237 mm <br/> Folded 277 mm </td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">宽</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">展开：237 mm，折叠：277 mm</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Width</td>
-            <td>128 mm</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">高</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">128 mm</td>
         </tr>
     </tbody>
 </table>
 
-### Base
-Galaxea A1 features two ports on the rear of the base for development and charging.
-<div style="text-align: center;">
-    <img src="../assets/A1_base.png" alt="A1_base" width="450">
-</div>
+### **底座**
 
-<table style="border-collapse: collapse;">
+Galaxea A1在底座后部有两个端口，用于开发和充电。
+
+<table style="width: 100%; border-collapse: collapse;">
     <thead>
-        <tr style="background-color: black; color: white;text-align: left;">
-            <th>Item</th>
-            <th>Notes</th>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">条目</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">说明</th>
         </tr>
     </thead>
     <tbody>
-        <tr style="background-color: white;text-align: left;">
-            <td>Power Port</td>
-            <td>Rated voltage 48 V</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">充电端口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">额定电压48V</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>USB Port</td>
-            <td>USB 2.0</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">USB端口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">USB 2.0</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Mounting Holes</td>
-            <td>Four M6 threads with a diameter of 6.3 mm</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">安装孔</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">四个M6螺纹，直径6.3 mm</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Size</td>
-            <td>100 mm x 100 mm</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">尺寸</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">100 mm x 100 mm</td>
         </tr>
-		<tr style="background-color: white;text-align: left;">
-            <td>Maximum End-Effector Linear Velocity</td>
-            <td>10 m/s</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">最大末端加速度</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">10 m/s²</td>
         </tr>
     </tbody>
-</table>  
+</table>
 
 
-### End-Effector
-#### [Galaxea G1](../../Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md) 
 
-G1 is composed of one motor, two clips, and one specially designed joint module.
+### **末端执行器**
+
+#### **Galaxea G1**
+
+Galaxea G1 由一个电机、两个夹子和一个特别设计的关节模块组成。
 
 ![G1_size](assets/G1_size.png)
 
-*Note: No gripper is included with the product. Contact us and purchase end-effectors or customized tools if needed.*
+注意：产品不包括夹爪。如有需要，您可以联系我们购买末端执行器或定制工具。
 
-<table style="border-collapse: collapse;">
+<table style="width: 100%; border-collapse: collapse;">
     <thead>
-        <tr style="background-color: black; color: white;text-align: left;">
-            <th>Feature</th>
-            <th>Value</th>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">特征</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">数值</th>
         </tr>
     </thead>
     <tbody>
-        <tr style="background-color: white;text-align: left;">
-            <td>Length</td>
-            <td>145 mm</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">长度</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">145 mm</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Length of Fingers</td>
-            <td>78 mm </td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">夹爪长度</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">78 mm</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Diameter of Motor</td>
-            <td>57 mm</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">电机直径</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">57 mm</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Gripper Operating Range</td>
-            <td>0 ~ 100 mm</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">夹爪操作范围</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0 ~ 100 mm</td>
         </tr>
-		<tr style="background-color: white;text-align: left;">
-            <td>Gripper Operating Range</td>
-            <td>100 N</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">夹爪额定力</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">100 N</td>
         </tr>
     </tbody>
 </table>
 
-Equipped with the end-effector, Galaxea G1, should have:
 
 ![A1_G1_size](assets/A1_G1_size.png)
 
-#### Attaching
-Here it shows how to attach gripper to Galaxea A1. To remove them, simply reverse these steps.
-![A1G1_attaching](assets/A1G1_attaching.png)
 
-1. **Alignment Check:** Ensure that the three mounting holes around the gripper are aligned with the three mounting holes at the end of arm.
-2. **Screw Fixation:** Once aligned, secure and tighten the gripper to the arm using the three screws provided.
-3. **Final Check:** After tightening the screws, double-check the alignment and stability of the gripper. It should be firmly attached and not wobble or move independently of the robot arm.
 
-### [Inspire-Robots RH56 Series Dexterous Hand](https://en.inspire-robots.com/product-category/the-dexterous-hands)
-The dexterous hand boasts significant gripping strength and moderate speed, making it suitable for grasping and manipulating tasks in robotics or prosthetic applications. Its combination of power and control allows for effective handling of various objects, similar to the versatility of a human hand, thereby enhancing the functionality of robots or prostheses in performing complex tasks.
-<table style="border-collapse: collapse;">
+配备末端执行器Galaxea G1，应具有以下特征：
+
+<table style="width: 100%; border-collapse: collapse;">
     <thead>
-        <tr style="background-color: black; color: white;text-align: left;">
-            <th>Feature</th>
-            <th>Value</th>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">条目</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">说明</th>
         </tr>
     </thead>
     <tbody>
-        <tr style="background-color: white;text-align: left;">
-            <td>Degrees of Freedom</td>
-            <td>6</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">尺寸</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">展开：923L x 128W x 254H mm，</br>折叠：550L x 128W x 294H mm</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Number of Joints</td>
-            <td>12</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">自由度</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">7</td>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Weight</td>
-            <td>540 g</td>
+    </tbody>
+</table>                                                    
+
+
+
+
+#### **连接**
+
+请按以下步骤将夹爪连接到A1。要移除它们，只需反转这些步骤。
+
+![A1G1_attaching](assets/A1G1_attaching.png)
+
+1. **对齐检查：**确保夹爪周围的三个安装孔与臂末端的三个安装孔对齐。
+2. **螺丝固定：**一旦对齐，使用提供的三个螺丝将夹爪固定并紧固到臂上。
+3. **最终检查：**紧固螺丝后，再次检查夹爪的对齐和稳定性。它应该牢固地附着，并且不会晃动或独立于机械臂移动。
+
+
+
+### **Inspire-Robots RH56系列灵巧手**
+
+灵巧手拥有显著的握持力和适中的速度，适合于机器人或假肢应用中的抓取和操纵任务。灵巧手结合了力量性和控制力，可以有效地处理各种物体，类似于人手的多功能性，从而增强了机器人或假肢执行复杂任务的功能。
+
+<table style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">特征</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">数值</th>
         </tr>
-        <tr style="background-color: white;text-align: left;">
-            <td>Repeatability</td>
-            <td>±0.20 mm</td>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">自由度</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">6</td>
         </tr>
-		<tr style="background-color: white;text-align: left;">
-            <td>Max. Finger Grip Force</td>
-            <td>10 N</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">关节数</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">12</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">重量</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">540 g</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">重复性</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">± 0.20 mm</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">最大手指握持力</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">10 N</td>
         </tr>
     </tbody>
 </table>
 
+
 ![A1_size_dexterous_hand](assets/A1_size_dexterous_hand.jpg)
 
-#### Attaching
-![](assets/hand_adapter.png)
 
 
-## Next Step
-This concludes the hardware guide for Galaxea A1. For further details, please refer to [Galaxea A1 Software Guide](../../Guide/A1/Software_Guide.md).
+#### **连接**
+
+![hand_adapter](assets/hand_adapter.png)
 
 
+
+## **下一步**
+
+Galaxea A1 的硬件指南到这里就结束了。我们建议您阅读 Galaxea A1软件指南 以获取更多详细信息。

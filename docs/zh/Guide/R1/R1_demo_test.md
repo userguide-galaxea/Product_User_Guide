@@ -1,74 +1,70 @@
-# Galaxea R1 Demo
-## Preparation Before Use
-Before you start testing, please ensure that:
+# R1_Demo测试
 
-1. Two arms are correctly installed. Ensue that the elbow joints (J3 & J4) are facing outward and the grippers are tipping downward to the ground.
-2. Torso is in the standing posture.
-3. No personnel and obstacles within a radius of 1.5 meters. (As shown in the figure below.)
 
-![R1_stand](../assets/R1_stand.png)
 
-**Visit our GitHub Repository to download script [r1_demo_easy.py](https://github.com/userguide-galaxea/Demo/blob/main/demo_r1/r1_demo_easy.py) for R1 demo testing.**
-```shell
+## **准备工作**
+
+在开始测试之前，请确保完成以下事项：
+
+1. R1 的双臂已准确安装完毕，此时手臂姿态应为肘关节  ( J3  &  J4 ) 向外伸展，夹爪垂直朝下指向地面。
+2. R1 的躯干已保持站立姿态。
+3. 以 R1 为中心，方圆 1.5 米范围内不得有人员以及障碍物存在。（可参考如下图所示内容。）
+
+![R1_Pro](assets/R1_Pro.png)
+
+**请访问我们的 GitHub 库，下载 R1 demo 测试的脚本 [r1_demo_easy.py](https://github.com/userguide-galaxea/Demo/blob/main/demo_r1/r1_demo_easy.py).**
+
+```Bash
 git clone https://github.com/userguide-galaxea/Demo.git
 #r1_demo_easy.py is located in path ${your_work_path}/Demo/blob/main/demo_r1.
 ```
-**Due to the following steps need to this python file, after cloning this repository you should use path `${your_work_path}/Demo/blob/main/demo_r1/r1_demo_easy.py`.**
+
+**由于需要执行以下步骤来处理这个 Python 文件，在克隆此库后，请使用路径 `${your_work_path}/Demo/blob/main/demo_r1/r1_demo_easy.py`。**
 
 
 
+## **动作描述**
+
+<span style="color:red">**重要提示：为了您的安全，在测试过程中遇到危险时，请务必在运行 “r1_demo_easy.py" 的 Python 3 终端中输入 `ctrl + C`，以停止正在执行的动作。**</span >
+
+- **arm_test_1：**双臂向上垂直抬起，接着放下双臂，夹爪垂直向下指向地面。
+<p style="text-align: center;">
+<video src="../assets/R1_arm_test_1.mp4" style="width: 95%;"autoplay muted loop>
+   </p>
+
+- **arm_test_2:** 双臂从身体两侧向上抬起，并在胸腔两侧收拢折叠。（此时 R1 的姿态与 URDF中 的零点姿态（默认状态）一致。）
+<p style="text-align: center;">
+      <video src="../assets/R1_arm_test_2.mp4" style="width: 95%;"autoplay muted loop>
+   </p>
+
+- **arm_test_3:**  先放下双臂，让夹爪垂直向下指向地面；随后，从躯干两侧将双臂垂直向上抬起 90°；接着，双臂从两侧向中间水平向前平移 90°；之后，双臂分别从两侧向上抬起，举过头顶并做出爱心形状；最后，双臂分别从两侧放下，夹爪再次垂直向下指向地面。
+
+<p style="text-align: center;">
+      <video src="../assets/R1_arm_test_3.mp4" style="width: 95%;"autoplay muted loop>
+   </p>
+- **torso_test_1: **躯干弯曲下蹲，同时双臂在胸腔两侧收拢折叠。（该动作用于测试 T1/T2/T3 躯干电机。）
+
+<p style="text-align: center;">
+      <video src="../assets/torso_test_1.mp4" style="width: 95%;"autoplay muted loop>
+   </p>
+
+- **torso_test_2:** 躯干升起站立，同时手臂在躯干两侧放下，接着腰部向左转动 45°，再向右转动 90°，然后向左转动 45°，最后使躯干回正。（此动作用于测试 T4 躯干电机。）
+
+<p style="text-align: center;">
+      <video src="../assets/torso_test_2.mp4" style="width: 95%;"autoplay muted loop>
+   </p>
 
 
-## Action Description
 
-<span style="color:red;">**Important: For your safety, in case of danger during the test, be sure to enter `Ctrl + C` , in the Python 3 terminal where "r1_demo_easy.py" is located, to stop the running action.**</span>
+## **脚本执行**
 
-- **arm_test_1:** Both arms are lifted vertically upward and then lowered, where the grippers are tipping vertically downward to the ground.
-  <div style="display: flex; justify-content: center; align-items: center;">
-  <video width="1920" height="1080" controls>
-    <source src="../assets/R1_arm_test_1.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  </div>
+<span style="color:red">**重要提示：请严格按照顺序进行测试。**</span>
 
-- **arm_test_2:** Both arms are lifted upward and then folded on both sides of the chest. At this time, the posture of R1 shows the zero-point posture (default) in URDF.
-  <div style="display: flex; justify-content: center; align-items: center;">
-  <video width="1920" height="1080" controls>
-    <source src="../assets/R1_arm_test_2.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  </div>
-- **arm_test_3:** Both arms are lowered down to the original pose, then are lifted vertically upward 90 degrees from both sides of the torso. Arms are moved horizontally forward 90 degrees from both sides to the middle, lifted upward from both sides respectively, and raised over the head to make pose in a heart shape. At the end, arms are lowered down, and the grippers point vertically downward to the ground again.
-  <div style="display: flex; justify-content: center; align-items: center;">
-  <video width="1920" height="1080" controls>
-    <source src="../assets/R1_arm_test_3.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  </div>
-- **torso_test_1:** The torso squats down, and arms are folded at the same time. (This action is used to test torso motors T1/T2/T3).
-  <div style="display: flex; justify-content: center; align-items: center;">
-  <video width="1920" height="1080" controls>
-    <source src="../assets/torso_test_1.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  </div>
-- **torso_test_2:** The torso raises to stand, and arms are back to the sides. Then turn the waist 45 degrees to the left, 90 degrees to the right, and then 45 degrees to the left where backs to the front. (This action is used to test the torso motor T4.)
-  <div style="display: flex; justify-content: center; align-items: center;">
-  <video width="1920" height="1080" controls>
-    <source src="../assets/torso_test_2.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  </div>
+**只有在上述准备工作完成后，才能使用机器人开始测试。**
 
+<span style="color:red">**重要提示：如果出现任何错误，请及时联系我们提供技术支持。**</span>
 
-## Code Execution
-<span style="color:red;">**Important: Please conduct the test strictly in the order.**</span>
-
-**Only after the above preparation work is completed can the robot be used to start the test.**
-
-<span style="color:red;">**Important: If there is any error, please contact us in time for technical support. If there is no abnormality, press `Ctrl + C` to close .**</span>
-
-**Step 1:** Stop all TMUXs running and close all ROS programs.
+1.停止后台所有运行中的 TMUX ，并关闭所有 ROS 程序。
 
 ```Bash
 # The following commands will terminate all TMUX. 
@@ -77,7 +73,7 @@ tmux kill-server
 pkill -9 ros
 ```
 
-**Step 2:** FDCAN Communication
+2.启动 FDCAN 通信
 
 ```Bash
 sudo ip link set dev can0 type can bitrate 1000000 dbitrate 5000000 fd on
@@ -85,67 +81,63 @@ sudo ip link set dev can0 type can bitrate 1000000 dbitrate 5000000 fd on
 sudo ip link set up can0
 ```
 
-**Step 3:** Enter TMUX
+3.进入 TMUX
 
 ```Bash
 tmux
 ```
 
-**Step 4:** Start roscore
+4.启动 roscore
 
 ```Bash
 roscore
 ```
 
-**Step 5:** Press `Ctrl + B` then `C` to create a new terminal, and execute launch file.  
+5.按下 `Ctrl + B` 加 `C` 创建一个新终端，并执行启动文件。
 
 ```Bash
 # Execute the following launch files in different terminals by sequence.
 source ~/work/galaxea/install/setup.bash
-roslaunch HDAS hdas.launch
+roslaunch HDAS hdas.launchch
 ```
 
-**Step 6:** Press `Ctrl + B` then `C` to create a new terminal. Then, start self-check.
+6.按下 `Ctrl + B` 加 `C` 创建一个新终端，进行自检。
 
-<span style="color:red;">**Important: If there is any error, please contact us in time for technical support. If there is no abnormality, press `ctrl+c` to close .**</span>
+**<span style="color:red">重要提示：如果有任何错误，请及时联系我们提供技术支持。如果没有异常，请按下`ctrl+c`关闭。</span>**
 
 ```Bash
 source ~/work/galaxea/install/setup.bash
 rosrun HDAS check_node #press 1  #1 means the self-check when the arms are installed.
 ```
 
-**Step 7:** Press `Ctrl + B` then `C` to create a new terminal. Then, start chassis control.
+7.按下 `Ctrl + B` 加 `C` 创建一个新终端，开启底盘控制。
 
 ```Bash
 source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_chassis_control.launch
 ```
 
-**Step 8:** `Ctrl + B` then `C` to create a new terminal. Then, start arm and torso control.
+8.按下 `Ctrl + B` 加 `C` 创建一个新终端，开启手臂和躯干控制。
 
 ```Bash
 source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_jointTrackerdemo.launch
 ```
 
-**Step 9:** Press `Ctrl + B` then `C` to create a new terminal. Then, start the test script.
+9.按下 `Ctrl + B` 加 `C` 创建一个新终端，开始测试脚本。
 
 ```Bash
 source ~/work/galaxea/install/setup.bash
-python3 r1_demo_easy.py
+python3 r1_test.py
 ```
 
-**Step 10:** Enter the number corresponding to each test action and press Enter. Then, R1 will start to perform the test action.
+10.输入对应每个测试动作的数字并按Enter键。随后，R1将开始执行测试动作。
 
-<span style="color:red;">**Important: Before performing torso_test_1, make sure arm_test_3 is verified first.** This is to avoid interference with R1 itself or ground when squatting with the arms in an uncontrollable state.</span>
+<span style="color:red">**重要提示：在执行 torso_test_1 之前，请确保先验证 arm_test_3 。**这是为了避免在双臂处于不可控状态时下蹲，与 R1 本身或地面发生干扰。</span>
 
-![enter_no](../assets/enter_no.png)
+![R1_Code_Execution](assets/R1_Code_Execution.png)
 
-When you completed all tests, press `Q` to quit testing. R1 will be back to the original pose.
-
-  <div style="display: flex; justify-content: center; align-items: center;">
-  <video width="1920" height="1080" controls>
-    <source src="../assets/R1_quit_test.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  </div>
+**注意：当您完成所有测试后，按 Q 退出测试。R1 将回到原始姿势。**
+<p style="text-align: center;">
+      <video src="../assets/R1_quit_test.mp4" style="width: 100%;"autoplay muted loop>
+   </p>

@@ -1,92 +1,124 @@
-> Congratulations on becoming the proud owner of a Galaxea Robot! We are thrilled to extend a warm welcome to the Galaxea Developer Community. This specially curated guide is designed to introduce beginners to the unique appeal and impressive functionalities of Galaxea Robot. Our goal is to help you quickly get started with us and empower you to explore the full range of possibilities that await you.
-# Getting Started
-In this series of step-by-step Galaxea A1 Getting Started tutorials, we will not only lay a solid foundation for using Galaxea A1 but also guide you through the mechanics and performance of each component. Together, we will explore and perform a series of exciting demonstrations to unlock Galaxea A1's amazing advanced features.
+> 欢迎加入 Galaxea 开发者的大家庭，成为 Galaxea A1 的尊贵用户！这本精心编制的指南将带您领略 Galaxea A1 的独特风采和卓越功能。我们致力于帮您迅速掌握操作技巧，并探索 Galaxea A1 的无限可能。
 
-## Before You Begin
-In this first tutorial, <u>you will learn how to turn on and operate this new product</u> , beginning your journey of interacting with Galaxea A1 Robot Arm.
 
-### Safety
-To ensure safe use, it is important to remember that Galaxea A1 can cause potential injury if operated improperly. Therefore, we strongly recommend that every user carefully read and follow the instructions in the Safety Guide before operating the robot for the first time to ensure a safe and efficient operation process.
 
-### Unboxing
-Upon opening the package, you will find the robot arm as a fully assembled unit. This means that the arm structure, including all its links and joints, comes pre-assembled and ready for installation. Here’s what you can expect inside the box:
+# 快速入门指南
+
+
+
+本节是 Galaxea A1 的快速入门指南，我们将深入介绍每个部件的工作原理和性能特点，为您使用 Galaxea A1 打下坚实基础。我们将一同探索和实践一系列令人兴奋的 demo 演示，解锁 Galaxea A1 的卓越功能。
+
+
+
+## **开始之前**
+
+本教程的第一节，<u>将带您了解如何开机并操控 Galaxea A1</u> 。请开始您与Galaxea A1 机械臂的互动之旅吧！
+
+
+
+### **安全**
+
+注意：如果操作不当，Galaxea A1 可能会造成潜在伤害。为确保您的安全，我们强烈建议您在首次操作机器之前仔细阅读并严格遵循《安全指南》中的说明，以保证操作的安全和高效。
+
+
+
+### **开箱**
+
+打开包装盒后，您会发现这款机械臂是一个完全组装好的单元。以下是包装盒内的物品：
+
 ![A1_unboxing](assets/A1_unboxing.png)
 
-<table style="width: 100%; border-collapse: collapse;text-align: left;">
+<table style="width: 100%; border-collapse: collapse;">
     <thead>
-        <tr style="background-color: black; color: white;">
-        </tr>
-        <tr style="background-color: black; color: white;">
-            <th style="width: 25%;">Item</th>
-            <th style="width: 5%;">Quantity</th>
-            <th style="width: 70%;">Notes</th>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 220px; padding: 8px; border: 1px solid #ddd;">物品</th>
+            <th style="width: 180px; padding: 8px; border: 1px solid #ddd;">数量</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">说明</th>
         </tr>
     </thead>
     <tbody>
-        <tr style="background-color: white;">
-            <td>Pre-assembled Robot Arm</td>
-            <td>1</td>
-            <td>The arm is constructed with all its components integrated, ensuring a straightforward setup process.</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">预装式机械臂</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">机械臂的所有组件都已预组装完成，确保设置过程简单直接。</td>
         </tr>
-        <tr style="background-color: white;">
-            <td>Power Supply Unit </td>
-            <td>1</td>
-            <td>Supplies the electrical power required for the robot arm's operation.</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">电源</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">为机械臂提供所需的电能。</td>
         </tr>
-        <tr style="background-color: white;">
-            <td>Emergency Stop Button</td>
-            <td>1</td>
-            <td>Used for immediate power interruption during emergencies</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">紧急停止按钮</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">用于紧急情况下立即切断电源。</td>
         </tr>
-        <tr style="background-color: white;">
-            <td>Power Cable</td>
-            <td>1</td>
-            <td>Used to connect the power supply unit to the robot arm.</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">电源线</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">用于将电源连接到机械臂。</td>
         </tr>
-        <tr style="background-color: white;">
-            <td>USB Cable</td>
-            <td>1</td>
-            <td>Used to connect the robot arm controller to a computer with a USB 2.0 port. </td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">USB线</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">用于将机械臂控制端连接到带有USB 2.0端口的电脑。</td>
         </tr>
-        <tr style="background-color: white;">
-            <td>Mounting Base Plate</td>
-            <td>1</td>
-            <td>A flat plate for mounting the robot arm to a stable surface.</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">安装底座板</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">平板，用于将机械臂安装在稳定表面上。</td>
         </tr>
-        <tr style="background-color: white;">
-            <td>G-Clip</td>
-            <td>2</td>
-            <td>Grating fasteners, used to secure the base plate to the worktable or surface.</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">G夹</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">2</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">格栅紧固件，用于将底座板固定在工作台或表面上。</td>
         </tr>
-        <tr style="background-color: white;">
-            <td>Mouting Plate Scew M6</td>
-            <td>4</td>
-            <td>Used to attach the base plate to the installation surface using the G-clips.</td>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">安装板螺丝M6</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">4</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">用于使用G夹将底座板固定在安装表面上。</td>
         </tr>
     </tbody>
 </table>
 
-### Installing
-The installation process of Galaxea A1 includes securing the arm to the mounting base to ensure its stability and operating accuracy. The design of the mounting holes allows the arm to be securely mounted on a variety of platforms, providing flexible mounting options.
-
-Please select the appropriate installation platform and fixing method according to the operating environment and usage requirements of the arm to ensure its stability and safety during operation.
-
-### Powering Up
-To power up, with the provided power adapter and cable, plug one end of the power adapter cable into the power port on the base of the robot arm, and connect the other end to the power source, ensuring the voltage is 48V.
-
-### Powering Off
-Once the robot arm and control system have completely stopped, you can just unplug the power cable to turn off Galaxea A1.
-
-In the current version of Galaxea A1, the motor does not have a brake, so cutting off the power may cause the robotic arm to drop suddenly. We will continue to improve the product to address this issue.
-
-### Emergency Stop
-The power supply unit of the robot arm includes an emergency stop switch (E-stop) for immediate power interruption during emergencies. 
-
-Pressing the E-stop button will instantly disconnect power to the robot arm, ensuring operator safety and preventing damage to the equipment.
-
-## Getting Help
-Should you encounter any issues, need immediate assistance, or find yourself seeking direct dialogue with Galaxea AI's engineering team, do not hesitate to contact us at <a href="mailto:products@galaxea.ai">products@galaxea.ai</a>.</p> 
 
 
-## Next Step
-Our quickstart journey has come to an end. To deepen your mastery of A1 Robot Arm, we strongly recommend exploring the following chapters in [Galaxea A1 Hardware Guide](../../Guide/A1/Hardware_Guide.md) and [Galaxea A1 Software Guide](../../Guide/A1/Software_Guide.md). These resources offer a wealth of additional information and practical examples, guiding you through the intricacies of programming with confidence and ease.
+
+### **安装**
+
+您需要将机械臂固定在安装底座板上，这一设计确保了其稳定性和操作精度。安装孔的设计提供了灵活的安装选项，允许在多种平台上安全稳固地安装臂。
+
+请根据您的操作环境和使用需求，选择适当的安装平台和固定方式，以确保机械臂在运行过程中的稳定性和安全性。
+
+
+
+### **开启电源**
+
+请用我们提供的电源适配器和电缆线开启电源：将电源适配器电缆线的一端插入机械臂底座上的电源端口，另一端连接到电源，确保电压为48V。
+
+
+
+### **关闭电源**
+
+当机械臂和控制系统完全停止时，您只需拔下电源线即可关闭Galaxea A1。
+
+在当前版本的Galaxea A1中，电机没有制动器，因此切断电源可能会导致机械臂突然掉落。我们将继续改进产品以解决这个问题。
+
+
+
+### **紧急停止**
+
+紧急停止开关（E-Stop）可在紧急情况下立即切断电源。
+
+按下 E-Stop 按钮将立即断开机械臂的电源，确保操作人员的安全并防止设备损坏。
+
+
+
+## **获取帮助**
+
+如果您遇到任何问题，需要立即帮助，或希望直接与Galaxea AI的工程团队对话，请随时通过products@galaxea.ai与我们联系。
+
+
+
+## **下一步**
+
+Galaxea A1 的快速入门之旅到这里就结束啦！为了更好的理解与掌握 Galaxea A1，我们建议您继续探索 Galaxea A1 硬件指南和 Galaxea A1 软件指南。我们提供了大量信息和实际示例，指导您自信且轻松地进行编程应用。
