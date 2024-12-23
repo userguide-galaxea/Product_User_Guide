@@ -1,4 +1,4 @@
-# Galaxea R1_软件指南
+# Galaxea R1软件指南
 
 
 
