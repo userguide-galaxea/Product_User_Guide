@@ -6,7 +6,9 @@
 
 
 
-本节是 Galaxea A1 的快速入门指南，我们将深入介绍每个部件的工作原理和性能特点，为您使用 Galaxea A1 打下坚实基础。我们将一同探索和实践一系列令人兴奋的 demo 演示，解锁 Galaxea A1 的卓越功能。
+
+
+本节是 Galaxea A1 的快速入门指南，我们将深入介绍每个部件的工作原理和性能特点，为您使用 Galaxea A1 打下坚实基础。我们将一同探索实践一系列令人兴奋的 demo 演示，解锁 Galaxea A1 的卓越功能。
 
 
 
@@ -26,7 +28,7 @@
 
 打开包装盒后，您会发现这款机械臂是一个完全组装好的单元。以下是包装盒内的物品：
 
-![A1_unboxing](assets/A1_unboxing.png)
+![A1_unboxing](assets/A1_unboxing_CN.png)
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>

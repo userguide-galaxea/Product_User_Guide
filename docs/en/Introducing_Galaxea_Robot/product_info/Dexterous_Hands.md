@@ -52,7 +52,7 @@
         </tr>
         <tr style="background-color: #f2f2f2;">
             <td>Max. Palm Finger Force</td>
-            <td>100 N</td>
+            <td>10 N</td>
         </tr>
         <tr style="background-color: white;">
             <td>Force Resolution</td>
