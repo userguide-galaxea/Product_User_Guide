@@ -88,7 +88,7 @@ hide:
         </div>
     </main>
     <section class="contact-section">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:info@galaxea.ai">info@galaxea.ai</a></p>
+        <h2>联系我们</h2>
+        <p>邮箱: <a href="mailto:info@galaxea.ai">info@galaxea.ai</a></p>
     </section>
 </html>
