@@ -290,7 +290,6 @@ The interface is a ROS package designed for manipulator control and status feedb
 #### Gripper Control Examples
 
 1. Gripper Force Control Interface
-
 ```sh
 # Control the gripper to a specified force
 # Positive gripper_force closes the gripper; negative gripper_force opens it
@@ -304,7 +303,6 @@ gripper_force: 10.0"
 ```
 
 2. Gripper Position Control Interface
-
 ```sh
 # Control the gripper to a specified position, 60 for open, 0 for closed
 rostopic pub /gripper_position_control_host signal_arm/gripper_position_control "header:

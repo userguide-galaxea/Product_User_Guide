@@ -40,25 +40,20 @@ orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
 ### **A1驱动套件**
 
 1. 首次使用时，在确认电源和USB连接后，运行以下命令修改串口文件的读写权限：
-
 ```shell
 sudo chmod 777 /dev/ttyACM0
 ```
-
 2. 确认修改后，您可以初始化SDK：
-
 ```shell
 cd A1_SDK/install
 source setup.bash
 roslaunch signal_arm single_arm_node.launch
 ```
-
 接口部分描述了A1机械臂的各种控制和状态反馈接口，帮助用户了解如何通过ROS包连接和控制机械臂。
 
+
 #### **驱动接口**
-
 该接口是一个用于机械臂控制和状态反馈的ROS包，定义了多个话题用于发布和订阅臂的状态、控制命令和相关错误代码。以下是每个话题及其相关消息类型的详细描述：
-
 <table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align: left;">
@@ -302,23 +297,19 @@ roslaunch signal_arm single_arm_node.launch
 
 
 #### **夹爪控制示例**
-
 1. 夹爪力控制接口
-
-```sh
-# 控制夹爪到指定的力
-# 正gripper_force闭合夹爪；负gripper_force打开它
-rostopic pub /gripper_force_control_host signal_arm/gripper_joint_command "header:
-  seq: 0
-  stamp:
-    secs: 0
-    nsecs: 0
-  frame_id: ''
-gripper_force: 10.0"
-```
-
+    ```sh
+    # 控制夹爪到指定的力
+    # 正gripper_force闭合夹爪；负gripper_force打开它
+    rostopic pub /gripper_force_control_host signal_arm/gripper_joint_command "header:
+      seq: 0
+      stamp:
+        secs: 0
+        nsecs: 0
+      frame_id: ''
+    gripper_force: 10.0"
+    ```
 2. 夹爪位置控制接口
-
 ```sh
 #  控制夹爪到指定位置，60为打开，0为闭合
 rostopic pub /gripper_position_control_host signal_arm/gripper_position_control "header:
@@ -329,9 +320,7 @@ rostopic pub /gripper_position_control_host signal_arm/gripper_position_control 
   frame_id: ''
 gripper_stroke: 40.0"
 ```
-
 #### **诊断故障代码**
-
 DTC用于反馈MCU和驱动器的错误信息，可用于查看每个电机的实时状态和驱动器的运行状态。以下是每个故障代码及其对应状态的详细描述：
 
 <table style="border-collapse: collapse;">
@@ -442,7 +431,6 @@ DTC用于反馈MCU和驱动器的错误信息，可用于查看每个电机的�
 #### 末端执行器姿态运动
 
 1. 首先，启动末端执行器姿态运动脚本。这将为Galaxea A1启动一个RViz可视化，默认关节位置设置为零。
-
 ```shell
 cd A1_SDK/install
 source setup.bash
@@ -450,14 +438,12 @@ roslaunch mobiman eeTrackerdemo.launch
 ```
 
 2. 在文件`eeTrackerdemo.launch`中：
-
 ```shell
 <param name="joint_states_topic" value="/joint_states" /> # the topic /joint_states  represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
 <param name="arm_joint_command_topic" value="/arm_joint_command_host" /> # the topic /arm_joint_command_host topic represents the channel for issuing commands to the motors.
 ```
 
 3. 在`/a1_ee_target`话题上发布消息以控制末端执行器运动。此操作是非阻塞的，允许连续发布消息，实现末端执行器的无缝运动。但是，目标端点不要离末端执行器的当前位置太远，以避免过度拉伸机械结构或碰撞风险。
-
 ```shell
 rostopic pub /a1_ee_target geometry_msgs/PoseStamped "{
 header: {
@@ -471,7 +457,6 @@ orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
 }
 }"
 ```
-
 ```python
 #!/usr/bin/env python
 import rospy
@@ -520,7 +505,6 @@ if __name__ == '__main__':
 #### **末端执行器轨迹运动**
 
 1. 首先，启动末端执行器轨迹运动脚本。这将为Galaxea A1启动一个RViz可视化，默认关节位置设置为零。
-
 ```shell
 cd A1_SDK/install
 source setup.bash
@@ -528,14 +512,12 @@ roslaunch mobiman eeTrajTrackerdemo.launch
 ```
 
 2. 在文件`eeTrajTrackerdemo.launch`中：
-
 ```shell
 <param name="joint_states_topic" value="/joint_states" /> # the /joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
 <param name="joint_command" value="/arm_joint_command_host" /> #the /arm_joint_command_host topic represents the channel for issuing commands to the motors.
 ```
 
 3. 在`/arm_target_trajectory`话题上发布消息，为末端执行器运动指定轨迹。此操作是非阻塞的，允许连续发布。确保轨迹不会显著偏离当前末端执行器的位置。建议在发送下一个轨迹之前等待当前轨迹完成，以避免跟踪所需路径时不准确。
-
 ```c++
 #include <ros/ros.h>
 #include <geometry_msgs/PoseArray.h>
@@ -658,7 +640,6 @@ int main(int argc, char** argv) {
 #### **关节角度运动**
 
 1. 首先，启动关节角度运动脚本。这将为Galaxea A1启动一个RViz可视化，默认关节位置设置为零。
-
 ```shell
 cd A1_SDK/install
 source setup.bash
@@ -666,14 +647,12 @@ roslaunch mobiman jointTrackerdemo.launch
 ```
 
 2. 在文件`jointTrackerdemo.launch`中：
-
 ```shell
 <param name="joint_states_sub_topic" value="/joint_states" /> # the /joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
 <param name="joint_command" value="/arm_joint_command_host" /> #the /arm_joint_command_host topic represents the channel for issuing commands to the motors.
 ```
 
 3. 在`/arm_joint_target_position`话题上发布关节运动的消息。此操作是非阻塞的，允许连续发布，使关节运动不间断。
-
 ```python
 import rospy
 from sensor_msgs.msg import JointState

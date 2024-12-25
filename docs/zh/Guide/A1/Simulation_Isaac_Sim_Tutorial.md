@@ -1,4 +1,4 @@
-Galaxea A1 Simulation Isaac Sim Tutorial_CN
+# Isaac Sim 仿真教程
 
 ## **安装 Isaac Sim 4.0.0**
 
@@ -90,12 +90,11 @@ A1 机械臂将开始在关节空间执行一个正弦轨迹运动，效果可�
 
 至此，我们已经完成了Isaac Sim A1 机械臂的仿真设置。现在，您可以利用我们提供的代码，在系统中启动演示，操作步骤如下所示。
 
-<img src="assets/a1_asaacsim_demo.gif" alt="video_git" width="1080" />
+<img src="../assets/a1_asaacsim_demo.gif" alt="video_git" width="1080" />
 
 
 
-# 抓取演示
-
+## **抓取演示**
 点击“播放（Play）”后，请参考 A1 SDK 中的[末端执行器运动示例](https://github.com/userguide-galaxea/A1_SDK/blob/galaxea/main/README_CONTROL.md#end-effector-movement-example)，克隆 A1_SDK 代码仓库，以便在 Isaac Sim 环境中完成整个仿真流程。
 
 注意：
@@ -146,7 +145,7 @@ roslaunch mobiman eeTrackerdemo.launch
 ##Initiate another terminal,e.g. "terminal_3", run the script.
 python mpc_picker.py
 ```
-3. demo视频
+3. Demo视频
 <div style="display: flex; justify-content: center; align-items: center;">
 <video width="1920" height="1080" controls>
   <source src="../assets/mp4_1.mp4" type="video/mp4">

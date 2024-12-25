@@ -118,7 +118,7 @@ Galaxea A1的性能参数凸显了其核心优势，包括轻盈的自重、出�
 
 ## **硬件架构**
 
-![A1_topo](assets/A1_topo.jpg)
+![A1_topo](assets/A1_topo_CN.png)
 
 
 
@@ -128,7 +128,7 @@ Galaxea A1的性能参数凸显了其核心优势，包括轻盈的自重、出�
 
 本节详细说明了六个关节的工作范围、额定扭矩和峰值扭矩，展示了机械臂在各种操作中的灵活性和力量性。
 
-![A1_joints](assets/A1_joints.png)
+![A1_joints](assets/A1_joints_CN.png)
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -173,7 +173,7 @@ Galaxea A1的性能参数凸显了其核心优势，包括轻盈的自重、出�
 </table>
 
 
-![A1_working_space](assets/A1_working_space.png)
+![A1_working_space](assets/A1_working_space_CN.png)
 
 - **view1**：显示关节1的工作半径和旋转角度，旋转半径为715 mm，最大旋转角度为330度。
 - **view2**：显示关节2和关节3的旋转范围，关节2的最大旋转角度为180度，关节3为190度。
@@ -217,11 +217,14 @@ Galaxea A1机械臂由两个主要的连接组成，这些连接由轻巧、坚�
 ### **底座**
 
 Galaxea A1在底座后部有两个端口，用于开发和充电。
+<div style="text-align: center">
+    <img src="../assets/A1_base_CN.png" alt="A1_base_CN" style="width:"30%;">
+</div>
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
-            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">条目</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">规格</th>
             <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">说明</th>
         </tr>
     </thead>
@@ -264,7 +267,7 @@ Galaxea G1 由一个电机、两个夹子和一个特别设计的关节模块组
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
-            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">特征</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">规格</th>
             <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">数值</th>
         </tr>
     </thead>
@@ -292,32 +295,8 @@ Galaxea G1 由一个电机、两个夹子和一个特别设计的关节模块组
     </tbody>
 </table>
 
-
-![A1_G1_size](assets/A1_G1_size.png)
-
-
-
 配备末端执行器Galaxea G1，应具有以下特征：
-
-<table style="width: 100%; border-collapse: collapse;">
-    <thead>
-        <tr style="background-color: black; color: white; text-align: left;">
-            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">条目</th>
-            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">说明</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">尺寸</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">展开：923L x 128W x 254H mm，</br>折叠：550L x 128W x 294H mm</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">自由度</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">7</td>
-        </tr>
-    </tbody>
-</table>                                                    
-
+![A1_G1_size](assets/A1_G1_size.png)
 
 
 
@@ -340,7 +319,7 @@ Galaxea G1 由一个电机、两个夹子和一个特别设计的关节模块组
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
-            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">特征</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">规格</th>
             <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">数值</th>
         </tr>
     </thead>
@@ -375,7 +354,7 @@ Galaxea G1 由一个电机、两个夹子和一个特别设计的关节模块组
 
 #### **连接**
 
-![hand_adapter](assets/hand_adapter.png)
+![hand_adapter](assets/hand_adapter_CN.png)
 
 
 

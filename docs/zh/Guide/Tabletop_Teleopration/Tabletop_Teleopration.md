@@ -1,12 +1,8 @@
-# 桌面遥操
-
-
+# 桌面遥操作
 
 ![Aloha_title](assets/Tabletop_Teleopration_CN.png)
-
-
-
 ## **技术规格**
+
 <table style="border-collapse: collapse; width: 100%;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -43,7 +39,7 @@
             <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 250px;">USB 端口</td>
             <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">USB 2.0</td>
         </tr>
-    </tbod
+    </tbody>
 </table>
 
 ## **技术图纸**
