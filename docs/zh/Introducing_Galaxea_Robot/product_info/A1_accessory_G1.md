@@ -1,14 +1,25 @@
-# Gripper
-![G1_title](../product_images_video/G1_title.png)
 
 
-## Advanced Performance & Versatility
-Our high-precision Galaxea G1 is designed for robust and versatile gripping solutions, making it ideal for various industrial applications. With its advanced mechanics and reliable performance, this gripper ensures secure handling and adaptability in diverse environments.
+# G1 夹爪
 
-- High Gripping Force
-- Linear Movement
 
-![G1_specifications_table](../product_images_video/A1/G1_specifications_table.png) 
+![G1_title](assets/G1_title_CN.png)
 
-## Comparison with Others
-![G1_comparison](../product_images_video/G1_comparison_1.png)
+
+
+
+
+## **高性能 & 多功能**
+
+高精度 Galaxea G1 设计用于强大且多功能的夹持解决方案，非常适合各种工业应用。这款夹爪凭借先进的机械结构和可靠的性能，确保了在多样化环境中的稳固操作和适应性。
+
+- 高夹持力
+- 线性移动
+
+![G1_specifications_table](assets/G1_specifications_table_CN.png)
+
+
+
+## **与同类产品比较**
+
+![G1_comparison](assets/G1_comparison_1_CN.png)
