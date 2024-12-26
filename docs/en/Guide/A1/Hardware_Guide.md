@@ -123,7 +123,7 @@ The joint performance parameters detail the operating range, rated torque, and p
         </tr>
         <tr style="background-color: white;text-align: left;">
             <td>Joint 3</td>
-            <td>[0°, 190°]</td>
+            <td>[-190°, 0°]</td>
 			<td>9 Nm</td>
         </tr>
         <tr style="background-color: white;text-align: left;">

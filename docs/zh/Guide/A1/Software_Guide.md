@@ -494,7 +494,7 @@ if __name__ == '__main__':
 
 <div style="display: flex; justify-content: center; align-items: center;">
 <video width="1920" height="1080" controls>
-  <source src="assets/A1_End-Effector_Motion.mp4" type="video/mp4">
+  <source src="../assets/A1_End-Effector_Motion.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 </div>
@@ -563,7 +563,7 @@ int main(int argc, char** argv) {
 
 <div style="display: flex; justify-content: center; align-items: center;">
 <video width="1920" height="1080" controls>
-  <source src="assets/A1_End-Effector_Trajectory_Motion.mp4" type="video/mp4">
+  <source src="../assets/A1_End-Effector_Trajectory_Motion.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 </div>
@@ -672,15 +672,15 @@ def publish_joint_state():
     joint_state.position = [0, 0, 0, 0, 0, 0]
     steps = 100 # Number of steps
 
-#to reach the target position
-target_position = [0.5, 0, 0, 0, 0, 0]
-step_increment = [(target - current) / steps for target, current in zip(target_position, joint_state.position)]
-for step in range(steps):
-    joint_state.header.stamp = rospy.Time.now() # Update the timestamp
-    joint_state.position = [current + increment for current, increment in zip(joint_state.position, step_increment)]
-    pub.publish(joint_state)
-    rate.sleep()
-rospy.loginfo("Published JointState message to /arm_joint_target_position")
+   #to reach the target position
+   target_position = [0.5, 0, 0, 0, 0, 0]
+   step_increment = [(target - current) / steps for target, current in zip(target_position, joint_state.position)]
+   for step in range(steps):
+       joint_state.header.stamp = rospy.Time.now() # Update the timestamp
+       joint_state.position = [current + increment for current, increment in zip(joint_state.position, step_increment)]
+       pub.publish(joint_state)
+       rate.sleep()
+   rospy.loginfo("Published JointState message to /arm_joint_target_position")
 
 if __name__ == '__main__':
     try:

@@ -555,6 +555,7 @@ int main(int argc, char** argv) {
 </div>
 
 
+
 ##### End-Effector Pose Movement Interface
 
 <table style="border-collapse: collapse;text-align:left">
@@ -652,15 +653,15 @@ def publish_joint_state():
     joint_state.position = [0, 0, 0, 0, 0, 0]
     steps = 100 # Number of steps
 
-#to reach the target position
-target_position = [0.5, 0, 0, 0, 0, 0]
-step_increment = [(target - current) / steps for target, current in zip(target_position, joint_state.position)]
-for step in range(steps):
-    joint_state.header.stamp = rospy.Time.now() # Update the timestamp
-    joint_state.position = [current + increment for current, increment in zip(joint_state.position, step_increment)]
-    pub.publish(joint_state)
-    rate.sleep()
-rospy.loginfo("Published JointState message to /arm_joint_target_position")
+    #to reach the target position
+    target_position = [0.5, 0, 0, 0, 0, 0]
+    step_increment = [(target - current) / steps for target, current in zip(target_position, joint_state.position)]
+    for step in range(steps):
+        joint_state.header.stamp = rospy.Time.now() # Update the timestamp
+        joint_state.position = [current + increment for current, increment in zip(joint_state.position, step_increment)]
+        pub.publish(joint_state)
+        rate.sleep()
+    rospy.loginfo("Published JointState message to /arm_joint_target_position")
 
 if __name__ == '__main__':
     try:

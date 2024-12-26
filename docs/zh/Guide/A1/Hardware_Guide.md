@@ -151,7 +151,7 @@ Galaxea A1的性能参数凸显了其核心优势，包括轻盈的自重、出�
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Joint 3</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">[0°,190°]</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">[-190°,0°]</td>
             <td style="padding: 8px; border: 1px solid #ddd;">9 Nm</td>
         </tr>
         <tr style="background-color: white; text-align: left;">

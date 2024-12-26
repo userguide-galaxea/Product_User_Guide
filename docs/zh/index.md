@@ -24,7 +24,7 @@ hide:
                 <div class="container">
                     <div class="text-button-container">
                         <img src="assets/R1_title.png" alt="R1_title">
-                        <a href="Introducing_Galaxea_Robot/product_info/R1" class="btn btn-primary">Learn More</a>
+                        <a href="Introducing_Galaxea_Robot/product_info/R1" class="btn btn-primary">了解更多</a>
                     </div>
                     <div class="image-container">
                         <img src="assets/R1_product.png" alt="R1_product" class="responsive-image">
@@ -35,7 +35,7 @@ hide:
                 <div class="container">
                     <div class="text-button-container">
                         <img src="assets/A1_title.png" alt="A1_title">
-                        <a href="Introducing_Galaxea_Robot/product_info/A1" class="btn btn-primary">Learn More</a>
+                        <a href="Introducing_Galaxea_Robot/product_info/A1" class="btn btn-primary">了解更多</a>
                     </div>
                     <div class="image-container">
                         <img src="assets/temp.png" alt="A1_product">
@@ -72,17 +72,17 @@ hide:
             <section class="products-section">
                 <h2><img src="assets/R1_series.png" alt="R1" width="50"></h2>
                 <div class="product">
-                        <a href="Guide/R1/GettingStarted_Before">Getting Started</a> <br>
-                        <a href="Guide/R1/Hardware_Guide">Hardware Guide</a> <br>
-                        <a href="Guide/R1/Software_Guide">Software Guide</a> <br>
+                        <a href="Guide/R1/R1_Overview">快速开始</a> <br>
+                        <a href="Guide/R1/Hardware_Guide">硬件手册</a> <br>
+                        <a href="Guide/R1/Software_Guide">软件手册</a> <br>
                 </div>
             </section>
             <section class="products-section">
                 <h2><img src="assets/A1_series.png" alt="A1" width="50"></h2>
                 <div class="product">
-                        <a href="Guide/A1/Getting_Started">Getting Started</a> <br>
-                        <a href="Guide/A1/Hardware_Guide">Hardware Guide</a> <br>
-                        <a href="Guide/A1/Software_Guide">Software Guide</a> <br>
+                        <a href="Guide/A1/Getting_Started">快速开始</a> <br>
+                        <a href="Guide/A1/Hardware_Guide">硬件手册</a> <br>
+                        <a href="Guide/A1/Software_Guide">软件手册</a> <br>
                 </div>
             </section>
         </div>
