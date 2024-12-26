@@ -43,7 +43,7 @@ theme:
         - search.highlight
         - search.inline
         - search.excerpt
-        - navigation.expand
+#         - navigation.expand
         - navigation.top
         - toc.follow
         - navigation.tracking
@@ -128,7 +128,7 @@ plugins:
             Galaxea A1 User Guide: A1用户手册
             Galaxea R1 User Guide: R1用户手册
             Galaxea B1 User Guide: B1用户手册
-            Getting Started: 快速开始
+            Getting Started: 快速入门
             Hardware Guide: 硬件手册
             Software Guide: 软件手册
             Simulation Isaac Sim Usage Tutorial: Simulation Isaac Sim 使用教程
@@ -138,4 +138,4 @@ plugins:
             Dexterous Hand: 灵巧手
             Tabletop Teleopration: 桌面遥操
             Step-By-Step Startup Guide: R1开箱指南
-            Overview: 快速开始
+            Overview: 快速入门
