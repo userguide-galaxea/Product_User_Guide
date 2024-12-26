@@ -140,32 +140,32 @@ Galaxea A1的性能参数凸显了其核心优势，包括轻盈的自重、出�
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Joint 1</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节 1</td>
             <td style="padding: 8px; border: 1px solid #ddd;">[-165°,165°]</td>
             <td style="padding: 8px; border: 1px solid #ddd;">20 Nm</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Joint 2</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节 2</td>
             <td style="padding: 8px; border: 1px solid #ddd;">[0°,180°]</td>
             <td style="padding: 8px; border: 1px solid #ddd;">20 Nm</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Joint 3</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节 3</td>
             <td style="padding: 8px; border: 1px solid #ddd;">[-190°,0°]</td>
             <td style="padding: 8px; border: 1px solid #ddd;">9 Nm</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Joint 4</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节 4</td>
             <td style="padding: 8px; border: 1px solid #ddd;">[-165°,165°]</td>
             <td style="padding: 8px; border: 1px solid #ddd;">3 Nm</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Joint 5</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节 5</td>
             <td style="padding: 8px; border: 1px solid #ddd;">[-95°,95°]</td>
             <td style="padding: 8px; border: 1px solid #ddd;">3 Nm</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Joint 6</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节 6</td>
             <td style="padding: 8px; border: 1px solid #ddd;">[-105°,105°]</td>
             <td style="padding: 8px; border: 1px solid #ddd;">3 Nm</td>
         </tr>
@@ -175,9 +175,9 @@ Galaxea A1的性能参数凸显了其核心优势，包括轻盈的自重、出�
 
 ![A1_working_space](assets/A1_working_space_CN.png)
 
-- **view1**：显示关节1的工作半径和旋转角度，旋转半径为715 mm，最大旋转角度为330度。
-- **view2**：显示关节2和关节3的旋转范围，关节2的最大旋转角度为180度，关节3为190度。
-- **view3**：显示关节4、5、6的旋转角度，以及机械臂的末端位置。关节4和6的最大旋转角度为330度，关节5的最大旋转角度为190度。
+- **视角1**：显示关节1的工作半径和旋转角度，旋转半径为715 mm，最大旋转角度为330度。
+- **视角1**：显示关节2和关节3的旋转范围，关节2的最大旋转角度为180度，关节3为190度。
+- **视角1**：显示关节4、5、6的旋转角度，以及机械臂的末端位置。关节4和6的最大旋转角度为330度，关节5的最大旋转角度为190度。
 
 
 
