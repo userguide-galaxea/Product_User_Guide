@@ -59,20 +59,17 @@ nav:
       - Hardware Guide: Guide/A1/Hardware_Guide.md
       - Software Guide: Guide/A1/Software_Guide.md
       - Simulation Isaac Sim Usage Tutorial: Guide/A1/Simulation_Isaac_Sim_Tutorial.md
-
   - Galaxea R1 User Guide:
-#       - Getting Started:
       - Step-By-Step Startup Guide: Guide/R1/R1_Step_by_Step_Guide.md
       - Demo: Guide/R1/R1_demo_test.md
       - Overview: Guide/R1/R1_Overview.md
-#           - Connecting and Installing: Guide/R1/GettingStarted_Connecting.md
       - Hardware Guide: Guide/R1/Hardware_Guide.md
       - Software Guide: Guide/R1/Software_Guide.md
       - Simulation Isaac Lab Usage Tutorial: Guide/R1/Simulation_Isaac_Lab_Tutorial.md
-  - Galaxea B1 User Guide:
-      - Getting Started: Guide/B1/B1_Getting_Started.md
-      - Hardware Guide: Guide/B1/B1_Hardware_Guide.md
-      - Software Guide: Guide/B1/B1_Software_Guide.md
+#   - Galaxea B1 User Guide:
+#       - Getting Started: Guide/B1/B1_Getting_Started.md
+#       - Hardware Guide: Guide/B1/B1_Hardware_Guide.md
+#       - Software Guide: Guide/B1/B1_Software_Guide.md
 
 extra_css:
   - styles.css
@@ -123,7 +120,7 @@ plugins:
             Getting Started: 快速开始
             Hardware Guide: 硬件手册
             Software Guide: 软件手册
-            Simulation Isaac Sim Usage Tutorial: Simulation Isaac Sim Usage Tutorial教程
+            Simulation Isaac Sim Usage Tutorial: Simulation Isaac Sim Usage教程
             Simulation Isaac Lab Usage Tutorial: Simulation Isaac Lab Usage教程
             Accessories: 附件
             Gripper: 夹爪
