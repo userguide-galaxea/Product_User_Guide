@@ -159,7 +159,7 @@ To turn on Galaxea R1, please press the boat-shaped power button on the bottom o
 
 ![3.2_power_on](assets/3.2_power_on.png)
 
-If the robot has battery inside the chassis, you can turn on the power button as the above said, skip 3.2.1 and 3.2.2 and go to [3.3 Connecting to R1](#33-connecting-to-r1).
+If the robot has battery inside the chassis, you can turn on the power button as the above said, skip 3.2.1 and 3.2.2 and go to [4.Connecting to R1](#4-connecting-to-r1).
 
 #### 3.2.1 Charging
 
@@ -182,17 +182,17 @@ The battery is located at the bottom of the right side of the chassis. To remove
 
 ![3.2.2_battery_changing](assets/3.2.2_battery_changing.png)
 
-### 3.3 Connecting to R1
+## 4. Connecting to R1
 
 There are two ways to connect to R1, locally or remotely.
 
-#### 3.3.1 Locally Connecting
+### 4.1 Locally Connecting
 
-If remote connection and control of R1 is not needed, continue to operate on the original display and keyboard, and keep the HDMI and USB cables connected. Then go to [3.4 Start CAN Driver](#34-start-can-driver), continuing the process.
+If remote connection and control of R1 is not needed, continue to operate on the original display and keyboard, and keep the HDMI and USB cables connected. Then go to [4.3 Start CAN Driver](#43-start-can-driver), continuing the process.
 
-#### 3.3.2 Remotely Connecting
+### 4.2 Remotely Connecting
 
-**3.3.2.1 Obtain IP address**
+**4.2.1 Obtain IP address**
 
 After R1 is powered on, wait for the display to show the desktop. Then, you should:
 
@@ -208,7 +208,7 @@ After R1 is powered on, wait for the display to show the desktop. Then, you shou
 3. Find `mlan0`. The IP address of R1 Orin is: `192.168.xxx.xxx`.
    ![3.3_IP_address](assets/3.3_IP_address.png)
 
-**3.3.2.2 Connecting by SSH**
+**4.2.2 Connecting by SSH**
 
 To remotely connect and futher control the robot, you should:
 
@@ -223,11 +223,11 @@ To remotely connect and futher control the robot, you should:
 
 3. If the connection is successful, disconnect the HDMI and USB cable, and close the peripheral interface covers on the chassis and chest, to avoid affecting the activity range.
 
-4. Then go to [3.4 Start CAN Driver](#34-start-can-driver), continuing the process.
+4. Then go to [4.3 Start CAN Driver](#43-start-can-driver), continuing the process.
 
 **<u>If the connection fails, please contact us in time for technical support.</u>**
 
-### 3.4 Start CAN Driver
+### 4.3 Start CAN Driver
 
 During the whole process of controlling R1, you need to open multiple terminals. We recommend you to use TMUX. Common instructions are as follows:
 
@@ -264,7 +264,7 @@ Now, you can start CAN driver in the following steps.
     ```
 
 
-### 3.5 The First Self-Check
+### 4.4 The First Self-Check
 
 <span style="color:red;">**Important: Before you do any actions on R1, you must complete R1 self-checks to ensure the safety.**</span>
 
@@ -288,13 +288,13 @@ Now, you can start the first self-check in the following steps.
 3. <u>If it appears warning, please contact us in time for technical support.</u>
    ![3.5_selfcheck_error](assets/3.5_selfcheck_error.png)
 
-### 3.6 Stand Up
+### 4.5 Stand Up
 
 <span style="color:red;">**Important: For your safety, please ensure that R1 is out of the box and there is no interference or fixings. Otherwise, the torso may enter the locked-rotor protection state.**</span>
 
 Once the self-check is completed, you can make R1 standing up by commanding torso and chassis and using the joystick controller.
 
-#### 3.6.1 Start Torso Control
+#### 4.5.1 Start Torso Control
 
 Press `Ctrl + B` then `C` to create a new terminal. Then, start arm and torso control.
 
@@ -303,7 +303,7 @@ source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_jointTrackerdemo.launch
 ```
 
-#### 3.6.2 Start Chassis Control
+#### 4.5.2 Start Chassis Control
 
 Press `Ctrl + B` then `C` to create a new terminal. Then, start chassis control.
 
@@ -312,7 +312,7 @@ source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_chassis_control.launch
 ```
 
-#### 3.6.3 Joystick Controller Operation
+#### 4.5.3 Joystick Controller Operation
 
 <span style="color:red;">Note: Ensure that all switches (SWA/SWB/SWC/SWD) are in the top position before you do any actions. </span> This will place the machine in a stop state, preventing the robot from operating. Please visit [Joystick Controller Guide](R1_Overview.md/#joystick-controller-teleoperation) in Galaxea R1 User Guide for more detailed information and operation, if you need.
 
@@ -323,7 +323,8 @@ roslaunch mobiman r1_chassis_control.launch
 <div style="text-align: center;">
   <img src="../assets/3.6.3_controller_standup.png" width="500">
 </div>
-### 3.7 Install Arms
+
+## 5. Install Arms
 
 <span style="color:red;">**Important: For your safety, please make R1 stand up and powered off before installing arms.**</span>
 
@@ -346,7 +347,7 @@ roslaunch mobiman r1_chassis_control.launch
 
 4.After confirming that the communication connection with the robot arms is successful, reattach the covers by reversing the steps in [2.6 Detach Rear Shell](#26-detach-rear-shell) and [2.7 Detach Front Shell](#27-detach-front-shell) above.
 
-### 3.8 The Second Self-Check
+### 5.1 The Second Self-Check
 
 Before you start the self-check, please make sure:
 
@@ -356,7 +357,7 @@ Before you start the self-check, please make sure:
 
 Then,  <span style="color:red;">**power it on**</span> and:
 
-1. Follow and complete the commands in [3.4 Start CAN Driver](#34-start-can-driver).
+1. Follow and complete the commands in [4.3 Start CAN Driver](#43-start-can-driver).
 
 2. Press `Ctrl + B` then `C` to create a new terminal. Now, start the second self-check.
 
@@ -365,12 +366,15 @@ Then,  <span style="color:red;">**power it on**</span> and:
     rosrun HDAS check_node #after executed the command, please press 1. (1 means the self-check when the arms are installed.)
     ```
 
-3. Follow and complete the commands in [3.6.1 Start Torso Control](#361-start-torso-control) and [3.6.2 Start Chassis Control](#362-start-chassis-control).
+3. Follow and complete the commands in [4.5.1 Start Torso Control](#451-start-torso-control) and [4.5.2 Start Chassis Control](#452-start-chassis-control).
 
-### 3.9 Demo Testing
+## 6. Demo Testing
 
 <span style="color:red;">**Important: Before you do any actions on R1, you must complete R1 self-checks to ensure the safety. **</span>
 
 After completing all the operations above, <span style="color:red;">move R1 to an open area to ensure there are no obstacles around. </span> Then remotely command R1 to perform demo testing.
 
 You can find the document and python scripts in [R1_Demo](R1_demo_test.md).
+
+## 7. R1 Sensor Calibration Data Collection Method\
+Click [here](R1_Sensor_Calibration_Data_Collection_Method.md) to get the detailed information of the R1 Sensor Calibration Data Collection Method.
