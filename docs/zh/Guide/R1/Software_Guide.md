@@ -623,7 +623,7 @@ roslaunch HDAS r1.launch
     <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]</td>
   </tr>
   <tr style="background-color: white;">
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="3">hdas/feedback_status_arm_right</td>
+    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="3">/hdas/feedback_status_chassis</td>
     <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
     <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">标准消息头</td>
   </tr>
