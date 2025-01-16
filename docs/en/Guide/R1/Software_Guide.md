@@ -6,9 +6,9 @@
 2. OS Dependency: [Ubuntu](https://ubuntu.com/download) 20.04 LTS
 3. Middleware Dependency: ROS Noetic
 
-## Installation
+## Software Version Changelog
 
-The [SDK](https://github.com/userguide-galaxea/R1_SDK) does not require recompilation. Please refer to the contents below.
+Visit the R1 Software Version Changelog and find the latest update.
 
 ## First Move
 

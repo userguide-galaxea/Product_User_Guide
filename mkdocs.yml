@@ -66,6 +66,8 @@ nav:
       - Overview: Guide/R1/R1_Overview.md
       - Hardware Guide: Guide/R1/Hardware_Guide.md
       - Software Guide: Guide/R1/Software_Guide.md
+      - R1 Software Changelog:
+            - v1.0.4: Guide/R1/R1_Software_Changelog/v1.0.4.md
       - Simulation Isaac Lab Usage Tutorial: Guide/R1/Simulation_Isaac_Lab_Tutorial.md
 #   - Galaxea B1 User Guide:
 #       - Getting Started: Guide/B1/B1_Getting_Started.md
@@ -130,3 +132,4 @@ plugins:
             Step-By-Step Startup Guide: R1开箱指南
             Overview: 快速入门
             R1 Sensor Calibration Data Collection Method: R1传感器标定数据采集方法
+            R1 Software Changelog: R1 软件版本更新日志

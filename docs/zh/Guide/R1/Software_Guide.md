@@ -6,9 +6,9 @@
 2. 操作系统依赖：Ubuntu 20.04 LTS
 3. 中间件依赖：ROS Noetic
 
-## 安装
+## 软件版本日志
 
-[SDK](https://github.com/userguide-galaxea/R1_SDK)不需要重新编译。请参考以下内容
+查看 R1 软件版本更新日志，获取最新的更新信息。
 
 ## 首次操作指引
 
