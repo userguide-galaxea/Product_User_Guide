@@ -66,9 +66,9 @@ nav:
       - Overview: Guide/R1/R1_Overview.md
       - Hardware Guide: Guide/R1/Hardware_Guide.md
       - Software Guide: Guide/R1/Software_Guide.md
-      - R1 Software Changelog:
-            - v1.0.4: Guide/R1/R1_Software_Changelog/v1.0.4.md
       - Simulation Isaac Lab Usage Tutorial: Guide/R1/Simulation_Isaac_Lab_Tutorial.md
+  - Galaxea R1 Software Changelog:
+        - V1.0.4: Guide/R1/R1_Software_Changelog/v1.0.4.md
 #   - Galaxea B1 User Guide:
 #       - Getting Started: Guide/B1/B1_Getting_Started.md
 #       - Hardware Guide: Guide/B1/B1_Hardware_Guide.md
@@ -117,19 +117,19 @@ plugins:
           nav_translations:
             GUIDE: 导航
             Galaxea Robot: 产品信息
-            Galaxea A1 User Guide: A1用户手册
-            Galaxea R1 User Guide: R1用户手册
-            Galaxea B1 User Guide: B1用户手册
+            Galaxea A1 User Guide: Galaxea A1 用户手册
+            Galaxea R1 User Guide: Galaxea R1 用户手册
+            Galaxea B1 User Guide: Galaxea B1 用户手册
             Getting Started: 快速入门
             Hardware Guide: 硬件手册
             Software Guide: 软件手册
-            Simulation Isaac Sim Usage Tutorial: Simulation Isaac Sim 使用教程
-            Simulation Isaac Lab Usage Tutorial: Simulation Isaac Lab 使用教程
-            Accessories: 附件
+            Simulation Isaac Sim Usage Tutorial: 仿真 Isaac Sim 使用教程
+            Simulation Isaac Lab Usage Tutorial: 仿真 Isaac Lab 使用教程
+            Accessories: 配件
             Gripper: 夹爪
             Dexterous Hand: 灵巧手
             Tabletop Teleopration: 桌面遥操
-            Step-By-Step Startup Guide: R1开箱指南
+            Step-By-Step Startup Guide: 开箱指南
             Overview: 快速入门
-            R1 Sensor Calibration Data Collection Method: R1传感器标定数据采集方法
-            R1 Software Changelog: R1 软件版本更新日志
+            R1 Sensor Calibration Data Collection Method: 传感器标定数据采集方法
+            Galaxea R1 Software Changelog: Galaxea R1 软件版本更新日志
