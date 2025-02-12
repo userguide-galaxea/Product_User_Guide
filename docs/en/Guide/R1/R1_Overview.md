@@ -6,7 +6,7 @@ In this tutorial, <u>you will learn how to power on and operate this new product
 
 ### Safety
 
-Galaxea R1 has the potential to cause harm if not properly used. We recommend that all users review the Safety Guide before operating the robot.
+Galaxea R1 has the potential to cause harm if not properly used. We recommend that all users review the Safety Guide before operating R1.
 
 ### Power On/Off
 

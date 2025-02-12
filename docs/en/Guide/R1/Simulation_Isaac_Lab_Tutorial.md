@@ -1,4 +1,4 @@
-# Galaxea R1 Simulation Isaac Lab Tutorial
+# Galaxea R1 Simulation Tutorial
 
 ## Get Started
 

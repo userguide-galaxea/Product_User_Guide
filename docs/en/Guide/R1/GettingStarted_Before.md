@@ -2,7 +2,7 @@
 
 # Before You Begin
 
-In this first tutorial, you will learn how to power on and operate this new product, beginning your journey of interacting with Galaxea R1.
+In this first tutorial, you will learn how to power on and operate R1, beginning your journey of interacting with Galaxea R1.
 
 ## Safety 
 

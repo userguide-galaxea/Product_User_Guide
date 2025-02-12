@@ -6,7 +6,7 @@ We developed an efficient driver for converting serial signals through the slave
 2. ROS Noetic
 
 ## Installation
-This SDK does not require recompilation. Please refer to the Developing and Operating Tutorials for direct usage instructions.
+This [SDK](https://github.com/userguide-galaxea/A1_SDK) does not require recompilation. Please refer to the Developing and Operating Tutorials for direct usage instructions.
 
 ## First Move
 ```shell

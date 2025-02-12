@@ -1,4 +1,4 @@
-# R1 Sensor Calibration Data Collection Method
+# Sensor Calibration Data Collection Method
 
 # Data Collection Process
 

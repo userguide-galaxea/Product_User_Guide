@@ -60,13 +60,14 @@ nav:
       - Software Guide: Guide/A1/Software_Guide.md
       - Simulation Isaac Sim Usage Tutorial: Guide/A1/Simulation_Isaac_Sim_Tutorial.md
   - Galaxea R1 User Guide:
-      - Step-By-Step Startup Guide: Guide/R1/R1_Step_by_Step_Guide.md
-      - Demo: Guide/R1/R1_demo_test.md
-      - R1 Sensor Calibration Data Collection Method: Guide/R1/R1_Sensor_Calibration_Data_Collection_Method.md
       - Overview: Guide/R1/R1_Overview.md
       - Hardware Guide: Guide/R1/Hardware_Guide.md
       - Software Guide: Guide/R1/Software_Guide.md
-      - Simulation Isaac Lab Usage Tutorial: Guide/R1/Simulation_Isaac_Lab_Tutorial.md
+      - Step-By-Step Startup Guide: Guide/R1/R1_Step_by_Step_Guide.md
+      - Demo: Guide/R1/R1_demo_test.md
+      - Simulation Usage Tutorial: Guide/R1/Simulation_Isaac_Lab_Tutorial.md
+      - Sensor Calibration Data Collection Method: Guide/R1/R1_Sensor_Calibration_Data_Collection_Method.md
+      - R1-Teleoperation Usage Tutorial: Guide/R1/R1_Teleoperation_ Usage_Tutorial.md
   - Galaxea R1 Software Changelog:
         - V1.0.4: Guide/R1/R1_Software_Changelog/v1.0.4.md
 #   - Galaxea B1 User Guide:
@@ -131,5 +132,7 @@ plugins:
             Tabletop Teleopration: 桌面遥操
             Step-By-Step Startup Guide: 开箱指南
             Overview: 快速入门
-            R1 Sensor Calibration Data Collection Method: 传感器标定数据采集方法
             Galaxea R1 Software Changelog: Galaxea R1 软件版本更新日志
+            Simulation Usage Tutorial: 仿真使用教程
+            Sensor Calibration Data Collection Method: 传感器标定数据采集方法
+            R1-Teleoperation Usage Tutorial: R1-T 同构遥操作教程
