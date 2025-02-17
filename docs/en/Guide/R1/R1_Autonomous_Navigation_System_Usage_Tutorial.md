@@ -3,16 +3,6 @@
 ## 1. Product Introduction
 
 The system includes mapping, localization, navigation, and control modules. The Galaxea R1 robot can build a point cloud map of the environment and use it for global localization, autonomous movement to target points, and obstacle avoidance.
-  <div style="display: flex; justify-content: center; align-items: center;">
-  <video width="1920" height="1080" controls>
-    <source src="../assets/R1_Navigation _Demo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  </div>
-
-## 2. Hardware Introduction
-
-### 2.1 Performance Parameters
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -48,7 +38,7 @@ The system includes mapping, localization, navigation, and control modules. The 
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Control Method</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Autonomous Navigation (Path Tracking)<br>Remote control </td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Autonomous Navigation (Path Tracking) </td>
         </tr>
         <tr style="background-color: white; text-align: left;">
                 <td style="padding: 8px; border: 1px solid #ddd;">Maximum Speed</td>
@@ -86,10 +76,16 @@ The system includes mapping, localization, navigation, and control modules. The 
 </table>
 
 
+  <div style="display: flex; justify-content: center; align-items: center;">
+  <video width="1920" height="1080" controls>
+    <source src="../assets/R1_Navigation _Demo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  </div>
 
-### 2.2 Sensor Configuration
+## 2. Hardware Introduction
 
-The Galaxea R1 is equipped with various sensors, including 9 high-definition cameras and 2 LiDAR units, enabling it to perceive its surroundings in all directions and perform precise operations.
+The Galaxea R1 is equipped with various sensors, including 9 high-definition cameras and 2 LiDAR units, enabling it to perceive its surroundings in all directions.
 
 ![R1_FOV](assets/R1_FOV.png)
 
@@ -116,7 +112,7 @@ The Galaxea R1 is equipped with various sensors, including 9 high-definition cam
 
 
 
-#### 2.2.1 Camera
+### 2.1 Camera
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -180,9 +176,7 @@ The Galaxea R1 is equipped with various sensors, including 9 high-definition cam
 </table>
 
 
-
-
-#### 2.2.2 LiDar
+### 2.2 LiDar
 
 The chassis is equipped with up to two 360-degree LiDARs*, which are of high precision and resistant to interference.
 
@@ -258,9 +252,10 @@ sudo apt install libgoogle-glog-dev
 
 ## 4. Localization and Navigation Operation Process
 
-Map building is the foundational step for the robot's autonomous navigation. The robot records map data (bag files) via remote control, processes and builds the map on a local computer, and finally uploads the map to the specified directory on the robot to complete the deployment. By following the tutorial below, you can set the target pose, modify the target file, and run the process to achieve point-to-point navigation.
+Map building is the foundational step for autonomous navigation in robots. It involves recording sensor data (bag files) by remotely controlling the robot and then transmitting the data back. After the map is exported, it is deployed onto the robot's body. The target pose is then set to achieve point-to-point navigation.
 
 ###  4.1 Building the Map
+#### 4.1.1 Start R1
 
 1. **Login to R1**
 
@@ -280,7 +275,7 @@ Map building is the foundational step for the robot's autonomous navigation. The
     ./ota_script.sh boot
     ```
 
-#### 4.1.1 Record Data Packets
+#### 4.1.2 Record Data Packets
 
 Run the following command to start recording the bag file.
 
@@ -295,11 +290,11 @@ When the map data recording is completed, press `Ctrl + C` to end the recording.
 
 **Notes:**
 
-- Please move the robot to the area to be mapped.
+- Please move the robot to the area to be mapped，befor you start recording.
 - At the start of the recording, the robot must remain stationary for at least 5 seconds to ensure data quality.
-- During the data recording, ensure that there are no dynamic objects (such as moving people or objects) in the environment to avoid interference with map construction.
+- During the data recording, ensure that there are no dynamic objects (such as moving people or objects) in the environment to avoid interference with map construction. Do not follow the robot to move.
 
-#### 4.1.2 Data Transmission
+#### 4.1.3 Data Transmission
 
 1. **Confirm the Bag File Path**
    </br>On the R1 robot, confirm the path of the recorded bag file. By default, the bag file will be saved in the user's home directory (~).
@@ -325,9 +320,9 @@ When the map data recording is completed, press `Ctrl + C` to end the recording.
    ```
    If the file transfer is successful, you will see the same file size as on the robot.
 4. **Data Transmission**
-   </br>Please transmit the data package to [support@galaxea.ai](mailto:support@galaxea.ai) or send it to the customer service via WeChat Work.
-#### 4.1.3  Import Map-Related Files
-
+   </br>**Please transmit the data package to [support@galaxea.ai](mailto:support@galaxea.ai) or send it to the customer service via WeChat Work.**
+#### 4.1.4  Import Map-Related Files
+After the data is sent back, contact a technician to get a map and import it into R1.
 ```Bash
 ssh nvidia@{rorbot_ip} "mkdir -p ~/galaxea/calib ~/galaxea/maps"
 scp -r ~/mapping_data/map/* nvidia@{robot_ip}:~/galaxea/maps/
@@ -485,7 +480,7 @@ When activating the positioning function, make sure the robot is in a known map.
     # pose_array.append(pose)
     ```
 
-    After the target point is set, execute this script, and the robot can achieve the autonomous navigation to the target point in a loop.
+    After the target point is set, execute this script, switch the remote control to Auto mode, and the robot can achieve the autonomous navigation to the target point in a loop.
     ```Go
     source ~/work/galaxea/install/setup.bash
     python3 point_nav.py

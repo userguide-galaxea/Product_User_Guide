@@ -1,18 +1,8 @@
-# R1自主导航系统使用手册
+# R1自主导航系统教程
 
 ## 1. 产品介绍
 
 该系统包含了建图、定位、导航和控制模块。 机器人可在环境下构建点云地图，并依此实现全局定位和目标点的自主移动和避障。
-  <div style="display: flex; justify-content: center; align-items: center;">
-  <video width="1920" height="1080" controls>
-    <source src="../assets/R1自主导航系统示例.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  </div>
-
-## 2. 硬件介绍
-### 2.1 性能参数
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -49,7 +39,7 @@
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">控制方式</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">自主导航（路径跟踪）、遥控</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">自主导航（路径跟踪）</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
                 <td style="padding: 8px; border: 1px solid #ddd;">最大行驶速度</td>
@@ -87,11 +77,18 @@
     </tbody>
 </table>
 
+  <div style="display: flex; justify-content: center; align-items: center;">
+  <video width="1920" height="1080" controls>
+    <source src="../assets/R1自主导航系统示例.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  </div>
 
+  
 
-### 2.2 传感器配置
+## 2. 硬件介绍
 
-Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激光雷达，使其不仅能够全方位感知周围环境，还能精确操作。
+Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激光雷达，使其能够全方位感知周围环境。
 
 ![R1_FOV](assets/R1_FOV.png)
 
@@ -118,7 +115,7 @@ Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激�
 
 
 
-#### 2.2.1 相机
+### 2.1 相机
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -182,7 +179,7 @@ Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激�
 </table>
 
 
-#### 2.2.2 激光雷达
+### 2.2 激光雷达
 
 底盘配备360°激光雷达*，精度高且抗干扰能力强。
 
@@ -248,7 +245,7 @@ Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激�
 2. 操作系统依赖：Ubuntu 20.04 LTS
 3. 中间件依赖：ROS Noetic
 
-<span style="color:red;">**注意：R1机器人软件版本必须安装V1.1.0及以上的智能版本包，请联系product@galaxea.ai 或致电4008780980获取。**</span>
+<span style="color:red;">**注意：R1必须安装V1.1.0及以上的智能版本包，请联系product@galaxea.ai 或致电4008780980获取。**</span>
 
 如果需要首次部署导航系统，请按照以下步骤安装相关依赖：
 
@@ -263,9 +260,10 @@ sudo apt install libgoogle-glog-dev
 
 ## 4. 定位导航操作流程
 
-地图构建是机器人自主导航的基础步骤。通过遥控机器人录制地图数据（bag文件），并在本地电脑上进行处理和构建地图，最后将地图上传至机器人端指定目录，完成地图的部署。根据以下教程内容所示，设置目标位姿，修改目标文件，运行后实现定点导航。
+地图构建是机器人自主导航的基础步骤，通过遥控机器人录制传感器数据（bag文件）并将数据回传。地图导出后，将地图部署在机器人本体，再设置目标位姿，实现定点导航。
 
 ###  4.1 构建地图
+#### 4.1.1 启动R1
 
 1. **登录R1端**
 
@@ -285,7 +283,7 @@ sudo apt install libgoogle-glog-dev
     ./ota_script.sh boot
     ```
 
-#### 4.1.1 录制数据包
+#### 4.1.2 录制数据包
 
 运行以下指令，开始录制bag文件。
 
@@ -294,19 +292,19 @@ cd ~
 rosbag record /hdas/imu_chassis /hdas/lidar_chassis_left /hdas/feedback_chassis
 ```
 
-通过<span style="color:red;">**遥控器**</span>控制机器人在所需建图空间内移动，确保覆盖所有需要导航的区域。
+通过**遥控器**控制机器人在所需建图空间内移动，确保覆盖所有需要导航的区域。
 
-遥控器操控机器人底盘方式请[点击此处](R1_Overview.md)查阅。
+遥控器操控机器人底盘方式请点击[此处](R1_Overview.md)查阅。
 
 当完成地图数据录制后，按下`ctrl+c`结束录制。
 
 **注意**：
 
-- 请将机器人移动到准备建图的区域。
+- 请将机器人移动到准备建图的区域，再启动录制。
 - 在录制开始时，机器人需保持静止状态，并持续5秒以上，以保证数据质量。
-- 在录制数据时，应确保环境中没有动态目标（如移动的人员或物体），以避免干扰地图构建。
+- 在录制数据时，应确保环境中没有动态目标（如移动的人员或物体），以避免干扰地图构建。请勿跟随机器人移动。
 
-#### 4.1.2 将数据回传
+#### 4.1.3 将数据回传
 
 1. **确认bag文件路径**
 	</br>在R1机器人端，确认录制的bag文件路径。默认情况下，bag文件会保存在用户的主目录下（`~`）
@@ -334,10 +332,10 @@ rosbag record /hdas/imu_chassis /hdas/lidar_chassis_left /hdas/feedback_chassis
     如果文件传输成功，您将看到与机器人端相同的文件大小。
     
 4. **数据回传**
-	</br>请将数据包回传至support@galaxea.ai或发送至企业微信客服。
+	</br>**请将数据包回传至support@galaxea.ai或发送至企业微信客服。**
 
-#### 4.1.3  导入地图相关文件
-
+#### 4.1.4  导入地图相关文件
+数据回传后，请联系技术人员获取地图，并将其导入R1。
 ```Bash
 ssh nvidia@{rorbot_ip} "mkdir -p ~/galaxea/calib ~/galaxea/maps"
 scp -r ~/mapping_data/map/* nvidia@{robot_ip}:~/galaxea/maps/
@@ -494,7 +492,7 @@ scp -r ~/mapping_data/robot_calibration.json nvidia@{robot_ip}:~/galaxea/calib/
     # pose_array.append(pose)
     ```
 
-    在目标点设置完成后，执行该脚本，可实现机器人设置目标点的循环自主导航
+    在目标点设置完成后，执行该脚本。将遥控器切换至Auto模式，可实现机器人设置目标点的循环自主导航。
     ```Go
     source ~/work/galaxea/install/setup.bash
     python3 point_nav.py
