@@ -52,7 +52,8 @@ VR遥操作系统提供沉浸式的远程控制体验，使操作员能够通过
 
 请在下载并解压R1遥操作整包版本V1.1.0。
 
-- 百度云： [https://pan.baidu.com/s/136OzRy-4_8b5USQg3btJCQ?pwd=r1vr](https://pan.baidu.com/s/136OzRy-4_8b5USQg3btJCQ?pwd=r1vr)
+- 百度云：[https://pan.baidu.com/s/136OzRy-4_8b5USQg3btJCQ?pwd=r1vr](https://pan.baidu.com/s/136OzRy-4_8b5USQg3btJCQ?pwd=r1vr)
+- Google Drive：[https://drive.google.com/drive/folders/1NADvlQDxJ8LASTA42AxzGY34oqcSZNmq?usp=sharing](https://drive.google.com/drive/folders/1NADvlQDxJ8LASTA42AxzGY34oqcSZNmq?usp=sharing)
 
 VR设备配置SDK：
 
@@ -161,7 +162,7 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
 
 ### 5.2 VR设备程序启动
 
-确认VR设备已成功连接到与R1本体相同的 WiFi 网络。
+**注意**：请佩戴好VR设备并手持两个遥控器，开始以下操作。
 
 #### 5.2.1. 连接WiFi
 

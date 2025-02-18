@@ -67,8 +67,8 @@ nav:
       - Demo: Guide/R1/R1_demo_test.md
       - Simulation Usage Tutorial: Guide/R1/Simulation_Isaac_Lab_Tutorial.md
       - Sensor Calibration Data Collection Method: Guide/R1/R1_Sensor_Calibration_Data_Collection_Method.md
-      - R1-Teleoperation Usage Tutorial: Guide/R1/R1_Teleoperation_ Usage_Tutorial.md
-      - R1-VR Teleoperation Usage Tutorial: Guide/R1/R1_VR_Teleoperation_Usage_Tutorial.md
+      - R1 Teleop Usage Tutorial: Guide/R1/R1_Teleop_ Usage_Tutorial.md
+      - R1 VR Teleop Usage Tutorial: Guide/R1/R1_VR_Teleop_Usage_Tutorial.md
       - R1 Autonomous Navigation System Usage Tutorial: Guide/R1/R1_Autonomous_Navigation_System_Usage_Tutorial.md
   - Galaxea R1 Software Changelog:
         - V1.0.4: Guide/R1/R1_Software_Changelog/v1.0.4.md
@@ -137,6 +137,6 @@ plugins:
             Galaxea R1 Software Changelog: Galaxea R1 软件版本更新日志
             Simulation Usage Tutorial: 仿真使用教程
             Sensor Calibration Data Collection Method: 传感器标定数据采集方法
-            R1-Teleoperation Usage Tutorial: R1-T 同构遥操作教程
-            R1-VR Teleoperation Usage Tutorial: R1 VR 遥操作教程
+            R1 Teleop Usage Tutorial: R1 Teleop 同构遥操作教程
+            R1 VR Teleop Usage Tutorial: R1 VR Teleop 遥操作教程
             R1 Autonomous Navigation System Usage Tutorial: R1 自主导航系统使用教程
