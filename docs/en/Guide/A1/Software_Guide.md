@@ -1,5 +1,5 @@
 # Galaxea A1 Software Guide
-We developed an efficient driver for converting serial signals through the slave computer, which has been released as a ROS (Robot Operating System) topic. This driver not only enables control of the slave computer but also retrieves feedback information and error codes from the device, facilitating two-way communication and real-time control. The tutorials will guide you on how to use this program to develop and operate Galaxea A1.
+This guide will show you on how to develop and operate Galaxea A1.
 
 ## Software Dependency
 1. Ubuntu 20.04 LTS
@@ -9,6 +9,7 @@ We developed an efficient driver for converting serial signals through the slave
 This [SDK](https://github.com/userguide-galaxea/A1_SDK) does not require recompilation. Please refer to the Developing and Operating Tutorials for direct usage instructions.
 
 ## First Move
+Click [here](https://github.com/userguide-galaxea/A1_SDK/tree/galaxea/main/resource) to get the Demo scripts for A1.
 ```shell
 cd A1_SDK/install
 source setup.bash

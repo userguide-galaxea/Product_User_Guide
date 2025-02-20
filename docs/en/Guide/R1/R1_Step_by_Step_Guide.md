@@ -6,7 +6,7 @@ In this step-by-step guide, we will provide detailed instructions on how to unpa
 <iframe width="720" height="540" src="https://www.youtube.com/embed/l3ULLs7gBdI?si=yIIOsdgYPhBADIAt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-## 1. Preparation
+## 1. Item List Check
 
 When you receive our products, please check whether the items in the box are complete according to the following list.
 
@@ -50,7 +50,7 @@ When you receive our products, please check whether the items in the box are com
     </tbody>
 </table>
 
-You should also prepare:
+Also, prepare the following items:
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -71,7 +71,11 @@ You should also prepare:
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">WiFi Network</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
-        </tr>       
+        </tr>
+                <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">HDMI Cable</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+        </tr>        
     </tbody>
 </table>
 

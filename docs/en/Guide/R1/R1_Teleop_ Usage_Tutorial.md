@@ -78,14 +78,16 @@ Please check whether all items in the shipping container are present.
 
 ### 3.2 Software Preparation
 
-#### 3.2.1 **Download and Unzip the Folder.**
+#### 3.2.1 Download and Unzip the Folder.
 
 Please download and extract the SDK file package of R1 from the R1 main body (this is the package of R1 main body in the customer's release version).
 
 - Baidu Cloud：[https://pan.baidu.com/s/1TeDBtkqUOXUPwE9fdivQ7w?pwd=gr1t](https://pan.baidu.com/s/1TeDBtkqUOXUPwE9fdivQ7w?pwd=gr1t)
 - Google Drive：[https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing](https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing)
 
-#### 3.2.2 **Install Software Dependencies**
+<span style="color:red;">Ensure that the R1 robot's software version has been updated to V1.1.0 or higher. Click [here](R1_Software_Changelog/v1.1.0.md) to get the latest version.</span>
+
+#### 3.2.2 Install Software Dependencies
 
 Please install the required software dependencies on the R1-T host computer.
 
@@ -95,7 +97,7 @@ sudo apt install ros-noetic-joy
 sudo apt install tmux tmuxp
 ```
 
-#### 3.2.3 **Modify the** **`/.bashrc`** **File**
+#### 3.2.3 Modify the `/.bashrc`File
 
 Modify the ROS IP settings on both the R1 and R1-T host computers. Follow these steps:
 
@@ -166,7 +168,7 @@ Connection steps are as follows:
     ```
 
     When both`js0` (left arm) and `js1` (right arm) are returned simultaneously, the connection is successful.
-![img](assets/R1-T_bluetooth_arm.png)
+    ![img](assets/R1-T_bluetooth_arm.png)
 
 4. Bluetooth Remote Controller Button Function Description
    ![img](assets/R1-T_controller_tag.png)
@@ -212,23 +214,24 @@ Connection steps are as follows:
         </tr>
                 <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Button C</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">N/A</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Start recording data.*</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Torso moves forward (Vx is positive).</td>
         </tr>
                 <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Button D</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">N/A</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Stop recording data.*</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Torso moves backward (Vx is negative).</td>
         </tr>
     </tbody>
 </table>
 
+<span style="color:red;">*This procedure is applicable only to R1 with software version updated to V1.1.0.</span>
 
 ## 5. Launch SDK
 
 ![img](assets/R1-T_pipeline.png)
 
-<span style="color:red;">**Note: The R1 software version must be V1.0.4 or higher. Click [here](R1_Software_Changelog/v1.0.4.md) to get the latest version.**</span>
+<span style="color:red;">**Note: The R1 software version must be V1.0.4 or higher. Click [here](R1_Software_Changelog/v1.1.0.md) to get the latest version.**</span>
 
 During the whole process of controlling R1, you need to open multiple terminals. We recommend you to use TMUX. Common instructions are as follows:
 
@@ -246,7 +249,7 @@ cd ~/work/galaxea/install/share/startup_config/script
 ./ota_script.sh boot_teleop     
 ```
 
-### 5.2 **Start** R1 Teleop
+### 5.2 Start R1 Teleop
 
 1. Start TMUX.
 
@@ -261,7 +264,7 @@ cd ~/work/galaxea/install/share/startup_config/script
       sudo ip link set up can0
       ```
 
-3. Press `Ctrl + C` to exit TMUX.
+3. Press `Ctrl + B` then `D` to exit TMUX.
 
 4. Start R1 Teleop
 
@@ -269,8 +272,7 @@ cd ~/work/galaxea/install/share/startup_config/script
       cd {your_path}/install/share/startup_config/script
       ./ota_script.sh boot
       ```
-
-Note：`your_path` refers to the path where the SDK of R1 Teleop is located.
+    Note：`your_path` refers to the path where the SDK of R1 Teleop is located.
 
 After completing the above steps, wait for 3 to 5 seconds and you can control R1 Teleop.
 
@@ -283,9 +285,9 @@ Please download and extract the R1 Teleop data acquisition program file package 
 - Baidu Cloud：[https://pan.baidu.com/s/1WEQIQbMhe3fQ2wyKx160Lw?pwd=gr1t](https://pan.baidu.com/s/1WEQIQbMhe3fQ2wyKx160Lw?pwd=gr1t)
 - Google Drive：[https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing](https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing)
 
-### 6.2 Data Collection Procedure
+### 6.2 Data Collection Procedure (V1.1.0)
 
-<span style="color:red;">Note: Please ensure that the teleoperation program on the R1 Base has been started correctly following the steps outlined in the previous sections.</span>
+<span style="color:red;">**Note: This section applies only to R1 with the software version updated to V1.1.0. Before starting data collection, ensure that the teleoperation program on the R1 Base has been started correctly according to the steps outlined in the preceding sections.**</span>
 
 #### 6.2.1 Connecting to R1
 
@@ -312,11 +314,11 @@ Please download and extract the R1 Teleop data acquisition program file package 
       ./sample_config.yaml
       ```
 
-2. Enter the initial sequence number for the recorded action, for example: 0.
+2. Enter the initial sequence number for the recorded action, for example: `0`.
 
       ![img](assets/R1-T_data_collection.png)
 
-3. Press <span style="color:red;">**Enter**</span> to start recording. Press Enter again to stop recording once completed <span style="color:red;">(Do not use `Ctrl + C` to stop)</span>. After the recording ends, you can check the recorded actions in the output path. Please wait for the program to calculate the **three camera frequencies** from the recently recorded data packet.
+3. Press **Enter** to start recording. Press **Enter** again to stop recording once completed <span style="color:red;">(Do not use `Ctrl + C` to stop)</span>. After the recording ends, you can check the recorded actions in the output path. Please wait for the program to calculate the **three camera frequencies** from the recently recorded data packet.
 
 ![img](assets/R1-T_frame_inquiry.png)
 
@@ -351,4 +353,23 @@ Once the camera frequency calculation is complete, the system will sequentially 
     </tbody>
 </table>
 
-If you encounter any issues during installation or startup, please contact us for technical support at support@galaxea.ai or 4008-780-980!
+### 6.3 Data Collection Procedure (V1.1.1)
+
+<span style="color:red;">Note: This section is applicable only to R1 with the internal software version updated to V1.1.1 or higher. </span> 
+
+Before starting data collection, ensure that the teleoperation program on the R1 Base has been started correctly according to the steps outlined in the preceding sections.
+
+Before starting data collection, ensure that the R1 robot is started correctly as described in Section [5.1](#51-start-r1), and that both Bluetooth controllers of the R1 Teleop are properly connected.
+
+Steps for Data Recording Using Bluetooth Controllers:
+
+1. **Start recording:** Press the **C** button on the left-arm Bluetooth controller to start data recording.
+2. **Stop recording and save:** Press the D button to stop data recording and save automatically. 
+
+The recorded data package will be saved by default at the following path: `/home/nvidia/GalaxeaDataset/data/`. If the path does not exist, the system will create it automatically. 
+
+Users can modify the default storage path or specify the rostopic to be recorded by editing the configuration file `~/work/galaxea/install/lib/data_collection/config/001.yaml`.
+
+
+
+If you encounter any issues during installation or startup, please contact us at [support@galaxea.ai](mailto:support@galaxea.ai) or call 4008 780 980 for technical support !

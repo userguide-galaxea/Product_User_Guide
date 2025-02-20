@@ -3,6 +3,16 @@
 ## 1. Product Introduction
 
 The system includes mapping, localization, navigation, and control modules. The Galaxea R1 robot can build a point cloud map of the environment and use it for global localization, autonomous movement to target points, and obstacle avoidance.
+  <div style="display: flex; justify-content: center; align-items: center;">
+  <video width="1920" height="1080" controls>
+    <source src="../assets/R1_Navigation _Demo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  </div>
+
+## 2. Hardware Introduction
+
+### 2.1 Performance Parameters
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -38,7 +48,7 @@ The system includes mapping, localization, navigation, and control modules. The 
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Control Method</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Autonomous Navigation (Path Tracking) </td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Autonomous Navigation (Path Tracking)<br>Remote control </td>
         </tr>
         <tr style="background-color: white; text-align: left;">
                 <td style="padding: 8px; border: 1px solid #ddd;">Maximum Speed</td>
@@ -76,16 +86,10 @@ The system includes mapping, localization, navigation, and control modules. The 
 </table>
 
 
-  <div style="display: flex; justify-content: center; align-items: center;">
-  <video width="1920" height="1080" controls>
-    <source src="../assets/R1_Navigation _Demo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  </div>
 
-## 2. Hardware Introduction
+### 2.2 Sensor Configuration
 
-The Galaxea R1 is equipped with various sensors, including 9 high-definition cameras and 2 LiDAR units, enabling it to perceive its surroundings in all directions.
+The Galaxea R1 is equipped with various sensors, including 9 high-definition cameras and 2 LiDAR units, enabling it to perceive its surroundings in all directions and perform precise operations.
 
 ![R1_FOV](assets/R1_FOV.png)
 
@@ -112,7 +116,7 @@ The Galaxea R1 is equipped with various sensors, including 9 high-definition cam
 
 
 
-### 2.1 Camera
+#### 2.2.1 Camera
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -176,7 +180,9 @@ The Galaxea R1 is equipped with various sensors, including 9 high-definition cam
 </table>
 
 
-### 2.2 LiDar
+
+
+#### 2.2.2 LiDar
 
 The chassis is equipped with up to two 360-degree LiDARs*, which are of high precision and resistant to interference.
 
@@ -252,10 +258,9 @@ sudo apt install libgoogle-glog-dev
 
 ## 4. Localization and Navigation Operation Process
 
-Map building is the foundational step for autonomous navigation in robots. It involves recording sensor data (bag files) by remotely controlling the robot and then transmitting the data back. After the map is exported, it is deployed onto the robot's body. The target pose is then set to achieve point-to-point navigation.
+Map building is the foundational step for the robot's autonomous navigation. The robot records map data (bag files) via remote control, processes and builds the map on a local computer, and finally uploads the map to the specified directory on the robot to complete the deployment. By following the tutorial below, you can set the target pose, modify the target file, and run the process to achieve point-to-point navigation.
 
 ###  4.1 Building the Map
-#### 4.1.1 Start R1
 
 1. **Login to R1**
 
@@ -275,7 +280,7 @@ Map building is the foundational step for autonomous navigation in robots. It in
     ./ota_script.sh boot
     ```
 
-#### 4.1.2 Record Data Packets
+#### 4.1.1 Record Data Packets
 
 Run the following command to start recording the bag file.
 
@@ -290,11 +295,11 @@ When the map data recording is completed, press `Ctrl + C` to end the recording.
 
 **Notes:**
 
-- Please move the robot to the area to be mapped，befor you start recording.
+- Please move the robot to the area to be mapped.
 - At the start of the recording, the robot must remain stationary for at least 5 seconds to ensure data quality.
-- During the data recording, ensure that there are no dynamic objects (such as moving people or objects) in the environment to avoid interference with map construction. Do not follow the robot to move.
+- During the data recording, ensure that there are no dynamic objects (such as moving people or objects) in the environment to avoid interference with map construction.
 
-#### 4.1.3 Data Transmission
+#### 4.1.2 Data Transmission
 
 1. **Confirm the Bag File Path**
    </br>On the R1 robot, confirm the path of the recorded bag file. By default, the bag file will be saved in the user's home directory (~).
@@ -315,14 +320,15 @@ When the map data recording is completed, press `Ctrl + C` to end the recording.
     ```
 3. **Verify File Transfer**
    </br>On your computer, check whether the file has been successfully transferred and confirm that the file size is consistent with the one on the robot.
+   
    ```Bash
    ls -lh /local/path/to/save/map_data.bag
    ```
    If the file transfer is successful, you will see the same file size as on the robot.
 4. **Data Transmission**
-   </br>**Please transmit the data package to [support@galaxea.ai](mailto:support@galaxea.ai) or send it to the customer service via WeChat Work.**
-#### 4.1.4  Import Map-Related Files
-After the data is sent back, contact a technician to get a map and import it into R1.
+   </br>Please transmit the data package to [support@galaxea.ai](mailto:support@galaxea.ai) or send it to customer service via WeChat Work.
+#### 4.1.3  Import Map-Related Files
+
 ```Bash
 ssh nvidia@{rorbot_ip} "mkdir -p ~/galaxea/calib ~/galaxea/maps"
 scp -r ~/mapping_data/map/* nvidia@{robot_ip}:~/galaxea/maps/
@@ -359,18 +365,22 @@ When activating the positioning function, make sure the robot is in a known map.
 
 ### 4.3 Set the Target Pose Position
 
-1. **The remote-controlled robot reaches the target point.**
-   </br>After successful startup of the positioning, remotely control the robot to the target point that the customer wants to set. Ensure that the center of R1 is at least 45 cm away from the obstacles.
+1. **Remote robot to the target point**
+   </br>After the positioning is successfully started, remotely control the robot to the target point you set. Ensure that the center of R1 is at least 45 cm away from obstacles.
 
 2. **Record the pose information**
-   </br>For each target point reached by remote control, record the pose information of that position.
+   </br>Every time the robot reaches the target point, record the robot pose information at that position.
+
    ```Bash
    - Translation: [3.280, -0.743, 0.008]
    - Rotation: in Quaternion [0.000, -0.004, -0.147, 0.989] # x y z w
    ```
 
 3. **Update the script for sending navigation target point information**
-    </br>The script example is as follows:
+
+    Repeat the above steps. After recording the pose information of all target points, update them to the navigation target point script.</br>
+
+    The script example is as follows:
 
     ```
     point_nav.py
@@ -434,7 +444,7 @@ When activating the positioning function, make sure the robot is in a known map.
         def send_engage(self):
             print("index  =", self.current_index)
             """Send the "engage" message"""
-    
+           
             if self.current_index >= len(self.pose_array):
                 self.current_index = 0
             if not self.engage_pending and self.current_index < len(self.pose_array):
@@ -449,9 +459,9 @@ When activating the positioning function, make sure the robot is in a known map.
         def response_callback(self, msg):
             """Handle the response message"""
             if self.engage_pending:
-                self.engage_pending = False  # Reset the status and allow sending new engage
-                rospy.sleep(0.1)  # Control the tempo of sending
-                self.send_engage()  # Send out the new "engage" message
+                self.engage_pending = False  # Reset the status and allow sending new engage.
+                rospy.sleep(0.1)  # Control the tempo of sending.
+                self.send_engage()  # Send out the new "engage" message.
     
         def run(self):
             """Run node"""
@@ -465,22 +475,22 @@ When activating the positioning function, make sure the robot is in a known map.
             pass
     ```
 
-    You can add any number of dots. In the Python file, replace and add the following areas in the Python script.
+    You can add any number of target points. In the Python file, replace and add the following areas in the Python script.
     ```Python
-    # Add a new target point
-    # pose = geometry_msg.msg.PoseStamped()
-    # pose.header.frame_id = "map"
-    # pose.pose.position.x = 5.761 
-    # pose.pose.position.y = -0.146
-    # pose.pose.position.z = 0.087
-    # pose.pose.orientation.x = -0.008 
-    # pose.pose.orientation.y = -0.001
-    # pose.pose.orientation.z = 0.551
-    # pose.pose.orientation.w = 0.835
-    # pose_array.append(pose)
+            # Add a new target point
+            # pose = geometry_msg.msg.PoseStamped()
+            # pose.header.frame_id = "map"
+            # pose.pose.position.x = 5.761 
+            # pose.pose.position.y = -0.146
+            # pose.pose.position.z = 0.087
+            # pose.pose.orientation.x = -0.008 
+            # pose.pose.orientation.y = -0.001
+            # pose.pose.orientation.z = 0.551
+            # pose.pose.orientation.w = 0.835
+            # pose_array.append(pose)
     ```
 
-    After the target point is set, execute this script, switch the remote control to Auto mode, and the robot can achieve the autonomous navigation to the target point in a loop.
+    After the target point is set, execute the script, and the robot can achieve autonomous navigation to the target point in a loop.
     ```Go
     source ~/work/galaxea/install/setup.bash
     python3 point_nav.py
@@ -488,37 +498,37 @@ When activating the positioning function, make sure the robot is in a known map.
 
 ## 5. Software Interface
 
-### 5.1 System Block Diagram
+### 5.1 System Diagram
 
 ![R1_navigation_system_diagram](assets/R1_navigation_system_diagram.png)
 
 ### 5.2 Driving Interface
 
-R1 offers multiple driver interfaces for communication and control with hardware devices. Below are the main driver interfaces and their descriptions:
+R1 offers multiple driver interfaces for communication and control with hardware devices. 
 
 #### 5.2.1 Chassis Drive Interface
 
-`/motion_control/chassis_speed`：It is used to control the movement of the robot chassis, including speed control, direction control, etc. Please refer to the [Chassis Drive Interface](Software_Guide.md/#chassis-driver-interface) section in the R1 software manual for more detailed information.
+`/motion_control/chassis_speed`：It is used for the chassis status feedback ROS package, which defines multiple topics to report the status of the chassis' motors. Please refer to the " [Chassis Drive Interface](Software_Guide.md/#chassis-driver-interface) "  in the Software Guide for more detailed information.
 
-#### 5.2.2 Lidar Interface
+#### 5.2.2 LiDAR Interface
 
-`/hdas/lidar_chassis_left`：Lidar is used for environmental perception and distance measurement, providing real-time environmental information to robots. For more detailed information, please refer to the [Lidar Interface](Software_Guide.md/#lidar-interface) section in the R1 software manual.
+`/hdas/lidar_chassis_left`：It is used for environmental perception and distance measurement, providing real-time environmental information to robots. For more detailed information, please refer to the "[Lidar Interface](Software_Guide.md/#lidar-interface) " in the Software Guide for more detailed information.
 
 #### 5.2.3 IMU Interface
 
-`/hdas/imu_chassis`：The IMU is used to measure the acceleration and angular velocity of the robot, providing data support for navigation and attitude control. For more detailed information, please refer to the [IMU Interface](Software_Guide.md/#imu-interfaces) section in the R1 software manual.
+`/hdas/imu_chassis`：It is used to measure the acceleration and angular velocity of the robot, providing data support for navigation and attitude control. For more detailed information, please refer to the " [IMU Interface](Software_Guide.md/#imu-interfaces) " in the Software Guide for more detailed information.
 
-### 5.3 Flight Control Interface
+### 5.3 Motion Control Interface
 
-The R1 robot offers multiple motion control interfaces for achieving precise control of the robot's movements. Below are the main motion control interfaces and their descriptions:
+R1 offers multiple motion control interfaces for achieving precise control of the robot's movements. Below are the main motion control interfaces and their descriptions.
 
 #### 5.3.1 Chassis Control Interface
 
-`/motion_target/target_speed_chassis`：It is used to control the movement of the robot chassis, including speed control, direction control, etc. Please refer to the "Chassis Control Interface" section in the R1 software manual for more detailed information.
+`/motion_target/target_speed_chassis`：It is used to control the movement of the robot chassis, including speed control, direction control, etc. Please refer to the "Chassis Control Interface" in the Software Guide for more detailed information.
 
-### 5.4 Positioning Interface
+### 5.4 Localization Interface
 
-The Localization interface is the core component for R1 robot to achieve autonomous navigation and environmental perception. Through these interfaces, the robot can receive data from various sensors, such as IMU (Inertial Measurement Unit) and LiDAR (Light Detection and Ranging), thereby enabling precise multi-sensor fusion localization. These interfaces ensure that the robot can accurately perceive its own position and posture in complex environments, providing reliable data support for subsequent path planning and navigation. This chapter elaborates on each topic of the Localization interface, including the types and uses of input and output data.
+It is used for the R1 robot to achieve autonomous navigation and environmental perception. Through these interfaces, the robot can receive data from various sensors, such as IMU and LiDAR, thereby enabling precise multi-sensor fusion localization. These interfaces ensure that the robot can accurately perceive its own position and posture in complex environments, providing reliable data support for subsequent path planning and navigation. 
 
 <table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
     <thead>
@@ -553,9 +563,9 @@ The Localization interface is the core component for R1 robot to achieve autonom
 
 
 
-### 5.5 Navigation Topic Interface
+### 5.5 Navigation Interface
 
-The Navigation interface is a crucial component for R1 robots to achieve autonomous path planning and motion control. These interfaces enable the robots to conduct global and local path planning based on the input sensor data (such as LiDAR point clouds and SLAM positioning status), and output control instructions to drive the robot chassis to move. The Navigation interface not only supports obstacle avoidance but also can update the robot's motion trajectory and task status in real time, ensuring that the robot can complete navigation tasks efficiently and safely. This chapter provides a detailed introduction to each topic of the Navigation interface, including the types and uses of input and output data.
+It is used for the R1 robot to achieve autonomous path planning and motion control. These interfaces enable the robots to conduct global and local path planning based on the input sensor data (such as LiDAR point clouds and SLAM positioning status), and output control instructions to drive the robot chassis to move. The Navigation interface not only supports obstacle avoidance but also can update the robot's motion trajectory and task status in real-time, ensuring that the robot can complete navigation tasks efficiently and safely. 
 
 <table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
     <thead>
@@ -640,12 +650,12 @@ The Navigation interface is a crucial component for R1 robots to achieve autonom
 
 ### 5.6 Navigation Service Interface
 
-#### 5.6.1 Enable Navigation Service
+#### 5.6.1 Start Navigation Service
 
-Executing the following command will enable the navigation service.
+Executing the following command to start the navigation service.
 
 ```YAML
-service name: /nav_service  # For use in navigation system switch
+service name: /nav_service  # Used to start or shut down the navigation system 
 Type: std_srvs/SetBool
 For Example: rosservice call /nav_service "data: true"
       rosservice call /nav_service "data: false"
@@ -657,18 +667,18 @@ For Example: rosservice call /nav_service "data: true"
 
 #### 5.6.2 Shutting Down Navigation Service
 
-Executing the following command will shut down the navigation service.
+Executing the following command to shut down the navigation service.
 
 ```YAML
-Service name: /nav_service  # For use in navigation system switch
+Service name: /nav_service  # Used to start or shut down the navigation system 
 Type: std_srvs/SetBool
 For Example: rosservice call /nav_service "data: true"
       rosservice call /nav_service "data: false"
 ```
 
-### 5.7 State Machine
+### 5.7 System Manager
 
-The System Manager is the core management module of the R1 robot system, responsible for coordinating and managing various tasks and services of the robot. Through System Manager, users can trigger navigation tasks, monitor the status of tasks, and receive feedback on task completion. This chapter provides a detailed introduction to the ROS topics related to System Manager, including the types and uses of input and output data.
+The System Manager is the core management module of the R1 robot system, responsible for coordinating and managing various tasks and services of the robot. Through System Manager, users can trigger navigation tasks, monitor the status of tasks, and receive feedback on task completion. 
 
 <table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
     <thead>
@@ -701,10 +711,5 @@ The System Manager is the core management module of the R1 robot system, respons
     </tbody>
 </table>
 
-
-​    
-​    
-​    
-​    
 ​    
 

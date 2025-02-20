@@ -2,11 +2,11 @@
 
 在这个分步指南中，我们将提供详细的说明，指导您如何正确地开箱Galaxea R1，连接电缆，安装机械臂，以及如何远程控制R1，以实现更好的通信和探索更多功能。
 
-## **指导视频**
+## 指导视频
 
 
 
-## **1.准备工作**
+## 1.物品清单检查
 
 当您收到我们的产品时，请根据以下清单检查包装盒内的物品是否齐全。
 
@@ -50,7 +50,7 @@
 </table>
 
 
-请您准备好以下物品：
+此外，仍需准备以下物品：
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -70,6 +70,10 @@
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">WiFi 网络</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+        </tr>
+                <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">HDMI线</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
         </tr>
     </tbody>

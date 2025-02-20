@@ -81,6 +81,8 @@ R1 Teleop平台采用按比例缩小设计，完美复刻R1的各项功能，实
 - 百度云： [https://pan.baidu.com/s/1WEQIQbMhe3fQ2wyKx160Lw?pwd=gr1t](https://pan.baidu.com/s/1WEQIQbMhe3fQ2wyKx160Lw?pwd=gr1t)
 - Google Drive：[https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing](https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing)
 
+<span style="color:red;">请确保R1机器人软件版本已更新至V1.1.0及以上，点击[此处](R1_Software_Changelog/v1.1.0.md)获取最新版本。</span>
+
 #### 3.2.2 安装软件依赖环境
 
 请在R1-T上位机上安装所需环境依赖。
@@ -88,6 +90,7 @@ R1 Teleop平台采用按比例缩小设计，完美复刻R1的各项功能，实
 ```Bash
 sudo apt install ros-noetic-trac-ik
 sudo apt install ros-noetic-joy
+sudo apt install tmux tmuxp
 ```
 
 #### 3.2.3 修改/.bashrc 文件
@@ -107,12 +110,12 @@ export ROS_IP=R1T上位机的ip地址
 3. 示例：
     ![img](assets/R1-T_software_preparation_CN.png)
     
-## 4. 连接R1-T
+## 4. 连接R1 Teleop
 ![img](assets/R1_R1T_hardware_diagram_CN.png)
 
 ### 4.1 固定设备
 
-请使用G夹固定器将R1-T本体固定至桌面，如下图所示：
+请使用G夹固定器将R1-T Base固定至桌面，如下图所示：
 
 ![img](assets/R1-T Base_mount_CN.png)
 
@@ -153,8 +156,8 @@ export ROS_IP=R1T上位机的ip地址
    ls /dev/input/ | grep js
    ```
    ​       当同时返回`js0`（左臂）和`js1`（右臂），即为连接成功。
-
     ![img](assets/R1-T_bluetooth_arm_CN.png)
+
 4. 蓝牙遥控器按键功能说明
    ![img](assets/R1-T_controller_tag_CN.png)
    
@@ -201,25 +204,27 @@ export ROS_IP=R1T上位机的ip地址
            </tr>
            <tr style="background-color: white; text-align: left;">
                <td style="padding: 8px; border: 1px solid #ddd;">按键 C</td>
-               <td style="padding: 8px; border: 1px solid #ddd;">N/A</td>
+               <td style="padding: 8px; border: 1px solid #ddd;">开始录制数据 *</td>
                <td style="padding: 8px; border: 1px solid #ddd;">躯干向前移动（Vx 为正）</td>
            </tr>
            </tr>
            <tr style="background-color: white; text-align: left;">
                <td style="padding: 8px; border: 1px solid #ddd;">按键 D</td>
-               <td style="padding: 8px; border: 1px solid #ddd;">N/A</td>
+               <td style="padding: 8px; border: 1px solid #ddd;">停止录制数据 *</td>
                <td style="padding: 8px; border: 1px solid #ddd;">躯干向后移动（Vx为负）</td>
            </tr>
        </tbody>
    </table>
 
+<span style="color:red;">*该操作方式仅适用于软件版本更新至V1.1.0版本的R1。</span>
+
 ## 5. 启动SDK
 
 ![img](assets/R1-T_pipeline_CN.png)
 
-**<span style="color:red;">注意：R1软件版本必须安装V1.0.4 或以上版本。点击[此处](R1_Software_Changelog/v1.0.4.md)获取最新版本</span>**
+**<span style="color:red;">注意：R1及R1 Teleop的软件版本必须安装V1.1.0或以上版本，点击[此处](R1_Software_Changelog/v1.1.0.md)获取最新版本</span>**
 
-在控制R1-T的整个过程中，您需要打开多个窗口。我们建议您使用TMUX。常用指令如下：
+在控制R1 Teleop的整个过程中，您需要打开多个窗口。我们建议您使用TMUX。常用指令如下：
 
 - 创建新窗口：按`Ctrl + B`然后按`C`。
 - 切换窗口：按`Ctrl + B`然后按数字，数字表示窗口的序号。
@@ -227,44 +232,46 @@ export ROS_IP=R1T上位机的ip地址
 现在，您可以按照以下步骤启动CAN驱动程序。
 
 ### 5.1 启动R1
-执行以下指令启动R1。
+在R1 ECU执行以下指令启动R1。
 ```Python
 cd ~/work/galaxea/install/share/startup_config/script
 ./ota_script.sh boot_teleop     
 ```
 ### 5.2 启动R1 Teleop
+
+在R1-T上位机上执行以下步骤。
+
 1. 启动TMUX
    ```Python
    tmux
    ```
 2. 启动FDCAN通信
-```Python
-sudo ip link set dev can0 type can bitrate 1000000 dbitrate 5000000 fd on
-sudo ip link set up can0
-```
-3. 按 `Ctrl + C` 退出TMUX。
+    ```Python
+    sudo ip link set dev can0 type can bitrate 1000000 dbitrate 5000000 fd on
+    sudo ip link set up can0
+    ```
+3. 按`Ctrl + B `然后按`D`退出TMUX。
 
 4. 启动 R1 Teleop
+   ```Bash
+   cd {your_path}/install/share/startup_config/script
+   ./ota_script.sh boot
+   ```
+   注意：`your_path` 为R1 Teleop的SDK所在路径。
 
-      ```Bash
-      cd {your_path}/install/share/startup_config/script
-      ./ota_script.sh boot
-      ```
-注意：`your_path` 为R1 Teleop的SDK所在路径。
-
-完成以上步骤后，等待3-5秒钟，便可操控R1-T。
+完成以上步骤后，等待3-5秒钟，便可操控R1 Teleop。
 
 ## 6. 数据采集
 
-### 6.1 数据采集程序
-请在以下链接下载并解压R1-T数据采集程序文件包。
+### 6.1 数据采集SDK
+请在以下链接下载并解压R1 Teleop数据采集SDK。
 
 - 百度云： [https://pan.baidu.com/s/1WEQIQbMhe3fQ2wyKx160Lw?pwd=gr1t](https://pan.baidu.com/s/1WEQIQbMhe3fQ2wyKx160Lw?pwd=gr1t)
 - Google Drive：[https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing](https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing)
 
-### 6.2 数据采集流程
+### 6.2 数据采集流程（V1.1.0）
 
-**<span style="color:red;">注意：请确保R1 Base上的遥操作程序已按照前述章节的步骤正常启动。</span>**
+**<span style="color:red;">注意：该章节针对软件版本已更新至V1.1.0的R1。在开始进行数据采集前，请确保R1 Base上的遥操作程序已按照前述章节的步骤正常启动。</span>**
 
 #### 6.2.1. 连接R1
 
@@ -285,14 +292,15 @@ sudo ip link set up can0
 
 1. 连接至R1后，此时系统会提示输入任务配置的YAML文件路径。
     请输入预先设定好的模板YAML文件路径：
+   
    ```Bash
    ./sample_config.yaml
    ```
 2. 输入录制动作的初始序号，例如：`0`。
    ![img](assets/R1-T_data_collection_CN.png)
-3. 按**<span style="color:red;">Enter</span>**开始录制，录制完成后再次按Enter结束**<span style="color:red;">（注意：不要使用 `Ctrl + C` 结束）</span>**。 录制结束后，可在输出路径查看录制的动作，需要等待程序计算刚刚录制的数据包中的**3个相机频率**。
+3. 按**Enter**开始录制，录制完成后再次按**Enter**结束**<span style="color:red;">（注意：不要使用 `Ctrl + C` 结束）</span>**。 录制结束后，可在输出路径查看录制的动作，需要等待程序计算刚刚录制的数据包中的**3个相机频率**。
     ![img](assets/R1-T_frame_inquiry_CN.png)
-#### 6.2.3. 后续操作
+#### 6.2.3. 后续询问
 
  相机频率计算完成后，系统会依次询问以下问题，根据您的选择进行相应操作。
 
@@ -319,5 +327,22 @@ sudo ip link set up can0
     </tbody>
 </table>
 
-如在安装和启动过程中有任何问题，请及时与我们联系至support@galaxea.ai或致电4008-780-980获得技术支持！
+### 6.3 数据采集流程（V1.1.1）
+
+**<span style="color:red;">注意：该章节针对软件版本已更新至内部版本V1.1.1及以上的R1。在开始进行数据采集前，请确保R1 Base上的遥操作程序已按照前述章节的步骤正常启动。</span>**
+
+在进行数据采集之前，请确保已按照第[5.1](#51-启动r1)节所述方式正确启动R1机器人，并确认R1 Teleop的两个蓝牙遥控器已正常连接。
+
+使用蓝牙遥控器录制数据的步骤如下：
+
+1. **开始数据录制**：按下左臂蓝牙遥控器的 **C** 键，开始数据录制。
+2. **停止录制并保存**：按下 **D** 键，停止数据录制并自动保存。
+
+录制的数据包将默认存放在以下路径：`/home/nvidia/GalaxeaDataset/data/`。如果该路径不存在，系统将自动创建。
+
+用户可以通过修改配置文件 `~/work/galaxea/install/lib/data_collection/config/001.yaml` 来更改默认存储路径或指定要录制的rostopic。
+
+
+
+如在安装和启动过程中有任何问题，请及时与我们联系至[support@galaxea.ai](mailto:support@galaxea.ai)或致电4008 780 980获得技术支持！
 

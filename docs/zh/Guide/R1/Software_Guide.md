@@ -8,11 +8,11 @@
 
 ## 软件版本日志
 
-查看 R1 软件版本更新日志，获取最新的更新信息。
+查看 [R1 软件版本更新日志](R1_Software_Changelog/v1.1.0.md)，获取最新的更新信息。
 
 ## 首次操作指引
 
-访问页面 [R1_Demo](R1_demo_test.md)，并按照说明操作R1。
+访问页面 [R1 Demo](R1_demo_test.md)，并按照说明操作R1。
 
 ## 软件接口
 
@@ -97,13 +97,13 @@ roslaunch HDAS r1.launch
             <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_arm_left</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_arm_left*</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Output</td>                                   
             <td style="padding: 8px; border: 1px solid #ddd;">左臂状态反馈</td>
             <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_arm_right</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_arm_right*</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Output</td>   
             <td style="padding: 8px; border: 1px solid #ddd;">右臂状态反馈</td>
             <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
@@ -290,7 +290,32 @@ roslaunch HDAS r1.launch
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">包含错误码和对应的错误描述</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="8">/motion_control/control_arm_left</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="6">/motion_control/control_arm_left</br>（伺服模式）</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">p_des</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 夹爪关节位置]</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">v_des</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1速度最大限制, 关节2速度最大限制, 关节3速度最大限制, 关节4速度最大限制, 关节5速度最大限制, 关节6速度最大限制, 夹爪关节速度最大限制]</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">t_ff</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1力矩最大限制, 关节2力矩最大限制, 关节3力矩最大限制, 关节4力矩最大限制, 关节5力矩最大限制, 关节6力矩最大限制, 夹爪关节力矩最大限制]</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="8">/motion_control/control_arm_left</br>（力位混合控制模式）</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">标准消息头</td>
     </tr>
@@ -323,7 +348,32 @@ roslaunch HDAS r1.launch
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="8">/motion_control/control_arm_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="6">/motion_control/control_arm_right</br>（伺服模式）</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">p_des</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 夹爪关节位置]</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">v_des</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1速度最大限制, 关节2速度最大限制, 关节3速度最大限制, 关节4速度最大限制, 关节5速度最大限制, 关节6速度最大限制, 夹爪关节速度最大限制]</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">t_ff</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1力矩最大限制, 关节2力矩最大限制, 关节3力矩最大限制, 关节4力矩最大限制, 关节5力矩最大限制, 关节6力矩最大限制, 夹爪关节力矩最大限制]</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+    </tr>
+     <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="8">/motion_control/control_arm_right</br>（力位混合控制模式）</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">标准消息头</td>
     </tr>
@@ -339,7 +389,7 @@ roslaunch HDAS r1.launch
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">v_des</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1速度, 关节2速度, 关节3速度, 关节4速度, 关节5速度, 关节6速度, 夹爪关节速度]</td>
     </tr>
-    <tr style="background-color: white;">
+        <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kp</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1kp, 关节2kp, 关节3kp, 关节4kp, 关节5kp, 关节6kp, 夹爪关节kp]</td>
     </tr>
@@ -442,8 +492,24 @@ roslaunch HDAS r1.launch
   </tbody>
 </table>
 
+***机械臂关节电机控制接口说明**</br>
+`/hdas/feedback_status_arm_left `</br>
+`/hdas/feedback_status_arm_right`</br>
+下图为力位混合控制模式架构：</br>
+![img](assets/R1_arm_driver_mit_mode.png)
+电机的输出扭矩公式用于计算电流环给定跟踪的力矩值 `Tref`，公式如下：</br>
+$K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
+其中：`Kp`，`Kd` 为位置增益和速度增益的比例项；`pd`，`vd` 为期望的位置和速度；`t_ff` 为前馈力矩；`pe` 为编码器反馈的位置，`ve` 为微分得到的电机转速。</br>
+输入项包括：`Kp`，`Kd`，`pd`，`vd`，`t_ff`。</br>
+反馈项 `pe` 和 `ve` 无需手动输入。
 
+**注意:**
 
+1. 前馈力矩是必须项。位置项和速度项无法弥补过大的力矩误差，前馈力矩至少应补偿机械臂自身重力的影响。
+
+2. 以下是A1电机的推荐 `kp` 和 `kd` 值。调整时请谨慎操作。</br>
+  `A1_kp = [ 140.0, 200.0, 120.0, 20.0, 20.0, 20.0 ]`</br>
+  `A1_kd = [ 10.0, 50.0, 5.0, 1.0, 1.0, 0.4 ]`
 
 #### 躯干驱动接口
 

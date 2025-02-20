@@ -8,11 +8,11 @@
 
 ## Software Version Changelog
 
-Visit the R1 Software Version Changelog and find the latest update.
+Visit the [R1 Software Version Changelog](R1_Software_Changelog/v1.1.0.md) and find the latest update.
 
 ## First Move
 
-Visit the page [R1_Demo](R1_demo_test.md) and get started to operate R1 following the instructions.
+Visit the page [R1 Demo](R1_demo_test.md) and get started to operate R1 following the instructions.
 
 ## Software Interface
 
@@ -101,13 +101,13 @@ This interface is used for the robot arm control and status feedback ROS package
             <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_arm_left</td>
+            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_arm_left*</td>
             <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>           
             <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Status of left arm</td>
             <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_arm_right</td>
+            <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_arm_right*</td>
             <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>           
             <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Status of right arm</td>
             <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
@@ -295,7 +295,32 @@ The specific fields and their detailed descriptions for the above topic are show
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Contains error code and error description</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="8">/motion_control/control_arm_left</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="6">/motion_control/control_arm_left <br>(Servo Mode)</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">p_des</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_position, Joint2_position, Joint3_position, Joint4_position, Joint5_position, Joint6_position]</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">v_des</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_velocity_max_limit, Joint2_velocity_max_limit, Joint3_velocity_max_limit, Joint4_velocity_max_limit, Joint5_velocity_max_limit, Joint6_velocity_max_limit]</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">t_ff</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_effort_max_limit, Joint2_effort_max_limit, Joint3_effort_max_limit, Joint4_effort_max_limit, Joint5_effort_max_limit, Joint6_effort_max_limit]</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="8">/motion_control/control_arm_left <br>(Torque-Position-Mix Control Mode)</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
     </tr>
@@ -327,8 +352,33 @@ The specific fields and their detailed descriptions for the above topic are show
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
     </tr>
+     <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="6">/motion_control/control_arm_right<br>(Servo Mode)</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
+    </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="8">/motion_control/control_arm_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">name</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">p_des</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_position, Joint2_position, Joint3_position, Joint4_position, Joint5_position, Joint6_position]</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">v_des</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_velocity_max_limit, Joint2_velocity_max_limit, Joint3_velocity_max_limit, Joint4_velocity_max_limit, Joint5_velocity_max_limit, Joint6_velocity_max_limit]</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">t_ff</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[Joint1_effort_max_limit, Joint2_effort_max_limit, Joint3_effort_max_limit, Joint4_effort_max_limit, Joint5_effort_max_limit, Joint6_effort_max_limit]</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+    </tr>
+     <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="8">/motion_control/control_arm_right<br>(Torque-Position-Mix Control Mode)</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
     </tr>
@@ -446,6 +496,26 @@ The specific fields and their detailed descriptions for the above topic are show
     </tr>
   </tbody>
 </table>
+
+
+***Joint Motor Control Interface Description**</br>
+`/hdas/feedback_status_arm_left `</br>
+`/hdas/feedback_status_arm_right`</br>
+The figure below illustrates the architecture of the Torque-Position-Mix Control Mode:</br>
+![img](assets/R1_arm_driver_mit_mode.png)
+The output torque formula of the motor is used to calculate the torque value `T_ref` given by the current loop for tracking, and the formula is as follows: </br>
+$K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
+Where:`Kp`,`Kd` are the proportional gains for position and velocity, respectively.`pd`,`vd` are the desired position and velocity, respectively.`t_ff` is the feedforward torque.`pe` is the position feedback from the encoder, and `ve` is the motor speed obtained by differentiation. </br>
+The input items include:`Kp`,`Kd`,`pd`,`vd`,`t_ff`.</br>
+The feedback items `pe` and `ve` do not need to be manually entered.
+
+**Note:**
+
+1. Feedforward torque is a mandatory item. The position and velocity terms cannot compensate for large torque errors. Therefore, the feedforward torque should at least compensate for the gravitational torque affecting the robotic arm.
+
+2. Below are the recommended `kp` and `kd` values for the A1 motors. Please exercise caution when making adjustments.</br>
+  `A1_kp = [ 140.0, 200.0, 120.0, 20.0, 20.0, 20.0 ]`</br>
+  `A1_kd = [ 10.0, 50.0, 5.0, 1.0, 1.0, 0.4 ]`
 
 
 #### Torso Driver Interface
