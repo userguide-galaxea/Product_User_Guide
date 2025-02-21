@@ -67,7 +67,7 @@ nav:
       - Demo: Guide/R1/R1_demo_test.md
       - Simulation Usage Tutorial: Guide/R1/Simulation_Isaac_Lab_Tutorial.md
       - Sensor Calibration Data Collection Method: Guide/R1/R1_Sensor_Calibration_Data_Collection_Method.md
-      - R1 Teleop Usage Tutorial: Guide/R1/R1_Teleop_ Usage_Tutorial.md
+      - R1 Teleop Usage Tutorial: Guide/R1/R1_Teleop_Usage_Tutorial.md
       - R1 VR Teleop Usage Tutorial: Guide/R1/R1_VR_Teleop_Usage_Tutorial.md
       - R1 Autonomous Navigation System Usage Tutorial: Guide/R1/R1_Autonomous_Navigation_System_Usage_Tutorial.md
   - Galaxea R1 Software Changelog:

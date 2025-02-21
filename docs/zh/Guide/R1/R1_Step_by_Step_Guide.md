@@ -187,15 +187,15 @@
 
 ![3.2.2_battery_changing_cn](assets/3.2.2_battery_changing_cn.png)
 
-##  **4. 连接**
+##  4. 连接
 
 共有本地或远程这两种方式来连接R1。
 
-###  **4.1 本地连接**
+###  4.1 本地连接
 
 如果不需要远程操控R1，请继续在原有的显示器和键盘上操作，并保持HDMI和USB电缆已连接。请跳转至[第4.3节](#43-启动can驱动程序)节启动CAN驱动程序，完成后续操作。
 
-### **4.2 远程连接**
+### 4.2 远程连接
 
 **4.2.1 获取IP地址**
 
@@ -207,7 +207,7 @@ R1开机后，等待显示器显示桌面。请按照以下步骤获取IP地址�
 
 2. 打开终端并输入以下命令：
 
-    ```Shell
+    ```bash
       ifconfig mlan0
     ```
 
@@ -223,7 +223,7 @@ R1开机后，等待显示器显示桌面。请按照以下步骤获取IP地址�
 
 2. 打开终端并输入以下命令以连接Orin。
 
-    ```Shell
+    ```bash
       ssh nvidia@IP address
       # Enter the password  (default: nvidia)
     ```
@@ -236,7 +236,7 @@ R1开机后，等待显示器显示桌面。请按照以下步骤获取IP地址�
 
 
 
-### **4.3 启动CAN驱动程序**
+### 4.3 启动CAN驱动程序
 
 在控制R1的整个过程中，您需要打开多个终端。我们建议您使用TMUX。常用指令如下：
 
@@ -261,18 +261,18 @@ R1开机后，等待显示器显示桌面。请按照以下步骤获取IP地址�
 
 3. 启动roscore。
 
-    ```Plain
+    ```bash
       roscore    
     ```
 
 4. 按下`Ctrl + B`加`C`，创建新终端，然后启动HDAS。
 
-    ```Plain
-      source ~/work/ci_pipeline/workspace/body/install/setup.bash
-      roslaunch HDAS hdas.launch
+    ```bash
+    source ~/work/galaxea/install/setup.bash
+    roslaunch HDAS r1.launch
     ```
 
-### **4.4  第一次自检**
+### 4.4  第一次自检
 
 <span style="color:red">**重要提示：在对R1进行任何操作之前，您必须完成R1自检以确保安全。** </span>
 
@@ -284,12 +284,13 @@ R1开机后，等待显示器显示桌面。请按照以下步骤获取IP地址�
 现在，您可以按照以下步骤进行第一次自检。
 
 1. 按`Ctrl + B`然后按`C`创建新终端。然后启动自检。
-    ```bash
-       source ~/work/ci_pipeline/workspace/body/install/setup.bash
-       rosrun HDAS check_node #after executed the command, please press 0. (0 means the self-check when the arms are uninstalled.)
-    ```
+   ```bash
+   source ~/work/galaxea/install/setup.bash
+   rosrun HDAS check_node 
+   #after executed the command, please press 0. (0 means the self-check when the arms are uninstalled.)
+   ```
 
-2. 如果显示“self-check completed”，如下图所示，表示自检完成，请按`ctrl+c`退出。
+2. 如果显示“self-check completed”，如下图所示，表示自检完成，请按`Ctrl + C`退出。
    ![3.6_selfcheck_completed_cn](assets/3.6_selfcheck_completed_cn.png)
 
 3. 如果出现警告，如下图所示，请及时联系我们提供技术支持。
@@ -297,31 +298,31 @@ R1开机后，等待显示器显示桌面。请按照以下步骤获取IP地址�
 
 
 
-### **4.5 站立**
+### 4.5 站立
 
 <span style="color:red">**重要提示：为了您的安全，请确保R1已出箱，且没有任何干扰或固定件。否则，躯干可能会进入自锁保护状态。**</span>
 
 完成自检后，您可以通过命令躯干和底盘，并使用遥控器使R1站立起来。
 
-#### **4.5.1 启动躯干控制**
+#### 4.5.1 启动躯干控制
 
 按下 `Ctrl + B ` 加 `C` 创建新终端，启动臂部和躯干控制。
 
-```Plain
-source ~/work/ci_pipeline/workspace/body/install/setup.bash
+```bash
+source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_jointTrackerdemo.launch
 ```
 
-#### **4.5.2 启动底盘控制**
+#### 4.5.2 启动底盘控制
 
 按下 `Ctrl + B ` 加 `C` 创建新终端，启动底盘控制。
 
-```Plain
-source ~/work/ci_pipeline/workspace/body/install/setup.bash
+```bash
+source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_chassis_control.launch
 ```
 
-#### **4.5.3 遥控器操作**
+#### 4.5.3 遥控器操作
 
 <span style="color:red"> 注意：在进行任何操作之前，请确保所有开关（SWA/SWB/SWC/SWD）都处于顶部位置。</span>这将使机器处于停止状态，防止R1误操作。如果需要获取更多详细操作信息，请参阅Galaxea R1用户指南中的遥控器指南。
 
@@ -334,7 +335,7 @@ roslaunch mobiman r1_chassis_control.launch
       <img src="../assets/3.6.3_controller_standup.png" style="width:600px;height:auto;" alt="3.6.3_controller_standup">
    </p>
 
-## **5. 安装手臂**
+## 5. 安装手臂
 
 <span style="color:red">**重要提示：为了您的安全，请在安装手臂之前使R1站立并关闭电源。**</span>
 
@@ -360,7 +361,7 @@ roslaunch mobiman r1_chassis_control.launch
 4. 在确认与R1手臂的通信连接成功后，通过反向执行上述[第2.6节](#26-拆卸胸腔后盖)节拆卸背部盖板和[第2.7节](#27-拆卸胸腔前盖)拆卸胸腔前盖的步骤，重新安装盖板。
 
 
-### **5.1 第二次自检**
+### 5.1 第二次自检
 
 在开始自检之前，请确保：
 
@@ -376,15 +377,15 @@ roslaunch mobiman r1_chassis_control.launch
 
 2. 按`Ctrl + B`然后按`C`创建新终端。现在，开始第二次自检。
 
-    ```Plain
-    source work/ci_pipeline/workspace/body/install/setup.bash
+    ```bash
+    source work/galaxea/install/setup.bash
     rosrun HDAS check_node #after executed the command, please press 1. (1 means the self-check when the arms are installed.)
     ```
 
 3. 按照[第3.6.1节](#361-启动躯干控制)节启动躯干控制和[第3.6.2节](#362-启动底盘控制)节启动底盘控制中的命令完成操作。
 
 
-## **6. Demo测试**
+## 6. Demo测试
 
 <span style="color:red">**重要提示：在对R1进行任何操作之前，您必须完成R1自检以确保安全。**</span>
 

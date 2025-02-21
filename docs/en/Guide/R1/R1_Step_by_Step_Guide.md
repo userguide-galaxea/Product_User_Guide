@@ -264,7 +264,7 @@ Now, you can start CAN driver in the following steps.
 
     ```bash
     source ~/work/galaxea/install/setup.bash
-    roslaunch HDAS hdas.launch
+    roslaunch HDAS r1.launch
     ```
 
 
@@ -280,7 +280,7 @@ Make sure that:
 Now, you can start the first self-check in the following steps.
 
 1. Press `Ctrl + B` then `C` to create a new terminal. Then start self-check.
-   ```shell
+   ```bash
    source ~/work/galaxea/install/setup.bash
    rosrun HDAS check_node 
    #after executed the command, please press 0. (0 means the self-check when the arms are uninstalled.)
@@ -366,7 +366,7 @@ Then,  <span style="color:red;">**power it on**</span> and:
 2. Press `Ctrl + B` then `C` to create a new terminal. Now, start the second self-check.
 
     ```bash
-    source ~/work/galaxea/install/setup.bash
+    source work/galaxea/install/setup.bash
     rosrun HDAS check_node #after executed the command, please press 1. (1 means the self-check when the arms are installed.)
     ```
 
