@@ -8,20 +8,17 @@
 
 ## 软件版本日志
 
-查看 [R1 软件版本更新日志](R1_Software_Changelog/v1.1.0.md)，获取最新的更新信息。
+查看 [R1 软件版本更新日志](R1_Software_Changelog/v1.1.0.md)，获取最新的SDK包及更新信息。
 
-## 首次操作指引
+## 启动SDK
+Galaxea R1驱动程序由多个组件组成，包括执行器接口、传感器接口和外部功能接口。
 
-访问页面 [R1 Demo](R1_demo_test.md)，并按照说明操作R1。
+当前支持分开启动和一键启动两种方式启动软件接口。为了您的安全，建议使用分开启动的方式启动SDK。
 
-## 软件接口
+### 分开启动各接口
+所有组件可以通过以下命令模板启动。
 
-当前的Galaxea R1控制图如下所示，由五个主要部分组成：R1姿态反馈(R1 Pose Feedback)、R1关节控制(R1 Joint Control)、R1底盘控制(R1 Chassis Control)、R1手臂姿态控制(R1 Arm Pose Control)和R1躯干姿态控制( R1 Torso Pose Control)。后续章节将提供详细信息。整个软件包被简称为“mobiman”,表示移动操作。
-
-![R1_control_interface_draw](assets/R1_control_interface_draw.png)
-### 驱动接口
-
-当前的Galaxea R1驱动程序由多个组件组成，包括执行器接口、传感器接口和外部功能接口。所有组件可以通过以下命令模板启动。
+点击[此处](R1_Step_by_Step_Guide/#43-启动can驱动程序)查看详细启动方式。
 
 ```Bash
 source ~/work/galaxea/install/setup.bash
@@ -57,6 +54,27 @@ roslaunch HDAS r1.launch
   </tbody>
 </table>
 
+### 一键启动所有接口
+<span style="color:red;">**注意：执行以下命令将启动所有驱动和运控接口。**</span>
+
+```Bash
+  sudo apt-get install tmux tmuxp
+  cd ~/work/galaxea/install/share/startup_config/script
+  ./ota_script.sh boot
+```
+
+## Demo演示
+
+访问页面 [R1 Demo](R1_demo_test.md)，并按照说明操作R1。
+
+## 软件接口
+
+当前的Galaxea R1控制图如下所示，由五个主要部分组成：R1姿态反馈(R1 Pose Feedback)、R1关节控制(R1 Joint Control)、R1底盘控制(R1 Chassis Control)、R1手臂姿态控制(R1 Arm Pose Control)和R1躯干姿态控制( R1 Torso Pose Control)。后续章节将提供详细信息。整个软件包被简称为“mobiman”,表示移动操作。
+![R1_control_interface_draw](assets/R1_control_interface_draw.png)
+
+### 驱动接口
+
+当前的Galaxea R1驱动程序由多个组件组成，包括执行器接口、传感器接口和外部功能接口。
 
 #### 手臂驱动接口
 

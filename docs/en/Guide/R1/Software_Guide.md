@@ -8,27 +8,23 @@
 
 ## Software Version Changelog
 
-Visit the [R1 Software Version Changelog](R1_Software_Changelog/v1.1.0.md) and find the latest update.
+Visit the [R1 Software Version Changelog](R1_Software_Changelog/v1.1.0.md) and find the latest SDK and release notes.
 
-## First Move
+## Start SDK
+The current Galaxea R1 control diagram is shown below, consisting of five main parts: R1 Pose Feedback, R1 Joint Control, R1 Chassis Control, R1 Arm Pose Control, and R1 Torso Pose Control. 
 
-Visit the page [R1 Demo](R1_demo_test.md) and get started to operate R1 following the instructions.
+R1 supports two ways to start the SDK: separate startup and one-click startup. For your safety, it is recommended to use the separate startup method to launch the SDK.
 
-## Software Interface
+### Seperate Start
+The current Galaxea R1 driver consists of several components, including actuator interface, sensor interface and external function interface. All the components can be launched by using the following command template. 
 
-The current Galaxea R1 control diagram is shown below, consisting of five main parts: R1 Pose Feedback, R1 Joint Control, R1 Chassis Control, R1 Arm Pose Control, and R1 Torso Pose Control. Details will be provided in the following chapters. The entire package is called 'mobiman,' short for mobile manipulation.
-
-![R1_control_interface_draw](assets/R1_control_interface_draw.png)
-
-### Driver Interface
-
-The current Galaxea R1 driver consists of several components, including actuator interface, sensor interface and external function interface. All the components can be launched by using the following command template.
-
+Click [here](R1_Step_by_Step_Guide/#43-start-can-driver) to view detailed startup instructions.
+All the components can be launched by using the following command template.
 ```Bash
-source ~/work/galaxea/install/setup.bash
-roslaunch <Package Name> <Launch File>
-# Example
-roslaunch HDAS r1.launch
+  source ~/work/galaxea/install/setup.bash
+  roslaunch <Package Name> <Launch File>
+  # Example
+  roslaunch HDAS r1.launch
 ```
 
 <table style="width: 100%; border-collapse: collapse;">
@@ -58,9 +54,30 @@ roslaunch HDAS r1.launch
   </tbody>
 </table>
 
+### One-Command Start
+
+<span style="color:red;">**Note: Running the following command will start all drivers and motion control interfaces.**</span>
+
+```Bash
+  sudo apt-get install tmux tmuxp
+  cd ~/work/galaxea/install/share/startup_config/script
+  ./ota_script.sh boot
+```
 
 
+## Demo
 
+Visit the page [R1 Demo](R1_demo_test.md) and get started to operate R1 following the instructions.
+
+## Software Interface
+
+The current Galaxea R1 control diagram is shown below, consisting of five main parts: R1 Pose Feedback, R1 Joint Control, R1 Chassis Control, R1 Arm Pose Control, and R1 Torso Pose Control. Details will be provided in the following chapters. The entire package is called 'mobiman,' short for mobile manipulation.
+
+![R1_control_interface_draw](assets/R1_control_interface_draw.png)
+
+### Driver Interface
+
+The current Galaxea R1 driver consists of several components, including actuator interface, sensor interface and external function interface. 
 
 #### Arms Driver Interface
 
