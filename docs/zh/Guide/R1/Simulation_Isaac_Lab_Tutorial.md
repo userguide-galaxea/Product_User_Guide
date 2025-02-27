@@ -22,7 +22,7 @@
 
 安装Galaxea Lab的主要步骤如下：
 
-1. 安装最新版本的Isaac Sim（推荐4.2.0），可以通过[omniverse launcher](https://galaxea.ai/Guide/A1/Simulation_Isaac_Sim_Tutorial/)安装（推荐）, 或者[pip](https://docs.omniverse.nvidia.com/isaacsim/latest/installation/install_python.html)安装（仅支持GLIBC 2.34+）
+1. 可以通过[omniverse launcher](https://galaxea.ai/Guide/A1/Simulation_Isaac_Sim_Tutorial/)下载安装最新版本, 或者[pip](https://docs.omniverse.nvidia.com/isaacsim/latest/installation/install_python.html)安装（仅支持GLIBC 2.34+）
 2. 安装Galaxea Lab后克隆代码库。
 ```Bash
 git clone https://github.com/userguide-galaxea/galaxea_lab.git
