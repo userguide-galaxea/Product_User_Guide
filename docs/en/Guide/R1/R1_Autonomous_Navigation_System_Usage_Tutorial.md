@@ -3,6 +3,9 @@
 ## 1. Product Introduction
 
 The system includes mapping, localization, navigation, and control modules. The Galaxea R1 robot can build a point cloud map of the environment and use it for global localization, autonomous movement to target points, and obstacle avoidance.
+
+**<span style="color:blue;">The Autonomous Navigation System is currently a premium feature in beta testing. For detailed inquiries or trial purchases, please contact us at product@galaxea.ai or call 4008780980.</span>**
+
   <div style="display: flex; justify-content: center; align-items: center;">
   <video width="1920" height="1080" controls>
     <source src="../assets/R1_Navigation _Demo.mp4" type="video/mp4">
@@ -320,13 +323,14 @@ When the map data recording is completed, press `Ctrl + C` to end the recording.
     ```
 3. **Verify File Transfer**
    </br>On your computer, check whether the file has been successfully transferred and confirm that the file size is consistent with the one on the robot.
-   
-   ```Bash
-   ls -lh /local/path/to/save/map_data.bag
-   ```
-   If the file transfer is successful, you will see the same file size as on the robot.
+    ```Bash
+    ls -lh /local/path/to/save/map_data.bag
+    ```
+    If the file transfer is successful, you will see the same file size as on the robot.
+
 4. **Data Transmission**
-   </br>Please transmit the data package to [support@galaxea.ai](mailto:support@galaxea.ai) or send it to customer service via WeChat Work.
+   </br><span style="color:blue;">**Please transmit the data package to [support@galaxea.ai](mailto:support@galaxea.ai) or send it to customer service via WeChat Work.**</span>
+
 #### 4.1.3  Import Map-Related Files
 
 ```Bash
@@ -370,7 +374,6 @@ When activating the positioning function, make sure the robot is in a known map.
 
 2. **Record the pose information**
    </br>Every time the robot reaches the target point, record the robot pose information at that position.
-
    ```Bash
    - Translation: [3.280, -0.743, 0.008]
    - Rotation: in Quaternion [0.000, -0.004, -0.147, 0.989] # x y z w

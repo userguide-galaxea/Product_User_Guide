@@ -6,10 +6,27 @@ This guide will show you on how to develop and operate Galaxea A1.
 2. ROS Noetic
 
 ## Installation
-This [SDK](https://github.com/userguide-galaxea/A1_SDK) does not require recompilation. Please refer to the Developing and Operating Tutorials for direct usage instructions.
+Click [here](https://github.com/userguide-galaxea/A1_SDK) to download SDK in our GitHub Community.It does not require recompilation. Please refer to the Developing and Operating Tutorials for direct usage instructions. Or you can download either from:
 
-## First Move
-Click [here](https://github.com/userguide-galaxea/A1_SDK/tree/galaxea/main/resource) to get the Demo scripts for A1.
+- Baidu Cloud：[https://pan.baidu.com/s/1w-zctmpHBfk_Sqm2uihAaA?pwd=arm1](https://pan.baidu.com/s/1w-zctmpHBfk_Sqm2uihAaA?pwd=arm1)
+
+- Google Drive: [https://drive.google.com/drive/folders/12oYeylWJWcaRDKeD2qG7xQNI7rFpBbel?usp=sharing](https://drive.google.com/drive/folders/12oYeylWJWcaRDKeD2qG7xQNI7rFpBbel?usp=sharing)
+
+
+## Developing and Operating Tutorials
+1. For the first use, after confirming the power supply and USB connection, run the following command to modify the read and write permissions of the serial port files:
+```shell
+sudo chmod 777 /dev/ttyACM0
+```
+
+2. After confirming the modification, you can initialize the SDK:
+```shell
+cd A1_SDK/install
+source setup.bash
+roslaunch signal_arm single_arm_node.launch
+```
+
+3. Click [here](https://github.com/userguide-galaxea/A1_SDK/tree/galaxea/main/resource) to get the Demo scripts for A1.
 ```shell
 cd A1_SDK/install
 source setup.bash
@@ -29,24 +46,8 @@ orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
 }"
 ```
 
-
-## Developing and Operating Tutorials
-### A1 Driver Kit
-1. For the first use, after confirming the power supply and USB connection, run the following command to modify the read and write permissions of the serial port files:
-```shell
-sudo chmod 777 /dev/ttyACM0
-```
-
-2. After confirming the modification, you can initialize the SDK:
-```shell
-cd A1_SDK/install
-source setup.bash
-roslaunch signal_arm single_arm_node.launch
-```
-
-The interface section describes the various control and status feedback interfaces for A1 robot arm, helping users understand how to communicate with and control the arm through the ROS package.
-
-#### Driver Interface
+## Software Interface
+### Driver Interface
 The interface is a ROS package designed for manipulator control and status feedback. This package defines several topics for publishing and subscribing to the robot arm’s status, control commands, and associated error codes. Below are detailed descriptions of each topic and its related message types:
 
 <table style="border-collapse: collapse;">
@@ -415,7 +416,7 @@ and can be used to view the real-time status of each motor and the running statu
     </tbody>
 </table>
 
-### Joint and End-Effector Movement Control
+### Motion Control Interface
 
 We provide joint and end-effector movement control interfaces for Galaxea A1, enabling efficient control through the ROS (Robot Operating System) framework. Before performing end-effector or joint movement, you must first activate the `signal_arm` interface; detailed operation instructions can be found in the  `signal_arm` documentation. This project includes several primary functions:
 

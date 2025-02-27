@@ -3,6 +3,20 @@
 ## 1. 产品介绍
 
 该系统包含了建图、定位、导航和控制模块。 机器人可在环境下构建点云地图，并依此实现全局定位和目标点的自主移动和避障。
+
+**<span style="color:blue;">自主导航系统为付费启用功能，目前处于测试阶段，如需深入了解及购买试用，请联系product@galaxea.ai或致电4008780980。</span>**
+
+  <div style="display: flex; justify-content: center; align-items: center;">
+  <video width="1920" height="1080" controls>
+    <source src="../assets/R1自主导航系统示例.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  </div>
+
+## 2. 硬件介绍
+
+### 2.1 性能参数
+
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -25,8 +39,6 @@
         </tr>
     </tbody>
 </table>
-
-
 
 
 <table style="width: 100%; border-collapse: collapse;">
@@ -57,7 +69,6 @@
 </table>
 
 
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -77,16 +88,9 @@
     </tbody>
 </table>
 
-  <div style="display: flex; justify-content: center; align-items: center;">
-  <video width="1920" height="1080" controls>
-    <source src="../assets/R1自主导航系统示例.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  </div>
 
-  
 
-## 2. 硬件介绍
+### 2.2 传感器配置
 
 Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激光雷达，使其能够全方位感知周围环境。
 
@@ -115,7 +119,7 @@ Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激�
 
 
 
-### 2.1 相机
+#### 2.2.1 相机
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -179,7 +183,7 @@ Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激�
 </table>
 
 
-### 2.2 激光雷达
+#### 2.2.2 激光雷达
 
 底盘配备360°激光雷达*，精度高且抗干扰能力强。
 
@@ -296,7 +300,7 @@ rosbag record /hdas/imu_chassis /hdas/lidar_chassis_left /hdas/feedback_chassis
 
 遥控器操控机器人底盘方式请点击[此处](R1_Overview.md)查阅。
 
-当完成地图数据录制后，按下`ctrl+c`结束录制。
+当完成地图数据录制后，按下`Ctrl + C`结束录制。
 
 **注意**：
 
@@ -332,11 +336,11 @@ rosbag record /hdas/imu_chassis /hdas/lidar_chassis_left /hdas/feedback_chassis
     如果文件传输成功，您将看到与机器人端相同的文件大小。
     
 4. **数据回传**
-	</br>**请将数据包回传至support@galaxea.ai或发送至企业微信客服。**
+	</br><span style="color:blue;">**请将数据包回传至support@galaxea.ai或发送至企业微信客服。**</span>
 
 #### 4.1.4  导入地图相关文件
 数据回传后，请联系技术人员获取地图，并将其导入R1。
-```Bash
+```Bashs
 ssh nvidia@{rorbot_ip} "mkdir -p ~/galaxea/calib ~/galaxea/maps"
 scp -r ~/mapping_data/map/* nvidia@{robot_ip}:~/galaxea/maps/
 scp -r ~/mapping_data/robot_calibration.json nvidia@{robot_ip}:~/galaxea/calib/
