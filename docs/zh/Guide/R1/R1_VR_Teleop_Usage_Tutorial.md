@@ -121,8 +121,12 @@ ssh nvidia@${R1_IP}
 mkdir ~/vr_workspace
 tar -zxvf ~/Downloads/R1_vrteleop-V1.1.0-20250213_19_03_45.tar.gz -C ~/vr_workspace
 ```
+4. 安装额外依赖
+```Bash
+pip3 install websockets pyquaternion
+```
 
-4. 嵌入式固件升级
+5. 嵌入式固件升级
 ```Bash
 # 启动环境
 source ~/vr_workspace/install/setup.bash
@@ -133,15 +137,15 @@ sudo -S ip link set up can0
 # 升级嵌入式固件
 bash r1_embedded_firmware_upgrade.sh ../../R1/V1_1_0
 ```
-
 注意：如果显示如下信息，则表示升级成功。
 ![VR_4.1_XCU_upgrade_CN](assets/VR_4.1_XCU_upgrade_CN.png)
-5. 重启R1
+
+6. 重启R1
 </br>升级完成后，将机器人R1下电并重新启动。重启后，软件包配置完成，VR遥操作功能即可使用。
 
 ## 5.遥操作启动
 
-**注意：****每次启动时都需要完成并确认本章节的所有操作。**
+**注意：每次启动时都需要完成并确认本章节的所有操作。**
 
 ### 5.1 R1本体程序启动
 
@@ -162,7 +166,7 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
 
 ### 5.2 VR设备程序启动
 
-**注意**：请佩戴好VR设备并手持两个遥控器，开始以下操作。
+**注意：请佩戴好VR设备并手持两个遥控器，开始以下操作。**
 
 #### 5.2.1. 连接WiFi
 

@@ -122,8 +122,12 @@ ssh nvidia@${R1_IP}
 mkdir ~/vr_workspace
 tar -zxvf ~/Downloads/R1_vrteleop-V1.1.0-20250213_19_03_45.tar.gz -C ~/vr_workspace
 ```
+4. Install extra dependency
+```Bash
+pip3 install websockets pyquaternion
+```
 
-4. Firmware upgrade for embedded system
+5. Firmware upgrade for embedded system
 ```Bash
 # Start the environment
 source ~/vr_workspace/install/setup.bash
@@ -137,7 +141,7 @@ bash r1_embedded_firmware_upgrade.sh ../../R1/V1_1_0
 Note: If the following message is displayed, it indicates that the upgrade is successful.
 ![VR_4.1_XCU_upgrade](assets/VR_4.1_XCU_upgrade.png)
 
-5. Restart R1
+6. Restart R1
   </br>After the upgrade is completed, power off R1 and restart it. After the restart, the software package configuration is completed and the VR Teleop operation function can be used.
 
 ## 5. Start VR Teleop Operation
