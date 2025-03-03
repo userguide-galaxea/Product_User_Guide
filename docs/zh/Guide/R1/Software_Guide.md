@@ -134,7 +134,7 @@ roslaunch HDAS r1.launch
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status_gripper_right</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                    
+            <td style="padding: 8px; border: 1px solid #ddd;">Output</td>                    
             <td style="padding: 8px; border: 1px solid #ddd;">右夹爪状态反馈</td>
             <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
         </tr>
