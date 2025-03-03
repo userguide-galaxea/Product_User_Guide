@@ -496,7 +496,7 @@ roslaunch HDAS r1.launch
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">夹爪行程 (0-100mm)</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">夹爪行程期待值 (0-100mm)</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="2">/motion_control/position_control_gripper_right</td>
@@ -505,7 +505,7 @@ roslaunch HDAS r1.launch
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">夹爪行程 (0-100mm)</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">夹爪行程期待值 (0-100mm)</td>
     </tr>
   </tbody>
 </table>
