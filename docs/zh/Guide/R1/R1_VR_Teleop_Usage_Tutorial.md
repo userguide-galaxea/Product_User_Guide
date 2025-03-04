@@ -371,6 +371,84 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
     </tbody>
 </table>
 
+### 6.4 连接腕部相机
+#### 6.4.1 连接前准备
+请在连接腕部相机前，准备好以下物品：
+
+<table style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">物品</th>
+            <th style="width: 100px; padding: 8px; border: 1px solid #ddd;">数量</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">备注</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">腕部相机</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">2</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+                <td style="padding: 8px; border: 1px solid #ddd;">腕部相机支架</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">2</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">用于固定相机至机器人腕部</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">USB-A转USB-C转接线</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">用于连接机器人背部的USB-A外设接口和腕部相机的USB-C接口</td>
+        </tr>
+    </tbody>
+</table>
+
+#### 6.4.2 连接相机线束
+1. 安装腕部相机支架至机器人腕部，并固定相机。
+2. 使用USB-A转USB-C转接线，连接机器人背部的任一USB-A外设接口和腕部相机的USB-C接口。
+
+#### 6.4.3 配置相机
+<span style="color:red;">**注意：为避免在配置相机过程中混淆两个相机的序列号，建议您先连接一个相机进行配置，然后再连接第二个相机进行配置。**</span>
+
+1. 进入腕部相机配置目录：
+    ```bash
+    cd ~/vr_workspace/install/share/realsense2_camera/launch
+    ```
+2. （以先连接左腕相机为例）连接左腕相机线束后，执行以下命令查看并记录该相机的序列号`Serial Number`:
+    ```bash
+    rs-enumerate-devices  | grep Serial
+    ```
+    ![VR_6.4.3_serial_number_1_CN](assets/VR_6.4.3_serial_number_1_CN.png)
+3. 连接右腕相机线束后，再次执行命令查看并记录该相机的序列号`Serial Number`:
+    ```bash
+    rs-enumerate-devices  | grep Serial
+    ```
+    ![VR_6.4.3_serial_number_2_CN](assets/VR_6.4.3_serial_number_2_CN.png)
+  <span style="color:red;">注意：序列号的排列先后与相机连接的顺序无关，因此建议您先连接一个相机并记录其序列号后，再连接第二个相机记录其序列号。</span>
+
+4. 使用vim工具修改launch文件中的相机序列号：
+    ```bash
+    vim rs_multiple_devices.launch
+    #无论先连接哪个相机，左腕相机名称固定为“camera1”,右腕相机名称固定为“camera2”。
+    ```
+    在对应名称的位置填入此前记录的两个相机序列号。
+    ![VR_6.4.3_vim_CN](assets/VR_6.4.3_vim_CN.png)
+5. 重新启动程序：
+    ```bash
+    cd ~/vr_workspace/install/share/startup_config/script/
+    ./ota_script.sh kill
+    ./ota_script.sh boot
+    ```
+6. 检查相机帧率：
+    ```bash
+    cd ~/vr_workspace/install/
+    source setup.bash
+    rostopic hz /hdas/camera_wrist_right/color/image_raw/compressed /hdas/camera_wrist_left/color/image_raw/compressed
+    ```
+    若出现两个摄像头的数值，且数值均在15hz左右即为连接成功。
+    ![VR_6.4.3_image_raw_CN](assets/VR_6.4.3_image_raw_CN.png)
+
+<span style="color:red;">**注意：每台机器人的腕部相机仅需配置一次，后续可按照[5.1](#51-r1本体程序启动)的方式，在启动机器人时直接启动相机。**</span>
+
 ## 7. 数据采集流程
 ### 7.1 数据格式介绍
 

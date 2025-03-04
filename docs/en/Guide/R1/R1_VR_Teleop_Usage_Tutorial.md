@@ -373,6 +373,85 @@ Press the T button and hold the right stick to rotate counterclockwise.</td>
     </tbody>
 </table>
 
+### 6.4 Connect the Wrist Cameras
+#### 6.4.1 Preparations Before Connection
+Please prepare the following items before connecting the wrist cameras:
+
+<table style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Item</th>
+            <th style="width: 100px; padding: 8px; border: 1px solid #ddd;">Quantity</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Wrist Camera</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">2</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+                <td style="padding: 8px; border: 1px solid #ddd;">Wrist Camera Bracket</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">2</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Used to fix the camera to the robot's wrist.</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">USB-A-to-USB-C Adapter Cable</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Used to connect the robot's back USB-A external device interface and the wrist camera's USB-C interface.</td>
+        </tr>
+    </tbody>
+</table>
+
+#### 6.4.2 Connecting Camera Cables
+1. Install the wrist camera bracket to the robot's wrist and secure the camera.
+2. Use the USB-A-to-USB-C adapter cable to connect any USB-A peripheral interface on the back of the robot and the wrist camera's USB-C interface.
+
+#### 6.4.3 Configuring the Cameras
+<span style="color:red;">**Note : To avoid confusion between the two camera serial numbers during the configuration process, it is recommended that you connect and configure one camera first, and then connect and configure the second camera.**</span>
+
+1. Enter the wrist camera configuration directory:
+    ```bash
+    cd ~/vr_workspace/install/share/realsense2_camera/launch
+    ```
+2. (Taking the connection of the left wrist camera as an example first) After connecting the left wrist camera cable, execute the following command to view and record the camera's `Serial Number`:
+    ```bash
+    rs-enumerate-devices  | grep Serial
+    ```
+    ![VR_6.4.3_serial_number_1](assets/VR_6.4.3_serial_number_1.png)
+3. After connecting the right wrist camera cable, execute the command again to view and record the camera's `Serial Number`:
+    ```bash
+    rs-enumerate-devices  | grep Serial
+    ```
+    ![VR_6.4.3_serial_number_2](assets/VR_6.4.3_serial_number_2.png)
+  <span style="color:red;">Note: The order of the serial numbers has nothing to do with the order in which the cameras are connected, so it is recommended that you connect one camera first, record its serial number, and then connect the second camera to record its serial number. </span>
+
+4. Use the vim tool to modify the camera's Serial Number in the launch file:
+    ```bash
+    vim rs_multiple_devices.launch
+    # No matter which camera is connected first, 
+    # "camera1" refers to the left wrist camera, and "camera2" refers to the right wrist camera.
+    ```
+    Enter the two wairt camera serial numbers recorded earlier in the corresponding name positions.
+    ![VR_6.4.3_vim](assets/VR_6.4.3_vim.png)
+5. Restart the program:
+    ```bash
+    cd ~/vr_workspace/install/share/startup_config/script/
+    ./ota_script.sh kill
+    ./ota_script.sh boot
+    ```
+6. Check the camera frame rate:
+    ```bash
+    cd ~/vr_workspace/install/
+    source setup.bash
+    rostopic hz /hdas/camera_wrist_right/color/image_raw/compressed /hdas/camera_wrist_left/color/image_raw/compressed
+    ```
+    If the values of the two cameras appear and are around 15hz, it means the connection is successful.
+    ![VR_6.4.3_image_raw](assets/VR_6.4.3_image_raw.png)
+
+<span style="color:red;">**Note: The wrist cameras of each robot only need to be configured once. Subsequently, you can follow the method in [5.1](#51-start-r1-base-program) to start the camera directly when starting the robot.**</span>
+
 
 ## 7. Data Collection Process
 ### 7.1 Introduction to Data Format

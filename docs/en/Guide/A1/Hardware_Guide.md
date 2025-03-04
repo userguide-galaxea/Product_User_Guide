@@ -82,7 +82,7 @@ The performance parameters highlight Galaxea A1's key specifications, such as we
         </tr>
 		<tr style="background-color: white;text-align: left;">
             <td>Maximum End-Effector Acceleration</td>
-            <td>10 m/s²</td>
+            <td>40 m/s²</td>
         </tr>
 		<tr style="background-color: white;text-align: left;">
             <td>Degree of Freedom</td>

@@ -100,7 +100,7 @@ Galaxea A1的性能参数凸显了其核心优势，包括轻盈的自重、出�
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">最大末端加速度</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">10 m/s²</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">40 m/s²</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">自由度</td>
