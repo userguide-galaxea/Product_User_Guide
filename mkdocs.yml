@@ -1,8 +1,8 @@
-site_name: GALAXEA
+site_name: Galaxea Documentation
 site_url: https://docs.galaxea.ai
 repo_url: https://github.com/userguide-galaxea/Product_User_Guide
-site_description: "Galaxea"
-copyright: Copyright &copy; 2023 - 2024 Galaxea
+site_description: "Galaxea Documentation"
+copyright: Copyright &copy; 2023 - 2025 Galaxea
 site_author: Galaxea Inc
 
 theme:
@@ -34,6 +34,7 @@ theme:
         - search.excerpt
 #         - navigation.expand
         - navigation.top
+        - navigation.sticky
         - toc.follow
         - navigation.tracking
         - navigation.path
@@ -55,16 +56,16 @@ nav:
           - Gripper: Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md
           - Dexterous Hand: Introducing_Galaxea_Robot/product_info/Dexterous_Hands.md
   - Galaxea A1 User Guide:
-      - Getting Started: Guide/A1/Getting_Started.md
-      - Hardware Guide: Guide/A1/Hardware_Guide.md
-      - Software Guide: Guide/A1/Software_Guide.md
+      - Unboxing and Startup: Guide/A1/Getting_Started.md
+      - Hardware Introduction: Guide/A1/Hardware_Guide.md
+      - Software Introduction: Guide/A1/Software_Guide.md
       - Simulation Isaac Sim Usage Tutorial: Guide/A1/Simulation_Isaac_Sim_Tutorial.md
   - Galaxea R1 User Guide:
       - Overview: Guide/R1/R1_Overview.md
-      - Hardware Guide: Guide/R1/Hardware_Guide.md
-      - Software Guide: Guide/R1/Software_Guide.md
+      - Hardware Introduction: Guide/R1/Hardware_Guide.md
+      - Software Introduction: Guide/R1/Software_Guide.md
       - Step-By-Step Startup Guide: Guide/R1/R1_Step_by_Step_Guide.md
-      - Demo: Guide/R1/R1_demo_test.md
+      - Demo Guide: Guide/R1/R1_demo_test.md
       - Simulation Usage Tutorial: Guide/R1/Simulation_Isaac_Lab_Tutorial.md
       - Sensor Calibration Data Collection Method: Guide/R1/R1_Sensor_Calibration_Data_Collection_Method.md
       - R1 Teleop Usage Tutorial: Guide/R1/R1_Teleop_Usage_Tutorial.md
@@ -124,16 +125,17 @@ plugins:
             Galaxea A1 User Guide: Galaxea A1 用户手册
             Galaxea R1 User Guide: Galaxea R1 用户手册
             Galaxea B1 User Guide: Galaxea B1 用户手册
-            Getting Started: 快速入门
-            Hardware Guide: 硬件手册
-            Software Guide: 软件手册
+            Getting Started: 开箱启动指南
+            Hardware Introduction: 硬件介绍
+            Software Introduction: 软件介绍
             Simulation Isaac Sim Usage Tutorial: 仿真 Isaac Sim 使用教程
             Simulation Isaac Lab Usage Tutorial: 仿真 Isaac Lab 使用教程
             Accessories: 配件
             Gripper: 夹爪
             Dexterous Hand: 灵巧手
             Tabletop Teleopration: 桌面遥操
-            Step-By-Step Startup Guide: 开箱指南
+            Step-By-Step Startup Guide: 开箱启动指南
+            Unboxing and Startup: 开箱启动指南
             Overview: 快速入门
             Galaxea R1 Software Changelog: Galaxea R1 软件版本更新日志
             Simulation Usage Tutorial: 仿真使用教程
@@ -141,3 +143,4 @@ plugins:
             R1 Teleop Usage Tutorial: R1 Teleop 同构遥操作教程
             R1 VR Teleop Usage Tutorial: R1 VR Teleop 遥操作教程
             R1 Autonomous Navigation System Usage Tutorial: R1 自主导航系统使用教程
+            Demo Guide: Demo演示指南

@@ -165,3 +165,9 @@ body, html {
 .swiper-button-next, .swiper-button-prev {
     color: #000000;
 }
+
+.md-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}

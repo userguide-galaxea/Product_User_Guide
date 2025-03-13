@@ -1436,19 +1436,19 @@ The interface is shown below:
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Onput</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Control of left arm motor</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Onput</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Control of right arm motor</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Onput</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Control of torso motor</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
     </tr>

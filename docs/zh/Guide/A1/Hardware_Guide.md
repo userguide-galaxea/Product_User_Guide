@@ -1,37 +1,7 @@
 # A1硬件指南
+>本用户指南将为您详尽解读 Galaxea A1 硬件部分的数据。
 
-
-
-本用户指南将为您详尽解读 Galaxea A1 硬件部分的数据。
-
-
-
-## **安全指南**
-<div style="text-align: left;">
-    <img src="../assets/warning_sign.jpg" style="width: 300px; height: auto;" alt="warning_sign">
-</div>
-
-Galaxea 机械臂在操作不当的情况下可能带来安全隐患，有造成人身伤害的风险。
-
-- 在使用机械臂之前，请务必仔细阅读以下安全须知。
-- 对于尚未熟悉本安全指南的人员，在靠近机器时必须受到严格监督，并需被明确告知机器操作可能存在的风险。
-- 在使用产品之前，请务必对周围环境进行全面检查，以排除任何潜在的安全威胁。
-
-更多安全信息，请查阅随附的安全指南。
-
-
-
-## **声明**
-
-<u>Galaxea A1 目前仅适用于科研开发应用，需要有经验的操作员和程序员使用。该产品不面向家庭消费者，且未获得相关认证以支持此类用途。</u>
-
-
-
-## **技术规格**
-
-### **电气参数**
-
-Galaxea A1的电气特性是其卓越性能的关键。通过精心设计的电压、电流和通信接口参数，我们确保了机械臂在处理高负载和执行复杂动态任务时的稳定性与可靠性。
+## 技术规格
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -59,12 +29,6 @@ Galaxea A1的电气特性是其卓越性能的关键。通过精心设计的电�
         </tr>
     </tbody>
 </table>
-
-
-
-### **性能参数**
-
-Galaxea A1的性能参数凸显了其核心优势，包括轻盈的自重、出色的负载能力、宽广的工作范围和迅捷的运行速度，这些特性共同确保了其在高速动态作业中的非凡表现。
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -113,18 +77,13 @@ Galaxea A1的性能参数凸显了其核心优势，包括轻盈的自重、出�
     </tbody>
 </table>
 
-
-
-
-## **硬件架构**
+## 硬件架构
 
 ![A1_topo](assets/A1_topo_CN.png)
 
+## 机械结构
 
-
-## **机械结构**
-
-### **关节**
+### 关节
 
 本节详细说明了六个关节的工作范围、额定扭矩和峰值扭矩，展示了机械臂在各种操作中的灵活性和力量性。
 
@@ -172,24 +131,18 @@ Galaxea A1的性能参数凸显了其核心优势，包括轻盈的自重、出�
     </tbody>
 </table>
 
-
 ![A1_working_space](assets/A1_working_space_CN.png)
 
-- **视角1**：显示关节1的工作半径和旋转角度，旋转半径为715 mm，最大旋转角度为330度。
-- **视角1**：显示关节2和关节3的旋转范围，关节2的最大旋转角度为180度，关节3为190度。
-- **视角1**：显示关节4、5、6的旋转角度，以及机械臂的末端位置。关节4和6的最大旋转角度为330度，关节5的最大旋转角度为190度。
+- **视角1**：关节1的工作半径为715 mm，最大旋转角度为330°。
+- **视角1**：关节2的最大旋转角度为180°，关节3的最大旋转角度为190°。
+- **视角1**：关节4和关节6的最大旋转角度均为330°，关节5的最大旋转角度为190°。
 
+### 机械臂
+Galaxea A1机械臂是双杆连接，每个关节均配备了行星齿轮电机，能够实现独立的变速操作，具有高精度和扭矩，使机械臂能够在控制器指挥的任何方向上灵活操作。
 
-
-### **连接**
-
-Galaxea A1机械臂由两个主要的连接组成，这些连接由轻巧、坚固且耐用的丙烯腈-丁二烯-苯乙烯（ABS）材料制成。每个关节均配备了行星齿轮电机，具有高精度和扭矩，能够实现独立的变速操作。这种设计使得机械臂能够在控制器指挥的任何方向上灵活操作。
-
-在当前版本中，电机尚未配备制动器，因此切断电源可能会导致机械臂突然掉落。我们将持续对产品进行改进，以解决这一问题。
+当前版本的电机尚未配备制动器，切断电源可能会导致机械臂突然掉落。
 
 ![A1_size_1](assets/A1_size_1.jpg)
-
-机械臂的设计包括：
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -214,9 +167,9 @@ Galaxea A1机械臂由两个主要的连接组成，这些连接由轻巧、坚�
     </tbody>
 </table>
 
-### **底座**
+### 底座
+Galaxea A1在底座后部有两个端口，用于通信和充电。
 
-Galaxea A1在底座后部有两个端口，用于开发和充电。
 <div style="text-align: center">
     <img src="../assets/A1_base_CN.png" alt="A1_base_CN" style="width:"30%;">
 </div>
@@ -252,17 +205,15 @@ Galaxea A1在底座后部有两个端口，用于开发和充电。
     </tbody>
 </table>
 
+### 末端执行器
 
+#### Galaxea G1夹爪
 
-### **末端执行器**
+[Galaxea G1](../../Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md)为自研平行夹爪，产品配备一个关节电机和两指夹具。
 
-#### **Galaxea G1**
-
-Galaxea G1 由一个电机、两个夹子和一个特别设计的关节模块组成。
+<span style="color: blue;">注意：A1机械臂不包括夹爪。如有需要，请联系我们购买。</span>
 
 ![G1_size](assets/G1_size.png)
-
-注意：产品不包括夹爪。如有需要，您可以联系我们购买末端执行器或定制工具。
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -295,26 +246,42 @@ Galaxea G1 由一个电机、两个夹子和一个特别设计的关节模块组
     </tbody>
 </table>
 
-配备末端执行器Galaxea G1，应具有以下特征：
+配备末端执行器 Galaxea G1 后，机械臂具有以下特征：
 ![A1_G1_size](assets/A1_G1_size.png)
 
+<table style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">项</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">备注</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">尺寸</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">展开：923L x 128W x 254H mm</br>折叠：550L x 128W x 294H mm</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">自由度</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">7</td>
+        </tr>
+    </tbody>
+</table>
 
-
-#### **连接**
-
-请按以下步骤将夹爪连接到A1。要移除它们，只需反转这些步骤。
+#### 安装夹爪
+通过以下步骤可以即将夹爪安装至机械臂末端（反转步骤即可拆卸夹爪）。
 
 ![A1G1_attaching](assets/A1G1_attaching.png)
 
-1. **对齐检查：**确保夹爪周围的三个安装孔与臂末端的三个安装孔对齐。
-2. **螺丝固定：**一旦对齐，使用提供的三个螺丝将夹爪固定并紧固到臂上。
-3. **最终检查：**紧固螺丝后，再次检查夹爪的对齐和稳定性。它应该牢固地附着，并且不会晃动或独立于机械臂移动。
+1. **对齐检查**：确保夹爪周围的3个安装孔与机械臂末端的3个安装孔对齐。
+2. **螺丝固定**：对齐后，使用提供的3个螺丝将夹爪固定并紧固到机械臂末端。
+3. **最终检查**：紧固螺丝后，再次检查夹爪的安装是否对齐并是否牢固。
 
+### Inspire-Robots RH56系列 灵巧手
 
+[灵巧手](../../Introducing_Galaxea_Robot/product_info/The%20Dexterous%20Hands.md)拥有一定的握持力和适中的速度，适合于机器人或假肢应用中的抓取和操纵任务。其结合了力量和控制，可以有效地处理各种物体，从而增强了机器人或假肢执行复杂任务的功能。
 
-### **Inspire-Robots RH56系列灵巧手**
-
-灵巧手拥有显著的握持力和适中的速度，适合于机器人或假肢应用中的抓取和操纵任务。灵巧手结合了力量性和控制力，可以有效地处理各种物体，类似于人手的多功能性，从而增强了机器人或假肢执行复杂任务的功能。
+<span style="color:blue;">注意：A1机械臂不包括灵巧手。如有需要，请联系我们购买。</span>
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -347,17 +314,15 @@ Galaxea G1 由一个电机、两个夹子和一个特别设计的关节模块组
     </tbody>
 </table>
 
-
 ![A1_size_dexterous_hand](assets/A1_size_dexterous_hand.jpg)
 
-
-
-#### **连接**
-
+#### 安装灵巧手
+通过以下步骤可以即将灵巧手安装至机械臂末端（反转步骤即可拆卸灵巧手）。
 ![hand_adapter](assets/hand_adapter_CN.png)
 
+1. **对齐检查**：使用特制转接件法兰，将法兰和灵巧手周围的4个安装孔对齐，以及将法兰与机械臂末端周围的3个安装孔对齐。
+2. **螺丝固定**：对齐后，使用提供的螺丝将灵巧手、法兰和机械臂末端固定连接在一起。
+3. **牢固检查**：紧固螺丝后，再次检查灵巧手的安装是否对齐并是否牢固。
 
-
-## **下一步**
-
-Galaxea A1 的硬件指南到这里就结束了。我们建议您阅读 Galaxea A1软件指南 以获取更多详细信息。
+## 下一步
+Galaxea A1的产品硬件介绍到这里就结束了。我们建议您继续探索[Galaxea A1产品软件介绍](./Software_Guide.md)以获取更多详细信息。

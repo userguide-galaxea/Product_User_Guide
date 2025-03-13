@@ -72,7 +72,7 @@ hide:
             <section class="products-section">
                 <h2><img src="assets/R1_series.png" alt="R1" width="50"></h2>
                 <div class="product">
-                        <a href="Guide/R1/GettingStarted_Before">Getting Started</a> <br>
+                        <a href="Guide/R1/R1_Step_by_Step_Guide">Unboxing & Startup</a> <br>
                         <a href="Guide/R1/Hardware_Guide">Hardware Guide</a> <br>
                         <a href="Guide/R1/Software_Guide">Software Guide</a> <br>
                 </div>
@@ -80,7 +80,7 @@ hide:
             <section class="products-section">
                 <h2><img src="assets/A1_series.png" alt="A1" width="50"></h2>
                 <div class="product">
-                        <a href="Guide/A1/Getting_Started">Getting Started</a> <br>
+                        <a href="Guide/A1/Getting_Started">Unboxing & Startup</a> <br>
                         <a href="Guide/A1/Hardware_Guide">Hardware Guide</a> <br>
                         <a href="Guide/A1/Software_Guide">Software Guide</a> <br>
                 </div>
@@ -89,6 +89,6 @@ hide:
     </main>
     <section class="contact-section">
         <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:info@galaxea.ai">info@galaxea.ai</a></p>
+        <p>Hoteline：400 878 0980 </br>E-mail(Product/Business):<a href="mailto:product@galaxea.ai">product@galaxea.ai</a></br>E-mail(Techncal Support): <a href="mailto:support@galaxea.ai">support@galaxea.ai</a></p>
     </section>
 </html>

@@ -1430,20 +1430,20 @@ roslaunch mobiman r1_jointTrackerdemo.launch
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Onput</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂电机控制反馈</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂电机控制</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Onput</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右臂电机控制反馈</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右臂电机控制</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Onput</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干电机控制反馈</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干电机控制</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
     </tr>
   </tbody>

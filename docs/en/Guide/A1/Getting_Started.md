@@ -1,15 +1,23 @@
-> Congratulations on becoming the proud owner of a Galaxea Robot! We are thrilled to extend a warm welcome to the Galaxea Developer Community. This specially curated guide is designed to introduce beginners to the unique appeal and impressive functionalities of Galaxea Robot. Our goal is to help you quickly get started with us and empower you to explore the full range of possibilities that await you.
 # Getting Started
-In this series of step-by-step Galaxea A1 Getting Started tutorials, we will not only lay a solid foundation for using Galaxea A1 but also guide you through the mechanics and performance of each component. Together, we will explore and perform a series of exciting demonstrations to unlock Galaxea A1's amazing advanced features.
+> Welcome to the Galaxea developer family as a valued user of Galaxea A1! This guide helps you understand its features and quickly learn to use this intelligent robot arm.
 
-## Before You Begin
-In this first tutorial, <u>you will learn how to turn on and operate this new product</u> , beginning your journey of interacting with Galaxea A1 Robot Arm.
+## Product Introduction
+[Galaxea A1](../../Introducing_Galaxea_Robot/product_info/A1.md) is a high-precision, intelligent robot arm for diverse industrial and innovative applications. It offers flexible operation, high payload, and programming compatibility, supporting precision assembly, automated lab operations, and educational projects.
 
-### Safety
-To ensure safe use, it is important to remember that Galaxea A1 can cause potential injury if operated improperly. Therefore, we strongly recommend that every user carefully read and follow the instructions in the Safety Guide before operating the robot for the first time to ensure a safe and efficient operation process.
+## Safety Guidelines
+Before using Galaxea A1, read these safety guidelines to ensure safety and proper operation.
 
-### Unboxing
-Upon opening the package, you will find the robot arm as a fully assembled unit. This means that the arm structure, including all its links and joints, comes pre-assembled and ready for installation. Here’s what you can expect inside the box:
+### Operational Safety
+- Personnel must be trained to understand the operation, safety rules, and emergency response.
+- Provide a proper workspace free of hazards like flammables and strong magnetic fields. Keep the area clean and dry.
+- Follow the manual's steps and avoid improper actions during operation.
+
+### Device Safety
+- Use the required power adapter and maintain a stable 48V power supply. Regularly inspect power connections.
+- Know the emergency stop button's location for immediate use in case of an emergency.
+
+## Unboxing Check
+After opening the box, check that the following items are included:
 ![A1_unboxing](assets/A1_unboxing.png)
 
 <table style="width: 100%; border-collapse: collapse;text-align: left;">
@@ -24,9 +32,9 @@ Upon opening the package, you will find the robot arm as a fully assembled unit.
     </thead>
     <tbody>
         <tr style="background-color: white;">
-            <td>Pre-assembled Robot Arm</td>
+            <td>Robot Arm</td>
             <td>1</td>
-            <td>The arm is constructed with all its components integrated, ensuring a straightforward setup process.</td>
+            <td>Pre-assembled for easy setup.</td>
         </tr>
         <tr style="background-color: white;">
             <td>Power Supply Unit </td>
@@ -49,9 +57,9 @@ Upon opening the package, you will find the robot arm as a fully assembled unit.
             <td>Used to connect the robot arm controller to a computer with a USB 2.0 port. </td>
         </tr>
         <tr style="background-color: white;">
-            <td>Mounting Base Plate</td>
+            <td>Pegboard</td>
             <td>1</td>
-            <td>A flat plate for mounting the robot arm to a stable surface.</td>
+            <td>A flat plate mounts the arm to a surface.</td>
         </tr>
         <tr style="background-color: white;">
             <td>G-Clip</td>
@@ -59,34 +67,35 @@ Upon opening the package, you will find the robot arm as a fully assembled unit.
             <td>Grating fasteners, used to secure the base plate to the worktable or surface.</td>
         </tr>
         <tr style="background-color: white;">
-            <td>Mouting Plate Scew M6</td>
+            <td>M6 Mounting Screws</td>
             <td>4</td>
-            <td>Used to attach the base plate to the installation surface using the G-clips.</td>
+            <td>Fixes the arm's base to the board.</td>
         </tr>
     </tbody>
 </table>
 
-### Installing
-The installation process of Galaxea A1 includes securing the arm to the mounting base to ensure its stability and operating accuracy. The design of the mounting holes allows the arm to be securely mounted on a variety of platforms, providing flexible mounting options.
+## Installing
+### Preparation
+1. Choose a flat, stable mounting platform that can bear the arm's maximum load.
+2. Clean the platform to remove debris and dust.
 
-Please select the appropriate installation platform and fixing method according to the operating environment and usage requirements of the arm to ensure its stability and safety during operation.
+### Installation Process
+1. Place the pegboard on the platform.
+2. Secure the board with G-clips.
+3. Put the arm on the base, align it with the board's holes, and fix it with M6 screws.
 
-### Powering Up
-To power up, with the provided power adapter and cable, plug one end of the power adapter cable into the power port on the base of the robot arm, and connect the other end to the power source, ensuring the voltage is 48V.
+## Powering On
+Connect the power adapter cable to the arm's power port and the power source (48V). Wait for the arm to complete its self-inspection and enter standby mode.
 
-### Powering Off
-Once the robot arm and control system have completely stopped, you can just unplug the power cable to turn off Galaxea A1.
-
-In the current version of Galaxea A1, the motor does not have a brake, so cutting off the power may cause the robotic arm to drop suddenly. We will continue to improve the product to address this issue.
+## Powering Off
+When the arm and control system are stopped, unplug the power cable to turn off Galaxea A1. Note that the arm may drop suddenly when power is cut, as there's no motor brake in the current version.
 
 ### Emergency Stop
-The power supply unit of the robot arm includes an emergency stop switch (E-stop) for immediate power interruption during emergencies. 
-
 Pressing the E-stop button will instantly disconnect power to the robot arm, ensuring operator safety and preventing damage to the equipment.
 
 ## Getting Help
-Should you encounter any issues, need immediate assistance, or find yourself seeking direct dialogue with Galaxea AI's engineering team, do not hesitate to contact us at <a href="mailto:products@galaxea.ai">products@galaxea.ai</a>.</p> 
+Should you encounter any issues, need immediate assistance, or find yourself seeking direct dialogue with Galaxea AI's engineering team, do not hesitate to contact us at <a href="mailto:support@galaxea.ai">support@galaxea.ai</a>.
 
 
 ## Next Step
-Our quickstart journey has come to an end. To deepen your mastery of A1 Robot Arm, we strongly recommend exploring the following chapters in [Galaxea A1 Hardware Guide](../../Guide/A1/Hardware_Guide.md) and [Galaxea A1 Software Guide](../../Guide/A1/Software_Guide.md). These resources offer a wealth of additional information and practical examples, guiding you through the intricacies of programming with confidence and ease.
+This quick-start guide ends here. For deeper understanding, explore the [Galaxea A1 Hardware Guide](./Hardware_Guide.md) and [Software Guides](./Software_Guide.md) for more information and examples on programming.

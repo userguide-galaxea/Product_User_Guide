@@ -1,24 +1,8 @@
 # Galaxea A1 Hardware Guide
-This manual provides engineering data and user guidance for working with Galaxea A1 hardware.
-
-## Safety Guide
-<div>
-<img src="../assets/warning_sign.jpg" alt="warning_sign" width="320">
-</div>
-Galaxea robots are potentially dangerous machines with safety hazards. If improperly used, they can cause injury.
-
-- All users must carefully read the following safety information before using the robot.
-- Anyone near the robot who has not read this safety information must be closely supervised at all times and made aware that the robot could be dangerous.
-- Only use the robot after inspecting the surrounding environment for potential hazards.
-
-Please refer to the Safety Guide for more information.
-
-## Disclaimer
-<u> Galaxea A1 is intended for research applications by users experienced in operating and programming research robots. This product is not designed for general consumer use in the home and does not have the necessary certifications for such purposes. </u>
+>This manual provides engineering data and user guidance for working with Galaxea A1 hardware.
 
 ## Technical Specification
-### Electric Parameters
-The electrical parameters of Galaxea A1 include its voltage, current, and communication interface. Its design ensures stable and reliable performance, even in high payload and dynamic applications.
+
 <table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align: left;">
@@ -46,8 +30,6 @@ The electrical parameters of Galaxea A1 include its voltage, current, and commun
     </tbody>
 </table>
 
-### Performance Parameters
-The performance parameters highlight Galaxea A1's key specifications, such as weight, payload capacity, arm reach, and speed, reflecting its superior performance in highly dynamic operations.
 <table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align: left;">
@@ -99,7 +81,7 @@ The performance parameters highlight Galaxea A1's key specifications, such as we
 
 ## Robot Structure 
 ### Joint
-The joint performance parameters detail the operating range, rated torque, and peak torque of the six joints, showcasing the robot's flexibility and power across a variety of operations.
+This section details the operating range, rated torque, and peak torque of the six joints, showing the arm's flexibility and strength in various operations.
 ![A1_joints](assets/A1_joints.png)
 
 <table style="border-collapse: collapse;">
@@ -146,18 +128,16 @@ The joint performance parameters detail the operating range, rated torque, and p
 
 ![A1_working_space](assets/A1_working_space.png)
 
-- **View 1:** Shows the working radius and rotation angle of Joint 1, with a rotation radius of 715 mm and a maximum rotation angle of 330 degrees.
-- **View 2:** Displays the rotation ranges for Joint 2 and Joint 3, with a maximum rotation angle of 180 degrees for Joint 2 and 190 degrees for Joint 3.
-- **View 3:** Illustrates the rotation angles of Joints 4, 5, and 6, as well as the end position of the robot arm. The maximum rotation angle for Joint 4 and 6 is 330 degrees, while Joint 5 has a maximum rotation angle of 190 degrees.
+- **View 1**: Joint 1 has a working radius of 715 mm and a maximum rotation angle of 330 °.
+- **View 2**: Joint 2 has a maximum rotation angle of 180 °, and Joint 3 has a maximum rotation angle of 190 °.
+- **View 3**: Joints 4 and 6 have a maximum rotation angle of 330 °, and Joint 5 has a maximum rotation angle of 190 °.
 
 
-### Link
-Galaxea A1 consists of two main links made from Acrylonitrile Butadiene Styrene (ABS), which is lightweight, rigid and durable. Each joint is equipped with planetary gear motors, enabling independent variable-speed operation with high precision and torque. This design allows the arm to maneuver in any direction commanded by the controller.
-In the current version, the motor does not have a brake, so cutting off the power may cause the robot arm to drop suddenly. We will continue to improve the product to address this issue.
+### Arm
+Galaxea A1's arm is connected by dual rods. Each joint is equipped with a planetary gear motor, enabling independent speed control with high precision and torque, and allowing flexible operation in any direction commanded by the controller. 
+
+The current version's motors lack brakes, so the arm may drop suddenly when power is cut.
 ![A1_size](../A1/assets/A1_size_1.jpg)
-
-
-The arm is designed to have:
 
 <table style="border-collapse: collapse;">
     <thead>
@@ -183,7 +163,8 @@ The arm is designed to have:
 </table>
 
 ### Base
-Galaxea A1 features two ports on the rear of the base for development and charging.
+Galaxea A1's base has two ports on the back for communication and charging.
+
 <div style="text-align: center;">
     <img src="../assets/A1_base.png" alt="A1_base" width="450">
 </div>
@@ -221,13 +202,12 @@ Galaxea A1 features two ports on the rear of the base for development and chargi
 
 
 ### End-Effector
-#### [Galaxea G1](../../Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md) 
+#### Galaxea G1 Gripper
+[Galaxea G1](../../Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md) is a self-developed parallel gripper with a joint motor and two-finger fixture.
 
-G1 is composed of one motor, two clips, and one specially designed joint module.
+<span style="color:blue;">Note: The A1 robotic arm does not include the gripper. If needed, please contact us to purchase.</span>
 
 ![G1_size](assets/G1_size.png)
-
-*Note: No gripper is included with the product. Contact us and purchase end-effectors or customized tools if needed.*
 
 <table style="border-collapse: collapse;">
     <thead>
@@ -268,12 +248,15 @@ Equipped with the end-effector, Galaxea G1, should have:
 Here it shows how to attach gripper to Galaxea A1. To remove them, simply reverse these steps.
 ![A1G1_attaching](assets/A1G1_attaching.png)
 
-1. **Alignment Check:** Ensure that the three mounting holes around the gripper are aligned with the three mounting holes at the end of arm.
-2. **Screw Fixation:** Once aligned, secure and tighten the gripper to the arm using the three screws provided.
-3. **Final Check:** After tightening the screws, double-check the alignment and stability of the gripper. It should be firmly attached and not wobble or move independently of the robot arm.
+1. **Alignment Check**: Ensure the three mounting holes around the gripper align with the three at the arm's end.
+2. **Screw Fixation**: Once aligned, use the provided three screws to fix and tighten the gripper to the arm's end.
+3. **Final Check**: After tightening, check if the gripper is aligned and firmly attached.
 
 ### [Inspire-Robots RH56 Series Dexterous Hand](https://en.inspire-robots.com/product-category/the-dexterous-hands)
-The dexterous hand boasts significant gripping strength and moderate speed, making it suitable for grasping and manipulating tasks in robotics or prosthetic applications. Its combination of power and control allows for effective handling of various objects, similar to the versatility of a human hand, thereby enhancing the functionality of robots or prostheses in performing complex tasks.
+The dextrous hand has a certain grip force and moderate speed, suitable for grasping and manipulating tasks in robotic or prosthetic applications. It combines strength and control to handle various objects effectively, enhancing the ability of robots or prosthetics to perform complex tasks.
+
+<span style="color:blue;">Note: The A1 robotic arm does not include the dextrous hand. If needed, please contact us to purchase.</span>
+
 <table style="border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align: left;">
@@ -307,11 +290,12 @@ The dexterous hand boasts significant gripping strength and moderate speed, maki
 
 ![A1_size_dexterous_hand](assets/A1_size_dexterous_hand.jpg)
 
-#### Attaching
-![](assets/hand_adapter.png)
+#### Installing the Dextrous Hand
+![hand_adapter](assets/hand_adapter.png)
 
+1. **Alignment Check**: Use a custom adapter flange to align the four mounting holes around the dextrous hand and the flange, as well as the three mounting holes around the arm's end and the flange.
+2. **Screw Fixation**: Once aligned, use the provided screws to fix the dextrous hand, flange, and arm's end together.
+3. **Final Check**: After tightening, check if the dextrous hand is aligned and firmly attached.
 
 ## Next Step
-This concludes the hardware guide for Galaxea A1. For further details, please refer to [Galaxea A1 Software Guide](../../Guide/A1/Software_Guide.md).
-
-
+This concludes the hardware introduction of Galaxea A1. We recommend exploring the [Galaxea A1 Software Guide](./Software_Guide.md) for more detailed information.

@@ -1,46 +1,41 @@
 # Galaxea A1 Software Guide
-
-本教程将指导您如何开发和操作Galaxea A1。
+>本教程将指导您如何开发和操作Galaxea A1。
 
 ## 软件依赖
-
 1. Ubuntu 20.04 LTS
 2. ROS Noetic
 
 ## 安装
-
 点击[此处](https://github.com/userguide-galaxea/A1_SDK)可在我们的GitHub社区获取SDK及其他信息。SDK无需重新编译。请参考开发与操作教程直接使用。或者，使用以下任一方式获取SDK：
 
 - 百度云盘：[https://pan.baidu.com/s/1w-zctmpHBfk_Sqm2uihAaA?pwd=arm1](https://pan.baidu.com/s/1w-zctmpHBfk_Sqm2uihAaA?pwd=arm1)
 
 - Google Drive: [https://drive.google.com/drive/folders/12oYeylWJWcaRDKeD2qG7xQNI7rFpBbel?usp=sharing](https://drive.google.com/drive/folders/12oYeylWJWcaRDKeD2qG7xQNI7rFpBbel?usp=sharing)
 
-
-
 ## 开发与操作教程
-
-1. 首次使用时，在确认电源和USB连接后，运行以下命令修改串口文件的读写权限：
-    ```shell
+### 初次使用设置
+1. 确认电源和USB连接后，运行以下命令修改串口文件的读写权限：
+    ```Bash
     sudo chmod 777 /dev/ttyACM0
     ```
 2. 确认修改后，初始化SDK：
-    ```shell
+    ```Bash
     cd A1_SDK/install
     source setup.bash
     roslaunch signal_arm single_arm_node.launch
     ```
     接口部分描述了A1机械臂的各种控制和状态反馈接口，帮助用户了解如何通过ROS包连接和控制机械臂。
 
-3. Demo演示
+### Demo演示
 点击[此处](https://github.com/userguide-galaxea/A1_SDK/tree/galaxea/main/resource)获取A1 Demo脚本。
 
-```shell
+```Bash
 cd A1_SDK/install
 source setup.bash
 roslaunch mobiman eeTrackerdemo.launch
 ```
-
-```shell
+运行以下命令以控制末端执行器运动：
+```Bash
 rostopic pub /a1_ee_target geometry_msgs/PoseStamped "{
 header: {
 seq: 0,
@@ -103,9 +98,6 @@ orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
             <th style="padding: 10px; border: 1px solid #ddd;">话题名称</th>
             <th style="padding: 10px; border: 1px solid #ddd;">字段</th>
             <th style="padding: 10px; border: 1px solid #ddd;">描述</th>
-            <th style="padding: 10px; border: 1px solid #ddd;">数据类型</th>
-            <th style="padding: 10px; border: 1px solid #ddd;">单位</th>
-            <th style="padding: 10px; border: 1px solid #ddd;">备注</th>
         </tr>
     </thead>
     <tbody>
@@ -113,203 +105,130 @@ orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
             <td rowspan="5" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/joint_states_host</td>
             <td style="padding: 10px; border: 1px solid #ddd;">header</td>
             <td style="padding: 10px; border: 1px solid #ddd;">标准消息头</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">name</td>
             <td style="padding: 10px; border: 1px solid #ddd;">关节名称</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">string[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">position</td>
             <td style="padding: 10px; border: 1px solid #ddd;">关节位置</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">float64[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">rad</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">velocity</td>
             <td style="padding: 10px; border: 1px solid #ddd;">关节速度</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">float64[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">rad/s</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">effort</td>
             <td style="padding: 10px; border: 1px solid #ddd;">关节力矩</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">float64[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">Nm</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td rowspan="4" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/arm_status_host</td>
             <td style="padding: 10px; border: 1px solid #ddd;">header</td>
             <td style="padding: 10px; border: 1px solid #ddd;">标准消息头</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">data.name</td>
             <td style="padding: 10px; border: 1px solid #ddd;">关节名称</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">string[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">data.motor_errors.error_code</td>
             <td style="padding: 10px; border: 1px solid #ddd;">关节错误码</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">float32[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">data.motor_errors.error_description</td>
             <td style="padding: 10px; border: 1px solid #ddd;">关节错误描述</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">float32[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">°C</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td rowspan="7" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/arm_joint_command_host</td>
             <td style="padding: 10px; border: 1px solid #ddd;">header</td>
             <td style="padding: 10px; border: 1px solid #ddd;">标准消息头</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">p_des</td>
             <td style="padding: 10px; border: 1px solid #ddd;">目标关节位置</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">float32[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">rad</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">v_des</td>
             <td style="padding: 10px; border: 1px solid #ddd;">目标关节速度</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">float32[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">rad/s</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">t_ff</td>
             <td style="padding: 10px; border: 1px solid #ddd;">目标关节力矩</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">float32[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">Nm</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">kp</td>
             <td style="padding: 10px; border: 1px solid #ddd;">目标关节kp</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">float32[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">kd</td>
             <td style="padding: 10px; border: 1px solid #ddd;">目标关节kd</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">float32[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">mode</td>
             <td style="padding: 10px; border: 1px solid #ddd;">控制模式</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">uint8</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">默认0, MIT控制</td>
         </tr>
         <tr style="background-color: white;">
             <td rowspan="2" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/gripper_force_control_host</td>
             <td style="padding: 10px; border: 1px solid #ddd;">header</td>
             <td style="padding: 10px; border: 1px solid #ddd;">标准消息头</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">gripper_force</td>
             <td style="padding: 10px; border: 1px solid #ddd;">夹持力</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">float32</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">N</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td rowspan="2" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/gripper_position_control_host</td>
             <td style="padding: 10px; border: 1px solid #ddd;">header</td>
             <td style="padding: 10px; border: 1px solid #ddd;">标准消息头</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">gripper_stroke</td>
             <td style="padding: 10px; border: 1px solid #ddd;">目标行程</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">float32</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">mm</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td rowspan="5" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/gripper_stroke_host</td>
             <td style="padding: 10px; border: 1px solid #ddd;">header</td>
             <td style="padding: 10px; border: 1px solid #ddd;">标准消息头</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">name</td>
             <td style="padding: 10px; border: 1px solid #ddd;">夹爪名称</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">string[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">position</td>
             <td style="padding: 10px; border: 1px solid #ddd;">夹爪行程</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">float64[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">mm</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">velocity</td>
             <td style="padding: 10px; border: 1px solid #ddd;">夹爪速度</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">float64[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">effort</td>
             <td style="padding: 10px; border: 1px solid #ddd;">夹爪力矩</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">float64[]</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">-</td>
         </tr>
     </tbody>
 </table>
 
-
 #### 夹爪控制示例
-1. 夹爪力控制接口
-    ```sh
-    # 控制夹爪到指定的力
-    # 正gripper_force闭合夹爪；负gripper_force打开它
+1. **夹爪力控制接口**
+    ```Bash
+    # 控制夹爪到指定的力:
+        # gripper_force为正值：闭合夹爪；
+        # gripper_force为负值：打开夹爪。
     rostopic pub /gripper_force_control_host signal_arm/gripper_joint_command "header:
-      seq: 0
-      stamp:
+        seq: 0
+        stamp:
         secs: 0
         nsecs: 0
-      frame_id: ''
+        frame_id: ''
     gripper_force: 10.0"
     ```
-2. 夹爪位置控制接口
-    ```sh
-    #  控制夹爪到指定位置，60为打开，0为闭合
+2. **夹爪位置控制接口**
+    ```Bash
+    # 控制夹爪到指定位置:
+        # 60为打开夹爪；
+        # 0为闭合夹爪。
     rostopic pub /gripper_position_control_host signal_arm/gripper_position_control "header:
       seq: 0
       stamp:
@@ -418,31 +337,29 @@ DTC用于反馈MCU和驱动器的错误信息，可用于查看每个电机的�
 
 
 ### 运动控制接口
-
-Galaxea A1 提供关节和末端执行器运动控制接口，通过ROS框架实现高效控制。在执行末端执行器或关节运动之前，激活`signal_arm`接口。主要功能：
+Galaxea A1 提供关节和末端执行器运动控制接口，通过ROS框架实现高效控制。在执行末端执行器或关节运动之前，激活`signal_arm`接口。
 
 - **末端执行器姿态运动**：允许通过发布目标姿态消息来控制Galaxea A1的末端执行器的位置和方向。该功能适用于需要精确定位的应用。
-
 - **末端执行器轨迹运动**：通过发布一系列姿态消息，实现Galaxea A1末端执行器沿指定轨迹的运动。该功能适用于复杂的路径规划和执行。
 - **关节角度运动**：提供一个关节级别的控制接口，可为每个关节设置目标位置，实现协调的整个手臂运动。
 
 #### 末端执行器姿态运动
 
 1. 启动末端执行器姿态运动脚本。启动RViz可视化，默认关节位置设置为零。
-    ```shell
+    ```Bash
     cd A1_SDK/install
     source setup.bash
     roslaunch mobiman eeTrackerdemo.launch
     ```
 
 2. 在文件`eeTrackerdemo.launch`中，执行以下命令：
-    ```shell
+    ```Bash
     <param name="joint_states_topic" value="/joint_states" /> # the topic /joint_states  represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
     <param name="arm_joint_command_topic" value="/arm_joint_command_host" /> # the topic /arm_joint_command_host topic represents the channel for issuing commands to the motors.
     ```
 
 3. 在`/a1_ee_target`话题上发布消息以控制末端执行器运动。此操作是非阻塞的，允许连续发布消息，实现末端执行器的无缝运动。但是，目标端点不要离末端执行器的当前位置太远，以避免过度拉伸机械结构或碰撞风险。
-    ```shell
+    ```Bash
     rostopic pub /a1_ee_target geometry_msgs/PoseStamped "{
     header: {
     seq: 0,
@@ -488,7 +405,7 @@ Galaxea A1 提供关节和末端执行器运动控制接口，通过ROS框架实
             pass
     ```
 
-4. 使用示例：
+4. Demo示例：
 
     <div style="display: flex; justify-content: center; align-items: center;">
     <video width="1920" height="1080" controls>
@@ -497,20 +414,17 @@ Galaxea A1 提供关节和末端执行器运动控制接口，通过ROS框架实
     </video>
     </div>
 
-
-
-
 #### 末端执行器轨迹运动
 
 1. 启动末端执行器轨迹运动脚本。启动RViz可视化，默认关节位置设置为零。
-    ```shell
+    ```Bash
     cd A1_SDK/install
     source setup.bash
     roslaunch mobiman eeTrajTrackerdemo.launch
     ```
 
 2. 在文件`eeTrajTrackerdemo.launch`中，执行以下命令：
-    ```shell
+    ```Bash
     <param name="joint_states_topic" value="/joint_states" /> # the /joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
     <param name="joint_command" value="/arm_joint_command_host" /> #the /arm_joint_command_host topic represents the channel for issuing commands to the motors.
     ```
@@ -557,7 +471,7 @@ Galaxea A1 提供关节和末端执行器运动控制接口，通过ROS框架实
     
     ```
 
-4. **演示示例:**
+4. Demo示例:
 
     <div style="display: flex; justify-content: center; align-items: center;">
     <video width="1920" height="1080" controls>
@@ -565,9 +479,6 @@ Galaxea A1 提供关节和末端执行器运动控制接口，通过ROS框架实
       Your browser does not support the video tag.
     </video>
     </div>
-
-
-
 
 ##### 末端执行器姿态运动接口
 
@@ -587,6 +498,8 @@ Galaxea A1 提供关节和末端执行器运动控制接口，通过ROS框架实
         </tr>
     </tbody>
 </table>
+
+针对以上话题的具体字段及其详细描述如下表所示：
 <table style="border-collapse: collapse; text-align: left; width: 100%;">
     <tr style="background-color: black; color: white;">
         <th style="padding: 10px; border: 1px solid #ddd;">话题名称</th>
@@ -628,20 +541,17 @@ Galaxea A1 提供关节和末端执行器运动控制接口，通过ROS框架实
     </tr>
 </table>
 
-
-
-
 #### 关节角度运动
 
 1. 启动关节角度运动脚本。启动RViz可视化，默认关节位置设置为零。
-    ```shell
+    ```Bash
     cd A1_SDK/install
     source setup.bash
     roslaunch mobiman jointTrackerdemo.launch
     ```
 
 2. 在文件`jointTrackerdemo.launch`中，执行以下命令：
-    ```shell
+    ```Bash
     <param name="joint_states_sub_topic" value="/joint_states" /> # the /joint_states topic represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
     <param name="joint_command" value="/arm_joint_command_host" /> #the /arm_joint_command_host topic represents the channel for issuing commands to the motors.
     ```
@@ -703,6 +613,8 @@ Galaxea A1 提供关节和末端执行器运动控制接口，通过ROS框架实
         </tr>
     </tbody>
 </table>
+
+针对以上话题的具体字段及其详细描述如下表所示：
 <table style="width: 100%; border-collapse: collapse;">
   <tr>
     <th style="background-color: black; color: white; vertical-align: middle; padding: 10px; border: 1px solid #ddd;">话题名称</th>
