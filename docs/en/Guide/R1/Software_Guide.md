@@ -563,7 +563,7 @@ This interface is used for the torso control and status feedback ROS package, wh
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>           
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>           
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Motor control of torso</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
     </tr>
@@ -1309,7 +1309,7 @@ The specific fields and their detailed descriptions for the above topic are show
   </thead>
   <tbody>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/controller</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/controller</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Signal from remote controller</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::controller_signal_stamped</td>
@@ -1331,7 +1331,7 @@ The specific fields and their detailed descriptions for the above topic are show
   </thead>
   <tbody>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="6">/hdas/controller</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="6">/controller</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Standard header</td>
     </tr>

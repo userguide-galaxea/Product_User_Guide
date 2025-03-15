@@ -1,14 +1,6 @@
 # Galaxea R1 硬件指南
 
-
-
-## **声明**
-
-<u>**Galaxea R1** 目前仅适用于科研开发应用，需要有经验的操作员和程序员使用。该产品不面向家庭消费者，且未获得相关认证以支持此类用途。</u>
-
-
-
-## **技术规格**
+## 技术规格
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -382,20 +374,9 @@ Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激�
             <td style="padding: 8px; border: 1px solid #ddd;">75 g</td>
             <td style="padding: 8px; border: 1px solid #ddd;"><50 g</td>
         </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">品牌 & 类型</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Zed 2</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">RealSense D435i</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">SENSING H120H</td>
-        </tr>
-    </tbody>
 </table>
 
-
-
-
-
-#### **激光雷达**
+#### 激光雷达
 
 底盘配备360°激光雷达，精度高且抗干扰能力强。
 
@@ -443,10 +424,6 @@ Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激�
             <td style="padding: 8px; border: 1px solid #ddd;">重量</td>
             <td style="padding: 8px; border: 1px solid #ddd;">265 g</td>
         </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">激光雷达品牌 & 类型</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">LIVOX MID-360</td>
-        </tr>
     </tbody>
 </table>
 
@@ -455,7 +432,7 @@ Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激�
 
 
 
-### **计算单元**
+### 计算单元
 
 <table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
     <thead>

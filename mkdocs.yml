@@ -56,15 +56,16 @@ nav:
           - Gripper: Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md
           - Dexterous Hand: Introducing_Galaxea_Robot/product_info/Dexterous_Hands.md
   - Galaxea A1 User Guide:
-      - Unboxing and Startup: Guide/A1/Getting_Started.md
+      - Unboxing and Startup Guide: Guide/A1/Getting_Started.md
       - Hardware Introduction: Guide/A1/Hardware_Guide.md
       - Software Introduction: Guide/A1/Software_Guide.md
-      - Simulation Isaac Sim Usage Tutorial: Guide/A1/Simulation_Isaac_Sim_Tutorial.md
+      - Simulation Usage Tutorial: Guide/A1/Simulation_Isaac_Sim_Tutorial.md
+      - FAQ: Guide/A1/FAQ_A1.md
   - Galaxea R1 User Guide:
-      - Overview: Guide/R1/R1_Overview.md
+      - Unboxing and Startup Guide: Guide/R1/R1_Step_by_Step_Guide.md
+      - Basic Usage Introduction: Guide/R1/R1_Overview.md
       - Hardware Introduction: Guide/R1/Hardware_Guide.md
       - Software Introduction: Guide/R1/Software_Guide.md
-      - Step-By-Step Startup Guide: Guide/R1/R1_Step_by_Step_Guide.md
       - Demo Guide: Guide/R1/R1_demo_test.md
       - Simulation Usage Tutorial: Guide/R1/Simulation_Isaac_Lab_Tutorial.md
       - Sensor Calibration Data Collection Method: Guide/R1/R1_Sensor_Calibration_Data_Collection_Method.md
@@ -74,10 +75,12 @@ nav:
   - Galaxea R1 Software Changelog:
         - V1.1.0: Guide/R1/R1_Software_Changelog/v1.1.0.md
         - V1.0.4: Guide/R1/R1_Software_Changelog/v1.0.4.md
-#   - Galaxea B1 User Guide:
-#       - Getting Started: Guide/B1/B1_Getting_Started.md
-#       - Hardware Guide: Guide/B1/B1_Hardware_Guide.md
-#       - Software Guide: Guide/B1/B1_Software_Guide.md
+  - Galaxea R1 Lite User Guide:
+        - Unboxing and Startup Guide: Guide/R1Lite/R1Lite_Unboxing_Startup_Guide.md
+        - Basic Usage Introduction: Guide/R1Lite/R1Lite_Basic_Usage_Introduction.md
+        - Hardware Introduction: Guide/R1Lite/R1Lite_Hardware_Introduction.md
+        - Software Introduction: Guide/R1Lite/R1Lite_Software_Introduction.md
+        - Wheel Motor Zero-Point Calibration Instruction: Guide/R1Lite/R1Lite_Wheel_Motor_Calibration.md
 
 extra_css:
   - styles.css
@@ -125,6 +128,7 @@ plugins:
             Galaxea A1 User Guide: Galaxea A1 用户手册
             Galaxea R1 User Guide: Galaxea R1 用户手册
             Galaxea B1 User Guide: Galaxea B1 用户手册
+            Galaxea R1 Lite User Guide: Galxea R1 Lite 用户手册
             Getting Started: 开箱启动指南
             Hardware Introduction: 硬件介绍
             Software Introduction: 软件介绍
@@ -135,7 +139,7 @@ plugins:
             Dexterous Hand: 灵巧手
             Tabletop Teleopration: 桌面遥操
             Step-By-Step Startup Guide: 开箱启动指南
-            Unboxing and Startup: 开箱启动指南
+            Unboxing and Startup Guide: 开箱启动指南
             Overview: 快速入门
             Galaxea R1 Software Changelog: Galaxea R1 软件版本更新日志
             Simulation Usage Tutorial: 仿真使用教程
@@ -144,3 +148,8 @@ plugins:
             R1 VR Teleop Usage Tutorial: R1 VR Teleop 遥操作教程
             R1 Autonomous Navigation System Usage Tutorial: R1 自主导航系统使用教程
             Demo Guide: Demo演示指南
+            Hardware Introduction: 硬件介绍
+            Software Introduction: 软件介绍
+            Basic Usage Introduction: 基础使用介绍
+            Wheel Motor Zero-Point Calibration Instruction: 舵轮电机零点标定说明
+            FAQ: 常见问题

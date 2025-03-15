@@ -564,8 +564,7 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
     </tbody>
 </table>
 
-
-
+针对以上话题的具体字段及其详细描述如下表所示：
 
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
@@ -680,7 +679,7 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
     </tbody>
 </table>
 
-
+针对以上话题的具体字段及其详细描述如下表所示：
 <table style="width: 100%; border-collapse: collapse;">
   </thead>
     <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">话题名称</th>
@@ -1044,9 +1043,6 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
   </tbody>
 </table>
 
-
-
-
 #### 激光雷达接口
 
 <table style="width: 100%; border-collapse: collapse;">
@@ -1068,9 +1064,7 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
     </tbody>
 </table>
 
-
-
-
+针对以上话题的具体字段及其详细描述如下表所示：
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -1110,13 +1104,13 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/hdas/imu_chassis</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Output</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Imu信息</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">底盘IMU反馈</td>
             <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::Imu</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/hdas/imu_torso</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Output</td>   
-            <td style="padding: 8px; border: 1px solid #ddd;">Imu信息</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">躯干IMU反馈</td>
             <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::Imu</td>
         </tr>
     </tbody>
@@ -1252,7 +1246,7 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
     </tbody>
 </table>
 
-
+针对以上话题的具体字段及其详细描述如下表所示：
 
 
 <table style="width: 100%; border-collapse: collapse;">
@@ -1284,9 +1278,6 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
     </tbody>
 </table>
 
-
-
-
 #### 遥控器接口
 
 <table style="width: 100%; border-collapse: collapse;">
@@ -1300,7 +1291,7 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/controller</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">/controller</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Output</td>
             <td style="padding: 8px; border: 1px solid #ddd;">遥控器信号</td>
             <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::controller_signal_stamped</td>
@@ -1321,7 +1312,7 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="6">/hdas/controller</td>
+            <td style="padding: 8px; border: 1px solid #ddd;" rowspan="6">/controller</td>
             <td style="padding: 8px; border: 1px solid #ddd;">header</td>
             <td style="padding: 8px; border: 1px solid #ddd;">标准消息头</td>
         </tr>
@@ -1365,17 +1356,17 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
 
 
 
-#### **R1 关节控制**
+#### R1 关节控制
 
 R1关节控制节点负责控制R1躯干和手臂的每个关节，总共有16个关节。
 
 可通过以下命令启动：
 
-```Plain
+```Bash
 source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_jointTrackerdemo.launch
-## For R1 Lite 
-##roslaunch mobiman pi_jointTrackerdemo.launch
+# For R1 Lite 
+# roslaunch mobiman pi_jointTrackerdemo.launch
 ```
 
 这个启动文件将启动 `r1_jointTracker_demo_node`，该节点是负责控制每个关节的主要节点。
@@ -1779,7 +1770,7 @@ R1底盘控制是一个使用矢量控制来控制R1底盘的节点，它允许�
 roslaunch mobiman r1_chassis_control.launch
 ```
 
-这个启动文件将启动两个节点：chassis_control_node 和 r1_control_manager。`chassis_control_node `负责R1底盘的速度控制。其接口如下所示：
+这个启动文件将启动两个节点：`chassis_control_node` 和 `r1_control_manager`。`chassis_control_node `负责R1底盘的速度控制。其接口如下所示：
 
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
@@ -1847,11 +1838,11 @@ roslaunch mobiman r1_chassis_control.launch
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">线速度x, 范围 (-1.5 to 1.5) m/s</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">线速度x, 范围 (-1.5, 1.5) m/s</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">线速度y, 范围 (-1.5 to 1.5) m/s</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">线速度y, 范围 (-1.5, 1.5) m/s</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">angular</td>

@@ -1,6 +1,9 @@
 # R1 开箱启动指南
 > 在本教程中，我们将提供详细的说明，指导您如何正确地开箱Galaxea R1，连接电缆，安装机械臂，以及如何远程控制R1，以实现更好的通信和探索更多功能。
 
+## 开箱启动教学
+<iframe width="720" height="350" src="https://youtu.be/jPyW3BnnwwY" title="R1 Lite Unboxing and Startup Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 1.物品清单检查
 收到产品时，请根据以下清单检查包装盒内的物品是否齐全。（部分物品在航空箱内）
 <table style="width: 100%; border-collapse: collapse;">

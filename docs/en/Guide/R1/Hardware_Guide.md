@@ -361,13 +361,7 @@ Galaxea R1 is equipped with a multitude of sensors, among which are eight HD cam
             <td style="padding: 8px; border: 1px solid #ddd;">164 g</td>
             <td style="padding: 8px; border: 1px solid #ddd;">75 g</td>
             <td style="padding: 8px; border: 1px solid #ddd;">＜50 g</td>            
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Brand & Type</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Zed 2</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">RealSense D435i</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">SENSING H120H</td>            
-        </tr>        
+        </tr>    
     </tbody>
 </table>
 
@@ -419,11 +413,7 @@ The chassis is equipped with up to two 360-degree LiDARs*, which are of high pre
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Weight</td>
             <td style="padding: 8px; border: 1px solid #ddd;">265 g</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Brand & Type</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">LIVOX MID-360</td>
-        </tr>        
+        </tr>       
     </tbody>
 </table>
 
