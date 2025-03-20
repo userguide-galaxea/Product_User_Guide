@@ -9,6 +9,7 @@
 Click [here](https://github.com/userguide-galaxea/A1_SDK) to download SDK in our GitHub Community.It does not require recompilation. Please refer to the Developing and Operating Tutorials for direct usage instructions. 
 
 Alternatively, you can obtain the SDK using either of the following methods:
+
 - Baidu Cloud：[https://pan.baidu.com/s/1w-zctmpHBfk_Sqm2uihAaA?pwd=arm1](https://pan.baidu.com/s/1w-zctmpHBfk_Sqm2uihAaA?pwd=arm1)
 - Google Drive: [https://drive.google.com/drive/folders/12oYeylWJWcaRDKeD2qG7xQNI7rFpBbel?usp=sharing](https://drive.google.com/drive/folders/12oYeylWJWcaRDKeD2qG7xQNI7rFpBbel?usp=sharing)
 
@@ -340,6 +341,7 @@ and can be used to view the real-time status of each motor and the running statu
 
 ### Motion Control Interface
 Galaxea A1 offers joint and end-effector motion control interfaces, enabling efficient control via the ROS framework. Activate the `signal_arm` interface before executing end-effector or joint movements.
+
 - **End-Effector Pose Movement**: Control the position and orientation of Galaxea A1's end-effector by publishing target pose messages. This is ideal for applications requiring precise positioning.
 - **End-Effector Trajectory Movement**: Achieve Galaxea A1 end-effector motion along a specified trajectory by publishing a series of pose messages. This is suitable for complex path planning and execution.
 - **Joint Angle Movement**: This interface allows joint-level control, letting you set target positions for each joint to coordinate the entire arm's movement.
@@ -357,7 +359,8 @@ Galaxea A1 offers joint and end-effector motion control interfaces, enabling eff
     <param name="joint_states_topic" value="/joint_states" /> # the topic /joint_states  represents the channel for acquiring simulated values, specifically the states of the robot's joints, within a simulation environment.
     <param name="arm_joint_command_topic" value="/arm_joint_command_host" /> # the topic /arm_joint_command_host topic represents the channel for issuing commands to the motors.
     ```
-    3. Publish messages on the `/a1_ee_target` topic to control end-effector motion. This operation is non-blocking, allowing continuous message publishing for seamless end-effector movement. However, ensure the target endpoint isn't too far from the current position to avoid over-stretching the mechanical structure or collision risks.```Bash
+3. Publish messages on the `/a1_ee_target` topic to control end-effector motion. This operation is non-blocking, allowing continuous message publishing for seamless end-effector movement. However, ensure the target endpoint isn't too far from the current position to avoid over-stretching the mechanical structure or collision risks.
+    ```Bash
     rostopic pub /a1_ee_target geometry_msgs/PoseStamped "{
     header: {
     seq: 0,
@@ -403,12 +406,12 @@ Galaxea A1 offers joint and end-effector motion control interfaces, enabling eff
             pass
     ```
 4. Demo Example:
-<div style="display: flex; justify-content: center; align-items: center;">
-<video width="1920" height="1080" controls>
-  <source src="../assets/A1_End-Effector_Motion.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-</div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <video width="1920" height="1080" controls>
+    <source src="../assets/A1_End-Effector_Motion.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+    </div>
 
 #### End-Effector Trajectory Movement
 
@@ -467,12 +470,12 @@ Galaxea A1 offers joint and end-effector motion control interfaces, enabling eff
 
     ```
 4. Demo Example:
-<div style="display: flex; justify-content: center; align-items: center;">
-<video width="1920" height="1080" controls>
-  <source src="../assets/A1_End-Effector_Trajectory_Motion.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-</div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <video width="1920" height="1080" controls>
+    <source src="../assets/A1_End-Effector_Trajectory_Motion.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+    </div>
 
 ##### End-Effector Pose Movement Interface
 

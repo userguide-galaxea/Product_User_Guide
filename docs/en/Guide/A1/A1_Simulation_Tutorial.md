@@ -67,7 +67,6 @@ Visit [A1_Simulation_A1 G1_SDK](https://github.com/userguide-galaxea/A1_Simulati
     <u>**Important:** The Isaac Sim ROS Bridge can only publish/subscribe to `rostopic` when `roscore` is running.</u>
    
 ## Demonstration Example
-
 After clicking the Play button, start the python script [A1_simulation_SDK/a1_joint_move_sin.py](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/a1_joint_move_sin.py). 
 
 A1 robot arm will begin executing a sinusoidal trajectory in joint space, as shown in the image below. You can also play the controller trajectory by running the python file [A1_simulation_SDK/a1_control_from_traj.py](https://github.com/userguide-galaxea/A1_Simulation_Isaac_Sim_Usage_Tutorial/blob/galaxea/main/A1_simulation_SDK/a1_control_from_traj.py). 
@@ -80,8 +79,8 @@ With this, the Isaac Sim A1 robot arm simulation process is complete. You may pl
 
 <img src="../assets/a1_asaacsim_demo.gif" alt="video_git" width="1080" />
 
-## Gripping
 
+## Gripping
 After clicking the “Play”, please refer to the [End-Effector Movement Example](https://github.com/userguide-galaxea/A1_SDK/blob/galaxea/main/README_CONTROL.md#end-effector-movement-example) in A1 SDK and clone the A1_SDK repository to complete the simuation process in Isaac Sim.
 
 Note:
@@ -97,45 +96,45 @@ Note:
 Take the following code as an example:
 
 1. Trace the end pose and position
-```python
-##Initiate the end motion script to start one RViz of the arm. Joint position is on zero-point by default.
-cd A1_SDK/install
-source setup.bash
-roslaunch mobiman eeTrackerdemo.launch
+  ```python
+  ##Initiate the end motion script to start one RViz of the arm. Joint position is on zero-point by default.
+  cd A1_SDK/install
+  source setup.bash
+  roslaunch mobiman eeTrackerdemo.launch
 
-##Initiate one terminal,e.g. "terminal_1", open the A1 simulation sync.
-python A1_simulation_SDK/a1_jointsync.py
-##or if you are using the A1-G1, run: python A1_simulation_A1_G1_SDK/a1_jointsync_A1G1.py
+  ##Initiate one terminal,e.g. "terminal_1", open the A1 simulation sync.
+  python A1_simulation_SDK/a1_jointsync.py
+  ##or if you are using the A1-G1, run: python A1_simulation_A1_G1_SDK/a1_jointsync_A1G1.py
 
-##Initiate one terminal,e.g. "terminal_2", publish the example trajactory ponits.
-rostopic pub /a1_ee_target geometry_msgs/PoseStamped "{
-header: {
-    seq: 0,
-    stamp: {secs: 0, nsecs: 0},
-    frame_id: 'world'
-},
-pose: {
-    position: {x: 0.08, y: 0.0, z: 0.5},
-    orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-}
-}"
-```
+  ##Initiate one terminal,e.g. "terminal_2", publish the example trajactory ponits.
+  rostopic pub /a1_ee_target geometry_msgs/PoseStamped "{
+  header: {
+      seq: 0,
+      stamp: {secs: 0, nsecs: 0},
+      frame_id: 'world'
+  },
+  pose: {
+      position: {x: 0.08, y: 0.0, z: 0.5},
+      orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  }
+  }"
+  ```
 
 2. Gripping the object. demo
-```Bash
-##Initiate the end motion script to start one RViz of the arm. Joint position is on zero-point by default.
-cd A1_SDK/install
-source setup.bash
-roslaunch mobiman eeTrackerdemo.launch
+  ```Bash
+  ##Initiate the end motion script to start one RViz of the arm. Joint position is on zero-point by default.
+  cd A1_SDK/install
+  source setup.bash
+  roslaunch mobiman eeTrackerdemo.launch
 
-##Initiate another terminal,e.g. "terminal_3", run the script.
-python mpc_picker.py
-```
+  ##Initiate another terminal,e.g. "terminal_3", run the script.
+  python mpc_picker.py
+  ```
 
 3. Demo Video
-<div style="display: flex; justify-content: center; align-items: center;">
-<video width="1920" height="1080" controls>
-  <source src="../assets/mp4_1.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-</div>
+  <div style="display: flex; justify-content: center; align-items: center;">
+  <video width="1920" height="1080" controls>
+    <source src="../assets/mp4_1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  </div>

@@ -1,14 +1,8 @@
 # 灵巧手
-
-
-
 ![Dexterous_hand_title](assets/Dexterous_hand_title_CN.png)
 
-
-
-## **更强大**
-
-Inspire-Robots 公司的 Dexterous Hand RH56DFX 系列拥有6个自由度（DOF）和12个运动关节，结合力位混合控制算法，实现了亚毫米级的重复定位精度，并能够处理数公斤的负载。这些手部能够精确模拟人手的抓握动作。该系列支持 ROS 系统，并提供相应的 ROS 插件，便于集成和使用。
+## 更强大
+灵巧手列拥有6个自由度（DOF）和12个运动关节，结合力位混合控制算法，实现了亚毫米级的重复定位精度，并能够处理数公斤的负载。这些手部能够精确模拟人手的抓握动作。该系列支持 ROS 系统，并提供相应的 ROS 插件，便于集成和使用。
 
 - 大握力
 - 适中速度
@@ -17,8 +11,7 @@ Inspire-Robots 公司的 Dexterous Hand RH56DFX 系列拥有6个自由度（DOF�
 
 </br>
 
-## **技术规格**
-
+## 技术规格
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white;text-align:left">
@@ -81,8 +74,3 @@ Inspire-Robots 公司的 Dexterous Hand RH56DFX 系列拥有6个自由度（DOF�
         </tr>
     </tbody>
 </table>
-
-
-
-
-

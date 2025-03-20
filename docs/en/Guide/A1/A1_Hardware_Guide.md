@@ -244,7 +244,8 @@ Equipped with the end-effector, Galaxea G1, should have:
 
 ![A1_G1_size](assets/A1_G1_size.png)
 
-#### Attaching
+**Install Gripper**
+
 Here it shows how to attach gripper to Galaxea A1. To remove them, simply reverse these steps.
 ![A1G1_attaching](assets/A1G1_attaching.png)
 
@@ -252,7 +253,7 @@ Here it shows how to attach gripper to Galaxea A1. To remove them, simply revers
 2. **Screw Fixation**: Once aligned, use the provided three screws to fix and tighten the gripper to the arm's end.
 3. **Final Check**: After tightening, check if the gripper is aligned and firmly attached.
 
-### [Inspire-Robots RH56 Series Dexterous Hand](https://en.inspire-robots.com/product-category/the-dexterous-hands)
+#### Dexterous Hand
 The dextrous hand has a certain grip force and moderate speed, suitable for grasping and manipulating tasks in robotic or prosthetic applications. It combines strength and control to handle various objects effectively, enhancing the ability of robots or prosthetics to perform complex tasks.
 
 <span style="color:blue;">Note: The A1 robotic arm does not include the dextrous hand. If needed, please contact us to purchase.</span>
@@ -290,7 +291,7 @@ The dextrous hand has a certain grip force and moderate speed, suitable for gras
 
 ![A1_size_dexterous_hand](assets/A1_size_dexterous_hand.jpg)
 
-#### Installing the Dextrous Hand
+**Install the Dextrous Hand**
 ![hand_adapter](assets/hand_adapter.png)
 
 1. **Alignment Check**: Use a custom adapter flange to align the four mounting holes around the dextrous hand and the flange, as well as the three mounting holes around the arm's end and the flange.
@@ -298,4 +299,4 @@ The dextrous hand has a certain grip force and moderate speed, suitable for gras
 3. **Final Check**: After tightening, check if the dextrous hand is aligned and firmly attached.
 
 ## Next Step
-This concludes the hardware introduction of Galaxea A1. We recommend exploring the [Galaxea A1 Software Guide](./Software_Guide.md) for more detailed information.
+This concludes the hardware introduction of Galaxea A1. We recommend exploring the [Galaxea A1 Software Guide](./A1_Software_Guide.md) for more detailed information.

@@ -1,4 +1,4 @@
-# Dexterous Hand
+# ACCESSORIES
 
 ![Dexterous_hand_title](../product_images_video/Dexterous_hand_title.png)
 
@@ -52,7 +52,7 @@
         </tr>
         <tr style="background-color: #f2f2f2;">
             <td>Max. Palm Finger Force</td>
-            <td>10 N</td>
+            <td>100 N</td>
         </tr>
         <tr style="background-color: white;">
             <td>Force Resolution</td>
@@ -76,8 +76,3 @@
         </tr>
     </tbody>
 </table>
-
-
-
-
-

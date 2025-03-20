@@ -59,7 +59,7 @@ nav:
       - Unboxing and Startup Guide: Guide/A1/A1_Getting_Started.md
       - Hardware Introduction: Guide/A1/A1_Hardware_Guide.md
       - Software Introduction: Guide/A1/A1_Software_Guide.md
-      - Simulation Usage Tutorial: Guide/A1/A1_Simulation_Tutorial.md
+      - Simulation Tutorial: Guide/A1/A1_Simulation_Tutorial.md
       - FAQ: Guide/A1/A1_FAQ.md
   - Galaxea R1 User Guide:
       - Unboxing and Startup Guide: Guide/R1/R1_Step_by_Step_Guide.md
@@ -132,8 +132,7 @@ plugins:
             Getting Started: 开箱启动指南
             Hardware Introduction: 硬件介绍
             Software Introduction: 软件介绍
-            Simulation Usage Tutorial: 仿真 Isaac Sim 使用教程
-            Simulation Usage Tutorial: 仿真 Isaac Lab 使用教程
+            Simulation Usage Tutorial: 仿真使用教程
             Accessories: 配件
             Gripper: 夹爪
             Dexterous Hand: 灵巧手
@@ -142,7 +141,7 @@ plugins:
             Unboxing and Startup Guide: 开箱启动指南
             Overview: 快速入门
             Galaxea R1 Software Changelog: Galaxea R1 软件版本更新日志
-            Simulation Usage Tutorial: 仿真使用教程
+            Simulation Tutorial: 仿真使用教程
             Sensor Calibration Data Collection Method: 传感器标定数据采集方法
             R1 Teleop Usage Tutorial: R1 Teleop 同构遥操作教程
             R1 VR Teleop Usage Tutorial: R1 VR Teleop 遥操作教程
