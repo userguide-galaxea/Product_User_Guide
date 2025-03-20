@@ -1,6 +1,5 @@
 # R1 Teleop Usage Tutorial
-
-Welcome to R1 Teleop (R1-T) — the isomorphic teleoperation platform designed specifically for Galaxea R1. 
+> Welcome to R1 Teleop (R1-T) — the isomorphic teleoperation platform designed specifically for Galaxea R1. 
 
 ## 1. Product Introduction
 
@@ -9,9 +8,7 @@ R1 Teleop is a platform which is designed with a scaled-down version that perfec
 The following tutorial will guide you through the installation and setup of R1 Teleop, helping you quickly experience this high-performance teleoperation platform.
 
 ## 2. Unboxing
-
 Please check whether all items in the shipping container are present.
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -45,9 +42,7 @@ Please check whether all items in the shipping container are present.
 </table>
 
 ## 3. Preparation Before Start
-
 ### 3.1 Hardware Preparation
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -77,9 +72,7 @@ Please check whether all items in the shipping container are present.
 </table>
 
 ### 3.2 Software Preparation
-
 #### 3.2.1 Download and Unzip the Folder.
-
 Please download and extract the SDK file package of R1 from the R1 main body (this is the package of R1 main body in the customer's release version).
 
 - Baidu Cloud：[https://pan.baidu.com/s/1TeDBtkqUOXUPwE9fdivQ7w?pwd=gr1t](https://pan.baidu.com/s/1TeDBtkqUOXUPwE9fdivQ7w?pwd=gr1t)
@@ -88,7 +81,6 @@ Please download and extract the SDK file package of R1 from the R1 main body (th
 <span style="color:red;">Ensure that the R1 robot's software version has been updated to V1.1.0 or higher. Click [here](R1_Software_Changelog/v1.1.0.md) to get the latest version.</span>
 
 #### 3.2.2 Install Software Dependencies
-
 Please install the required software dependencies on the R1-T host computer.
 
 ```Bash
@@ -98,7 +90,6 @@ sudo apt install tmux tmuxp
 ```
 
 #### 3.2.3 Modify the `/.bashrc`File
-
 Modify the ROS IP settings on both the R1 and R1-T host computers. Follow these steps:
 
 1. Add the following two lines to the end of the **`/.bashrc`** file on the R1:
@@ -115,23 +106,20 @@ Modify the ROS IP settings on both the R1 and R1-T host computers. Follow these 
       export ROS_IP= The IP address of the R1-T host computer
       ```
 
-3. **Example:**
+3. Example:
 
-      ![img](assets/R1-T_software_preparation.png)
+      ![R1-T_software_preparation](assets/R1-T_software_preparation.png)
 
 
 ## 4. R1 Teleop Connection
-
-![img](assets/R1_R1T_hardware_diagram.png)
+![R1_R1T_hardware_diagram](assets/R1_R1T_hardware_diagram.png)
 
 ### 4.1 Securing the Device
-
 Use the G-clips to secure the R1-T Base to the desktop, as shown in the diagram below:
 
-![img](assets/R1-T Base_mount.png)
+![R1-T_Base_mount](assets/R1-T Base_mount.png)
 
 ### 4.2 Connecting the Device
-
 Following the hardware connection architecture diagram:
 
 ![img](assets/R1-T Base_box_conection.png)
@@ -143,7 +131,6 @@ Following the hardware connection architecture diagram:
 <span style="color:red;">**Note: After completing the connections, do not power on immediately. Please follow the steps below to proceed.**</span>
 
 ### 4.3 Powering On
-
 After securing the R1-T Base to the desktop, **place the arms and torso in the initial position** as shown in the diagram below. <span style="color:red;">**Ensure that the J4, J5, and J6 joints of both arms, as well as the R1-T Base, are at zero-point (initial posture)**</span>, then you may insert the power unit into the power outlet and press the power button on the R1-T to turn it on.
 
 ![img](assets/R1-T Initial Position.png)
@@ -151,7 +138,6 @@ After securing the R1-T Base to the desktop, **place the arms and torso in the i
 <span style="color:red;">**Note: Before starting the R1 Teleop each time, make sure to adjust to its initial posture. Failing to do so may pose a risk during operation.**</span>
 
 ### 4.4 **Connect Bluetooth Remote Controller**
-
 Please be sure to connect two arms to the R1-T host conputer in sequence, ensuring that <span style="color:red;">**the left arm is connected first, followed by the right arm**</span>.
 
 **Note: Due to program settings, to streamline the operation process, if the controller connection sequence is incorrect, please turn off the power and power it on again, then follow the correct sequence for connection.**
@@ -228,7 +214,6 @@ Connection steps are as follows:
 <span style="color:red;">*This procedure is applicable only to R1 with software version updated to V1.1.0.</span>
 
 ## 5. Launch SDK
-
 ![img](assets/R1-T_pipeline.png)
 
 <span style="color:red;">**Note: The R1 software version must be V1.0.4 or higher. Click [here](R1_Software_Changelog/v1.1.0.md) to get the latest version.**</span>
@@ -241,7 +226,6 @@ During the whole process of controlling R1, you need to open multiple terminals.
 Now, you can start CAN driver in the following steps.
 
 ### 5.1 Start R1
-
 Execute the following conmands to start the robot.
 
 ```Python
@@ -277,7 +261,6 @@ cd ~/work/galaxea/install/share/startup_config/script
 After completing the above steps, wait for 3 to 5 seconds and you can control R1 Teleop.
 
 ## 6. Data Collection
-
 ### 6.1 Data Collection Script
 
 Please download and extract the R1 Teleop data acquisition program file package from the following link.
@@ -286,7 +269,6 @@ Please download and extract the R1 Teleop data acquisition program file package 
 - Google Drive：[https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing](https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing)
 
 ### 6.2 Data Collection Procedure (V1.1.0)
-
 <span style="color:red;">**Note: This section applies only to R1 with the software version updated to V1.1.0. Before starting data collection, ensure that the teleoperation program on the R1 Base has been started correctly according to the steps outlined in the preceding sections.**</span>
 
 #### 6.2.1 Connecting to R1
@@ -323,7 +305,6 @@ Please download and extract the R1 Teleop data acquisition program file package 
 ![img](assets/R1-T_frame_inquiry.png)
 
 #### 6.2.3 Follow-up Inquiry
-
 Once the camera frequency calculation is complete, the system will sequentially ask the following questions. Please respond accordingly based on your selection.
 
 <table style="width: 100%; border-collapse: collapse;">
@@ -369,7 +350,5 @@ Steps for Data Recording Using Bluetooth Controllers:
 The recorded data package will be saved by default at the following path: `/home/nvidia/GalaxeaDataset/data/`. If the path does not exist, the system will create it automatically. 
 
 Users can modify the default storage path or specify the rostopic to be recorded by editing the configuration file `~/work/galaxea/install/lib/data_collection/config/001.yaml`.
-
-
 
 If you encounter any issues during installation or startup, please contact us at [support@galaxea.ai](mailto:support@galaxea.ai) or call 4008 780 980 for technical support !

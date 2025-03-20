@@ -58,6 +58,7 @@
         </tr>        
     </tbody>
 </table>
+
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">

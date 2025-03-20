@@ -56,18 +56,18 @@ nav:
           - Gripper: Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md
           - Dexterous Hand: Introducing_Galaxea_Robot/product_info/Dexterous_Hands.md
   - Galaxea A1 User Guide:
-      - Unboxing and Startup Guide: Guide/A1/Getting_Started.md
-      - Hardware Introduction: Guide/A1/Hardware_Guide.md
-      - Software Introduction: Guide/A1/Software_Guide.md
-      - Simulation Usage Tutorial: Guide/A1/Simulation_Isaac_Sim_Tutorial.md
-      - FAQ: Guide/A1/FAQ_A1.md
+      - Unboxing and Startup Guide: Guide/A1/A1_Getting_Started.md
+      - Hardware Introduction: Guide/A1/A1_Hardware_Guide.md
+      - Software Introduction: Guide/A1/A1_Software_Guide.md
+      - Simulation Usage Tutorial: Guide/A1/A1_Simulation_Tutorial.md
+      - FAQ: Guide/A1/A1_FAQ.md
   - Galaxea R1 User Guide:
       - Unboxing and Startup Guide: Guide/R1/R1_Step_by_Step_Guide.md
       - Basic Usage Introduction: Guide/R1/R1_Overview.md
-      - Hardware Introduction: Guide/R1/Hardware_Guide.md
-      - Software Introduction: Guide/R1/Software_Guide.md
-      - Demo Guide: Guide/R1/R1_demo_test.md
-      - Simulation Usage Tutorial: Guide/R1/Simulation_Isaac_Lab_Tutorial.md
+      - Hardware Introduction: Guide/R1/R1_Hardware_Guide.md
+      - Software Introduction: Guide/R1/R1_Software_Guide.md
+      - Demo Guide: Guide/R1/R1_Demo_Guide.md
+      - Simulation Usage Tutorial: Guide/R1/R1_Simulation_Tutorial.md
       - Sensor Calibration Data Collection Method: Guide/R1/R1_Sensor_Calibration_Data_Collection_Method.md
       - R1 Teleop Usage Tutorial: Guide/R1/R1_Teleop_Usage_Tutorial.md
       - R1 VR Teleop Usage Tutorial: Guide/R1/R1_VR_Teleop_Usage_Tutorial.md
@@ -132,8 +132,8 @@ plugins:
             Getting Started: 开箱启动指南
             Hardware Introduction: 硬件介绍
             Software Introduction: 软件介绍
-            Simulation Isaac Sim Usage Tutorial: 仿真 Isaac Sim 使用教程
-            Simulation Isaac Lab Usage Tutorial: 仿真 Isaac Lab 使用教程
+            Simulation Usage Tutorial: 仿真 Isaac Sim 使用教程
+            Simulation Usage Tutorial: 仿真 Isaac Lab 使用教程
             Accessories: 配件
             Gripper: 夹爪
             Dexterous Hand: 灵巧手

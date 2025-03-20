@@ -1,6 +1,5 @@
 # R1 Teleop 同构遥操作教程
-
-欢迎使用 **R1 Teleop（简称 R1-T）** —— 专为 R1 打造的同构遥操作平台。
+> 欢迎使用 **R1 Teleop（简称 R1-T）** —— 专为 R1 打造的同构遥操作平台。
 
 ## 1. 产品介绍
 R1 Teleop平台采用按比例缩小设计，完美复刻R1的各项功能，实现全身力反馈遥操作、全关节映射，并支持本体端力反馈至遥操端，确保操作精准同步，具备毫米级精度与毫秒级响应速度。
@@ -40,11 +39,8 @@ R1 Teleop平台采用按比例缩小设计，完美复刻R1的各项功能，实
     </tbody>
 </table>
 
-
 ## 3. 启动前准备
-
 ### 3.1 硬件准备
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -73,9 +69,7 @@ R1 Teleop平台采用按比例缩小设计，完美复刻R1的各项功能，实
 </table>
 
 ### 3.2 软件准备
-
 #### 3.2.1 下载并解压SDK包
-
 请在R1-T上位机里下载并解压R1-T 的SDK文件包。
 
 - 百度云： [https://pan.baidu.com/s/1WEQIQbMhe3fQ2wyKx160Lw?pwd=gr1t](https://pan.baidu.com/s/1WEQIQbMhe3fQ2wyKx160Lw?pwd=gr1t)
@@ -84,7 +78,6 @@ R1 Teleop平台采用按比例缩小设计，完美复刻R1的各项功能，实
 <span style="color:red;">请确保R1机器人软件版本已更新至V1.1.0及以上，点击[此处](R1_Software_Changelog/v1.1.0.md)获取最新版本。</span>
 
 #### 3.2.2 安装软件依赖环境
-
 请在R1-T上位机上安装所需环境依赖。
 
 ```Bash
@@ -94,7 +87,6 @@ sudo apt install tmux tmuxp
 ```
 
 #### 3.2.3 修改/.bashrc 文件
-
 分别修改R1和R1-T上位机的ROS IP设置，具体步骤如下：
 
 1. 在R1的`/.bashrc`文件末尾加入以下两行：
@@ -114,13 +106,11 @@ export ROS_IP=R1T上位机的ip地址
 ![img](assets/R1_R1T_hardware_diagram_CN.png)
 
 ### 4.1 固定设备
-
 请使用G夹固定器将R1-T Base固定至桌面，如下图所示：
 
 ![img](assets/R1-T Base_mount_CN.png)
 
 ### 4.2 连接设备
-
 请按下图所示连接设备
 
 ![img](assets/R1-T Base_box_conection_CN.png)
@@ -132,7 +122,6 @@ export ROS_IP=R1T上位机的ip地址
 **<span style="color:red;">注意：连接完成后不要立刻上电，请按照以下步骤继续操作。</span>**
 
 ### 4.3 打开电源
-
 **<span style="color:red;">将R1-TBase固定至桌面后，按下图所示的初始位置摆放手臂和躯干，确保左右臂的J4、J5、J6及R1-T Base均处于零点位置后，方可连接T1-T电源线再上电。</span>**
 
 ![img](assets/R1-T Initial Position_CN.png)
@@ -140,7 +129,6 @@ export ROS_IP=R1T上位机的ip地址
 **<span style="color:red;">注意：每次启动R1-T之前，请务必将R1-T姿态调整为初始姿态，否则可能存在使用风险。</span>**
 
 ### 4.4 连接蓝牙遥控手柄
-
 请务必依次将左臂和右臂连接至 R1-T 上位机，确保**<span style="color:red;">先连接左臂，再连接右臂</span>**。
 
 <span style="color:red;">注意：由于程序设置，为减少操作流程，如若手柄连接顺序错误，请关闭电源后重新上电，再按正确顺序进行连接。</span>
@@ -219,7 +207,6 @@ export ROS_IP=R1T上位机的ip地址
 <span style="color:red;">*该操作方式仅适用于软件版本更新至V1.1.0版本的R1。</span>
 
 ## 5. 启动SDK
-
 ![img](assets/R1-T_pipeline_CN.png)
 
 **<span style="color:red;">注意：R1及R1 Teleop的软件版本必须安装V1.1.0或以上版本，点击[此处](R1_Software_Changelog/v1.1.0.md)获取最新版本</span>**
@@ -238,7 +225,6 @@ cd ~/work/galaxea/install/share/startup_config/script
 ./ota_script.sh boot_teleop     
 ```
 ### 5.2 启动R1 Teleop
-
 在R1-T上位机上执行以下步骤。
 
 1. 启动TMUX
@@ -262,7 +248,6 @@ cd ~/work/galaxea/install/share/startup_config/script
 完成以上步骤后，等待3-5秒钟，便可操控R1 Teleop。
 
 ## 6. 数据采集
-
 ### 6.1 数据采集SDK
 请在以下链接下载并解压R1 Teleop数据采集SDK。
 
@@ -270,7 +255,6 @@ cd ~/work/galaxea/install/share/startup_config/script
 - Google Drive：[https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing](https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing)
 
 ### 6.2 数据采集流程（V1.1.0）
-
 **<span style="color:red;">注意：该章节针对软件版本已更新至V1.1.0的R1。在开始进行数据采集前，请确保R1 Base上的遥操作程序已按照前述章节的步骤正常启动。</span>**
 
 #### 6.2.1. 连接R1
@@ -301,8 +285,7 @@ cd ~/work/galaxea/install/share/startup_config/script
 3. 按**Enter**开始录制，录制完成后再次按**Enter**结束**<span style="color:red;">（注意：不要使用 `Ctrl + C` 结束）</span>**。 录制结束后，可在输出路径查看录制的动作，需要等待程序计算刚刚录制的数据包中的**3个相机频率**。
     ![img](assets/R1-T_frame_inquiry_CN.png)
 #### 6.2.3. 后续询问
-
- 相机频率计算完成后，系统会依次询问以下问题，根据您的选择进行相应操作。
+相机频率计算完成后，系统会依次询问以下问题，根据您的选择进行相应操作。
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -328,7 +311,6 @@ cd ~/work/galaxea/install/share/startup_config/script
 </table>
 
 ### 6.3 数据采集流程（V1.1.1）
-
 **<span style="color:red;">注意：该章节针对软件版本已更新至内部版本V1.1.1及以上的R1。在开始进行数据采集前，请确保R1 Base上的遥操作程序已按照前述章节的步骤正常启动。</span>**
 
 在进行数据采集之前，请确保已按照第[5.1](#51-启动r1)节所述方式正确启动R1机器人，并确认R1 Teleop的两个蓝牙遥控器已正常连接。
@@ -341,8 +323,6 @@ cd ~/work/galaxea/install/share/startup_config/script
 录制的数据包将默认存放在以下路径：`/home/nvidia/GalaxeaDataset/data/`。如果该路径不存在，系统将自动创建。
 
 用户可以通过修改配置文件 `~/work/galaxea/install/lib/data_collection/config/001.yaml` 来更改默认存储路径或指定要录制的rostopic。
-
-
 
 如在安装和启动过程中有任何问题，请及时与我们联系至[support@galaxea.ai](mailto:support@galaxea.ai)或致电4008 780 980获得技术支持！
 

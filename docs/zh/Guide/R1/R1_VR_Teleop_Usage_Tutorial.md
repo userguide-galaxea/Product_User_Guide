@@ -1,15 +1,11 @@
 # R1 VR遥操作使用教程
-
 ## 1. 产品介绍
-
 VR遥操作系统提供沉浸式的远程控制体验，使操作员能够通过精准反馈和实时响应控制R1机器人。系统支持全身同步，提供直观且高精度的操作界面，具备毫米级精度和毫秒级响应速度。该系统设计用于在复杂环境中无缝互动，非常适合需要精细和精准机器人控制的任务。
 
 接下来的教程将详细介绍VR遥操作产品的激活方法、使用手册和实际视频演示，助您迅速体验这款高性能遥操作平台。
 
 ## 2. 启动前准备
-
 ### 2.1 硬件准备
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -47,9 +43,7 @@ VR遥操作系统提供沉浸式的远程控制体验，使操作员能够通过
     </tbody>
 </table>
 
-
 ### 2.2 软件准备
-
 请在下载并解压R1遥操作整包版本V1.1.0。
 
 - 百度云：[https://pan.baidu.com/s/136OzRy-4_8b5USQg3btJCQ?pwd=r1vr](https://pan.baidu.com/s/136OzRy-4_8b5USQg3btJCQ?pwd=r1vr)
@@ -93,17 +87,14 @@ Galaxea R1 VR遥操作SDK_V1.1.0：
    ![VR_3.2_install_apk_CN](assets/VR_3.2_install_apk_CN.png)
 
 ### 3.3 VR 设备配置
-
 在 Meta Quest 3 的初始界面下，连接与R1相同的WiFi网络。 **注意**：提示网络受限是正常现象，因为该网络无法访问外网。
 
 ![VR_3.3_wifi_CN](assets/VR_3.3_wifi_CN.png)
 
 ### 3.4 获取VR设备的IP地址
-
 在VR设备内，点击已连接的WiFi，打开网络页面后向下划，找到并记录IP地址（如：192.168.5.24）。
 
 ## 4. R1配置
-
 安装 Galaxea R1 VR遥操作SDK
 
 1. **下载并拷贝SDK**： 下载`R1_vrteleop-V1.1.0-20250213_19_03_45.tar.gz` 文件，执行以下命令拷贝SDK到R1上。
@@ -144,7 +135,6 @@ bash r1_embedded_firmware_upgrade.sh ../../R1/V1_1_0
 </br>升级完成后，将机器人R1下电并重新启动。重启后，软件包配置完成，VR遥操作功能即可使用。
 
 ## 5.遥操作启动
-
 **注意：每次启动时都需要完成并确认本章节的所有操作。**
 
 ### 5.1 R1本体程序启动
@@ -165,7 +155,6 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
 ```
 
 ### 5.2 VR设备程序启动
-
 **注意：请佩戴好VR设备并手持两个遥控器，开始以下操作。**
 
 #### 5.2.1. 连接WiFi
@@ -207,15 +196,12 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
 详细操作说明请参考第6章节：遥操作控制说明。
 
 ## 6.遥操作控制说明
-
 请在确保人员与物品安全的情况下，于开阔场地练习本产品的使用。
 
 建议待熟悉本产品的使用后，再开始正式数据采集。
 
 ### 6.1遥控器使用说明
-
 #### 6.1.1 R1遥控器
-
 ![R1_controller](assets/R1_controller.png)
 
 1. **开启/关闭：**同时按住两个电源按钮，直至触摸屏亮起或者熄灭。
@@ -245,7 +231,6 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
 ### 6.3 模式切换
 
 遥操作启动后，默认模式为**双臂操控模式**。用户可以通过VR设备遥控器切换不同的操作模式。
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -278,7 +263,6 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
 </table>
 
 #### 6.3.1双臂操控模式
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -311,7 +295,6 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
 </table>
 
 #### 6.3.2 底盘模式
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -342,7 +325,6 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
 </table>
 
 #### 6.3.3躯干模式
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -369,7 +351,6 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
 ### 6.4 连接腕部相机
 #### 6.4.1 连接前准备
 请在连接腕部相机前，准备好以下物品：
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -446,15 +427,12 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
 
 ## 7. 数据采集流程
 ### 7.1 数据格式介绍
-
 数据采集的文件格式为**rosbag**，文件后缀为`*.bag`。
 
 ### 7.2 数据获取
-
 **默认存储路径：/home/nvidia/GalaxeaDataset/data/**
 
 ### 7.3  数据录制配置文件介绍
-
 默认数据录制使用的配置文件位于：
 
 ```Bash
@@ -543,7 +521,6 @@ record_rostopics:
 ```
 
 ### 7.4  数据落盘文件介绍
-
 数据以 **rosbag + yaml** 格式保存，文件一一对应。例如：
 
 ```YAML
@@ -558,9 +535,7 @@ record_rostopics:
 ```
 
 ###  7.5 开启录制
-
 通过VR左遥控器进行数据录制操作：
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -594,6 +569,5 @@ record_rostopics:
 1. 第一次左手柄 T 键长按1秒，开始录制数据包，文件名为： `1-0001-20240213173320.bag`。
 2. 左手柄 G 键长按1秒，结束当前数据包并开始新数据包，文件名为：`1-0002-20240213175555.bag` （episode_id + 1）。
 3. 左手柄 T + G 键同时长按1秒，停止数据录制。
-
 
 如在安装和启动过程中有任何问题，请及时与我们联系至support@galaxea.ai或致电4008-780-980获得技术支持！

@@ -98,4 +98,4 @@ Should you encounter any issues, need immediate assistance, or find yourself see
 
 
 ## Next Step
-This quick-start guide ends here. For deeper understanding, explore the [Galaxea A1 Hardware Guide](./Hardware_Guide.md) and [Software Guides](./Software_Guide.md) for more information and examples on programming.
+This quick-start guide ends here. For deeper understanding, explore the [Galaxea A1 Hardware Introduction](./A1_Hardware_Guide.md) and [Software Introduction ](./A1_Software_Guide.md) for more information and examples on programming.

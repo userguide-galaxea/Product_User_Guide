@@ -1,21 +1,16 @@
 # R1传感器标定数据采集方法
-
 ## 数据采集流程
-
-![Data collection process_cn](assets/Data collection process_cn.png)
+![Data_collection_process_cn](./assets/Data%20collection%20process_cn.png)
 
 ## 1. 开机
-
 启动R1
 
 ## 2. 确认SDK版本
-
 请确认R1整机SDK版本为V1.0.1及以上。
 
 点击[这里](https://github.com/userguide-galaxea/System_Version_Release/tree/main/R1/v1.0.1)获取系统版本更新安装包。
 
 ## 3. 启动相关驱动
-
 **Step 1: 清理已有ROS节点**
 
 ```Bash
@@ -75,7 +70,6 @@ roslaunch signal_camera signal_camera.launch
 ```
 
 ## 4. 开启遥控
-
 <span style="color:red;">**重要提示：在进行任何操作之前，请确认所有拨杆开关（SWA/SWB/SWC/SWD）都拨至最上方档位，这样能使R1处于停止状态，防止其意外运行。** </span>
 
 在不同功能下，各拨杆开关切换到不同位置的操作说明如下：
@@ -85,7 +79,6 @@ roslaunch signal_camera signal_camera.launch
 <u>在使用遥控器控制R1之前，请必须先启动 CAN 驱动程序和其他相关程序，详细说明请参考《开机指南》中的 **第[3.4](R1_Step_by_Step_Guide.md/#34-启动can驱动程序), [3.5](R1_Step_by_Step_Guide.md/#35--第一次自检), [3.6](R1_Step_by_Step_Guide.md/#36--站立) 和[3.7](R1_Step_by_Step_Guide.md/#37--安装手臂)节**。</u> 完成启动后，可将每个开关移至指定位置，并按照以下步骤控制R1。
 
 ## 5. 确认Topic
-
 开始采集前， 确保有以下topic，且类型和帧率正常。
 
 ```Bash
@@ -132,9 +125,7 @@ rostopic hz /hdas/imu_chassis /hdas/lidar_chassis_left /hdas/camera_chassis_fron
     </tbody>
 </table>
 
-
 ## 6. 采集场景
-
 符合要求的采集场景示例：光线好、空间开阔超100平米、纹理与结构多样且无动态物体，如照明充足的地下车库、人少开阔的写字楼园区。
 
 不符合要求的采集场景示例：空间狭窄、纹理结构单一、光线不佳或有较多动态物体，像狭窄走廊、大白墙环境、人多的餐厅、办公室等。
@@ -142,7 +133,6 @@ rostopic hz /hdas/imu_chassis /hdas/lidar_chassis_left /hdas/camera_chassis_fron
 ![collection_scenarios_cn](assets/collection_scenarios_cn.png)
 
 ## 7. 采集路线
-
 在对R1传感器进行标定工作时，一共需要采集2组数据，可通过录制ros bag的方式来完成相应数据的收集操作。
 
 ```Bash
@@ -156,5 +146,4 @@ rosbag record -a
    ![square_move_cn](assets/square_move_cn.png)
 
 ## 8. 数据回传
-
-将bag回传
+将bag回传。

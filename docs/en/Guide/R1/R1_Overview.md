@@ -62,7 +62,6 @@ The following table shows how to switch SWA/SWB/SWC/SWD to different positions i
 ![R1_controller_squat_stand](assets/R1_controller_squat_stand.png)
 
 #### Chassis Control
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -91,4 +90,4 @@ For startup and operation instructions, please refer to the [R1 Teleop Usage Tut
 For startup and operation instructions, please refer to the [R1 VR Teleop Usage Tutorial](./R1_VR_Teleop_Usage_Tutorial.md).
 
 ## Next Step
-Our quickstart journey has come to an end. To deepen your mastery of Galaxea R1, we strongly recommend exploring the following chapters in [Galaxea R1 Product Hardware Instruction](Hardware_Guide.md) and [Product Software Instruction](Software_Guide.md). These resources offer a wealth of additional information and practical examples, guiding you through the intricacies of programming with confidence and ease.
+Our quickstart journey has come to an end. To deepen your mastery of Galaxea R1, we strongly recommend exploring the following chapters in [Galaxea R1 Product Hardware Guide](./R1_Hardware_Guide.md) and [Product Software Guide](./R1_Software_Guide.md). These resources offer a wealth of additional information and practical examples, guiding you through the intricacies of programming with confidence and ease.

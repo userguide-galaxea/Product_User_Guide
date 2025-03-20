@@ -93,4 +93,4 @@ R1颈部后方配备了一个银色圆形电源按钮：
 启动和操作说明请查看[R1 VR-Teleop遥操作使用说明](./R1_VR_Teleop_Usage_Tutorial.md)。
 
 ## 下一步
-我们的快速入门之旅已告一段落。为了更深入地掌握Galaxea R1，我们强烈建议您查阅[Galaxea R1 产品硬件介绍](Hardware_Guide.md)和[Galaxea R1 产品软件介绍](Software_Guide.md)中的章节。这些资源包含了丰富的信息以及实际示例，能够帮助您更轻松、更好地使用 Galaxea R1。
+我们的快速入门之旅已告一段落。为了更深入地掌握Galaxea R1，我们强烈建议您查阅[Galaxea R1 产品硬件介绍](./R1_Hardware_Guide.md)和[Galaxea R1 产品软件介绍](./R1_Software_Guide.md)中的章节。这些资源包含了丰富的信息以及实际示例，能够帮助您更轻松、更好地使用 Galaxea R1。

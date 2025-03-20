@@ -73,16 +73,16 @@ hide:
                 <h2><img src="assets/R1_series.png" alt="R1" width="50"></h2>
                 <div class="product">
                         <a href="Guide/R1/R1_Step_by_Step_Guide.md">开箱启动</a> <br>
-                        <a href="Guide/R1/Hardware_Guide">硬件介绍</a> <br>
-                        <a href="Guide/R1/Software_Guide">软件介绍</a> <br>
+                        <a href="Guide/R1/R1_Hardware_Guide">硬件介绍</a> <br>
+                        <a href="Guide/R1/R1_Software_Guide">软件介绍</a> <br>
                 </div>
             </section>
             <section class="products-section">
                 <h2><img src="assets/A1_series.png" alt="A1" width="50"></h2>
                 <div class="product">
-                        <a href="Guide/A1/Getting_Started.md">开箱启动</a> <br>
-                        <a href="Guide/A1/Hardware_Guide">硬件介绍</a> <br>
-                        <a href="Guide/A1/Software_Guide">软件介绍</a> <br>
+                        <a href="Guide/A1/A1_Getting_Started.md">开箱启动</a> <br>
+                        <a href="Guide/A1/A1_Hardware_Guide">硬件介绍</a> <br>
+                        <a href="Guide/A1/A1_Software_Guide">软件介绍</a> <br>
                 </div>
             </section>
         </div>

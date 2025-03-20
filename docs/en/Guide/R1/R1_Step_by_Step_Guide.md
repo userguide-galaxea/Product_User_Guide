@@ -165,7 +165,6 @@ If there is no battery in the robot's chassis, install it first. The battery is 
 If remote connection and control of R1 are not required, continue operating on the original monitor and keyboard, maintaining the HDMI and USB connections. Then proceed to [section 4.3 Start CAN Driver](#43-start-can-driver).
 
 ### 4.2 Remote Connection
-
 #### 4.2.1 Obtain IP address
 After R1 is powered on, wait for the monitor to display the desktop.
 
@@ -226,7 +225,6 @@ Now, you can start CAN driver in the following steps.
     ```
 
 ### 4.4 The First Self-Check
-
 <span style="color:red;">**Important: Before you do any actions on R1, you must complete R1 self-checks to ensure the safety.**</span>
 
 Make sure that:
@@ -279,7 +277,6 @@ roslaunch mobiman r1_chassis_control.launch
 </div>
 
 ## 5. Install Arms
-
 <span style="color:red;">**Important: For your safety, please make R1 stand up and powered off before installing arms.**</span>
 
 1. Follow these steps to install the gripper on the end of the mechanical arm (reverse the steps to remove the gripper).

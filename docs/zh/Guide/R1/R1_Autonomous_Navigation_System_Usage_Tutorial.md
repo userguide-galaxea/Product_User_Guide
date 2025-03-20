@@ -1,7 +1,5 @@
 # R1自主导航系统教程
-
 ## 1. 产品介绍
-
 该系统包含了建图、定位、导航和控制模块。 机器人可在环境下构建点云地图，并依此实现全局定位和目标点的自主移动和避障。
 
 **<span style="color:blue;">自主导航系统为付费启用功能，目前处于测试阶段，如需深入了解及购买试用，请联系product@galaxea.ai或致电4008780980。</span>**
@@ -14,9 +12,7 @@
   </div>
 
 ## 2. 硬件介绍
-
 ### 2.1 性能参数
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -39,7 +35,6 @@
         </tr>
     </tbody>
 </table>
-
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -68,7 +63,6 @@
     </tbody>
 </table>
 
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -88,10 +82,7 @@
     </tbody>
 </table>
 
-
-
 ### 2.2 传感器配置
-
 Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激光雷达，使其能够全方位感知周围环境。
 
 ![R1_FOV](assets/R1_FOV.png)
@@ -117,10 +108,7 @@ Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激�
     </tbody>
 </table>
 
-
-
 #### 2.2.1 相机
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -182,11 +170,8 @@ Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激�
     </tbody>
 </table>
 
-
 #### 2.2.2 激光雷达
-
 底盘配备360°激光雷达*，精度高且抗干扰能力强。
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -242,7 +227,6 @@ Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激�
 \* 标配1个激光雷达，可根据用户需求选择激光雷达配置数量。
 
 ## 3. 软件介绍
-
 请确保您的环境满足以下软件依赖要求。
 
 1. 硬件依赖：R1计算单元
@@ -263,7 +247,6 @@ sudo apt install libgoogle-glog-dev
 ```
 
 ## 4. 定位导航操作流程
-
 地图构建是机器人自主导航的基础步骤，通过遥控机器人录制传感器数据（bag文件）并将数据回传。地图导出后，将地图部署在机器人本体，再设置目标位姿，实现定点导航。
 
 ###  4.1 构建地图
@@ -288,7 +271,6 @@ sudo apt install libgoogle-glog-dev
     ```
 
 #### 4.1.2 录制数据包
-
 运行以下指令，开始录制bag文件。
 
 ```Bash
@@ -347,7 +329,6 @@ scp -r ~/mapping_data/robot_calibration.json nvidia@{robot_ip}:~/galaxea/calib/
 ```
 
 ### 4.2 启动定位功能
-
 启动定位功能时，确保机器人在已知地图中。
 
 1. **启动R1节点**
@@ -503,39 +484,29 @@ scp -r ~/mapping_data/robot_calibration.json nvidia@{robot_ip}:~/galaxea/calib/
     ```
 
 ## 5. 软件接口
-
 ### 5.1 系统框图
-
 ![R1_navigation_system_diagram_CN](assets/R1_navigation_system_diagram_CN.png)
 
 ### 5.2 驱动接口
-
 R1提供了多种驱动接口，用于与硬件设备进行通信和控制。以下是主要的驱动接口及其说明：
 
 #### 5.2.1 底盘驱动接口
-
 `/motion_control/chassis_speed`：用于控制机器人底盘的运动，包括速度控制、方向控制等。请前往R1软件手册的[底盘驱动接口](Software_Guide.md/#底盘驱动接口)章节获取更多详细信息。
 
 #### 5.2.2 激光雷达接口
-
 `/hdas/lidar_chassis_left`：激光雷达用于环境感知和距离测量，为机器人提供实时的环境信息。请前往R1软件手册的[激光雷达接口](Software_Guide.md/#激光雷达接口)章节获取更多详细信息。
 
 #### 5.2.3 IMU接口
-
 `/hdas/imu_chassis`：IMU用于测量机器人的加速度、角速度等信息，为导航和姿态控制提供数据支持。请前往R1软件手册的[IMU接口](Software_Guide.md/#imu-接口)章节获取更多详细信息。
 
 ### 5.3 运控接口
-
 R1机器人提供了多种运动控制接口，用于实现对机器人运动的精确控制。以下是主要的运控接口及其说明：
 
 #### 5.3.1 底盘控制接口
-
 `/motion_target/target_speed_chassis`：用于控制机器人底盘的运动，包括速度控制、方向控制等。请前往R1软件手册的“底盘控制接口”章节获取更多详细信息。
 
 ### 5.4 定位接口
-
 定位（Localization）接口是R1机器人实现自主导航和环境感知的核心组件。通过这些接口，机器人能够接收来自多种传感器的数据，如IMU（惯性测量单元）和激光雷达，从而实现精确的多传感器融合定位。这些接口确保机器人能够在复杂环境中准确地感知自身位置和姿态，为后续的路径规划和导航提供可靠的数据支持。本章节详细介绍了定位接口的各个话题，包括输入和输出数据的类型及其用途。
-
 <table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -568,9 +539,7 @@ R1机器人提供了多种运动控制接口，用于实现对机器人运动的
 </table>
 
 ### 5.5 导航话题接口
-
 导航（Navigation）接口是R1机器人实现自主路径规划和运动控制的关键部分。这些接口允许机器人根据输入的传感器数据（如激光雷达点云和SLAM定位状态）进行全局和局部路径规划，并输出控制指令以驱动机器人底盘运动。导航接口不仅支持避障功能，还能够实时更新机器人的运动轨迹和任务状态，确保机器人能够高效、安全地完成导航任务。本章节详细介绍了导航接口的各个话题，包括输入和输出数据的类型及其用途。
-
 <table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -651,9 +620,7 @@ R1机器人提供了多种运动控制接口，用于实现对机器人运动的
 </table>
 
 ### 5.6 导航服务接口
-
 #### 5.6.1 开启导航服务
-
 执行以下命令可开启导航服务。
 
 ```YAML
@@ -668,7 +635,6 @@ Type: std_srvs/SetBool
 **注意：确保R1机器人在导航服务开启时处于已建图的环境中，且周围环境与建图时保持一致，以确保定位和导航的准确性**
 
 #### 5.6.2 关闭导航服务
-
 执行以下命令可关闭导航服务。
 
 ```YAML
@@ -679,9 +645,7 @@ Type: std_srvs/SetBool
 ```
 
 ### 5.7 状态机
-
 状态机（System Manager）是R1机器人系统的核心管理模块，负责协调和管理机器人的各项任务和服务。通过System Manager，用户可以触发导航任务、监控任务状态，并接收任务完成的反馈。本章节详细介绍了System Manager相关的ROS话题，包括输入和输出数据的类型及其用途。
-
 <table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">

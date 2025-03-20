@@ -1,15 +1,11 @@
 # VR Teleop Usage Tutorial
-
 ## 1. Product Introduction
-
 The VR Teleop system provides an immersive remote control experience that enables the operator to control the R1 robot with precise feedback and real-time response. The system supports full-body synchronization and provides an intuitive and highly accurate operating interface with millimeter-level accuracy and millisecond response speed. The system is designed to interact seamlessly in complex environments and is ideal for tasks requiring fine and precise robotic control.
 
 The following tutorial will provide a detailed introduction to the activation methods, user manual and actual video demonstrations of VR remote operation products, helping you quickly experience this high-performance remote operation platform.
 
 ## 2. Preparations Before Startup
-
 ### 2.1 Hardware Preparation
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -47,10 +43,7 @@ The following tutorial will provide a detailed introduction to the activation me
     </tbody>
 </table>
 
-
-
 ### 2.2 Software Preparation
-
 Please download and extract the R1 remote operation package version V1.1.0.
 
 - Baidu Cloud：[https://pan.baidu.com/s/136OzRy-4_8b5USQg3btJCQ?pwd=r1vr](https://pan.baidu.com/s/136OzRy-4_8b5USQg3btJCQ?pwd=r1vr)
@@ -68,7 +61,6 @@ Galaxea R1 VR Teleoperation SDK_V1.1.0:
 
 ## 3. VR Device Configuration
 ### 3.1 Activating VR Device Developer Mode
-
 Please refer to [the Meta Quest 3 developer mode user guide](https://blog.csdn.net/weixin_44234976/article/details/145135895?spm=1001.2014.3001.5502) to complete the activation.
 
 ### 3.2 VR Device SDK Installation
@@ -92,18 +84,15 @@ Please refer to [the Meta Quest 3 developer mode user guide](https://blog.csdn.n
    ![VR_3.2_install_apk](assets/VR_3.2_install_apk.png)
 
 ### 3.3 VR Device Configuration
-
 On the initial screen of Meta Quest 3,connect to the same WiFi network as R1. 
 </br>**Note**：It is normal for the network to be restricted, as this network cannot access the external internet.
 
 ![VR_3.3_wifi](assets/VR_3.3_wifi.png)
 
 ### 3.4 Obtain the IP Address of VR Device
-
 Inside the VR device, click on the connected WiFi, open the network page, and scroll down to find and record the IP address (e.g., 192.168.5.24).
 
 ## 4. R1 Configuration
-
 Install the Galaxea R1 VR Teleop SDK_V1.1.0
 
 1. **Download and copy the SDK:** 
@@ -145,7 +134,6 @@ Note: If the following message is displayed, it indicates that the upgrade is su
   </br>After the upgrade is completed, power off R1 and restart it. After the restart, the software package configuration is completed and the VR Teleop operation function can be used.
 
 ## 5. Start VR Teleop Operation
-
 **Note: All operations in this section need to be completed and confirmed each time you start.**
 
 ### 5.1 Start R1 Base Program
@@ -166,11 +154,9 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
 ```
 
 ### 5.2 Start VR Device Program
-
 **Note:** Please wear the VR device and hold two remote controllers. Then start the following operations.
 
 #### 5.2.1. Connect to WiFi
-
 Confirm that the VR device has successfully connected to the same WiFi network as R1 Base.
 
 #### 5.2.2. Create a Boundary
@@ -216,11 +202,9 @@ You can complete the simple operation using the following steps:
 Detailed operation instructions can be found in Chapter 6: Remote Operation Control Instructions.
 
 ## 6.Remote Control Operation Instructions
-
 Please practice the use of this product in an open area while ensuring the safety of personnel and items. It is recommended to start the formal data collection after getting familiar with the use of this product.
 
 ### 6.1 Instructions for Using the Remote Controller
-
 #### 6.1.1 R1 Joystick Controller
 
 ![R1_controller](assets/R1_controller.png)
@@ -281,9 +265,7 @@ After remote operation is started, the default mode is **BIMANUAL Control Mode**
     </tbody>
 </table>
 
-
 #### 6.3.1 BIMANUAL
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -315,9 +297,7 @@ After remote operation is started, the default mode is **BIMANUAL Control Mode**
     </tbody>
 </table>
 
-
 #### 6.3.2 BASE
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -347,9 +327,7 @@ Press the T button and hold the right stick to rotate counterclockwise.</td>
     </tbody>
 </table>
 
-
 #### 6.3.3Torso
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -376,7 +354,6 @@ Press the T button and hold the right stick to rotate counterclockwise.</td>
 ### 6.4 Connect the Wrist Cameras
 #### 6.4.1 Preparations Before Connection
 Please prepare the following items before connecting the wrist cameras:
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -452,18 +429,14 @@ Please prepare the following items before connecting the wrist cameras:
 
 <span style="color:red;">**Note: The wrist cameras of each robot only need to be configured once. Subsequently, you can follow the method in [5.1](#51-start-r1-base-program) to start the camera directly when starting the robot.**</span>
 
-
 ## 7. Data Collection Process
 ### 7.1 Introduction to Data Format
-
 The file format for data acquisition is **rosbag**，and the file suffix is `*.bag`.
 
 ### 7.2 Data Acquisition
-
 **Default storage path：/home/nvidia/GalaxeaDataset/data/**
 
 ### 7.3  Introduction to Data Recording Configuration File
-
 The configuration file used for default data recording is located at:
 
 ```Bash
@@ -552,7 +525,6 @@ record_rostopics:
 ```
 
 ### 7.4  Introduction to Data Disk Files
-
 The data is saved in  **rosbag + yaml** format,and each file corresponds to one another. For example:
 
 ```YAML
@@ -567,9 +539,7 @@ The data is saved in  **rosbag + yaml** format,and each file corresponds to one 
 ```
 
 ###  7.5 Start Recording
-
 Perform data recording operation through the VR left remote controller:
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -603,6 +573,5 @@ For example:
 1. Press and hold the T button on the left controller for 1 second to start recording the data packet. The file name will be: `1-0001-20240213173320.bag`.
 2. Press and hold the G button on the left controller for 1 second to end the current data packet and start a new one. The file name will be:`1-0002-20240213175555.bag` (episode_id + 1).
 3. Press and hold both the T button and G button on the left controller simultaneously for 1 second to stop the data recording. 
-
 
 If you encounter any problems during the installation and startup process, please contact us promptly at support@galaxea.ai or call 4008-780-980 for technical support!

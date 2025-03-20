@@ -1,7 +1,5 @@
 # R1 Autonomous Navigation System Tutorial
-
 ## 1. Product Introduction
-
 The system includes mapping, localization, navigation, and control modules. The Galaxea R1 robot can build a point cloud map of the environment and use it for global localization, autonomous movement to target points, and obstacle avoidance.
 
 **<span style="color:blue;">The Autonomous Navigation System is currently a premium feature in beta testing. For detailed inquiries or trial purchases, please contact us at product@galaxea.ai or call 4008780980.</span>**
@@ -14,9 +12,7 @@ The system includes mapping, localization, navigation, and control modules. The 
   </div>
 
 ## 2. Hardware Introduction
-
 ### 2.1 Performance Parameters
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -39,7 +35,6 @@ The system includes mapping, localization, navigation, and control modules. The 
         </tr>
     </tbody>
 </table>
-
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -68,7 +63,6 @@ The system includes mapping, localization, navigation, and control modules. The 
     </tbody>
 </table>
 
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -88,10 +82,7 @@ The system includes mapping, localization, navigation, and control modules. The 
     </tbody>
 </table>
 
-
-
 ### 2.2 Sensor Configuration
-
 The Galaxea R1 is equipped with various sensors, including 9 high-definition cameras and 2 LiDAR units, enabling it to perceive its surroundings in all directions and perform precise operations.
 
 ![R1_FOV](assets/R1_FOV.png)
@@ -115,12 +106,7 @@ The Galaxea R1 is equipped with various sensors, including 9 high-definition cam
     </tbody>
 </table>
 
-
-
-
-
 #### 2.2.1 Camera
-
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -182,11 +168,7 @@ The Galaxea R1 is equipped with various sensors, including 9 high-definition cam
     </tbody>
 </table>
 
-
-
-
 #### 2.2.2 LiDar
-
 The chassis is equipped with up to two 360-degree LiDARs*, which are of high precision and resistant to interference.
 
 <table style="width: 100%; border-collapse: collapse;">
@@ -239,7 +221,6 @@ The chassis is equipped with up to two 360-degree LiDARs*, which are of high pre
 \* One LiDAR is standard, the number of LiDAR configurations can be selected according to user needs.
 
 ## 3. Software Introduction
-
 Please ensure that your environment meets the following software dependency requirements:
 
 1. Hardware Dependency: R1 computing unit
@@ -260,7 +241,6 @@ sudo apt install libgoogle-glog-dev
 ```
 
 ## 4. Localization and Navigation Operation Process
-
 Map building is the foundational step for the robot's autonomous navigation. The robot records map data (bag files) via remote control, processes and builds the map on a local computer, and finally uploads the map to the specified directory on the robot to complete the deployment. By following the tutorial below, you can set the target pose, modify the target file, and run the process to achieve point-to-point navigation.
 
 ###  4.1 Building the Map
@@ -340,7 +320,6 @@ scp -r ~/mapping_data/robot_calibration.json nvidia@{robot_ip}:~/galaxea/calib/
 ```
 
 ### 4.2 Initiating the Positioning Function
-
 When activating the positioning function, make sure the robot is in a known map.
 
 1. **Start the R1 node**
@@ -500,39 +479,29 @@ When activating the positioning function, make sure the robot is in a known map.
     ```
 
 ## 5. Software Interface
-
 ### 5.1 System Diagram
-
 ![R1_navigation_system_diagram](assets/R1_navigation_system_diagram.png)
 
 ### 5.2 Driving Interface
-
 R1 offers multiple driver interfaces for communication and control with hardware devices. 
 
 #### 5.2.1 Chassis Drive Interface
-
 `/motion_control/chassis_speed`：It is used for the chassis status feedback ROS package, which defines multiple topics to report the status of the chassis' motors. Please refer to the " [Chassis Drive Interface](Software_Guide.md/#chassis-driver-interface) "  in the Software Guide for more detailed information.
 
 #### 5.2.2 LiDAR Interface
-
 `/hdas/lidar_chassis_left`：It is used for environmental perception and distance measurement, providing real-time environmental information to robots. For more detailed information, please refer to the "[Lidar Interface](Software_Guide.md/#lidar-interface) " in the Software Guide for more detailed information.
 
 #### 5.2.3 IMU Interface
-
 `/hdas/imu_chassis`：It is used to measure the acceleration and angular velocity of the robot, providing data support for navigation and attitude control. For more detailed information, please refer to the " [IMU Interface](Software_Guide.md/#imu-interfaces) " in the Software Guide for more detailed information.
 
 ### 5.3 Motion Control Interface
-
 R1 offers multiple motion control interfaces for achieving precise control of the robot's movements. Below are the main motion control interfaces and their descriptions.
 
 #### 5.3.1 Chassis Control Interface
-
 `/motion_target/target_speed_chassis`：It is used to control the movement of the robot chassis, including speed control, direction control, etc. Please refer to the "Chassis Control Interface" in the Software Guide for more detailed information.
 
 ### 5.4 Localization Interface
-
 It is used for the R1 robot to achieve autonomous navigation and environmental perception. Through these interfaces, the robot can receive data from various sensors, such as IMU and LiDAR, thereby enabling precise multi-sensor fusion localization. These interfaces ensure that the robot can accurately perceive its own position and posture in complex environments, providing reliable data support for subsequent path planning and navigation. 
-
 <table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -564,12 +533,8 @@ It is used for the R1 robot to achieve autonomous navigation and environmental p
     </tbody>
 </table>
 
-
-
 ### 5.5 Navigation Interface
-
 It is used for the R1 robot to achieve autonomous path planning and motion control. These interfaces enable the robots to conduct global and local path planning based on the input sensor data (such as LiDAR point clouds and SLAM positioning status), and output control instructions to drive the robot chassis to move. The Navigation interface not only supports obstacle avoidance but also can update the robot's motion trajectory and task status in real-time, ensuring that the robot can complete navigation tasks efficiently and safely. 
-
 <table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -649,12 +614,8 @@ It is used for the R1 robot to achieve autonomous path planning and motion contr
     </tbody>
 </table>
 
-
-
 ### 5.6 Navigation Service Interface
-
 #### 5.6.1 Start Navigation Service
-
 Executing the following command to start the navigation service.
 
 ```YAML
@@ -669,7 +630,6 @@ For Example: rosservice call /nav_service "data: true"
 **Note: Ensure that the R1 robot is in an environment with map data established when the navigation service is enabled, and the surrounding environment remains consistent with that during map generation to ensure the accuracy of positioning and navigation.**
 
 #### 5.6.2 Shutting Down Navigation Service
-
 Executing the following command to shut down the navigation service.
 
 ```YAML
@@ -680,9 +640,7 @@ For Example: rosservice call /nav_service "data: true"
 ```
 
 ### 5.7 System Manager
-
 The System Manager is the core management module of the R1 robot system, responsible for coordinating and managing various tasks and services of the robot. Through System Manager, users can trigger navigation tasks, monitor the status of tasks, and receive feedback on task completion. 
-
 <table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -712,7 +670,5 @@ The System Manager is the core management module of the R1 robot system, respons
             <td style="padding: 8px; border: 1px solid #ddd;">system_manager_msg/TaskRequest</td>
         </tr>
     </tbody>
-</table>
-
-​    
+</table> 
 

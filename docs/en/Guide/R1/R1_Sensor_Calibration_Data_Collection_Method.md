@@ -1,22 +1,16 @@
 # Sensor Calibration Data Collection Method
-
 # Data Collection Process
-
-![Data collection process](assets/Data collection process.png)
-
+![Data_collection_process](./assets/Data%20collection%20process.png)
 
 ## 1. Power On
-
 Start R1.
 
-## 2. Check SDK Version
-
+## 2. Check SDK Versio
 Please confirm that the SDK version of the R1 system is V1.0.1 or higher.
 
 Click [here](https://github.com/userguide-galaxea/System_Version_Release/tree/main/R1/v1.0.1) to download the installation package, if you need.
 
 ## 3. Start Related Drivers
-
 **Step 1: Kill existing ROS nodes.**
 
 ```Bash
@@ -76,7 +70,6 @@ roslaunch signal_camera signal_camera.launch
 ```
 
 ## 4. Start Remote Control
-
 <span style="color:red;">**Note: Ensure that all switches (SWA/SWB/SWC/SWD) are in the top position before you do any actions. This will place the machine in a stop state, preventing the robot from operating. ** </span>
 
 The following table shows how to switch SWA/SWB/SWC/SWD to different positions in different functions.
@@ -85,10 +78,7 @@ The following table shows how to switch SWA/SWB/SWC/SWD to different positions i
 
 Before you use the joystick controller to control the robot, you must start CAN driver and other programs. For detailed instructions, please refer to the [4.3](R1_Step_by_Step_Guide.md/#43-start-can-driver), [4.4](R1_Step_by_Step_Guide.md/#44-the-first-self-check), [4.5](R1_Step_by_Step_Guide.md/#45-stand-up) and [5](R1_Step_by_Step_Guide.md/#5-install-arms) in Step-By-Step Startup Guide. After that, you can move each switch to a specified position and control the robot by the following steps.
 
-
-
 ## 5. Check Topic
-
 Before starting data collection, ensure the following topics are available, and verify that their types and frame rates are normal.
 
 ```Bash
@@ -135,10 +125,7 @@ rostopic hz /hdas/imu_chassis /hdas/lidar_chassis_left /hdas/camera_chassis_fron
     </tbody>
 </table>
 
-
-
 ## 6. Data Collection Scenarios
-
 Examples of compliant data collection scenarios: Well-lit, spacious environments over 100 square meters, with diverse textures and structures, and no dynamic objects. For example, a well-lit underground parking garage or a sparsely populated office park.
 
 Examples of non-compliant data collection scenarios: Narrow spaces, environments with simple textures and structures, poor lighting, or environments with many dynamic objects, such as narrow corridors, white-walled rooms, crowded restaurants, or offices.
@@ -146,7 +133,6 @@ Examples of non-compliant data collection scenarios: Narrow spaces, environments
 ![collection_scenarios](assets/collection_scenarios.png)
 
 ## 7. Data Collection Route
-
 When calibrating the R1 sensors, a total of 2 sets of data need to be collected. This can be done by recording ROS bag files to gather the required data.
 
 ```Bash
@@ -161,5 +147,4 @@ rosbag record -a
 
 
 ## 8. Data Transmission
-
 Return the bag files.
