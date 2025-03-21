@@ -51,7 +51,7 @@ R1 Teleop平台采用按比例缩小设计，完美复刻R1的各项功能，实
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">R1-T 上位机</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">R1-T 上位机（双系统，非虚拟机）</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
             <td style="padding: 8px; border: 1px solid #ddd;">系统：Ubuntu20.04 ROS Noetic <br /><span style="color:red;">注意：请勿在虚拟机中使用R1-T上位机，否则可能无法连接蓝牙遥控器。</span></td>
         </tr>

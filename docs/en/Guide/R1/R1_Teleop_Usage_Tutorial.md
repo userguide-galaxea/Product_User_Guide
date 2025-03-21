@@ -53,7 +53,7 @@ Please check whether all items in the shipping container are present.
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">R1-T Host Computer</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">R1-T Host Computer (Dual systems)</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
             <td style="padding: 8px; border: 1px solid #ddd;">System: Ubuntu 20.04 ROS Noetic 
             </br><span style="color:red;">Note: Do not use the R1-T host computer in a virtual machine, as this may prevent Bluetooth controller connection.</span></td>

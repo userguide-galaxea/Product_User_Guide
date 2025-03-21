@@ -2,8 +2,9 @@
 >本教程将指导您如何开发和操作Galaxea A1。
 
 ## 软件依赖
-1. Ubuntu 20.04 LTS
-2. ROS Noetic
+
+1. 操作系统依赖：Ubuntu 20.04 LTS（PC安装双系统，非虚拟机）
+2. 中间件依赖：ROS Noetic
 
 ## 获取SDK
 点击[此处](https://github.com/userguide-galaxea/A1_SDK)可在我们的GitHub社区获取SDK及其他信息。SDK无需重新编译。请参考开发与操作教程直接使用。或者，使用以下任一方式获取SDK：

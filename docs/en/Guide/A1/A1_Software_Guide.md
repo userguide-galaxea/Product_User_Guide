@@ -2,8 +2,9 @@
 >This guide will show you on how to develop and operate Galaxea A1.
 
 ## Software Dependency
-1. Ubuntu 20.04 LTS
-2. ROS Noetic
+
+1. OS Dependency: [Ubuntu](https://ubuntu.com/download) 20.04 LTS (Install dual systems on a PC without using a virtual machine.)
+2. Middleware Dependency: ROS Noetic
 
 ## Obtain SDK
 Click [here](https://github.com/userguide-galaxea/A1_SDK) to download SDK in our GitHub Community.It does not require recompilation. Please refer to the Developing and Operating Tutorials for direct usage instructions. 

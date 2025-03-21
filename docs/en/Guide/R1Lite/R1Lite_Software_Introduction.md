@@ -3,7 +3,7 @@
 ## Environment Dependency
 
 1. Hardware Dependency: R1 Lite Computing Unit
-2. OS Dependency: Ubuntu 20.04 LTS
+2. OS Dependency: Ubuntu 20.04 LTS (Install dual systems on a PC without using a virtual machine.)
 3. Middleware Dependency: ROS Noetic
 
 ## Software Version Changelog

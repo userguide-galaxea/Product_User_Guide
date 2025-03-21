@@ -31,7 +31,7 @@ VR遥操作系统提供沉浸式的远程控制体验，使操作员能够通过
             <td style="padding: 8px; border: 1px solid #ddd;">控制R1机器人</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">R1上位机</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">R1上位机（双系统，非虚拟机）</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
             <td style="padding: 8px; border: 1px solid #ddd;">系统：Ubuntu20.04 ROS Noetic</br>用于给R1 Base升级软件程序</td>
         </tr>

@@ -2,7 +2,7 @@
 ## Environment Dependency
 
 1. Hardware Dependency: R1 Computing Unit
-2. OS Dependency: [Ubuntu](https://ubuntu.com/download) 20.04 LTS
+2. OS Dependency: [Ubuntu](https://ubuntu.com/download) 20.04 LTS (Install dual systems on a PC without using a virtual machine.)
 3. Middleware Dependency: ROS Noetic
 
 ## Obtain SDK

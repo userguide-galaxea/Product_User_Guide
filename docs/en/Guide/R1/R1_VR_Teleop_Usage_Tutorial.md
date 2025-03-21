@@ -31,7 +31,7 @@ The following tutorial will provide a detailed introduction to the activation me
             <td style="padding: 8px; border: 1px solid #ddd;">Controls the R1 robot.</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Host Computer</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Host Computer (Dual systems)</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
             <td style="padding: 8px; border: 1px solid #ddd;">System：Ubuntu20.04 ROS Noetic</br>Used for upgrading the software program of R1 Base.</td>
         </tr>
