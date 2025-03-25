@@ -1623,9 +1623,9 @@ R1躯干速度控制是一个用于控制躯干移动到目标浮动基座坐标
 ```bash
 source ~/work/galaxea/install/setup.bash
 roslaunch mobiman torso_speed_control_hard.launch
-## Note, this command cannot be executed simultaneously with joint_tracker.
-## If you want to use joint tracker simultaneously, use joint_tracker_disable_torso instead. 
-## Detail information can be found at joint Control Page
+# 注意，此命令不能与 joint_tracker 同时执行。
+# 如果需要同时使用 joint_tracker，请改用 joint_tracker_disable_torso。
+# 详细信息可在关节控制小节查询。
 ```
 
 ![R1_torso_speed_control](assets/R1_torso_speed_control.png)
