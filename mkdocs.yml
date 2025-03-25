@@ -72,6 +72,7 @@ nav:
       - R1 Teleop Usage Tutorial: Guide/R1/R1_Teleop_Usage_Tutorial.md
       - R1 VR Teleop Usage Tutorial: Guide/R1/R1_VR_Teleop_Usage_Tutorial.md
       - R1 Autonomous Navigation System Usage Tutorial: Guide/R1/R1_Autonomous_Navigation_System_Usage_Tutorial.md
+      - R1 FAQ: Guide/R1/R1_FAQ.md
   - Galaxea R1 Software Changelog:
         - V1.1.0: Guide/R1/R1_Software_Changelog/v1.1.0.md
         - V1.0.4: Guide/R1/R1_Software_Changelog/v1.0.4.md
