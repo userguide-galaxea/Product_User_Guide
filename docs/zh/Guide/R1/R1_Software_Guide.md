@@ -1527,15 +1527,15 @@ roslaunch mobiman r1_right_arm_mpc.launch  # MPC control of the right arm end-ef
   </thead>
   <tbody>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/pose_ee_arm_left</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/pose_target_arm_left</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">目标左臂末端执行器姿态</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂目标姿态</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/pose_ee_arm_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/pose_target_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>        
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">目标右臂末端执行器姿态</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右臂目标姿态</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
     </tr>
     <tr style="background-color: white;">

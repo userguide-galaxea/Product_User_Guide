@@ -1527,15 +1527,15 @@ The interface is shown below.
   </thead>
   <tbody>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/pose_ee_arm_left</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/pose_target_arm_left</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Target pose of left arm end-effector frame</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Target pose of left arm</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/pose_ee_arm_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/pose_target_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>        
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Target pose of right arm end-effector frame</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Target pose of right arm</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
     </tr>
     <tr style="background-color: white;">
