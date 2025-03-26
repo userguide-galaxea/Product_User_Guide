@@ -16,7 +16,7 @@ R1 supports two ways to start the SDK: separate startup and one-click startup. F
 ### Seperate Start
 The current Galaxea R1 driver consists of several components, including actuator interface, sensor interface and external function interface. All the components can be launched by using the following command template. 
 
-Click [here](R1_Step_by_Step_Guide/#43-start-can-driver) to view detailed startup instructions.
+Click [here](./R1_Step_by_Step_Guide.md/#43-start-can-driver) to view detailed startup instructions.
 All the components can be launched by using the following command template.
 ```Bash
   source ~/work/galaxea/install/setup.bash

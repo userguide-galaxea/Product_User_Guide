@@ -16,7 +16,7 @@ Galaxea R1驱动程序由多个组件组成，包括执行器接口、传感器�
 ### 分开启动各接口
 所有组件可以通过以下命令模板启动。
 
-点击[此处](R1_Step_by_Step_Guide/#43-启动can驱动程序)查看详细启动方式。
+点击[此处](./R1_Step_by_Step_Guide.md/#43-启动can驱动程序)查看详细启动方式。
 
 ```Bash
 source ~/work/galaxea/install/setup.bash
