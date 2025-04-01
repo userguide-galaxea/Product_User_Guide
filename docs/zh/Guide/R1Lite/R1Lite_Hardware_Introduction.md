@@ -304,40 +304,45 @@ Galaxea R1 Lite可选配平台双目相机和机械臂腕部相机。
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
             <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">单元</th>
-            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">单 SoC</th>
-            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">双 SoC</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">NUC</th>
         </tr>
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">基本计算能力</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">8核 2.2GHz CPU</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">2 * 8核 2.2GHz CPU</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">14核 2.5GHz CPU I9-12900HK  (Up to 5.0Ghz)</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">供电</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">电压：19 V <br>电流：6.32 A</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">重量</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">358 g</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">内存芯片</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">1 x LPDDR5@32G</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">2 x LPDDR5@32G</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1 x LPDDR4@32G </td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">硬盘</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1 x SSD@1T</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">2 x SSD@512G</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">相机</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">8 x GMSL</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">8 x GMSL (SoC-1) + 8 x GMSL (SoC-2)</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">USB2.0: 1<br>USB3.0: 3<br>Type-C: 1<br>HDMI: 2</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">以太网</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">4 x 千兆以太网 (M12)</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">3 x SoC-1 千兆以太网 (M12) + 3 x SoC-2 千兆以太网 (M12)</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">散热系统</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">智能风扇 + 全铜散热片</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">WiFi 模块</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">M.2 WiFi 带AP模式</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">M.2 WiFi 带AP模式</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">AX 201, WIFI 6</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">蓝牙</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">BT 5.2</td>
         </tr>
     </tbody>
 </table>

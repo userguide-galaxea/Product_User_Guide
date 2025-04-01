@@ -300,40 +300,45 @@ The Galaxea R1 Lite offers optional platform binocular cameras and wrist cameras
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
             <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">Units</th>
-            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">Single SOC</th>
-            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">Dual SOC</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">NUC</th>
         </tr>
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Basic Computating Capability</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">8 Core 2.2GHz CPU</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">2 * 8 Core 2.2GHz CPU</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">14 Core 2.5GHz CPU I9-12900HK (Up to 5.0 Ghz)</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Power Supply</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Voltage: 19 V<br>Current: 6.32 A </td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Weight</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">358 g</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Memory</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">1 x LPDDR5@32G </td>
-            <td style="padding: 8px; border: 1px solid #ddd;">2 x LPDDR5@32G </td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1 x LPDDR4@32G </td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Hard Disk</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1 x SSD@1T</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">2 x SSD@512G</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Camera</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">8 x GMSL</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">8 x GMSL (SoC-1) + 8 x GMSL (SoC-2) </td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Interface</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">USB2.0: 1<br>USB3.0: 3<br>Type-C: 1<br>HDMI: 2</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Ethernet</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">4 x Gigabit Ethernet (M12 cable)</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">3 x SoC-1 Gigabit Ethernet (M12 cable) + 3 x SoC-2 Gigabit Ethernet (M12 cable)</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Heat Dissipation</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Smart fan + All-copper heat sink</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">WiFi Module</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">M.2 Wifi with AP mode</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">M.2 Wifi with AP mode</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">AX 201, WIFI 6</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Bluetooth</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">BT 5.2</td>
         </tr>
     </tbody>
 </table>
