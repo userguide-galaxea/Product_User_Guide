@@ -48,11 +48,11 @@
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">额定负载</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">2.5 kg</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">2 kg</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">最大负载</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">5 kg</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">3.5 kg</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">臂展</td>

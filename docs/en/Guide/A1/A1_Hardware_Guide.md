@@ -52,7 +52,7 @@
         </tr>
         <tr style="background-color: white;text-align: left;">
             <td>Maximum Payload</td>
-            <td>5 kg</td>
+            <td>3.5 kg</td>
         </tr>
         <tr style="background-color: white;text-align: left;">
             <td>Reach</td>
