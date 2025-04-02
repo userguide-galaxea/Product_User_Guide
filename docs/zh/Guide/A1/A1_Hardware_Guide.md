@@ -64,11 +64,11 @@
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">最大末端加速度</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">40 m/s²</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">40 m/s² </td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">自由度</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">6</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">6 </td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">重复定位精度</td>
