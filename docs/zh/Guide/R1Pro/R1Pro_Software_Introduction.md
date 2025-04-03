@@ -9,8 +9,7 @@
 
 点击下方链接获取SDK：
 
-- 百度云盘：
-- Google Drive：
+- 百度云盘：https://pan.baidu.com/s/1mXY0Qx5JNiI7I1tjFAUGvg?pwd=r1pr
 
 当前为R1 Pro的首发软件版本。后续的版本更新您可以在R1 Pro软件版本更新日志中查看，获取最新的SDK包及更新信息。
 
@@ -22,7 +21,7 @@ Galaxea R1 Pro驱动程序由多个组件组成，包括执行器接口、传感
 ### 分开启动各接口
 所有组件可以通过以下命令模板启动。
 
-点击[此处](./R1 Pro_Step_by_Step_Guide.md/#43-启动can驱动程序)查看详细启动方式。
+<!-- 点击[此处](./R1 Pro_Step_by_Step_Guide.md/#43-启动can驱动程序)查看详细启动方式。 -->
 
 ```Bash
 source ~/work/galaxea/install/setup.bash
