@@ -61,9 +61,16 @@ nav:
       - Software Introduction: Guide/A1/A1_Software_Guide.md
       - Simulation Tutorial: Guide/A1/A1_Simulation_Tutorial.md
       - FAQ: Guide/A1/A1_FAQ.md
+  - Galaxea A1XY User Guide:
+      - Getting Started: Guide/A1XY/A1XY_Getting_Started.md
+      - Hardware Introduction: Guide/A1XY/A1XY_Hardware_Introduction.md
+      - Unboxing and Startup Guide: Guide/A1XY/A1XY_Unboxing_Startup_Guide.md
+      # - Software Introduction: Guide/A1/A1_Software_Guide.md
+      # - Simulation Tutorial: Guide/A1/A1_Simulation_Tutorial.md
+      # - FAQ: Guide/A1/A1_FAQ.md
   - Galaxea R1 User Guide:
       - Unboxing and Startup Guide: Guide/R1/R1_Step_by_Step_Guide.md
-      - Basic Usage Introduction: Guide/R1/R1_Overview.md
+      - Getting Started: Guide/R1/R1_Overview.md
       - Hardware Introduction: Guide/R1/R1_Hardware_Guide.md
       - Software Introduction: Guide/R1/R1_Software_Guide.md
       - Demo Guide: Guide/R1/R1_Demo_Guide.md
@@ -78,10 +85,14 @@ nav:
         - V1.0.4: Guide/R1/R1_Software_Changelog/v1.0.4.md
   - Galaxea R1 Lite User Guide:
         - Unboxing and Startup Guide: Guide/R1Lite/R1Lite_Unboxing_Startup_Guide.md
-        - Basic Usage Introduction: Guide/R1Lite/R1Lite_Basic_Usage_Introduction.md
+        - Getting Started: Guide/R1Lite/R1Lite_Basic_Usage_Introduction.md
         - Hardware Introduction: Guide/R1Lite/R1Lite_Hardware_Introduction.md
         - Software Introduction: Guide/R1Lite/R1Lite_Software_Introduction.md
         - Wheel Motor Zero-Point Calibration Instruction: Guide/R1Lite/R1Lite_Wheel_Motor_Calibration.md
+  - Galaxea R1 Pro User Guide:
+        - Getting Started: Guide/R1Pro/R1Pro_Getting_Started.md
+        - Hardware Introduction: Guide/R1Pro/R1Pro_Hardware_Introduction.md
+        - Software Introduction: Guide/R1Pro/R1Pro_Software_Introduction.md
 
 extra_css:
   - styles.css
@@ -127,8 +138,9 @@ plugins:
             GUIDE: 导航
             Galaxea Robot: 产品信息
             Galaxea A1 User Guide: Galaxea A1 用户手册
+            Galaxea A1XY User Guide: Galaxea A1XY 用户手册
             Galaxea R1 User Guide: Galaxea R1 用户手册
-            Galaxea B1 User Guide: Galaxea B1 用户手册
+            Galaxea R1 Pro User Guide: Galaxea R1 Pro 用户手册
             Galaxea R1 Lite User Guide: Galxea R1 Lite 用户手册
             Getting Started: 开箱启动指南
             Hardware Introduction: 硬件介绍
@@ -150,6 +162,6 @@ plugins:
             Demo Guide: Demo演示指南
             Hardware Introduction: 硬件介绍
             Software Introduction: 软件介绍
-            Basic Usage Introduction: 基础使用介绍
+            Getting Started: 快速开始
             Wheel Motor Zero-Point Calibration Instruction: 舵轮电机零点标定说明
             FAQ: 常见问题
