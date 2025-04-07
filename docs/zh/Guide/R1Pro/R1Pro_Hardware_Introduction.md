@@ -140,7 +140,7 @@ Galaxea R1 Pro标配两只Galaxea A2机械臂和两个G1夹爪。
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">长度</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">620 mm</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">716 mm</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">自由度</td>
