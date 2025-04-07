@@ -59,7 +59,7 @@
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">自由度</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">全身共26 DOF:</br> 底盘6 DOF</br> 躯干4 DOF </br>单臂带夹爪8 DOF</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">全身共26 DOF:</br>单臂带夹爪8 DOF</br> 底盘6 DOF</br> 躯干4 DOF</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">手臂负载</td>
@@ -67,7 +67,7 @@
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">操作范围</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">垂直: 0 ~ 2000 mm</br>水平: 716 mm （带夹爪861mm，带灵气手933mm）</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">垂直: 0 ~ 2000 mm</br>水平: 716 mm （带夹爪861mm，带灵巧手933mm）</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">功能</td>
