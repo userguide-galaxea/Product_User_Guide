@@ -152,11 +152,11 @@ Galaxea R1 Pro标配两只Galaxea A2机械臂和两个G1夹爪。
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">额定负载</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">3.5 kg@0.62m</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">3.5 kg@0.6m</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">最大负载</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">5 kg@0.62m</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">5 kg@0.6m</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">最大末端线速度</td>
