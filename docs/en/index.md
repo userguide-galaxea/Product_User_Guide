@@ -69,12 +69,36 @@ hide:
 </body>
     <main id = unique-page>
         <div class="row">
+            <!-- <section class="products-section">
+                <h2><img src="assets/A1XY_title.png" alt="R1 Pro" width="120"></h2>
+                <div class="product">
+                        <a href="Guide/R1Pro/R1Pro_Unboxing_Guide">Unboxing & Startup</a> <br>
+                        <a href="Guide/A1XY/A1XY_Hardware_Introduction">Hardware Guide</a> <br>
+                        <a href="Guide/A1XY/A1XY_Software_Introduction">Software Guide</a> <br>
+                </div>
+            </section> -->
+            <!-- <section class="products-section">
+                <h2><img src="assets/A1XY_title.png" alt="R1 Lite" width="120"></h2>
+                <div class="product">
+                        <a href="Guide/R1Lite/R1Lite_Unboxing_Startup_Guide">Unboxing & Startup</a> <br>
+                        <a href="Guide/R1Lite/R1Lite_Hardware_Introduction">Hardware Guide</a> <br>
+                        <a href="Guide/R1Lite/R1Lite_Software_Introduction">Software Guide</a> <br>
+                </div>
+            </section> -->
             <section class="products-section">
                 <h2><img src="assets/R1_series.png" alt="R1" width="50"></h2>
                 <div class="product">
                         <a href="Guide/R1/R1_Step_by_Step_Guide">Unboxing & Startup</a> <br>
                         <a href="Guide/R1/R1_Hardware_Guide">Hardware Guide</a> <br>
                         <a href="Guide/R1/R1_Software_Guide">Software Guide</a> <br>
+                </div>
+            </section>
+            <section class="products-section">
+                <h2><img src="assets/A1XY_title.png" alt="A1XY" width="120"></h2>
+                <div class="product">
+                        <a href="Guide/A1XY/A1XY_Unboxing_Guide">Unboxing & Startup</a> <br>
+                        <a href="Guide/A1XY/A1XY_Hardware_Introduction">Hardware Guide</a> <br>
+                        <a href="Guide/A1XY/A1XY_Software_Introduction">Software Guide</a> <br>
                 </div>
             </section>
             <section class="products-section">
@@ -85,6 +109,7 @@ hide:
                         <a href="Guide/A1/A1_Software_Guide">Software Guide</a> <br>
                 </div>
             </section>
+            
         </div>
     </main>
     <section class="contact-section">

@@ -29,11 +29,6 @@
             <td style="padding: 8px; border: 1px solid #ddd;">用于开启和关闭机械臂电源。</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">开关电路</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">用于开启和关闭机械臂电源。</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">CAN盒</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
             <td style="padding: 8px; border: 1px solid #ddd;">用于机械臂通信。</td>
@@ -114,4 +109,4 @@
 3. 连接开关电路的两端至机械臂底座的供电口和电源适配器。
 4. 将电源适配器接入电源中。
 
-连接成功后，查看[A1XY 部署与启动指南](./A1XY_Startup_Demo_Guide.md)，开启机械臂控制和Demo演示。
+连接成功后，查看[A1XY 启动与Demo演示指南](./A1XY_Startup_Demo_Guide.md)，开启机械臂控制和Demo演示。

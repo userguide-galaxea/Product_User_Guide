@@ -1,104 +1,104 @@
-## 环境依赖
+## Software Dependency
 
-1. 操作系统依赖：Ubuntu 20.04 LTS
-2. 中间件依赖：ROS Noetic
+1. OS Dependency: Ubuntu 20.04 LTS 
+2. Middleware Dependency: ROS Noetic
 
-## 软件资源
+## Obtain Resources
 
-点击以下链接获取A1XY SDK文件：
+Click any of the following links to obtain A1XY SDK. 
 
-- 百度云盘：[https://pan.baidu.com/s/1jVEqjL-r_Ll7bKFB1XxKIw?pwd=a1xy](https://pan.baidu.com/s/1jVEqjL-r_Ll7bKFB1XxKIw?pwd=a1xy)
+- Baidu Cloud: [https://pan.baidu.com/s/1jVEqjL-r_Ll7bKFB1XxKIw?pwd=a1xy](https://pan.baidu.com/s/1jVEqjL-r_Ll7bKFB1XxKIw?pwd=a1xy)
 - Google Drive：[https://drive.google.com/drive/folders/180qSZTc7bZgwklVuwcuhq5O2DPteI2nR?usp=sharing](https://drive.google.com/drive/folders/180qSZTc7bZgwklVuwcuhq5O2DPteI2nR?usp=sharing)
 
-当前为A1XY机械臂的首发软件版本。后续的版本更新您可以在A1XY软件版本更新日志中查看，获取最新的SDK包及更新信息。
+This is the initial software release for the A1XY robot arm. For subsequent version updates, you can refer to the A1XY Software Version Cahngelog to obtain the latest SDK package and update information.
 
-点击获取A1XY URDF文件：
+Click the following links to obtain A1XY URDF.
 
 - [A1X URDF](https://github.com/userguide-galaxea/URDF/tree/galaxea/main/A1X)
 - [A1Y URDF](https://github.com/userguide-galaxea/URDF/tree/galaxea/main/A1Y)
 
-## 启动SDK
+## Start SDK
 
-点击查看[A1XY 启动与Demo演示指南](./A1XY_Startup_Demo_Guide.md)
+Visit the [A1XY Startup and Demo Guide](./A1XY_Startup_Demo_Guide.md).
 
-## Demo演示
+## Demo
 
-点击查看[A1XY Demo演示](./A1XY_Startup_Demo_Guide.md/#23-demo演示)
+Visit the [A1XY Demo Guide](./A1XY_Startup_Demo_Guide.md/#23-demo).
 
-## 软件接口
+## Software Interface
 
-### 驱动接口
+### Driver Interface
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;table-layout: fixed;">
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Topic Name</th>
             <th style="width: 100px; padding: 8px; border: 1px solid #ddd;">I/O</th>          
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">描述</th>
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">消息类型</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Desciption</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Message Type</th>
         </tr>
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Output</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">各关节反馈位置/速度/力矩</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Position, speed, and torque feedback for each joint</td>
             <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_gripper</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Output</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">末端夹爪反馈行程</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">End-effector gripper stroke feedback</td>
             <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_status</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Output</td>                                   
-            <td style="padding: 8px; border: 1px solid #ddd;">各关节状态反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Status feedback for each joint</td>
             <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::feedback_status</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                   
-            <td style="padding: 8px; border: 1px solid #ddd;">各关节电机控制接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Motor control interface for each joint</td>
             <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_gripper</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                 
-            <td style="padding: 8px; border: 1px solid #ddd;">末端夹爪电机控制接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">End-effector gripper motor control interface</td>
             <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/position_control_gripper</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">末端夹爪行程控制接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">End-effector gripper stroke control interface</td>
             <td style="padding: 8px; border: 1px solid #ddd;">std_msgs::Float32</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/arm_node/function_frame_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">机械臂功能帧</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Robot arm function frame</td>
             <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg/FunctionFrame</td>
         </tr>        
     </tbody>
 </table>
 
-针对以上话题的具体字段及其详细描述如下表所示：
+The specific fields and their detailed descriptions for the above topic are shown in the table below:
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;table-layout: fixed;">
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
-            <th style="width: 100px; padding: 8px; border: 1px solid #ddd;">字段</th>          
-            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Topic Name</th>
+            <th style="width: 100px; padding: 8px; border: 1px solid #ddd;">Field</th>          
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">Desciption</th>
         </tr>
     </thead>
     <tbody>
         <tr style="background-color: white;">
             <td rowspan="4" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/hdas/feedback_arm</td>
             <td style="padding: 10px; border: 1px solid #ddd;">header</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">标准消息头</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Standard Header</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">position</td>
@@ -115,7 +115,7 @@
         <tr style="background-color: white;">
             <td rowspan="4" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/hdas/feedback_gripper</td>
             <td style="padding: 10px; border: 1px solid #ddd;">header</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">标准消息头</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Standard Header</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">position</td>
@@ -123,29 +123,29 @@
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">velocity</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">未使用</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Not used</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">effort</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">未使用</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Not used</td>
         </tr>
                 <tr style="background-color: white;">
             <td rowspan="3" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/hdas/feedback_status_arm</td>
             <td style="padding: 10px; border: 1px solid #ddd;">header</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">标准消息头</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Standard Header</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">name_id</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">关节名称</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Joint name</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">errors</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">包含错误代码及描述</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Contains error code and desciption</td>
         </tr>
         <tr style="background-color: white;">
             <td rowspan="8" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/motion_control/control_arm</td>
             <td style="padding: 10px; border: 1px solid #ddd;">header</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">标准消息头</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Standard Header</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">name</td>
@@ -178,7 +178,7 @@
         <tr style="background-color: white;">
             <td rowspan="8" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/motion_control/control_gripper</td>
             <td style="padding: 10px; border: 1px solid #ddd;">header</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">标准消息头</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Standard Header</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">name</td>
@@ -211,7 +211,7 @@
         <tr style="background-color: white;">
             <td rowspan="2" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/motion_control/position_control_gripper</td>
             <td style="padding: 10px; border: 1px solid #ddd;">header</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">标准消息头</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Standard Header</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">data</td>
@@ -220,274 +220,275 @@
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/arm_node/function_frame_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">command</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">1: 使能<br>2: 失能<br>3: 整臂标定<br>4: 清除错误</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1: Enable<br>2: Disable<br>3: Whole arm calibration<br>4: Clear error</td>
         </tr>
     </tbody>
 </table>
 
 
-### 运控接口
+### Motion Control Interface
 
-#### 关节控制
+#### Joint Control
 
 ```Bash
 source A1XY_workspace/install/setup.bash
 
-# 根据产品型号，选择以下任一启动方式：
+# Depending on the product model, select one of the following startup methods:
 roslaunch mobiman a1x_jointTrackerdemo.launch
 roslaunch mobiman a1y_jointTrackerdemo.launch
 ```
 
-该启动文件将启动 `a1_xy_jointTracker_demo_node`，该节点是负责控制每个关节的主要节点。
+This launch file will start with the `a1_xy_jointTracker_demo_node`, which is the main node responsible for controlling each joint.
 
-接口信息如下：
+The interface is shown below:
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;table-layout: fixed;">
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Topic Name</th>
             <th style="width: 100px; padding: 8px; border: 1px solid #ddd;">I/O</th>          
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">描述</th>
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">消息类型</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Desciption</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Message Type</th>
         </tr>
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Output</td>                                   
-            <td style="padding: 8px; border: 1px solid #ddd;">手臂关节反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Arm joint feedback</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Hdas_msg::motor_control</td>
         </tr>        
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">手臂电机控制</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Arm motor control</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">各关节目标位置</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Target position of each joint</td>
             <td style="padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
         </tr>
     </tbody>
 </table>
 
-针对以上话题的具体字段及其详细描述如下表所示：
+The specific fields and their detailed descriptions for the above topic are shown in the table below:
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;table-layout: fixed;">
-            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">字段</th>          
-            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">Topic Name</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Field</th>          
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">Desciption</th>
         </tr>
     </thead>
     <tbody>
         <tr style="background-color: white;">
             <td rowspan="2" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/motion_target/target_joint_state_arm</td>
             <td style="padding: 10px; border: 1px solid #ddd;">position</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">这是一个包含六个元素的向量，代表每个关节的六个目标位置。</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">This is a vector with six elements representing the target positions of each joint.This is a vector with six elements representing the target positions of each joint.</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">velocity</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">这是一个包含六个元素的向量，代表每个关节在运动过程中的最大速度。最大速度如下：{3, 3, 3, 5, 5, 5, 5}。 加速度和加加速度限制设置为速度限制的1.5倍。</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">This is a vector with six elements representing the maximum velocity of each joint during motion. The maximum velocities are as follows: {3, 3, 3, 5, 5, 5, 5}. The acceleration and jerk limits are set to 1.5 times the velocity limits.</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">-</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Please refer to the arm diver interface.</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">-</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Please refer to the arm diver interface.</td>
         </tr>
     </tbody>
 </table>
 
-#### 手臂姿态控制
+#### Arm Pose Control
 
-A1XY手臂姿态控制是一个用于控制手臂移动到目标末端执行器（ee）坐标帧的ROS软件包。它主要包括一个launch文件,可以通过以下命令启动。
+A1XY Arm Pose Control is a ROS package designed to control the movement of the robotic arm to the target end-effector (ee) coordinate frame. It primarily includes a launch file that can be started using the following command:
 
 ```Bash
 source A1XY_workspace/install/setup.bash
 
-# 根据产品型号，选择以下任一启动方式：
+# Depending on the product model, select one of the following startup methods:
 roslaunch mobiman a1x_arm_relaxed_ik.launch
 roslaunch mobiman a1y_arm_relaxed_ik.launch
 ```
 
-请注意： 
+Note: 
 
-- 当双臂姿态控制器启动后，还是需要将关节控制节点启动，原因是姿态控制是根据目标ee姿态不断解算出目标关节角下发给`/motion_target/target_joint_state_arm`。
+- When the dual-arm pose controller is started, the joint control node must also be launched. This is because the pose controller continuously calculates the target joint angles based on the desired end-effector (ee) pose and sends these target angles to the `/motion_target/target_joint_state_arm` topic.
+
 
     ```Bash
     source A1XY_workspace/install/setup.bash
 
-    # 根据产品型号，选择以下任一启动方式：
+    # Depending on the product model, select one of the following startup methods:
     roslaunch mobiman a1x_jointTrackerdemo.launch
     roslaunch mobiman a1y_jointTrackerdemo.launch
     ```
 
-- 当前末端姿态控制的相对位姿是URDF中gripper_link相对于base_link的姿态转换。以A1X为例，下图展示了gripper_link坐标系相对于base_link坐标系的相对关系，包含了x、y、z的偏移量以及orientation对应的旋转偏移。
+- The relative pose of the current end-effector pose control is the transformation of the gripper_link relative to the base_link in the URDF. Taking the A1X as an example, the following figure shows the relative relationship of the gripper_link coordinate system to the base_link coordinate system, including the offsets in x, y, and z, as well as the rotational offsets corresponding to the orientation.
 
-  ![A1XY_arm_pose_cn](./assets/A1XY_arm_pose_cn.png)
+  ![A1XY_arm_pose_cn](./assets/A1XY_arm_pose.png)
 
-该接口如下所示：
+The interface is shown below:
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;table-layout: fixed;">
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Topic Name</th>
             <th style="width: 100px; padding: 8px; border: 1px solid #ddd;">I/O</th>          
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">描述</th>
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">消息类型</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Desciption</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Message Type</th>
         </tr>
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/hdas/pose_ee_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Output</td>                                   
-            <td style="padding: 8px; border: 1px solid #ddd;">末端实际位姿</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Actual pose of ee</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Hdas_msg::motor_control</td>
         </tr> 
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Output</td>                                   
-            <td style="padding: 8px; border: 1px solid #ddd;">手臂关节反馈</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Arm joint feedback</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Hdas_msg::motor_control</td>
         </tr>        
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">手臂关节目标</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Target of Arm joint </td>
             <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/pose_ee_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">目标手臂末端执行器姿态</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Target pose of ee</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
         </tr>
     </tbody>
 </table>
 
-针对以上话题的具体字段及其详细描述如下表所示：
+The specific fields and their detailed descriptions for the above topic are shown in the table below:
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;table-layout: fixed;">
-            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">字段</th>          
-            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">Topic Name</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Field</th>          
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">Desciption</th>
         </tr>
     </thead>
     <tbody>
         <tr style="background-color: white;">
             <td rowspan="8" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/motion_target/pose_ee_arm</td>
             <td style="padding: 10px; border: 1px solid #ddd;">header</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">标准消息头</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">Standard Header</td>
         </tr>
         <tr style="background-color: white;">
             <td style="padding: 10px; border: 1px solid #ddd;">pose.position.x</td>
-            <td style="padding: 10px; border: 1px solid #ddd;">X轴偏移</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">X-axis offset</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">pose.position.y</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Y轴偏移</td>                    
+            <td style="padding: 8px; border: 1px solid #ddd;">Y-axis offset</td>                    
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">pose.position.z</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Z轴偏移</td>                    
+            <td style="padding: 8px; border: 1px solid #ddd;">Z-axis offset</td>                    
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.x</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>                    
+            <td style="padding: 8px; border: 1px solid #ddd;">Rotation quaternion</td>                    
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.y</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>                    
+            <td style="padding: 8px; border: 1px solid #ddd;">Rotation quaternion</td>                    
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.z</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>                    
+            <td style="padding: 8px; border: 1px solid #ddd;">Rotation quaternion</td>                    
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">pose.orientation.w</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">旋转四元数</td>                    
+            <td style="padding: 8px; border: 1px solid #ddd;">Rotation quaternion</td>                    
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">-</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Please refer to the arm diver interface.</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">-</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">请参考关节控制接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Please refer to the joint control interface</td>
         </tr>
     </tbody>
 </table>
 
-#### 夹爪控制
+#### Gripper Control
 
-A1XY夹爪控制是一个用于控制末端夹爪的ROS node。它主要包括一个launch文件,可以通过以下命令启动：
+A1XY Gripper Control is a ROS node designed to control the end-effector gripper. It primarily includes a launch file that can be started using the following command:
 
 ```Bash
 source A1XY_workspace/install/setup.bash
 roslaunch mobiman a1xy_gripperController.launch
 ```
 
-该启动文件将启动 `a1_xy_jointTracker_demo_node`，该节点是负责控制每个关节的主要节点。
+This launch file will start `a1_xy_jointTracker_demo_node`, which is the main node responsible for controlling each joint.
 
-接口信息如下：
+The interface is shown below:
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;table-layout: fixed;">
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Topic Name</th>
             <th style="width: 100px; padding: 8px; border: 1px solid #ddd;">I/O</th>          
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">描述</th>
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">消息类型</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Desciption</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Message Type</th>
         </tr>
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_position_gripper</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                                   
-            <td style="padding: 8px; border: 1px solid #ddd;">夹爪目标位置</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Target position of gripper</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
         </tr>        
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_gripper</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">夹爪电机控制</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Motor control of gripper</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
         </tr>
     </tbody>
 </table>
 
-针对以上话题的具体字段及其详细描述如下表所示：
+The specific fields and their detailed descriptions for the above topic are shown in the table below:
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;table-layout: fixed;">
-            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">字段</th>          
-            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">Topic Name</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Field</th>          
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">Desciption</th>
         </tr>
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_position_gripper</td>
             <td style="padding: 8px; border: 1px solid #ddd;">position</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">表示夹爪的目标位置，[0，100]，0为完全闭合，100为完全张开。</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Indicates the target position of the gripper, ranging from [0, 100], where 0 represents fully closed and 100 represents fully open.</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_gripper</td>
             <td style="padding: 8px; border: 1px solid #ddd;">-</td>                    
-            <td style="padding: 8px; border: 1px solid #ddd;">请参考驱动接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Please refer to the driver interface.</td>
         </tr>
     </tbody>
 </table>
