@@ -100,3 +100,4 @@ hide:
         <p>联系电话：400 878 0980 </br>邮箱（产品/商务）: <a href="mailto:product@galaxea.ai">product@galaxea.ai</a></br>邮箱（技术支持）: <a href="mailto:support@galaxea.ai">support@galaxea.ai</a></p>
     </section>
 </html>
+
