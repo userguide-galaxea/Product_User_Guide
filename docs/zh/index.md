@@ -85,6 +85,14 @@ hide:
                         <a href="Guide/A1/A1_Software_Guide">软件介绍</a> <br>
                 </div>
             </section>
+            <section class="products-section">
+                <h2><img src="assets/A1XY_title.png" alt="A1XY" width="120"></h2>
+                <div class="product">
+                        <a href="Guide/A1XY/A1XY_Unboxing_Guide.md">开箱启动</a> <br>
+                        <a href="Guide/A1XY/A1XY_Hardware_Introduction">硬件介绍</a> <br>
+                        <a href="Guide/A1XY/A1XY_Software_Introduction.md">软件介绍</a> <br>
+                </div>
+            </section>
         </div>
     </main>
     <section class="contact-section">

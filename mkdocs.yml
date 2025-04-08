@@ -64,8 +64,9 @@ nav:
   - Galaxea A1XY User Guide:
       - Getting Started: Guide/A1XY/A1XY_Getting_Started.md
       - Hardware Introduction: Guide/A1XY/A1XY_Hardware_Introduction.md
-      - Unboxing and Startup Guide: Guide/A1XY/A1XY_Unboxing_Startup_Guide.md
-      # - Software Introduction: Guide/A1/A1_Software_Guide.md
+      - Unboxing and Installation Guide: Guide/A1XY/A1XY_Unboxing_Guide.md
+      - Startup and Demo Guide: Guide/A1XY/A1XY_Startup_Demo_Guide.md
+      - Software Introduction: Guide/A1XY/A1XY_Software_Introduction.md
       # - Simulation Tutorial: Guide/A1/A1_Simulation_Tutorial.md
       # - FAQ: Guide/A1/A1_FAQ.md
   - Galaxea R1 User Guide:
@@ -165,3 +166,5 @@ plugins:
             Getting Started: 快速开始
             Wheel Motor Zero-Point Calibration Instruction: 舵轮电机零点标定说明
             FAQ: 常见问题
+            Unboxing and Installation Guide: 开箱与安装指南
+            Startup and Demo Guide: 启动与Demo演示指南
