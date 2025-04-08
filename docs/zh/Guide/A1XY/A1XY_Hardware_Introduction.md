@@ -195,7 +195,7 @@ A1Y机械臂共有6个关节，最大旋转角度为330度。
 
 ![A1Y_joint_tag_cn](./assets/A1Y_joint_tag_cn.png)
 
-其中，关节5和关节6与A1X有区别。具体参数如下：
+其中，关节4和关节5与A1X有区别。具体参数如下：
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>

@@ -151,7 +151,7 @@ plugins:
             Gripper: 夹爪
             Dexterous Hand: 灵巧手
             Tabletop Teleopration: 桌面遥操
-            Step-By-Step Startup Guide: 开箱启动指南
+            # Step-By-Step Startup Guide: 开箱启动指南
             Unboxing and Startup Guide: 开箱启动指南
             Overview: 快速入门
             Galaxea R1 Software Changelog: Galaxea R1 软件版本更新日志
