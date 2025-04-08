@@ -148,7 +148,7 @@ A1X机械臂共有6个关节，最大旋转角度为330度。
             <td style="padding: 8px; border: 1px solid #ddd;">36</td>
             <td style="padding: 8px; border: 1px solid #ddd;">100</td>
             <td style="padding: 8px; border: 1px solid #ddd;">40</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">[0°,190 °]</td>            
+            <td style="padding: 8px; border: 1px solid #ddd;">[-190°,0°]</td>            
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Joint 4</td>
@@ -235,7 +235,7 @@ A1Y机械臂共有6个关节，最大旋转角度为330度。
             <td style="padding: 8px; border: 1px solid #ddd;">36</td>
             <td style="padding: 8px; border: 1px solid #ddd;">100</td>
             <td style="padding: 8px; border: 1px solid #ddd;">40</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">[0°,190 °]</td>            
+            <td style="padding: 8px; border: 1px solid #ddd;">[-190°,0°]</td>            
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Joint 4</td>
