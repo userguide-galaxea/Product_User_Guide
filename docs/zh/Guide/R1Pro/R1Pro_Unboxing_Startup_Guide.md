@@ -367,4 +367,4 @@ roslaunch mobiman r1_pro_chassis_control.launch
 
 3. 当完成所有动作后，按`q`退出。R1 Pro将回到零点姿态。
 
-在后续使用机器人的过程中，请参考[R1 Pro Demo演示指南](./R1Pro_Demo_Guide.md)进行完整操作。
+在后续使用机器人的过程中，请参考[R1 Pro Demo演示指南](./R1Pro_Demo_Guide.md)进行后续完整操作。
