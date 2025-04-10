@@ -15,7 +15,7 @@
 ## 脚本执行
 
 
-<span style="color:red">**注意：请严格按照顺序进行测试，如出现任何错误，请及时按下`Ctrl + C`关闭程序，并联系我们提供技术支持。**</span>
+<span style="color:red">**注意：请严格按照顺序进行演示，如出现任何错误，请及时按下`Ctrl + C`关闭程序，并联系我们提供技术支持。**</span>
 
 1. 停止后台所有运行中的TMUX，并关闭所有ROS程序。
    ```Bash
@@ -42,39 +42,39 @@
    roscore
    ```
 
-5. 按 `Ctrl + B` 加 `C` 创建一个新终端，并执行启动文件。
+5. 按下 `Ctrl + B` 加 `C` 创建一个新终端，并执行启动文件。
    ```Bash
    source {your_download_path}/install/setup.bash
    roslaunch HDAS r1pro.launch
    ```
 
-6. 按 `Ctrl + B` 加 `C` 创建一个新终端，进行自检。
+6. 按下 `Ctrl + B` 加 `C` 创建一个新终端，进行自检。
    ```Bash
    source {your_download_path}/install/setup.bash
    rosrun HDAS check_node 
    # 按1 (0 表示安装机械臂后的自检；1表示未装机械臂时的自检)
    ```
 
-7. 按 `Ctrl + B` 加 `C` 创建一个新终端，开启底盘控制。
+7. 按下 `Ctrl + B` 加 `C` 创建一个新终端，开启底盘控制。
    ```Bash
    source {your_download_path}/install/setup.bash
    roslaunch mobiman r1_pro_chassis_control.launch
    ```
 
-8. 按 `Ctrl + B` 加 `C` 创建一个新终端，开启手臂和躯干控制。
+8. 按下 `Ctrl + B` 加 `C` 创建一个新终端，开启手臂和躯干控制。
    ```Bash
    source {your_download_path}/install/setup.bash
    roslaunch mobiman r1_pro_jointTrackerdemo_pid.launch
    ```
 
-9. 按 `Ctrl + B` 加 `C` 创建一个新终端，开始测试脚本。
+9. 按下 `Ctrl + B` 加 `C` 创建一个新终端，开始执行脚本。
    ```Bash
    source {your_download_path}/install/setup.bash
    cd {your_download_path}/install/share/mobiman/script
    python3 r1pro_test_open_box.py
    ```
 
-10. 输入对应每个测试动作的数字并按Enter键。随后，R1将开始执行测试动作。
+10. 输入对应每个动作的数字并按Enter键。随后，R1将开始执行demo动作。
    ![R1Pro_7_demo_cn](./assets/unbox/R1Pro_7_demo_cn.png)
 
-11. 当完成所有测试后，按`q`退出测试。R1 将回到零点姿势。
+11. 当完成所有动作后，按`q`退出。R1 将回到零点姿势。

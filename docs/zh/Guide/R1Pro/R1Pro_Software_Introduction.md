@@ -7,11 +7,12 @@
 
 ## 获取SDK
 
-点击下方链接获取SDK：
+点击下方链接获取最新版本
 
-- 百度云盘：https://pan.baidu.com/s/1mXY0Qx5JNiI7I1tjFAUGvg?pwd=r1pr
+- 百度云盘：[R1 Pro SDK V1.1.4](https://pan.baidu.com/s/1rQd3_Cu4E9PjygupxeQDig?pwd=v114)
+- Google Drive: [R1 Pro SDK V1.1.4](https://drive.google.com/drive/folders/1RTt6NMOoA0pjbx5qXkYCb2fyQyUHyZFf?usp=sharing)
 
-当前为R1 Pro的首发软件版本。后续的版本更新您可以在R1 Pro软件版本更新日志中查看，获取最新的SDK包及更新信息。
+所有版本更新可在R1 Pro软件版本更新日志中查看。
 
 ## 启动SDK
 Galaxea R1 Pro驱动程序由多个组件组成，包括执行器接口、传感器接口和外部功能接口。
@@ -21,13 +22,11 @@ Galaxea R1 Pro驱动程序由多个组件组成，包括执行器接口、传感
 ### 分开启动各接口
 所有组件可以通过以下命令模板启动。
 
-<!-- 点击[此处](./R1 Pro_Step_by_Step_Guide.md/#43-启动can驱动程序)查看详细启动方式。 -->
-
 ```Bash
-source ~/work/galaxea/install/setup.bash
+source ~{your_download_path}/install/setup.bash
 roslaunch <Package Name> <Launch File>
-# Example
-roslaunch HDAS r1.launch
+# 示例
+roslaunch HDAS r1pro.launch
 ```
 
 <table style="width: 100%; border-collapse: collapse;">
@@ -42,7 +41,7 @@ roslaunch HDAS r1.launch
     <tr style="background-color: white; text-align: left;">
       <td style="padding: 8px; border: 1px solid #ddd;">Arms Driver Interface<br>Torso Driver Interface<br>Chassis Driver Interface<br>IMU Interface<br>BMS Interface<br>Remote Controller Interface</td>
       <td style="padding: 8px; border: 1px solid #ddd;">HDAS</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">r1.launch</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">r1pro.launch</td>
     </tr>
      <tr style="background-color: white; text-align: left;">
       <td style="padding: 8px; border: 1px solid #ddd;">Camera Interface</td>
@@ -73,7 +72,7 @@ roslaunch HDAS r1.launch
 ## 软件接口
 当前的Galaxea R1 Pro控制图如下所示，由五个主要部分组成：R1 Pro姿态反馈(R1 Pro Pose Feedback)、R1 Pro关节控制(R1 Pro Joint Control)、R1 Pro底盘控制(R1 Pro Chassis Control)、R1 Pro手臂姿态控制(R1 Pro Arm Pose Control)和R1 Pro躯干姿态控制( R1 Pro Torso Pose Control)。后续章节将提供详细信息。整个软件包被简称为“mobiman”,表示移动操作。
 
-![R1Pro_structure_cn](D:\星海图\2_用户手册\R1 Pro\R1Pro_软件介绍\R1Pro_structure_cn.png)
+![R1Pro_structure_cn](./assets/software/R1Pro_structure_cn.png)
 
 ### 驱动接口
 当前的Galaxea R1 Pro驱动程序由多个组件组成，包括执行器接口、传感器接口和外部功能接口。
@@ -1306,6 +1305,7 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
         </tr>
     </tbody>
 </table>
+
 ### 运动控制接口
 
 - **关节控制：**该节点控制R1 Pro躯干和手臂的每个关节。
@@ -1319,16 +1319,14 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
 - **姿态估计：**该节点接收来自HDAS的关节角反馈，并计算出对应三个坐标系的反馈。
 
 #### 关节控制
-R1 Pro关节控制节点负责控制R1 Pro躯干和手臂的每个关节，总共有16个关节。
-
-可通过以下命令启动：
+R1 Pro关节控制节点负责控制R1 Pro躯干和手臂的每个关节，总共有16个关节。可通过以下命令启动：
 
 ```Bash
-source R1Pro_workspace/install/setup.bash
+source {your_download_path}/install/setup.bash
 roslaunch mobiman r1_pro_jointTrackerdemo_pid.launch
 ```
 
-这个启动文件将启动 `r1_jointTracker_demo_node`，该节点是负责控制每个关节的主要节点。
+这个启动文件将启动 `r1_pro_jointTracker_demo_node`，该节点是负责控制每个关节的主要节点。
 
 接口信息如下：
 <table style="width: 100%; border-collapse: collapse;">
@@ -1462,8 +1460,11 @@ roslaunch mobiman r1_pro_jointTrackerdemo_pid.launch
 #### 手臂姿态控制
 R1 Pro手臂姿态控制是一个用于控制手臂移动到目标末端执行器（ee）坐标帧的ROS软件包。它主要包括两个launch文件,分别对应 左臂的姿态控制和右臂的姿态控制, 可以通过以下命令启动
 
+#### 手臂姿态控制
+R1 Pro手臂姿态控制是一个用于控制手臂移动到目标末端执行器（ee）坐标帧的ROS软件包。它主要包括两个launch文件,分别对应 左臂的姿态控制和右臂的姿态控制, 可以通过以下命令启动：
+
 ```bash
-source R1Pro_workspace/install/setup.bash
+source {your_download_path}/install/setup.bash
 roslaunch mobiman r1_pro_left_arm_relaxed_ik.launch
 roslaunch mobiman r1_pro_right_arm_relaxed_ik.launch
 ```
@@ -1473,6 +1474,7 @@ roslaunch mobiman r1_pro_right_arm_relaxed_ik.launch
 - 当双臂姿态控制器启动后，左右双臂将自动调整至左图所示的状态。请确保将R1 Pro置于双臂自然垂下的位置，以避免因运动角度过大导致初始化失败。
 
 - 当前末端姿态控制的相对位姿是URDF中gripper_link相对于torso_link4的姿态转换。以左臂为例，这是左臂left_gripper_link坐标系相对于torso_link4坐标系的相对关系，包含了x、y、z的偏移量以及orientation对应的旋转偏移，如右图所示：
+![R1Pro_arm_pose_control_cn](./assets/software/R1Pro_arm_pose_control_cn.png)
 
 该接口如下所示：
 <table style="width: 100%; border-collapse: collapse;">
@@ -1709,6 +1711,8 @@ roslaunch mobiman r1_pro_chassis_control.launch
 
 #### 姿态估计
 在底盘控制的launch文件中，还会启动一个名为`eepose_pub_node`的节点。该节点接收来自HDAS的关节角反馈，并计算出对应于三个坐标系的反馈。`eepose_pub_node`定义了三个坐标帧：基座链接帧（Base Link Frame，左图）、浮动基座帧（Floating Base Frame，中图）和末端执行器姿态帧（End-Effector Pose Frame，右图）。
+
+![R1Pro_pose_est_cn](./assets/software/R1Pro_pose_est_cn.png)
 
 接口信息如下:
 <table style="width: 100%; border-collapse: collapse;">

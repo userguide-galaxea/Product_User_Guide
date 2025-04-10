@@ -124,6 +124,6 @@ hide:
     </main>
     <section class="contact-section">
         <h2>Contact Us</h2>
-        <p>Hoteline：400 878 0980 </br>E-mail(Product/Business): <a href="mailto:product@galaxea.ai">product@galaxea.ai</a></br>E-mail(Techncal Support): <a href="mailto:support@galaxea.ai">support@galaxea.ai</a></p>
+        <p>Hoteline：4008 780 980 </br>E-mail(Product/Business): <a href="mailto:product@galaxea.ai">product@galaxea.ai</a></br>E-mail(Techncal Support): <a href="mailto:support@galaxea.ai">support@galaxea.ai</a></p>
     </section>
 </html>

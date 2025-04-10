@@ -229,7 +229,7 @@ R1 Pro开机后，等待连接机器人的显示器显示桌面。
    ```Bash
    source {your_download_path}/install/setup.bash
    rosrun HDAS check_node 
-   # 按1 (0 表示安装机械臂后的自检；1表示未装机械臂时的自检)
+   # 输入1 (0 表示安装机械臂后的自检；1表示未装机械臂时的自检)
    ```
 
 2. 如果显示“self-check completed”，如下图所示，表示自检完成，请按`Ctrl + C`退出。
@@ -267,7 +267,6 @@ roslaunch mobiman r1_pro_chassis_control.launch
 3. 保持长拨杆SWC和短拨杆SWD在上方。
 
 4. 同时将左操纵杆移至左上角，右操纵杆移至右上角（如下图所示）。等待3秒钟，**R1 Pro即可站立。**
-
    ![R1Pro_4.5.3_controller_stand_cn](./assets/unbox/R1Pro_4.5.3_controller_stand_cn.png)
 
    
@@ -291,11 +290,9 @@ roslaunch mobiman r1_pro_chassis_control.launch
 1. 打开机械臂产品箱，拿出机械臂。机械臂底座贴有标签，注意区分左右臂。
 
 2. 使用六角L型扳手（5mm）和四个M6螺钉固定手臂。 <span style="color:red;">**注意：在安装机器人手臂时，您必须确保手臂底座上的端口朝向后方，如下图所示。**</span>
-
    ![R1Pro_5.3_arm_install_cn](./assets/unbox/R1Pro_5.3_arm_install_cn.png)
 
 3. 将机械臂电源线和CAN线连接到手臂底座端口。在插入CAN电缆之前，请先卸下电阻帽。
-
    ![R1Pro_5.3_arm_cable_cn](./assets/unbox/R1Pro_5.3_arm_cable_cn.png)
 
 4. 在确认与机器人手臂的通信连接成功后，通过反向执行上述第2.6节拆卸背部盖板和第2.7节拆卸前侧盖板的步骤，重新安装盖板。
@@ -328,22 +325,19 @@ roslaunch mobiman r1_pro_chassis_control.launch
 1. 按照[第4.3节-启动CAN驱动程序](#43-启动can驱动程序)中的命令完成操作。
 
 2. 按`Ctrl + B`然后按`C`创建新终端。现在，开始第二次自检。
-
    ```Bash
    source {your_download_path}/install/setup.bash
    rosrun HDAS check_node 
-   # 按0 (0 表示安装机械臂后的自检；1表示未装机械臂时的自检)
+   # 输入0 (0 表示安装机械臂后的自检；1表示未装机械臂时的自检)
    ```
 
 3. 按`Ctrl + B`然后按`C`创建新终端。启动臂部和躯干控制。
-
    ```bash
    source {your_download_path}/install/setup.bash
    roslaunch mobiman r1_pro_jointTrackerdemo_pid.launch
    ```
 
 4. 按`Ctrl + B`然后按`C`创建新终端。启动底盘控制。
-
    ```bash
    source {your_download_path}/install/setup.bash
    roslaunch mobiman r1_pro_chassis_control.launch
@@ -355,6 +349,7 @@ roslaunch mobiman r1_pro_chassis_control.launch
 <span style="color:red">**重要提示：在对R1 Pro进行任何操作之前，您必须完成R1 Pro自检以确保安全。**</span>
 
 完成上述所有操作后，<span style="color:red">将R1 Pro移动到一个开阔区域，确保周围没有障碍物</span>，方可远程命令R1 Pro进行Demo演示。
+
 1. 按`Ctrl + B`然后按C创建一个新终端。然后，执行脚本。
     ```bash
     source {your_download_path}/install/setup.bash
@@ -362,7 +357,7 @@ roslaunch mobiman r1_pro_chassis_control.launch
     python3 r1pro_test_open_box.py
     ```
 
-2. 输入对应每个测试动作的数字并按`Enter`。然后，R1 Pro将开始执行动作。
+2. 输入对应每个动作的数字并按`Enter`。然后，R1 Pro将开始执行动作。
     ![R1Pro_7_demo_cn](./assets/unbox/R1Pro_7_demo_cn.png)
 
 3. 当完成所有动作后，按`q`退出。R1 Pro将回到零点姿态。

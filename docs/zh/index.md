@@ -105,14 +105,6 @@ hide:
                 </div>
             </section>
             <section class="products-section">
-                <h2><img src="assets/A1_series.png" alt="A1" width="50"></h2>
-                <div class="product">
-                        <a href="Guide/A1/A1_Getting_Started">开箱启动</a> <br>
-                        <a href="Guide/A1/A1_Hardware_Guide">硬件介绍</a> <br>
-                        <a href="Guide/A1/A1_Software_Guide">软件介绍</a> <br>
-                </div>
-            </section>
-            <section class="products-section">
                 <h2><img src="assets/A1XY_title.png" alt="A1XY" width="120"></h2>
                 <div class="product">
                         <a href="Guide/A1XY/A1XY_Unboxing_Guide">开箱启动</a> <br>
@@ -120,11 +112,19 @@ hide:
                         <a href="Guide/A1XY/A1XY_Software_Introduction">软件介绍</a> <br>
                 </div>
             </section>
+            <section class="products-section">
+                <h2><img src="assets/A1_series.png" alt="A1" width="50"></h2>
+                <div class="product">
+                        <a href="Guide/A1/A1_Getting_Started">开箱启动</a> <br>
+                        <a href="Guide/A1/A1_Hardware_Guide">硬件介绍</a> <br>
+                        <a href="Guide/A1/A1_Software_Guide">软件介绍</a> <br>
+                </div>
+            </section>
         </div>
     </main>
     <section class="contact-section">
         <h2>联系我们</h2>
-        <p>联系电话：400 878 0980 </br>邮箱（产品/商务）: <a href="mailto:product@galaxea.ai">product@galaxea.ai</a></br>邮箱（技术支持）: <a href="mailto:support@galaxea.ai">support@galaxea.ai</a></p>
+        <p>联系电话：4008 780 980 </br>邮箱（产品/商务）: <a href="mailto:product@galaxea.ai">product@galaxea.ai</a></br>邮箱（技术支持）: <a href="mailto:support@galaxea.ai">support@galaxea.ai</a></p>
     </section>
 </html>
 
