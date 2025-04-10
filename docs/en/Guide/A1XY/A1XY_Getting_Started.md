@@ -1,3 +1,4 @@
+# A1XY Getting Started
 > Welcome to the Galaxea developer family as a Galaxea A1XY user! This document will help you explore A1XY's unique features and performance, master operation skills quickly, and start an intelligent robotic arm application journey.
 
 ## Product Introduction

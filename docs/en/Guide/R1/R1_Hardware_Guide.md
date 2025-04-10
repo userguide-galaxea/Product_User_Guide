@@ -1,4 +1,4 @@
-# Galaxea R1 Hardware Guide
+# R1 Hardware Introduction
 
 ## Disclaimer
 

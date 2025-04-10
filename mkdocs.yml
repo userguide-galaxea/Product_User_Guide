@@ -56,10 +56,10 @@ nav:
           - Gripper: Introducing_Galaxea_Robot/product_info/A1_accessory_G1.md
           - Dexterous Hand: Introducing_Galaxea_Robot/product_info/Dexterous_Hands.md
   - Galaxea A1 User Guide:
-      - Unboxing and Startup Guide: Guide/A1/A1_Getting_Started.md
+      - Unboxing and Installation Guide: Guide/A1/A1_Getting_Started.md
       - Hardware Introduction: Guide/A1/A1_Hardware_Guide.md
       - Software Introduction: Guide/A1/A1_Software_Guide.md
-      - Simulation Tutorial: Guide/A1/A1_Simulation_Tutorial.md
+      - Simulation Usage Instruction: Guide/A1/A1_Simulation_Tutorial.md
       - FAQ: Guide/A1/A1_FAQ.md
   - Galaxea A1XY User Guide:
       - Getting Started: Guide/A1XY/A1XY_Getting_Started.md
@@ -67,7 +67,7 @@ nav:
       - Startup and Demo Guide: Guide/A1XY/A1XY_Startup_Demo_Guide.md
       - Hardware Introduction: Guide/A1XY/A1XY_Hardware_Introduction.md
       - Software Introduction: Guide/A1XY/A1XY_Software_Introduction.md
-      # - Simulation Tutorial: Guide/A1/A1_Simulation_Tutorial.md
+      # - Simulation Usage Instruction: Guide/A1/A1_Simulation_Tutorial.md
       # - FAQ: Guide/A1/A1_FAQ.md
   - Galaxea R1 User Guide:
       - Getting Started: Guide/R1/R1_Overview.md
@@ -75,12 +75,12 @@ nav:
       - Demo Guide: Guide/R1/R1_Demo_Guide.md
       - Hardware Introduction: Guide/R1/R1_Hardware_Guide.md
       - Software Introduction: Guide/R1/R1_Software_Guide.md
-      - Simulation Usage Tutorial: Guide/R1/R1_Simulation_Tutorial.md
+      - Simulation Usage Instruction: Guide/R1/R1_Simulation_Tutorial.md
       - Sensor Calibration Data Collection Method: Guide/R1/R1_Sensor_Calibration_Data_Collection_Method.md
       - Teleop Usage Tutorial: Guide/R1/R1_Teleop_Usage_Tutorial.md
       - VR Teleop Usage Tutorial: Guide/R1/R1_VR_Teleop_Usage_Tutorial.md
       - Autonomous Navigation System Usage Tutorial: Guide/R1/R1_Autonomous_Navigation_System_Usage_Tutorial.md
-      - FAQ: Guide/R1/R1_FAQ.md
+    #   - FAQ: Guide/R1/R1_FAQ.md
       - Software Changelog: Guide/R1/R1_Software_Changelog/R1_changelog.md
   - Galaxea R1 Lite User Guide:
         - Getting Started: Guide/R1Lite/R1Lite_Getting_Started.md
@@ -90,6 +90,8 @@ nav:
         - Wheel Motor Zero-Point Calibration Instruction: Guide/R1Lite/R1Lite_Wheel_Motor_Calibration.md
   - Galaxea R1 Pro User Guide:
         - Getting Started: Guide/R1Pro/R1Pro_Getting_Started.md
+        - Unboxing and Startup Guide: Guide/R1Pro/R1Pro_Unboxing_Startup_Guide.md
+        - Demo Guide: Guide/R1Pro/R1Pro_Demo_Guide.md
         - Hardware Introduction: Guide/R1Pro/R1Pro_Hardware_Introduction.md
         - Software Introduction: Guide/R1Pro/R1Pro_Software_Introduction.md
 
@@ -155,8 +157,7 @@ plugins:
             Unboxing and Installation Guide: 开箱安装指南
             Demo Guide: Demo演示指南
             Software Changelog: 软件版本更新日志
-            Simulation Tutorial: 仿真使用教程
-            Simulation Usage Tutorial: 仿真使用教程
+            Simulation Usage Instruction: 仿真平台使用说明
             Sensor Calibration Data Collection Method: 传感器标定数据采集方法
             Teleop Usage Tutorial: Teleop 同构遥操作教程
             VR Teleop Usage Tutorial: VR Teleop 遥操作教程

@@ -1,4 +1,4 @@
-# R1 Lite Product Hardware Introduction
+# R1 Lite Hardware Introduction
 > Galaxea R1 Lite is intended for research applications by users experienced in operating and programming research robots. This product is not designed for general consumer use in the home and does not have the necessary certifications for such purposes. 
 
 ## Technical Specifications
@@ -327,7 +327,7 @@ The Galaxea R1 Lite offers optional platform binocular cameras and wrist cameras
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Interface</td>
             <td style="padding: 8px; border: 1px solid #ddd;">USB2.0: 1<br>USB3.0: 3<br>Type-C: 1<br>HDMI: 2</td>
-        </tr>
+        </tr> 
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Heat Dissipation</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Smart fan + All-copper heat sink</td>

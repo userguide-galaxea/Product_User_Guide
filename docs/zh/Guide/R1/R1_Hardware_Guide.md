@@ -1,4 +1,4 @@
-# Galaxea R1 硬件指南
+# R1 硬件介绍
 ## 技术规格
 <table style="width: 100%; border-collapse: collapse;">
     <thead>

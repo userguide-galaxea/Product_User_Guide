@@ -23,6 +23,17 @@ hide:
             <div class="swiper-slide">
                 <div class="container">
                     <div class="text-button-container">
+                        <img src="assets/GALAXEA_A1XY_title.png" alt="A1XY_title">
+                        <a href="Guide/A1XY/A1XY_Getting_Started" class="btn btn-primary">Learn More</a>
+                    </div>
+                    <div class="image-container">
+                        <img src="assets/A1XY_banner.png" alt="R1_product" class="responsive-image">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="text-button-container">
                         <img src="assets/R1_title.png" alt="R1_title">
                         <a href="Introducing_Galaxea_Robot/product_info/R1" class="btn btn-primary">Learn More</a>
                     </div>
@@ -70,50 +81,49 @@ hide:
     <main id = unique-page>
         <div class="row">
             <!-- <section class="products-section">
-                <h2><img src="assets/A1XY_title.png" alt="R1 Pro" width="120"></h2>
+                <h2><img src="assets/R1Pro_title.png" alt="R1 Pro" width="130"></h2>
                 <div class="product">
-                        <a href="Guide/R1Pro/R1Pro_Unboxing_Guide">Unboxing & Startup</a> <br>
-                        <a href="Guide/A1XY/A1XY_Hardware_Introduction">Hardware Guide</a> <br>
-                        <a href="Guide/A1XY/A1XY_Software_Introduction">Software Guide</a> <br>
-                </div>
-            </section> -->
-            <!-- <section class="products-section">
-                <h2><img src="assets/A1XY_title.png" alt="R1 Lite" width="120"></h2>
-                <div class="product">
-                        <a href="Guide/R1Lite/R1Lite_Unboxing_Startup_Guide">Unboxing & Startup</a> <br>
-                        <a href="Guide/R1Lite/R1Lite_Hardware_Introduction">Hardware Guide</a> <br>
-                        <a href="Guide/R1Lite/R1Lite_Software_Introduction">Software Guide</a> <br>
+                        <a href="Guide/R1Pro/R1Pro_Unboxing_Startup_Guide">Unboxing & Startup Guide</a> <br>
+                        <a href="Guide/R1Pro/R1Pro_Hardware_Introduction">Hardware Introduction</a> <br>
+                        <a href="Guide/R1Pro/R1Pro_Software_Introduction">Software Introduction</a> <br>
                 </div>
             </section> -->
             <section class="products-section">
+                <h2><img src="assets/R1Lite_title.png" alt="R1 Lite" width="110"></h2>
+                <div class="product">
+                        <a href="Guide/R1Lite/R1Lite_Unboxing_Startup_Guide">Unboxing & Startup Guide</a> <br>
+                        <a href="Guide/R1Lite/R1Lite_Hardware_Introduction">Hardware Introduction</a> <br>
+                        <a href="Guide/R1Lite/R1Lite_Software_Introduction">Software Introduction</a> <br>
+                </div>
+            </section>
+            <section class="products-section">
                 <h2><img src="assets/R1_series.png" alt="R1" width="50"></h2>
                 <div class="product">
-                        <a href="Guide/R1/R1_Step_by_Step_Guide">Unboxing & Startup</a> <br>
-                        <a href="Guide/R1/R1_Hardware_Guide">Hardware Guide</a> <br>
-                        <a href="Guide/R1/R1_Software_Guide">Software Guide</a> <br>
+                        <a href="Guide/R1/R1_Step_by_Step_Guide">Unboxing & Startup Guide</a> <br>
+                        <a href="Guide/R1/R1_Hardware_Guide">Hardware Introduction</a> <br>
+                        <a href="Guide/R1/R1_Software_Guide">Software Introduction</a> <br>
                 </div>
             </section>
             <section class="products-section">
                 <h2><img src="assets/A1XY_title.png" alt="A1XY" width="120"></h2>
                 <div class="product">
-                        <a href="Guide/A1XY/A1XY_Unboxing_Guide">Unboxing & Startup</a> <br>
-                        <a href="Guide/A1XY/A1XY_Hardware_Introduction">Hardware Guide</a> <br>
-                        <a href="Guide/A1XY/A1XY_Software_Introduction">Software Guide</a> <br>
+                        <a href="Guide/A1XY/A1XY_Unboxing_Guide">Unboxing & Startup Guide</a> <br>
+                        <a href="Guide/A1XY/A1XY_Hardware_Introduction">Hardware Introduction</a> <br>
+                        <a href="Guide/A1XY/A1XY_Software_Introduction">Software Introduction</a> <br>
                 </div>
             </section>
             <section class="products-section">
                 <h2><img src="assets/A1_series.png" alt="A1" width="50"></h2>
                 <div class="product">
-                        <a href="Guide/A1/A1_Getting_Started">Unboxing & Startup</a> <br>
-                        <a href="Guide/A1/A1_Hardware_Guide">Hardware Guide</a> <br>
-                        <a href="Guide/A1/A1_Software_Guide">Software Guide</a> <br>
+                        <a href="Guide/A1/A1_Getting_Started">Unboxing & Startup Guide</a> <br>
+                        <a href="Guide/A1/A1_Hardware_Guide">Hardware Introduction</a> <br>
+                        <a href="Guide/A1/A1_Software_Guide">Software Introduction</a> <br>
                 </div>
-            </section>
-            
+            </section>    
         </div>
     </main>
     <section class="contact-section">
         <h2>Contact Us</h2>
-        <p>Hoteline：400 878 0980 </br>E-mail(Product/Business):<a href="mailto:product@galaxea.ai">product@galaxea.ai</a></br>E-mail(Techncal Support): <a href="mailto:support@galaxea.ai">support@galaxea.ai</a></p>
+        <p>Hoteline：400 878 0980 </br>E-mail(Product/Business): <a href="mailto:product@galaxea.ai">product@galaxea.ai</a></br>E-mail(Techncal Support): <a href="mailto:support@galaxea.ai">support@galaxea.ai</a></p>
     </section>
 </html>

@@ -1,4 +1,4 @@
-# R1传感器标定数据采集方法
+# R1 传感器标定数据采集方法
 ## 数据采集流程
 ![Data_collection_process_cn](./assets/Data%20collection%20process_cn.png)
 

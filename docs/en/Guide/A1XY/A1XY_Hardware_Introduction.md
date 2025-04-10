@@ -1,3 +1,4 @@
+# A1XY Hardware Introduction
 > This user guide will thoroughly explain the hardware data of the Galaxea A1XY.
 
 ## Safety Guidelines

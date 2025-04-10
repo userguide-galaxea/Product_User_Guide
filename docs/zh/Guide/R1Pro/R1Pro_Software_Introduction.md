@@ -1,4 +1,4 @@
-# Galaxea R1 Pro 软件介绍
+# R1 Pro 软件介绍
 ## 环境依赖
 
 1. 硬件依赖：R1 Pro计算单元
@@ -62,8 +62,8 @@ roslaunch HDAS r1.launch
 
 ```Bash
   sudo apt-get install tmux tmuxp
-  cd ~/work/galaxea/install/share/startup_config/script
-  ./ota_script.sh boot
+  cd ~{your_download_path}/install/share/startup_config/script
+  ./ota_script.sh boot ../session.d/ATCStandard/R1PROBody.d/
 ```
 
 ## Demo演示

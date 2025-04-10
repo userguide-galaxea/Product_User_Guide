@@ -1,6 +1,8 @@
-> 本指南将为您详尽解读 Galaxea R1 Pro 硬件信息。
+
 
 # R1 Pro 硬件介绍
+> 本指南将为您详尽解读 Galaxea R1 Pro 硬件信息。
+
 ## 参数规格
 <table style="width: 100%; border-collapse: collapse;">
     <thead>

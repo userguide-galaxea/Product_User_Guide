@@ -23,6 +23,17 @@ hide:
             <div class="swiper-slide">
                 <div class="container">
                     <div class="text-button-container">
+                        <img src="assets/GALAXEA_A1XY_title.png" alt="A1XY_title">
+                        <a href="Guide/A1XY/A1XY_Getting_Started" class="btn btn-primary">了解更多</a>
+                    </div>
+                    <div class="image-container">
+                        <img src="assets/A1XY_banner.png" alt="R1_product" class="responsive-image">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="text-button-container">
                         <img src="assets/R1_title.png" alt="R1_title">
                         <a href="Introducing_Galaxea_Robot/product_info/R1" class="btn btn-primary">了解更多</a>
                     </div>
@@ -69,6 +80,22 @@ hide:
 </body>
     <main id = unique-page>
         <div class="row">
+            <section class="products-section">
+                <h2><img src="assets/R1Pro_title.png" alt="R1 Pro" width="130"></h2>
+                <div class="product">
+                        <a href="Guide/R1Pro/R1Pro_Unboxing_Startup_Guide">开箱启动</a> <br>
+                        <a href="Guide/R1Pro/R1Pro_Hardware_Introduction">硬件介绍</a> <br>
+                        <a href="Guide/R1Pro/R1Pro_Software_Introduction">软件介绍</a> <br>
+                </div>
+            </section>
+            <section class="products-section">
+                <h2><img src="assets/R1Lite_title.png" alt="R1 Lite" width="120"></h2>
+                <div class="product">
+                        <a href="Guide/R1Lite/R1Lite_Unboxing_Startup_Guide">开箱启动</a> <br>
+                        <a href="Guide/R1Lite/R1Lite_Hardware_Introduction">硬件介绍</a> <br>
+                        <a href="Guide/R1Lite/R1Lite_Software_Introduction">软件介绍</a> <br>
+                </div>
+            </section>
             <section class="products-section">
                 <h2><img src="assets/R1_series.png" alt="R1" width="50"></h2>
                 <div class="product">

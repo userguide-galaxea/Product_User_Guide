@@ -1,4 +1,4 @@
-# Galaxea A1 Common Issues
+# A1 FAQ
 > This page collects common questions and answers about the Galaxea A1 robot arm. Whether you're a beginner or an experienced developer, you can find practical information here to quickly solve technical problems and improve the use and development efficiency of the robot arm.
 
 ## 1. Why doesn't the A1 robot arm reach the set target position?

@@ -1,4 +1,4 @@
-# Galaxea A1 Software Guide
+# A1 软件介绍
 >本教程将指导您如何开发和操作Galaxea A1。
 
 ## 软件依赖

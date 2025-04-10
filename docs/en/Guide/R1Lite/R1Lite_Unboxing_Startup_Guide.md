@@ -1,4 +1,4 @@
-# R1 Lite_Unboxing and Startup Guide
+# R1 Lite Unboxing and Startup Guide
 > In this tutorial, we'll offer detailed guidance on unpacking the Galaxea R1 Lite, connecting cables, installing the robot arm, and achieving remote control of R1 for enhanced communication and functionality exploration.
 
 ## Instruction Video

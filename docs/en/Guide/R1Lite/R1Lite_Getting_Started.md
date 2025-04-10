@@ -1,4 +1,4 @@
-# R1 Lite Basic Usage Introduction
+# R1 Lite Getting Started
 > In this tutorial, you will learn how to power on and operate this new product, beginning your journey of interacting with Galaxea R1 Lite.
 
 ## Power On/Off

@@ -1,4 +1,4 @@
-# Galaxea A1 Hardware Guide
+# A1 Hardware Introduction
 >This manual provides engineering data and user guidance for working with Galaxea A1 hardware.
 
 ## Technical Specification

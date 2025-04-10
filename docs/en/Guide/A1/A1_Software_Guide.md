@@ -1,4 +1,4 @@
-# Galaxea A1 Software Guide
+# A1 Software Introduction
 >This guide will show you on how to develop and operate Galaxea A1.
 
 ## Software Dependency

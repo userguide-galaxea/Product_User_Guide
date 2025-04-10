@@ -1,4 +1,4 @@
-# VR Teleop Usage Tutorial
+# R1 VR Teleop Usage Tutorial
 ## 1. Product Introduction
 The VR Teleop system provides an immersive remote control experience that enables the operator to control the R1 robot with precise feedback and real-time response. The system supports full-body synchronization and provides an intuitive and highly accurate operating interface with millimeter-level accuracy and millisecond response speed. The system is designed to interact seamlessly in complex environments and is ideal for tasks requiring fine and precise robotic control.
 

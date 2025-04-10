@@ -1,4 +1,4 @@
-# Galaxea R1 Software Guide
+# R1 Software Introduction
 ## Environment Dependency
 
 1. Hardware Dependency: R1 Computing Unit

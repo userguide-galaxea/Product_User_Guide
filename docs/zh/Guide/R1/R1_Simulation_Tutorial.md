@@ -1,8 +1,8 @@
-# Simulation_Isaac_Lab 仿真教程
+# R1 仿真平台使用说明
 
 
 
-## **开始使用**
+## 开始使用
 
 **Galaxea Lab**基于**[Isaac Lab](https://isaac-sim.github.io/IsaacLab/main/index.html)** 代码库开发，我们在其基础上打造了一个专属的独立版本，用户可以在其中配置个人的仿真操作环境和操作任务。此外，我们还提供了内部的**Real-to-Sim资产**，包括一个桌面果篮抓取场景（持续更新中）。
 
@@ -18,7 +18,7 @@
 
 
 
-## **安装**
+## 安装
 
 安装Galaxea Lab的主要步骤如下：
 
@@ -50,7 +50,7 @@ git clone https://github.com/userguide-galaxea/galaxea_lab.git
 
 
 
-## **示例**
+## 示例
 
 在目录 source/standalone/galaxea/basic 下，我们提供了部分基本示例：
 
@@ -68,23 +68,23 @@ git clone https://github.com/userguide-galaxea/galaxea_lab.git
 运行最后一行代码后，您将看到如下演示：R1 将开始收集篮子里的水果，同时轨迹数据将以hdf5格式保存。
 ![isaaclab_pickcarrot](assets/isaaclab_pickcarrot.mp4)
 
-## **Real-to-Sim 资产**
+## Real-to-Sim 资产
 
 所有R1的USD资产和水果模型都存储在以下路径：<u>*source/extensions/omni.isaac.lab_assets/data*</u>
 
 ![R1_real_to_sim](assets/R1_real_to_sim.png)
 
-###  **R1 URDF**
+### R1 URDF
 
 如需下载R1的URDF文件，请访问我们的开源GitHub社区进行下载[URDF](https://github.com/userguide-galaxea/URDF/tree/galaxea/main/R1/urdf)。
 
 
 
-## **任务环境界面**
+## 任务环境界面
 
 我们使用**OpenAI Gym**作为基本环境。对于自定义任务，请关注以下关键接口。我们提供了最小可执行的代码片段，帮助您理解任务逻辑。
 
-### **初始化**
+### 初始化
 
 ```Bash
 from omni.isaac.lab_tasks.utils.parse_cfg import parse_env_cfg 
@@ -104,7 +104,7 @@ env_cfg = parse_env_cfg(
 
 
 
-### **执行动作**
+### 执行动作
 
 ```Bash
 obs, reward, terminated, truncated, info = env.step(actions)
@@ -159,7 +159,7 @@ obs, reward, terminated, truncated, info = env.step(actions)
 
 
 
-### **最小可执行代码单元**
+### 最小可执行代码单元
 
 我们为您提供了一个包含上述所有信息的最小可执行代码单元。您可以在以下路径找到该代码：  *<u>source/standalone/galaxea/basic/simple_env.py</u>* 。
 
@@ -239,9 +239,9 @@ if __name__ == "__main__":
 ![isaaclab_spawn_env_randomactionv2](assets/isaaclab_spawn_env_randomactionv2.mp4)
 
 
-## **自定义任务**
+## 自定义任务
 
-### **自定义机器人**
+### 自定义机器人
 
 机器人被设置为 Galaxea Lab 中的 **Articulation** 类。您可以参考以下路径来修改 kp、kd 等相关参数：
 
@@ -255,7 +255,7 @@ if __name__ == "__main__":
 
 ![R1_isaacsim_define_a_robot2](assets/R1_isaacsim_define_a_robot2.png)
 
-### **自定义任务**
+### 自定义任务
 
 您可以通过参考以下脚本来定义新的任务和新的入口点：
 
@@ -274,7 +274,7 @@ gym.register(
 )
 ```
 
-### **自定义观察、动作、奖励等**
+### 自定义观察、动作、奖励等
 
 您可以通过路径*<u>source/extensions/omni.isaac.lab_tasks/omni/isaac/lab_tasks/galaxea/direct/lift/pick_fruit_env.py</u>*，查看我们如何定义环境的观察、动作、奖励等。以下是相关的代码段：
 

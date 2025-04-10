@@ -1,3 +1,8 @@
 .idea/
 .DS_Store
 raw_video_image/
+
+
+Dockerfile
+README.md
+nginx.conf

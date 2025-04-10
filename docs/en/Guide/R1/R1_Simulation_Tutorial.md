@@ -1,4 +1,4 @@
-# Galaxea R1 Simulation Tutorial
+# R1 Simulation Usage Instruction
 
 ## Get Started
 

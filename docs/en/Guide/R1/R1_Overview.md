@@ -1,4 +1,4 @@
-# R1 Basic Usage Introduction
+# R1 Getting Started
 > In this tutorial, <u>you will learn how to power on and operate this new product,</u> beginning your journey of interacting with Galaxea R1.
 
 ## Power On/Off

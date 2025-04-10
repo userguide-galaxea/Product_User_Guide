@@ -6,7 +6,7 @@
 Start R1.
 
 ## 2. Check SDK Versio
-Please confirm that the SDK version of the R1 system is V1.0.1 or higher.
+Please confirm that the SDK version of the R1 system is V1.1.0 or higher.
 
 Click [here](https://github.com/userguide-galaxea/System_Version_Release/tree/main/R1/v1.0.1) to download the installation package, if you need.
 
