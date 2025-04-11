@@ -120,11 +120,9 @@
 1. 使用L型六角扳手（M3）卸下底盘外设接口盖上的两个M3螺钉。
 
 2. 将HDMI电缆连接到底盘和显示器。请确保连接牢固，避免松动。
-
    ![R1Pro_3.1_hdmi_cn](./assets/unbox/R1Pro_3.1_hdmi_cn.png)
 
 3. 将USB接口连接到鼠标、键盘和胸腔。请确保连接牢固，避免松动。
-
    ![R1Pro_3.1_usb_cn](./assets/unbox/R1Pro_3.1_usb_cn.png)
 
 ### 3.2 打开电源
@@ -138,6 +136,7 @@
 如果机器人的底盘内有电池但电量耗尽，应先充电然后再打开按钮。电源端口位于底盘后侧底部。
 
 充电步骤如下所示：
+
 1. 拧开电源充电口盖。
 2. 将电源线插入端口。当充电器上的红灯亮起时，且机器人底盘侧边的电源指示灯橙绿色频闪状态，表示机器人正在充电。
 
@@ -145,6 +144,7 @@
 如果机器人的底盘内没有电池，请先安装电池。电池位于底盘右侧底部。
 
 更换电池步骤如下所示：
+
 1. 拆除底盘侧边盖板的2个螺丝，并向有滑动盖板即可拆卸。
 2. 将电池推入底盘。
 3. 将电池电缆连接到底盘。
@@ -161,16 +161,14 @@
 R1 Pro开机后，等待连接机器人的显示器显示桌面。
 
 1. 点击“设置”并连接WiFi。
-
     ![R1Pro_4.2.1_ip_cn](./assets/unbox/R1Pro_4.2.1_ip_cn.png)
 
-1. 按`Ctrl + Alt + T` 打开终端，并输入以下命令：
+2. 按`Ctrl + Alt + T` 打开终端，并输入以下命令：
     ```Bash
-      ifconfig mlan0
+    ifconfig mlan0
     ```
 
-2. 找到`mlan0`。R1 Pro Orin的IP地址是：`192.xxx.xxx.xxx`。
-
+3. 找到`mlan0`。R1 Pro Orin的IP地址是：`192.xxx.xxx.xxx`。
     ![R1Pro_4.2.1_wifi_cn](./assets/unbox/R1Pro_4.2.1_wifi_cn.png)
 
 #### 4.2.2 通过SSH连接
@@ -179,8 +177,8 @@ R1 Pro开机后，等待连接机器人的显示器显示桌面。
 
 2. 在终端输入以下命令以连接Orin。
     ```Bash
-    ssh nvidia@IP address
-    # 密码（默认）：nvidia
+        ssh nvidia@IP address
+        # 密码（默认）：nvidia
     ```
     
 3. 如果连接成功，请断开HDMI和USB电缆，并关闭底盘和胸腔的外设接口盖，以免影响活动范围。然后进行[第4.3节-启动CAN驱动程序](#43-启动can驱动程序)，继续后续流程。<span style="color: red;">如果连接失败，请及时联系我们<a href="mailto:support@galaxea.ai">support@galaxea.ai</a>提供技术支持。</span>
@@ -199,21 +197,21 @@ R1 Pro开机后，等待连接机器人的显示器显示桌面。
 
 2. 启动FDCAN通信。
     ```Bash
-    sudo ip link set dev can0 type can bitrate 1000000 dbitrate 5000000 fd on
-    sudo ip link set up can0  
-    # 可能需要再次输入密码：nvidia
-    # 若出现“RTNETLINK answers: Device or resource busy”这个错误信息，通常表示你尝试配置的设备（如网络接口或CAN收发器）已经被配置并且正在运行中。
+        sudo ip link set dev can0 type can bitrate 1000000 dbitrate 5000000 fd on
+        sudo ip link set up can0  
+        # 可能需要再次输入密码：nvidia
+        # 若出现“RTNETLINK answers: Device or resource busy”这个错误信息，通常表示你尝试配置的设备（如网络接口或CAN收发器）已经被配置并且正在运行中。
     ```
 
 3. 启动roscore。
     ```Bash
-    roscore    
+        roscore    
     ```
 
 4. 按下`Ctrl + B`加`C`，创建新终端，然后启动HDAS。
     ```Bash
-    source {your_download_path}/install/setup.bash
-    roslaunch HDAS r1pro.launch
+        source {your_download_path}/install/setup.bash
+        roslaunch HDAS r1pro.launch
     ```
 
 ### 4.4  第一次自检
@@ -225,6 +223,7 @@ R1 Pro开机后，等待连接机器人的显示器显示桌面。
 - R1 Pro保持折叠状态，没有安装机械臂。
 
 按照以下步骤进行第一次自检。
+
 1. 按`Ctrl + B`然后按`C`创建新终端。然后启动自检。
    ```Bash
    source {your_download_path}/install/setup.bash
@@ -244,14 +243,14 @@ R1 Pro开机后，等待连接机器人的显示器显示桌面。
 完成自检后，您可以通过命令躯干和底盘并使用遥控器使R1 Pro站立起来。
 
 #### 4.5.1 启动躯干控制
-按下 `Ctrl + B ` 加 `C` 创建新终端，启动臂部和躯干控制。
+按下 `Ctrl + B` 加 `C` 创建新终端，启动臂部和躯干控制。
 ```Bash
 source {your_download_path}/install/setup.bash
 roslaunch mobiman r1_pro_jointTrackerdemo_pid.launch
 ```
 
 #### 4.5.2 启动底盘控制
-按下 `Ctrl + B ` 加 `C` 创建新终端，启动底盘控制。
+按下 `Ctrl + B` 加 `C` 创建新终端，启动底盘控制。
 ```Bash
 source {your_download_path}/install/setup.bash
 roslaunch mobiman r1_pro_chassis_control.launch
@@ -292,9 +291,11 @@ roslaunch mobiman r1_pro_chassis_control.launch
 2. 使用六角L型扳手（5mm）和四个M6螺钉固定手臂。 <span style="color:red;">**注意：在安装机器人手臂时，您必须确保手臂底座上的端口朝向后方，如下图所示。**</span>
    ![R1Pro_5.3_arm_install_cn](./assets/unbox/R1Pro_5.3_arm_install_cn.png)
 
-3. 将机械臂电源线和CAN线连接到手臂底座端口。在插入CAN电缆之前，请先卸下电阻帽。
-   ![R1Pro_5.3_arm_cable_cn](./assets/unbox/R1Pro_5.3_arm_cable_cn.png)
+3. 将机械臂电源线和CAN线连接到手臂底座端口。
+   <span style="color:red">**注意：在插入CAN电缆之前，请先卸下电阻帽。如在未安装机械臂的状态下使用机器人，需要重新安装上电阻帽，建议您妥善保存。**</span>
 
+   ![R1Pro_5.3_arm_cable_cn](./assets/unbox/R1Pro_5.3_arm_cable_cn.png)
+   
 4. 在确认与机器人手臂的通信连接成功后，通过反向执行上述第2.6节拆卸背部盖板和第2.7节拆卸前侧盖板的步骤，重新安装盖板。
 
 

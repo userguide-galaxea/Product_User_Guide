@@ -89,7 +89,7 @@
 4. 按`Ctrl + B`然后按`C`创建新终端。然后启动HDAS。
 
       ```Bash
-      source {workspace}/install/setup.bash
+      source {your_download_path}/install/setup.bash
       roslaunch HDAS A1XY.launch
       ```
 
@@ -105,8 +105,8 @@
 2. 按`Ctrl + B`然后按`C`创建新终端。运行以下命令以启用硬件接口和ROS接口。
 
       ```Bash
-      source {workspace}/install/setup.bash
-
+      source {your_download_path}/install/setup.bash
+      
       # 根据产品型号，选择以下启动方式之一：
       roslaunch mobiman a1_x_jointTrackerdemo.launch
       roslaunch mobiman a1_y_jointTrackerdemo.launch
@@ -132,13 +132,6 @@
       sudo ip link set can0 up
       ```
 
-3. 按`Ctrl + B`然后按`C`创建新终端。然后启动HDAS。
-
-      ```Bash
-      cd {workspace}/install && source setup.bash
-      roslaunch HDAS A1XY.launch
-      ```
-
 4. 进入tmux。
 
       ```Bash
@@ -154,14 +147,14 @@
 6. 按`Ctrl + B`然后按`C`创建一个新窗口，并执行启动文件。
 
       ```Bash
-      cd {workspace}/install && source setup.bash
+      cd {your_download_path}/install && source setup.bash
       roslaunch HDAS A1XY.launch
       ```
 
 7. 按`Ctrl + B`然后按`C`创建一个新窗口。然后，开启关节控制。
 
       ```Bash
-      cd {workspace}/install && source setup.bash
+      cd {your_download_path}/install && source setup.bash
 
       # 根据产品型号，选择以下启动方式之一：
       roslaunch mobiman a1x_jointTrackerdemo.launch
@@ -171,6 +164,6 @@
 8. 按`Ctrl + B`然后按`C`创建一个新终端。然后，启动demo脚本。
 
       ```Bash
-      cd {workspace}/install && source setup.bash
+      cd {your_download_path}/install && source setup.bash
       rosrun mobiman test_mobiman_a1xy
       ```

@@ -242,7 +242,7 @@ R1开机后，等待显示器显示桌面。
 #### 4.5.1 启动躯干控制
 按下 `Ctrl + B ` 加 `C` 创建新终端，启动臂部和躯干控制。
 ```Bash
-source ~/work/galaxea/install/setup.Bash
+source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_jointTrackerdemo.launch
 ```
 
@@ -251,7 +251,7 @@ roslaunch mobiman r1_jointTrackerdemo.launch
 ```Bash
 source ~/work/galaxea/install/setup.Bash
 roslaunch mobiman r1_chassis_control.launch
-```                                              
+```
 
 #### 4.5.3 遥控器操作
 <span style="color:red"> 注意：在进行任何操作之前，请确保所有开关（SWA/SWB/SWC/SWD）都处于顶部位置。</span>这将使机器处于停止状态，防止R1误操作。如果需要获取更多详细操作信息，请参阅Galaxea R1用户指南中的遥控器指南。
@@ -278,7 +278,8 @@ roslaunch mobiman r1_chassis_control.launch
 
    ![3.7_arm_install_cn](assets/3.7_arm_install_cn.png)
 
-3. 将机械臂电源线和CAN线连接到手臂底座端口。在插入CAN电缆之前，请先卸下电阻帽。
+3. 将机械臂电源线和CAN线连接到手臂底座端口。
+   <span style="color:red">**注意：在插入CAN电缆之前，请先卸下电阻帽。如在未安装机械臂的状态下使用机器人，需要重新安装上电阻帽，建议您妥善保存。**</span>
 
    ![3.7_arm_cables_cn](assets/3.7_arm_cables_cn.png)
 

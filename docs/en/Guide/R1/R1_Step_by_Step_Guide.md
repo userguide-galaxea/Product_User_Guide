@@ -280,7 +280,7 @@ roslaunch mobiman r1_chassis_control.launch
 <span style="color:red;">**Important: For your safety, please make R1 stand up and powered off before installing arms.**</span>
 
 1. Follow these steps to install the gripper on the end of the mechanical arm (reverse the steps to remove the gripper).
-  ![3.7_G1GEN2_attaching](assets/3.7_G1GEN2_attaching.png)
+    ![3.7_G1GEN2_attaching](assets/3.7_G1GEN2_attaching.png)
 
   - **Alignment Check**: Ensure that the three mounting holes around the gripper are aligned with the three mounting holes at the end of arm.
   - **Screw Fixation**: Once aligned, secure and tighten the gripper to the arm using the three screws provided.
@@ -291,7 +291,7 @@ roslaunch mobiman r1_chassis_control.launch
    ![3.8_arm_install](assets/3.8_arm_install.png)
 
 3. Connect the power and CAN cable provided with A1 arms to arm base ports.
-   Before plugging CAN cable, you must remove the resistance rod.
+   <span style="color:red">**Note: Before inserting the CAN cable, please remove the resistor rod. If the robot is used without the mechanical arm installed, the resistor rod must be reinstalled. It is recommended that you keep it properly.**</span>
    ![3.8_arm_cables](assets/3.8_arm_cables.png)
 
 4. After confirming successful communication with the robot arm, reverse the steps in [section 2.6 Detach Rear Cover](#26-detach-rear-shell) and [section 2.7 Deatch Front Cover](#27-detach-front-shell) to reinstall the covers.

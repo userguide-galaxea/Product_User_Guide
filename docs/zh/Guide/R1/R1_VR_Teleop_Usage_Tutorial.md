@@ -23,7 +23,7 @@ VR遥操作系统提供沉浸式的远程控制体验，使操作员能够通过
         <tr style="background-color: white; text-align: left;">
                 <td style="padding: 8px; border: 1px solid #ddd;">R1 Base</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">用于R1和R1-T之间的无线通信。</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">机器人本体</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">R1遥控器</td>
@@ -164,10 +164,9 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
 #### 5.2.2. 新建边界
 
 1. 点击左下角的WiFi和电池界面，选择**“边界”**。
+    ![VR_3.3_wifi_CN](assets/VR_3.3_wifi_CN.png)    
 
 2. 根据提示选择**”原地边界”**，可以看到脚下出现一个蓝色的圈，表示边界已建立。
-   ![VR_3.3_wifi_CN](assets/VR_3.3_wifi_CN.png)
-   
    ![VR_5.2.2_new_boarder_CN](assets/VR_5.2.2_new_boarder_CN.png)
    
    **注意：新建边界后，直到结束 VR 遥操作任务前，请不要挪动双脚。**
@@ -183,10 +182,10 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
 3. **操控VR设备**:
     设置好IP后点击**Start**按钮开始。双手立刻自然下垂放在身体两侧，等待3秒后开始操控。
     **注意：此时机器人会同步您的操作，请注意安全，先进行小幅移动，确保周围没有障碍物。**
-![VR_5.2.3_operatevr_CN](assets/VR_5.2.3_operatevr_CN.png)
+    ![VR_5.2.3_operatevr_CN](assets/VR_5.2.3_operatevr_CN.png)
 4. **VR设备图像显示** 此时，您可以看到机器人头部相机的图像。
    ![VR_5.2.4_vr_image_CN](assets/VR_5.2.4_vr_image_CN.png)
-您可使用以下步骤完成简易操作：
+   您可使用以下步骤完成简易操作：
 
 - **停止操作**：长按 B 键 2 秒以上，停止VR遥操作。
 - **控制夹爪**：手的移动会控制机器人手臂的移动。左手的 X 键和右手的 A 键分别控制左右手的夹爪闭合。
@@ -399,7 +398,7 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
     rs-enumerate-devices  | grep Serial
     ```
     ![VR_6.4.3_serial_number_2_CN](assets/VR_6.4.3_serial_number_2_CN.png)
-  <span style="color:red;">注意：序列号的排列先后与相机连接的顺序无关，因此建议您先连接一个相机并记录其序列号后，再连接第二个相机记录其序列号。</span>
+    <span style="color:red;">注意：序列号的排列先后与相机连接的顺序无关，因此建议您先连接一个相机并记录其序列号后，再连接第二个相机记录其序列号。</span>
 
 4. 使用vim工具修改launch文件中的相机序列号：
     ```bash

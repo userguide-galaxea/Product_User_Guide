@@ -57,7 +57,7 @@ The following table shows how to switch SWA/SWB/SWC/SWD to different positions i
 
 #### Torso Control
 1. Move the left joystick to the upper left, and move the right joystick to the upper right simultaneously, as shown below. Waiting for 3 seconds, **R1 will stand up.**
-2. Move the left joystick to the upper left, and move the right joystick to the upper right simultaneously, as shown below. Waiting for 3 seconds, **R1 will squat down.**
+2. Move the left joystick to the lower right, and move the right joystick to the lower left simultaneously, as shown below. Waiting for 3 seconds, **R1 will squat down.**
 
 ![R1_controller_squat_stand](assets/R1_controller_squat_stand.png)
 
