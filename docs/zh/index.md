@@ -83,7 +83,7 @@ hide:
             <section class="products-section">
                 <h2><img src="assets/R1Pro_title.png" alt="R1 Pro" width="130"></h2>
                 <div class="product">
-                        <a href="Guide/R1Pro/R1Pro_Unboxing_Startup_Guide">开箱启动</a> <br>
+                        <a href="Guide/R1Pro/R1Pro_Unbox_Startup_Guide">开箱启动</a> <br>
                         <a href="Guide/R1Pro/R1Pro_Hardware_Introduction">硬件介绍</a> <br>
                         <a href="Guide/R1Pro/R1Pro_Software_Introduction">软件介绍</a> <br>
                 </div>
@@ -91,7 +91,7 @@ hide:
             <section class="products-section">
                 <h2><img src="assets/R1Lite_title.png" alt="R1 Lite" width="120"></h2>
                 <div class="product">
-                        <a href="Guide/R1Lite/R1Lite_Unboxing_Startup_Guide">开箱启动</a> <br>
+                        <a href="Guide/R1Lite/R1Lite_Unbox_Startup_Guide">开箱启动</a> <br>
                         <a href="Guide/R1Lite/R1Lite_Hardware_Introduction">硬件介绍</a> <br>
                         <a href="Guide/R1Lite/R1Lite_Software_Introduction">软件介绍</a> <br>
                 </div>
@@ -107,7 +107,7 @@ hide:
             <section class="products-section">
                 <h2><img src="assets/A1XY_title.png" alt="A1XY" width="120"></h2>
                 <div class="product">
-                        <a href="Guide/A1XY/A1XY_Unboxing_Guide">开箱启动</a> <br>
+                        <a href="Guide/A1XY/A1XY_Unbox_Guide">开箱启动</a> <br>
                         <a href="Guide/A1XY/A1XY_Hardware_Introduction">硬件介绍</a> <br>
                         <a href="Guide/A1XY/A1XY_Software_Introduction">软件介绍</a> <br>
                 </div>

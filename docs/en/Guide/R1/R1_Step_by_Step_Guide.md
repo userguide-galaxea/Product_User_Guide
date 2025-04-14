@@ -1,4 +1,4 @@
-# R1 Unboxing and Startup Guide
+# R1 Unbox and Startup Guide
 >This tutorial provides detailed instructions on how to properly unbox the Galaxea R1, connect cables, install the robot arms, and remotely control the R1 for better communication and to explore more functionalities.
 
 ## Instruction Video

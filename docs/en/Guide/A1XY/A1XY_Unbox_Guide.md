@@ -1,4 +1,4 @@
-# A1XY Unboxing and Installation Guide
+# A1XY Unbox and Installation Guide
 ## 1.  Item List Check
 
 Upon receiving the product, check the contents of the box against the following list.

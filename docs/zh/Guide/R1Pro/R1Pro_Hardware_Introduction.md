@@ -1,5 +1,3 @@
-
-
 # R1 Pro 硬件介绍
 > 本指南将为您详尽解读 Galaxea R1 Pro 硬件信息。
 
@@ -307,7 +305,7 @@ Galaxea R1 Pro标配两只Galaxea A2机械臂和两个G1夹爪。
 
 Galaxea R1 Pro配备了多种传感器，标配1个头部双目相机、5个底盘相机和1个激光雷达。
 
-<span style="color: blue;">**如需腕部相机和多个激光雷达，请致电4008780980。**</span>
+<span style="color: blue;">**如需腕部相机和2个激光雷达，请致电4008780980。**</span>
 
 ![R1Pro_sensor_cn](./assets/hardware/R1Pro_sensor_cn.png)
 
@@ -325,7 +323,7 @@ Galaxea R1 Pro配备了多种传感器，标配1个头部双目相机、5个底�
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">激光雷达</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">2 x 360°</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">2 x 360° （标配1个）</td>
         </tr>
     </tbody>
 </table>                              

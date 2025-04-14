@@ -1,4 +1,4 @@
-# A1 Unboxing and Installation Guide
+# A1 Unbox and Installation Guide
 > Welcome to the Galaxea developer family as a valued user of Galaxea A1! This guide helps you understand its features and quickly learn to use this intelligent robot arm.
 
 ## Product Introduction

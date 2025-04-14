@@ -12,7 +12,7 @@
 - 百度云盘：[R1 Pro SDK V1.1.4](https://pan.baidu.com/s/1rQd3_Cu4E9PjygupxeQDig?pwd=v114)
 - Google Drive: [R1 Pro SDK V1.1.4](https://drive.google.com/drive/folders/1RTt6NMOoA0pjbx5qXkYCb2fyQyUHyZFf?usp=sharing)
 
-所有版本更新可在R1 Pro软件版本更新日志中查看。
+所有版本更新后续可在R1 Pro软件版本更新日志中查看。
 
 ## 启动SDK
 Galaxea R1 Pro驱动程序由多个组件组成，包括执行器接口、传感器接口和外部功能接口。
@@ -34,6 +34,7 @@ roslaunch HDAS r1pro.launch
     <tr style="background-color: black; color: white; text-align: left;">
       <th style="padding: 8px; border: 1px solid #ddd; width: 200px;">接口信息</th>
       <th style="padding: 8px; border: 1px solid #ddd; width: 200px;">文件包名</th>
+      <th style="padding: 8px; border: 1px solid #ddd; width: 200px;">路径</th>
       <th style="padding: 8px; border: 1px solid #ddd; width: 200px;">启动文件</th>
     </tr>
   </thead>
@@ -41,16 +42,19 @@ roslaunch HDAS r1pro.launch
     <tr style="background-color: white; text-align: left;">
       <td style="padding: 8px; border: 1px solid #ddd;">Arms Driver Interface<br>Torso Driver Interface<br>Chassis Driver Interface<br>IMU Interface<br>BMS Interface<br>Remote Controller Interface</td>
       <td style="padding: 8px; border: 1px solid #ddd;">HDAS</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">/install/share/HDAS/launch</td>
       <td style="padding: 8px; border: 1px solid #ddd;">r1pro.launch</td>
     </tr>
      <tr style="background-color: white; text-align: left;">
       <td style="padding: 8px; border: 1px solid #ddd;">Camera Interface</td>
       <td style="padding: 8px; border: 1px solid #ddd;">signal_camera</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">/install/share/signal_camera/launch</td>
       <td style="padding: 8px; border: 1px solid #ddd;">signal_camera.launch</td>
     </tr>
       <tr style="background-color: white; text-align: left;">
       <td style="padding: 8px; border: 1px solid #ddd;">LiDAR Interface</td>
       <td style="padding: 8px; border: 1px solid #ddd;">livox_ros_driver2</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">/install/share/livox_ros_driver2/launch_ROS1</td>
       <td style="padding: 8px; border: 1px solid #ddd;">msg_MID360.launch</td>
     </tr>
   </tbody>
@@ -60,9 +64,9 @@ roslaunch HDAS r1pro.launch
 <span style="color:red;">**注意：执行以下命令将启动所有驱动和运控接口。**</span>
 
 ```Bash
-  sudo apt-get install tmux tmuxp
-  cd ~{your_download_path}/install/share/startup_config/script
-  ./ota_script.sh boot ../session.d/ATCStandard/R1PROBody.d/
+sudo apt-get install tmux tmuxp
+cd {your_download_path}/install/share/startup_config/script
+./ota_script.sh boot ../session.d/ATCStandard/R1PROBody.d/
 ```
 
 ## Demo演示
@@ -70,15 +74,13 @@ roslaunch HDAS r1pro.launch
 访问页面 [R1 Pro Demo演示指南](./R1 Pro_Demo_Guide.md)，并按照说明操作R1 Pro。
 
 ## 软件接口
-当前的Galaxea R1 Pro控制图如下所示，由五个主要部分组成：R1 Pro姿态反馈(R1 Pro Pose Feedback)、R1 Pro关节控制(R1 Pro Joint Control)、R1 Pro底盘控制(R1 Pro Chassis Control)、R1 Pro手臂姿态控制(R1 Pro Arm Pose Control)和R1 Pro躯干姿态控制( R1 Pro Torso Pose Control)。后续章节将提供详细信息。整个软件包被简称为“mobiman”,表示移动操作。
+当前的Galaxea R1 Pro控制图如下所示，由6个主要部分组成：关节控制、手臂姿态控制、夹爪控制、躯干速度控制、底盘控制和姿态估计。整个软件包被简称为“mobiman”,表示移动操作。
 
 ![R1Pro_structure_cn](./assets/software/R1Pro_structure_cn.png)
 
 ### 驱动接口
-当前的Galaxea R1 Pro驱动程序由多个组件组成，包括执行器接口、传感器接口和外部功能接口。
-
 #### 手臂驱动接口
-该接口是用于机械臂控制和状态反馈的ROS软件包，定义了多个话题用于发布和订阅臂的状态、控制命令和相关错误代码。以下是每个话题及其对应消息类型的详细描述：
+该接口是用于机械臂控制和状态反馈的ROS软件包，定义了多个话题用于发布和订阅臂的状态、控制命令和相关错误代码。接口信息如下所示：
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;table-layout: fixed;">
@@ -193,15 +195,15 @@ roslaunch HDAS r1pro.launch
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">position</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 夹爪关节位置]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 关节7位置]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">velocity</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1速度, 关节2速度, 关节3速度, 关节4速度, 关节5速度, 关节6速度, 夹爪关节速度]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1速度, 关节2速度, 关节3速度, 关节4速度, 关节5速度, 关节6速度, 关节7速度]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">effort</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1力矩, 关节2力矩, 关节3力矩, 关节4力矩, 关节5力矩, 关节6力矩, 夹爪关节力矩]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1力矩, 关节2力矩, 关节3力矩, 关节4力矩, 关节5力矩, 关节6力矩, 关节7力矩]</td>
 <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="4">/hdas/feedback_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
@@ -209,15 +211,15 @@ roslaunch HDAS r1pro.launch
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">position</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 夹爪关节位置]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 关节7位置]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">velocity</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1速度, 关节2速度, 关节3速度, 关节4速度, 关节5速度, 关节6速度, 夹爪关节速度]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1速度, 关节2速度, 关节3速度, 关节4速度, 关节5速度, 关节6速度, 关节7速度]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">effort</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1力矩, 关节2力矩, 关节3力矩, 关节4力矩, 关节5力矩, 关节6力矩, 夹爪关节力矩]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1力矩, 关节2力矩, 关节3力矩, 关节4力矩, 关节5力矩, 关节6力矩, 关节7力矩]</td>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;" rowspan="4">/hdas/feedback_gripper_left</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
@@ -315,15 +317,15 @@ roslaunch HDAS r1pro.launch
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">p_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 夹爪关节位置]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 关节7位置]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">v_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1速度最大限制, 关节2速度最大限制, 关节3速度最大限制, 关节4速度最大限制, 关节5速度最大限制, 关节6速度最大限制, 夹爪关节速度最大限制]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1速度最大限制, 关节2速度最大限制, 关节3速度最大限制, 关节4速度最大限制, 关节5速度最大限制, 关节6速度最大限制, 关节7速度最大限制]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">t_ff</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1力矩最大限制, 关节2力矩最大限制, 关节3力矩最大限制, 关节4力矩最大限制, 关节5力矩最大限制, 关节6力矩最大限制, 夹爪关节力矩最大限制]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1力矩最大限制, 关节2力矩最大限制, 关节3力矩最大限制, 关节4力矩最大限制, 关节5力矩最大限制, 关节6力矩最大限制, 关节7力矩最大限制]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
@@ -340,23 +342,23 @@ roslaunch HDAS r1pro.launch
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">p_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 夹爪关节位置]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 关节7位置]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">v_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1速度, 关节2速度, 关节3速度, 关节4速度, 关节5速度, 关节6速度, 夹爪关节速度]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1速度, 关节2速度, 关节3速度, 关节4速度, 关节5速度, 关节6速度, 关节7速度]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kp</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1kp, 关节2kp, 关节3kp, 关节4kp, 关节5kp, 关节6kp, 夹爪关节kp]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1kp, 关节2kp, 关节3kp, 关节4kp, 关节5kp, 关节6kp, 关节7kp]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kd</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1kd, 关节2kd, 关节3kd, 关节4kd, 关节5kd, 关节6kd, 夹爪关节kd]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1kd, 关节2kd, 关节3kd, 关节4kd, 关节5kd, 关节6kd, 关节7kd]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">t_ff</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1力矩, 关节2力矩, 关节3力矩, 关节4力矩, 关节5力矩, 关节6力矩, 夹爪关节力矩]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1力矩, 关节2力矩, 关节3力矩, 关节4力矩, 关节5力矩, 关节6力矩, 关节7力矩]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
@@ -373,15 +375,15 @@ roslaunch HDAS r1pro.launch
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">p_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 夹爪关节位置]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 关节7位置]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">v_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1速度最大限制, 关节2速度最大限制, 关节3速度最大限制, 关节4速度最大限制, 关节5速度最大限制, 关节6速度最大限制, 夹爪关节速度最大限制]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1速度最大限制, 关节2速度最大限制, 关节3速度最大限制, 关节4速度最大限制, 关节5速度最大限制, 关节6速度最大限制, 关节7速度最大限制]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">t_ff</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1力矩最大限制, 关节2力矩最大限制, 关节3力矩最大限制, 关节4力矩最大限制, 关节5力矩最大限制, 关节6力矩最大限制, 夹爪关节力矩最大限制]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1力矩最大限制, 关节2力矩最大限制, 关节3力矩最大限制, 关节4力矩最大限制, 关节5力矩最大限制, 关节6力矩最大限制, 关节7力矩最大限制]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
@@ -398,23 +400,23 @@ roslaunch HDAS r1pro.launch
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">p_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 夹爪关节位置]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1位置, 关节2位置, 关节3位置, 关节4位置, 关节5位置, 关节6位置, 关节7位置]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">v_des</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1速度, 关节2速度, 关节3速度, 关节4速度, 关节5速度, 关节6速度, 夹爪关节速度]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1速度, 关节2速度, 关节3速度, 关节4速度, 关节5速度, 关节6速度, 关节7速度]</td>
     </tr>
         <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kp</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1kp, 关节2kp, 关节3kp, 关节4kp, 关节5kp, 关节6kp, 夹爪关节kp]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1kp, 关节2kp, 关节3kp, 关节4kp, 关节5kp, 关节6kp, 关节7kp]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">kd</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1kd, 关节2kd, 关节3kd, 关节4kd, 关节5kd, 关节6kd, 夹爪关节kd]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1kd, 关节2kd, 关节3kd, 关节4kd, 关节5kd, 关节6kd, 关节7kd]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">t_ff</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1力矩, 关节2力矩, 关节3力矩, 关节4力矩, 关节5力矩, 关节6力矩, 夹爪关节力矩]</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[关节1力矩, 关节2力矩, 关节3力矩, 关节4力矩, 关节5力矩, 关节6力矩, 关节7力矩]</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
@@ -506,27 +508,40 @@ roslaunch HDAS r1pro.launch
     </tr>
   </tbody>
 </table>
-**机械臂关节电机控制接口说明**</br>
-`/hdas/feedback_status_arm_left `</br>
-`/hdas/feedback_status_arm_right`</br>
-下图为力位混合控制模式架构：</br>
-![R1Pro_arm_motor_cn](D:\星海图\2_用户手册\R1 Pro\R1Pro_软件介绍\R1Pro_arm_motor_cn.png)
-电机的输出扭矩公式用于计算电流环给定跟踪的力矩值 `Tref`，公式如下：</br>
-$K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
-其中：`Kp`，`Kd` 为位置增益和速度增益的比例项；`pd`，`vd` 为期望的位置和速度；`t_ff` 为前馈力矩；`pe` 为编码器反馈的位置，`ve` 为微分得到的电机转速。</br>
-输入项包括：`Kp`，`Kd`，`pd`，`vd`，`t_ff`。</br>
-反馈项 `pe` 和 `ve` 无需手动输入。
+
+***机械臂关节电机控制接口说明**
+
+- `/hdas/feedback_status_arm_left `
+- `/hdas/feedback_status_arm_right`
+
+下图为力位混合控制模式架构：
+
+![R1Pro_arm_motor_cn](./assets/software/R1Pro_arm_motor_cn.png)
+
+电机的输出扭矩公式用于计算电流环给定跟踪的力矩值 `Tref`，公式如下：
+
+$K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$，其中：
+
+- `Kp`，`Kd` 为位置增益和速度增益的比例项；`pd`，`vd` 为期望的位置和速度；`t_ff` 为前馈力矩；`pe` 为编码器反馈的位置，`ve` 为微分得到的电机转速。
+- 输入项包括：`Kp`，`Kd`，`pd`，`vd`，`t_ff`。
+- 反馈项 `pe` 和 `ve` 无需手动输入。
 
 **注意:**
 
 1. 前馈力矩是必须项。位置项和速度项无法弥补过大的力矩误差，前馈力矩至少应补偿机械臂自身重力的影响。
+2. 以下是A2机械臂电机的推荐 `kp` 和 `kd` 值，调整时请谨慎操作。
 
-2. 以下是A1电机的推荐 `kp` 和 `kd` 值。调整时请谨慎操作。</br>
-    `A1_kp = [ 140.0, 200.0, 120.0, 20.0, 20.0, 20.0 ]`</br>
-    `A1_kd = [ 10.0, 50.0, 5.0, 1.0, 1.0, 0.4 ]`
+    `R1_Pro_A2_left_kp = [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]`
+
+    `R1_Pro_A2_left_kd = [25.0, 25.0, 25.0, 25.0, 25.0, 25.0, 25.0]`
+
+    `R1_Pro_A2_right_kp = [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]`
+    
+    `R1_Pro_A2_right_kd = [25.0, 25.0, 25.0, 25.0, 25.0, 25.0, 25.0]`
+    
 
 #### 躯干驱动接口
-该接口是用于躯干控制和提供状态反馈的ROS软件包，它定义了多个话题，用于发布和订阅躯干电机的状态和控制命令。以下是每个话题及其对应消息类型的详细描述：
+该接口是用于躯干控制和提供状态反馈的ROS软件包，它定义了多个话题，用于发布和订阅躯干电机的状态和控制命令。接口信息如下所示：
 <table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -743,6 +758,7 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
 </table>
 
 #### 相机接口
+接口信息如下所示：：
 <table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -1027,6 +1043,7 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
 </table>
 
 #### 激光雷达接口
+接口信息如下所示：：
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -1069,6 +1086,7 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
 </table>
 
 #### IMU 接口
+接口信息如下所示：：
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -1149,7 +1167,6 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
             <td style="padding: 8px; border: 1px solid #ddd;">linear_acceleration.z</td>
             <td style="padding: 8px; border: 1px solid #ddd;">线加速度z</td>
         </tr>
-        <!-- Repeat the structure for /hdas/imu_torso -->
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;" rowspan="11">/hdas/imu_torso</td>
             <td style="padding: 8px; border: 1px solid #ddd;">header</td>
@@ -1199,6 +1216,7 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
 </table>
 
 #### BMS 接口
+接口信息如下所示：：
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -1249,6 +1267,7 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
 </table>
 
 #### 遥控器接口
+接口信息如下所示：：
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -1308,27 +1327,28 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
 
 ### 运动控制接口
 
-- **关节控制：**该节点控制R1 Pro躯干和手臂的每个关节。
+- [**关节控制：**](#关节控制)该节点控制R1 Pro躯干和手臂的每个关节。
 
-- **手臂姿态控制：**该节点控制手臂运动至目标末端执行器（ee）的坐标系。
+- [**手臂姿态控制：**](#手臂姿态控制)该节点控制手臂运动至目标末端执行器（ee）的坐标系。
 
-- **躯干速度控制：**该节点控制躯干运动至目标浮动基座坐标系。
+- [**夹爪控制：**](#夹爪控制)该节点控制末端执行器夹爪运动至目标位置。
 
-- **底盘控制：**该节点使用矢量控制来控制R1 Pro底盘，允许同时发送x、y和w三个方向的速度命令。
+- [**躯干速度控制：**](#躯干速度控制)该节点控制躯干运动至目标浮动基座坐标系。
 
-- **姿态估计：**该节点接收来自HDAS的关节角反馈，并计算出对应三个坐标系的反馈。
+- [**底盘控制：**](#底盘控制)该节点使用矢量控制来控制R1 Pro底盘，允许同时发送x、y和w三个方向的速度命令。
+
+- [**姿态估计：**](#姿态估计)该节点接收来自HDAS的关节角反馈，并计算出对应三个坐标系的反馈。
 
 #### 关节控制
-R1 Pro关节控制节点负责控制R1 Pro躯干和手臂的每个关节，总共有16个关节。可通过以下命令启动：
+R1 Pro关节控制节点负责控制R1 Pro躯干和手臂的每个关节，总共有18个关节。可通过以下命令启动：
 
 ```Bash
 source {your_download_path}/install/setup.bash
 roslaunch mobiman r1_pro_jointTrackerdemo_pid.launch
 ```
 
-这个启动文件将启动 `r1_pro_jointTracker_demo_node`，该节点是负责控制每个关节的主要节点。
+该文件将启动 `r1_pro_jointTracker_demo_node`，该节点是负责控制每个关节的主要节点。接口信息如下所示：：
 
-接口信息如下：
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
     <tr>
@@ -1338,25 +1358,7 @@ roslaunch mobiman r1_pro_jointTrackerdemo_pid.launch
       <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Message Type</th>
     </tr>
   </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂各关节的目标位置</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右臂各关节的目标位置</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干各关节目标位置</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
-    </tr>
+    <tbody>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
@@ -1375,25 +1377,43 @@ roslaunch mobiman r1_pro_jointTrackerdemo_pid.launch
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干关节反馈</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂电机控制</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右臂电机控制</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干电机控制</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
-    </tr>
-  </tbody>
+      <tr style="background-color: white;">
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_left</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂各关节的目标位置</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white;">
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_right</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右臂各关节的目标位置</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white;">
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_torso</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干各关节目标位置</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
+        </tr>
+        <tr style="background-color: white;">
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂电机控制</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+        </tr>
+        <tr style="background-color: white;">
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_right</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右臂电机控制</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+        </tr>
+        <tr style="background-color: white;">
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_torso</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干电机控制</td>
+          <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+        </tr>
+   </tbody>
 </table>
 
 针对以上话题的具体字段及其详细描述如下表所示：
@@ -1471,12 +1491,11 @@ roslaunch mobiman r1_pro_right_arm_relaxed_ik.launch
 
 请注意：
 
-- 当双臂姿态控制器启动后，左右双臂将自动调整至左图所示的状态。请确保将R1 Pro置于双臂自然垂下的位置，以避免因运动角度过大导致初始化失败。
+- 当双臂姿态控制器启动后，左右双臂将自动调整至左图所示的状态。请确保将机械臂置于双臂自然垂下的位置，以避免因运动角度过大导致初始化失败。
+- 当前末端姿态控制的相对位姿是URDF中`gripper_link`相对于`torso_link4`的姿态转换。以下图中的左臂为例，左臂的`left_gripper_link`坐标系相对于躯干的`torso_link4`坐标系的相对关系中，包含了x、y、z的偏移量以及orientation对应的旋转偏移。
+  ![R1Pro_arm_pose_control_cn](./assets/software/R1Pro_arm_pose_control_cn.png)
 
-- 当前末端姿态控制的相对位姿是URDF中gripper_link相对于torso_link4的姿态转换。以左臂为例，这是左臂left_gripper_link坐标系相对于torso_link4坐标系的相对关系，包含了x、y、z的偏移量以及orientation对应的旋转偏移，如右图所示：
-![R1Pro_arm_pose_control_cn](./assets/software/R1Pro_arm_pose_control_cn.png)
-
-该接口如下所示：
+接口信息如下所示：
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
     <tr>
@@ -1578,16 +1597,296 @@ roslaunch mobiman r1_pro_right_arm_relaxed_ik.launch
 </table>
 
 
-#### 底盘控制
-R1 Pro底盘控制是一个使用矢量控制来控制R1 Pro底盘的节点，它允许您同时发送三个方向的速度命令：x、y 和w。
+#### 夹爪控制
 
-可通过以下命令启动：
+夹爪控制是一个用于控制末端执行器夹爪的ROS node，可通过以下命令启动：
+```bash
+source {your_download_path}/install/setup.bash
+roslaunch mobiman r1_gripperController.launch robot_type:=R1PRO 
+```
+该文件将启动一个节点`R1_Gripper_Controller` (注意：此处不是R1_Pro_Gripper_Controller)。接口信息如下所示：：
+
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">话题名称</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 100px;">I/O</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 500px;">描述</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">消息类型</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_position_gripper_left</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左夹爪目标位置</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_position_gripper_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>        
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右夹爪目标位置</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_gripper</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>   
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">夹爪电机控制</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+    </tr>
+  </tbody>
+</table>
+
+针对以上话题的具体字段及其详细描述如下表所示：
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">话题名称</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 500px;">字段</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 500px;">描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="2">/motion_target/target_position_gripper_left<br>/motion_target/target_position_gripper_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">position</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">表示左右夹爪的目标位置，[0，100]，0为完全闭合，100为完全张开。</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_gripper</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+    </tr>
+  </tbody>
+</table>
+
+#### 躯干速度控制
+躯干速度控制是一个用于控制躯干移动到目标浮动基座坐标帧的ROS软件包。通过以下命令启动：
+
+```bash
+source {your_download_path}/install/setup.bash
+roslaunch mobiman torso_control_r1.launch
+# 注意，此命令不能与 joint_tracker 同时执行。
+# 如果需要同时使用 joint_tracker，请改用 joint_tracker_disable_torso。
+# 详细信息可在关节控制小节查询。
+```
+
+该控制节点如图所显示，表示`torsolink3`相对`base_link`的的速度控制，其方向与`base_link`的frame相同。
+
+![R1_torso_speed_control_cn](./assets/software/R1Pro_torso_speed_control_cn.png)
+
+- `v_x`是torso frame相对于`base_link`的x方向的速度（最大速度是0.1m/s），正值表示基于`base_link`向前，负值表示向后；
+- `v_z`是torso frame相对于`base_link`的z方向的速度（最大速度是0.1m/s），方向正值表示基于`base_link`向上，负值表示向下;
+- `w_pitch`是torso frame相对于`base_link`的y方向的角速度（最大速度是0.3rad/s），方向符合右手坐标系；
+- `w_yaw`是torso frame相对于`base_link`的z方向的角速度（最大速度是0.3rad/s），方向符合右手坐标系。
+
+接口信息如下所示。
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">话题名称</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 100px;">I/O</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 500px;">描述</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">消息类型</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干关节反馈</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_speed_torso</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">浮动基座框架的目标速度 </td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::TwistStamped</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_torso</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output </td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干各关节目标位置 </td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+    </tr>
+  </tbody>
+</table>
+
+
+针对以上话题的具体字段及其详细描述如下表所示：
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">话题名称</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">字段</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 600px;">描述</th>
+    </tr>
+  </thead>
+  <tbody>   
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考躯干驱动接口</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="4">/motion_target/target_speed_torso</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">target_speed.v_x = msg.twist.linear.x</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干笛卡尔空间x方向线速度，[-0.2,0.2]m/s，<br>-0.1≤x≤0.2</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">target_speed.v_z = msg.twist.linear.z</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干笛卡尔空间z方向线速度，[-0.1,0.1]m/s，<br>0.3≤z≤0.7</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">target_speed.w_pitch =msg.twist.angular.y</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干笛卡尔空间y方向角速度，[-0.3,0.3]m/s，<br>-1.75≤z≤1.75</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">target_speed.w_yaw =msg.twist.angular.z</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干笛卡尔空间z方向角速度，[-0.3,0.3]m/s，<br>-0.75≤z≤0.75</td>
+    </tr>
+  </tbody>
+</table>
+
+#### 底盘控制
+底盘控制是一个矢量控制节点，允许同时发送三个方向的速度命令：x、y 和w。通过以下命令启动：
+
+```bash
+roslaunch mobiman r1_chassis_control.launch
+```
+
+该文件将启动两个节点：`chassis_control_node` 和 `r1_control_manager`。`chassis_control_node `负责R1底盘的速度控制。接口信息如下所示：
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">话题名称</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 100px;">I/O</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">描述</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">消息类型</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_speed_chassis</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">底盘的目标速度，包括vx, vy and omega.</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::Twist</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/chassis_acc_limit</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">底盘的加速度限制，最大值分别为2.5, 1.0, 1.0</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::Twist</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/brake_mode</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">发出底盘是否进入制动模式的指令。如果处于制动模式，当速度为0时，底盘将通过将车轮转动一定角度来锁定自身。</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">std_msgs::Bool</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_chassis</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">R1底盘控制订阅此话题并控制底盘的目标速度。</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_chassis</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">R1底盘控制发布此话题以控制电机。</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+    </tr>
+  </tbody>
+</table>
+
+针对以上话题的具体字段及其详细描述如下表所示：
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">消息名称</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">字段</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 500px;">描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="6">/motion_target/target_speed_chassis</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">linear</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">线速度</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.x</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">线速度x, 范围 (-1.5, 1.5) m/s</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.y</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">线速度y, 范围 (-1.5, 1.5) m/s</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">angular</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">角速度</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.z</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">角速度, 范围  (-3 - 3) rad/s</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="6">/motion_target/chassis_acc_limit</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">标准消息头</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">linear</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">线速度</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.x</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">加速度限制x, 范围 (-2.5, 2.5) m/s²</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.y</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">加速度限制y, 范围 (-1.0, 1.0) m/s²</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">angular</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">角速度</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.z</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">角速度限制, 范围 (-3, 3) rad/s²</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/brake_mode</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">布尔值<br>进入刹车模式：True<br>退出刹车模式：False</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_chassis</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考底盘驱动接口</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_chassis</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考底盘驱动接口</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+#### 底盘控制
+底盘控制是一个矢量控制节点，允许同时发送三个方向的速度命令：x、y 和w。通过以下命令启动：
 
 ```bash
 roslaunch mobiman r1_pro_chassis_control.launch
 ```
 
-这个启动文件将启动两个节点：`chassis_control_node` 和 `r1_pro_eepose_pub_node`。`chassis_control_node `为R1 Pro底盘的速度控制。其接口如下所示：
+该文件将启动两个节点：`chassis_control_node` 和 `r1_pro_eepose_pub_node`，其中`chassis_control_node `为R1 Pro底盘的速度控制。接口信息如下所示：
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
     <tr>
@@ -1710,11 +2009,11 @@ roslaunch mobiman r1_pro_chassis_control.launch
 </table>
 
 #### 姿态估计
-在底盘控制的launch文件中，还会启动一个名为`eepose_pub_node`的节点。该节点接收来自HDAS的关节角反馈，并计算出对应于三个坐标系的反馈。`eepose_pub_node`定义了三个坐标帧：基座链接帧（Base Link Frame，左图）、浮动基座帧（Floating Base Frame，中图）和末端执行器姿态帧（End-Effector Pose Frame，右图）。
+在底盘控制的launch文件中，还会启动一个名为`eepose_pub_node`的节点。该节点接收来自HDAS的关节角反馈，并计算出对应于三个坐标系的反馈。`eepose_pub_node`定义了三个坐标帧：基座连接框架（Base Link Frame，左图）、浮动基座框架（Floating Base Frame，中图）和末端执行器姿态框架（End-Effector Pose Frame，右图）。
 
 ![R1Pro_pose_est_cn](./assets/software/R1Pro_pose_est_cn.png)
 
-接口信息如下:
+接口信息如下所示：:
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
     <tr>

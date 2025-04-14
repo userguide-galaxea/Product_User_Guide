@@ -9,9 +9,7 @@
 查看 [R1 软件版本更新日志](R1_Software_Changelog/v1.1.0.md)，获取最新的SDK包及更新信息。
 
 ## 启动SDK
-Galaxea R1驱动程序由多个组件组成，包括执行器接口、传感器接口和外部功能接口。
-
-当前支持分开启动和一键启动两种方式启动软件接口。为了您的安全，建议使用分开启动的方式启动SDK。
+当前支持分开启动和一键启动两种方式启动软件接口。为了您的安全，强烈建议使用分开启动的方式
 
 ### 分开启动各接口
 所有组件可以通过以下命令模板启动。
@@ -19,7 +17,7 @@ Galaxea R1驱动程序由多个组件组成，包括执行器接口、传感器�
 点击[此处](./R1_Step_by_Step_Guide.md/#43-启动can驱动程序)查看详细启动方式。
 
 ```Bash
-source ~/work/galaxea/install/setup.bash
+source {your_download_path}install/setup.bash
 roslaunch <Package Name> <Launch File>
 # Example
 roslaunch HDAS r1.launch
@@ -57,7 +55,7 @@ roslaunch HDAS r1.launch
 
 ```Bash
   sudo apt-get install tmux tmuxp
-  cd ~/work/galaxea/install/share/startup_config/script
+  cd {your_download_path}install/share/startup_config/script
   ./ota_script.sh boot
 ```
 
@@ -66,14 +64,14 @@ roslaunch HDAS r1.launch
 访问页面 [R1 Demo演示指南](./R1_Demo_Guide.md)，并按照说明操作R1。
 
 ## 软件接口
-当前的Galaxea R1控制图如下所示，由五个主要部分组成：R1姿态反馈(R1 Pose Feedback)、R1关节控制(R1 Joint Control)、R1底盘控制(R1 Chassis Control)、R1手臂姿态控制(R1 Arm Pose Control)和R1躯干姿态控制( R1 Torso Pose Control)。后续章节将提供详细信息。整个软件包被简称为“mobiman”,表示移动操作。
+当前的Galaxea R1 Pro控制图如下所示，由5个主要部分组成：关节控制、手臂姿态控制、躯干速度控制、底盘控制和姿态估计。整个软件包被简称为“mobiman”,表示移动操作。
 ![R1_control_interface_draw](assets/R1_control_interface_draw.png)
 
 ### 驱动接口
 当前的Galaxea R1驱动程序由多个组件组成，包括执行器接口、传感器接口和外部功能接口。
 
 #### 手臂驱动接口
-该接口是用于机械臂控制和状态反馈的ROS软件包，定义了多个话题用于发布和订阅臂的状态、控制命令和相关错误代码。以下是每个话题及其对应消息类型的详细描述：
+该接口是用于机械臂控制和状态反馈的ROS软件包，定义了多个话题用于发布和订阅臂的状态、控制命令和相关错误代码。接口信息如下所示：
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;table-layout: fixed;">
@@ -502,7 +500,8 @@ roslaunch HDAS r1.launch
   </tbody>
 </table>
 
-**机械臂关节电机控制接口说明**</br>
+**机械臂关节电机控制接口说明**
+
 `/hdas/feedback_status_arm_left `</br>
 `/hdas/feedback_status_arm_right`</br>
 下图为力位混合控制模式架构：</br>
@@ -522,7 +521,7 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$</br>
   `A1_kd = [ 10.0, 50.0, 5.0, 1.0, 1.0, 0.4 ]`
 
 #### 躯干驱动接口
-该接口是用于躯干控制和提供状态反馈的ROS软件包，它定义了多个话题，用于发布和订阅躯干电机的状态和控制命令。以下是每个话题及其对应消息类型的详细描述：
+该接口是用于躯干控制和提供状态反馈的ROS软件包，它定义了多个话题，用于发布和订阅躯干电机的状态和控制命令。接口信息如下所示：
 <table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -1320,7 +1319,7 @@ R1关节控制节点负责控制R1躯干和手臂的每个关节，总共有16�
 可通过以下命令启动：
 
 ```Bash
-source ~/work/galaxea/install/setup.bash
+source {your_download_path}install/setup.bash
 roslaunch mobiman r1_jointTrackerdemo.launch
 # For R1 Lite 
 # roslaunch mobiman pi_jointTrackerdemo.launch
@@ -1502,7 +1501,7 @@ roslaunch mobiman r1_jointTrackerdemo.launch
 R1手臂姿态控制是一个用于控制手臂移动到目标末端执行器（ee）坐标帧的ROS软件包。它主要包括两个launch文件,分别对应 左臂的姿态控制和右臂的姿态控制, 可以通过以下命令启动
 
 ```bash
-source ~/work/galaxea/install/setup.bash
+source {your_download_path}install/setup.bash
 roslaunch mobiman r1_left_arm_mpc.launch  # MPC control of the left arm end-effector.
 roslaunch mobiman r1_right_arm_mpc.launch  # MPC control of the right arm end-effector.
 ```
@@ -1515,7 +1514,7 @@ roslaunch mobiman r1_right_arm_mpc.launch  # MPC control of the right arm end-ef
 
 ![R1_arm_pose_control](assets/R1_arm_pose_control.png)
 
-该接口如下所示：
+接口信息如下所示：
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
     <tr>
@@ -1621,7 +1620,7 @@ roslaunch mobiman r1_right_arm_mpc.launch  # MPC control of the right arm end-ef
 R1躯干速度控制是一个用于控制躯干移动到目标浮动基座坐标帧的ROS软件包。它可以通过以下命令启动：
 
 ```bash
-source ~/work/galaxea/install/setup.bash
+source {your_download_path}install/setup.bash
 roslaunch mobiman torso_speed_control_hard.launch
 # 注意，此命令不能与 joint_tracker 同时执行。
 # 如果需要同时使用 joint_tracker，请改用 joint_tracker_disable_torso。
@@ -1630,10 +1629,10 @@ roslaunch mobiman torso_speed_control_hard.launch
 
 ![R1_torso_speed_control](assets/R1_torso_speed_control.png)
 
-该控制节点如图所显示，表示torsolink3相对base_link的的速度控制，其方向与base_link的frame相同。其中，
+该控制节点如图所显示，表示`torsolink3`相对`base_link`的的速度控制，其方向与`base_link`的frame相同。其中，
 
-- v_x是torso frame相对于base_link的x方向的速度（最大速度是0.2m/s），正值表示基于baselink向前，负值表示向后；
-- v_z是torso frame相对于base_link的z方向的速度（最大速度是0.2m/s），方向正值表示基于baselink向上，负值表示向下。
+- `v_x`是torso frame相对于`base_link`的x方向的速度（最大速度是0.2m/s），正值表示基于`base_link`向前，负值表示向后；
+- `v_z`是torso frame相对于`base_link`的z方向的速度（最大速度是0.2m/s），方向正值表示基于`base_link`向上，负值表示向下。
 
 该接口如下所示。
 <table style="width: 100%; border-collapse: collapse;">
@@ -1702,7 +1701,7 @@ roslaunch mobiman torso_speed_control_hard.launch
 </table>
 
 #### 底盘控制
-R1底盘控制是一个使用矢量控制来控制R1底盘的节点，它允许您同时发送三个方向的速度命令：x、y 和w。
+底盘控制是一个矢量控制节点，允许同时发送三个方向的速度命令：x、y 和w。
 
 可通过以下命令启动：
 
@@ -1833,7 +1832,7 @@ roslaunch mobiman r1_chassis_control.launch
 </table>
 
 #### 姿态估计
-在底盘控制的launch文件中，还会启动一个名为`eepose_pub_node`的节点。该节点接收来自HDAS的关节角反馈，并计算出对应于三个坐标系的反馈。`eepose_pub_node`定义了三个坐标帧：基座链接帧（Base Link Frame，左图）、浮动基座帧（Floating Base Frame，中图）和末端执行器姿态帧（End-Effector Pose Frame，右图）。
+在底盘控制的launch文件中，还会启动一个名为`eepose_pub_node`的节点。该节点接收来自HDAS的关节角反馈，并计算出对应于三个坐标系的反馈。`eepose_pub_node`定义了三个坐标帧：基座连接框架（Base Link Frame，左图）、浮动基座框架（Floating Base Frame，中图）和末端执行器姿态框架（End-Effector Pose Frame，右图）。
 
 ![R1_joint_control](assets/R1_joint_control.png)
 
