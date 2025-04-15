@@ -284,7 +284,7 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
             <td style="padding: 8px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">夹爪暂停</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">手臂暂停</td>
             <td style="padding: 8px; border: 1px solid #ddd;">VR右遥控器的 B 键控制右臂的暂停
             </br>VR左遥控器的 Y 键控制左臂的暂停
 </br>按一下暂停，再按一下解除暂停</td>

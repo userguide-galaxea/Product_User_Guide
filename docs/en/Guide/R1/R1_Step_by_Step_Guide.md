@@ -126,10 +126,10 @@ Use L-hex key (M5) to remove two screws inside the chest, as boxed in the figure
 <span style="color:red;">**Important: For your safety, please power off R1 before connecting any cables.**</span>
 
 Follow these steps to connect R1:
+
 1. Use the L-hex key (M3) to remove two M3 screws on the peripheral interface cover on the chassis.
 2. Connect HDMI cable to the chassis and the display. Please ensure a firm connection to avoid looseness.
    ![3.1_HDMI_Connecting](assets/3.1_HDMI_Connecting.png)
-
 3. Connect the USB interface to the mouse and keyboard and the chest. Please ensure a firm connection to avoid looseness.
    ![3.1_USB_Connecting](assets/3.1_USB_Connecting.png)
 
@@ -140,12 +140,13 @@ To turn on Galaxea R1, please press the boat-shaped power button on the bottom o
 
 ![3.2_power_on](assets/3.2_power_on.png)
 
-If the robot has battery inside the chassis, you can turn on the power button as the above said, skip 3.2.1 and 3.2.2 and go to [4.Connecting to R1](#4-connecting-to-r1).
+If the robot has battery inside the chassis, you can turn on the power button as the above said, skip 3.2.1 and 3.2.2 and go to [4.Connect R1](#4-connecting-to-r1).
 
 #### 3.2.1 Charging
 If the robot's chassis has a battery but it is depleted, charge it before pressing the button. The power port is located on the bottom of the rear side of the chassis.
 
 **Charging steps:**
+
 1. Unscrew the power charging port cover.
 2. Insert the power cord into the port. When the red light on the charger comes on and the power indicator on the side of the robot chassis flashes orange-green, it indicates that the robot is charging.
 
@@ -153,6 +154,7 @@ If the robot's chassis has a battery but it is depleted, charge it before pressi
 If there is no battery in the robot's chassis, install it first. The battery is located on the bottom of the right side of the chassis.
 
 **Battery replacement steps:**
+
 1. Remove the two screws on the chassis side cover and slide the cover to remove it.
 2. Push the battery into the chassis.
 3. Connect the battery cable to the chassis.
@@ -296,8 +298,9 @@ roslaunch mobiman r1_chassis_control.launch
 
 4. After confirming successful communication with the robot arm, reverse the steps in [section 2.6 Detach Rear Cover](#26-detach-rear-shell) and [section 2.7 Deatch Front Cover](#27-detach-front-shell) to reinstall the covers.
 
-### 5.1 The Second Self-Check
+## 6. The Second Self-Check
 Before starting the self-check, ensure:
+
 - R1 is standing.
 - R1 has the arms installed correctly. The elbows face outward (silver part inside, black part outside), and the gripper cable faces outward.
   ![3.8_selfcheck2_arm](assets/3.8_selfcheck2_arm.png)
@@ -313,12 +316,12 @@ Then, <span style="color:red;">**power it on**</span> and:
 
 3. Follow and complete the commands in [section 4.5.1 Start Torso Control](#451-start-torso-control) and [section 4.5.2 Start Chassis Control](#452-start-chassis-control).
 
-## 6. Demo Testing
+## 7. Demo 
 <span style="color:red;">**Important: Before you do any actions on R1, you must complete R1 self-checks to ensure the safety. **</span>
 
 After completing all the operations above, <span style="color:red;">move R1 to an open area to ensure there are no obstacles around. </span> Then remotely command R1 to perform demo testing.
 
 You can find the document and python scripts in [R1 Demo Guide](R1_demo_test.md).
 
-## 7. R1 Sensor Calibration Data Collection Method
+## 8. Sensor Calibration Data Collection Method
 Visit [R1 Sensor Calibration Data Collection Method](./R1_Sensor_Calibration_Data_Collection_Method.md) to get the detailed information on how to calibrate the sensors.

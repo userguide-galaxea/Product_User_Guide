@@ -52,9 +52,9 @@ VR遥操作系统提供沉浸式的远程控制体验，使操作员能够通过
 
 VR设备配置SDK：
 
-- Meta 相关安装包.zip：用于新设备激活。
-- platform-tools-latest-windows.zip：adb文件，用于安装VR头显内部的数据采集APP。
-- GalaxeaVR-V1-0-1.apk：VR头显内部的数据采集APP。
+- `Meta 相关安装包.zip`：用于新设备激活。
+- `platform-tools-latest-windows.zip`：adb文件，用于安装VR头显内部的数据采集APP。
+- `GalaxeaVR-V1-0-1.apk`：VR头显内部的数据采集APP。
 
 ## 3. VR 设备配置
 ### 3.1 VR设备开发者模式激活
@@ -80,7 +80,7 @@ VR设备配置SDK：
 ### 3.3 VR 设备配置
 在 Meta Quest 3 的初始界面下，连接与R1 Pro 相同的WiFi网络。 
 
-**注意**：提示网络受限是正常现象，因为该网络无法访问外网。
+**注意：提示网络受限是正常现象，因为该网络无法访问外网。**
 
 ![VR_3.3_wifi_CN](./assets/vr/VR_3.3_wifi_CN.png)
 
@@ -137,7 +137,7 @@ VR设备配置SDK：
 <span style="color:red;">**注意：请佩戴好VR设备并手持两个遥控器，开始以下操作。**</span>
 
 #### 5.2.1. 连接WiFi
-确认VR设备已成功连接到与 R1 Pro 本体相同的 WiFi 网络。
+确认VR设备已成功连接到与 R1 Pro 本体相同的WiFi网络。
 
 #### 5.2.2. 新建边界
 
@@ -149,26 +149,35 @@ VR设备配置SDK：
 
    <span style="color:red;">**新建边界后，直到结束 VR 遥操作任务前，请不要挪动双脚。**</span>
 
-#### 5.2.3. 启动 GalaxeaVR APP
+#### 5.2.3. 启动GalaxeaVR APP
 
-1. **打开GalaxeaVR应用**：点击右下角的正方体图标启动GalaxeaVR应用。
+1. **打开GalaxeaVR应用**：
+
+    点击右下角的正方体图标启动GalaxeaVR应用。
    ![VR_5.2.3_open_app_CN](./assets/vr/VR_5.2.3_open_app_CN.png)
 
-2. **输入 R1 Pro 的 IP 地址**：
+2. **输入R1 Pro的IP地址**：
+
     进入GalaxeaVR应用后，将VR手柄发射的射线对准绿色的IP输入框。
+
     等待绿色输入框轻微变色后，用右控制器的T键（食指键）点击输入框（光标位置需要偏下一些）。
-    键盘弹出后，输入机器人端的IP地址（即 R1_Pro_IP）。
+
+    键盘弹出后，输入机器人端的IP地址（即R1_Pro_IP）。
 
 3. **操控VR设备**:
+
     设置好IP后点击**Start**按钮开始。
+
     双手立刻自然下垂放在身体两侧，等待3秒后开始操控。
+
     **注意：此时机器人会同步您的操作，请注意安全，先进行小幅移动，确保周围没有障碍物。**
     ![VR_5.2.3_operatevr_CN](./assets/vr/VR_5.2.3_operatevr_CN.png)
 
-4. **VR设备图像显示** 此时，您可以看到机器人头部相机的图像。
-   ![VR_5.2.4_vr_image_CN](./assets/vr/VR_5.2.4_vr_image_CN.png)
-   
+4. **VR设备图像显示** :
 
+    此时，您可以看到机器人头部相机的图像。
+    ![VR_5.2.4_vr_image_CN](./assets/vr/VR_5.2.4_vr_image_CN.png)
+   
 您可使用以下步骤完成简易操作：
 
 - **停止操作**：长按 B 键 2 秒以上，停止VR遥操作。
@@ -197,15 +206,11 @@ VR设备配置SDK：
 
 #### 6.1.2 VR手持遥控器
 
-![VR_6.1.2_vr_controller_left_CN](./assets/vr/VR_6.1.2_vr_controller_left_CN.png)
-
-![VR_6.1.2_vr_controller_right_CN](./assets/vr/VR_6.1.2_vr_controller_right_CN.png)
-
-
+![VR_6.1.2_vr_controller_cn](./assets/vr/VR_6.1.2_vr_controller_cn.png)
 
 ### 6.2 VR设备APP显示按键
 
-![VR_6.2_vr_app_button_CN](./assets/vr/VR_6.2_vr_app_button_CN.png)
+![VR_6.2_vr_app_button_cn](./assets/vr/VR_6.2_vr_app_button_CN.png)
 
 ### 6.3 模式切换
 
@@ -254,15 +259,12 @@ VR设备配置SDK：
         </tr>
         <tr style="background-color: white; text-align: left;">
                 <td style="padding: 8px; border: 1px solid #ddd;">夹爪夹取</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">VR右遥控器的 T 键控制右夹爪闭合
-            </br>VR左遥控器的 T 键控制左夹爪闭合</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">VR右遥控器的 T 键控制右夹爪开合</br>VR左遥控器的 T 键控制左夹爪开合</td>
             <td style="padding: 8px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">夹爪暂停</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">VR右遥控器的 B 键控制右臂的暂停
-            </br>VR左遥控器的 Y 键控制左臂的暂停
-</br>按一下暂停，再按一下解除暂停</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">手臂暂停</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">VR右遥控器的 G 键控制右臂的暂停</br>VR左遥控器的 G 键控制左臂的暂停</br>按一下暂停，再按一下解除暂停</td>
             <td style="padding: 8px; border: 1px solid #ddd;">解除暂停时，要确保手持遥控器的位置与点击暂停时的位置一致，否则机械臂可能会出现较大幅度的突然移动。</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
@@ -295,25 +297,25 @@ VR设备配置SDK：
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">躯干左右旋转</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">腰部左右旋转</td>
             <td style="padding: 8px; border: 1px solid #ddd;">VR左遥控器摇杆向左/向右
 </td>
-            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节1运动</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-                <td style="padding: 8px; border: 1px solid #ddd;">躯干俯仰</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">腰部前后俯仰</td>
             <td style="padding: 8px; border: 1px solid #ddd;">VR左遥控器摇杆向前/向后</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节2运动</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-                <td style="padding: 8px; border: 1px solid #ddd;">躯干上下平移</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">躯干上下升降</td>
             <td style="padding: 8px; border: 1px solid #ddd;">VR右遥控器摇杆向前/向后</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节3运动</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-                <td style="padding: 8px; border: 1px solid #ddd;">躯干前/后平移</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">躯干前后俯仰</td>
             <td style="padding: 8px; border: 1px solid #ddd;">VR右遥控器T/G键</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">-</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">关节4运动</td>
         </tr>
     </tbody>
 </table>
@@ -344,8 +346,7 @@ VR设备配置SDK：
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">USB-A转USB-C转接线</td>
             <td style="padding: 8px; border: 1px solid #ddd;">2</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">请注意，转接线的长度≥1.5m
-            </br>用于连接机器人背部的USB-A外设接口和腕部相机的USB-C接口</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">用于连接机器人背部的USB-A外设接口和腕部相机的USB-C接口<br>转接线的长度需≥1.5m</td>
         </tr>
     </tbody>
 </table>
@@ -477,7 +478,8 @@ date 为当天日期，格式如下：20250307
 </table>
 
 ### 8. 夹爪夹持力更改
-当前默认的加持速度较快，夹持力较大。，如需变化，您可以手动调整配置文件来修改：
+当前默认的加持速度较快，夹持力较大。如需更改，可手动调整配置文件。
+
 ```bash
 /home/nvidia/vr_workspace/install/share/mobiman/config/gripper_controller_kp_kd.toml
 ```
@@ -488,10 +490,10 @@ date 为当天日期，格式如下：20250307
 
 <span style="color:blue;">**机器人监控平台为付费启用功能，目前处于测试阶段，如需深入了解及购买试用，请联系product@galaxea.ai或致电4008 780 980。**</span>
 
-1. 启动遥操作后，请登录 EDP 平台 https://edp.galaxea-ai.com
+1. 启动遥操作后，请登录星海图EDP具身数据平台 [https://edp.galaxea-ai.com](https://edp.galaxea-ai.com)
    ![VR_9_edp_login_CN](./assets/vr/VR_9_edp_login_CN.png)
 
 2. 选择对应机器人ID，即可监控topic状态等信息。
    ![VR_9_edp_topic_CN](./assets/vr/VR_9_edp_topic_CN.png)
 
-<span style="color:red;">如在安装和启动过程中有任何问题，请及时与我们联系至support@galaxea.ai或致电4008-780-980获得技术支持！</span>
+<span style="color:blue;">如在安装和启动过程中有任何问题，请及时与我们联系至support@galaxea.ai或致电4008-780-980获得技术支持！</span>

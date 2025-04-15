@@ -1,6 +1,7 @@
 # R1 Pro 硬件介绍
 > 本指南将为您详尽解读 Galaxea R1 Pro 硬件信息。
 
+机器人产品详细规格参数如下：
 ## 参数规格
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -90,7 +91,7 @@
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">通信接口</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">USB3.0、HDMI、以太网</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">USB2.0、HDMI、以太网</td>
         </tr>
     </tbody>
 </table>
@@ -110,12 +111,12 @@ Galaxea R1 Pro 头部配备了双目深度相机。
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">长度</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">201 mm</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">尺寸</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">201L x 174W x177H mm</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">高度</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">177 mm</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">自由度</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">无</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">传感器</td>
@@ -139,8 +140,8 @@ Galaxea R1 Pro标配两只Galaxea A2机械臂和两个G1夹爪。
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">长度</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">716 mm</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">单臂工作半径</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">620 mm</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">自由度</td>
@@ -190,6 +191,10 @@ Galaxea R1 Pro标配两只Galaxea A2机械臂和两个G1夹爪。
             <td style="padding: 8px; border: 1px solid #ddd;">1223H x 348W mm</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">自由度</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">4</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">功能</td>
             <td style="padding: 8px; border: 1px solid #ddd;">升降/横摆/俯仰</td>
         </tr>
@@ -215,7 +220,7 @@ Galaxea R1 Pro标配两只Galaxea A2机械臂和两个G1夹爪。
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">USB接口</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">USB3.0，用于连接鼠标和键盘等外部设备。</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">USB2.0，用于连接鼠标和键盘等外部设备。</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">3-Pin 航空插头</td>
@@ -241,12 +246,12 @@ Galaxea R1 Pro标配两只Galaxea A2机械臂和两个G1夹爪。
             <td style="padding: 8px; border: 1px solid #ddd;">675L x 636W x 346H mm</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">硬开关</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">用于开/关闭R1 Pro电源。</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">额定电压</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">48 V</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">充电口</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">额定电压：48 V</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">硬开关</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">用于开/关闭R1 Pro电源。</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">紧急停止按钮</td>
@@ -257,16 +262,12 @@ Galaxea R1 Pro标配两只Galaxea A2机械臂和两个G1夹爪。
             <td style="padding: 8px; border: 1px solid #ddd;">82m³/min，用于散发机器内部产生的热量，防止因过热导致性能下降或不稳定。</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">躯干电机扭矩</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">额定: 108 Nm<br>最大: 304 Nm</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">电池指示器</td>
             <td style="padding: 8px; border: 1px solid #ddd;">用于开启/关闭R1 Pro电源。</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">USB接口</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">USB3.0，用于连接鼠标和键盘等外部设备。</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">USB2.0，用于连接鼠标和键盘等外部设备。</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">3-Pin 航空插头</td>
@@ -274,6 +275,7 @@ Galaxea R1 Pro标配两只Galaxea A2机械臂和两个G1夹爪。
         </tr>
     </tbody>
 </table>
+
 底盘的外设接口位于底盘后侧顶部。
 
 ![R1Pro_chassis_interfaces_cn](./assets/hardware/R1Pro_chassis_interfaces_cn.png)
@@ -303,9 +305,9 @@ Galaxea R1 Pro标配两只Galaxea A2机械臂和两个G1夹爪。
 
 ### 传感器
 
-Galaxea R1 Pro配备了多种传感器，标配1个头部双目相机、5个底盘相机和1个激光雷达。
+Galaxea R1 Pro标配1个头部双目相机、5个底盘相机和1个激光雷达。
 
-<span style="color: blue;">**如需腕部相机和2个激光雷达，请致电4008780980。**</span>
+<span style="color: blue;">**如需选配腕部相机和2个激光雷达，请致电4008780980。**</span>
 
 ![R1Pro_sensor_cn](./assets/hardware/R1Pro_sensor_cn.png)
 
@@ -319,11 +321,11 @@ Galaxea R1 Pro配备了多种传感器，标配1个头部双目相机、5个底�
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">相机</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">头部：1 x 双目深度相机<br>腕部：2 x 单目深度相机<br>底盘：5 x 单目相机</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">头部：1 x 双目深度相机<br>腕部：2 x 单目深度相机（选配）<br>底盘：5 x 单目相机</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">激光雷达</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">2 x 360° （标配1个）</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">2 x 360°</td>
         </tr>
     </tbody>
 </table>                              

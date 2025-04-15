@@ -66,7 +66,14 @@ git clone https://github.com/userguide-galaxea/galaxea_lab.git
 ```
 
 运行最后一行代码后，您将看到如下演示：R1 将开始收集篮子里的水果，同时轨迹数据将以hdf5格式保存。
-![isaaclab_pickcarrot](assets/isaaclab_pickcarrot.mp4)
+
+<div style="display: flex; justify-content: center; align-items: center;">
+<video width="1920" height="1080" controls>
+  <source src="../assets/R1_isaaclab_pickcarrot.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
+
 
 ## Real-to-Sim 资产
 
@@ -236,8 +243,12 @@ if __name__ == "__main__":
 ./isaaclab.sh -p source/standalone/galaxea/basic/simple_env.py
 ```
 
-![isaaclab_spawn_env_randomactionv2](assets/isaaclab_spawn_env_randomactionv2.mp4)
-
+<div style="display: flex; justify-content: center; align-items: center;">
+<video width="1920" height="1080" controls>
+  <source src="../assets/R1_isaaclab_spawn_env_randomactionv2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
 
 ## 自定义任务
 

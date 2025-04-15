@@ -288,7 +288,7 @@ After remote operation is started, the default mode is **BIMANUAL Control Mode**
             <td style="padding: 8px; border: 1px solid #ddd;">-</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Gripper Pause</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Arm Pause</td>
             <td style="padding: 8px; border: 1px solid #ddd;">The B button on the VR right remote controller controls the pause of the right arm.
             </br>The Y button on the VR left remote controller controls the pause of the left arm.
 </br>Press the pause button once, then press it again to release the pause.</td>
