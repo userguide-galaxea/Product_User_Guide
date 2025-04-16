@@ -1,4 +1,13 @@
-# Galaxea R1 Software Changelog
+# R1 Software Version Changelog
 
-- [V 1.1.0](./v1.1.0.md)
-- [V 1.0.4](./v1.0.4.md)
+## ROS 1 Noetic
+
+- [V 1.1.4](./ROS1/v1.1.4.md)
+- [V 1.1.0](./ROS1/v1.1.0.md)
+- [V 1.0.4](./ROS1/v1.0.4.md)
+- [V 1.0.1](./ROS1/v1.0.1.md)
+
+
+## ROS 2 Humble
+
+- [V 2.0.0](./ROS2/v2.0.0.md)  

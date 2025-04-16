@@ -190,7 +190,7 @@ The working range of each joint of the robot arm is shown in the figure below:
 - Figure 2: The maximum rotation angle of Joint 2 and Joint 3 of the robot arm in the Pitch direction is 180 degrees and 190 degrees, respectively; the maximum rotation angle of Joint 4 in the Pitch direction is 180 degrees.
 - Figure 3: The maximum rotation angle of Joint 5 of the robot arm in the Yaw direction is 180 degrees; the maximum rotation angle of Joint 6 in the Roll direction is 330 degrees.
 
-#### A1 Y
+#### A1Y
 The A1Y robot arm has 6 joints with a maximum rotation angle of 330 degrees.
 
 ![A1Y_joint_tag_cn](./assets/A1Y_joint_tag.png)
