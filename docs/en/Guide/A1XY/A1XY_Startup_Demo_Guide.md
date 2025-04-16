@@ -95,8 +95,8 @@ Now, you can start CAN driver in the following steps.
   source {workspace}/install/setup.bash
 
   # Depending on the product model, select one of the following startup methods:
-  roslaunch mobiman a1_x_jointTrackerdemo.launch
-  roslaunch mobiman a1_y_jointTrackerdemo.launch
+  roslaunch mobiman a1x_jointTrackerdemo.launch
+  roslaunch mobiman a1y_jointTrackerdemo.launch
   ```
 
 ### 2.3 Demo 

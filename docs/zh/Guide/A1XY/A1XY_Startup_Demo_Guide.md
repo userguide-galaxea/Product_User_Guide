@@ -108,8 +108,8 @@
       source {your_download_path}/install/setup.bash
       
       # 根据产品型号，选择以下启动方式之一：
-      roslaunch mobiman a1_x_jointTrackerdemo.launch
-      roslaunch mobiman a1_y_jointTrackerdemo.launch
+      roslaunch mobiman a1x_jointTrackerdemo.launch
+      roslaunch mobiman a1y_jointTrackerdemo.launch
       ```
 
 ### 2.3 Demo演示
