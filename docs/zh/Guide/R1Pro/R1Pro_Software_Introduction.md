@@ -2,7 +2,7 @@
 ## 环境依赖
 
 1. 硬件依赖：R1 Pro计算单元
-2. 操作系统依赖：Ubuntu 20.04 LTS（PC安装双系统，非虚拟机）
+2. 操作系统依赖：Ubuntu 20.04 LTS
 3. 中间件依赖：ROS 1 Noetic
 
 ## 获取SDK
@@ -1540,25 +1540,25 @@ roslaunch mobiman r1_pro_right_arm_relaxed_ik.launch
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_pose_arm_left</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">目标左臂末端执行器位姿</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_pose_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>        
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">目标右臂末端执行器位姿</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>   
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂关节反馈</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>   
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右臂关节反馈</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
@@ -1650,19 +1650,19 @@ roslaunch mobiman r1_gripperController.launch robot_type:=R1PRO
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_position_gripper_left</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左夹爪目标位置</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_position_gripper_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>        
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右夹爪目标位置</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_gripper</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>   
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">夹爪电机控制</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
   </tbody>
 </table>
@@ -1725,7 +1725,7 @@ roslaunch mobiman torso_control_r1.launch
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干关节反馈</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_speed_torso</td>
@@ -2058,37 +2058,37 @@ roslaunch mobiman r1_pro_chassis_control.launch
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/pose_ee_arm_left</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">从浮动基座变换到左端执行器姿态</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/pose_ee_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">从浮动基座变换到右端执行器姿态</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/pose_floating_base</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">从基座链接变换到浮动基座</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂电机反馈</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右臂电机反馈</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干电机反馈</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
   </tbody>
 </table>
