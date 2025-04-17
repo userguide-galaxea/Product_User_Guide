@@ -253,7 +253,7 @@ roslaunch mobiman r1_jointTrackerdemo.launch
 #### 4.5.2 启动底盘控制
 按下 `Ctrl + B ` 加 `C` 创建新终端，启动底盘控制。
 ```Bash
-source ~/work/galaxea/install/setup.Bash
+source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_chassis_control.launch
 ```
 
@@ -299,7 +299,7 @@ roslaunch mobiman r1_chassis_control.launch
 1. 按照[第4.3节-启动CAN驱动程序](#43-启动can驱动程序)中的命令完成操作。
 2. 按`Ctrl + B`然后按`C`创建新终端。现在，开始第二次自检。
     ```Bash
-    source work/galaxea/install/setup.Bash
+    source work/galaxea/install/setup.bash
     rosrun HDAS check_node #after executed the command, please press 1. (1 means the self-check when the arms are installed.)
     ```
 3. 按照[第4.5.1节-启动躯干控制](#451-启动躯干控制)和[第4.5.2节-启动底盘控制](#452-启动底盘控制)中的命令完成操作。
