@@ -9,15 +9,14 @@ Before you start testing, please ensure that:
 
 ![R1_stand](../assets/R1_stand.png)
 
-**Visit our GitHub Repository to download script [r1_demo_easy.py](https://github.com/userguide-galaxea/Demo/blob/main/demo_r1/r1_demo_easy.py) for R1 demo testing.**
-```shell
+**Visit our GitHub Repository to download script `r1_demo_easy.py`**
+```bash
 git clone https://github.com/userguide-galaxea/Demo.git
 #r1_demo_easy.py is located in path ${your_work_path}/Demo/blob/main/demo_r1.
 ```
-**Due to the following steps need to this python file, after cloning this repository you should use path `${your_work_path}/Demo/blob/main/demo_r1/r1_demo_easy.py`.**
 
 ## Action Description
-<span style="color:red;">**Important: For your safety, in case of danger during the test, be sure to enter ctrl + C , in the Python 3 terminal where "r1_demo_easy.py" is located, to stop the running action.**</span>
+<span style="color:red;">**Important: For your safety, in case of danger during the test, be sure to press `Ctrl + C` , in the Python 3 terminal where "r1_demo_easy.py" is located, to stop the running action.**</span>
 
 - **arm_test_1:** Both arms are lifted vertically upward and then lowered, where the grippers are tipping vertically downward to the ground.
   <div style="display: flex; justify-content: center; align-items: center;">
@@ -61,7 +60,7 @@ git clone https://github.com/userguide-galaxea/Demo.git
 
 **Only after the above preparation work is completed can the robot be used to start the test.**
 
-<span style="color:red;">**Important: If there is any error, please contact us in time for technical support. If there is no abnormality, press `ctrl+c` to close .**</span>
+<span style="color:red;">**Important: If there is any error, please contact us in time for technical support. If there is no abnormality, press `Ctrl + C` to close .**</span>
 
 **Step 1:** Stop all TMUXs running and close all ROS programs.
 
@@ -76,8 +75,8 @@ pkill -9 ros
 
 ```Bash
 sudo ip link set dev can0 type can bitrate 1000000 dbitrate 5000000 fd on
-# If "RTNETLINK answers: Device or resource busy" appears, it indicates that the CAN transceiver has been configured and is currently running.
 sudo ip link set up can0
+# If "RTNETLINK answers: Device or resource busy" appears, it indicates that the CAN transceiver has been configured and is currently running.
 ```
 
 **Step 3:** Enter TMUX
@@ -96,45 +95,46 @@ roscore
 
 ```Bash
 # Execute the following launch files in different terminals by sequence.
-source ~/work/galaxea/install/setup.bash
+source {your_download_path}/install/setup.bash
 roslaunch HDAS hdas.launch
 ```
 
 **Step 6:** Press `Ctrl + B` then `C` to create a new terminal. Then, start self-check.
 
-<span style="color:red;">**Important: If there is any error, please contact us in time for technical support. If there is no abnormality, press `ctrl+c` to close .**</span>
+<span style="color:red;">**Important: If there is any error, please contact us in time for technical support. If there is no abnormality, press `Ctrl + C` to close .**</span>
 
 ```Bash
-source ~/work/galaxea/install/setup.bash
-rosrun HDAS check_node #press 1  #1 means the self-check when the arms are installed.
+source {your_download_path}/install/setup.bash
+rosrun HDAS check_node 
+#press 1 (1 means the self-check when the arms are installed.)
 ```
 
 **Step 7:** Press `Ctrl + B` then `C` to create a new terminal. Then, start chassis control.
 
 ```Bash
-source ~/work/galaxea/install/setup.bash
+source {your_download_path}/install/setup.bash
 roslaunch mobiman r1_chassis_control.launch
 ```
 
 **Step 8:** `Ctrl + B` then `C` to create a new terminal. Then, start arm and torso control.
 
 ```Bash
-source ~/work/galaxea/install/setup.bash
+source {your_download_path}/install/setup.bash
 roslaunch mobiman r1_jointTrackerdemo.launch
 ```
 
 **Step 9:** Press `Ctrl + B` then `C` to create a new terminal. Then, start the test script.
 
 ```Bash
-source ~/work/galaxea/install/setup.bash
-python3 r1_test.py
+source {your_download_path}/install/setup.bash
+python3 r1_demo_easy.py
 ```
 
 **Step 10:** Enter the number corresponding to each test action and press Enter. Then, R1 will start to perform the test action.
 
 <span style="color:red;">**Important: Before performing torso_test_1, make sure arm_test_3 is verified first.** This is to avoid interference with R1 itself or ground when squatting with the arms in an uncontrollable state.</span>
 
-![enter_no](../assets/enter_no.png)
+![R1_demo_code](./assets/R1_demo_code.png)
 
 When you completed all tests, press `q` to quit testing. R1 will be back to the original pose.
 

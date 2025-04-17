@@ -197,21 +197,21 @@ R1 Pro开机后，等待连接机器人的显示器显示桌面。
 
 2. 启动FDCAN通信。
     ```Bash
-        sudo ip link set dev can0 type can bitrate 1000000 dbitrate 5000000 fd on
-        sudo ip link set up can0  
-        # 可能需要再次输入密码：nvidia
-        # 若出现“RTNETLINK answers: Device or resource busy”这个错误信息，通常表示你尝试配置的设备（如网络接口或CAN收发器）已经被配置并且正在运行中。
+    sudo ip link set dev can0 type can bitrate 1000000 dbitrate 5000000 fd on
+    sudo ip link set up can0  
+    # 可能需要再次输入密码：nvidia
+    # 若出现“RTNETLINK answers: Device or resource busy”这个错误信息，通常表示你尝试配置的设备（如网络接口或CAN收发器）已经被配置并且正在运行中。
     ```
 
 3. 启动roscore。
     ```Bash
-        roscore    
+    roscore    
     ```
 
 4. 按下`Ctrl + B`加`C`，创建新终端，然后启动HDAS。
     ```Bash
-        source {your_download_path}/install/setup.bash
-        roslaunch HDAS r1pro.launch
+    source {your_download_path}/install/setup.bash
+    roslaunch HDAS r1pro.launch
     ```
 
 ### 4.4  第一次自检

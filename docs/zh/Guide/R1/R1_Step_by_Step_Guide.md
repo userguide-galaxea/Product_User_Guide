@@ -117,8 +117,7 @@
 
 ## 3. R1开机
 ### 3.1 连接HDMI和USB
-<span style="color: red;">**重要提示：为了您的安全，请在连接任何电缆之前先关闭R1的电源。**
-</span>
+<span style="color: red;">**重要提示：为了您的安全，请在连接任何电缆之前先关闭R1的电源。**</span>
 
 请按照以下步骤连接R1：
 
@@ -167,7 +166,7 @@ R1开机后，等待显示器显示桌面。
 
 2. 打开终端并输入以下命令：
     ```Bash
-      ifconfig mlan0
+    ifconfig mlan0
     ```
 
 3. 找到`mlan0`。R1 Orin的IP地址是：`192.168.xxx.xxx`。
@@ -177,13 +176,13 @@ R1开机后，等待显示器显示桌面。
 1. 使用另一台计算机。
 2. 在终端输入以下命令以连接Orin。
     ```Bash
-      ssh nvidia@IP address
-      # Enter the password  (default: nvidia)
+    ssh nvidia@IP address
+    # Enter the password  (default: nvidia)
     ```
 3. 如果连接成功，请断开HDMI和USB电缆，并关闭底盘和胸腔的外设接口盖，以免影响活动范围。
 4. 然后进行[第4.3节-启动CAN驱动程序](#43-启动can驱动程序)，继续后续流程。
 
-<span style="color: blue;">如果连接失败，请及时联系我们<a href="mailto:support@galaxea.ai">support@galaxea.ai</a>提供技术支持。</span>
+<span style="color: red;">如果连接失败，请及时联系我们<a href="mailto:support@galaxea.ai">support@galaxea.ai</a>提供技术支持。</span>
 
 ### 4.3 启动CAN驱动程序
 在控制R1的整个过程中，您需要打开多个终端。我们建议您使用TMUX。常用指令如下：
@@ -200,8 +199,8 @@ R1开机后，等待显示器显示桌面。
 2. 启动FDCAN通信。
     ```Bash
     sudo ip link set dev can0 type can bitrate 1000000 dbitrate 5000000 fd on
-    # If "RTNETLINK answers: Device or resource busy" appears, it indicates that the CAN transceiver has been configured and is currently running.
     sudo ip link set up can0  
+    # 若出现“RTNETLINK answers: Device or resource busy”这个错误信息，通常表示你尝试配置的设备（如网络接口或CAN收发器）已经被配置并且正在运行中。
     ```
 
 3. 启动roscore。
@@ -211,7 +210,7 @@ R1开机后，等待显示器显示桌面。
 
 4. 按下`Ctrl + B`加`C`，创建新终端，然后启动HDAS。
     ```Bash
-    source ~/work/galaxea/install/setup.bash
+    source ~/{your_download_path}/install/setup.bash
     roslaunch HDAS r1.launch
     ```
 
@@ -227,9 +226,9 @@ R1开机后，等待显示器显示桌面。
 
 1. 按`Ctrl + B`然后按`C`创建新终端。然后启动自检。
    ```Bash
-   source ~/work/galaxea/install/setup.bash
+   source ~/{your_download_path}/install/setup.bash
    rosrun HDAS check_node 
-   #after executed the command, please press 0. (0 means the self-check when the arms are uninstalled.)
+   # 输入0 (0 表示安装机械臂后的自检；1表示未装机械臂时的自检)
    ```
 
 2. 如果显示“self-check completed”，如下图所示，表示自检完成，请按`Ctrl + C`退出。
@@ -246,14 +245,14 @@ R1开机后，等待显示器显示桌面。
 #### 4.5.1 启动躯干控制
 按下 `Ctrl + B ` 加 `C` 创建新终端，启动臂部和躯干控制。
 ```Bash
-source ~/work/galaxea/install/setup.bash
+source ~/{your_download_path}/install/setup.bash
 roslaunch mobiman r1_jointTrackerdemo.launch
 ```
 
 #### 4.5.2 启动底盘控制
 按下 `Ctrl + B ` 加 `C` 创建新终端，启动底盘控制。
 ```Bash
-source ~/work/galaxea/install/setup.bash
+source ~/{your_download_path}/install/setup.bash
 roslaunch mobiman r1_chassis_control.launch
 ```
 
@@ -299,8 +298,9 @@ roslaunch mobiman r1_chassis_control.launch
 1. 按照[第4.3节-启动CAN驱动程序](#43-启动can驱动程序)中的命令完成操作。
 2. 按`Ctrl + B`然后按`C`创建新终端。现在，开始第二次自检。
     ```Bash
-    source work/galaxea/install/setup.bash
-    rosrun HDAS check_node #after executed the command, please press 1. (1 means the self-check when the arms are installed.)
+    source {your_download_path}/install/setup.bash
+    rosrun HDAS check_node 
+    # 输入1 (0 表示安装机械臂后的自检；1表示未装机械臂时的自检)
     ```
 3. 按照[第4.5.1节-启动躯干控制](#451-启动躯干控制)和[第4.5.2节-启动底盘控制](#452-启动底盘控制)中的命令完成操作。
 
