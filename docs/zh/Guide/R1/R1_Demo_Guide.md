@@ -79,8 +79,8 @@ git clone https://github.com/userguide-galaxea/Demo.git
 
 5.按下 `Ctrl + B` 加 `C` 创建一个新终端，并执行启动文件。
    ```Bash
-   source {your_download_path}/install/setup.bash
-   roslaunch HDAS hdas.launchch
+   source ~/{your_download_path}/install/setup.bash
+   roslaunch HDAS r1.launch
    ```
 
 6.按下 `Ctrl + B` 加 `C` 创建一个新终端，进行自检。

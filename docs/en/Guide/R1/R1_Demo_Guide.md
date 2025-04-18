@@ -94,9 +94,8 @@ roscore
 **Step 5:** Press `Ctrl + B` then `C` to create a new terminal, and execute launch file.  
 
 ```Bash
-# Execute the following launch files in different terminals by sequence.
-source {your_download_path}/install/setup.bash
-roslaunch HDAS hdas.launch
+source ~/{your_download_path}/install/setup.bash
+roslaunch HDAS r1.launch
 ```
 
 **Step 6:** Press `Ctrl + B` then `C` to create a new terminal. Then, start self-check.
