@@ -205,6 +205,33 @@ This interface is used for the robot arm control and status feedback ROS package
     </tbody>
 </table>
 
+Arm services such as enable/disable/calibration/contro mode switch can be processed by the following interfaces:
+<table style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 200px; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Topic Name</th>
+            <th style="width: 300px; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 100px;">I/O</th>            
+            <th style="width: 300px; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Description</th>
+            <th style="width: 300px; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">Message Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/function_frame_left_arm</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                    
+            <td style="padding: 8px; border: 1px solid #ddd;">Arm function frame</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg/FunctionFrame</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/function_frame_right_arm</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                                   
+            <td style="padding: 8px; border: 1px solid #ddd;">Arm function frame</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg/FunctionFrame</td>
+        </tr>
+    </tbody>
+</table>
+
+
 The specific fields and their detailed descriptions for the above topic are shown in the table below:
 
 <table style="width: 100%; border-collapse: collapse;">
@@ -536,6 +563,31 @@ The specific fields and their detailed descriptions for the above topic are show
     </tr>
   </tbody>
 </table>
+
+手臂服务接口：
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Topic Name</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">Field</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd;width: 600px;">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/function_frame_left_arm</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">command</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: enable<br>2: disable<br>3: calibration for the whole arm<br>4: clear error<br>5: MIT control mode<br>6: PID control mode</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/function_frame_right_arm</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">command</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: enable<br>2: disable<br>3: calibration for the whole arm<br>4: clear error<br>5: MIT control mode<br>6: PID control mode</td>
+    </tr>
+  </tbody>
+</table>
+
+
 
 ***Joint Motor Control Interface Description**
 

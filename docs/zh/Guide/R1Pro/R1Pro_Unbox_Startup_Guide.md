@@ -256,7 +256,18 @@ source {your_download_path}/install/setup.bash
 roslaunch mobiman r1_pro_chassis_control.launch
 ```
 
-#### 4.5.3 遥控器操作
+#### 4.5.3 上位机控制
+按下`Ctrl + B`然后按`C`创建一个新终端，执行以下脚本。
+```bash
+source {your_download_path}/install/setup.bash
+cd {your_download_path}/install/share/mobiman/script
+python3 r1pro_test_open_box.py
+```
+
+输入`5`然后按下`Enter`，R1 Pro将站立，按`q`即可退出Demo脚本。
+![R1Pro_4.5.3_torso_control_5_cn](assets/unbox/R1Pro_4.5.3_torso_control_5_cn.png)
+
+<!-- #### 4.5.3 遥控器操作
 <span style="color:red"> 注意：在进行任何操作之前，请确保所有开关（SWA/SWB/SWC/SWD）都处于顶部位置。</span>这将使机器处于停止状态，防止R1 Pro误操作。如果需要获取更多详细操作信息，请参阅Galaxea R1 Pro用户指南中的遥控器指南。
 
 1. 要开启/关闭控制器，请按住两个电源按钮，直到触摸屏亮起/熄灭。
@@ -266,7 +277,7 @@ roslaunch mobiman r1_pro_chassis_control.launch
 3. 保持长拨杆SWC和短拨杆SWD在上方。
 
 4. 同时将左操纵杆移至左上角，右操纵杆移至右上角（如下图所示）。等待3秒钟，**R1 Pro即可站立。**
-   ![R1Pro_4.5.3_controller_stand_cn](./assets/unbox/R1Pro_4.5.3_controller_stand_cn.png)
+   ![R1Pro_4.5.3_controller_stand_cn](./assets/unbox/R1Pro_4.5.3_controller_stand_cn.png) -->
 
    
 ## 5. 安装手臂

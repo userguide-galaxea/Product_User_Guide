@@ -260,7 +260,18 @@ source {your_download_path}/install/setup.bash
 roslaunch mobiman r1_pro_chassis_control.launch
 ```
 
-#### 4.5.3 Joystick Controller Operation
+#### 4.5.3 Host Computer Control
+Press `Ctrl + B` then `C` to create a new terminal. Then, execute the following conmand.
+```bash
+source {your_download_path}/install/setup.bash
+cd {your_download_path}/install/share/mobiman/script
+python3 r1pro_test_open_box.py
+```
+
+Enter `5` then press `Enter`, R1 Pro will stand; enter `q`to quit the demo script.
+![R1Pro_4.5.3_torso_control_5](assets/unbox/R1Pro_4.5.3_torso_control_5.png)
+
+<!-- #### 4.5.3 Joystick Controller Operation
 <span style="color:red"> Note: Before any operation, ensure all switches (SWA/SWB/SWC/SWD) are in the top position. </span>This will keep the machine stopped and prevent robot operation. For more detailed operation information, refer to the remote controller guide in the Getting Started.
 
 1. To turn the controller on/off, hold the two power buttons until the touch screen lights on/off.
@@ -268,7 +279,7 @@ roslaunch mobiman r1_pro_chassis_control.launch
 3. Keep the SWC switch and the SWD switch in the top position. 
 4. Move the left joystick to the top-left and the right joystick to the top-right simultaneously as shown in the figure below. Wait for 3 seconds, and R1 will stand up.
 
-![R1Pro_4.5.3_controller_stand](./assets/unbox/R1Pro_4.5.3_controller_stand.png)
+![R1Pro_4.5.3_controller_stand](./assets/unbox/R1Pro_4.5.3_controller_stand.png) -->
 
 
 

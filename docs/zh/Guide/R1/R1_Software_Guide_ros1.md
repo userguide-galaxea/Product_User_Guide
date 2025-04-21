@@ -174,6 +174,32 @@ roslaunch HDAS r1.launch
     </tbody>
 </table>
 
+手臂使能/失能/标定/控制模式切换可通过以下服务接口进行控制：
+<table style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;table-layout: fixed;">
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">服务名称</th>
+            <th style="width: 100px; padding: 8px; border: 1px solid #ddd;">I/O</th>          
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">描述</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">消息类型</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/function_frame_left_arm</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                    
+            <td style="padding: 8px; border: 1px solid #ddd;">机械臂功能帧</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg/FunctionFrame</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">/hdas/function_frame_right_arm</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                                   
+            <td style="padding: 8px; border: 1px solid #ddd;">机械臂功能帧</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg/FunctionFrame</td>
+        </tr>
+    </tbody>
+</table>
+
 针对以上话题的具体字段及其详细描述如下表所示：
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
@@ -504,6 +530,30 @@ roslaunch HDAS r1.launch
     </tr>
   </tbody>
 </table>
+
+手臂服务接口：
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">话题名称</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">字段</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 600px;">描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/function_frame_left_arm</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">command</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: 使能<br>2: 失能<br>3: 整臂标定<br>4: 清除错误<br>5: MIT<br>6: PID</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/function_frame_right_arm</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">command</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: 使能<br>2: 失能<br>3: 整臂标定<br>4: 清除错误<br>5: MIT<br>6: PID</td>
+    </tr>
+  </tbody>
+</table>
+
 
 **机械臂关节电机控制接口说明**
 
