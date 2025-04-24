@@ -88,7 +88,7 @@ Also, prepare the following items:
     </tbody>
 </table>
 
-**Note: To ensure proper operation of the product, please place R1 in a dry, well-ventilated environment and ensure there are no obstacles or hazardous materials around.**
+**Note: To ensure proper operation of the product, please place A1XY in a dry, well-ventilated environment and ensure there are no obstacles or hazardous materials around.**
 
 ## 2. Installing the Arm
 

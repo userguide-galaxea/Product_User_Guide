@@ -13,8 +13,9 @@
 
 - Google Drive: [https://drive.google.com/drive/folders/12oYeylWJWcaRDKeD2qG7xQNI7rFpBbel?usp=sharing](https://drive.google.com/drive/folders/12oYeylWJWcaRDKeD2qG7xQNI7rFpBbel?usp=sharing)
 
-## 开发与操作教程
-### 初次使用设置
+## 启动SDK
+<span style="color:red;">**注意：每次重新连接USB线束之后，务必要执行以下命令。**</span>
+
 1. 确认电源和USB连接后，运行以下命令修改串口文件的读写权限：
     ```Bash
     sudo chmod 777 /dev/ttyACM0
@@ -25,9 +26,8 @@
     source setup.bash
     roslaunch signal_arm single_arm_node.launch
     ```
-    接口部分描述了A1机械臂的各种控制和状态反馈接口，帮助用户了解如何通过ROS包连接和控制机械臂。
 
-### Demo演示
+## Demo演示
 点击[此处](https://github.com/userguide-galaxea/A1_SDK/tree/galaxea/main/resource)获取A1 Demo脚本。
 
 ```Bash
@@ -35,6 +35,7 @@ cd A1_SDK/install
 source setup.bash
 roslaunch mobiman eeTrackerdemo.launch
 ```
+
 运行以下命令以控制末端执行器运动：
 ```Bash
 rostopic pub /a1_ee_target geometry_msgs/PoseStamped "{
@@ -49,6 +50,7 @@ orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
 }
 }"
 ```
+
 ## 软件接口
 ### 驱动接口
 该接口是一个用于机械臂控制和状态反馈的ROS包，定义了多个话题用于发布和订阅臂的状态、控制命令和相关错误代码。以下是每个话题及其相关消息类型的详细描述：
@@ -93,6 +95,7 @@ orientation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
         </tr>
     </tbody>
 </table>
+
 <table style="border-collapse: collapse; width: 100%;">
     <thead>
         <tr tr style="background-color: black; color: white;text-align: left;">

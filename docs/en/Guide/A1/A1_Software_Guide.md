@@ -14,8 +14,9 @@ Alternatively, you can obtain the SDK using either of the following methods:
 - Baidu Cloud：[https://pan.baidu.com/s/1w-zctmpHBfk_Sqm2uihAaA?pwd=arm1](https://pan.baidu.com/s/1w-zctmpHBfk_Sqm2uihAaA?pwd=arm1)
 - Google Drive: [https://drive.google.com/drive/folders/12oYeylWJWcaRDKeD2qG7xQNI7rFpBbel?usp=sharing](https://drive.google.com/drive/folders/12oYeylWJWcaRDKeD2qG7xQNI7rFpBbel?usp=sharing)
 
-## Developing and Operating Tutorial
-### Initial Setup
+## Start SDK
+<span style="color:red;">**Note: After reconnecting the USB cable each time, make sure to execute the following commands.**</span>
+
 1. After confirming the power and USB connection, run the following command to modify the serial port file's read and write permissions:
 ```Bash
 sudo chmod 777 /dev/ttyACM0
@@ -28,12 +29,14 @@ source setup.bash
 roslaunch signal_arm single_arm_node.launch
 ```
 
-3. Click [here](https://github.com/userguide-galaxea/A1_SDK/tree/galaxea/main/resource) to get the Demo scripts for A1.
+## Demo
+Click [here](https://github.com/userguide-galaxea/A1_SDK/tree/galaxea/main/resource) to get the Demo scripts for A1.
 ```Bash
 cd A1_SDK/install
 source setup.bash
 roslaunch mobiman eeTrackerdemo.launch
 ```
+
 ```Bash
 rostopic pub /a1_ee_target geometry_msgs/PoseStamped "{
 header: {

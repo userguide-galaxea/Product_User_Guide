@@ -49,13 +49,11 @@ The current Galaxea R1 driver consists of several components, including actuator
 Click [here](./R1_Step_by_Step_Guide.md/#43-start-can-driver) to view detailed startup instructions.
 All the components can be launched by using the following command template. 
 
-Remember to change `roslaunch` to `ros2 launch` for each module.
-
 ```Bash
 source {your_download_path}/install/setup.bash
-ros2 launch <Package Name> <Launch File>
+roslaunch <Package Name> <Launch File>
 # example
-ros2 launch HDAS r1.py
+roslaunch HDAS r1.launch
 ```
 
 <table style="width: 100%; border-collapse: collapse;">
@@ -1594,13 +1592,18 @@ The specific fields and their detailed descriptions for the above topic are show
 R1 Arm Pose Control is a ROS package for controlling arm movement to the target end-effector (ee) frame. It can be launched using the following command:
 
 ```bash
-source {your_download_path}install/setup.bash
-roslaunch mobiman r1_left_arm_mpc.launch  # MPC control of the left arm end-effector.
-roslaunch mobiman r1_right_arm_mpc.launch  # MPC control of the right arm end-effector.
+source {your_download_path}/install/setup.bash
+roslaunch mobiman r1_left_arm_relaxed_ik_mit.launch
+roslaunch mobiman r1_right_arm_relaxed_ik_mit.launch
 ```
 
 Note：
 
+- After the dual-arm pose control is activated, the joint control node still needs to be started. This is because pose control involves continuously solving for the target joint angles based on the target end-effector (ee) pose, and then publishing these angles to `/motion_target/target_joint_state_arm_left` and `/motion_target/target_joint_state_arm_right`.
+  ```bash
+  source {your_download_path}/install/setup.bash
+  roslaunch mobiman r1_jointTrackerdemo.launch
+  ```
 - When the dual-arm pose controller is activated, both the left and right arms will automatically adjust to the position shown in the figure below. Please ensure that the R1 is placed with both arms naturally hanging down to avoid initialization failure due to excessive movement angles.
 - The current end-effector pose control's relative pose is the transformation of the gripper_link relative to torso_link4 in the URDF. For the left arm, this refers to the relative relationship between the left_gripper_link coordinate frame and torso_link4 coordinate frame, including offsets in x, y, and z, as shown in the right figure below, transforming as well as the rotational offsets corresponding to the orientation.
 
@@ -1642,16 +1645,16 @@ The interface is shown below.
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_left</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>   
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Control of left arm motor</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Target joint state of left arm</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>   
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Control of right arm motor</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Target joint state of right arm</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
   </tbody>
 </table>
@@ -1703,7 +1706,12 @@ The specific fields and their detailed descriptions for the above topic are show
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left<br>/hdas/feedback_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Refer to HDAS msg</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Refer to the arm driver interace </td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_left<br>/motion_target/target_joint_state_arm_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Refer to the arm driver interace </td>
     </tr>
   </tbody>
 </table>

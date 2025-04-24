@@ -49,11 +49,12 @@ The current Galaxea R1 driver consists of several components, including actuator
 
 Click [here](./R1_Step_by_Step_Guide.md/#43-start-can-driver) to view detailed startup instructions.
 All the components can be launched by using the following command template.
+
 ```Bash
 source {your_download_path}install/setup.bash
-roslaunch <Package Name> <Launch File>
+ros2 launch <Package Name> <Launch File>
 # Example
-roslaunch HDAS r1.launch
+ros2 launch HDAS r1.py
 ```
 
 <table style="width: 100%; border-collapse: collapse;">

@@ -1558,15 +1558,21 @@ roslaunch mobiman r1_jointTrackerdemo_fast_disable_torso.launch
 注意：此功能应与躯干速度控制接口一起使用。躯干速度控制接口将直接调用电机控制接口，因此应禁用躯干关节控制。
 
 #### 手臂姿态控制
-R1手臂姿态控制是一个用于控制手臂移动到目标末端执行器（ee）坐标帧的ROS软件包。它主要包括两个launch文件,分别对应 左臂的姿态控制和右臂的姿态控制, 可以通过以下命令启动
+R1手臂姿态控制是一个用于控制手臂移动到目标末端执行器（ee）坐标帧的ROS软件包。它主要包括两个launch文件,分别对应左臂的姿态控制和右臂的姿态控制, 可以通过以下命令启动
 
 ```bash
-source {your_download_path}install/setup.bash
-roslaunch mobiman r1_left_arm_mpc.launch  # MPC control of the left arm end-effector.
-roslaunch mobiman r1_right_arm_mpc.launch  # MPC control of the right arm end-effector.
+source {your_download_path}/install/setup.bash
+roslaunch mobiman r1_left_arm_relaxed_ik_mit.launch
+roslaunch mobiman r1_right_arm_relaxed_ik_mit.launch
 ```
 
 请注意：
+
+- 当双臂姿态控制器启动后，还是需要将关节控制节点启动，原因是姿态控制是根据目标ee姿态不断解算出目标关节角下发给`/motion_target/target_joint_state_arm_left`和`/motion_target/target_joint_state_arm_right`。
+  ```bash
+  source {your_download_path}/install/setup.bash
+  roslaunch mobiman r1_jointTrackerdemo.launch
+  ```
 
 - 当双臂姿态控制器启动后，左右双臂将自动调整至左图所示的状态。请确保将R1置于双臂自然垂下的位置，以避免因运动角度过大导致初始化失败。
 
@@ -1610,16 +1616,16 @@ roslaunch mobiman r1_right_arm_mpc.launch  # MPC control of the right arm end-ef
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_left</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>   
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂电机控制</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂关节目标</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>   
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右臂电机控制</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右臂关节目标</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
   </tbody>
 </table>
@@ -1669,6 +1675,11 @@ roslaunch mobiman r1_right_arm_mpc.launch  # MPC control of the right arm end-ef
     </tr>      
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left<br>/hdas/feedback_arm_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_left<br>/motion_target/target_joint_state_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
     </tr>
