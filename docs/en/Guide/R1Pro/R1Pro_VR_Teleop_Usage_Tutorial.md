@@ -33,7 +33,7 @@ The following tutorial will provide a detailed introduction to the activation me
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Host Computer (Dual systems)</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">System：Ubuntu20.04, ROS Noetic</br>Used for upgrading the software program of R1 Pro Base.</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">System：Ubuntu20.04 ROS 1 Noetic; or Unbuntu 22.04 ROS 2 Humble</br>Used for upgrading the software program of R1 Pro Base.</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Local Area Network (LAN)</td>
@@ -45,12 +45,12 @@ The following tutorial will provide a detailed introduction to the activation me
 
 
 ### 2.2 Software Preparation
-Click the following links to download R1 Pro VR Teleop SDK `V1.1.4`. (R1 Pro SDK contains VR Teleop resources.) 
 
-- Baidu Cloud：[R1 Pro SDK V1.1.4](https://pan.baidu.com/s/1rQd3_Cu4E9PjygupxeQDig?pwd=v114)
-- Google Drive：[R1 Pro SDK V1.1.4](https://drive.google.com/drive/folders/1RTt6NMOoA0pjbx5qXkYCb2fyQyUHyZFf?usp=sharing)
+Visit the [R1 Pro Software Version Changelog](./R1Pro_Software_Changelog/R1Pro_changelog.md) to download the latest SDK (ATC SDK contains all resources). 
 
-VR Device Configuration SDK:
+<span style="color:red;">Note: If you use Ubuntu 20.04 ROS 1 Noetic system, refer to the SDK launch commands in the [Software Introduction ROS 1 Noetic](./R1Pro_Software_Introduction_ROS1.md). If you use Ubuntu 22.04 ROS 2 Humble system, refer to the SDK launch commands in the [Software Introduction ROS 2 Humble](./R1Pro_Software_Introduction_ROS2.md). </span>
+
+Meanwhile, download the file `VR Device Configuration SDK` from the same source link as the main SDK in the changelog.
 
 - `Meta Quest 3 Installation Package`: Used for activating new devices.
 - `platform-tools-latest-windows`: Contains adb files for installing the data collection app inside the VR headset.
@@ -88,47 +88,49 @@ Inside the VR device, click on the connected WiFi, open the network page, and sc
 ## 4. R1 Pro Configuration
 Install the Galaxea R1 Pro VR Teleop SDK V1.1.4
 
-1. **Download and copy the SDK**
-Download the file`atc_standard-V1.1.4-20250408_00_26_42.tar.gz` ，and execute the following command to copy the SDK to R1 Pro.
-```Bash
-scp atc_standard-V1.1.4-20250408_00_26_42.tar.gz nvidia@${R1_Pro_IP}:~/Downloads
-```
+1. Download the file`sdk_name.tar.gz` ，and execute the following command to copy the SDK to R1 Pro.
+    ```Bash
+    scp sdk_name.tar.gz nvidia@${R1_Pro_IP}:~/Downloads
+    ```
 
-2. **Log in to R1 Pro**
-```Bash
-ssh nvidia@${R1_Pro_IP}
-```
+2. Log in to R1 Pro.
+    ```Bash
+    ssh nvidia@${R1_Pro_IP}
+    ```
 
-3. **Decompress the SDK to R1 Pro**
-```Bash
-mkdir ~/vr_workspace
-tar -zxvf ~/Downloads/atc_standard-V1.1.4-20250408_00_26_42.tar.gz -C ~/vr_workspace
-```
-4. **Install an extra dependency**
-```Bash
-pip3 install websockets pyquaternion
-```
-Once the upgrade is completed, power off R1 Pro and restart it. After the restart, the software package configuration is completed and the VR Teleop operation function can be used.
+3. Decompress the SDK to R1 Pro.
+    ```Bash
+    mkdir ~/vr_workspace
+    tar -zxvf ~/Downloads/sdk_name.tar.gz -C ~/vr_workspace
+    ```
+
+4. Install an extra dependency.
+    ```Bash
+    pip3 install websockets pyquaternion
+    ```
+
+Once the upgrade is completed, power off the robot and restart it. After the restart, the software package configuration is completed and the VR Teleop operation function can be used.
 
 ## 5. Start VR Teleop Operation
+
 **Note: All operations in this section need to be completed and confirmed each time you start.**
 
-### 5.1 Start R1 Pro Base Program
+### 5.1 Start R1 Pro Base Programme
 
 1. Log in to R1 Pro.
-```Bash
-ssh nvidia@${R1_Pro_IP}
-```
+    ```Bash
+    ssh nvidia@${R1_Pro_IP}
+    ```
 
 2. Enter the software package startup directory.
-```Bash
-cd ~/vr_workspace/install/share/startup_config/script/
-```
+    ```Bash
+    cd ~/vr_workspace/install/share/startup_config/script/
+    ```
 
 3. Start the program.
-```Bash
-ROS_IP=${R1_Pro_IP} ROS_MASTER_URI=http://${R1_Pro_IP}:11311 VR_IP=${VR_IP} ./robot_startup.sh boot ../session.d/ATCStandard/R1PROVRTeleop.d/
-```
+    ```Bash
+    ROS_IP=${R1_Pro_IP} ROS_MASTER_URI=http://${R1_Pro_IP}:11311 VR_IP=${VR_IP} ./robot_startup.sh boot ../session.d/ATCStandard/R1PROVRTeleop.d/
+    ```
 
 ### 5.2 Start VR Device Program
 **Note:** Please wear the VR device and hold two remote controllers. Then start the following operations.

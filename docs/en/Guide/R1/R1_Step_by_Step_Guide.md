@@ -266,8 +266,18 @@ Press `Ctrl + B` then `C` to create a new terminal. Then, start chassis control.
 source ~/work/galaxea/install/setup.bash
 roslaunch mobiman r1_chassis_control.launch
 ```
+#### 4.5.3 Host Computer Control
+Press `Ctrl + B` then press `C` to create a new terminal. Then, execute the following command.
 
-#### 4.5.3 Joystick Controller Operation
+```bash
+source ~/work/galaxea/install/setup.bash
+python3 r1_demo_easy.py
+```
+
+Type `1` then press `Enter`, R1 Pro will stand up; press `q` to quit the demo script.
+![R1_4.5.3_demo](./assets/R1_4.5.3_demo.png)
+
+<!-- #### 4.5.3 Joystick Controller Operation
 <span style="color:red;">Note: Ensure that all switches (SWA/SWB/SWC/SWD) are in the top position before you do any actions. </span> This will place the machine in a stop state, preventing the robot from operating. Please visit [Joystick Controller Guide](R1_Overview.md/#joystick-controller-teleoperation) in Galaxea R1 User Guide for more detailed information and operation, if you need.
 
 1. To turn the controller on/off, hold the two power buttons until the touch screen lights up/goes out.
@@ -276,7 +286,7 @@ roslaunch mobiman r1_chassis_control.launch
 
 <div style="text-align: center;">
   <img src="../assets/3.6.3_controller_standup.png" width="500">
-</div>
+</div> -->
 
 ## 5. Install Arms
 <span style="color:red;">**Important: For your safety, please make R1 stand up and powered off before installing arms.**</span>
@@ -321,7 +331,7 @@ Then, <span style="color:red;">**power it on**</span> and:
 
 After completing all the operations above, <span style="color:red;">move R1 to an open area to ensure there are no obstacles around. </span> Then remotely command R1 to perform demo testing.
 
-You can find the document and python scripts in [R1 Demo Guide](R1_demo_test.md).
+You can find the document and python scripts in [R1 Demo Guide](./R1_Demo_Guide.md).
 
 ## 8. Sensor Calibration Data Collection Method
 Visit [R1 Sensor Calibration Data Collection Method](./R1_Sensor_Calibration_Data_Collection_Method.md) to get the detailed information on how to calibrate the sensors.

@@ -486,13 +486,13 @@ When activating the positioning function, make sure the robot is in a known map.
 R1 offers multiple driver interfaces for communication and control with hardware devices. 
 
 #### 5.2.1 Chassis Drive Interface
-`/motion_control/chassis_speed`：It is used for the chassis status feedback ROS package, which defines multiple topics to report the status of the chassis' motors. Please refer to the " [Chassis Drive Interface](Software_Guide.md/#chassis-driver-interface) "  in the Software Guide for more detailed information.
+`/motion_control/chassis_speed`：It is used for the chassis status feedback ROS package, which defines multiple topics to report the status of the chassis' motors. Please refer to the Chassis Drive Interface in the [Software Guide](./R1_Software_Guide.md) for more detailed information.
 
 #### 5.2.2 LiDAR Interface
-`/hdas/lidar_chassis_left`：It is used for environmental perception and distance measurement, providing real-time environmental information to robots. For more detailed information, please refer to the "[Lidar Interface](Software_Guide.md/#lidar-interface) " in the Software Guide for more detailed information.
+`/hdas/lidar_chassis_left`：It is used for environmental perception and distance measurement, providing real-time environmental information to robots. For more detailed information, please refer to the Lidar Interface in the [Software Guide](./R1_Software_Guide.md) for more detailed information.
 
 #### 5.2.3 IMU Interface
-`/hdas/imu_chassis`：It is used to measure the acceleration and angular velocity of the robot, providing data support for navigation and attitude control. For more detailed information, please refer to the " [IMU Interface](Software_Guide.md/#imu-interfaces) " in the Software Guide for more detailed information.
+`/hdas/imu_chassis`：It is used to measure the acceleration and angular velocity of the robot, providing data support for navigation and attitude control. For more detailed information, please refer to the " IMU Interface in the [Software Guide](./R1_Software_Guide.md) for more detailed information.
 
 ### 5.3 Motion Control Interface
 R1 offers multiple motion control interfaces for achieving precise control of the robot's movements. Below are the main motion control interfaces and their descriptions.

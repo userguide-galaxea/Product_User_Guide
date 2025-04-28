@@ -9,8 +9,8 @@ The following tutorial will provide a detailed introduction to the activation me
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">item</th>
-            <th style="width: 100px; padding: 8px; border: 1px solid #ddd;">quantity</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Item</th>
+            <th style="width: 100px; padding: 8px; border: 1px solid #ddd;">Quantity</th>
             <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">Note</th>
         </tr>
     </thead>
@@ -33,7 +33,7 @@ The following tutorial will provide a detailed introduction to the activation me
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Host Computer (Dual systems)</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">System：Ubuntu20.04 ROS Noetic</br>Used for upgrading the software program of R1 Base.</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">System：Ubuntu20.04 ROS 1 Noetic or Ubuntu 22.04 ROS 2 Humble</br>Used for upgrading the software program of R1 Base.</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Local Area Network (LAN)</td>
@@ -44,20 +44,15 @@ The following tutorial will provide a detailed introduction to the activation me
 </table>
 
 ### 2.2 Software Preparation
-Please download and extract the R1 remote operation package version V1.1.0.
+Visit the [R1 Pro Software Version Changelog](./R1_Software_Changelog/R1_changelog.md) to download the latest SDK (ATC SDK contains all resources). 
 
-- Baidu Cloud：[https://pan.baidu.com/s/136OzRy-4_8b5USQg3btJCQ?pwd=r1vr](https://pan.baidu.com/s/136OzRy-4_8b5USQg3btJCQ?pwd=r1vr)
-- Google Drive：[https://drive.google.com/drive/folders/1NADvlQDxJ8LASTA42AxzGY34oqcSZNmq?usp=sharing](https://drive.google.com/drive/folders/1NADvlQDxJ8LASTA42AxzGY34oqcSZNmq?usp=sharing)
+<span style="color:red;">Note: If you use Ubuntu 20.04 ROS 1 Noetic system, refer to the SDK launch commands in the [Software Introduction ROS 1 Noetic](./R1_Software_Guide_ros1.md). If you use Ubuntu 22.04 ROS 2 Humble system, refer to the SDK launch commands in the [Software Introduction ROS 2 Humble](./R1_Software_Guide_ros2.md). </span>
 
-VR Device Configuration SDK:
+Meanwhile, download the file `VR Device Configuration SDK` from the same source link as the main SDK in the changelog.
 
-- Meta Quest 3 Installation Package: Used for activating new devices.
-- platform-tools-latest-windows: Contains adb files for installing the data collection app inside the VR headset.
-- GalaxeaVR-V1-0-1.apk: The data collection app for the VR headset.
-
-Galaxea R1 VR Teleoperation SDK_V1.1.0:
-
-- R1_vrteleop-V1.1.0-20250213_19_03_45.tar: The VR teleoperation software package for the R1 robot.
+- `Meta Quest 3 Installation Package`: Used for activating new devices.
+- `platform-tools-latest-windows`: Contains adb files for installing the data collection app inside the VR headset.
+- `GalaxeaVR-V1-0-1.apk`: The data collection app for the VR headset.
 
 ## 3. VR Device Configuration
 ### 3.1 Activating VR Device Developer Mode
@@ -66,26 +61,22 @@ Please refer to [the Meta Quest 3 developer mode user guide](https://blog.csdn.n
 ### 3.2 VR Device SDK Installation
 
 1. Extract the ADB files：Download and extract the`platform-tools-latest-windows.zip`file.
-
 2. Connect the VR device: Use a Type-C USB cable to connect the VR device to the computer.
-
 3. Authorize USB connection: On the VR device, confirm and allow the USB device connection (as shown in the image).
    ![VR_3.2_USB_connection](assets/VR_3.2_USB_connection.png)
-
 4. Enter the ADB extraction path: Open the file explorer and navigate to the folder where the ADB tool has been extracted.
 5. Copy the APK file: Copy the  `GalaxeaVR-V1-0-1.apk` file to this path.
 6. Install the APK: Open the Command Prompt (CMD) in this path and run the following command to install the application:
-
    ```Bash
    .\adb.exe install GalaxeaVR-V1-0-1.apk 
    ```
-
    If the command shows **"Success"** after execution, it means the installation was successful.
    ![VR_3.2_install_apk](assets/VR_3.2_install_apk.png)
 
 ### 3.3 VR Device Configuration
 On the initial screen of Meta Quest 3,connect to the same WiFi network as R1. 
-</br>**Note**：It is normal for the network to be restricted, as this network cannot access the external internet.
+
+**Note：It is normal for the network to be restricted, as this network cannot access the external internet.**
 
 ![VR_3.3_wifi](assets/VR_3.3_wifi.png)
 
@@ -93,45 +84,42 @@ On the initial screen of Meta Quest 3,connect to the same WiFi network as R1.
 Inside the VR device, click on the connected WiFi, open the network page, and scroll down to find and record the IP address (e.g., 192.168.5.24).
 
 ## 4. R1 Configuration
-Install the Galaxea R1 VR Teleop SDK_V1.1.0
 
-1. **Download and copy the SDK:** 
-</br>Download the file`R1_vrteleop-V1.1.0-20250213_19_03_45.tar.gz` ，and execute the following command to copy the SDK to R1.
-```Bash
-scp R1_vrteleop-V1.1.0-20250213_19_03_45.tar.gz nvidia@192.168.5.8:~/Downloads
-```
+1. Download the SDK file，e.g. `r1_vr_teleop_sdk_name.tar.gz`，and execute the following command to copy the SDK to R1.
+    ```Bash
+    scp r1_vr_teleop_sdk_name.tar.gz nvidia@192.168.5.8:~/Downloads
+    ```
+2. Log in to R1.
+    ```Bash
+    ssh nvidia@${R1_IP}
+    ```
+3. Decompress the SDK to R1.
+    ```Bash
+    mkdir ~/vr_workspace
+    tar -zxvf ~/Downloads/r1_vr_teleop_sdk_name.tar.gz -C ~/vr_workspace
+    ```
+4. Install extra dependency.
+    ```Bash
+    pip3 install websockets pyquaternion
+    ```
+5. Firmware upgrade for embedded system.
+    ```Bash
+    # Start the environment
+    source ~/vr_workspace/install/setup.bash
+    cd ~/vr_workspace/install/share/Embedded_Software_Firmware/tools/R1
+    # Start CAN
+    sudo -S ip link set can0 type can bitrate 1000000 dbitrate 5000000 fd on
+    sudo -S ip link set up can0
+    # Upgrade the firmware for the embedded system
+    bash r1_embedded_firmware_upgrade.sh ../../R1/V1_1_0
+    ```
 
-2. Log in to R1
-```Bash
-ssh nvidia@${R1_IP}
-```
+    Note: If the following message is displayed, it indicates that the upgrade is successful.
+    ![VR_4.1_XCU_upgrade](assets/VR_4.1_XCU_upgrade.png)
 
-3. Decompress the SDK to R1
-```Bash
-mkdir ~/vr_workspace
-tar -zxvf ~/Downloads/R1_vrteleop-V1.1.0-20250213_19_03_45.tar.gz -C ~/vr_workspace
-```
-4. Install extra dependency
-```Bash
-pip3 install websockets pyquaternion
-```
-
-5. Firmware upgrade for embedded system
-```Bash
-# Start the environment
-source ~/vr_workspace/install/setup.bash
-cd ~/vr_workspace/install/share/Embedded_Software_Firmware/tools/R1
-# Start CAN
-sudo -S ip link set can0 type can bitrate 1000000 dbitrate 5000000 fd on
-sudo -S ip link set up can0
-# Upgrade the firmware for the embedded system
-bash r1_embedded_firmware_upgrade.sh ../../R1/V1_1_0
-```
-Note: If the following message is displayed, it indicates that the upgrade is successful.
-![VR_4.1_XCU_upgrade](assets/VR_4.1_XCU_upgrade.png)
-
-6. Restart R1
-  </br>After the upgrade is completed, power off R1 and restart it. After the restart, the software package configuration is completed and the VR Teleop operation function can be used.
+6. Restart R1.
+    
+    After the upgrade is completed, power off R1 and restart it. After the restart, the software package configuration is completed and the VR Teleop operation function can be used.
 
 ## 5. Start VR Teleop Operation
 **Note: All operations in this section need to be completed and confirmed each time you start.**
@@ -139,19 +127,17 @@ Note: If the following message is displayed, it indicates that the upgrade is su
 ### 5.1 Start R1 Base Program
 
 1. Log in to R1.
-```Bash
-ssh nvidia@${R1_IP}
-```
-
+    ```Bash
+    ssh nvidia@${R1_IP}
+    ```
 2. Enter the software package startup directory.
-```Bash
-cd ~/vr_workspace/install/share/startup_config/script/
-```
-
+    ```Bash
+    cd ~/vr_workspace/install/share/startup_config/script/
+    ```
 3. Start the program.
-```Bash
-ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script.sh boot
-```
+    ```Bash
+    ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script.sh boot
+    ```
 
 ### 5.2 Start VR Device Program
 **Note:** Please wear the VR device and hold two remote controllers. Then start the following operations.
@@ -162,33 +148,37 @@ Confirm that the VR device has successfully connected to the same WiFi network a
 #### 5.2.2. Create a Boundary
 
 1. Click the WiFi and battery interface at the lower left corner and select **"Boundary"**.
-
 2. According to the prompt, select **"In-place Boundary"**, and you can see a blue circle appears under your feet, indicating that the boundary has been established.
-
    ![VR_3.3_wifi](assets/VR_3.3_wifi.png)
-
    ![VR_5.2.2_new_boarder](assets/VR_5.2.2_new_boarder.png)
-
    <span style="color:red;"> **Note: After creating a new boundary, do not move your feet until the VR remote operation task is completed.**</span>
 
 #### 5.2.3. Start GalaxeaVR APP
 
-1. **Open the GalaxeaVR application**</br>
+1. **Open the GalaxeaVR application**
+
     Click the cube icon at the bottom right to start the GalaxeaVR application.
    ![VR_5.2.3_open_app](assets/VR_5.2.3_open_app.png)
+2. **Enter the IP address of R1**
 
-2. **Enter the IP address of R1**</br>
-After entering the GalaxeaVR application, align the ray emitted by the VR controller with the green IP input box.</br>
-Wait for the green box to slightly change color, then click the box with T button of the right controller (the cursor position should be slightly lower).</br>
-After the keyboard pops up, enter the IP address of the robot (R1_IP). 
+    After entering the GalaxeaVR application, align the ray emitted by the VR controller with the green IP input box.
 
-3. **Operating VR Devices**</br>
-After setting the IP, click the **Start** button to begin.</br>
-Immediately, let your hands naturally hang down by your sides and wait for 3 seconds before starting to operate.</br>
-<span style="color:red;">**Note: At this time, the robot will synchronize your operations. Please be cautious and start with small movements to ensure there are no obstacles around.**</span></br>
-![VR_5.2.3_operatevr](assets/VR_5.2.3_operatevr.png)
+    Wait for the green box to slightly change color, then click the box with T button of the right controller (the cursor position should be slightly lower).
 
-4. **Display of VR Device Images** </br>
+    After the keyboard pops up, enter the IP address of the robot (R1_IP). 
+
+3. **Operating VR Devices**
+
+    After setting the IP, click the **Start** button to begin.
+
+    Immediately, let your hands naturally hang down by your sides and wait for 3 seconds before starting to operate.
+
+    <span style="color:red;">**Note: At this time, the robot will synchronize your operations. Please be cautious and start with small movements to ensure there are no obstacles around.**</span>
+
+    ![VR_5.2.3_operatevr](assets/VR_5.2.3_operatevr.png)
+
+4. **Display of VR Device Images**
+
     At this moment, you can see the image from the robot's head camera.
    ![VR_5.2.4_vr_image](assets/VR_5.2.4_vr_image.png)
 
@@ -448,81 +438,81 @@ The configuration file used for default data recording is located at:
 1. `task_id`：The task number of this collection task. If there are multiple tasks, you can change this ID. When the data is written to disk, it will be distinguished by the task number as the prefix.
 2. `save_folder`：The disk path for data collection. Users can change it according to their requirements.
 
-```YAML
-task_id: 001
-task_description:   teleoperation data collection starts.
-save_folder: /home/nvidia/GalaxeaDataset/data/
-arm_manipulation_type: two_arms
-arm_controller_type: task_space
-scene_labels:
-  - office
-action_labels:
-  - pick
-  - place
-object_labels:
-  - objects
-robot_serial_number: S2R12000P11224
-robot_hardware_version: 'R1_1.0.0'
-robot_software_version: '1.0.0'
-teleoperator_id: 0001
-camera_extrinsic: 
-  - [0.06739, 0.000, 0.475300]  # position
-  - [0.000, 0.17364, 0.000, 0.98480]  # quaternion
-record_rostopics:
-  - /breakpoint
-  - /exception
-  - /hdas/camera_head/left_raw/image_raw_color/compressed
-  - /hdas/camera_head/right_raw/image_raw_color/compressed
-  - /hdas/camera_head/depth/depth_registered
-  - /hdas/camera_wrist_left/color/image_raw/compressed
-  - /hdas/camera_wrist_left/aligned_depth_to_color/image_raw
-  - /hdas/camera_wrist_right/color/image_raw/compressed
-  - /hdas/camera_wrist_right/aligned_depth_to_color/image_raw
-  - /controller
-  - /eeTracker_demo_node_left/mobile_manipulator_mode_schedule
-  - /eeTracker_demo_node_left/mobile_manipulator_mpc_observation
-  - /eeTracker_demo_node_left/mobile_manipulator_mpc_target
-  - /eeTracker_demo_node_right/mobile_manipulator_mode_schedule
-  - /eeTracker_demo_node_right/mobile_manipulator_mpc_observation
-  - /eeTracker_demo_node_right/mobile_manipulator_mpc_target
-  - /hdas/bms
-  - /hdas/camera_head/left_raw/image_raw_color/compressed
-  - /hdas/feedback_arm_left
-  - /hdas/feedback_arm_right
-  - /hdas/feedback_chassis
-  - /hdas/feedback_gripper_left
-  - /hdas/feedback_gripper_right
-  - /hdas/feedback_status_arm_left
-  - /hdas/feedback_status_arm_right
-  - /hdas/feedback_status_torso
-  - /hdas/feedback_torso
-  - /hdas/imu_chassis
-  - /hdas/imu_torso
-  - /mobile_manipulator_mpc_observation
-  - /mobile_manipulator_mpc_target
-  - /motion_control/chassis_speed
-  - /motion_control/control_arm_left
-  - /motion_control/control_arm_right
-  - /motion_control/control_chassis
-  - /motion_control/control_gripper_left
-  - /motion_control/control_gripper_right
-  - /motion_control/control_torso
-  - /motion_control/pose_ee_arm_left
-  - /motion_control/pose_ee_arm_right
-  - /motion_control/pose_floating_base
-  - /motion_control/position_control_gripper_left
-  - /motion_control/position_control_gripper_right
-  - /motion_target/brake_mode
-  - /motion_target/chassis_acc_limit
-  - /motion_target/target_joint_state_arm_left
-  - /motion_target/target_joint_state_arm_right
-  - /motion_target/target_joint_state_torso
-  - /motion_target/target_pose_arm_left
-  - /motion_target/target_pose_arm_right
-  - /motion_target/target_speed_chassis
-  - /tf_static
-  - /vr_pose
-```
+    ```YAML
+    task_id: 001
+    task_description:   teleoperation data collection starts.
+    save_folder: /home/nvidia/GalaxeaDataset/data/
+    arm_manipulation_type: two_arms
+    arm_controller_type: task_space
+    scene_labels:
+    - office
+    action_labels:
+    - pick
+    - place
+    object_labels:
+    - objects
+    robot_serial_number: S2R12000P11224
+    robot_hardware_version: 'R1_1.0.0'
+    robot_software_version: '1.0.0'
+    teleoperator_id: 0001
+    camera_extrinsic: 
+    - [0.06739, 0.000, 0.475300]  # position
+    - [0.000, 0.17364, 0.000, 0.98480]  # quaternion
+    record_rostopics:
+    - /breakpoint
+    - /exception
+    - /hdas/camera_head/left_raw/image_raw_color/compressed
+    - /hdas/camera_head/right_raw/image_raw_color/compressed
+    - /hdas/camera_head/depth/depth_registered
+    - /hdas/camera_wrist_left/color/image_raw/compressed
+    - /hdas/camera_wrist_left/aligned_depth_to_color/image_raw
+    - /hdas/camera_wrist_right/color/image_raw/compressed
+    - /hdas/camera_wrist_right/aligned_depth_to_color/image_raw
+    - /controller
+    - /eeTracker_demo_node_left/mobile_manipulator_mode_schedule
+    - /eeTracker_demo_node_left/mobile_manipulator_mpc_observation
+    - /eeTracker_demo_node_left/mobile_manipulator_mpc_target
+    - /eeTracker_demo_node_right/mobile_manipulator_mode_schedule
+    - /eeTracker_demo_node_right/mobile_manipulator_mpc_observation
+    - /eeTracker_demo_node_right/mobile_manipulator_mpc_target
+    - /hdas/bms
+    - /hdas/camera_head/left_raw/image_raw_color/compressed
+    - /hdas/feedback_arm_left
+    - /hdas/feedback_arm_right
+    - /hdas/feedback_chassis
+    - /hdas/feedback_gripper_left
+    - /hdas/feedback_gripper_right
+    - /hdas/feedback_status_arm_left
+    - /hdas/feedback_status_arm_right
+    - /hdas/feedback_status_torso
+    - /hdas/feedback_torso
+    - /hdas/imu_chassis
+    - /hdas/imu_torso
+    - /mobile_manipulator_mpc_observation
+    - /mobile_manipulator_mpc_target
+    - /motion_control/chassis_speed
+    - /motion_control/control_arm_left
+    - /motion_control/control_arm_right
+    - /motion_control/control_chassis
+    - /motion_control/control_gripper_left
+    - /motion_control/control_gripper_right
+    - /motion_control/control_torso
+    - /motion_control/pose_ee_arm_left
+    - /motion_control/pose_ee_arm_right
+    - /motion_control/pose_floating_base
+    - /motion_control/position_control_gripper_left
+    - /motion_control/position_control_gripper_right
+    - /motion_target/brake_mode
+    - /motion_target/chassis_acc_limit
+    - /motion_target/target_joint_state_arm_left
+    - /motion_target/target_joint_state_arm_right
+    - /motion_target/target_joint_state_torso
+    - /motion_target/target_pose_arm_left
+    - /motion_target/target_pose_arm_right
+    - /motion_target/target_speed_chassis
+    - /tf_static
+    - /vr_pose
+    ```
 
 ### 7.4  Introduction to Data Disk Files
 The data is saved in  **rosbag + yaml** format,and each file corresponds to one another. For example:

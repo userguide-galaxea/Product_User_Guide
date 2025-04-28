@@ -9,17 +9,7 @@
 查看 [R1 ROS 2 软件版本更新日志](./R1_Software_Changelog/R1_changelog.md)，获取最新的SDK包及更新信息。
 
 ## 启动SDK
-当前支持分开启动和一键启动两种方式启动软件接口。为了您的安全，强烈建议使用分开启动的方式
-
-### 分开启动各接口
-所有模块可以通过以下命令模板启动。
-
-```Bash
-source {your_download_path}/install/setup.bash
-ros2 launch <Package Name> <Launch File>
-# 示例
-ros2 launch HDAS r1.py
-```
+当前支持分开启动和一键启动两种方式启动软件接口。为了您的安全，建议使用分开启动的方式启动SDK。文件详情如下：
 
 <table style="table-layout: fixed; width: 100%; border-collapse: collapse; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
   <thead>
@@ -51,6 +41,17 @@ ros2 launch HDAS r1.py
     </tr>
   </tbody>
 </table>
+
+### 分开启动各接口
+所有模块可以通过以下命令模板启动。
+
+```Bash
+source {your_download_path}/install/setup.bash
+ros2 launch <Package Name> <Launch File>
+# 示例
+ros2 launch HDAS r1.py
+```
+
 
 ### 一键启动所有接口
 
@@ -1687,6 +1688,7 @@ ros2 launch mobiman torso_control_example_launch.py
     </tr>
   </tbody>
 </table>
+
 针对以上话题的具体字段及其详细描述如下表所示：
 <table style="width: 100%; border-collapse: collapse;">
   <thead>

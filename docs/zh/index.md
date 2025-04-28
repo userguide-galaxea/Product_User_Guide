@@ -107,7 +107,7 @@ hide:
                 <div class="product">
                         <a href="Guide/R1Pro/R1Pro_Unbox_Startup_Guide">开箱启动</a> <br>
                         <a href="Guide/R1Pro/R1Pro_Hardware_Introduction">硬件介绍</a> <br>
-                        <a href="Guide/R1Pro/R1Pro_Software_Introduction">软件介绍</a> <br>
+                        <a href="Guide/R1Pro/R1Pro_Software_Guide">软件介绍</a> <br>
                 </div>
             </section>
             <section class="products-section">

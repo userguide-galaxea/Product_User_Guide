@@ -33,7 +33,7 @@ VR遥操作系统提供沉浸式的远程控制体验，使操作员能够通过
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">R1上位机（双系统，非虚拟机）</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">系统：Ubuntu20.04 ROS Noetic</br>用于给R1 Base升级软件程序</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">系统：Ubuntu20.04 ROS 1 Noetic或Ubuntu 22.04 ROS 2 Humble</br>用于给R1 Pro Base升级软件程序</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">局域网</td>
@@ -44,20 +44,16 @@ VR遥操作系统提供沉浸式的远程控制体验，使操作员能够通过
 </table>
 
 ### 2.2 软件准备
-请在下载并解压R1遥操作整包版本V1.1.0。
 
-- 百度云：[https://pan.baidu.com/s/136OzRy-4_8b5USQg3btJCQ?pwd=r1vr](https://pan.baidu.com/s/136OzRy-4_8b5USQg3btJCQ?pwd=r1vr)
-- Google Drive：[https://drive.google.com/drive/folders/1NADvlQDxJ8LASTA42AxzGY34oqcSZNmq?usp=sharing](https://drive.google.com/drive/folders/1NADvlQDxJ8LASTA42AxzGY34oqcSZNmq?usp=sharing)
+查看[R1 软件版本更新日志](./R1_Software_Changelog/R1_changelog.md)，获取最新的SDK版本。整机ATC SDK版本中包含所有产品软件资源。
 
-VR设备配置SDK：
+<span style="color:red;">注意：如使用Ubuntu 20.04 ROS 1 Noetic版本，请查看[ROS 1软件文档](./R1_Software_Guide_ros1.md)并使用ROS 1版本的启动命令进行以下控制；如使用Ubuntu 22.04 ROS 2 Humble版本，请查看[ROS 2软件文档](./R1_Software_Guide_ros2.md)并使用ROS 2版本对应的启动命令进行以下控制。</span>
 
-- Meta 相关安装包.zip：用于新设备激活。
-- platform-tools-latest-windows.zip：adb文件，用于安装VR头显内部的数据采集APP。
-- GalaxeaVR-V1-0-1.apk：VR头显内部的数据采集APP。
+同时，在SDK链接中下载VR设备配置SDK：
 
-Galaxea R1 VR遥操作SDK_V1.1.0：
-
-- R1_vrteleop-V1.1.0-20250213_19_03_45.tar：R1机器人VR遥操作软件包
+- `Meta 相关安装包.zip`：用于新设备激活。
+- `platform-tools-latest-windows.zip`：adb文件，用于安装VR头显内部的数据采集APP。
+- `GalaxeaVR-V1-0-1.apk`：VR头显内部的数据采集APP。
 
 ## 3. VR 设备配置
 ### 3.1 VR设备开发者模式激活
@@ -67,72 +63,64 @@ Galaxea R1 VR遥操作SDK_V1.1.0：
 ### 3.2 VR设备SDK安装
 
 1. 解压ADB文件：下载并解压`platform-tools-latest-windows.zip`文件。
-
 2. 连接VR设备：使用Type-C数据线将 VR 设备连接到电脑。
-
 3. 授权USB连接：在VR设备中，确认并允许USB设备连接（如图所示）。
    ![VR_3.2_USB_connection_CN](assets/VR_3.2_USB_connection_CN.png)
-
 4. 进入ADB解压路径：打开文件资源管理器，进入解压后的ADB工具文件夹路径。
-
 5. 拷贝APK文件：将 `GalaxeaVR-V1-0-1.apk` 文件拷贝到该路径下。
-
 6. 安装APK：在该路径下打开命令提示符（CMD），执行以下命令安装应用：
-
    ```Bash
    .\adb.exe install GalaxeaVR-V1-0-1.apk 
    ```
-
    如果命令执行后显示 **Success**，则表示安装成功。
    ![VR_3.2_install_apk_CN](assets/VR_3.2_install_apk_CN.png)
 
 ### 3.3 VR 设备配置
-在 Meta Quest 3 的初始界面下，连接与R1相同的WiFi网络。 **注意**：提示网络受限是正常现象，因为该网络无法访问外网。
+在 Meta Quest 3 的初始界面下，连接与R1相同的WiFi网络。 
+
+**注意：提示网络受限是正常现象，因为该网络无法访问外网。**
 
 ![VR_3.3_wifi_CN](assets/VR_3.3_wifi_CN.png)
 
 ### 3.4 获取VR设备的IP地址
-在VR设备内，点击已连接的WiFi，打开网络页面后向下划，找到并记录IP地址（如：192.168.5.24）。
+在VR设备内，点击已连接的WiFi，打开网络页面后向下划找到并记录IP地址，如192.168.5.24。
 
 ## 4. R1配置
 安装 Galaxea R1 VR遥操作SDK
 
-1. **下载并拷贝SDK**： 下载`R1_vrteleop-V1.1.0-20250213_19_03_45.tar.gz` 文件，执行以下命令拷贝SDK到R1上。
-```Bash
-scp R1_vrteleop-V1.1.0-20250213_19_03_45.tar.gz nvidia@192.168.5.8:~/Downloads
-```
+1. 下载SDK文件（例如：`r1_vr_teleop_sdk_name.tar.gz`），执行以下命令拷贝SDK到R1上。
+    ```Bash
+    scp r1_vr_teleop_sdk_name.tar.gz nvidia@192.168.5.8:~/Downloads
+    ```
+2. 登陆R1。
+    ```Bash
+    ssh nvidia@${R1_IP}
+    ```
+3. 解压SDK到R1。
+    ```Bash
+    mkdir ~/vr_workspace
+    tar -zxvf ~/Downloads/r1_vr_teleop_sdk_name.tar.gz -C ~/vr_workspace
+    ```
+4. 安装额外依赖。
+    ```Bash
+    pip3 install websockets pyquaternion
+    ```
+5. 嵌入式固件升级。
+    ```Bash
+    # 启动环境
+    source ~/vr_workspace/install/setup.bash
+    cd ~/vr_workspace/install/share/Embedded_Software_Firmware/tools/R1
+    # 启动 can
+    sudo -S ip link set can0 type can bitrate 1000000 dbitrate 5000000 fd on
+    sudo -S ip link set up can0
+    # 升级嵌入式固件
+    bash r1_embedded_firmware_upgrade.sh ../../R1/V1_1_0
+    ```
+    注意：如果显示如下信息，则表示升级成功。
+    ![VR_4.1_XCU_upgrade_CN](assets/VR_4.1_XCU_upgrade_CN.png)
+6. 重启R1。
 
-2. 登陆R1
-```Bash
-ssh nvidia@${R1_IP}
-```
-
-3. 解压SDK到R1
-```Bash
-mkdir ~/vr_workspace
-tar -zxvf ~/Downloads/R1_vrteleop-V1.1.0-20250213_19_03_45.tar.gz -C ~/vr_workspace
-```
-4. 安装额外依赖
-```Bash
-pip3 install websockets pyquaternion
-```
-
-5. 嵌入式固件升级
-```Bash
-# 启动环境
-source ~/vr_workspace/install/setup.bash
-cd ~/vr_workspace/install/share/Embedded_Software_Firmware/tools/R1
-# 启动 can
-sudo -S ip link set can0 type can bitrate 1000000 dbitrate 5000000 fd on
-sudo -S ip link set up can0
-# 升级嵌入式固件
-bash r1_embedded_firmware_upgrade.sh ../../R1/V1_1_0
-```
-注意：如果显示如下信息，则表示升级成功。
-![VR_4.1_XCU_upgrade_CN](assets/VR_4.1_XCU_upgrade_CN.png)
-
-6. 重启R1
-</br>升级完成后，将机器人R1下电并重新启动。重启后，软件包配置完成，VR遥操作功能即可使用。
+    升级完成后，将机器人R1下电并重新启动。重启后，软件包配置完成，VR遥操作功能即可使用。
 
 ## 5.遥操作启动
 **注意：每次启动时都需要完成并确认本章节的所有操作。**
@@ -140,19 +128,19 @@ bash r1_embedded_firmware_upgrade.sh ../../R1/V1_1_0
 ### 5.1 R1本体程序启动
 
 1. 登录R1
-```Bash
-ssh nvidia@${R1_IP}
-```
+    ```Bash
+    ssh nvidia@${R1_IP}
+    ```
 
 2. 进入软件包启动目录
-```Bash
-cd ~/vr_workspace/install/share/startup_config/script/
-```
+    ```Bash
+    cd ~/vr_workspace/install/share/startup_config/script/
+    ```
 
 3. 启动程序
-```Bash
-ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script.sh boot
-```
+    ```Bash
+    ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script.sh boot
+    ```
 
 ### 5.2 VR设备程序启动
 **注意：请佩戴好VR设备并手持两个遥控器，开始以下操作。**
@@ -176,23 +164,24 @@ ROS_IP=${R1_IP} ROS_MASTER_URI=http://${R1_IP}:11311 VR_IP=${VR_IP} ./ota_script
 1. **打开GalaxeaVR应用**：点击右下角的正方体图标启动GalaxeaVR应用。
    ![VR_5.2.3_open_app_CN](assets/VR_5.2.3_open_app_CN.png)
 2. **输入 R1 的 IP 地址**：
-    进入GalaxeaVR应用后，将VR手柄发射的射线对准绿色的IP输入框。
-    等待绿色输入框轻微变色后，用右控制器的肩键（食指键）点击输入框（光标位置需要偏下一些）。
-    键盘弹出后，输入机器人端的IP地址（即 R1_IP）。
+    进入GalaxeaVR应用后，将VR手柄发射的射线对准绿色的IP输入框。等待绿色输入框轻微变色后，用右控制器的肩键（食指键）点击输入框（光标位置需要偏下一些）。键盘弹出后，输入机器人端的IP地址（即 R1_IP）。
 3. **操控VR设备**:
     设置好IP后点击**Start**按钮开始。双手立刻自然下垂放在身体两侧，等待3秒后开始操控。
+    
     **注意：此时机器人会同步您的操作，请注意安全，先进行小幅移动，确保周围没有障碍物。**
     ![VR_5.2.3_operatevr_CN](assets/VR_5.2.3_operatevr_CN.png)
+
 4. **VR设备图像显示** 此时，您可以看到机器人头部相机的图像。
    ![VR_5.2.4_vr_image_CN](assets/VR_5.2.4_vr_image_CN.png)
-   您可使用以下步骤完成简易操作：
+   
+使用以下步骤完成遥控器简易操作，详细操作说明请参考第6章节：遥操作控制说明。
 
 - **停止操作**：长按 B 键 2 秒以上，停止VR遥操作。
 - **控制夹爪**：手的移动会控制机器人手臂的移动。左手的 X 键和右手的 A 键分别控制左右手的夹爪闭合。
 - **暂停右臂**：短按 B 键一下，右臂会停在当前的位置；再按一下 B 键解除暂停。
 - **暂停左臂**：短按 Y 键一下，左臂会停在当前的位置；再按一下 Y 键解除暂停。
 
-详细操作说明请参考第6章节：遥操作控制说明。
+
 
 ## 6.遥操作控制说明
 请在确保人员与物品安全的情况下，于开阔场地练习本产品的使用。

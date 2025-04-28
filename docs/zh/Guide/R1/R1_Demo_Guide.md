@@ -20,29 +20,29 @@ git clone https://github.com/userguide-galaxea/Demo.git
 
 - **arm_test_1：**双臂向上垂直抬起，接着放下双臂，夹爪垂直向下指向地面。
 <p style="text-align: center;">
-<video src="../assets/R1_arm_test_1.mp4" style="width: 95%;"autoplay muted loop>
+<video src="./assets/R1_arm_test_1.mp4" style="width: 95%;"autoplay muted loop>
    </p>
 
 - **arm_test_2:** 双臂从身体两侧向上抬起，并在胸腔两侧收拢折叠。（此时 R1 的姿态与 URDF中 的零点姿态（默认状态）一致。）
 <p style="text-align: center;">
-      <video src="../assets/R1_arm_test_2.mp4" style="width: 95%;"autoplay muted loop>
+      <video src="./assets/R1_arm_test_2.mp4" style="width: 95%;"autoplay muted loop>
    </p>
 
 - **arm_test_3:**  先放下双臂，让夹爪垂直向下指向地面；随后，从躯干两侧将双臂垂直向上抬起 90°；接着，双臂从两侧向中间水平向前平移 90°；之后，双臂分别从两侧向上抬起，举过头顶并做出爱心形状；最后，双臂分别从两侧放下，夹爪再次垂直向下指向地面。
 
 <p style="text-align: center;">
-      <video src="../assets/R1_arm_test_3.mp4" style="width: 95%;"autoplay muted loop>
+      <video src="./assets/R1_arm_test_3.mp4" style="width: 95%;"autoplay muted loop>
    </p>
 - **torso_test_1: **躯干弯曲下蹲，同时双臂在胸腔两侧收拢折叠。（该动作用于测试 T1/T2/T3 躯干电机。）
 
 <p style="text-align: center;">
-      <video src="../assets/torso_test_1.mp4" style="width: 95%;"autoplay muted loop>
+      <video src="./assets/torso_test_1.mp4" style="width: 95%;"autoplay muted loop>
    </p>
 
 - **torso_test_2:** 躯干升起站立，同时手臂在躯干两侧放下，接着腰部向左转动 45°，再向右转动 90°，然后向左转动 45°，最后使躯干回正。（此动作用于测试 T4 躯干电机。）
 
 <p style="text-align: center;">
-      <video src="../assets/torso_test_2.mp4" style="width: 95%;"autoplay muted loop>
+      <video src="./assets/torso_test_2.mp4" style="width: 95%;"autoplay muted loop>
    </p>
 
 
@@ -119,5 +119,5 @@ git clone https://github.com/userguide-galaxea/Demo.git
 
 **注意：当您完成所有测试后，按`Q`退出测试。R1 将回到原始姿势。**
 <p style="text-align: center;">
-      <video src="../assets/R1_quit_test.mp4" style="width: 100%;"autoplay muted loop>
+      <video src="./assets/R1_quit_test.mp4" style="width: 100%;"autoplay muted loop>
    </p>

@@ -491,13 +491,13 @@ scp -r ~/mapping_data/robot_calibration.json nvidia@{robot_ip}:~/galaxea/calib/
 R1提供了多种驱动接口，用于与硬件设备进行通信和控制。以下是主要的驱动接口及其说明：
 
 #### 5.2.1 底盘驱动接口
-`/motion_control/chassis_speed`：用于控制机器人底盘的运动，包括速度控制、方向控制等。请前往R1软件手册的[底盘驱动接口](Software_Guide.md/#底盘驱动接口)章节获取更多详细信息。
+`/motion_control/chassis_speed`：用于控制机器人底盘的运动，包括速度控制、方向控制等。请前往[R1软件介绍](./R1_Software_Guide.md)查看底盘驱动接口章节获取更多详细信息。
 
 #### 5.2.2 激光雷达接口
-`/hdas/lidar_chassis_left`：激光雷达用于环境感知和距离测量，为机器人提供实时的环境信息。请前往R1软件手册的[激光雷达接口](Software_Guide.md/#激光雷达接口)章节获取更多详细信息。
+`/hdas/lidar_chassis_left`：激光雷达用于环境感知和距离测量，为机器人提供实时的环境信息。请前往[R1软件介绍](./R1_Software_Guide.md)查看激光雷达接口章节获取更多详细信息。
 
 #### 5.2.3 IMU接口
-`/hdas/imu_chassis`：IMU用于测量机器人的加速度、角速度等信息，为导航和姿态控制提供数据支持。请前往R1软件手册的[IMU接口](Software_Guide.md/#imu-接口)章节获取更多详细信息。
+`/hdas/imu_chassis`：IMU用于测量机器人的加速度、角速度等信息，为导航和姿态控制提供数据支持。请前往[R1软件介绍](./R1_Software_Guide.md)查看IMU接口章节获取更多详细信息。
 
 ### 5.3 运控接口
 R1机器人提供了多种运动控制接口，用于实现对机器人运动的精确控制。以下是主要的运控接口及其说明：

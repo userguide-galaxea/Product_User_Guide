@@ -7,7 +7,7 @@ Before you start testing, please ensure that:
 2. Torso is in the standing posture.
 3. No personnel and obstacles within a radius of 1.5 meters. (As shown in the figure below.)
 
-![R1_stand](../assets/R1_stand.png)
+![R1_stand](./assets/R1_stand.png)
 
 **Visit our GitHub Repository to download script `r1_demo_easy.py`**
 ```bash
@@ -21,7 +21,7 @@ git clone https://github.com/userguide-galaxea/Demo.git
 - **arm_test_1:** Both arms are lifted vertically upward and then lowered, where the grippers are tipping vertically downward to the ground.
   <div style="display: flex; justify-content: center; align-items: center;">
   <video width="1920" height="1080" controls>
-    <source src="../assets/R1_arm_test_1.mp4" type="video/mp4">
+    <source src="./assets/R1_arm_test_1.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   </div>
@@ -29,28 +29,28 @@ git clone https://github.com/userguide-galaxea/Demo.git
 - **arm_test_2:** Both arms are lifted upward and then folded on both sides of the chest. At this time, the posture of R1 shows the zero-point posture (default) in URDF.
   <div style="display: flex; justify-content: center; align-items: center;">
   <video width="1920" height="1080" controls>
-    <source src="../assets/R1_arm_test_2.mp4" type="video/mp4">
+    <source src="./assets/R1_arm_test_2.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   </div>
 - **arm_test_3:** Both arms are lowered down to the original pose. Then, both arms are lifted vertically upward 90 degrees from both sides of the torso. Next, both arms are moved horizontally forward 90 degrees from both sides to the middle and hold for a while. Afterwards, both arms are lifted upward from both sides respectively, and are raised over the head to make pose in a heart shape. Finally, arms are lowered respectively, and the grippers point vertically downward to the ground again.
   <div style="display: flex; justify-content: center; align-items: center;">
   <video width="1920" height="1080" controls>
-    <source src="../assets/R1_arm_test_3.mp4" type="video/mp4">
+    <source src="./assets/R1_arm_test_3.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   </div>
 - **torso_test_1:** The torso squats down, and arms are folded at the same time. (This action is used to test torso motors T1/T2/T3).
   <div style="display: flex; justify-content: center; align-items: center;">
   <video width="1920" height="1080" controls>
-    <source src="../assets/torso_test_1.mp4" type="video/mp4">
+    <source src="./assets/torso_test_1.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   </div>
 - **torso_test_2:** The torso raised to stand, and arms are back to the sides. Then turn the waist 45 degrees to the left, 90 degrees to the right, and then 45 degrees to the left where backs to the front. (This action is used to test the torso motor T4.)
   <div style="display: flex; justify-content: center; align-items: center;">
   <video width="1920" height="1080" controls>
-    <source src="../assets/torso_test_2.mp4" type="video/mp4">
+    <source src="./assets/torso_test_2.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   </div>
@@ -139,7 +139,7 @@ When you completed all tests, press `q` to quit testing. R1 will be back to the 
 
   <div style="display: flex; justify-content: center; align-items: center;">
   <video width="1920" height="1080" controls>
-    <source src="../assets/R1_quit_test.mp4" type="video/mp4">
+    <source src="./assets/R1_quit_test.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   </div>

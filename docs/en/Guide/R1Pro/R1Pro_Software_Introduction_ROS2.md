@@ -1,16 +1,15 @@
-# R1 Pro Software Introduction
+# R1 Pro Software Introduction ROS 2 Humble
 ## Environment Dependency
 
 1. Hardware Dependency: R1 Pro Computing Unit
-2. OS Dependency: Ubuntu 20.04 LTS
-3. Middleware Dependency: ROS 1 Noetic
+2. OS Dependency: Ubuntu 22.04 LTS
+3. Middleware Dependency: ROS 2 Humble
 
 ## Obtain SDK
+Visit [R1 Pro ROS 2 Software Version Changelog](./R1Pro_Software_Changelog/R1Pro_changelog.md) to obtian the latest SDK.
 
-- Baidu Cloud: [R1 Pro SDK V1.1.4](https://pan.baidu.com/s/1rQd3_Cu4E9PjygupxeQDig?pwd=v114)
-- Google Drive: [R1 Pro SDK V1.1.4](https://drive.google.com/drive/folders/1RTt6NMOoA0pjbx5qXkYCb2fyQyUHyZFf?usp=sharing)
-
-For updates and version history, please refer to the R1 Pro Software Version Changelog.
+## Start SDK
+R1 Pro supports two ways to start the SDK: Separate Startup and One-Command Startup. <span style="color:red;">For your safety, we highly recommend using the Separate Startup method to launch the SDK.</span> Details of SDK file are listed below:
 
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
@@ -25,42 +24,33 @@ For updates and version history, please refer to the R1 Pro Software Version Cha
     <tr style="background-color: white; text-align: left;">
       <td style="padding: 8px; border: 1px solid #ddd;">Arms Driver Interface<br>Torso Driver Interface<br>Chassis Driver Interface<br>IMU Interface<br>BMS Interface<br>Remote Controller Interface</td>
       <td style="padding: 8px; border: 1px solid #ddd;">HDAS</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">/install/share/HDAS/launch/</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">r1pro.launch</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">/install/HDAS/share/HDAS/launch/</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">r1pro.py</td>
     </tr>
      <tr style="background-color: white; text-align: left;">
       <td style="padding: 8px; border: 1px solid #ddd;">Camera Interface</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">signal_camera</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">/install/share/signal_camera/launch/</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">signal_camera.launch</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">signal_camera_node</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">/install/signal_camera_node/share/signal_camera_node/launch/</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">signal_camera.py</td>
     </tr>
       <tr style="background-color: white; text-align: left;">
       <td style="padding: 8px; border: 1px solid #ddd;">LiDAR Interface</td>
       <td style="padding: 8px; border: 1px solid #ddd;">livox_ros_driver2</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">/install/share/livox_ros_driver2/launch_ROS1/</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">msg_MID360.launch</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">/install/livox_ros_driver2/share/livox_ros_driver2/launch_ROS2/</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">msg_MID360_launch.py</td>
     </tr>
   </tbody>
 </table>
 
-## Start SDK
-R1 Pro supports two ways to start the SDK: Separate Startup and One-Command Startup. 
-
-<span style="color:red;">For your safety, we highly recommend using the Separate Startup method to launch the SDK.</span>
-
 ### Seperate Start
 The current Galaxea R1 Pro driver consists of several components, including actuator interface, sensor interface and external function interface. All the components can be launched by using the following command template. 
 
-Click [here](./R1 Pro_Step_by_Step_Guide.md/#43-start-can-driver) to view detailed startup instructions.
-All the components can be launched by using the following command template.
 ```Bash
-source {your_download_path}install/setup.bash
-roslaunch <Package Name> <Launch File>
+source ~{your_download_path}/install/setup.bash
+ros2 launch <Package Name> <Launch File>
 # Example
-roslaunch HDAS r1pro.launch
+ros2 launch HDAS r1pro.py
 ```
-
-
 
 
 ### One-Command Start
@@ -69,9 +59,8 @@ roslaunch HDAS r1pro.launch
 ```Bash
 sudo apt-get install tmux tmuxp
 cd ~{your_download_path}/install/share/startup_config/script
-./ota_script.sh boot ../session.d/ATCStandard/R1PROBody.d/
+./robot_startup.sh boot ../session.d/ATCStandard/R1PROBody.d/
 ```
-
 
 ## Demo
 Visit the page [R1 Pro Demo Guide](./R1 Pro_Demo_Guide.md) and get started to operate R1 Pro following the instructions.
@@ -711,8 +700,7 @@ The specific fields and their detailed descriptions for the above topic are show
   </tr>
   <tr style="background-color: white;">
     <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">velocity</td>
-    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[linear_velocity_front_left, linear_velocity_front_right, linear_velocity_rear
-0.0, 0.0, 0.0]</td>
+    <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">[linear_velocity_front_left, linear_velocity_front_right, linear_velocity_rear]</td>
   </tr>
   <tr style="background-color: white;">
     <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">effort</td>
@@ -763,9 +751,10 @@ The specific fields and their detailed descriptions for the above topic are show
   <tr style="background-color: white;">
     <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">mode</td>
     <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-  	</tr>  
+    </tr>  
    </tbody>
 </table>
+
 #### Camera Interface
 
 Below are detailed descriptions of each topic and its associated message types:
@@ -1355,7 +1344,7 @@ Joint Control is a ROS package for controlling each joint of the R1 Pro torso an
 
 ```bash
 source {your_download_path}/install/setup.bash
-roslaunch mobiman r1_pro_jointTrackerdemo_pid.launch
+ros2 launch mobiman r1_pro_jointTrackerdemo.py
 ```
 
 This launch file will start with the `r1_pro_jointTracker_demo_node`, which is the main node responsible for controlling each joint.
@@ -1496,8 +1485,8 @@ Arm Pose Control is a ROS package for controlling arm movement to the target end
 
 ```bash
 source {your_download_path}/install/setup.bash
-roslaunch mobiman r1_pro_left_arm_relaxed_ik.launch
-roslaunch mobiman r1_pro_right_arm_relaxed_ik.launch
+ros2 launch mobiman r1_pro_left_arm_relaxed_ik.py
+ros2 launch mobiman r1_pro_right_arm_relaxed_ik.py
 ```
 
 Note：
@@ -1615,7 +1604,7 @@ Gripper Control is the node that controls the end-effector. It can be launched u
 
 ```bash
 source {your_download_path}/install/setup.bash
-roslaunch mobiman r1_gripperController.launch robot_type:=R1PRO 
+ros2 launch mobiman r1_gripperController.py robot_type:=R1PRO 
 ```
 
 The launch file will start with `R1_Gripper_Controller`(Note: not R1_Pro_Gripper_Controller here). The interface is shown below.
@@ -1680,7 +1669,7 @@ Torso Speed Control is a ROS package for controlling torso movement to the targe
 
 ```bash
 source {your_download_path}/install/setup.bash
-roslaunch mobiman torso_control_r1.launch
+ros2 launch mobiman torso_control_example_launch.py
 ## Note, this command cannot be executed simultaneously with joint_tracker.
 ## If you want to use joint tracker simultaneously, use joint_tracker_disable_torso instead. 
 ## Detail information can be found at joint Control Page
@@ -1766,10 +1755,10 @@ The specific fields and their detailed descriptions for the above topic are show
 Chassis Control is the node that controls the R1 Pro chassis using vector control, allowing you to send speed commands in three directions simultaneously: x, y, and w. It can be launched using the following command:
 
 ```bash
-roslaunch mobiman r1_pro_chassis_control.launch
+ros2 launch mobiman r1_pro_chassis_control_launch.py
 ```
 
-This launch file will bring up two nodes: `chassis_control_node` and `r1_pro_control_manager`. The `chassis_control_node` is responsible for R1 Pro chassis speed control. The interface is shown below:
+This launch file will bring up two nodes: `chassis_control_node` and `r1_pro_eepose_pub_node`. The `chassis_control_node` is responsible for R1 Pro chassis speed control. The interface is shown below:
 
 <table style="width: 100%; border-collapse: collapse;">
   <thead>

@@ -1,4 +1,4 @@
-# R1 Pro 软件介绍
+# R1 Pro 软件介绍 ROS 1 Noetic
 ## 环境依赖
 
 1. 硬件依赖：R1 Pro计算单元
@@ -6,13 +6,10 @@
 3. 中间件依赖：ROS 1 Noetic
 
 ## 获取SDK
+Visit[R1 Pro ROS 1 软件版本更新日志](./R1Pro_Software_Changelog/R1Pro_changelog.md)，获取最新的SDK包及更新信息。
 
-点击下方链接获取最新版本
-
-- 百度云盘：[R1 Pro SDK V1.1.4](https://pan.baidu.com/s/1rQd3_Cu4E9PjygupxeQDig?pwd=v114)
-- Google Drive: [R1 Pro SDK V1.1.4](https://drive.google.com/drive/folders/1RTt6NMOoA0pjbx5qXkYCb2fyQyUHyZFf?usp=sharing)
-
-所有版本更新后续可在R1 Pro软件版本更新日志中查看。
+## 启动SDK
+当前支持分开启动和一键启动两种方式启动软件接口。<span style="color:red";>为了您的安全，建议使用分开启动的方式启动SDK。</span>文件信息如下：
 
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
@@ -45,9 +42,6 @@
   </tbody>
 </table>
 
-## 启动SDK
-当前支持分开启动和一键启动两种方式启动软件接口。为了您的安全，建议使用分开启动的方式启动SDK。
-
 ### 分开启动各接口
 所有组件可以通过以下命令模板启动。
 
@@ -57,37 +51,6 @@ roslaunch <Package Name> <Launch File>
 # 示例
 roslaunch HDAS r1pro.launch
 ```
-
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr style="background-color: black; color: white; text-align: left;">
-      <th style="padding: 8px; border: 1px solid #ddd; width: 200px;">接口信息</th>
-      <th style="padding: 8px; border: 1px solid #ddd; width: 200px;">文件包名</th>
-      <th style="padding: 8px; border: 1px solid #ddd; width: 200px;">路径</th>
-      <th style="padding: 8px; border: 1px solid #ddd; width: 200px;">启动文件</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white; text-align: left;">
-      <td style="padding: 8px; border: 1px solid #ddd;">Arms Driver Interface<br>Torso Driver Interface<br>Chassis Driver Interface<br>IMU Interface<br>BMS Interface<br>Remote Controller Interface</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">HDAS</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">/install/share/HDAS/launch</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">r1pro.launch</td>
-    </tr>
-     <tr style="background-color: white; text-align: left;">
-      <td style="padding: 8px; border: 1px solid #ddd;">Camera Interface</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">signal_camera</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">/install/share/signal_camera/launch</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">signal_camera.launch</td>
-    </tr>
-      <tr style="background-color: white; text-align: left;">
-      <td style="padding: 8px; border: 1px solid #ddd;">LiDAR Interface</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">livox_ros_driver2</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">/install/share/livox_ros_driver2/launch_ROS1</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">msg_MID360.launch</td>
-    </tr>
-  </tbody>
-</table>
 
 ### 一键启动所有接口
 <span style="color:red;">**注意：执行以下命令将启动所有驱动和运控接口。**</span>
@@ -791,7 +754,7 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$，其中：
 <table style="width: 100%; border-collapse: collapse;table-layout: fixed;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
+            <th style="width: 500px; padding: 8px; border: 1px solid #ddd;">话题名称</th>
             <th style="width: 100px; padding: 8px; border: 1px solid #ddd;">I/O</th>
             <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">描述</th>
             <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">消息类型</th>
@@ -866,6 +829,7 @@ $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$，其中：
         </tr>
     </tbody>
 </table>
+
 
 针对以上话题的具体字段及其详细描述如下表所示：
 <table style="width: 100%; border-collapse: collapse;">
@@ -1456,6 +1420,21 @@ roslaunch mobiman r1_pro_jointTrackerdemo_pid.launch
   </thead>
   <tbody>
     <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考躯干驱动接口</td>
+    </tr>
+    <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="2">/motion_target/target_joint_state_arm_left <br>/motion_target/target_joint_state_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">position</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">这是一个包含六个元素的向量，代表每个关节的六个目标位置。</td>
@@ -1475,21 +1454,6 @@ roslaunch mobiman r1_pro_jointTrackerdemo_pid.launch
 加速度和加加速度限制设置为速度限制的1.5倍。</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_torso</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考躯干驱动接口</td>
-    </tr>
-    <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
@@ -1507,6 +1471,7 @@ roslaunch mobiman r1_pro_jointTrackerdemo_pid.launch
   </tbody>
 </table>
 
+
 #### 手臂姿态控制
 R1 Pro手臂姿态控制是一个用于控制手臂移动到目标末端执行器（ee）坐标帧的ROS软件包。它主要包括两个launch文件,分别对应 左臂的姿态控制和右臂的姿态控制, 可以通过以下命令启动：
 
@@ -1518,7 +1483,13 @@ roslaunch mobiman r1_pro_right_arm_relaxed_ik.launch
 
 请注意：
 
-- 当双臂姿态控制器启动后，左右双臂将自动调整至左图所示的状态。请确保将机械臂置于双臂自然垂下的位置，以避免因运动角度过大导致初始化失败。
+- 由于姿态控制是根据目标ee姿态不断解算出目标关节角下发给`/motion_target/target_joint_state_arm_left`和`/motion_target/target_joint_state_arm_right`，所以当双臂姿态控制器启动后，需要执行以下命令启动关节控制节点。
+  ```bash
+  source {your_download_path}/install/setup.bash
+  roslaunch mobiman r1_pro_jointTrackerdemo_pid.launch
+  ```
+
+- 当双臂姿态控制器启动后，左右双臂将自动调整至左图所示的状态。请确保将R1 Pro置于双臂自然垂下的位置，以避免因运动角度过大导致初始化失败。
 - 当前末端姿态控制的相对位姿是URDF中`gripper_link`相对于`torso_link4`的姿态转换。以下图中的左臂为例，左臂的`left_gripper_link`坐标系相对于躯干的`torso_link4`坐标系的相对关系中，包含了x、y、z的偏移量以及orientation对应的旋转偏移。
   ![R1Pro_arm_pose_control_cn](./assets/software/R1Pro_arm_pose_control_cn.png)
 
@@ -1535,18 +1506,6 @@ roslaunch mobiman r1_pro_right_arm_relaxed_ik.launch
   </thead>
   <tbody>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_pose_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">目标左臂末端执行器位姿</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_pose_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>        
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">目标右臂末端执行器位姿</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
-    </tr>
-    <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>   
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂关节反馈</td>
@@ -1559,19 +1518,32 @@ roslaunch mobiman r1_pro_right_arm_relaxed_ik.launch
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_left</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_pose_arm_left</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">目标左臂末端执行器位姿</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_pose_arm_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>        
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">目标右臂末端执行器位姿</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_left</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>   
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂关节控制</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂关节目标位置</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>   
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右臂关节控制</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右臂关节目标位置</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
   </tbody>
 </table>
+
 
 针对以上话题的具体字段及其详细描述如下表所示：
 <table style="width: 100%; border-collapse: collapse;">
@@ -1583,6 +1555,11 @@ roslaunch mobiman r1_pro_right_arm_relaxed_ik.launch
     </tr>
   </thead>
   <tbody>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left<br>/hdas/feedback_arm_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
+    </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="8">/motion_target/target_pose_arm_left<br>/motion_target/target_pose_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
@@ -1615,14 +1592,15 @@ roslaunch mobiman r1_pro_right_arm_relaxed_ik.launch
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">pose.orientation.w</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">旋转四元数</td>
-    </tr>      
+    </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_left<br>/hdas/feedback_arm_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm_left<br>/motion_target/target_joint_state_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考手臂驱动接口</td>
-    </tr>
+    </tr>      
   </tbody>
 </table>
+
 
 
 #### 夹爪控制
@@ -1780,141 +1758,10 @@ roslaunch mobiman torso_control_r1.launch
 底盘控制是一个矢量控制节点，允许同时发送三个方向的速度命令：x、y 和w。通过以下命令启动：
 
 ```bash
-roslaunch mobiman r1_chassis_control.launch
-```
-
-该文件将启动两个节点：`chassis_control_node` 和 `r1_control_manager`。`chassis_control_node `负责R1底盘的速度控制。接口信息如下所示：
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">话题名称</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 100px;">I/O</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 300px;">描述</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">消息类型</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_speed_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">底盘的目标速度，包括vx, vy and omega.</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::Twist</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/chassis_acc_limit</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">底盘的加速度限制，最大值分别为2.5, 1.0, 1.0</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::Twist</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/brake_mode</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">发出底盘是否进入制动模式的指令。如果处于制动模式，当速度为0时，底盘将通过将车轮转动一定角度来锁定自身。</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">std_msgs::Bool</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">R1底盘控制订阅此话题并控制底盘的目标速度。</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">R1底盘控制发布此话题以控制电机。</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
-    </tr>
-  </tbody>
-</table>
-
-针对以上话题的具体字段及其详细描述如下表所示：
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">消息名称</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">字段</th>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 500px;">描述</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="6">/motion_target/target_speed_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">标准消息头</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">linear</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">线速度</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">线速度x, 范围 (-1.5, 1.5) m/s</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">线速度y, 范围 (-1.5, 1.5) m/s</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">angular</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">角速度</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">角速度, 范围  (-3 - 3) rad/s</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="6">/motion_target/chassis_acc_limit</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">标准消息头</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">linear</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">线速度</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.x</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">加速度限制x, 范围 (-2.5, 2.5) m/s²</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.y</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">加速度限制y, 范围 (-1.0, 1.0) m/s²</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">angular</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">角速度</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">.z</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">角速度限制, 范围 (-3, 3) rad/s²</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/brake_mode</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">data</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">布尔值<br>进入刹车模式：True<br>退出刹车模式：False</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考底盘驱动接口</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考底盘驱动接口</td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-#### 底盘控制
-底盘控制是一个矢量控制节点，允许同时发送三个方向的速度命令：x、y 和w。通过以下命令启动：
-
-```bash
 roslaunch mobiman r1_pro_chassis_control.launch
 ```
 
-该文件将启动两个节点：`chassis_control_node` 和 `r1_pro_eepose_pub_node`，其中`chassis_control_node `为R1 Pro底盘的速度控制。接口信息如下所示：
+该文件将启动两个节点：`chassis_control_node` 和 `r1_pro_eepose_pub_node`。`chassis_control_node `负责R1底盘的速度控制。接口信息如下所示：
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
     <tr>
@@ -1925,6 +1772,12 @@ roslaunch mobiman r1_pro_chassis_control.launch
     </tr>
   </thead>
   <tbody>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_chassis</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">底盘控制订阅此话题并控制底盘的目标速度。</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
+    </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_speed_chassis</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
@@ -1944,19 +1797,14 @@ roslaunch mobiman r1_pro_chassis_control.launch
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">std_msgs::Bool</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">R1底盘控制订阅此话题并控制底盘的目标速度。</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
-    </tr>
-    <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_chassis</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">R1底盘控制发布此话题以控制电机。</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">底盘控制发布此话题以控制电机。</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
     </tr>
   </tbody>
 </table>
+
 
 针对以上话题的具体字段及其详细描述如下表所示：
 <table style="width: 100%; border-collapse: collapse;">
@@ -1968,6 +1816,11 @@ roslaunch mobiman r1_pro_chassis_control.launch
     </tr>
   </thead>
   <tbody>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_chassis</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考底盘驱动接口</td>
+    </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="6">/motion_target/target_speed_chassis</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
@@ -2024,17 +1877,13 @@ roslaunch mobiman r1_pro_chassis_control.launch
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">布尔值<br>进入刹车模式：True<br>退出刹车模式：False</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_chassis</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考底盘驱动接口</td>
-    </tr>
-    <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/control_chassis</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">-</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">请参考底盘驱动接口</td>
     </tr>
   </tbody>
 </table>
+
 
 #### 姿态估计
 在底盘控制的launch文件中，还会启动一个名为`eepose_pub_node`的节点。该节点接收来自HDAS的关节角反馈，并计算出对应于三个坐标系的反馈。`eepose_pub_node`定义了三个坐标帧：基座连接框架（Base Link Frame，左图）、浮动基座框架（Floating Base Frame，中图）和末端执行器姿态框架（End-Effector Pose Frame，右图）。
@@ -2053,24 +1902,6 @@ roslaunch mobiman r1_pro_chassis_control.launch
   </thead>
   <tbody>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/pose_ee_arm_left</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">从浮动基座变换到左端执行器姿态</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/pose_ee_arm_right</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">从浮动基座变换到右端执行器姿态</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
-    </tr>
-    <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/pose_floating_base</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">从基座链接变换到浮动基座</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
-    </tr>
-    <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂电机反馈</td>
@@ -2088,8 +1919,27 @@ roslaunch mobiman r1_pro_chassis_control.launch
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">躯干电机反馈</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">sensor_msgs::JointState</td>
     </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/pose_ee_arm_left</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">从浮动基座变换到左端执行器姿态</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/pose_ee_arm_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">从浮动基座变换到右端执行器姿态</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
+    </tr>
+    <tr style="background-color: white;">
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_control/pose_floating_base</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Output</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">从基座链接变换到浮动基座</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
+    </tr>
   </tbody>
 </table>
+
 
 针对以上话题的具体字段及其详细描述如下表所示：
 <table style="width: 100%; border-collapse: collapse;">

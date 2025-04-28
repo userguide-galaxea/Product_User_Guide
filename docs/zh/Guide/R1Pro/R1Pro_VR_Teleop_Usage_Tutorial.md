@@ -33,7 +33,7 @@ VR遥操作系统提供沉浸式的远程控制体验，使操作员能够通过
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">R1 Pro 上位机（双系统，非虚拟机）</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">系统：Ubuntu20.04 ROS Noetic</br>用于给R1 Pro Base升级软件程序</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">系统：Ubuntu20.04 ROS 1 Noetic或Ubuntu 22.04 ROS 2 Humble</br>用于给R1 Pro Base升级软件程序</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">局域网</td>
@@ -45,12 +45,12 @@ VR遥操作系统提供沉浸式的远程控制体验，使操作员能够通过
 
 
 ### 2.2 软件准备
-点击下方链接获取R1 Pro VR 遥操作SDK`V1.1.4`。(R1 Pro整机SDK版本中包含VR遥操作SDK)
 
-- 百度云盘：[R1 Pro SDK V1.1.4](https://pan.baidu.com/s/1rQd3_Cu4E9PjygupxeQDig?pwd=v114)
-- Google Drive: [R1 Pro SDK V1.1.4](https://drive.google.com/drive/folders/1RTt6NMOoA0pjbx5qXkYCb2fyQyUHyZFf?usp=sharing)
+查看[R1 Pro软件版本更新日志](./R1Pro_Software_Changelog/R1Pro_changelog.md)，获取最新的SDK版本。整机ATC SDK版本中包含所有产品软件资源。
 
-VR设备配置SDK：
+<span style="color:red;">注意：如使用Ubuntu 20.04 ROS 1 Noetic版本，请查看[ROS 1软件文档](./R1Pro_Software_Introduction_ROS1.md)并使用ROS 1版本的启动命令进行以下控制；如使用Ubuntu 22.04 ROS 2 Humble版本，请查看[ROS 2软件文档](./R1Pro_Software_Introduction_ROS2.md)并使用ROS 2版本对应的启动命令进行以下控制。</span>
+
+同时，在SDK链接中下载VR设备配置SDK：
 
 - `Meta 相关安装包.zip`：用于新设备激活。
 - `platform-tools-latest-windows.zip`：adb文件，用于安装VR头显内部的数据采集APP。
@@ -67,7 +67,6 @@ VR设备配置SDK：
 2. 连接VR设备：使用Type-C数据线将 VR 设备连接到电脑。
 3. 授权USB连接：在VR设备中，确认并允许USB设备连接（如图所示）。
    ![VR_3.2_USB_connection_CN](./assets/vr/VR_3.2_USB_connection_CN.png)
-
 4. 进入ADB解压路径：打开文件资源管理器，进入解压后的ADB工具文件夹路径。
 5. 拷贝APK文件：将 `GalaxeaVR-V1-0-1.apk` 文件拷贝到该路径下。
 6. 安装APK：在该路径下打开命令提示符（CMD），执行以下命令安装应用：
@@ -85,33 +84,29 @@ VR设备配置SDK：
 ![VR_3.3_wifi_CN](./assets/vr/VR_3.3_wifi_CN.png)
 
 ### 3.4 获取VR设备的IP地址
-在VR设备内，点击已连接的WiFi，打开网络页面后向下划，找到并记录IP地址（如：192.168.5.24）。
+在VR设备内，点击已连接的WiFi，打开网络页面后向下划找到并记录IP地址，如192.168.5.24。
 
 ## 4. R1 Pro 配置
-安装 Galaxea R1 Pro VR遥操作SDK
 
-1. 解压SDK文件`r1_pro_sdk_v1.1.4.tar.gz`，执行以下命令拷贝SDK到 R1 Pro 上。
+1. 解压SDK文件（例如：`r1pro_vr_teleop_sdk_name.tar.gz`），执行以下命令拷贝SDK到 R1 Pro 上。
     ```Bash
-    scp r1_pro_sdk_v1.1.4.tar.gz nvidia@${R1_Pro_IP}:~/Downloads
+    scp r1pro_vr_teleop_sdk_name.tar.gz nvidia@${R1_Pro_IP}:~/Downloads
     ```
-
 2. 登陆 R1 Pro
     ```Bash
     ssh nvidia@${R1_Pro_IP}
     ```
-
 3. 解压SDK到 R1 Pro
     ```Bash
     mkdir ~/vr_workspace
-    tar -zxvf ~/Downloads/r1_pro_sdk_v1.1.4.tar.gz -C ~/vr_workspace
+    tar -zxvf ~/Downloads/r1pro_vr_teleop_sdk_name.tar.gz -C ~/vr_workspace
     ```
-
 4. 安装额外依赖
     ```Bash
     pip3 install websockets pyquaternion
     ```
 
-升级完成后，将机器人 R1 Pro 下电并重新启动。重启后，软件包配置完成，VR遥操作功能即可使用。
+升级完成后，将机器人下电并重新启动。重启后，软件包配置完成，VR遥操作功能即可使用。
 
 ## 5.遥操作启动
 <span style="color:red;">**注意：每次启动时都需要完成并确认本章节的所有操作。**</span>
@@ -178,7 +173,7 @@ VR设备配置SDK：
     此时，您可以看到机器人头部相机的图像。
     ![VR_5.2.4_vr_image_CN](./assets/vr/VR_5.2.4_vr_image_CN.png)
    
-您可使用以下步骤完成简易操作：
+使用以下步骤完成遥控器简易操作：
 
 - **停止操作**：长按 B 键 2 秒以上，停止VR遥操作。
 - **控制夹爪**：手的移动会控制机器人手臂的移动。左遥控器的 T 键和右遥控器的 T 键分别控制左右手的夹爪闭合。
@@ -404,6 +399,7 @@ VR设备配置SDK：
 数据采集的文件格式为**rosbag**，文件后缀为`*.bag`。
 
 ### 7.2 数据获取
+
 **默认存储路径：`/home/nvidia/GalaxeaDataset/{data}/`**
 
 date 为当天日期，格式如下：20250307

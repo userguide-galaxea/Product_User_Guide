@@ -107,7 +107,7 @@ hide:
                 <div class="product">
                         <a href="Guide/R1Pro/R1Pro_Unbox_Startup_Guide">Unbox & Startup Guide</a> <br>
                         <a href="Guide/R1Pro/R1Pro_Hardware_Introduction">Hardware Introduction</a> <br>
-                        <a href="Guide/R1Pro/R1Pro_Software_Introduction">Software Introduction</a> <br>
+                        <a href="Guide/R1Pro/R1Pro_Software_Guide">Software Introduction</a> <br>
                 </div>
             </section>
             <section class="products-section">
