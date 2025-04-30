@@ -12,7 +12,7 @@
 
 ## 首次操作指引
 
-访问[Galaxea R1 Lite开箱启动指南](./R1Lite_Unboxing_Startup_Guide.md)，并按照说明操作R1 Lite。
+访问[Galaxea R1 Lite开箱启动指南](./R1Lite_Unbox_Startup_Guide.md)，并按照说明操作R1 Lite。
 
 ## 软件接口
 ### 驱动接口
@@ -1049,8 +1049,7 @@
 
 #### 手臂关节控制
 
-手臂关节控制节点负责控制手臂的每个关节，总共有6个关节。
-可通过以下命令启动：
+手臂关节控制节点负责控制手臂的每个关节，总共有6个关节。可通过以下命令启动：
 ```Bash
 # 以下两个launch选择一个启动，本质是关节速度限制参数不一样
 source ~/work/galaxea/install/setup.bash
@@ -1157,7 +1156,7 @@ roslaunch mobiman r1_lite_jointTrackerdemo_fast.launch           #（高跟随�
 
 #### 手臂姿态控制
 
-手臂姿态控制是一个用于控制手臂移动到目标末端执行器（ee）坐标帧的ROS软件包。它主要包括两个launch文件,分别对应 左臂的姿态控制和右臂的姿态控制, 可以通过以下命令启动
+手臂姿态控制是一个用于控制手臂移动到目标末端执行器（ee）坐标帧的ROS软件包。它主要包括两个launch文件,分别对应 左臂的姿态控制和右臂的姿态控制。可通过以下命令启动:
 
 ```Bash
 source ~/work/galaxea/install/setup.bash
@@ -1285,7 +1284,7 @@ roslaunch mobiman R1_Lite_right_arm_relaxed_ik.launch #启动右手
 
 #### 躯干速度控
 
-R1 Lite躯干速度控制是一个用于控制躯干移动到目标浮动基座坐标帧的ROS软件包。它可以通过以下命令启动：
+R1 Lite躯干速度控制是一个用于控制躯干移动到目标浮动基座坐标帧的ROS软件包。可通过以下命令启动：
 
 ```Bash
 source ~/work/galaxea/install/setup.bash
@@ -1363,9 +1362,7 @@ roslaunch mobiman torso_speed_control_example.launch
 
 #### 底盘控制
 
-底盘控制是一个使用矢量控制来控制R1 Lite底盘的节点，可同时发送三个方向的速度命令：x、y 和w。
-
-通过以下命令启动：
+底盘控制是一个使用矢量控制来控制R1 Lite底盘的节点，可同时发送三个方向的速度命令：x、y 和w。可通过以下命令启动：
 
 ```Bash
 source ~/work/galaxea/install/setup.bash

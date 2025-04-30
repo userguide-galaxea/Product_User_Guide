@@ -348,6 +348,3 @@ Galaxea R1 Lite可选配平台双目相机和机械臂腕部相机。
 </table>
 
 <span style="color: blue;">如需不同配置，请联系我们product@galaxea.ai。</span>
-
-## 下一步
-Galaxea R1 Lite 硬件指南到这里就结束了。我们建议您阅读Galaxea R1 Lite 软件指南以获取更多详细信息。

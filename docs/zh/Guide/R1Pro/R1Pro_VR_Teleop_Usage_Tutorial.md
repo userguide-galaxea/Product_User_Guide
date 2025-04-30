@@ -88,9 +88,9 @@ VR遥操作系统提供沉浸式的远程控制体验，使操作员能够通过
 
 ## 4. R1 Pro 配置
 
-1. 解压SDK文件（例如：`r1pro_vr_teleop_sdk_name.tar.gz`），执行以下命令拷贝SDK到 R1 Pro 上。
+1. 解压SDK文件（例如：`{r1pro_vr_teleop_sdk_name}.tar.gz`），执行以下命令拷贝SDK到 R1 Pro 上。
     ```Bash
-    scp r1pro_vr_teleop_sdk_name.tar.gz nvidia@${R1_Pro_IP}:~/Downloads
+    scp {r1pro_vr_teleop_sdk_name}.tar.gz nvidia@${R1_Pro_IP}:~/Downloads
     ```
 2. 登陆 R1 Pro
     ```Bash
@@ -99,7 +99,7 @@ VR遥操作系统提供沉浸式的远程控制体验，使操作员能够通过
 3. 解压SDK到 R1 Pro
     ```Bash
     mkdir ~/vr_workspace
-    tar -zxvf ~/Downloads/r1pro_vr_teleop_sdk_name.tar.gz -C ~/vr_workspace
+    tar -zxvf ~/Downloads/{r1pro_vr_teleop_sdk_name}.tar.gz -C ~/vr_workspace
     ```
 4. 安装额外依赖
     ```Bash

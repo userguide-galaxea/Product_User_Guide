@@ -10,7 +10,7 @@
 This is the initial software release for the R1 Lite. For future version updates, you can check the R1 Lite Software Version Update Log to obtain the latest SDK package and update information.
 
 ## First-Time Operation Guide
-Refer to the [Galaxea R1 Lite Unboxing and Startup Guide](./R1Lite_Unboxing_Startup_Guide.md) and follow the instructions to operate the R1 Lite.
+Refer to the [Galaxea R1 Lite Unboxing and Startup Guide](./R1Lite_Unbox_Startup_Guide.md) and follow the instructions to operate the R1 Lite.
 
 ## Software Interface
 ### Driver Interface

@@ -53,7 +53,3 @@ R1 Lite共有3个遥控器来分别控制机器人的躯干、底盘和紧急停
 请按照下图所示，将4个拨杆拨到指定位置控制底盘移动：
 
 ![R1L_chassis_control_cn](./assets/R1Lite_Basic_Usage_Introduction_cn/R1L_chassis_control_cn.png)
-
-## 下一步
-
-我们的快速入门之旅已告一段落。为了更深入地掌握Galaxea R1 Lite，我们强烈建议您查阅[R1 Lite产品硬件介绍](./R1Lite_Hardware_Introduction.md)和R1 Lite产品软件介绍中的章节。这些资源包含了丰富的信息以及实际示例，能够帮助您更轻松、更好地使用Galaxea R1 Lite。
