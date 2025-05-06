@@ -575,12 +575,12 @@ The specific fields and their detailed descriptions for the above topic are show
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/function_frame_left_arm</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">command</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: enable<br>2: disable<br>3: calibration for the whole arm<br>4: clear error<br>5: MIT control mode<br>6: PID control mode</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: enable<br>2: disable<br>3: calibration for the whole arm<br>4: clear error<br>5: Torque-Position-Mix Control Mode<br>6: Servo Mode</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/function_frame_right_arm</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">command</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: enable<br>2: disable<br>3: calibration for the whole arm<br>4: clear error<br>5: MIT control mode<br>6: PID control mode</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: enable<br>2: disable<br>3: calibration for the whole arm<br>4: clear error<br>5: Torque-Position-Mix Control Mode<br>6: Servo Mode</td>
     </tr>
   </tbody>
 </table>

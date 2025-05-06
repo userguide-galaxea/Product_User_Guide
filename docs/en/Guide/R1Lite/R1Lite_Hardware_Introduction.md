@@ -63,7 +63,7 @@
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Operating Range</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Vertical: 0 ~ 1600 mm (250mm in front of the wheel)</br>Horizontal: 760 mm (760mm in front of the wheel)</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Vertical 0-1.7m</td>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Function</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Torso: Lift/Tilt</br>Chassis: Ackerman/Translation/Spinning</td>

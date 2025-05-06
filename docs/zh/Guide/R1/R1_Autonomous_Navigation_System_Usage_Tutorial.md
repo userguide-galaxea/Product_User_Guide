@@ -252,23 +252,19 @@ sudo apt install libgoogle-glog-dev
 ###  4.1 构建地图
 #### 4.1.1 启动R1
 
-1. **登录R1端**
+通过SSH登录至R1 ECU。
 
-    通过SSH登录至R1 ECU。
+```Bash
+ssh nvidia@robot_ip
+# Enter the password  (default: nvidia)
+```
 
-    ```Bash
-    ssh nvidia@robot_ip
-    # Enter the password  (default: nvidia)
-    ```
+运行以下指令，启动R1的相关节点。
 
-2. **启动R1**
-
-    运行以下指令，启动相关节点。
-
-    ```Bash
-    cd work/galaxea/install/share/startup_config/script/
-    ./ota_script.sh boot
-    ```
+```Bash
+cd work/galaxea/install/share/startup_config/script/
+./ota_script.sh boot
+```
 
 #### 4.1.2 录制数据包
 运行以下指令，开始录制bag文件。
@@ -290,57 +286,87 @@ rosbag record /hdas/imu_chassis /hdas/lidar_chassis_left /hdas/feedback_chassis
 - 在录制开始时，机器人需保持静止状态，并持续5秒以上，以保证数据质量。
 - 在录制数据时，应确保环境中没有动态目标（如移动的人员或物体），以避免干扰地图构建。请勿跟随机器人移动。
 
-#### 4.1.3 将数据回传
+#### 4.1.3  获取建图运行环境Docker
+1. 下载并安装Docker镜像。
 
-1. **确认bag文件路径**
-	</br>在R1机器人端，确认录制的bag文件路径。默认情况下，bag文件会保存在用户的主目录下（`~`）
-   
-    ```Bash
-    ls -lh ~/map_data.bag
-    ```
-	 如果文件名与默认不同，请记录实际的文件名。
-	
-2. **使用SCP将数据传输到本地电脑**
-	</br>通过SCP工具，将bag文件从机器人端传输到本地电脑。确保本地电脑已连接到与机器人相同的网络，并且网络连接稳定。在本地电脑的终端中，运行以下命令：
-    ```Bash
-    scp nvidia@robot_ip:~/map_data.bag /local/path/to/save/
-    # nvidia@robot_ip：机器人的用户名和IP地址。
-    # ~/map_data.bag：机器人端bag文件的路径。
-    # /local/path/to/save/：本地电脑上保存bag文件的目录。
+    <span style="color:blue;">由于文件过大，请扫描下方微信二维码添加企业客服或邮件至support@galaxea.ai获取文件。</span>
+    ![R1_navi_4.1.3_qrcode_cn](./assets/R1_navi_4.1.3_qrcode_cn.png)
+
+    推荐查看[Docker安装教程](https://blog.csdn.net/qq_38156743/article/details/130401015)进行安装。
+
+2. 执行以下命令在本地电脑上加载Docker文件。
+
+    ```bash
+    sudo docker load -i galaxea-main-mapping-image.tar.gz
     ```
 
-3. **验证文件传输**
-    </br>在本地电脑上，检查文件是否已成功传输，并确认文件大小是否与机器人端一致。
-    
-    ```Bash
-    ls -lh /local/path/to/save/map_data.bag
-	```
-    如果文件传输成功，您将看到与机器人端相同的文件大小。
-    
-4. **数据回传**
-	</br><span style="color:blue;">**请将数据包回传至support@galaxea.ai或发送至企业微信客服。**</span>
+    > docker默认挂载在根目录，请预留20G以上存储空间。如需更改挂载路径，请参考:
+        ```bash
+        # 1. 在 /etc/docker/ 目录下创建一个新的 daemon.json 文件：
+        sudo vim /etc/docker/daemon.json
+        # 2. 在打开的文件中，添加以下内容，将 Docker 存储目录改为希望挂载的路径
+        {
+        "data-root": "/path/to/target_dir"
+        }
+        # 3. 保存并退出。按下'shift'+ ':'，输入'w'+'q'，然后按下回车键。
+        # 4. 修改配置后，重启 Docker 服务使配置生效：
+        sudo systemctl restart docker
+        ```
 
-#### 4.1.4  导入地图相关文件
-数据回传后，请联系技术人员获取地图，并将其导入R1。
-```Bashs
+3. 下载默认标定文件。<span style="color:blue;">请添加企业客服或邮件至support@galaxea.ai获取文件。</span>
+
+#### 4.1.4 在环境中建图
+1. 在本地电脑终端中，运行以下命令将录制的bag文件从R1端拉取到本地。
+    ```bash
+    scp nvidia@{robot_ip}:~/{xxx.bag} .
+    # [robot_ip]为R1的IP地址;
+    # [xxx.bag]为录制的bag文件名。
+    ```
+
+2. 准备好bag文件和标定参数文件。
+    ```bash
+    mkdir -p ~/mapping_data
+    cp /path/to/xxx.bag ~/mapping_data
+    cp /path/to/robot_calibration.json ~/mapping_data
+    ```
+
+3. 启动Docker并开始建图。
+    ```bash
+    sudo docker run --rm  -v ~/mapping_data:/mapping_data galaxea-mapping:v0.0.1 bash -c "./root/run_mapping_app.sh /mapping_data"
+    ```
+
+4. 查看建图结果。
+    ```bash
+    cd ~/mapping_data/map
+    # map.obj 文件即为地图结果.  可以使用meshlab打开查看点云. 
+    # sudo apt-get install meshlab
+    meshlab map.obj
+    ```
+
+#### 4.1.5 导入地图和标定文件
+执行以下命将地图和标定文件导入至R1。
+```bash
 ssh nvidia@{rorbot_ip} "mkdir -p ~/galaxea/calib ~/galaxea/maps"
 scp -r ~/mapping_data/map/* nvidia@{robot_ip}:~/galaxea/maps/
 scp -r ~/mapping_data/robot_calibration.json nvidia@{robot_ip}:~/galaxea/calib/
 ```
 
+
 ### 4.2 启动定位功能
 启动定位功能时，确保机器人在已知地图中。
 
 1. **启动R1节点**
-    </br>在R1端执行以下命令，启动相关节点。
-    ```Plain
-    ssh nvidia@{rorbot_ip}
+    
+    在R1端执行以下命令，启动相关节点。
+    ```Bash
+    ssh nvidia@{robot_ip}
     cd work/galaxea/install/share/startup_config/script/
     ./ota_script.sh boot
     ```
 
 2. **获取定位**
-    </br>将遥控器拨到底盘控制模式，操作机器人已知地图环境中2m范围内绕圈，确保机器人能够成功定位。
+    
+    将遥控器拨到底盘控制模式，操作机器人已知地图环境中2m范围内绕圈，确保机器人能够成功定位。
 
     在R1端终端中，运行以下命令检查定位状态：
     ```Bash
@@ -369,11 +395,11 @@ scp -r ~/mapping_data/robot_calibration.json nvidia@{robot_ip}:~/galaxea/calib/
 3. **更新导航目标点下发脚本**
     </br>重复上述过程，记录所有目标点的位姿信息后，将所有目标点位姿信息更新到导航目标点下发脚本中。 脚本示例如下：
 
-    ```
+    ```Python
     point_nav.py
     ```
 
-    ```
+    ```Python
     #!/usr/bin/env python
     import geometry_msg.msg
     import rospy

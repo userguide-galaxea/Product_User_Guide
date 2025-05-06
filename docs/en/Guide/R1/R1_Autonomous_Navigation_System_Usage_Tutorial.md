@@ -244,28 +244,25 @@ sudo apt install libgoogle-glog-dev
 Map building is the foundational step for the robot's autonomous navigation. The robot records map data (bag files) via remote control, processes and builds the map on a local computer, and finally uploads the map to the specified directory on the robot to complete the deployment. By following the tutorial below, you can set the target pose, modify the target file, and run the process to achieve point-to-point navigation.
 
 ###  4.1 Building the Map
+#### 4.1.1 Start R1
 
-1. **Login to R1**
+Log in to the R1 ECU via SSH.
 
-    Log in to the R1 ECU via SSH.
+```Bash
+ssh nvidia@robot_ip
+# Enter the password  (default: nvidia)
+```
 
-    ```Bash
-    ssh nvidia@robot_ip
-    # Enter the password  (default: nvidia)
-    ```
+Execute the following command to start R1's relevant nodes.
 
-2. **Start R1**
+```Bash
+cd work/galaxea/install/share/startup_config/script/
+./ota_script.sh boot
+```
 
-    Run the following command to start the relevant nodes.
+#### 4.1.2 Record Data Packets
 
-    ```Bash
-    cd work/galaxea/install/share/startup_config/script/
-    ./ota_script.sh boot
-    ```
-
-#### 4.1.1 Record Data Packets
-
-Run the following command to start recording the bag file.
+Execute the following command to start recording the bag file.
 
 ```Bash
 cd ~
@@ -282,65 +279,95 @@ When the map data recording is completed, press `Ctrl + C` to end the recording.
 - At the start of the recording, the robot must remain stationary for at least 5 seconds to ensure data quality.
 - During the data recording, ensure that there are no dynamic objects (such as moving people or objects) in the environment to avoid interference with map construction.
 
-#### 4.1.2 Data Transmission
+#### 4.1.3 Data Transmission
+1. Download and install the Docker file.
 
-1. **Confirm the Bag File Path**
-   </br>On the R1 robot, confirm the path of the recorded bag file. By default, the bag file will be saved in the user's home directory (~).
+    <span style="color:blue;">As the file is too large, please email support@galaxea.ai or scan the WeChat QR code below to add the customer service to get the file.</span>
+    ![R1_navi_4.1.3_qrcode](./assets/R1_navi_4.1.3_qrcode.png)
 
-    ```Bash
-    ls -lh ~/map_data.bag
+    Visit the page to see the toturial on [how to install the Docker](https://blog.csdn.net/qq_38156743/article/details/130401015). You may have to translate the page to English.
+
+2. Execute the following command to process the Docker file on the local PC.
+
+    ```bash
+    sudo docker load -i galaxea-main-mapping-image.tar.gz
     ```
-   If the file name is different from the default, please record the actual file name.
 
-2. **Transfer Data to Local Computer Using SCP**
-   </br>Use the SCP tool to transfer the bag file from the robot to your local computer. Ensure that your local computer is connected to the same network as the robot and that the network connection is stable. 
-   In the terminal on your local computer, run the following command:
-    ```Bash
-    scp nvidia@robot_ip:~/map_data.bag /local/path/to/save/
-    # nvidia@robot_ip：The username and IP address of R1.
-    # ~/map_data.bag：The path to the bag file on R1.
-    # /local/path/to/save/：The directory on the local computer where the bag file will be saved.
+    > Docker is processed on the root path by default. You may leave more storage space greater than 20GB. If you need to change teh path, refer to:
+        ```bash
+        # 1. Create a new file named "daenmon.json" under the path '/etc/docker/'
+        sudo vim /etc/docker/daemon.json
+        # 2. Add the following content in the opened file to change the path you want to save the Docker file.
+        {
+        "data-root": "/path/to/target_dir"
+        }
+        # 3. Press 'Shift' + ':', enter 'w' + 'q' and then press 'Enter' to save and exit.
+        # 4. Restart the Docker to make it valid.
+        sudo systemctl restart docker
+        ```
+
+3. Download the calibration file, <span style="color:blue;">please email support@galaxea.ai or add the customer service on Wechat to get the file.</span>
+
+#### 4.1.4 Build the map
+1. Run the following command in the local computer terminal to pull the recorded bag file from the R1 end to the local end.
+    ```bash
+    scp nvidia@{robot_ip}:~/{xxx.bag} .
+    # [robot_ip] is R1's IP address;
+    # [xxx.bag] is the name of the recorded bag file.
     ```
-3. **Verify File Transfer**
-   </br>On your computer, check whether the file has been successfully transferred and confirm that the file size is consistent with the one on the robot.
-    ```Bash
-    ls -lh /local/path/to/save/map_data.bag
+
+2. Prepare the bag file and calibration parameter file.
+    ```bash
+    mkdir -p ~/mapping_data
+    cp /path/to/xxx.bag ~/mapping_data
+    cp /path/to/robot_calibration.json ~/mapping_data
     ```
-    If the file transfer is successful, you will see the same file size as on the robot.
 
-4. **Data Transmission**
-   </br><span style="color:blue;">**Please transmit the data package to [support@galaxea.ai](mailto:support@galaxea.ai) or send it to customer service via WeChat Work.**</span>
+3. Launch Docker and start the mapping process. 
+    ```bash
+    sudo docker run --rm  -v ~/mapping_data:/mapping_data galaxea-mapping:v0.0.1 bash -c "./root/run_mapping_app.sh /mapping_data"
+    ```
 
-#### 4.1.3  Import Map-Related Files
+4. Check the mapping outcome.
+    ```bash
+    cd ~/mapping_data/map
+    # map.obj file represents the mapping result, which can be opened and viewed in MeshLab for point cloud inspection.
+    # sudo apt-get install meshlab
+    meshlab map.obj
+    ```
 
-```Bash
+#### 4.1.5 Importing the Map and Calibration Files.
+Run the following command to import the map and calibration files into R1.
+```bash
 ssh nvidia@{rorbot_ip} "mkdir -p ~/galaxea/calib ~/galaxea/maps"
 scp -r ~/mapping_data/map/* nvidia@{robot_ip}:~/galaxea/maps/
 scp -r ~/mapping_data/robot_calibration.json nvidia@{robot_ip}:~/galaxea/calib/
 ```
 
-### 4.2 Initiating the Positioning Function
-When activating the positioning function, make sure the robot is in a known map.
+### 4.2 Start the Localization Function
+When starting localization the function, ensure the robot is within the known map.
 
-1. **Start the R1 node**
-   </br>Execute the following commands at the R1 end to start the related nodes.
-   ```Plain
-   ssh nvidia@{rorbot_ip}
-   cd work/galaxea/install/share/startup_config/script/
-   ./ota_script.sh boot
-   ```
+1. **Start the R1 Node.**
+    
+    On the R1 end, run the following commands to start the relevant nodes:
 
-2. **Obtain Positioning Information**
-   </br>Set the remote control to the chassis control mode, and operate the robot to circle within 2m in the known map environment of the robot. Ensure that the robot can successfully locate itself.
-
-    In the R1 terminal, run the following command to check the positioning status:
     ```Bash
-        source ~/work/galaxea/install/setup.bash
-        rosrun tf tf_echo map body
+    ssh nvidia@{robot_ip}
+    cd work/galaxea/install/share/startup_config/script/
+    ./ota_script.sh boot
     ```
 
-    If the following data are returned normally, the positioning is successful:
+2. **Acquire Localization.**
+    
+    Switch the controller to chassis control and mode drive the robot in a circle within a 2m range in the known map environment to ensure successful localization.
 
+    In the R1 terminal, run the following commands to check the localization status:
+    ```Bash
+     source ~/work/galaxea/install/setup.bash
+     rosrun tf tf_echo map body
+    ```
+
+    If the following data is returned normally, localization is successful:
     ```Bash
     - Translation: [3.280, -0.743, 0.008]
     - Rotation: in Quaternion [0.000, -0.004, -0.147, 0.989] # xx y z w
@@ -348,17 +375,17 @@ When activating the positioning function, make sure the robot is in a known map.
 
 ### 4.3 Set the Target Pose Position
 
-1. **Remote robot to the target point**
+1. **Remote robot to the target point.**
    </br>After the positioning is successfully started, remotely control the robot to the target point you set. Ensure that the center of R1 is at least 45 cm away from obstacles.
 
-2. **Record the pose information**
+2. **Record the pose information.**
    </br>Every time the robot reaches the target point, record the robot pose information at that position.
    ```Bash
    - Translation: [3.280, -0.743, 0.008]
    - Rotation: in Quaternion [0.000, -0.004, -0.147, 0.989] # x y z w
    ```
 
-3. **Update the script for sending navigation target point information**
+3. **Update the script for sending navigation target point information.**
 
     Repeat the above steps. After recording the pose information of all target points, update them to the navigation target point script.</br>
 

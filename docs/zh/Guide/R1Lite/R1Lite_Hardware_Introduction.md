@@ -12,11 +12,11 @@
     <tbody>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">高度</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">977 mm（站立时）</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1281 mm</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">宽度</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">596 mm</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">596 mm（底盘）；<br>670 mm（平台）</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">重量</td>
@@ -62,16 +62,12 @@
             <td style="padding: 8px; border: 1px solid #ddd;">额定: 3 kg@0.6 m</br>最大: 5 kg@0.6 m</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">操作范围</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">55 kg（含电池）</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">额定电压</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">垂直: 0-1600mm(距离车轮前面250mm距离)</br>水平:  0-760mm（高度750mm，距离车轮前面距离760mm）</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">垂直操作范围</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">0-1.7m</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">功能</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">躯干：升降/俯仰</br>底盘：阿克曼/平移/旋转</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">躯干：上下升降/前后平移</br>底盘：阿克曼/平移/自旋</td>
         </tr>
     </tbody>
 </table>
@@ -131,7 +127,7 @@
 </table>
 
 ### 平台
-平台是机械臂的安装基础，架设在躯干的顶端。它为机械臂提供了稳定的支撑，并通过与躯干的连接，实现整体结构的协调性。平台的设计注重结构强度和稳定性，能够承受机械臂在操作过程中产生的各种力和力矩；同时配备精准的安装接口，便于机械臂的快速安装和调试。
+平台是机械臂的安装基础，架设在躯干的顶端。它为机械臂提供了稳定的支撑，并通过与躯干的连接，实现整体结构的协调性。平台的设计注重结构强度和稳定性，能够承受机械臂在操作过程中产生的各种力和力矩；同时配备精准的v安装接口，便于机械臂的快速安装和调试。
 
 ![R1L_platform_cn](./assets/R1Lite_Hardware_cn/R1L_platform_cn.png)
 
@@ -155,7 +151,7 @@
 </table>
 
 ### 躯干
-躯干是R1 Lite的主体结构，用于连接平台和底盘。它不仅为机械臂和平台提供支撑，还内置了部分关键的电气和控制系统，是整个机器人的重要组成部分。躯干的设计注重结构的紧凑性和可靠性，同时兼顾了内部空间的合理利用。
+躯干是R1 Lite的主体结构，用于连接平台和底盘。它不仅为机械臂和平台提供支撑，还内置了部分关键的电气和控制系统，是整个机器人的重要组成部分。躯干的设计注重结构的紧凑性和可靠性，同时兼顾了内部空间的合理利用。通过遥控器或上位机控制，可实现躯干的升降和前后移动，满足不同方位的操作需求。
 
 ![R1L_torso_cn](./assets/R1Lite_Hardware_cn/R1L_torso_cn.png)
 
@@ -191,7 +187,7 @@
 </table>
 
 ### 底盘
-底盘是R1 Lite的基础支撑结构，采用三舵轮自研舵轮模组W1，总共6自由度，可以实现360°旋转无限位。这种设计使得机器人在移动和转向时更加灵活，能够适应复杂的环境和任务需求。
+底盘是R1 Lite的基础支撑结构，采用三舵轮自研舵轮模组W1，总共6自由度，可以实现360°旋转无限位，支持平移、自旋和阿克曼运动。这种设计使得机器人在移动和转向时更加灵活，能够适应复杂的环境和任务需求。
 
 <span style="color:red;">**注意：R1 Lite支持两种供电方式：电池供电或交流电供电。用户可根据实际情况选择机器人的供电配置。**</span>
 

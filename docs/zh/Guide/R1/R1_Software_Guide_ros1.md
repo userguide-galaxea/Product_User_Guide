@@ -544,12 +544,12 @@ roslaunch HDAS r1.launch
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/function_frame_left_arm</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">command</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: 使能<br>2: 失能<br>3: 整臂标定<br>4: 清除错误<br>5: MIT<br>6: PID</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: 使能<br>2: 失能<br>3: 整臂标定<br>4: 清除错误<br>5: 力位混合控制<br>6: 伺服模式</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/function_frame_right_arm</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">command</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: 使能<br>2: 失能<br>3: 整臂标定<br>4: 清除错误<br>5: MIT<br>6: PID</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: 使能<br>2: 失能<br>3: 整臂标定<br>4: 清除错误<br>5: 力位混合控制模式<br>6: 伺服模式</td>
     </tr>
   </tbody>
 </table>
