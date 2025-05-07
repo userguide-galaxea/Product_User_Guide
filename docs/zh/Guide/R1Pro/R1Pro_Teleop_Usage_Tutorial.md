@@ -218,7 +218,7 @@ cd ${SDK_path}/install/share/startup_config/script/
    ```bash
    cd ${R1Pro-T_SDK_path}/install
    source setup.bash
-   roslaunch HDAS R1 Pro-T.launch
+   roslaunch HDAS r1prot.launch
    ```
 5. 启动R1 Pro-T teleoperation节点。
    ```bash

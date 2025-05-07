@@ -6,6 +6,7 @@
 
 ## ROS 1 Noetic Changelog
 
+- [V 1.1.8](./ROS1/v1.1.8.md)
 - [V 1.1.7](./ROS1/v1.1.7.md)
 - [V 1.1.4](./ROS1/v1.1.4.md)
 

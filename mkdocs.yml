@@ -88,6 +88,7 @@ nav:
         - Hardware Introduction: Guide/R1Lite/R1Lite_Hardware_Introduction.md
         - Software Introduction: Guide/R1Lite/R1Lite_Software_Introduction.md
         - Wheel Motor Zero-Point Calibration Instruction: Guide/R1Lite/R1Lite_Wheel_Motor_Calibration.md
+        - Software Changelog: Guide/R1Lite/R1Lite_Software_Changelog/R1Lite_changelog.md
   - Galaxea R1 Pro User Guide:
         - Getting Started: Guide/R1Pro/R1Pro_Getting_Started.md
         - Unbox and Startup Guide: Guide/R1Pro/R1Pro_Unbox_Startup_Guide.md

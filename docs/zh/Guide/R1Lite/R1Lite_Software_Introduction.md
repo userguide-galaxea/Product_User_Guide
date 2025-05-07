@@ -1282,7 +1282,7 @@ roslaunch mobiman R1_Lite_right_arm_relaxed_ik.launch #启动右手
   </tbody>
 </table>
 
-#### 躯干速度控
+#### 躯干速度控制
 
 R1 Lite躯干速度控制是一个用于控制躯干移动到目标浮动基座坐标帧的ROS软件包。可通过以下命令启动：
 
