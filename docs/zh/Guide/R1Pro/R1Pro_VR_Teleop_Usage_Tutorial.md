@@ -438,7 +438,7 @@ date 为当天日期，格式如下：20250307
  S2R12000P18245_20240213173320125_RAW.bag
  S2R12000P18245_20240213173320125_RAW.json
  # 格式为 robot_serial_number+timestamp+RAW
- # robot_serial_number：机器人序列号，位于 /opt/galaxea/body/RSN，章节4中配置过
+ # robot_serial_number：机器人序列号，位于 /opt/galaxea/body/RSN
  # timestamp：数据采集的时间戳精确到毫秒。
  # RAW：代表数据采集原始落盘数据
 ```
@@ -473,7 +473,7 @@ date 为当天日期，格式如下：20250307
     </tbody>
 </table>
 
-### 8. 夹爪夹持力更改
+## 8. 夹爪夹持力更改
 当前默认的加持速度较快，夹持力较大。如需更改，可手动调整配置文件。
 
 ```bash
@@ -481,7 +481,7 @@ date 为当天日期，格式如下：20250307
 ```
 ![VR_8_gripper_CN](./assets/vr/VR_8_gripper_CN.png)
 
-### 9.机器人监控平台
+## 9. 机器人监控平台
 该平台包含了机器人状态上报及报警功能。
 
 <span style="color:blue;">**机器人监控平台为付费启用功能，目前处于测试阶段，如需深入了解及购买试用，请联系product@galaxea.ai或致电4008 780 980。**</span>

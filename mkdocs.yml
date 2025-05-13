@@ -98,6 +98,7 @@ nav:
         - Teleop Usage Tutorial: Guide/R1Pro/R1Pro_Teleop_Usage_Tutorial.md
         - VR Teleop Usage Tutorial: Guide/R1Pro/R1Pro_VR_Teleop_Usage_Tutorial.md
         - Software Changelog: Guide/R1Pro/R1Pro_Software_Changelog/R1Pro_changelog.md
+  - ROS2 Upgrade Guide: Guide/ROS2_upgrade/ROS2_upgrade_guide.md
 
 extra_css:
   - styles.css
@@ -168,3 +169,4 @@ plugins:
             Autonomous Navigation System Usage Tutorial: 自主导航系统使用教程
             Wheel Motor Zero-Point Calibration Instruction: 舵轮电机零点标定说明
             FAQ: 常见问题
+            ROS2 Upgrade Guide: ROS2 升级烧录操作教程

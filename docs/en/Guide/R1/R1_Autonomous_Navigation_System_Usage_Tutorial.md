@@ -227,7 +227,7 @@ Please ensure that your environment meets the following software dependency requ
 2. Operating System Dependency: Ubuntu 20.04 LTS
 3. Middleware Dependency: ROS Noetic
 
-<span style="color:red;">**Ensure that the R1 robot has installed the intelligence system version V1.1.0 or higher. For access, please email product@galaxea.ai or call 4008780980.**</span>
+<span style="color:blue;"> Please email support@galaxea.ai or add the customer service on Wechat to get the SDK file.</span>
 
 If you need to deploy the navigation system for the first time, please follow the steps below to install the required dependencies:
 
@@ -306,7 +306,7 @@ When the map data recording is completed, press `Ctrl + C` to end the recording.
         sudo systemctl restart docker
         ```
 
-3. Download the calibration file, <span style="color:blue;">please email support@galaxea.ai or add the customer service on Wechat to get the file.</span>
+3. <span style="color:blue;"> Please email support@galaxea.ai or add the customer service on Wechat to get the calibration file.</span>
 
 #### 4.1.4 Build the map
 1. Run the following command in the local computer terminal to pull the recorded bag file from the R1 end to the local end.

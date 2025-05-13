@@ -233,7 +233,7 @@ Galaxea R1配备了多种传感器，其中包括9个高清摄像头和2个激�
 2. 操作系统依赖：Ubuntu 20.04 LTS
 3. 中间件依赖：ROS Noetic
 
-<span style="color:red;">**注意：R1必须安装V1.1.0及以上的智能版本包，请联系product@galaxea.ai 或致电4008780980获取。**</span>
+<span style="color:blue;">请添加企业客服或邮件至support@galaxea.ai获取SDK文件。</span>
 
 如果需要首次部署导航系统，请按照以下步骤安装相关依赖：
 
@@ -289,7 +289,7 @@ rosbag record /hdas/imu_chassis /hdas/lidar_chassis_left /hdas/feedback_chassis
 #### 4.1.3  获取建图运行环境Docker
 1. 下载并安装Docker镜像。
 
-    <span style="color:blue;">由于文件过大，请扫描下方微信二维码添加企业客服或邮件至support@galaxea.ai获取文件。</span>
+    <span style="color:blue;">请扫描下方微信二维码添加企业客服或邮件至support@galaxea.ai获取文件。</span>
     ![R1_navi_4.1.3_qrcode_cn](./assets/R1_navi_4.1.3_qrcode_cn.png)
 
     推荐查看[Docker安装教程](https://blog.csdn.net/qq_38156743/article/details/130401015)进行安装。

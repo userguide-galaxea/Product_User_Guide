@@ -33,6 +33,7 @@ git clone https://github.com/userguide-galaxea/Demo.git
 <p style="text-align: center;">
       <video src="./assets/R1_arm_test_3.mp4" style="width: 95%;"autoplay muted loop>
    </p>
+   
 - **torso_test_1: **躯干弯曲下蹲，同时双臂在胸腔两侧收拢折叠。（该动作用于测试 T1/T2/T3 躯干电机。）
 
 <p style="text-align: center;">

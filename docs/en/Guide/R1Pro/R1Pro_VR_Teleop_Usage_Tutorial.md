@@ -427,11 +427,10 @@ The data is saved in `rosbag + json` format, and each file corresponds to one an
 S2R12000P18245_20240213173320125_RAW.bag
 S2R12000P18245_20240213173320125_RAW.json
 
-# The format is task id + episode id + timestamp
-# task id：The task number defined in the configuration file.
-# episode id：During this collection process, the sequence numbers after the breakpoint packet cut-off are also included.
-# timestamp：The timestamp of data collection.
-"{task_id}-{episode_id}-{timestamp}.bag
+# The format is "robot_serial_number + timestamp + RAW"
+# robot_serial_number：the serial number of robot which is located in the path "/opt/galaxea/body/RSN".
+# timestamp：The timestamp of data collection in ms.
+# RAW: the raw data.
 ```
 
 ###  7.5 Start Recording
@@ -463,7 +462,7 @@ Perform data recording operation through the VR left remote controller:
     </tbody>
 </table>
 
-## 8 Gripping Force Change
+## 8. Gripping Force Change
 
 The current default gripping speed is fast, and the gripping force is strong. To change it, you can manually adjust the configuration file to modify it.
 

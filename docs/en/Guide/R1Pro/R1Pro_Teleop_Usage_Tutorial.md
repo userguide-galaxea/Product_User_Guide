@@ -1,11 +1,11 @@
 # R1 Teleop Usage Tutorial
-> Welcome to R1 Teleop (R1-T) — the isomorphic teleoperation platform designed specifically for Galaxea R1. 
+> Welcome to R1 Pro Teleop (R1 Pro-T) — the isomorphic teleoperation platform designed specifically for Galaxea R1 Pro. 
 
 ## 1. Product Introduction
 
-R1 Teleop is a platform which is designed with a scaled-down version that perfectly replicates the full functionality of the R1, enabling full-body force feedback teleoperation and full-joint mapping. It also supports force feedback from the body to the remote control side, ensuring precise synchronization of operations with millimeter-level accuracy and millisecond-level response time. 
+R1 Pro Teleop is a platform which is designed with a scaled-down version that perfectly replicates the full functionality of the R1 Pro, enabling full-body force feedback teleoperation and full-joint mapping. It also supports force feedback from the body to the remote control side, ensuring precise synchronization of operations with millimeter-level accuracy and millisecond-level response time. 
 
-The following tutorial will guide you through the installation and setup of R1 Teleop, helping you quickly experience this high-performance teleoperation platform.
+The following tutorial will guide you through the installation and setup of R1 Pro Teleop, helping you quickly experience this high-performance teleoperation platform.
 
 ## 2. Unboxing
 Please check whether all items in the shipping container are present.
@@ -18,25 +18,52 @@ Please check whether all items in the shipping container are present.
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">R1-T Base</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">R1 Pro-T Base</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">R1-T Box</br> 
-(Power/Communication Box)</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">R1 Pro-T Box</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Power Unit (24V)</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">4-pin plug—XT30-F (2+2)</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">2-pin plug—XT60-M</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">USB-CAN Adaptor</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">USB-Type-C Charging Cable</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">2</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">Velcro band</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">2</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">G-clips</td>
             <td style="padding: 8px; border: 1px solid #ddd;">2</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Power </td>
+            <td style="padding: 8px; border: 1px solid #ddd;">G-clip board</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">USB/CAN Cable</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">L-hex wrench</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">M6x16 Screws</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">8</td>
         </tr>
     </tbody>
 </table>
@@ -53,302 +80,200 @@ Please check whether all items in the shipping container are present.
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">R1-T Host Computer (Dual systems)</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">R1 Pro-T Host Computer</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
             <td style="padding: 8px; border: 1px solid #ddd;">System: Ubuntu 20.04 ROS Noetic 
-            </br><span style="color:red;">Note: Do not use the R1-T host computer in a virtual machine, as this may prevent Bluetooth controller connection.</span></td>
+            </br><span style="color:red;">Note: Do not use the R1 Pro-T host computer in a virtual machine, as this may prevent Bluetooth controller connection.</span></td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Local Area Network (LAN)</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Used for wireless communication between R1 and R1 Teleop.</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Used for wireless communication between R1 Pro and R1 Pro Teleop.</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">Ethernet Cable</td>
             <td style="padding: 8px; border: 1px solid #ddd;">1</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Used to check the IP address of R1.</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Used to check the IP address of R1 Pro.</td>
         </tr>
     </tbody>
 </table>
 
 ### 3.2 Software Preparation
 #### 3.2.1 Download and Unzip the Folder.
-Please download and extract the SDK file package of R1 from the R1 main body (this is the package of R1 main body in the customer's release version).
 
-- Baidu Cloud：[https://pan.baidu.com/s/1TeDBtkqUOXUPwE9fdivQ7w?pwd=gr1t](https://pan.baidu.com/s/1TeDBtkqUOXUPwE9fdivQ7w?pwd=gr1t)
-- Google Drive：[https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing](https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing)
+<span style="color:red;">Please use the dedicated SDK version of R1 Pro V1.1.7 and R1 Pro-T provided in the following link. Do not use the V1.1.7 version in the version log.</span>
 
-<span style="color:red;">Ensure that the R1 robot's software version has been updated to V1.1.0 or higher. Click [here](R1_Software_Changelog/v1.1.0.md) to get the latest version.</span>
+- Google Drive：[R1 Pro-T ROS 1 SDK](https://drive.google.com/drive/folders/1awWaOjIlWNk8olzHGkcmlt8sC9VpzHX9?usp=sharing)
+- Baidu Cloud：[R1 Pro-T ROS 1 SDK](https://pan.baidu.com/s/1BgKtbmyzy-Bn8NpHZtQc_g?pwd=r1pt)
+
+
 
 #### 3.2.2 Install Software Dependencies
-Please install the required software dependencies on the R1-T host computer.
+Please install the required software dependencies on the R1 Pro-T host computer.
 
 ```Bash
+sudo apt install ros-noetic-joy 
 sudo apt install ros-noetic-trac-ik
-sudo apt install ros-noetic-joy
-sudo apt install tmux tmuxp
+sudo apt install tmuxp
+sudo apt install tmux
 ```
 
-#### 3.2.3 Modify the `/.bashrc`File
-Modify the ROS IP settings on both the R1 and R1-T host computers. Follow these steps:
+#### 3.2.3 Multi-device Communication Configuration
+<span style="color:red;">Note: When R1Pro and R1Pro - T are on the same gateway, separately modify the ~/.bashrc file of the upper - computer environment of R1 Pro and R1 Pro - T.</span>
 
-1. Add the following two lines to the end of the **`/.bashrc`** file on the R1:
+1. Add the following command to the end of the **`~/.bashrc`** file on the R1 Pro ECU:
+    ```Bash
+    export ROS_MASTER_URI=http://R1 Pro_IP address:11311
+    export ROS_IP=R1 Pro_IP address
+    ```
 
-      ```Bash
-      export ROS_MASTER_URI=http://The IP address of R1:11311
-      export ROS_IP= The IP address of R1
-      ```
-
-2. Add the following two lines to the end of the **`/.bashrc`** file on the R1-T host computer:
-
-      ```Bash
-      export ROS_MASTER_URI=http://The IP address of R1:11311
-      export ROS_IP= The IP address of the R1-T host computer
-      ```
+2. Add the following command to the end of the **`/.bashrc`** file on the R1 Pro-T host computer:
+    ```Bash
+    export ROS_MASTER_URI=http://R1 Pro-T_IP address:11311
+    export ROS_IP=R1 Pro-T_IP address
+    ```
 
 3. Example:
 
-      ![R1-T_software_preparation](assets/R1-T_software_preparation.png)
+    When the host computers of R1 Pro and R1 Pro-T are both on the 192.168.10.0 gateway, separately modify the `~/.bashrc` of the host computers of R1 Pro and R1 Pro-T.
+
+    ![R1Pro-T_3.2.3](./assets/r1prot/R1Pro-T_3.2.3.png)
 
 
-## 4. R1 Teleop Connection
-![R1_R1T_hardware_diagram](assets/R1_R1T_hardware_diagram.png)
-
+## 4. R1 Pro Teleop Connection
 ### 4.1 Securing the Device
-Use the G-clips to secure the R1-T Base to the desktop, as shown in the diagram below:
+Use the M6x16 screws and G-clips to secure the R1 Pro-T Base to the desktop, as shown in the diagram below:
 
-![R1-T_Base_mount](assets/R1-T Base_mount.png)
+![R1Pro-T_4.1_base_mount](./assets/r1prot/R1Pro-T_4.1_base_mount.png)
 
 ### 4.2 Connecting the Device
 Following the hardware connection architecture diagram:
 
-![img](assets/R1-T Base_box_conection.png)
+![R1Pro-T_4.2_conection](./assets/r1prot/R1Pro-T_4.2_conection.png)
 
-1. Connect the CAN cable at the bottom rear of the R1-T Base to the 4-pin aviation connector on the R1-T Box.
-2. Connect the power supply cable to the 2-pin aviation connector on the R1-T Box.
-3. Connect the USB-CAN cable from the R1-T Box to the USB port of the host computer.
+1. Connect one end of the 2-pin plug to the port on R1 Pro-T Box and the other end to the XT60-F port on the power adapter.
+2. Connect one end of the 4-pin plug to the port on R1 Pro-T Box and the other end to the XT30(2+2)-F port to the motor on the torso of R1 Pro-T.
+3. Connect one end of the blue USB-CAN adaptor cable to R1 Pro-T Box and the other end to the USB port on the host computer.
 
 <span style="color:red;">**Note: After completing the connections, do not power on immediately. Please follow the steps below to proceed.**</span>
 
 ### 4.3 Powering On
-After securing the R1-T Base to the desktop, **place the arms and torso in the initial position** as shown in the diagram below. <span style="color:red;">**Ensure that the J4, J5, and J6 joints of both arms, as well as the R1-T Base, are at zero-point (initial posture)**</span>, then you may insert the power unit into the power outlet and press the power button on the R1-T to turn it on.
+After securing the R1 Pro-T Base to the desktop, **place the arms and torso in the initial position** as shown in the diagram below. <span style="color:red;">**Ensure that the J5, J6, and J7 joints of both arms, as well as the R1 Pro-T Base, are at zero-point (initial posture)**</span>, then you may insert the power unit into the power outlet and press the power button on the R1 Pro-T Box to turn it on.
 
-![img](assets/R1-T Initial Position.png)
+![R1Pro-T_4.3_initial_position](./assets/r1prot/R1Pro-T_4.3_initial_position.png)
 
-<span style="color:red;">**Note: Before starting the R1 Teleop each time, make sure to adjust to its initial posture. Failing to do so may pose a risk during operation.**</span>
+<span style="color:red;">**Note: Before starting the R1 Pro-T every time, make sure to adjust to its initial posture. Failing to do so may pose a risk during operation.**</span>
 
-### 4.4 **Connect Bluetooth Remote Controller**
-Please be sure to connect two arms to the R1-T host conputer in sequence, ensuring that <span style="color:red;">**the left arm is connected first, followed by the right arm**</span>.
+### 4.4 Connect Bluetooth Remote Controller
+Please be sure to connect two arms to the R1 Pro-T host conputer in sequence, ensuring that <span style="color:red;">**the left arm is connected first, followed by the right arm. Due to program settings, to streamline the operation process, if the controller connection sequence is incorrect, please turn off the power and power it on again, then follow the correct sequence for connection.**</span>.
 
-**Note: Due to program settings, to streamline the operation process, if the controller connection sequence is incorrect, please turn off the power and power it on again, then follow the correct sequence for connection.**
+#### 4.4.1 Bluetooth Controller
+![]()
 
-Connection steps are as follows:
+#### 4.4.2 Connection Steps
 
-1. Turn on Bluetooth on the remote controller. For both left and right-hand controllers, flip the “ON/OFF” switch on the right side of the controller, then press and hold the “M” button on the left side and the “B” button on the top of the controller.
-![img](assets/R1-T_controller.png)
-2. Turn on Bluetooth on the host computer and connect to the two devices named "Magicsee R1."
-![img](assets/R1-T_bluetooth_connection.png)
-3. After connecting, the message “Device Connected” should appear. Enter the following command to confirm if the connection is successful:
+1. Press the power switch to turn on the handle Bluetooth.
+2. Turn on the host computer's Bluetooth and connect to the two devices named `HID`.
+3. After connection, "Device Connected" will be displayed. Enter the following command to check whether the connection is successful:
     ```Bash
     ls /dev/input/ | grep js
     ```
 
     When both`js0` (left arm) and `js1` (right arm) are returned simultaneously, the connection is successful.
-    ![img](assets/R1-T_bluetooth_arm.png)
-
-4. Bluetooth Remote Controller Button Function Description
-   ![img](assets/R1-T_controller_tag.png)
-
-<table style="width: 100%; border-collapse: collapse;">
-    <thead>
-        <tr style="background-color: black; color: white; text-align: left;">
-            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Joystick/Button</th>
-            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">Controller_Left</th>
-            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">Controller_Right</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Joystick X - Positiver</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Chassis moves forward (Vx is positive).</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Torso moves upward (Vz is positive).</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Joystick X - Negative</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Chassis moves backward (Vx is negative).</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Chassis rotates counterclockwise (W is positive).</td>
-        </tr>
-        <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Joystick Y - Positive</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Chassis moves left (Vy is positive).</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Chassis rotates counterclockwise (W is positive).</td>
-        </tr>
-                <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Joystick Y - Negative</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Chassis moves right (Vy is negative).</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Chassis rotates clockwise (W is negative).</td>
-        </tr>
-                <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Button A</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Left gripper closes.</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Right gripper closes.</td>
-        </tr>
-                <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Button B</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Left gripper opens.</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Right gripper opens.</td>
-        </tr>
-                <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Button C</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Start recording data.*</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Torso moves forward (Vx is positive).</td>
-        </tr>
-                <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Button D</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Stop recording data.*</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Torso moves backward (Vx is negative).</td>
-        </tr>
-    </tbody>
-</table>
-
-<span style="color:red;">*This procedure is applicable only to R1 with software version updated to V1.1.0.</span>
+    ![R1Pro-T_4.4.2_grep_js](./assets/r1prot/R1Pro-T_4.4.2_grep_js.png)
 
 ## 5. Launch SDK
-![img](assets/R1-T_pipeline.png)
-
-<span style="color:red;">**Note: The R1 software version must be V1.0.4 or higher. Click [here](R1_Software_Changelog/v1.1.0.md) to get the latest version.**</span>
-
-During the whole process of controlling R1, you need to open multiple terminals. We recommend you to use TMUX. Common instructions are as follows:
-
-- Create a new terminal: Press `Ctrl + B` then `C`. 
-- Switch terminals: Press `Ctrl + B` then press number which indicates the number of terminal windows. 
-
-Now, you can start CAN driver in the following steps.
-
 ### 5.1 Start R1
-Execute the following conmands to start the robot.
+Use the following script to launch R1 Pro with one click:
 
-```Python
-cd ~/work/galaxea/install/share/startup_config/script
-./ota_script.sh boot_teleop     
+```bash
+cd ${SDK_path}/install/share/startup_config/script/
+./robot_startup.sh boot ../session.d/ATCStandard/R1PROIsomorphicTeleop.d/
 ```
 
-### 5.2 Start R1 Teleop
+This script will launch nodes such as roscore, HDAS, mobiman, the camera, and the radar.
+
+![R1Pro-T_5.1_r1prosdk](./assets/r1prot/R1Pro-T_5.1_r1prosdk.png)
+
+### 5.2 Start R1 Pro-T SDK
+<span style="color:red;">Note: This step must be performed on the R1 Pro-T host computer.</span>
 
 1. Start TMUX.
-
-      ```Python
-      tmux
-      ```
-
+    ```Python
+    tmux
+    ```
 2. Start FDCAN Communication
+    ```Python
+    sudo ip link set dev can0 type can bitrate 1000000 dbitrate 5000000 fd on
+    sudo ip link set up can0
+    ```
+3. Press `Ctrl + D` to exit TMUX.
+4. Start R1 Pro-T HDAS node.
+    ```Bash
+    cd ${R1Pro-T_SDK_path}/install
+    source setup.bash
+    roslaunch HDAS r1prot.launch
+    ```
+5. Start R1 Pro-T teleoperation node.
+    ```Bash
+    cd ${R1Pro-T_SDK_path}/install
+    source setup.bash
+    roslaunch mobiman r1_pro_teleoperation.launch
+    ```
 
-      ```Python
-      sudo ip link set dev can0 type can bitrate 1000000 dbitrate 5000000 fd on
-      sudo ip link set up can0
-      ```
+After completing the above steps, wait 3-5 seconds and you will be able to control R1 Pro-T.
 
-3. Press `Ctrl + B` then `D` to exit TMUX.
+## 6. Data Collection Process
+### 6.1 Introduction to Data Format
+The file format for data acquisition is rosbag，and the file suffix is `*.bag`.
 
-4. Start R1 Teleop
+### 6.2 Data Acquisition
+Default storage path：`/home/nvidia/GalaxeaDataset/{date}/`.
 
-      ```Bash
-      cd {your_path}/install/share/startup_config/script
-      ./ota_script.sh boot
-      ```
-    Note：`your_path` refers to the path where the SDK of R1 Teleop is located.
+>
 
-After completing the above steps, wait for 3 to 5 seconds and you can control R1 Teleop.
+### 6.3 Data Write-to-Disk Files
+The data is saved in `rosbag + json` format, and each file corresponds to one another. For example:
 
-## 6. Data Collection
-### 6.1 Data Collection Script
+```json
+# For example, the two files below represent a data bag.
 
-Please download and extract the R1 Teleop data acquisition program file package from the following link.
+S2R12000P18245_20240213173320125_RAW.bag
+S2R12000P18245_20240213173320125_RAW.json
 
-- Baidu Cloud：[https://pan.baidu.com/s/1WEQIQbMhe3fQ2wyKx160Lw?pwd=gr1t](https://pan.baidu.com/s/1WEQIQbMhe3fQ2wyKx160Lw?pwd=gr1t)
-- Google Drive：[https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing](https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing)
+# The format is "robot_serial_number + timestamp + RAW"
+# robot_serial_number：the serial number of robot which is located in the path "/opt/galaxea/body/RSN".
+# timestamp：The timestamp of data collection in ms.
+# RAW: the raw data.
+```
 
-### 6.2 Data Collection Procedure (V1.1.0)
-<span style="color:red;">**Note: This section applies only to R1 with the software version updated to V1.1.0. Before starting data collection, ensure that the teleoperation program on the R1 Base has been started correctly according to the steps outlined in the preceding sections.**</span>
-
-#### 6.2.1 Connecting to R1
-
-1. Login R1. 
-
-      ```Bash
-      ssh nvidia@IP address
-      # Enter the password  (default: nvidia)
-      ```
-
-2. Exexute the data collection command.
-
-      ```Bash
-      python3 colect_data.py
-      ```
-
-      <span style="color:red;">If the connection is successful, please disconnect the HDMI and USB cables, and close the peripheral interface covers on the chassis and torso to avoid limiting the range of motion.</span>
-
-#### 6.2.2 Execute Data Collection Command
-
-1. After connecting to R1, the system will prompt you to enter the path of the task configuration YAML file. Please enter the path of the pre-configured template YAML file:
-
-      ```Bash
-      ./sample_config.yaml
-      ```
-
-2. Enter the initial sequence number for the recorded action, for example: `0`.
-
-      ![img](assets/R1-T_data_collection.png)
-
-3. Press **Enter** to start recording. Press **Enter** again to stop recording once completed <span style="color:red;">(Do not use `Ctrl + C` to stop)</span>. After the recording ends, you can check the recorded actions in the output path. Please wait for the program to calculate the **three camera frequencies** from the recently recorded data packet.
-
-![img](assets/R1-T_frame_inquiry.png)
-
-#### 6.2.3 Follow-up Inquiry
-Once the camera frequency calculation is complete, the system will sequentially ask the following questions. Please respond accordingly based on your selection.
-
+###  6.4 Start Recording
+Perform data recording operation through the VR left remote controller:
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
-            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">Inquiry</th>
-            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">Description</th>
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">Function</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">Operation</th>
+            <th style="width: 300px; padding: 8px; border: 1px solid #ddd;">Description</th>
         </tr>
     </thead>
     <tbody>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Continue recording the next trajectory?</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Enter y: Start recording the next data packet, the number will automatically increment by 1. 
-            </br>Enter n: Proceed to the next step.</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Start recording</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Click button C on the left controller</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Start data recording.</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Re-record the current trajectory?</br> 
-(Power/Communication Box)</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Enter y: Re-record the current data packet, the number will remain unchanged. 
-</br>Enter n: Proceed to the next step.</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">Stop recording</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Click button D on the left controller</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Stop data recording.</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">Delete the current trajectory?</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Enter y: Save the data and exit the program. 
-            </br>Enter n: Delete the current data packet and exit the program.</td>
+                <td style="padding: 8px; border: 1px solid #ddd;">Delete the current recording</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">Click button C on the left controller</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">If a recording is already in progress, click button C again will stop and delete the current recording, and it will not be written to disk.</td>
         </tr>
     </tbody>
 </table>
-
-### 6.3 Data Collection Procedure (V1.1.1)
-
-<span style="color:red;">Note: This section is applicable only to R1 with the internal software version updated to V1.1.1 or higher. </span> 
-
-Before starting data collection, ensure that the teleoperation program on the R1 Base has been started correctly according to the steps outlined in the preceding sections.
-
-Before starting data collection, ensure that the R1 robot is started correctly as described in Section [5.1](#51-start-r1), and that both Bluetooth controllers of the R1 Teleop are properly connected.
-
-Steps for Data Recording Using Bluetooth Controllers:
-
-1. **Start recording:** Press the **C** button on the left-arm Bluetooth controller to start data recording.
-2. **Stop recording and save:** Press the D button to stop data recording and save automatically. 
-
-The recorded data package will be saved by default at the following path: `/home/nvidia/GalaxeaDataset/data/`. If the path does not exist, the system will create it automatically. 
-
-Users can modify the default storage path or specify the rostopic to be recorded by editing the configuration file `~/work/galaxea/install/lib/data_collection/config/001.yaml`.
 
 If you encounter any issues during installation or startup, please contact us at [support@galaxea.ai](mailto:support@galaxea.ai) or call 4008 780 980 for technical support !

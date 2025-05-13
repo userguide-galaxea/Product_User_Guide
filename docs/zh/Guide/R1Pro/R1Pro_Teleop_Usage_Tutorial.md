@@ -117,8 +117,8 @@ sudo apt install tmuxp
 sudo apt install tmux
 ```
 
-#### 3.2.3 修改/.bashrc 文件
-注意：确保R1Pro和R1Pro-T在同一网关时，分别修改R1 Pro和R1 Pro-T上位机环境的`~/.bashrc`文件。
+#### 3.2.3 多机通信配置
+<span style="color:red;">注意：确保R1Pro和R1Pro-T在同一网关时，分别修改R1 Pro和R1 Pro-T上位机环境的`~/.bashrc`文件。</span>
 
 1. 在R1 Pro ECU的`~/.bashrc`文件末尾加入以下内容：
     ```Bash
@@ -147,8 +147,8 @@ sudo apt install tmux
 
 ![R1Pro-T_4.2_conection_cn](./assets/r1prot/R1Pro-T_4.2_conection_cn.png)
 
-1. 将2芯航插公-XT60公连接线的一端连接至R1 Pro-T Box的2芯航插母口，另一端连接至电源适配器的XT60母头。
-2. 将4芯航插公-XT30(2+2)母连接线的4芯航插公端连接至R1 Pro-T Box的4芯航插母口，XT30(2+2)母端连接至R1 Pro-T的躯干电机 。
+1. 将2芯航插连接线的一端连接至R1 Pro-T Box，另一端连接至电源适配器的XT60母头。
+2. 将4芯航插连接线的一端连接至R1 Pro-T Box，另一端连接至R1 Pro-T的躯干电机。
 3. 将蓝色USB-CAN线一端连至接R1 Pro-T Box，另一端连接至上位机的USB接口。
 
 **<span style="color:red;">注意：连接完成后不要立刻上电，请按照以下步骤继续操作。</span>**
@@ -231,6 +231,58 @@ cd ${SDK_path}/install/share/startup_config/script/
 
 
 ## 6. 数据采集
-即将更新！
+### 6.1 数据格式介绍
+数据采集的文件格式为rosbag，文件后缀为`*.bag`。
+
+### 6.2 数据获取
+
+默认存储路径：`/home/nvidia/GalaxeaDataset/{date}/`
+
+> date 为当天日期，格式如下：20250307
+
+### 6.3 数据落盘文件介绍
+
+数据以 `rosbag + json` 格式保存，文件一一对应。
+
+```JSON
+# 例如以下两个文件代表了一个数据包：
+
+S2R12000P18245_20240213173320125_RAW.bag
+S2R12000P18245_20240213173320125_RAW.json
+
+# 格式为 robot_serial_number+timestamp+RAW
+# robot_serial_number：机器人序列号，位于 /opt/galaxea/body/RSN，
+# timestamp：数据采集的时间戳精确到毫秒。
+# RAW：代表数据采集原始落盘数据
+```
+### 6.4 录制数据
+使用VR左遥控器进行数据录制操作：
+
+<table style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr style="background-color: black; color: white; text-align: left;">
+            <th style="width: 200px; padding: 8px; border: 1px solid #ddd;">功能</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">操作</th>
+            <th style="width: 400px; padding: 8px; border: 1px solid #ddd;">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">开启录制</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">点击一下左手柄 C 键</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">开始数据录制</span></td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+                <td style="padding: 8px; border: 1px solid #ddd;">停止录制</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">点击一下左手柄 D 键</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">停止数据录制</td>
+        </tr>
+        <tr style="background-color: white; text-align: left;">
+            <td style="padding: 8px; border: 1px solid #ddd;">删除当前录制</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">点击一下左手柄 C 键</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">若已经有录制在进行中，再点击一下C键将结束并删除当前录制，数据不会落盘。</td>
+        </tr>
+    </tbody>
+</table>
 
 如在安装和启动过程中有任何问题，请及时与我们联系至[support@galaxea.ai](mailto:support@galaxea.ai)或致电4008 780 980获得技术支持！

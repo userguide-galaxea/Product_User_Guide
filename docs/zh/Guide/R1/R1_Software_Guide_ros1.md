@@ -535,7 +535,7 @@ roslaunch HDAS r1.launch
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
     <tr>
-      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">话题名称</th>
+      <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">服务名称</th>
       <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 200px;">字段</th>
       <th style="background-color: black; color: white; vertical-align: middle; padding: 8px; border: 1px solid #ddd; width: 600px;">描述</th>
     </tr>
@@ -544,42 +544,58 @@ roslaunch HDAS r1.launch
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/function_frame_left_arm</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">command</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: 使能<br>2: 失能<br>3: 整臂标定<br>4: 清除错误<br>5: 力位混合控制<br>6: 伺服模式</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: 使能<br>2: 失能<br>3: 整臂标定<br>4: 清除错误<br>5: MIT（力位混合控制模式）<br>6: PID（伺服控制模式）</td>
     </tr>
     <tr style="background-color: white;">
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/hdas/function_frame_right_arm</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">command</td>
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: 使能<br>2: 失能<br>3: 整臂标定<br>4: 清除错误<br>5: 力位混合控制模式<br>6: 伺服模式</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">1: 使能<br>2: 失能<br>3: 整臂标定<br>4: 清除错误<br>5: MIT（力位混合控制模式）<br>6: PID（伺服控制模式）</td>
     </tr>
   </tbody>
 </table>
 
+<span style="color:red;">注意：机械臂开机默认为MIT（力位混合控制模式）模式。以左臂为例，切换为PID（伺服控制模式）需通过`/hdas/function_frame_left_arm`接口。按顺序依次调用“2-6-1”命令，即先将机械臂“失能”，再切换机械臂控制模式为“PID（伺服控制模式）”，最后开启机械臂“使能”。如设备重新启动，机械臂会自动恢复至MIT（力位混合控制模式）。</span>
 
 **机械臂关节电机控制接口说明**
 
-- `/hdas/feedback_status_arm_left `
-- `/hdas/feedback_status_arm_right`
+``` Plain
+/motion_control/control_arm_left
+/motion_control/control_arm_right
+```
 
-下图为力位混合控制模式架构：
+1. **MIT-力位混合控制模式架构：**
+  ![R1_arm_driver_mit_mode](assets/R1_arm_driver_mit_mode.png)
+  电机的输出扭矩公式用于计算电流环给定跟踪的力矩值 `Tref`，公式如下：
+  <br>
+  $K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$，其中：
 
-![R1_arm_driver_mit_mode](assets/R1_arm_driver_mit_mode.png)
+    - `Kp`，`Kd` 为位置增益和速度增益的比例项；`pd`，`vd` 为期望的位置和速度；`t_ff` 为前馈力矩；`pe` 为编码器反馈的位置，`ve` 为微分得到的电机转速。
+    - 输入项包括：`Kp`，`Kd`，`pd`，`vd`，`t_ff`。
+    - 反馈项 `pe` 和 `ve` 无需手动输入。
 
-电机的输出扭矩公式用于计算电流环给定跟踪的力矩值 `Tref`，公式如下：
+    **使用须知:**
 
-$K_p(p_d - p_e) + K_d(v_d - v_e)+t_{ff} = T_{ref}$，其中：
+    - 前馈力矩：该值为必须项。由于位置项和速度项无法弥补过大的力矩误差，所以前馈力矩至少应补偿机械臂自身重力的影响。
+    - 增益设置推荐：以下是A1电机的推荐 `kp` 和 `kd` 值。调整时请谨慎操作。
 
-- `Kp`，`Kd` 为位置增益和速度增益的比例项；`pd`，`vd` 为期望的位置和速度；`t_ff` 为前馈力矩；`pe` 为编码器反馈的位置，`ve` 为微分得到的电机转速。
-- 输入项包括：`Kp`，`Kd`，`pd`，`vd`，`t_ff`。
-- 反馈项 `pe` 和 `ve` 无需手动输入。
+        `A1_kp = [ 140.0, 200.0, 120.0, 20.0, 20.0, 20.0 ]`
 
-**注意:**
+        `A1_kd = [ 10.0, 50.0, 5.0, 1.0, 1.0, 0.4 ]`
 
-1. 前馈力矩是必须项。位置项和速度项无法弥补过大的力矩误差，前馈力矩至少应补偿机械臂自身重力的影响。
-2. 以下是A1电机的推荐 `kp` 和 `kd` 值。调整时请谨慎操作。
+2. **PID-伺服控制模式架构：**
+  ![R1_arm_pid_cn](./assets/R1_arm_pid_cn.png)
+  伺服控制模式为三环PID（位置环、速度环、电流环）控制，该模式引入积分环节，稳态误差较小。为保持接口一致性，在控制数据格式上，与MIT接口相同。在`/motion_control/control_arm_left`接口中：
 
-  `A1_kp = [ 140.0, 200.0, 120.0, 20.0, 20.0, 20.0 ]`
+    - `p_des`：表示设定角度（rad）。
+    - `v_des`：表示速度限制（rad/s）。
+    - `k_p`，`k_d`：无意义。
+    - `t_ff`：表示对应力限保护。保护值范围为[0,1]，即电机允许的最大力矩百分比。
+  
+    **使用须知:**
 
-  `A1_kd = [ 10.0, 50.0, 5.0, 1.0, 1.0, 0.4 ]`
+    - 在PID-伺服模式下，设置所有电机控制信号值 `t_ff = 0.2`，其余值为0，机械臂将会进入带阻尼的自由拖动状态（当速度为0 rad/s时，电机会抑制转动）。
+    - 当`v_des ≠ 0`且`t_ff ≠ 0`时，即可开启对电机的位置控制。推荐首次调试数值为：`v_des = 0.5`，`t_ff=0.2`。
+    - 正常使用时，推荐设定`t_ff ＜ 0.8`，可防止电机触发力矩保护。
 
 #### 躯干驱动接口
 该接口是用于躯干控制和提供状态反馈的ROS软件包，它定义了多个话题，用于发布和订阅躯干电机的状态和控制命令。接口信息如下所示：
@@ -1573,9 +1589,51 @@ roslaunch mobiman r1_right_arm_relaxed_ik_mit.launch
   source {your_download_path}/install/setup.bash
   roslaunch mobiman r1_jointTrackerdemo.launch
   ```
+  
+  上述topic 启动后，需要一直发送，示例如下：
+  ```bash
+  # 右臂：
+  rostopic pub /motion_target/target_pose_arm_right geometry_msgs/PoseStamped "header:
+    seq: 0
+    stamp:
+      secs: 0
+      nsecs: 0
+    frame_id: ''
+  pose:
+    position:
+      x: 0.277
+      y: -0.675
+      z: -0.303
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: -0.047
+      w: 0.999"  -r 10
+
+
+  # 左臂：
+  rostopic pub /motion_target/target_pose_arm_left geometry_msgs/PoseStamped "header:
+    seq: 0
+    stamp:
+      secs: 0
+      nsecs: 0
+    frame_id: ''
+  pose:
+    position:
+      x: 0.373
+      y: 0.637
+      z: 0.303
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: -0.028
+      w: 1.0"  -r 10
+  ```
+  上述示例末端位姿如图：
+  
+  ![R1_arm_pose_control_eg_cn](./assets/R1_arm_pose_control_eg_cn.png)
 
 - 当双臂姿态控制器启动后，左右双臂将自动调整至左图所示的状态。请确保将R1置于双臂自然垂下的位置，以避免因运动角度过大导致初始化失败。
-
 - 当前末端姿态控制的相对位姿是URDF中gripper_link相对于torso_link4的姿态转换。以左臂为例，这是左臂left_gripper_link坐标系相对于torso_link4坐标系的相对关系，包含了x、y、z的偏移量以及orientation对应的旋转偏移，如右图所示：
 
 ![R1_arm_pose_control](assets/R1_arm_pose_control.png)
@@ -1592,13 +1650,13 @@ roslaunch mobiman r1_right_arm_relaxed_ik_mit.launch
   </thead>
   <tbody>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_pose_arm_left</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/pose_target_arm_left</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">左臂目标姿态</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
     </tr>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/target_pose_arm_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">/motion_target/pose_target_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">Input</td>        
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">右臂目标姿态</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">geometry_msgs::PoseStamped</td>
@@ -1641,7 +1699,7 @@ roslaunch mobiman r1_right_arm_relaxed_ik_mit.launch
   </thead>
   <tbody>
     <tr style="background-color: white;">
-      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="8">/motion_target/target_pose_arm_left<br>/motion_target/target_pose_arm_right</td>
+      <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;" rowspan="8">/motion_target/pose_target_arm_left<br>/motion_target/pose_target_arm_right</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">header</td>
       <td style="vertical-align: middle; padding: 8px; border: 1px solid #ddd;">标准消息头</td>
     </tr>
