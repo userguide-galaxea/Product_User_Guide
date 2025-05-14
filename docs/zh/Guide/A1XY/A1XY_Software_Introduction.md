@@ -257,13 +257,13 @@ roslaunch mobiman a1y_jointTrackerdemo.launch
             <td style="padding: 8px; border: 1px solid #ddd;">/hdas/feedback_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Output</td>                                   
             <td style="padding: 8px; border: 1px solid #ddd;">手臂关节反馈</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Hdas_msg::motor_control</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
         </tr>        
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/control_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                    
             <td style="padding: 8px; border: 1px solid #ddd;">手臂电机控制</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">hdas_msg::motor_control</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/target_joint_state_arm</td>
