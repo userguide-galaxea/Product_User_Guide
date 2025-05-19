@@ -63,7 +63,7 @@ cd {your_download_path}/install/share/startup_config/script
 
 ## Demo演示
 
-访问页面 [R1 Pro Demo演示指南](./R1 Pro_Demo_Guide.md)，并按照说明操作R1 Pro。
+访问页面 [R1 Pro Demo演示指南](./R1Pro_Demo_Guide.md)，并按照说明操作R1 Pro。
 
 ## 软件接口
 当前的Galaxea R1 Pro控制图如下所示，由6个主要部分组成：关节控制、手臂姿态控制、夹爪控制、躯干速度控制、底盘控制和姿态估计。整个软件包被简称为“mobiman”,表示移动操作。

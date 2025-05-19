@@ -63,7 +63,7 @@ cd ~{your_download_path}/install/share/startup_config/script
 ```
 
 ## Demo
-Visit the page [R1 Pro Demo Guide](./R1 Pro_Demo_Guide.md) and get started to operate R1 Pro following the instructions.
+Visit the page [R1 Pro Demo Guide](./R1Pro_Demo_Guide.md) and get started to operate R1 Pro following the instructions.
 
 ## Software Interface
 The current Galaxea R1 Pro control diagram is shown below, consisting of six main parts: Joint Control, Arm Pose Control, Gripper Control, Torso Speed Control, Chassis Control, and Pose Estimation. Details will be provided in the following chapters. The entire package is called 'mobiman,' short for mobile manipulation.

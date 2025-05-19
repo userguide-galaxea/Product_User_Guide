@@ -5,6 +5,24 @@
 2. OS Dependency: Ubuntu 22.04 LTS
 3. Middleware Dependency: ROS 2 Humble
 
+## Special Reminder——ROS2 Communication
+The ROS2 SDK defaults to a global ROS2 communication mechanism. In a local area network (LAN), ROS2 processes on all hosts will automatically communicate with each other (i.e., a ROS2 on one host can default to discovering the Topics of ROS2 processes on another host), which may lead to node conflicts or unintended execution of control programs. To avoid such issues, it is recommended that users configure the following restrictions before launching ROS2 programs.
+
+1. Restrict ROS2 communication to the local host only.
+  ```Bash
+  echo "export ROS_LOCALHOST_ONLY=1" >> ~/.bashrc
+  # To remove the restriction, go into the ~/.bashrc file and change it to: ROS_LOCALHOST_ONLY=0
+  ```
+2. Configure `ROS_DOMAIN_ID` to isolate communication domains.
+
+  The `ROS_DOMAIN_ID`is used to divide independent communication domains. When all ROS2 processes have the same `ROS_DOMAIN_ID`, they can communicate with each other; otherwise, even on the same host, ROS2 processes with different `ROS_DOMAIN_ID`s cannot communicate. This configuration is similar to setting port numbers in a network, and it achieves communication isolation by specifying a non-zero number.
+  ```Bash
+  # Example: Set to 72
+  export ROS_DOMAIN_ID=72  
+  ```
+
+  For more information on the roles and usage of these environment variables, please refer to the [Configuring Environment](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html) section in the official website.
+
 ## Obtain SDK
 Visit [R1 Pro ROS 2 Software Version Changelog](./R1Pro_Software_Changelog/R1Pro_changelog.md) to obtian the latest SDK.
 
@@ -63,7 +81,7 @@ cd ~{your_download_path}/install/share/startup_config/script
 ```
 
 ## Demo
-Visit the page [R1 Pro Demo Guide](./R1 Pro_Demo_Guide.md) and get started to operate R1 Pro following the instructions.
+Visit the page [R1 Pro Demo Guide](./R1Pro_Demo_Guide.md) and get started to operate R1 Pro following the instructions.
 
 ## Software Interface
 The current Galaxea R1 Pro control diagram is shown below, consisting of six main parts: Joint Control, Arm Pose Control, Gripper Control, Torso Speed Control, Chassis Control, and Pose Estimation. Details will be provided in the following chapters. The entire package is called 'mobiman,' short for mobile manipulation.

@@ -78,7 +78,7 @@ Please download and extract the SDK file package of R1 from the R1 main body (th
 - Baidu Cloud：[https://pan.baidu.com/s/1TeDBtkqUOXUPwE9fdivQ7w?pwd=gr1t](https://pan.baidu.com/s/1TeDBtkqUOXUPwE9fdivQ7w?pwd=gr1t)
 - Google Drive：[https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing](https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing)
 
-<span style="color:red;">Ensure that the R1 robot's software version has been updated to V1.1.0 or higher. Click [here](R1_Software_Changelog/v1.1.0.md) to get the latest version.</span>
+<span style="color:red;">Ensure that the R1 robot's software version has been updated to the latest version. Click [here](./R1_Software_Changelog/R1_changelog.md) to get the version changelog.</span>
 
 #### 3.2.2 Install Software Dependencies
 Please install the required software dependencies on the R1-T host computer.
@@ -216,7 +216,7 @@ Connection steps are as follows:
 ## 5. Launch SDK
 ![img](assets/R1-T_pipeline.png)
 
-<span style="color:red;">**Note: The R1 software version must be V1.0.4 or higher. Click [here](R1_Software_Changelog/v1.1.0.md) to get the latest version.**</span>
+<span style="color:red;">**Note: The R1 software version must be the latest version. Click [here](./R1_Software_Changelog/R1_changelog.md) to get the version changelog.**</span>
 
 During the whole process of controlling R1, you need to open multiple terminals. We recommend you to use TMUX. Common instructions are as follows:
 

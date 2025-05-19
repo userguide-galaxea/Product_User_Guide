@@ -75,7 +75,7 @@ R1 Teleop平台采用按比例缩小设计，完美复刻R1的各项功能，实
 - 百度云： [https://pan.baidu.com/s/1WEQIQbMhe3fQ2wyKx160Lw?pwd=gr1t](https://pan.baidu.com/s/1WEQIQbMhe3fQ2wyKx160Lw?pwd=gr1t)
 - Google Drive：[https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing](https://drive.google.com/drive/folders/1yMCa5XaNEa0SFwQ_b2NTLBQz5o1i9Z1h?usp=sharing)
 
-<span style="color:red;">请确保R1机器人软件版本已更新至V1.1.0及以上，点击[此处](R1_Software_Changelog/v1.1.0.md)获取最新版本。</span>
+<span style="color:red;">请确保R1机器人软件版本已更新至最新版本及以上，请查看[R1软件版本更新日志](./R1_Software_Changelog/ROS1/v1.1.0.md)获取最新版本。</span>
 
 #### 3.2.2 安装软件依赖环境
 请在R1-T上位机上安装所需环境依赖。
@@ -209,7 +209,7 @@ export ROS_IP=R1T上位机的ip地址
 ## 5. 启动SDK
 ![img](assets/R1-T_pipeline_CN.png)
 
-**<span style="color:red;">注意：R1及R1 Teleop的软件版本必须安装V1.1.0或以上版本，点击[此处](R1_Software_Changelog/v1.1.0.md)获取最新版本</span>**
+**<span style="color:red;">注意：R1及R1 Teleop的软件版本必须安装至最新版本，查看[此处](./R1_Software_Changelog/R1_changelog.md)获取最新版本</span>**
 
 在控制R1 Teleop的整个过程中，您需要打开多个窗口。我们建议您使用TMUX。常用指令如下：
 

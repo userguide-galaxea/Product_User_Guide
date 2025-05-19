@@ -76,7 +76,7 @@ roslaunch signal_camera signal_camera.launch
 
 ![R1_controller_switch](assets/R1_controller_switch_cn.png)
 
-<u>在使用遥控器控制R1之前，请必须先启动 CAN 驱动程序和其他相关程序，详细说明请参考《开机指南》中的 **第[3.4](R1_Step_by_Step_Guide.md/#34-启动can驱动程序), [3.5](R1_Step_by_Step_Guide.md/#35--第一次自检), [3.6](R1_Step_by_Step_Guide.md/#36--站立) 和[3.7](R1_Step_by_Step_Guide.md/#37--安装手臂)节**。</u> 完成启动后，可将每个开关移至指定位置，并按照以下步骤控制R1。
+<u>在使用遥控器控制R1之前，请必须先启动 CAN 驱动程序和其他相关程序，详细说明请参考《开机指南》中的 **第[4.3](./R1_Step_by_Step_Guide.md/#43-启动can驱动程序), [4.4](./R1_Step_by_Step_Guide.md/#44--第一次自检), [4.5](./R1_Step_by_Step_Guide.md/#45-站立) 和其他相关章节。</u> 完成启动后，可将每个开关移至指定位置，并按照以下步骤控制R1。
 
 ## 5. 确认Topic
 开始采集前， 确保有以下topic，且类型和帧率正常。

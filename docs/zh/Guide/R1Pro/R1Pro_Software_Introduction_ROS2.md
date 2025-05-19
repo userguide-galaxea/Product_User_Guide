@@ -5,6 +5,23 @@
 2. 操作系统依赖：Ubuntu 22.04 LTS
 3. 中间件依赖：ROS 2 Humble
 
+## 特别提醒——ROS2通信
+ROS2版本的SDK默认采用全局ROS2通信机制。在局域网中，所有主机上的ROS2进程会自动相互通信，（即一台主机上的ROS2默认可以发现另一台主机上ROS2进程的Topic），因此可能导致节点冲突或意外执行控制程序。为避免此类问题的发生，建议用户在启动ROS2程序前进行以下限制配置。
+
+1. 限制ROS2通信范围至本地主机。
+  ```Bash
+  echo "export ROS_LOCALHOST_ONLY=1" >> ~/.bashrc
+  # 取消限制时，进入~/.bashrc文件中，修改为：ROS_LOCALHOST_ONLY=0
+  ```
+2. 配置ROS_DOMAIN_ID以隔离通信域。
+  `ROS_DOMAIN_ID`用于划分独立的通信域。当所有ROS2进程的`ROS_DOMAIN_ID`相同时，它们可以互相通信；反之，即使在同一台主机上，不同`ROS_DOMAIN_ID`的ROS2进程也无法通信。此配置类似于网络中的端口号设置，通过指定一个非0的数字来实现通信隔离。
+  
+  ```Bash
+  # 举例：设置为72
+  export ROS_DOMAIN_ID=72  
+  ```
+  相关环境变量的作用和用法详见ROS2官方文档中[Configuring Environment](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html)章节。
+
 ## 获取SDK
 Visit[R1 Pro ROS 2 软件版本更新日志](./R1Pro_Software_Changelog/R1Pro_changelog.md)，获取最新的SDK包及更新信息。
 
@@ -42,6 +59,7 @@ Visit[R1 Pro ROS 2 软件版本更新日志](./R1Pro_Software_Changelog/R1Pro_ch
   </tbody>
 </table>
 
+
 ### 分开启动各接口
 所有组件可以通过以下命令模板启动。
 
@@ -61,9 +79,10 @@ cd ~{your_download_path}/install/share/startup_config/script
 ./robot_startup.sh boot ../session.d/ATCStandard/R1PROBody.d/
 ```
 
+
 ## Demo演示
 
-访问页面 [R1 Pro Demo演示指南](./R1 Pro_Demo_Guide.md)，并按照说明操作R1 Pro。
+访问页面 [R1 Pro Demo演示指南](./R1Pro_Demo_Guide.md)，并按照说明操作R1 Pro。
 
 ## 软件接口
 当前的Galaxea R1 Pro控制图如下所示，由6个主要部分组成：关节控制、手臂姿态控制、夹爪控制、躯干速度控制、底盘控制和姿态估计。整个软件包被简称为“mobiman”,表示移动操作。

@@ -321,7 +321,7 @@ python3 r1_demo_easy.py
 
 完成上述所有操作后，<span style="color:red">将R1移动到一个开阔区域，确保周围没有障碍物</span>，方可远程命令R1进行Demo测试。
 
-您可以在[R1 Demo Guide](./R1_demo_test.md)中找到文档和Python脚本。
+您可以在[R1 Demo Guide](./R1_Demo_Guide.md)中找到文档和Python脚本。
 
 ## 8. 传感器标定数据采集
 点击查看[R1传感器标定数据采集方法](./R1_Sensor_Calibration_Data_Collection_Method.md)。
