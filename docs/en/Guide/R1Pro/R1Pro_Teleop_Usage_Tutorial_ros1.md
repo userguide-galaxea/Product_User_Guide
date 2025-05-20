@@ -140,7 +140,7 @@ S2R12000P18245_20240213173320125_RAW.json
 ```
 
 ###  4.4 Start Recording
-Perform data recording operation through the VR left remote controller:
+Perform data recording operation through the left controller:
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr style="background-color: black; color: white; text-align: left;">
@@ -163,7 +163,7 @@ Perform data recording operation through the VR left remote controller:
         <tr style="background-color: white; text-align: left;">
                 <td style="padding: 8px; border: 1px solid #ddd;">Delete the current recording</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Click button C on the left controller</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">If a recording is already in progress, click button C again will stop and delete the current recording, and it will not be written to disk.</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">If a recording is already in progress, click button C again will stop and delete the current recording (leave at least 5sec gap), and it will not be written to disk.</td>
         </tr>
     </tbody>
 </table>

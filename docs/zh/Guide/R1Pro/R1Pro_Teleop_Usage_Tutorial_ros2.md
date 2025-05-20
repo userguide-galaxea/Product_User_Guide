@@ -140,7 +140,7 @@ S2R12000P18245_20240213173320125_RAW.json
 # RAW：代表数据采集原始落盘数据
 ```
 ### 4.4 录制数据
-使用VR左遥控器进行数据录制操作：
+使用左手柄进行数据录制操作：
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -164,7 +164,7 @@ S2R12000P18245_20240213173320125_RAW.json
         <tr style="background-color: white; text-align: left;">
             <td style="padding: 8px; border: 1px solid #ddd;">删除当前录制</td>
             <td style="padding: 8px; border: 1px solid #ddd;">点击一下左手柄 C 键</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">若已经有录制在进行中，再点击一下C键将结束并删除当前录制，数据不会落盘。</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">若已经有录制在进行中，再点击一下C键将结束并删除当前录制（两次按键的间隔在5秒以上），数据不会落盘。</td>
         </tr>
     </tbody>
 </table>
