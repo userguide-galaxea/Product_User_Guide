@@ -99,9 +99,8 @@ This script will launch the HDAS (communication protocol node), Mobiman (motion 
     ```
 3. Use the quick start script to launch all nodes on the R1 Pro-T host computer.
     ```Bash
-    cd ${R1Pro-T_SDK_path}/install
-    source setup.bash
-    roslaunch mobiman r1_pro_teleoperation.launch
+    cd ${SDK_path}/install/startup_config/share/startup_config/script/
+    ./robot_startup.sh boot ../sessions.d/ATCHostStandard/R1PROT.d/
     ```
 
 After completing the above steps, wait 3-5 seconds and you will be able to control R1 Pro-T.
