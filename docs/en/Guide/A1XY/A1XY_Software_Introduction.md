@@ -367,7 +367,7 @@ The interface is shown below:
             <td style="padding: 8px; border: 1px solid #ddd;">Sensor_msgs::JointState</td>
         </tr>
         <tr style="background-color: white; text-align: left;">
-            <td style="padding: 8px; border: 1px solid #ddd;">/motion_target/pose_ee_arm</td>
+            <td style="padding: 8px; border: 1px solid #ddd;">/motion_control/pose_ee_arm</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Input</td>                    
             <td style="padding: 8px; border: 1px solid #ddd;">Target pose of ee</td>
             <td style="padding: 8px; border: 1px solid #ddd;">Geometry_msgs::PoseStamped</td>
@@ -387,7 +387,7 @@ The specific fields and their detailed descriptions for the above topic are show
     </thead>
     <tbody>
         <tr style="background-color: white;">
-            <td rowspan="8" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/motion_target/pose_ee_arm</td>
+            <td rowspan="8" style="padding: 10px; border: 1px solid #ddd; vertical-align: middle;">/motion_target/target_pose_arm</td>
             <td style="padding: 10px; border: 1px solid #ddd;">header</td>
             <td style="padding: 10px; border: 1px solid #ddd;">Standard Header</td>
         </tr>

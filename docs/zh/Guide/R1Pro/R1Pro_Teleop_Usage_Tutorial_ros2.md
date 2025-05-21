@@ -95,20 +95,15 @@ cd ${SDK_path}/install/startup_config/share/startup_config/script/
 
 现在，您可以按照以下步骤启动CAN驱动程序。
 
-1. 启动TMUX。
-   ```bash
-   tmux
-   ```
-2. 启动FDCAN通信。
+1. 启动FDCAN通信。
    ```bash
    sudo ip link set dev can0 type can bitrate 1000000 dbitrate 5000000 fd on
    sudo ip link set up can0
    ```
-3. 使用快捷启动脚本拉起R1 Pro-T上位机的所有节点。
+2. 使用快捷启动脚本拉起R1 Pro-T上位机的所有节点。
    ```bash
-   cd ${R1Pro-T_SDK_path}/install
-   source setup.bash
-   roslaunch mobiman r1_pro_teleoperation.launch
+   cd ${SDK_path}/install/startup_config/share/startup_config/script/
+   ./robot_startup.sh boot ../sessions.d/ATCHostStandard/R1PROT.d/
    ```
 
 完成以上步骤后，等待3-5秒钟，便可操控R1 Pro-T。
